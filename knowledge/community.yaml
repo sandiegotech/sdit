@@ -1,0 +1,16 @@
+community:
+  fellowships:
+    - id: mullen-scholar
+      name: Mullen Scholar
+      emphasis: radical arts, creativity, culture-technology fusion
+    - id: hansen-fellowship
+      name: Hansen Fellowship
+      emphasis: engineering excellence and shipped outcomes
+  training:
+    - name: FPV drone training sessions (weekly)
+      mascots: ["Young Lurks", "Shrimp Fairy"]
+  local_groups:
+    - Drones
+    - Engineering
+    - Unmanned Systems
+    - Creative

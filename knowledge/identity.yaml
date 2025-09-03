@@ -1,0 +1,17 @@
+identity:
+  name: San Diego Institute of Technology (SDIT)
+  form: Nonprofit educational and research institute (pre-accreditation credibility phase)
+  mission: >
+    To be the Bell Labs of the 21st century—a post-industrial renaissance hub uniting
+    technology, design, engineering, music, art, and liberal education.
+  tagline: "A hands-on institute where technology and culture meet — inspiration, innovation, integrity."
+  long_term_goals:
+    - Become the most advanced research and engineering organization in the world
+    - Be the top producer of talent, improving members’ quality of life
+    - Shape a Post-Industrial Renaissance movement
+  positioning:
+    prestige_peers: [Harvard, MIT, Stanford]
+    ethos: open knowledge, shipped projects, intellectual integrity
+  formality:
+    status: early-stage
+    accreditation: exploring WSCUC path

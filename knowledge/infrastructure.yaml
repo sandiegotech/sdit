@@ -1,0 +1,17 @@
+infrastructure:
+  digital:
+    website: "sandiegotech.org"
+    stack: ["Kajabi", "Squarespace hybrid"]
+    workspace: "Notion (structure & portfolio)"
+    code: "GitHub Pages (projects: Terminal 82, etc.)"
+  legal_financial:
+    nonprofit: true
+    ein: "established"
+    accreditation_path: "exploring WSCUC"
+    funding:
+      donations: true
+      anchors:
+        - "Monolyth potential contribution: $50k"
+  physical:
+    phase: "early-stage garage workspace"
+    vision: "San Diego campus (surf/skate culture + labs)"

@@ -1,0 +1,16 @@
+strategic_anchors:
+  - id: education-49
+    name: "$49 Education Project"
+    description: Accessible liberal arts education package (books, films, exercises, AI-assisted)
+  - id: ship-stfu
+    name: "Ship//STFU"
+    description: Credibility through actually shipped projects; no empty theory
+  - id: mira
+    name: "Mullen Institute of Radical Arts (MIRA)"
+    description: Arts wing inspired by Rodney Mullen; cultural counterpoint to DEUS
+  - id: ai-as-tool
+    name: "AI as Tool"
+    description: AI for research/exploration/explanation; focus remains on self-reflection & real projects
+  - id: post-industrial-renaissance
+    name: "Post-Industrial Renaissance / Open Age"
+    description: Movement branding for a new intellectual, cultural, technological rebirth

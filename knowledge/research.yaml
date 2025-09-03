@@ -1,0 +1,42 @@
+research:
+  divisions:
+    - id: deus
+      name: DEUS (Defense Engineering & Unmanned Systems)
+      focus: [UAS, spectrum analysis, RF systems, electronic warfare]
+    - id: mira
+      name: MIRA (Mullen Institute of Radical Arts)
+      focus: [skate, surf, music, film, cultural innovation]
+  projects:
+    # DEUS example projects
+    - id: deus-spectrum-analysis
+      name: Spectrum Analysis Toolkit
+      division: deus
+      description: Field-ready RF spectrum analysis tools for sensing and EW awareness
+      status: exploratory
+    - id: deus-uas-platform
+      name: UAS Engineering Platform
+      division: deus
+      description: Modular UAS airframes, avionics integration, telemetry, and ground control links
+      status: prototype
+    - id: deus-applied-engineering
+      name: Applied Engineering Projects
+      division: deus
+      description: Bench-scale projects across sensing, communications, power, and mechanisms
+      status: ongoing
+
+    # MIRA example projects
+    - id: mira-films
+      name: Short Films Series
+      division: mira
+      description: Documentary and narrative works at the intersection of technology and culture
+      status: planned
+    - id: mira-surf-skate
+      name: Surf/Skate Design Experiments
+      division: mira
+      description: Board design, materials studies, and motion capture-informed performance analysis
+      status: exploratory
+    - id: mira-music-lab
+      name: Music and Sound Lab
+      division: mira
+      description: Sound design, recording, and live performance technology experiments
+      status: ongoing

@@ -1,0 +1,30 @@
+programs:
+  - id: liberal-education-2
+    name: Liberal Education 2.0
+    description: >
+      Interdisciplinary core with Mental Gym and tree-of-knowledge model; project-based validation in lieu of grades.
+    volumes:
+      - vol-01-foundations
+      - vol-02-ethics-and-reasoning
+      - vol-03-communication-rhetoric
+      - vol-04-science-systems
+      - vol-05-design-creativity
+      - vol-06-economy-history
+      - vol-07-technology-society
+      - vol-08-leadership-citizenship
+    courses:
+      - creative-intelligence
+      - wild-card-lab
+      - mental-models-lab
+  - id: engineering
+    name: Engineering Programs
+    tracks:
+      - drones
+      - spectrum
+      - ai-systems
+  - id: labs-studios
+    name: Labs & Studios
+    items:
+      - mental-models-lab
+      - creative-intelligence
+      - wild-card-lab
