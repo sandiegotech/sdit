@@ -1,0 +1,5 @@
+# VS Code workspace files
+.vscode/
+*.code-workspace
+.history/
+.VSCodeCounter/
