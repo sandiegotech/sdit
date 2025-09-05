@@ -1,3 +1,7 @@
+__meta__:
+  title: Programs
+  description: Canonical list of educational programs, tracks, and labs with stable IDs.
+  intended_use: Source for Programs pages and cross-linking to courses; IDs must match course/module references.
 programs:
   - id: liberal-education-2
     name: Liberal Education 2.0

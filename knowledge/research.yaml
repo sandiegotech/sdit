@@ -1,3 +1,7 @@
+__meta__:
+  title: Research
+  description: Research divisions and project records with status and ownership.
+  intended_use: Fuel Research pages, roadmaps, and status dashboards; prefer detailed, evolving records here.
 research:
   divisions:
     - id: deus

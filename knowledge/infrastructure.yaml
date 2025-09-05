@@ -1,3 +1,7 @@
+__meta__:
+  title: Infrastructure
+  description: Operational footprint across digital, legal/financial, and physical domains.
+  intended_use: Internal reference for ops planning and sanity checks; avoid sensitive details.
 infrastructure:
   digital:
     website: "sandiegotech.org"

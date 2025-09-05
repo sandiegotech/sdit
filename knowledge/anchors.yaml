@@ -1,3 +1,7 @@
+__meta__:
+  title: Strategic Anchors
+  description: Enduring pillars that guide SDIT’s decisions and messaging.
+  intended_use: Reference for communications, strategy reviews, and tagging across docs/projects; IDs must remain stable.
 strategic_anchors:
   - id: education-49
     name: "$49 Education Project"

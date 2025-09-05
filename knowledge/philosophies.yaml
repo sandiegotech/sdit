@@ -1,3 +1,7 @@
+__meta__:
+  title: Core Philosophies
+  description: Educational and cultural principles that shape programs, research, and voice.
+  intended_use: Inform curriculum design, editorial tone, and decision tradeoffs; echo on philosophy pages.
 core_philosophies:
   liberal_education_2_0:
     concepts:

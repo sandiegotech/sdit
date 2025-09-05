@@ -1,3 +1,7 @@
+__meta__:
+  title: Near‑Term Priorities
+  description: Short, focused list of the next concrete wins to build credibility and momentum.
+  intended_use: Quarterly planning and status review; do not overfill—keep crisp and current.
 near_term_priorities:
   - Publish first SDIT research paper (drone detection, open-source hardware/software)
   - Ship first $49 Education core guidebook (physical + digital)

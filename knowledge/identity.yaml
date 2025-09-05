@@ -1,3 +1,7 @@
+__meta__:
+  title: Identity
+  description: Canonical organization identity (name, mission, tagline, positioning, formality).
+  intended_use: Source-of-truth for About/landing copy; informs tone, outreach, and policy text.
 identity:
   name: San Diego Institute of Technology (SDIT)
   form: Nonprofit educational and research institute (pre-accreditation credibility phase)
