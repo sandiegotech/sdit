@@ -5,7 +5,7 @@ __meta__:
 infrastructure:
   digital:
     website: "sandiegotech.org"
-    stack: ["Kajabi", "Squarespace hybrid"]
+    stack: ["Kajabi", "Squarespace Domain", "Google Workplace Email"]
     workspace: "Notion (structure & portfolio)"
     code: "GitHub Pages (projects: Terminal 82, etc.)"
   legal_financial:

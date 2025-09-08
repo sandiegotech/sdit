@@ -6,7 +6,7 @@ Each file now includes a top-level `__meta__` block with a short description and
 
 ## What’s Essential vs. Optional
 
-- Essential: `identity.yaml`, `anchors.yaml`, `philosophies.yaml`, `programs.yaml`, `research.yaml`
+- Essential: `identity.yaml`, `anchors.yaml`, `philosophies.yaml`, `programs.yaml`, `courses.yaml`, `research.yaml`
 - Optional/Contextual: `projects.yaml` (index view), `community.yaml` (when fellowships/events go live), `priorities.yaml` (internal planning), `infrastructure.yaml` (ops reference)
 
 ## Files
@@ -15,6 +15,7 @@ Each file now includes a top-level `__meta__` block with a short description and
 - `knowledge/anchors.yaml`: Strategic anchors (enduring pillars for decisions/messaging). Use for consistent framing across docs and projects.
 - `knowledge/philosophies.yaml`: Educational and cultural principles. Guides curriculum design, editorial voice, and tradeoffs.
 - `knowledge/programs.yaml`: Official programs, tracks, and labs with stable IDs. Cross‑link to courses/modules.
+- `knowledge/courses.yaml`: Master list of all courses (core and electives) with canonical paths and grouping; powers course indexes.
 - `knowledge/research.yaml`: Research divisions and detailed project records with status. Use for research pages and roadmaps.
 - `knowledge/projects.yaml`: Cross‑cutting, high‑level project index (education, research, culture). Keep brief; detail lives in `research.yaml`.
 - `knowledge/community.yaml`: Fellowships, training rhythms, and local/affinity groups. Drives community pages and planning.

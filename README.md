@@ -21,9 +21,10 @@ Authoritative, versioned source for San Diego Institute of Technology (SDIT) ide
   - `docs/index.md`: High-level overview.
   - `docs/faq.md`: Frequently asked questions.
 
-- `courses/`: Core volumes and electives organized simply as:
-  - For core: `core/vol-XX/` with `syllabus.md`, `courses/` (one file per course), and `schedule/` (daily summary and one file per week). No module subfolders.
-  - For electives: one file per field book.
+- `courses/`: Flat list of all courses (one Markdown file per course). No nested core/electives folders. See `courses/INDEX.md` for the generated master list.
+
+- `programs/`: Volume syllabi and schedules by semester.
+  - `programs/vol-XX-*` with `syllabus.md` (Year/Semester overview) and optional `schedule/` (daily/weekly pages).
 
 - `scripts/`: Validation tooling.
   - `scripts/validate.py`: Minimal YAML shape check (ensures top-level mapping).
@@ -80,9 +81,13 @@ Schema: A formal schema is not enforced yet. If you add structure that others wi
 
 ---
 
-## Courses (`courses/`)
+## Courses (`courses/`) and Programs (`programs/`)
 
-Keep course content simple: one page per course; schedules use daily or weekly pages. Avoid nested module folders.
+- Courses: keep simple — one Markdown page per course at the top level of `courses/`.
+- Programs: each volume lives under `programs/vol-XX-*/` with a `syllabus.md`. If you add schedules, place them under `programs/vol-XX-*/schedule/`.
+- Master list: regenerate `courses/INDEX.md` and `knowledge/courses.yaml` with:
+  - `python scripts/build_courses_yaml.py`
+  - `python scripts/generate_course_indexes.py`
 
 ---
 

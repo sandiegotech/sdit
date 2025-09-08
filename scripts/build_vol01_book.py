@@ -21,7 +21,7 @@ import tempfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEDULE_DIR = ROOT / "courses" / "core" / "vol-01-foundations" / "schedule"
+SCHEDULE_DIR = ROOT / "courses" / "programs" / "vol-01-foundations" / "schedule"
 
 
 def strip_front_matter(text: str) -> tuple[str, dict]:
@@ -93,7 +93,7 @@ def _assemble_markdown() -> str:
     header = (
         "# Volume 01 — Foundations: Full Semester\n\n"
         "This file concatenates every day in chronological order from\n"
-        "`courses/core/vol-01-foundations/schedule`.\n\n"
+        "`courses/programs/vol-01-foundations/schedule`.\n\n"
     )
     pieces.append(header)
 

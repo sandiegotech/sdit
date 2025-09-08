@@ -1,0 +1,347 @@
+__meta__:
+  title: Courses
+  description: Canonical master list of all courses with paths and grouping.
+  intended_use: Source for generating curriculum and electives indexes; single source
+    of truth for course paths and labels.
+courses:
+- id: bus-201
+  code: BUS-201
+  title: Entrepreneurship & Startup Design
+  path: courses/BUS-201-entrepreneurship-startup-design.md
+  tags: []
+- id: finance-for-innovators
+  code: BUS-202
+  title: Finance for Innovators
+  path: courses/BUS-202-finance-for-innovators.md
+  level: 200
+  tags:
+  - finance
+  - modeling
+  - startups
+  - strategy
+- id: organizational-leadership-negotiation
+  code: BUS-203
+  title: Organizational Leadership & Negotiation
+  path: courses/BUS-203-organizational-leadership-negotiation.md
+  level: 200
+  tags:
+  - leadership
+  - negotiation
+  - teams
+  - management
+- id: global-markets-geopolitics
+  code: BUS-204
+  title: Global Markets & Geopolitics
+  path: courses/BUS-204-global-markets-geopolitics.md
+  level: 200
+  tags:
+  - markets
+  - geopolitics
+  - strategy
+  - risk
+- id: business-ethics-responsibility
+  code: BUS-205
+  title: Business Ethics & Responsibility
+  path: courses/BUS-205-business-ethics-responsibility.md
+  level: 200
+  tags:
+  - ethics
+  - responsibility
+  - governance
+  - policy
+- id: philosophy-of-consciousness
+  code: HUM-201
+  title: Philosophy of Consciousness
+  path: courses/HUM-201-philosophy-of-consciousness.md
+  level: 200
+  tags:
+  - philosophy
+  - mind
+  - cognition
+  - ethics
+- id: political-theory-civic-life
+  code: HUM-202
+  title: Political Theory & Civic Life
+  path: courses/HUM-202-political-theory-civic-life.md
+  level: 200
+  tags:
+  - politics
+  - civics
+  - law
+  - ethics
+- id: cultural-anthropology-fieldwork
+  code: HUM-203
+  title: Cultural Anthropology & Fieldwork
+  path: courses/HUM-203-cultural-anthropology-fieldwork.md
+  level: 200
+  tags:
+  - anthropology
+  - fieldwork
+  - culture
+  - methods
+- id: history-of-technology-innovation
+  code: HUM-204
+  title: History of Technology & Innovation
+  path: courses/HUM-204-history-of-technology-innovation.md
+  level: 200
+  tags:
+  - history
+  - technology
+  - innovation
+  - society
+- id: comparative-religion-society
+  code: HUM-205
+  title: Comparative Religion & Society
+  path: courses/HUM-205-comparative-religion-society.md
+  level: 200
+  tags:
+  - religion
+  - society
+  - culture
+  - ethics
+- id: lab-101
+  code: LAB-101
+  title: LAB 101 – Creative Intelligence Lab I
+  path: courses/LAB-101-creative-intelligence-lab.md
+  level: 100
+  tags:
+  - creativity
+  - studio
+  - making
+  - design
+- id: lab-201
+  code: LAB-201
+  title: 'LAB 201 – Reasoning Lab II: Cases & Debates'
+  path: courses/LAB-201-reasoning-lab-cases-debates.md
+  level: 200
+  tags:
+  - lab
+  - reasoning
+  - debate
+  - cases
+- id: lbs-101
+  code: LBS-101
+  title: LBS 101 – The Mental Gym
+  path: courses/LBS-101-mental-gym.md
+  level: 100
+  tags:
+  - liberal-education
+  - foundations
+  - reasoning
+- id: lbs-105
+  code: LBS-105
+  title: 'LBS 105 – Writing & Communication I: Rhetoric and Storytelling'
+  path: courses/LBS-105-writing-communication.md
+  level: 100
+  tags:
+  - writing
+  - rhetoric
+  - storytelling
+  - communication
+- id: lbs-110
+  code: LBS-110
+  title: LBS 110 – Mathematics for Modern Thinkers
+  path: courses/LBS-110-mathematics-for-modern-thinkers.md
+  level: 100
+  tags:
+  - mathematics
+  - patterns
+  - reasoning
+- id: lbs-120
+  code: LBS-120
+  title: LBS 120 – Physics with Lab
+  path: courses/LBS-120-physics-with-lab.md
+  level: 100
+  tags:
+  - physics
+  - science
+  - inquiry
+  - lab
+- id: lbs-201
+  code: LBS-201
+  title: LBS 201 – Ethics & Moral Reasoning
+  path: courses/LBS-201-ethics-moral-reasoning.md
+  level: 200
+  tags:
+  - ethics
+  - moral-reasoning
+  - philosophy
+- id: lbs-205
+  code: LBS-205
+  title: 'LBS 205 – Writing & Communication II: Argument, Evidence, and Style'
+  path: courses/LBS-205-writing-communication-ii.md
+  level: 200
+  tags:
+  - writing
+  - rhetoric
+  - argument
+  - style
+- id: lbs-210
+  code: LBS-210
+  title: LBS 210 – Mathematical Reasoning & Proof
+  path: courses/LBS-210-mathematical-reasoning-proof.md
+  level: 200
+  tags:
+  - mathematics
+  - logic
+  - proof
+- id: lbs-220
+  code: LBS-220
+  title: LBS 220 – Scientific Method & Experimental Design
+  path: courses/LBS-220-scientific-method-experimental-design.md
+  level: 200
+  tags:
+  - science
+  - method
+  - design
+  - data
+- id: outdoor-leadership-expeditionary-skills
+  code: LIFE-201
+  title: Outdoor Leadership & Expeditionary Skills
+  path: courses/LIFE-201-outdoor-leadership-expeditionary-skills.md
+  level: 200
+  tags:
+  - leadership
+  - outdoor
+  - safety
+  - teamwork
+- id: health-fitness-human-performance
+  code: LIFE-202
+  title: Health, Fitness & Human Performance
+  path: courses/LIFE-202-health-fitness-human-performance.md
+  level: 200
+  tags:
+  - health
+  - fitness
+  - performance
+  - habits
+- id: psychology-creativity-flow-states
+  code: LIFE-203
+  title: Psychology of Creativity & Flow States
+  path: courses/LIFE-203-psychology-creativity-flow-states.md
+  level: 200
+  tags:
+  - psychology
+  - creativity
+  - flow
+  - habits
+- id: education-mentorship-teach-what-you-know
+  code: LIFE-204
+  title: 'Education & Mentorship: Teach What You Know'
+  path: courses/LIFE-204-education-mentorship-teach-what-you-know.md
+  level: 200
+  tags:
+  - education
+  - mentorship
+  - teaching
+  - communication
+- id: global-citizenship-civic-engagement
+  code: LIFE-205
+  title: Global Citizenship & Civic Engagement
+  path: courses/LIFE-205-global-citizenship-civic-engagement.md
+  level: 200
+  tags:
+  - civics
+  - service
+  - community
+  - policy
+- id: film-visual-storytelling
+  code: MEDIA-201
+  title: Film & Visual Storytelling
+  path: courses/MEDIA-201-film-visual-storytelling.md
+  level: 200
+  tags:
+  - film
+  - storytelling
+  - editing
+  - cinematography
+- id: music-sound-design
+  code: MEDIA-202
+  title: Music & Sound Design
+  path: courses/MEDIA-202-music-sound-design.md
+  level: 200
+  tags:
+  - music
+  - sound
+  - recording
+  - production
+- id: design-visual-communication
+  code: MEDIA-203
+  title: Design & Visual Communication
+  path: courses/MEDIA-203-design-visual-communication.md
+  level: 200
+  tags:
+  - design
+  - typography
+  - branding
+  - ui
+- id: creative-writing-story-craft
+  code: MEDIA-204
+  title: Creative Writing & Story Craft
+  path: courses/MEDIA-204-creative-writing-story-craft.md
+  level: 200
+  tags:
+  - writing
+  - storytelling
+  - rhetoric
+- id: media-culture-society
+  code: MEDIA-205
+  title: Media, Culture & Society
+  path: courses/MEDIA-205-media-culture-society.md
+  level: 200
+  tags:
+  - media
+  - culture
+  - society
+  - analysis
+- id: unmanned-systems
+  code: TECH-201
+  title: Unmanned Systems — UAS Fundamentals
+  path: courses/TECH-201-unmanned-systems.md
+  level: 200
+  tags:
+  - UAS
+  - DEUS
+  - engineering
+  - spectrum
+  - safety
+- id: ai-society
+  code: TECH-202
+  title: AI & Society
+  path: courses/TECH-202-ai-society.md
+  level: 200
+  tags:
+  - AI
+  - ethics
+  - policy
+  - safety
+- id: cybersecurity-information-warfare
+  code: TECH-203
+  title: Cybersecurity & Information Warfare
+  path: courses/TECH-203-cybersecurity-information-warfare.md
+  level: 200
+  tags:
+  - security
+  - networks
+  - threat-modeling
+  - information-ops
+- id: hardware-hacking-embedded
+  code: TECH-204
+  title: Hardware Hacking & Embedded Systems
+  path: courses/TECH-204-hardware-hacking-embedded.md
+  level: 200
+  tags:
+  - embedded
+  - electronics
+  - firmware
+  - prototyping
+- id: climate-tech-energy-systems
+  code: TECH-205
+  title: Climate Tech & Energy Systems
+  path: courses/TECH-205-climate-tech-energy-systems.md
+  level: 200
+  tags:
+  - energy
+  - climate
+  - systems
+  - modeling
