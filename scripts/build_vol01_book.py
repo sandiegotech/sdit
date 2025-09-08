@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Assemble Volume 01 (Foundations) schedule days into a single text/markdown file
+Assemble Volume 01 (Foundations) schedule sections into a single text/markdown file
 in chronological order.
 
 Usage:
@@ -21,7 +21,7 @@ import tempfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEDULE_DIR = ROOT / "courses" / "programs" / "vol-01-foundations" / "schedule"
+SCHEDULE_DIR = ROOT / "programs" / "Bachelor-Liberal-Arts" / "vol-01-foundations" / "schedule"
 
 
 def strip_front_matter(text: str) -> tuple[str, dict]:
@@ -63,27 +63,27 @@ def strip_front_matter(text: str) -> tuple[str, dict]:
     return body.lstrip(), meta
 
 
-def find_week_dirs() -> list[Path]:
+def find_chapter_dirs() -> list[Path]:
     if not SCHEDULE_DIR.exists():
         print(f"Error: schedule directory not found: {SCHEDULE_DIR}", file=sys.stderr)
         sys.exit(1)
-    weeks = [p for p in SCHEDULE_DIR.iterdir() if p.is_dir() and p.name.startswith("week-")]
+    chapters = [p for p in SCHEDULE_DIR.iterdir() if p.is_dir() and p.name.startswith("chapter-")]
     # Sort by numeric suffix if present
-    def week_key(p: Path):
+    def chapter_key(p: Path):
         m = re.search(r"(\d+)$", p.name)
         return int(m.group(1)) if m else p.name
 
-    return sorted(weeks, key=week_key)
+    return sorted(chapters, key=chapter_key)
 
 
-def find_day_files(week_dir: Path) -> list[Path]:
-    days = [p for p in week_dir.iterdir() if p.is_file() and p.name.startswith("day-") and p.suffix == ".md"]
+def find_section_files(chapter_dir: Path) -> list[Path]:
+    sections = [p for p in chapter_dir.iterdir() if p.is_file() and p.name.startswith("section-") and p.suffix == ".md"]
 
-    def day_key(p: Path):
+    def section_key(p: Path):
         m = re.search(r"(\d+)", p.stem)
         return int(m.group(1)) if m else p.name
 
-    return sorted(days, key=day_key)
+    return sorted(sections, key=section_key)
 
 
 def _assemble_markdown() -> str:
@@ -92,23 +92,23 @@ def _assemble_markdown() -> str:
 
     header = (
         "# Volume 01 — Foundations: Full Semester\n\n"
-        "This file concatenates every day in chronological order from\n"
-        "`courses/programs/vol-01-foundations/schedule`.\n\n"
+        "This file concatenates every section in chronological order from\n"
+        "`programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule`.\n\n"
     )
     pieces.append(header)
 
-    for week_dir in find_week_dirs():
-        # Extract week number for section header
-        m = re.search(r"(\d+)$", week_dir.name)
-        week_num = int(m.group(1)) if m else week_dir.name
+    for chapter_dir in find_chapter_dirs():
+        # Extract chapter number for section header
+        m = re.search(r"(\d+)$", chapter_dir.name)
+        chapter_num = int(m.group(1)) if m else chapter_dir.name
 
-        week_header = f"\n\n---\n\n## Week {int(week_num):02d}\n\n"
-        pieces.append(week_header)
+        chapter_header = f"\n\n---\n\n## Chapter {int(chapter_num):02d}\n\n"
+        pieces.append(chapter_header)
 
-        for day_file in find_day_files(week_dir):
-            raw = day_file.read_text(encoding="utf-8")
+        for section_file in find_section_files(chapter_dir):
+            raw = section_file.read_text(encoding="utf-8")
             body, _meta = strip_front_matter(raw)
-            # Add a spacer between days for readability; rely on the day's own H1
+            # Add a spacer between sections for readability; rely on the section's own H1
             pieces.append("\n")
             pieces.append(body.strip())
             pieces.append("\n")
@@ -125,7 +125,7 @@ def _inject_pagebreaks_for_docx(md_text: str) -> str:
     """Insert hard page breaks in Markdown so pandoc outputs pages in DOCX.
 
     Rules:
-    - Before each new day heading (lines starting with `# Day`), except the first.
+    - Before each new section heading (lines starting with `# Section`), except the first.
     - Before each `## Practice` section so Practice starts on a new page.
 
     Pandoc treats a form feed character (\f) on its own line as a page break
@@ -133,7 +133,7 @@ def _inject_pagebreaks_for_docx(md_text: str) -> str:
     """
     lines = md_text.splitlines()
     out: list[str] = []
-    seen_first_day = False
+    seen_first_section = False
 
     def prev_nonempty_is_break() -> bool:
         # Check if the last non-empty emitted line is a form feed
@@ -147,16 +147,16 @@ def _inject_pagebreaks_for_docx(md_text: str) -> str:
         line = raw.rstrip("\n")
         stripped = line.lstrip()
 
-        # Insert a page break before subsequent Day headers
-        if stripped.startswith("# Day "):
-            if seen_first_day:
+        # Insert a page break before subsequent Section headers
+        if stripped.startswith("# Section "):
+            if seen_first_section:
                 if not prev_nonempty_is_break():
                     # Blank line, break, blank line
                     if len(out) and out[-1].strip() != "":
                         out.append("")
                     out.append("\f")
                     out.append("")
-            seen_first_day = True
+            seen_first_section = True
             out.append(line)
             continue
 
