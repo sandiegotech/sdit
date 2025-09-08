@@ -1,0 +1,31 @@
+---
+id: vol01-chapter02-section01
+title: "Section 01 — Logic & Reasoning (LBS 101)"
+parent_volume: vol-01-foundations
+chapter: 2
+section: 1
+course: LBS 101 – The Mental Gym
+---
+
+# Section 01 — Logic & Reasoning
+Course: LBS 101 – The Mental Gym
+
+## Learning Session (≈3 hrs)
+Explore These Materials:
+1. Read (45 min) — Aristotle, Organon (Categories & Prior Analytics, short excerpts); Lewis Carroll, “What the Tortoise Said to Achilles”.  
+2. Watch (60 min) — Intro to Logic: Validity vs. Soundness (short lecture); Argument Mapping basics (workshop clip).  
+3. Listen (30 min) — Philosophy Bites: What Is a Good Argument? (episode).  
+4. Reflect While Engaging (45 min) — Note examples of valid-but-unsound vs sound arguments; list 5 common fallacies you notice in daily life.
+
+## Key Quote Box
+Write one quote from today’s materials that you want to keep:  
+“_______________________________________________________”
+
+## Practice (≈6 hrs)
+1. Syllogism Lab (1 hr) — Write 3 syllogisms: one valid & sound, one valid but unsound, one invalid; explain each.  
+2. Fallacy Hunt (1.5 hrs) — Collect 5 real‑world statements (ads, posts, conversations) and identify the fallacy and why it persuades.  
+3. Argument Map (2 hrs) — Map a short editorial’s main claim, reasons, evidence, and counterarguments.  
+4. Reflection (1.5 hrs) — What habits help me reason better? Where am I most prone to bias?
+
+## Hard Problem (Optional)
+Analyze the Liar Paradox (“This statement is false.”) or Russell’s Barber Paradox. What does it reveal about the limits of formal systems vs. natural language?

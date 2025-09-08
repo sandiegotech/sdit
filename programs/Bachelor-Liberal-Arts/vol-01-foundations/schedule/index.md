@@ -1,23 +1,23 @@
 ---
-id: vol01-weeks
-title: "Volume 01 — Weekly Schedule Index"
+id: vol01-chapters
+title: "Volume 01 — Chapter Schedule Index"
 parent_volume: vol-01-foundations
 ---
 
-# Weekly Schedule Index — Volume 01
+# Chapter Schedule Index — Volume 01
 
-- Week 01: The Beginning of Inquiry — weeks/week-01/index.md
-- Week 02 — weeks/week-02.md
-- Week 03 — weeks/week-03.md
-- Week 04 — weeks/week-04.md
- - Week 05 — weeks/week-05.md
- - Week 06 — weeks/week-06.md
- - Week 07 — weeks/week-07.md
- - Week 08 — weeks/week-08.md
- - Week 09 — weeks/week-09.md
- - Week 10 — weeks/week-10.md
- - Week 11 — weeks/week-11.md
- - Week 12 — weeks/week-12.md
- - Week 13 — weeks/week-13.md
- - Week 14 — weeks/week-14.md
- - Week 15 — weeks/week-15.md
+- Chapter 01: The Beginning of Inquiry — chapter-01/index.md
+- Chapter 02 — chapter-02/index.md
+- Chapter 03 — chapter-03/index.md
+- Chapter 04 — chapter-04/index.md
+- Chapter 05 — chapter-05/index.md
+- Chapter 06 — chapter-06/index.md
+- Chapter 07 — chapter-07/index.md
+- Chapter 08 — chapter-08/index.md
+- Chapter 09 — chapter-09/index.md
+- Chapter 10 — chapter-10/index.md
+- Chapter 11 — chapter-11/index.md
+- Chapter 12 — chapter-12/index.md
+- Chapter 13 — chapter-13/index.md
+- Chapter 14 — chapter-14/index.md
+- Chapter 15 — chapter-15/index.md
