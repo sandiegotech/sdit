@@ -220,11 +220,16 @@ def build_index(title_map: Dict[Path, str]) -> None:
             # directories
             for d in subs:
                 idx = d / "index.html"
-                label = humanize(d.name)
+                label = title_map.get(idx.resolve(), humanize(d.name)) if idx.exists() else humanize(d.name)
+                inner = walk(d)
                 if idx.exists():
-                    items.append(f"<li><a href='{rel_from_root(idx)}'><strong>{label}</strong></a>{walk(d)}</li>")
+                    items.append(
+                        "<li><details><summary><a href='" + rel_from_root(idx) + "'>" + label + "</a></summary>" + inner + "</details></li>"
+                    )
                 else:
-                    items.append(f"<li><strong>{label}</strong>{walk(d)}</li>")
+                    items.append(
+                        "<li><details><summary>" + label + "</summary>" + inner + "</details></li>"
+                    )
             # files
             for f in files:
                 if f.name == "index.html":
@@ -237,10 +242,10 @@ def build_index(title_map: Dict[Path, str]) -> None:
         return walk(base) or "<p><em>None</em></p>"
 
     sections = []
-    sections.append(f"<section><h2>Knowledge</h2>{tree_html(OUT / 'knowledge')}</section>")
-    sections.append(f"<section><h2>Programs</h2>{tree_html(OUT / 'programs')}</section>")
-    sections.append(f"<section><h2>Courses</h2>{tree_html(OUT / 'courses')}</section>")
-    sections.append(f"<section><h2>Docs</h2>{tree_html(OUT / 'docs')}</section>")
+    sections.append(f"<details class='root'><summary>Knowledge</summary>{tree_html(OUT / 'knowledge')}</details>")
+    sections.append(f"<details class='root'><summary>Programs</summary>{tree_html(OUT / 'programs')}</details>")
+    sections.append(f"<details class='root'><summary>Courses</summary>{tree_html(OUT / 'courses')}</details>")
+    sections.append(f"<details class='root'><summary>Docs</summary>{tree_html(OUT / 'docs')}</details>")
 
     intro = "<p>Browse SDIT content organized by repository structure.</p>"
     html = tmpl_page("SDIT Content Index", intro + "\n" + "\n".join(sections))
@@ -260,6 +265,16 @@ def write_assets():
     header h1 { margin: 0 0 4px; font-size: 20px; }
     main { padding: 20px; max-width: 900px; margin: 0 auto; }
     section { background: var(--card); padding: 12px 16px; margin: 12px 0; border-radius: 8px; }
+    /* Collapsible tree (details/summary) */
+    details { background: var(--card); border-radius: 8px; padding: 8px 12px; margin: 10px 0; }
+    details[open] { padding-bottom: 10px; }
+    details > summary { cursor: pointer; list-style: none; font-weight: 600; }
+    details > summary::-webkit-details-marker { display: none; }
+    details > summary::marker { content: ""; }
+    details > summary::before { content: "▸"; display: inline-block; width: 1em; color: var(--muted); transition: transform .15s ease; }
+    details[open] > summary::before { content: "▾"; }
+    details ul { margin: 6px 0 0 18px; padding-left: 10px; }
+    li { margin: 2px 0; }
     ul { padding-left: 20px; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
