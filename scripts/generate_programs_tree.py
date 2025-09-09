@@ -18,6 +18,18 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "programs" / "Bachelor-Liberal-Arts"
 INDEX_HTML = ROOT / "index.html"
 
+# Short descriptions for each volume to avoid repetitive labels on the index page.
+VOL_DESCRIPTIONS = {
+    "vol-01-foundations": "Groundwork in thinking, communication, math, science, and creativity.",
+    "vol-02-ethics-and-reasoning": "Explore moral philosophy and sharpen logical reasoning.",
+    "vol-03-communication-rhetoric": "Develop effective communication and persuasive skills.",
+    "vol-04-science-systems": "Investigate scientific principles and complex systems.",
+    "vol-05-design-creativity": "Practice design thinking to unlock creativity.",
+    "vol-06-economy-history": "Trace economic ideas through historical contexts.",
+    "vol-07-technology-society": "Examine technology's role in shaping society.",
+    "vol-08-leadership-citizenship": "Build leadership skills and civic responsibility.",
+}
+
 
 def vol_key(p: Path) -> tuple[int, str]:
     m = re.search(r"vol-(\d+)", p.name)
@@ -117,7 +129,7 @@ def build_tree() -> str:
     for vol in vol_dirs:
         vol_label = labelize(vol.name)
         vol_title = title_from_md(vol / "syllabus.md") or vol_label
-        vol_desc = desc_from_title(vol_title)
+        vol_desc = VOL_DESCRIPTIONS.get(vol.name, desc_from_title(vol_title))
         vol_index = (vol / "syllabus.html").relative_to(ROOT).as_posix()
         vol_block: list[str] = []
         desc_span = f" <span class='desc'>— {vol_desc}</span>" if vol_desc else ""
