@@ -17,10 +17,12 @@ import os
 import sys
 import shutil
 from pathlib import Path
+import argparse
 from typing import Iterable
 
 
 ROOT = Path(__file__).resolve().parents[1]
+# Defaults; may be overridden via --out
 OUT = ROOT / "dist" / "site"
 ASSETS = OUT / "assets"
 
@@ -246,6 +248,20 @@ def write_assets():
 
 
 def main(argv: list[str] | None = None) -> int:
+    global OUT, ASSETS
+    parser = argparse.ArgumentParser(description="Build static site")
+    parser.add_argument("--out", type=str, default=None, help="Output directory (default: dist/site)")
+    if argv is None:
+        args = parser.parse_args()
+    else:
+        args = parser.parse_args(argv)
+    if args.out:
+        out_path = Path(args.out)
+        if not out_path.is_absolute():
+            OUT = ROOT / out_path
+        else:
+            OUT = out_path
+        ASSETS = OUT / "assets"
     # Reset output dir
     if OUT.exists():
         shutil.rmtree(OUT)
