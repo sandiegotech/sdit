@@ -5,12 +5,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SDIT Content Index — SDIT</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Inline minimal CSS for reliable rendering on GitHub Pages -->
+  <style>
+    :root { --ink: #111; --bg: #fff; --muted:#666; --card:#fafafa; --border:#e6e6e6; --link:#0645AD; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, Segoe UI, Roboto, Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; }
+    header { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+    header h1 { margin: 0 0 4px; font-size: 20px; }
+    main { padding: 20px; max-width: 1000px; margin: 0 auto; }
+    /* Collapsible blocks */
+    details { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; margin: 10px 0; }
+    details > summary { cursor: pointer; font-weight: 600; list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details > summary::marker { content: ""; }
+    details ul { margin: 6px 0 0 18px; padding-left: 0; }
+    li { margin: 3px 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
   <header><h1>SDIT Content Index</h1></header>
   <main>
   <p>Browse SDIT content organized by repository structure.</p>
+  <script>
+    // Ensure all sections are expanded on load, but still closable
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('details').forEach(function (d) { d.open = true; });
+    });
+  </script>
 <details class='root'><summary>Knowledge</summary><ul><li><a href='knowledge/anchors.html'>Strategic Anchors</a></li>
 <li><a href='knowledge/community.html'>Community</a></li>
 <li><a href='knowledge/courses.html'>Courses</a></li>
