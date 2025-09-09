@@ -120,9 +120,8 @@ def build_tree() -> str:
         vol_desc = desc_from_title(vol_title)
         vol_index = (vol / "syllabus.html").relative_to(ROOT).as_posix()
         vol_block: list[str] = []
-        vol_block.append(f"<details><summary>{vol_label} <a class='view' href='{vol_index}' aria-label='Open volume'>🔗</a></summary>")
-        if vol_desc:
-            vol_block.append(f"<div class='preview'>{vol_desc}</div>")
+        desc_span = f" <span class='desc'>— {vol_desc}</span>" if vol_desc else ""
+        vol_block.append(f"<details><summary>{vol_label}{desc_span} <a class='view' href='{vol_index}' aria-label='Open volume'>🔗</a></summary>")
         # Chapters
         sched = vol / "schedule"
         if sched.exists():
@@ -134,9 +133,8 @@ def build_tree() -> str:
                     chap_title = title_from_md(chap / "index.md") or chap_label
                     chap_desc = desc_from_title(chap_title)
                     chap_index = (chap / "index.html").relative_to(ROOT).as_posix()
-                    vol_block.append(f"<li><details><summary>{chap_label} <a class='view' href='{chap_index}' aria-label='Open chapter'>🔗</a></summary>")
-                    if chap_desc:
-                        vol_block.append(f"<div class='preview'>{chap_desc}</div>")
+                    chap_desc_span = f" <span class='desc'>— {chap_desc}</span>" if chap_desc else ""
+                    vol_block.append(f"<li><details><summary>{chap_label}{chap_desc_span} <a class='view' href='{chap_index}' aria-label='Open chapter'>🔗</a></summary>")
                     # Sections
                     secs = sorted(chap.glob("section-*.html"), key=sect_key)
                     if secs:
@@ -149,7 +147,7 @@ def build_tree() -> str:
                             sec_md = sec.with_suffix('.md')
                             sec_title = title_from_md(sec_md) or sec_label
                             sec_desc = desc_from_title(sec_title)
-                            vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a><div class='preview'>{sec_desc}</div></li>")
+                            vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a> <span class='desc'>— {sec_desc}</span></li>")
                         vol_block.append("</ul>")
                     vol_block.append("</details></li>")
                 vol_block.append("</ul>")
@@ -165,10 +163,23 @@ def inject_into_index(html_block: str) -> None:
     end = "PROGRAMS_TREE_END -->"
     sidx = content.find(start)
     eidx = content.find(end)
-    if sidx == -1 or eidx == -1:
-        raise SystemExit("Markers not found in index.html")
-    eidx += len(end)
-    new = content[:sidx] + f"<!-- PROGRAMS_TREE_START (auto-generated) -->\n" + html_block + "\n" + content[eidx:]
+    if sidx == -1:
+        raise SystemExit("Start marker not found in index.html")
+    if eidx == -1:
+        # Fallback: inject before </main> and add an END marker
+        main_end = content.lower().rfind("</main>")
+        if main_end == -1:
+            raise SystemExit("End marker not found and no </main> tag present")
+        new = (
+            content[:sidx]
+            + "<!-- PROGRAMS_TREE_START (auto-generated) -->\n"
+            + html_block
+            + "\n    <!-- PROGRAMS_TREE_END -->\n"
+            + content[main_end:]
+        )
+    else:
+        eidx += len(end)
+        new = content[:sidx] + f"<!-- PROGRAMS_TREE_START (auto-generated) -->\n" + html_block + "\n" + content[eidx:]
     INDEX_HTML.write_text(new, encoding="utf-8")
 
 
