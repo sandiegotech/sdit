@@ -2,7 +2,7 @@ name: Deploy Homepage to GitHub Pages
 
 on:
   push:
-    branches: [main]  # or whatever branch you work on
+    branches: [main]
 
 jobs:
   deploy:
@@ -26,5 +26,5 @@ jobs:
           git config user.name "SDIT Bot"
           git config user.email "bot@sandiegotech.org"
           git add index.html
-          git commit -m "Auto-update homepage from SDIT-Curriculum"
-          git push
+          git commit -m "Auto-update homepage from curriculum repo" || echo "No changes"
+          git push origin main
