@@ -1,6 +1,6 @@
-# SDIT Knowledge Base
+# SDIT Curriculum & Knowledge Repository
 
-Authoritative, versioned source for San Diego Institute of Technology (SDIT) identity, strategy, programs, and public-facing content. The goal is to keep information organized, human-readable, and easy to validate.
+Authoritative, versioned source for San Diego Institute of Technology (SDIT) curriculum, programs, and canonical knowledge. Plain‑text first, easy to validate, and auto‑published to GitHub Pages.
 
 - Live site: https://sandiegotech.github.io/sdit/
 - Repository: https://github.com/sandiegotech/sdit
@@ -20,17 +20,19 @@ Authoritative, versioned source for San Diego Institute of Technology (SDIT) ide
   - `knowledge/projects.yaml`: Initiatives and projects.
   - `knowledge/priorities.yaml`: Near-term goals.
 
-- `docs/`: Public, human-readable Markdown content.
-  - `docs/index.md`: High-level overview.
-  - `docs/faq.md`: Frequently asked questions.
+- `docs/`: Generated static site (HTML). Do not edit by hand. The site is rebuilt and committed on each push to `main`.
 
-- `courses/`: Flat list of all courses (one Markdown file per course). No nested core/electives folders. See `courses/INDEX.md` for the generated master list.
+- `courses/`: Flat list of all courses (one Markdown file per course). See `courses/INDEX.md` for the generated master list.
 
-- `programs/`: Volume syllabi and schedules by semester.
-  - `programs/vol-XX-*` with `syllabus.md` (Year/Semester overview) and optional `schedule/` (daily/weekly pages).
+- `programs/`: Program curricula (syllabi + schedules). Example: `programs/Bachelor-Liberal-Arts/vol-01-foundations/` with `syllabus.md` and `schedule/` chapters/sections.
 
-- `scripts/`: Validation tooling.
-  - `scripts/validate.py`: Minimal YAML shape check (ensures top-level mapping).
+- `scripts/`: Generators and validation
+  - `validate.py`: Minimal YAML shape check for `knowledge/`
+  - `build_courses_yaml.py`: Scan `courses/` → write `knowledge/courses.yaml`
+  - `generate_course_indexes.py`: Write `courses/INDEX.md` from the master list
+  - `build_site.py`: Build static site; use `--out docs` for Pages
+  - `clean_practice_times.py`: Remove times from Practice sections
+  - `clean_learning_times.py`: Keep times for Read/Watch/Listen only
 
 - `.github/workflows/validate.yml`: CI that runs the validator on every push and pull request.
 
@@ -53,7 +55,7 @@ The validator checks that each file in `knowledge/` parses as YAML and uses a to
 
 ---
 
-## Editing the Knowledge Base
+## Authoring: Courses & Programs
 
 General guidance:
 - Use YAML with a top-level mapping (dictionary) per file.
@@ -75,28 +77,67 @@ notes: >
   Short, human-readable explanation that complements structured fields.
 ```
 
-Schema: A formal schema is not enforced yet. If you add structure that others will reuse, document it in the file with brief comments and keep key names consistent across files.
+Schema: A formal schema is not enforced yet. If you add structure that others will reuse, document it briefly and keep key names consistent.
+
+Add a course (flat file under `courses/`):
+```yaml
+---
+id: lbs-101
+title: "LBS 101 — The Mental Gym"
+level: 100
+tags: [liberal-education, foundations]
+---
+
+# LBS 101 — The Mental Gym
+What this course is about...
+```
+
+Add a program section (chapter/section under a volume):
+```yaml
+---
+id: vol01-chapter04-section02
+title: "Section 02 — Structure & Flow (LBS 105)"
+parent_volume: vol-01-foundations
+chapter: 4
+section: 2
+course: LBS 105 – Writing & Communication I
+---
+
+# Section 02 — Structure & Flow
+
+## Learning Session
+Explore These Materials:
+1. Read (45 min) — ...
+2. Watch (45 min) — ...
+3. Listen (30 min) — ...
+4. Reflect While Engaging — ...
+
+## Key Quote Box
+“_______________________________________________________”
+
+## Practice
+1. Task — ...
+2. Task — ...
+
+## Hard Problem (Optional)
+A stretch challenge...
+```
 
 ---
 
-## Docs (`docs/`)
+## Building & Publishing
 
-- Write public content in Markdown.
-- Keep pages short and scannable; link to deeper details in `knowledge/` when appropriate.
-- There is no static site generator configured yet in this repo. You can render directly on GitHub, or add a site tool (e.g., MkDocs) in a future change.
+- GitHub Pages: Settings → Pages → Source = Deploy from a branch; Branch = `main`; Folder = `/docs`.
+- Auto‑build: `.github/workflows/update-docs-index.yml` rebuilds the site into `docs/` and commits the update on every push to `main`.
+- Local build: `python scripts/build_site.py --out docs` then open `docs/index.html`.
 
 ---
 
-## Courses (`courses/`) and Programs (`programs/`)
+## Course Master List
 
-- Courses: keep simple — one Markdown page per course at the top level of `courses/`.
-- Programs: each volume lives under `programs/vol-XX-*/` with a `syllabus.md`. If you add schedules, place them under `programs/vol-XX-*/schedule/`.
-- Master list: regenerate `courses/INDEX.md` and `knowledge/courses.yaml` with:
-  - `python scripts/build_courses_yaml.py`
-  - `python scripts/generate_course_indexes.py`
-
-Publishing:
-- This repository auto-updates the generated site under `docs/` on each push to `main` via GitHub Actions, and GitHub Pages is configured to serve from `main` / `docs`.
+Regenerate the canonical list and index after adding/updating courses:
+- `python scripts/build_courses_yaml.py`
+- `python scripts/generate_course_indexes.py`
 
 ---
 
@@ -121,6 +162,6 @@ On each push and pull request, GitHub Actions runs `scripts/validate.py` to sani
 
 ## Future Improvements
 
-- Add JSON Schema-based validation for `knowledge/`.
-- Define course content conventions and templates.
-- Introduce a docs site (e.g., MkDocs) with a simple navigation and deploy workflow.
+- Add JSON Schema validation for `knowledge/`.
+- Expand program schedules and link more courses.
+- Add site search and sitemap.
