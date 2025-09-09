@@ -15,14 +15,14 @@ Quick links
   <details>
     <summary>Bachelor of Liberal Arts</summary>
 
-  - Volume 01 — Foundations: `programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.md`
-  - Volume 02 — Ethics & Reasoning: `programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.md`
-  - Volume 03 — Communication & Rhetoric: `programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.md`
-  - Volume 04 — Science & Systems: `programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.md`
-  - Volume 05 — Design & Creativity: `programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.md`
-  - Volume 06 — Economy & History: `programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.md`
-  - Volume 07 — Technology & Society: `programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.md`
-  - Volume 08 — Leadership & Citizenship: `programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.md`
+  - [Volume 01 — Foundations](../programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.md)
+  - [Volume 02 — Ethics & Reasoning](../programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.md)
+  - [Volume 03 — Communication & Rhetoric](../programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.md)
+  - [Volume 04 — Science & Systems](../programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.md)
+  - [Volume 05 — Design & Creativity](../programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.md)
+  - [Volume 06 — Economy & History](../programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.md)
+  - [Volume 07 — Technology & Society](../programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.md)
+  - [Volume 08 — Leadership & Citizenship](../programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.md)
 
   </details>
 
@@ -31,7 +31,7 @@ Quick links
 <details>
   <summary><strong>Courses</strong></summary>
 
-  - Master Course List (generated): `../courses/INDEX.md`
+  - Master Course List (generated): [courses/INDEX.md](../courses/INDEX.md)
   - Courses live flat under `courses/` (e.g., `courses/LBS-101-mental-gym.md`).
 
 </details>
@@ -39,15 +39,15 @@ Quick links
 <details>
   <summary><strong>Knowledge (canonical YAML)</strong></summary>
 
-  - Identity: `../knowledge/identity.yaml`
-  - Philosophies: `../knowledge/philosophies.yaml`
-  - Programs: `../knowledge/programs.yaml`
-  - Research: `../knowledge/research.yaml`
-  - Anchors: `../knowledge/anchors.yaml`
-  - Community: `../knowledge/community.yaml`
-  - Projects: `../knowledge/projects.yaml`
-  - Infrastructure: `../knowledge/infrastructure.yaml`
-  - Priorities: `../knowledge/priorities.yaml`
+  - [Identity](../knowledge/identity.yaml)
+  - [Philosophies](../knowledge/philosophies.yaml)
+  - [Programs](../knowledge/programs.yaml)
+  - [Research](../knowledge/research.yaml)
+  - [Anchors](../knowledge/anchors.yaml)
+  - [Community](../knowledge/community.yaml)
+  - [Projects](../knowledge/projects.yaml)
+  - [Infrastructure](../knowledge/infrastructure.yaml)
+  - [Priorities](../knowledge/priorities.yaml)
 
 </details>
 
