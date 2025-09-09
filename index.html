@@ -15,9 +15,11 @@
     main { padding: 20px; max-width: 1000px; margin: 0 auto; }
     /* Collapsible blocks */
     details { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; margin: 10px 0; }
-    details > summary { cursor: pointer; font-weight: 600; list-style: none; }
+    details > summary { cursor: pointer; font-weight: 600; list-style: none; position: relative; padding-left: 1.2em; }
     details > summary::-webkit-details-marker { display: none; }
     details > summary::marker { content: ""; }
+    details > summary::before { content: "▸"; position: absolute; left: 0; top: 0; font-size: 18px; line-height: 1; color: var(--muted); transition: transform .15s ease; }
+    details[open] > summary::before { content: "▾"; }
     details ul { margin: 6px 0 0 18px; padding-left: 0; }
     li { margin: 3px 0; }
     a { color: var(--link); text-decoration: none; }
@@ -29,7 +31,7 @@
 <body>
   <header><h1>SDIT Content Index</h1></header>
   <main>
-  <p>SDIT’s public curriculum browser. Use the dropdowns to navigate programs, chapters, sections, and course pages. Everything below links to the rendered content.</p>
+  <p>SDIT’s public curriculum browser. Use the dropdowns to navigate programs, chapters, and sections. All links open rendered content; summaries toggle menus.</p>
   
   <script>
     // Open only the top-level sections by default; keep inner menus collapsed.
@@ -38,6 +40,59 @@
       document.querySelectorAll('details').forEach(function (d) { d.open = false; });
       // Open each root section (Knowledge, Programs, Courses, Docs)
       document.querySelectorAll('details.root').forEach(function (d) { d.open = true; });
+
+      // Transform summaries that are links into: [label] [View]
+      document.querySelectorAll('details > summary').forEach(function (sum) {
+        const a = sum.querySelector('a');
+        if (a && a.getAttribute('href')) {
+          const href = a.getAttribute('href');
+          const label = a.textContent.trim();
+          sum.textContent = label; // make summary text-only for toggling
+          const view = document.createElement('a');
+          view.href = href; view.textContent = 'View'; view.className = 'view';
+          view.style.marginLeft = '8px'; view.style.fontWeight = '500';
+          sum.appendChild(view);
+        }
+      });
+
+      // Unwrap the first chapter under Vol 01 Foundations so its sections show immediately
+      function findSummary(detailsElem, text) {
+        const sums = Array.from(detailsElem.querySelectorAll(':scope > ul > li > details > summary'));
+        return sums.find(s => s.textContent.toLowerCase().includes(text.toLowerCase()));
+      }
+      const programsRoot = document.querySelector('details.root > summary')?.textContent.trim().toLowerCase().includes('programs')
+        ? document.querySelector('details.root') : null;
+      if (programsRoot) {
+        // Find Bachelor Liberal Arts block
+        const blaSummary = Array.from(programsRoot.querySelectorAll(':scope ul > li > details > summary'))
+          .find(s => s.textContent.toLowerCase().includes('bachelor liberal arts'));
+        if (blaSummary) {
+          const blaDetails = blaSummary.parentElement;
+          const vol1Summary = findSummary(blaDetails, 'vol 01');
+          if (vol1Summary) {
+            const vol1 = vol1Summary.parentElement;
+            // First chapter under vol1
+            const chapSummary = findSummary(vol1, 'chapter 1');
+            if (chapSummary) {
+              const chapDetails = chapSummary.parentElement;
+              const ul = chapDetails.querySelector(':scope > ul');
+              if (ul) {
+                // Insert a header row for Chapter 1 with a View link to its index
+                const header = document.createElement('div');
+                header.textContent = chapSummary.textContent.replace('View','').trim();
+                header.style.fontWeight = '600'; header.style.margin = '6px 0 4px';
+                // Try to get chapter index link from the old summary link (now appended as .view)
+                const viewLink = chapSummary.querySelector('a.view');
+                if (viewLink) {
+                  const go = document.createElement('a'); go.href = viewLink.href; go.textContent = 'View'; go.className = 'view';
+                  go.style.marginLeft = '8px'; header.appendChild(go);
+                }
+                chapDetails.replaceWith(header, ul);
+              }
+            }
+          }
+        }
+      }
     });
   </script>
 
