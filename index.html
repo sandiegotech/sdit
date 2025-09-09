@@ -49,11 +49,25 @@
   </style>
   <script>
     function filterDetails(event) {
-      const value = event.target.value.toLowerCase();
+      const query = event.target.value.toLowerCase();
       const blocks = document.querySelectorAll("details");
       blocks.forEach(d => {
-        const title = d.querySelector("summary").textContent.toLowerCase();
-        d.style.display = title.includes(value) ? "block" : "none";
+        const text = d.innerText.toLowerCase();
+        const match = text.includes(query);
+        d.style.display = match || !query ? "block" : "none";
+        d.open = query && match;
+        if (match) {
+          let parent = d.parentElement;
+          while (parent) {
+            if (parent.tagName === "DETAILS") {
+              parent.style.display = "block";
+              parent.open = true;
+            }
+            parent = parent.parentElement;
+          }
+        } else if (!query) {
+          d.open = false;
+        }
       });
     }
     // Footer metrics (load time, page size, links)
@@ -89,7 +103,7 @@
     </div>
 
     <!-- PROGRAMS_TREE_START (auto-generated) -->
-<details><summary>Vol 01 Foundations <span class='desc'>— foundations | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 01 Foundations <span class='desc'>— Groundwork in thinking, communication, math, science, and creativity.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 <ul>
 <li><details><summary>Chapter 01 <span class='desc'>— The Beginning of Inquiry</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/index.html' aria-label='Open chapter'>🔗</a></summary>
 <ul>
@@ -228,19 +242,19 @@
 </details></li>
 </ul>
 </details>
-<details><summary>Vol 02 Ethics And Reasoning <span class='desc'>— Ethics & Reasoning | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 02 Ethics And Reasoning <span class='desc'>— Explore moral philosophy and sharpen logical reasoning.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 </details>
-<details><summary>Vol 03 Communication Rhetoric <span class='desc'>— Communication & Rhetoric | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 03 Communication Rhetoric <span class='desc'>— Develop effective communication and persuasive skills.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 </details>
-<details><summary>Vol 04 Science Systems <span class='desc'>— Science & Systems | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 04 Science Systems <span class='desc'>— Investigate scientific principles and complex systems.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 </details>
-<details><summary>Vol 05 Design Creativity <span class='desc'>— Design & Creativity | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 05 Design Creativity <span class='desc'>— Practice design thinking to unlock creativity.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 </details>
-<details><summary>Vol 06 Economy History <span class='desc'>— Economy & History | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 06 Economy History <span class='desc'>— Trace economic ideas through historical contexts.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 </details>
-<details><summary>Vol 07 Technology Society <span class='desc'>— Technology & Society | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 07 Technology Society <span class='desc'>— Examine technology's role in shaping society.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 </details>
-<details><summary>Vol 08 Leadership Citizenship <span class='desc'>— Leadership & Citizenship | Liberal Education 2.0</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html' aria-label='Open volume'>🔗</a></summary>
+<details><summary>Vol 08 Leadership Citizenship <span class='desc'>— Build leadership skills and civic responsibility.</span> <a class='view' href='programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html' aria-label='Open volume'>🔗</a></summary>
 </details>
     <!-- PROGRAMS_TREE_END -->
 </main>
