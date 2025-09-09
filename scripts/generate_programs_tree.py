@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "programs" / "Bachelor-Liberal-Arts"
@@ -43,6 +44,43 @@ def labelize(name: str) -> str:
         parts[1] = f"{int(parts[1]):02d}"
     return " ".join(w.capitalize() for w in parts)
 
+def read_frontmatter(md_path: Path) -> dict:
+    try:
+        txt = md_path.read_text(encoding="utf-8")
+    except Exception:
+        return {}
+    if not txt.startswith("---"):
+        return {}
+    m = re.search(r"^---\s*\n([\s\S]*?)\n---\s*\n", txt)
+    if not m:
+        return {}
+    try:
+        data = yaml.safe_load(m.group(1)) or {}
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+def title_from_md(md_path: Path) -> str | None:
+    fm = read_frontmatter(md_path)
+    t = fm.get("title") if isinstance(fm, dict) else None
+    if isinstance(t, str) and t.strip():
+        return t.strip()
+    # fallback: first H1
+    try:
+        for line in md_path.read_text(encoding="utf-8").splitlines():
+            if line.startswith("# "):
+                return line[2:].strip()
+    except Exception:
+        pass
+    return None
+
+def desc_from_title(title: str) -> str:
+    # Pull text after an em/en dash or hyphen if present, drop parentheses
+    parts = re.split(r"\s[—–-]\s", title, maxsplit=1)
+    desc = parts[1] if len(parts) > 1 else title
+    # remove trailing parenthetical
+    desc = re.sub(r"\s*\([^)]*\)\s*", "", desc).strip()
+    return desc
 
 def strip_tags(html: str) -> str:
     # Remove tags
@@ -78,9 +116,13 @@ def build_tree() -> str:
     blocks: list[str] = []
     for vol in vol_dirs:
         vol_label = labelize(vol.name)
+        vol_title = title_from_md(vol / "syllabus.md") or vol_label
+        vol_desc = desc_from_title(vol_title)
         vol_index = (vol / "syllabus.html").relative_to(ROOT).as_posix()
         vol_block: list[str] = []
-        vol_block.append(f"<details><summary>{vol_label} <a class='view' href='{vol_index}'>View</a></summary>")
+        vol_block.append(f"<details><summary>{vol_label} <a class='view' href='{vol_index}' aria-label='Open volume'>🔗</a></summary>")
+        if vol_desc:
+            vol_block.append(f"<div class='preview'>{vol_desc}</div>")
         # Chapters
         sched = vol / "schedule"
         if sched.exists():
@@ -89,8 +131,12 @@ def build_tree() -> str:
                 vol_block.append("<ul>")
                 for chap in chaps:
                     chap_label = labelize(chap.name)
+                    chap_title = title_from_md(chap / "index.md") or chap_label
+                    chap_desc = desc_from_title(chap_title)
                     chap_index = (chap / "index.html").relative_to(ROOT).as_posix()
-                    vol_block.append(f"<li><details><summary>{chap_label} <a class='view' href='{chap_index}'>View</a></summary>")
+                    vol_block.append(f"<li><details><summary>{chap_label} <a class='view' href='{chap_index}' aria-label='Open chapter'>🔗</a></summary>")
+                    if chap_desc:
+                        vol_block.append(f"<div class='preview'>{chap_desc}</div>")
                     # Sections
                     secs = sorted(chap.glob("section-*.html"), key=sect_key)
                     if secs:
@@ -99,10 +145,11 @@ def build_tree() -> str:
                             sec_num = sect_key(sec)
                             sec_label = f"Section {sec_num:02d}"
                             preview = extract_preview(sec)
-                            if preview:
-                                vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a><div class='preview'>{preview}</div></li>")
-                            else:
-                                vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a></li>")
+                            # Prefer section title-based description
+                            sec_md = sec.with_suffix('.md')
+                            sec_title = title_from_md(sec_md) or sec_label
+                            sec_desc = desc_from_title(sec_title)
+                            vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a><div class='preview'>{sec_desc}</div></li>")
                         vol_block.append("</ul>")
                     vol_block.append("</details></li>")
                 vol_block.append("</ul>")
