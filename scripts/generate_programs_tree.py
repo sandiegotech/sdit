@@ -44,47 +44,72 @@ def labelize(name: str) -> str:
     return " ".join(w.capitalize() for w in parts)
 
 
+def strip_tags(html: str) -> str:
+    # Remove tags
+    text = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.I)
+    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    # Collapse whitespace
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def extract_preview(section_html_path: Path, max_chars: int = 320) -> str:
+    try:
+        s = section_html_path.read_text(encoding="utf-8")
+    except Exception:
+        return ""
+    m = re.search(r"<main>([\s\S]*?)</main>", s, flags=re.I)
+    body = m.group(1) if m else s
+    text = strip_tags(body)
+    if len(text) > max_chars:
+        text = text[:max_chars].rstrip() + "…"
+    return text
+
+
 def build_tree() -> str:
     if not BASE.exists():
         return "<p><em>No programs found.</em></p>"
 
     out: list[str] = []
-    out.append("<details class='root' open><summary>Programs</summary>")
-    out.append("<ul>")
-    out.append("<li><details><summary>Bachelor Liberal Arts</summary>")
-    out.append("<ul>")
+    # Render only volumes as top-level dropdowns (no Programs/Bachelor wrappers)
 
     vol_dirs = sorted([p for p in BASE.glob("vol-*") if p.is_dir()], key=vol_key)
+    blocks: list[str] = []
     for vol in vol_dirs:
         vol_label = labelize(vol.name)
-        vol_index = (vol / "syllabus.html").as_posix()
-        out.append(f"<li><details><summary>{vol_label} <a class='view' href='{vol_index}'>View</a></summary>")
+        vol_index = (vol / "syllabus.html").relative_to(ROOT).as_posix()
+        vol_block: list[str] = []
+        vol_block.append(f"<details><summary>{vol_label} <a class='view' href='{vol_index}'>View</a></summary>")
         # Chapters
         sched = vol / "schedule"
         if sched.exists():
             chaps = sorted([p for p in sched.glob("chapter-*") if p.is_dir()], key=chap_key)
             if chaps:
-                out.append("<ul>")
+                vol_block.append("<ul>")
                 for chap in chaps:
                     chap_label = labelize(chap.name)
-                    chap_index = (chap / "index.html").as_posix()
-                    out.append(f"<li><details><summary>{chap_label} <a class='view' href='{chap_index}'>View</a></summary>")
+                    chap_index = (chap / "index.html").relative_to(ROOT).as_posix()
+                    vol_block.append(f"<li><details><summary>{chap_label} <a class='view' href='{chap_index}'>View</a></summary>")
                     # Sections
                     secs = sorted(chap.glob("section-*.html"), key=sect_key)
                     if secs:
-                        out.append("<ul>")
+                        vol_block.append("<ul>")
                         for sec in secs:
                             sec_num = sect_key(sec)
                             sec_label = f"Section {sec_num:02d}"
-                            out.append(f"<li><a href='{sec.as_posix()}'>{sec_label}</a></li>")
-                        out.append("</ul>")
-                    out.append("</details></li>")
-                out.append("</ul>")
-        out.append("</details></li>")
+                            preview = extract_preview(sec)
+                            if preview:
+                                vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a><div class='preview'>{preview}</div></li>")
+                            else:
+                                vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a></li>")
+                        vol_block.append("</ul>")
+                    vol_block.append("</details></li>")
+                vol_block.append("</ul>")
+        vol_block.append("</details>")
+        blocks.append("\n".join(vol_block))
 
-    out.append("</ul>")
-    out.append("</details>")
-    return "\n".join(out)
+    return "\n".join(blocks)
 
 
 def inject_into_index(html_block: str) -> None:
@@ -109,4 +134,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
