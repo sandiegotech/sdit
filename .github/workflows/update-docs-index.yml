@@ -1,4 +1,4 @@
-name: Build docs site (index + pages)
+name: Build site at repo root
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  build-docs:
+  build-root:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -28,9 +28,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml markdown
 
-      - name: Generate site into docs/
+      - name: Generate site into repo root
         run: |
-          python scripts/build_site.py --out docs
+          python scripts/build_site.py --out .
 
       - name: Commit and push changes (if any)
         run: |
@@ -38,9 +38,8 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "Update generated site in docs [skip ci]"
+            git commit -m "Update generated site at repo root [skip ci]"
             git push
           else
             echo "No changes to commit."
           fi
-

@@ -18,7 +18,7 @@ import sys
 import shutil
 from pathlib import Path
 import argparse
-from typing import Iterable
+from typing import Iterable, Dict
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -199,23 +199,51 @@ def yaml_to_html(value) -> str:
     return html.escape(s)
 
 
-def build_index(knowledge_entries: list[tuple[str, Path]], docs_entries: list[tuple[str, Path]], courses_entries: list[tuple[str, Path]]):
+def build_index(title_map: Dict[Path, str]) -> None:
     def rel_from_root(p: Path) -> str:
         return p.resolve().relative_to(OUT).as_posix()
 
-    def mk_list(title: str, entries: Iterable[tuple[str, Path]]) -> str:
-        items = [f"<li><a href='{rel_from_root(p)}'>{t}</a></li>" for t, p in entries]
-        if not items:
-            items = ["<li><em>No items found.</em></li>"]
-        return f"<section><h2>{title}</h2><ul>\n" + "\n".join(items) + "\n</ul></section>"
+    def humanize(name: str) -> str:
+        return name.replace("-", " ").replace("_", " ").title()
 
-    body = [
-        "<p>Browse SDIT content: Knowledge base, Docs, and Courses.</p>",
-        mk_list("Knowledge", sorted(knowledge_entries, key=lambda x: x[0].lower())),
-        mk_list("Docs", sorted(docs_entries, key=lambda x: x[0].lower())),
-        mk_list("Courses", sorted(courses_entries, key=lambda x: x[0].lower())),
-    ]
-    html = tmpl_page("SDIT Content Index", "\n".join(body))
+    def display_for_file(p: Path) -> str:
+        return title_map.get(p.resolve(), p.stem.replace("-", " ").title())
+
+    def tree_html(base: Path) -> str:
+        if not base.exists():
+            return "<p><em>None</em></p>"
+        def walk(dir_path: Path) -> str:
+            # list subdirs then files (html only)
+            subs = sorted([d for d in dir_path.iterdir() if d.is_dir()])
+            files = sorted([f for f in dir_path.iterdir() if f.is_file() and f.suffix == ".html"])
+            items: list[str] = []
+            # directories
+            for d in subs:
+                idx = d / "index.html"
+                label = humanize(d.name)
+                if idx.exists():
+                    items.append(f"<li><a href='{rel_from_root(idx)}'><strong>{label}</strong></a>{walk(d)}</li>")
+                else:
+                    items.append(f"<li><strong>{label}</strong>{walk(d)}</li>")
+            # files
+            for f in files:
+                if f.name == "index.html":
+                    continue
+                items.append(f"<li><a href='{rel_from_root(f)}'>{display_for_file(f)}</a></li>")
+            if not items:
+                return ""
+            return "<ul>" + "\n".join(items) + "</ul>"
+
+        return walk(base) or "<p><em>None</em></p>"
+
+    sections = []
+    sections.append(f"<section><h2>Knowledge</h2>{tree_html(OUT / 'knowledge')}</section>")
+    sections.append(f"<section><h2>Programs</h2>{tree_html(OUT / 'programs')}</section>")
+    sections.append(f"<section><h2>Courses</h2>{tree_html(OUT / 'courses')}</section>")
+    sections.append(f"<section><h2>Docs</h2>{tree_html(OUT / 'docs')}</section>")
+
+    intro = "<p>Browse SDIT content organized by repository structure.</p>"
+    html = tmpl_page("SDIT Content Index", intro + "\n" + "\n".join(sections))
     html = html.replace("{ASSET_REL}", asset_rel(OUT / "index.html"))
     write_file(OUT / "index.html", html)
 
@@ -263,9 +291,14 @@ def main(argv: list[str] | None = None) -> int:
             OUT = out_path
         ASSETS = OUT / "assets"
     # Reset output dir
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir(parents=True, exist_ok=True)
+    # If building to repo root (OUT == ROOT), avoid deleting the repository.
+    # In that case, just ensure directories and overwrite files in place.
+    if OUT.resolve() != ROOT.resolve():
+        if OUT.exists():
+            shutil.rmtree(OUT)
+        OUT.mkdir(parents=True, exist_ok=True)
+    else:
+        OUT.mkdir(parents=True, exist_ok=True)
     write_assets()
 
     knowledge_entries = render_knowledge(ROOT / "knowledge", OUT / "knowledge")
@@ -293,7 +326,11 @@ def main(argv: list[str] | None = None) -> int:
         page = page.replace("{ASSET_REL}", asset_rel(out_path))
         write_file(out_path, page)
 
-    build_index(knowledge_entries, docs_entries, courses_entries + programs_entries)
+    # Build title map for pretty labels in the tree
+    title_map: Dict[Path, str] = {}
+    for title, path in (knowledge_entries + docs_entries + courses_entries + programs_entries):
+        title_map[path.resolve()] = title
+    build_index(title_map)
     print(f"Wrote static site to {OUT}")
     return 0
 
