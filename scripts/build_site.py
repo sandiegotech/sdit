@@ -112,7 +112,7 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
         page = tmpl_page(title, html)
         # Inject the correct asset relative prefix
         rel = asset_rel(out_path)
-        page = page.replace("{{ASSET_REL}}", rel)
+        page = page.replace("{ASSET_REL}", rel)
         write_file(out_path, page)
         entries.append((title, out_path))
     return entries
@@ -149,7 +149,7 @@ def render_knowledge(src: Path, dest: Path) -> list[tuple[str, Path]]:
         body_html = "\n".join(body_parts)
         out_path = dest / (yml.stem + ".html")
         page = tmpl_page(title, body_html)
-        page = page.replace("{{ASSET_REL}}", asset_rel(out_path))
+        page = page.replace("{ASSET_REL}", asset_rel(out_path))
         write_file(out_path, page)
 
         entries.append((title, out_path))
@@ -165,7 +165,7 @@ def render_knowledge(src: Path, dest: Path) -> list[tuple[str, Path]]:
     """.format(items="\n".join(sections))
     out_index = dest / "index.html"
     page = tmpl_page("Knowledge", index_body)
-    page = page.replace("{{ASSET_REL}}", asset_rel(out_index))
+    page = page.replace("{ASSET_REL}", asset_rel(out_index))
     write_file(out_index, page)
 
     return entries
@@ -214,7 +214,7 @@ def build_index(knowledge_entries: list[tuple[str, Path]], docs_entries: list[tu
         mk_list("Courses", sorted(courses_entries, key=lambda x: x[0].lower())),
     ]
     html = tmpl_page("SDIT Content Index", "\n".join(body))
-    html = html.replace("{{ASSET_REL}}", asset_rel(OUT / "index.html"))
+    html = html.replace("{ASSET_REL}", asset_rel(OUT / "index.html"))
     write_file(OUT / "index.html", html)
 
 
@@ -274,7 +274,7 @@ def main(argv: list[str] | None = None) -> int:
             entries.append(f"<li><a href='{rel}'>{display}</a></li>")
         body = f"<h2>{title}</h2><ul>\n" + "\n".join(entries) + "\n</ul>"
         page = tmpl_page(title, body)
-        page = page.replace("{{ASSET_REL}}", asset_rel(out_path))
+        page = page.replace("{ASSET_REL}", asset_rel(out_path))
         write_file(out_path, page)
 
     build_index(knowledge_entries, docs_entries, courses_entries + programs_entries)
