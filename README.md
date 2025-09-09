@@ -4,6 +4,8 @@ Authoritative, versioned source for San Diego Institute of Technology (SDIT) ide
 
 - **Website:** https://sandiegotech.github.io/sdit/
 - **Repository:** https://github.com/sandiegotech/sdit
+- **Main site:** https://sandiegotech.org
+- **Learning portal:** https://learn.sandiegotech.org
 
 ---
 
