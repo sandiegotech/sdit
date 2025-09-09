@@ -1,0 +1,30 @@
+name: Deploy Homepage to GitHub Pages
+
+on:
+  push:
+    branches: [main]  # or whatever branch you work on
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout curriculum repo
+        uses: actions/checkout@v3
+
+      - name: Clone homepage repo
+        run: |
+          git clone https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/sandiegotech/sandiegotech.github.io.git homepage-repo
+
+      - name: Copy homepage file
+        run: |
+          cp index.html homepage-repo/index.html
+
+      - name: Commit and push
+        run: |
+          cd homepage-repo
+          git config user.name "SDIT Bot"
+          git config user.email "bot@sandiegotech.org"
+          git add index.html
+          git commit -m "Auto-update homepage from SDIT-Curriculum"
+          git push
