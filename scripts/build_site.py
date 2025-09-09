@@ -220,6 +220,8 @@ def build_index(knowledge_entries: list[tuple[str, Path]], docs_entries: list[tu
 
 def write_assets():
     ASSETS.mkdir(parents=True, exist_ok=True)
+    # Disable Jekyll processing on GitHub Pages so files are served as-is
+    write_file(OUT / ".nojekyll", "")
     css = """
     :root { --bg: #0c0d10; --fg: #e8e8ea; --muted: #a7a7ad; --link: #7cc4ff; --card: #17181d; }
     * { box-sizing: border-box; }
