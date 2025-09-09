@@ -49,7 +49,7 @@ Setup and validate locally:
 - `python scripts/validate.py`
 
 Build the site locally (mirrors GitHub Pages output):
-- `python scripts/build_site.py --out docs`
+- `python scripts/build_site.py --out .`
 
 The validator checks that each file in `knowledge/` parses as YAML and uses a top-level mapping. It exits non-zero if any file fails to load or violates this shape.
 
@@ -98,7 +98,7 @@ Schema: A formal schema is not enforced yet. If you add structure that others wi
   - `python scripts/generate_course_indexes.py`
 
 Publishing:
-- This repository auto-updates the generated site under `docs/` on each push to `main` via GitHub Actions, and GitHub Pages is configured to serve from `main` / `docs`.
+- This repository auto-updates the generated site at the repo root on each push to `main` via GitHub Actions. Configure GitHub Pages to serve from `main` / root (`/`).
 
 ---
 
