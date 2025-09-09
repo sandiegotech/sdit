@@ -1,352 +1,143 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SDIT Content Index — SDIT</title>
-  <!-- Inline minimal CSS for reliable rendering on GitHub Pages -->
+  <title>SDIT Curriculum — Learn</title>
   <style>
-    :root { --ink: #111; --bg: #fff; --muted:#666; --card:#fafafa; --border:#e6e6e6; --link:#0645AD; }
+    :root {
+      --ink: #111;
+      --bg: #fff;
+      --muted: #666;
+      --card: #f9f9f9;
+      --border: #e0e0e0;
+      --link: #0366d6;
+      --highlight: #f3f4f6;
+    }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: -apple-system, Segoe UI, Roboto, Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; }
-    header { padding: 16px 20px; border-bottom: 1px solid var(--border); }
-    header h1 { margin: 0 0 4px; font-size: 20px; }
-    main { padding: 20px; max-width: 1000px; margin: 0 auto; }
-    /* Collapsible blocks */
-    details { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; margin: 10px 0; }
-    details > summary { cursor: pointer; font-weight: 600; list-style: none; position: relative; padding-left: 1.2em; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid var(--border); background: var(--highlight); position: sticky; top: 0; z-index: 999; }
+    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
+    nav a { margin-left: 20px; font-size: 16px; color: var(--link); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 40px 20px; max-width: 960px; margin: 0 auto; }
+    p.description { font-size: 18px; margin-bottom: 30px; color: var(--muted); }
+    details { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; margin: 16px 0; transition: background 0.2s ease; }
+    details:hover { background: #fefefe; }
+    details > summary { cursor: pointer; font-weight: 600; list-style: none; position: relative; padding-left: 1.5em; font-size: 18px; }
     details > summary::-webkit-details-marker { display: none; }
     details > summary::marker { content: ""; }
-    details > summary::before { content: "▸"; position: absolute; left: 0; top: 0; font-size: 18px; line-height: 1; color: var(--muted); transition: transform .15s ease; }
+    details > summary::before { content: "▸"; position: absolute; left: 0; top: 0; font-size: 16px; color: var(--muted); transition: transform 0.2s ease; }
     details[open] > summary::before { content: "▾"; }
-    details ul { margin: 6px 0 0 18px; padding-left: 0; }
-    li { margin: 3px 0; }
+    details ul { margin: 10px 0 0 20px; padding-left: 0; }
+    li { margin: 6px 0; font-size: 16px; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .quick-links { padding-left: 18px; }
-    .quick-links li { margin: 2px 0; }
+    .view { margin-left: 8px; font-weight: 500; font-size: 15px; }
+    footer { margin-top: 60px; text-align: center; padding: 30px; font-size: 14px; color: var(--muted); background: var(--highlight); border-top: 1px solid var(--border); }
+    .search-bar { max-width: 400px; margin: 0 auto 30px; }
+    .search-bar input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; }
+    @media (max-width: 768px) {
+      main { padding: 20px 16px; }
+      header { flex-direction: column; align-items: flex-start; }
+      nav { margin-top: 10px; }
+      header h1 { font-size: 22px; }
+      p.description { font-size: 16px; }
+    }
   </style>
-</head>
-<body>
-  <header><h1>SDIT Content Index</h1></header>
-  <main>
-  <p>SDIT’s public curriculum browser. Use the dropdowns to navigate programs, chapters, and sections. All links open rendered content; summaries toggle menus.</p>
-  
   <script>
-    // Open only the top-level sections by default; keep inner menus collapsed.
-    document.addEventListener('DOMContentLoaded', function () {
-      // Close all details elements first
-      document.querySelectorAll('details').forEach(function (d) { d.open = false; });
-      // Open each root section (Knowledge, Programs, Courses, Docs)
-      document.querySelectorAll('details.root').forEach(function (d) { d.open = true; });
-
-      // Transform summaries that are links into: [label] [View]
-      document.querySelectorAll('details > summary').forEach(function (sum) {
-        const a = sum.querySelector('a');
-        if (a && a.getAttribute('href')) {
-          const href = a.getAttribute('href');
-          const label = a.textContent.trim();
-          sum.textContent = label; // make summary text-only for toggling
-          const view = document.createElement('a');
-          view.href = href; view.textContent = 'View'; view.className = 'view';
-          view.style.marginLeft = '8px'; view.style.fontWeight = '500';
-          sum.appendChild(view);
-        }
+    function filterDetails(event) {
+      const value = event.target.value.toLowerCase();
+      const blocks = document.querySelectorAll("details");
+      blocks.forEach(d => {
+        const title = d.querySelector("summary").textContent.toLowerCase();
+        d.style.display = title.includes(value) ? "block" : "none";
       });
-
-      // Unwrap the first chapter under Vol 01 Foundations so its sections show immediately
-      function findSummary(detailsElem, text) {
-        const sums = Array.from(detailsElem.querySelectorAll(':scope > ul > li > details > summary'));
-        return sums.find(s => s.textContent.toLowerCase().includes(text.toLowerCase()));
-      }
-      const programsRoot = document.querySelector('details.root > summary')?.textContent.trim().toLowerCase().includes('programs')
-        ? document.querySelector('details.root') : null;
-      if (programsRoot) {
-        // Find Bachelor Liberal Arts block
-        const blaSummary = Array.from(programsRoot.querySelectorAll(':scope ul > li > details > summary'))
-          .find(s => s.textContent.toLowerCase().includes('bachelor liberal arts'));
-        if (blaSummary) {
-          const blaDetails = blaSummary.parentElement;
-          const vol1Summary = findSummary(blaDetails, 'vol 01');
-          if (vol1Summary) {
-            const vol1 = vol1Summary.parentElement;
-            // First chapter under vol1
-            const chapSummary = findSummary(vol1, 'chapter 1');
-            if (chapSummary) {
-              const chapDetails = chapSummary.parentElement;
-              const ul = chapDetails.querySelector(':scope > ul');
-              if (ul) {
-                // Insert a header row for Chapter 1 with a View link to its index
-                const header = document.createElement('div');
-                header.textContent = chapSummary.textContent.replace('View','').trim();
-                header.style.fontWeight = '600'; header.style.margin = '6px 0 4px';
-                // Try to get chapter index link from the old summary link (now appended as .view)
-                const viewLink = chapSummary.querySelector('a.view');
-                if (viewLink) {
-                  const go = document.createElement('a'); go.href = viewLink.href; go.textContent = 'View'; go.className = 'view';
-                  go.style.marginLeft = '8px'; header.appendChild(go);
-                }
-                chapDetails.replaceWith(header, ul);
-              }
-            }
-          }
-        }
-      }
+    }
+    // Footer metrics (load time, HTML size, links)
+    window.addEventListener('load', () => {
+      try {
+        const nav = performance.getEntriesByType('navigation')[0];
+        const loadMs = nav ? Math.round(nav.domComplete - nav.startTime) : Math.round(performance.now());
+        const bytes = new TextEncoder().encode(document.documentElement.outerHTML).length;
+        const kb = (bytes/1024).toFixed(1);
+        const links = document.querySelectorAll('a').length;
+        const stamp = new Date().toLocaleString();
+        const el = document.getElementById('metrics');
+        if (el) el.textContent = `Load: ${loadMs} ms · HTML: ${kb} KB · Links: ${links} · ${stamp}`;
+      } catch(e) {}
     });
   </script>
+</head>
+<body>
+  <header>
+    <h1>San Diego Institute of Technology</h1>
+    <nav>
+      <a href="https://www.sandiegotech.org">Home</a>
+      <a href="https://github.com/sandiegotech/sdit">GitHub</a>
+      <a href="https://www.sandiegotech.org/donate">Donate</a>
+    </nav>
+  </header>
+  <main>
+    <p class="description">
+      Welcome to the SDIT Open Curriculum — a free, open-source education program for the curious, creative, and ambitious.
+    </p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search topics or chapters..." oninput="filterDetails(event)">
+    </div>
 
-<details class='root'><summary>Programs</summary><ul><li><details><summary>Bachelor Liberal Arts</summary><ul><li><details><summary>Vol 01 Foundations</summary><ul><li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html'>Chapter Schedule Index — Volume 01</a></summary><ul><li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/index.html'>Chapter 1 — The Beginning of Inquiry</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html'>Section 01 — What is a Liberal Education?</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-02.html'>Section 02 — The Power of Story</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-03.html'>Section 03 — Mathematics as a Language</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-04.html'>Section 04 — Observing the Natural World</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-05.html'>Section 05 — Mapping the Mind</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/index.html'>Chapter 2</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-01.html'>Section 01 — Logic & Reasoning</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-02.html'>Section 02 — Voice & Style</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-03.html'>Section 03 — Patterns & Sequences</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-04.html'>Section 04 — Motion & Measurement</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-05.html'>Section 05 — Creative Constraints</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/index.html'>Chapter 3</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-01.html'>Section 01 — The Examined Life</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-02.html'>Section 02 — Argument & Persuasion</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-03.html'>Section 03 — Ratios & Proportions</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-04.html'>Section 04 — Forces & Balance</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-05.html'>Section 05 — Play as Learning</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/index.html'>Chapter 4</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-01.html'>Section 01 — Truth & Perspectives</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-02.html'>Section 02 — Structure & Flow</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-03.html'>Section 03 — Infinity & Limits</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-04.html'>Section 04 — Energy & Work</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-05.html'>Section 05 — Storytelling Through Images</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/index.html'>Chapter 5</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-01.html'>Section 01 — Rhetoric & Persuasion</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-02.html'>Section 02 — Audience Awareness</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-03.html'>Section 03 — Probability & Uncertainty</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-04.html'>Section 04 — Sound & Vibration</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-05.html'>Section 05 — Improvisation & Surprise</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/index.html'>Chapter 6</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-01.html'>Section 01 — Writing as Clear Thinking</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-02.html'>Section 02 — Writing as Clear Thinking</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-03.html'>Section 03 — Statistics as Storytelling</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-04.html'>Section 04 — Light & Perception</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-05.html'>Section 05 — Sound & Rhythm</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/index.html'>Chapter 7</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-01.html'>Section 01 — Mathematics as Language</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-02.html'>Section 02 — Writing from Sources</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-03.html'>Section 03 — Geometry in Nature</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-04.html'>Section 04 — Gravity & Orbits</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-05.html'>Section 05 — Design with Found Objects</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/index.html'>Chapter 8</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-01.html'>Section 01 — Ethics & Moral Reasoning</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-02.html'>Section 02 — Revision as Discovery</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-03.html'>Section 03 — Symmetry & Beauty</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-04.html'>Section 04 — Electricity & Circuits</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-05.html'>Section 05 — Collaboration & Exchange</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/index.html'>Chapter 9</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-01.html'>Section 01 — Science & Inquiry</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-02.html'>Section 02 — Storytelling in Oral Traditions</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-03.html'>Section 03 — Numbers in Music</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-04.html'>Section 04 — Waves in Nature</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-05.html'>Section 05 — Creative Spaces</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/index.html'>Chapter 10</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-01.html'>Section 01 — Imagination & Creativity</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-02.html'>Section 02 — Writing for Media</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-03.html'>Section 03 — Chaos & Complexity</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-04.html'>Section 04 — Heat & Thermodynamics</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-05.html'>Section 05 — Patterns in Chaos</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/index.html'>Chapter 11</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-01.html'>Section 01 — Memory & Learning</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-02.html'>Section 02 — Writing & Identity</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-03.html'>Section 03 — Math in Technology</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-04.html'>Section 04 — Momentum & Collisions</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-05.html'>Section 05 — Art & Technology</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/index.html'>Chapter 12</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-01.html'>Section 01 — Culture & Worldviews</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-02.html'>Section 02 — Writing in Community</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-03.html'>Section 03 — Visualizing Data</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-04.html'>Section 04 — Scale of the Universe</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-05.html'>Section 05 — Creativity Across Cultures</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/index.html'>Chapter 13</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-01.html'>Section 01 — Technology & Tools of Thought</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-02.html'>Section 02 — Writing & Technology</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-03.html'>Section 03 — The Philosophy of Numbers</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-04.html'>Section 04 — Chaos & Randomness</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-05.html'>Section 05 — Creative Risks</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/index.html'>Chapter 14</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-01.html'>Section 01 — Philosophy of Knowledge</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-02.html'>Section 02 — Writing as Reflection</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-03.html'>Section 03 — Math as Creativity</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-04.html'>Section 04 — Science & Society</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-05.html'>Section 05 — Creative Flow</a></li></ul></details></li>
-<li><details><summary><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/index.html'>Chapter 15</a></summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-01.html'>Section 01 — My Philosophy of Learning</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-02.html'>Section 02 — My Manifesto of Voice</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-03.html'>Section 03 — My Math Philosophy</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-04.html'>Section 04 — My Philosophy of Science</a></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-05.html'>Section 05 — Creative Manifesto</a></li></ul></details></li></ul></details></li>
-<li><a href='programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html'>Semester Overview</a></li></ul></details></li>
-<li><details><summary>Vol 02 Ethics And Reasoning</summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html'>Semester Overview</a></li></ul></details></li>
-<li><details><summary>Vol 03 Communication Rhetoric</summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html'>Semester Overview</a></li></ul></details></li>
-<li><details><summary>Vol 04 Science Systems</summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html'>Semester Overview</a></li></ul></details></li>
-<li><details><summary>Vol 05 Design Creativity</summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html'>Semester Overview</a></li></ul></details></li>
-<li><details><summary>Vol 06 Economy History</summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html'>Semester Overview</a></li></ul></details></li>
-<li><details><summary>Vol 07 Technology Society</summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html'>Semester Overview</a></li></ul></details></li>
-<li><details><summary>Vol 08 Leadership Citizenship</summary><ul><li><a href='programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html'>Semester Overview</a></li></ul></details></li></ul></details></li></ul></details>
-<details class='root'><summary>Courses</summary><ul><li><a href='courses/BUS-201-entrepreneurship-startup-design.html'>Entrepreneurship & Startup Design</a></li>
-<li><a href='courses/BUS-202-finance-for-innovators.html'>Finance for Innovators</a></li>
-<li><a href='courses/BUS-203-organizational-leadership-negotiation.html'>Organizational Leadership & Negotiation</a></li>
-<li><a href='courses/BUS-204-global-markets-geopolitics.html'>Global Markets & Geopolitics</a></li>
-<li><a href='courses/BUS-205-business-ethics-responsibility.html'>Business Ethics & Responsibility</a></li>
-<li><a href='courses/HUM-201-philosophy-of-consciousness.html'>Philosophy of Consciousness</a></li>
-<li><a href='courses/HUM-202-political-theory-civic-life.html'>Political Theory & Civic Life</a></li>
-<li><a href='courses/HUM-203-cultural-anthropology-fieldwork.html'>Cultural Anthropology & Fieldwork</a></li>
-<li><a href='courses/HUM-204-history-of-technology-innovation.html'>History of Technology & Innovation</a></li>
-<li><a href='courses/HUM-205-comparative-religion-society.html'>Comparative Religion & Society</a></li>
-<li><a href='courses/LAB-101-creative-intelligence-lab.html'>LAB 101 – Creative Intelligence Lab I</a></li>
-<li><a href='courses/LAB-201-reasoning-lab-cases-debates.html'>LAB 201 – Reasoning Lab II: Cases & Debates</a></li>
-<li><a href='courses/LBS-101-mental-gym.html'>LBS 101 – The Mental Gym</a></li>
-<li><a href='courses/LBS-105-writing-communication.html'>LBS 105 – Writing & Communication I: Rhetoric and Storytelling</a></li>
-<li><a href='courses/LBS-110-mathematics-for-modern-thinkers.html'>LBS 110 – Mathematics for Modern Thinkers</a></li>
-<li><a href='courses/LBS-120-physics-with-lab.html'>LBS 120 – Physics with Lab</a></li>
-<li><a href='courses/LBS-201-ethics-moral-reasoning.html'>LBS 201 – Ethics & Moral Reasoning</a></li>
-<li><a href='courses/LBS-205-writing-communication-ii.html'>LBS 205 – Writing & Communication II: Argument, Evidence, and Style</a></li>
-<li><a href='courses/LBS-210-mathematical-reasoning-proof.html'>LBS 210 – Mathematical Reasoning & Proof</a></li>
-<li><a href='courses/LBS-220-scientific-method-experimental-design.html'>LBS 220 – Scientific Method & Experimental Design</a></li>
-<li><a href='courses/LIFE-201-outdoor-leadership-expeditionary-skills.html'>Outdoor Leadership & Expeditionary Skills</a></li>
-<li><a href='courses/LIFE-202-health-fitness-human-performance.html'>Health, Fitness & Human Performance</a></li>
-<li><a href='courses/LIFE-203-psychology-creativity-flow-states.html'>Psychology of Creativity & Flow States</a></li>
-<li><a href='courses/LIFE-204-education-mentorship-teach-what-you-know.html'>Education & Mentorship: Teach What You Know</a></li>
-<li><a href='courses/LIFE-205-global-citizenship-civic-engagement.html'>Global Citizenship & Civic Engagement</a></li>
-<li><a href='courses/MEDIA-201-film-visual-storytelling.html'>Film & Visual Storytelling</a></li>
-<li><a href='courses/MEDIA-202-music-sound-design.html'>Music & Sound Design</a></li>
-<li><a href='courses/MEDIA-203-design-visual-communication.html'>Design & Visual Communication</a></li>
-<li><a href='courses/MEDIA-204-creative-writing-story-craft.html'>Creative Writing & Story Craft</a></li>
-<li><a href='courses/MEDIA-205-media-culture-society.html'>Media, Culture & Society</a></li>
-<li><a href='courses/TECH-201-unmanned-systems.html'>Unmanned Systems — UAS Fundamentals</a></li>
-<li><a href='courses/TECH-202-ai-society.html'>AI & Society</a></li>
-<li><a href='courses/TECH-203-cybersecurity-information-warfare.html'>Cybersecurity & Information Warfare</a></li>
-<li><a href='courses/TECH-204-hardware-hacking-embedded.html'>Hardware Hacking & Embedded Systems</a></li>
-<li><a href='courses/TECH-205-climate-tech-energy-systems.html'>Climate Tech & Energy Systems</a></li></ul></details>
-<details class='root'><summary>Docs</summary><ul><li><details><summary>Assets</summary></details></li>
-<li><details><summary><a href='docs/courses/index.html'>Courses</a></summary><ul><li><a href='docs/courses/BUS-201-entrepreneurship-startup-design.html'>Bus 201 Entrepreneurship Startup Design</a></li>
-<li><a href='docs/courses/BUS-202-finance-for-innovators.html'>Bus 202 Finance For Innovators</a></li>
-<li><a href='docs/courses/BUS-203-organizational-leadership-negotiation.html'>Bus 203 Organizational Leadership Negotiation</a></li>
-<li><a href='docs/courses/BUS-204-global-markets-geopolitics.html'>Bus 204 Global Markets Geopolitics</a></li>
-<li><a href='docs/courses/BUS-205-business-ethics-responsibility.html'>Bus 205 Business Ethics Responsibility</a></li>
-<li><a href='docs/courses/HUM-201-philosophy-of-consciousness.html'>Hum 201 Philosophy Of Consciousness</a></li>
-<li><a href='docs/courses/HUM-202-political-theory-civic-life.html'>Hum 202 Political Theory Civic Life</a></li>
-<li><a href='docs/courses/HUM-203-cultural-anthropology-fieldwork.html'>Hum 203 Cultural Anthropology Fieldwork</a></li>
-<li><a href='docs/courses/HUM-204-history-of-technology-innovation.html'>Hum 204 History Of Technology Innovation</a></li>
-<li><a href='docs/courses/HUM-205-comparative-religion-society.html'>Hum 205 Comparative Religion Society</a></li>
-<li><a href='docs/courses/LAB-101-creative-intelligence-lab.html'>Lab 101 Creative Intelligence Lab</a></li>
-<li><a href='docs/courses/LAB-201-reasoning-lab-cases-debates.html'>Lab 201 Reasoning Lab Cases Debates</a></li>
-<li><a href='docs/courses/LBS-101-mental-gym.html'>Lbs 101 Mental Gym</a></li>
-<li><a href='docs/courses/LBS-105-writing-communication.html'>Lbs 105 Writing Communication</a></li>
-<li><a href='docs/courses/LBS-110-mathematics-for-modern-thinkers.html'>Lbs 110 Mathematics For Modern Thinkers</a></li>
-<li><a href='docs/courses/LBS-120-physics-with-lab.html'>Lbs 120 Physics With Lab</a></li>
-<li><a href='docs/courses/LBS-201-ethics-moral-reasoning.html'>Lbs 201 Ethics Moral Reasoning</a></li>
-<li><a href='docs/courses/LBS-205-writing-communication-ii.html'>Lbs 205 Writing Communication Ii</a></li>
-<li><a href='docs/courses/LBS-210-mathematical-reasoning-proof.html'>Lbs 210 Mathematical Reasoning Proof</a></li>
-<li><a href='docs/courses/LBS-220-scientific-method-experimental-design.html'>Lbs 220 Scientific Method Experimental Design</a></li>
-<li><a href='docs/courses/LIFE-201-outdoor-leadership-expeditionary-skills.html'>Life 201 Outdoor Leadership Expeditionary Skills</a></li>
-<li><a href='docs/courses/LIFE-202-health-fitness-human-performance.html'>Life 202 Health Fitness Human Performance</a></li>
-<li><a href='docs/courses/LIFE-203-psychology-creativity-flow-states.html'>Life 203 Psychology Creativity Flow States</a></li>
-<li><a href='docs/courses/LIFE-204-education-mentorship-teach-what-you-know.html'>Life 204 Education Mentorship Teach What You Know</a></li>
-<li><a href='docs/courses/LIFE-205-global-citizenship-civic-engagement.html'>Life 205 Global Citizenship Civic Engagement</a></li>
-<li><a href='docs/courses/MEDIA-201-film-visual-storytelling.html'>Media 201 Film Visual Storytelling</a></li>
-<li><a href='docs/courses/MEDIA-202-music-sound-design.html'>Media 202 Music Sound Design</a></li>
-<li><a href='docs/courses/MEDIA-203-design-visual-communication.html'>Media 203 Design Visual Communication</a></li>
-<li><a href='docs/courses/MEDIA-204-creative-writing-story-craft.html'>Media 204 Creative Writing Story Craft</a></li>
-<li><a href='docs/courses/MEDIA-205-media-culture-society.html'>Media 205 Media Culture Society</a></li>
-<li><a href='docs/courses/TECH-201-unmanned-systems.html'>Tech 201 Unmanned Systems</a></li>
-<li><a href='docs/courses/TECH-202-ai-society.html'>Tech 202 Ai Society</a></li>
-<li><a href='docs/courses/TECH-203-cybersecurity-information-warfare.html'>Tech 203 Cybersecurity Information Warfare</a></li>
-<li><a href='docs/courses/TECH-204-hardware-hacking-embedded.html'>Tech 204 Hardware Hacking Embedded</a></li>
-<li><a href='docs/courses/TECH-205-climate-tech-energy-systems.html'>Tech 205 Climate Tech Energy Systems</a></li></ul></details></li>
-<li><details><summary><a href='docs/docs/index.html'>Docs</a></summary></details></li>
-<li><details><summary><a href='docs/knowledge/index.html'>Knowledge</a></summary><ul><li><a href='docs/knowledge/anchors.html'>Anchors</a></li>
-<li><a href='docs/knowledge/community.html'>Community</a></li>
-<li><a href='docs/knowledge/courses.html'>Courses</a></li>
-<li><a href='docs/knowledge/identity.html'>Identity</a></li>
-<li><a href='docs/knowledge/infrastructure.html'>Infrastructure</a></li>
-<li><a href='docs/knowledge/philosophies.html'>Philosophies</a></li>
-<li><a href='docs/knowledge/priorities.html'>Priorities</a></li>
-<li><a href='docs/knowledge/programs.html'>Programs</a></li>
-<li><a href='docs/knowledge/projects.html'>Projects</a></li>
-<li><a href='docs/knowledge/research.html'>Research</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/index.html'>Programs</a></summary><ul><li><details><summary>Bachelor Liberal Arts</summary><ul><li><details><summary>Vol 01 Foundations</summary><ul><li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html'>Schedule</a></summary><ul><li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/index.html'>Chapter 01</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/index.html'>Chapter 02</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/index.html'>Chapter 03</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/index.html'>Chapter 04</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/index.html'>Chapter 05</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/index.html'>Chapter 06</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/index.html'>Chapter 07</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/index.html'>Chapter 08</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/index.html'>Chapter 09</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/index.html'>Chapter 10</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/index.html'>Chapter 11</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/index.html'>Chapter 12</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/index.html'>Chapter 13</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/index.html'>Chapter 14</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-05.html'>Section 05</a></li></ul></details></li>
-<li><details><summary><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/index.html'>Chapter 15</a></summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-01.html'>Section 01</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-02.html'>Section 02</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-03.html'>Section 03</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-04.html'>Section 04</a></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-05.html'>Section 05</a></li></ul></details></li></ul></details></li>
-<li><a href='docs/programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html'>Syllabus</a></li></ul></details></li>
-<li><details><summary>Vol 02 Ethics And Reasoning</summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html'>Syllabus</a></li></ul></details></li>
-<li><details><summary>Vol 03 Communication Rhetoric</summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html'>Syllabus</a></li></ul></details></li>
-<li><details><summary>Vol 04 Science Systems</summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html'>Syllabus</a></li></ul></details></li>
-<li><details><summary>Vol 05 Design Creativity</summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html'>Syllabus</a></li></ul></details></li>
-<li><details><summary>Vol 06 Economy History</summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html'>Syllabus</a></li></ul></details></li>
-<li><details><summary>Vol 07 Technology Society</summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html'>Syllabus</a></li></ul></details></li>
-<li><details><summary>Vol 08 Leadership Citizenship</summary><ul><li><a href='docs/programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html'>Syllabus</a></li></ul></details></li></ul></details></li></ul></details></li></ul></details>
+    <details>
+      <summary>📘 Chapter 1: What is Education?</summary>
+      <ul>
+        <li>📖 Read: John Henry Newman, <em>The Idea of a University</em></li>
+        <li>🎥 Watch: Harry Lewis, <em>Excellence Without a Soul</em></li>
+        <li>🎧 Listen: Philosophy Bites, <em>The Examined Life Today</em></li>
+        <li>📝 Practice: Reflect and take notes in your daily notebook</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>📘 Chapter 2: Mental Models & Systems Thinking</summary>
+      <ul>
+        <li>📖 Read: Farnam Street – Mental Models Overview</li>
+        <li>🎥 Watch: <em>How to Think in Systems</em> by GDS</li>
+        <li>🧠 Hard Problem: Identify a system in your life and sketch its feedback loops</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>📘 Chapter 3: AI, Tech & Ethics</summary>
+      <ul>
+        <li>📖 Read: Alan Turing’s “Computing Machinery and Intelligence”</li>
+        <li>🎥 Watch: <em>Ex Machina</em> or <em>The Social Dilemma</em></li>
+        <li>🎧 Listen: Ezra Klein on AI and society</li>
+        <li>📝 Journal: How should humans co-exist with machines?</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>📘 Chapter 4: History, Power & Progress</summary>
+      <ul>
+        <li>📖 Read: Selections from <em>Guns, Germs, and Steel</em></li>
+        <li>🎥 Watch: <em>The Fog of War</em> (Errol Morris)</li>
+        <li>🧠 Practice: Map a historical pattern to a current event</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>📘 Chapter 5: Art & Expression in the Digital Age</summary>
+      <ul>
+        <li>📖 Read: McLuhan, <em>The Medium is the Message</em></li>
+        <li>🎥 Watch: <em>Everything is a Remix</em> (Kirby Ferguson)</li>
+        <li>🎧 Listen: Rick Rubin & Questlove on creativity</li>
+        <li>🎨 Create: Make something by hand</li>
+      </ul>
+    </details>
+
   </main>
   <footer>
-    <p>Built locally from repo content.</p>
+    <p>Built with purpose by <strong>SDIT</strong>. <a href="https://github.com/sandiegotech/sdit">View on GitHub</a> · <a href="https://www.sandiegotech.org">Main Site</a></p>
+    <p id="metrics">&nbsp;</p>
   </footer>
 </body>
 </html>
