@@ -29,35 +29,19 @@
 <body>
   <header><h1>SDIT Content Index</h1></header>
   <main>
-  <p>Browse SDIT content organized by repository structure.</p>
+  <p>SDIT’s public curriculum browser. Use the dropdowns to navigate programs, chapters, sections, and course pages. Everything below links to the rendered content.</p>
   <ul class="quick-links">
     <li><a href="programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html">Volume 01 — Semester Overview</a></li>
     <li><a href="programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">Volume 01 — Chapter Schedule Index</a></li>
     <li><a href="courses/index.html">All Courses</a></li>
   </ul>
   <script>
-    // Open only Volume 01 under Programs; keep others collapsed
+    // Open only the top-level sections by default; keep inner menus collapsed.
     document.addEventListener('DOMContentLoaded', function () {
-      // Close all details elements
+      // Close all details elements first
       document.querySelectorAll('details').forEach(function (d) { d.open = false; });
-      // Helper: open the first details whose summary contains the given text
-      function openBySummary(root, text) {
-        const scopes = root ? root.querySelectorAll('details > summary') : document.querySelectorAll('details > summary');
-        for (const s of scopes) {
-          if (s.textContent.trim().toLowerCase().includes(text.toLowerCase())) {
-            s.parentElement.open = true; return s.parentElement;
-          }
-        }
-        return null;
-      }
-      // Open Programs root
-      const programsRoot = openBySummary(null, 'Programs');
-      if (programsRoot) {
-        const bla = openBySummary(programsRoot, 'Bachelor Liberal Arts');
-        if (bla) {
-          openBySummary(bla, 'Vol 01');
-        }
-      }
+      // Open each root section (Knowledge, Programs, Courses, Docs)
+      document.querySelectorAll('details.root').forEach(function (d) { d.open = true; });
     });
   </script>
 <details class='root'><summary>Knowledge</summary><ul><li><a href='knowledge/anchors.html'>Strategic Anchors</a></li>
