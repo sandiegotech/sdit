@@ -12,7 +12,10 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-import yaml
+try:
+    import yaml  # type: ignore
+except Exception:  # pragma: no cover - fallback when PyYAML missing
+    yaml = None
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "programs" / "Bachelor-Liberal-Arts"
@@ -66,6 +69,14 @@ def read_frontmatter(md_path: Path) -> dict:
     m = re.search(r"^---\s*\n([\s\S]*?)\n---\s*\n", txt)
     if not m:
         return {}
+    if yaml is None:
+        data = {}
+        for line in m.group(1).splitlines():
+            if ":" not in line:
+                continue
+            k, v = line.split(":", 1)
+            data[k.strip()] = v.strip().strip('"')
+        return data
     try:
         data = yaml.safe_load(m.group(1)) or {}
         return data if isinstance(data, dict) else {}
@@ -133,7 +144,10 @@ def build_tree() -> str:
         vol_index = (vol / "syllabus.html").relative_to(ROOT).as_posix()
         vol_block: list[str] = []
         desc_span = f" <span class='desc'>— {vol_desc}</span>" if vol_desc else ""
-        vol_block.append(f"<details><summary>{vol_label}{desc_span} <a class='view' href='{vol_index}' aria-label='Open volume'>🔗</a></summary>")
+        vol_block.append(
+            f"<details><summary>{vol_label}{desc_span} "
+            f"<a class='view' href='{vol_index}' aria-label='Open volume'>view</a></summary>"
+        )
         # Chapters
         sched = vol / "schedule"
         if sched.exists():
@@ -146,7 +160,10 @@ def build_tree() -> str:
                     chap_desc = desc_from_title(chap_title)
                     chap_index = (chap / "index.html").relative_to(ROOT).as_posix()
                     chap_desc_span = f" <span class='desc'>— {chap_desc}</span>" if chap_desc else ""
-                    vol_block.append(f"<li><details><summary>{chap_label}{chap_desc_span} <a class='view' href='{chap_index}' aria-label='Open chapter'>🔗</a></summary>")
+                    vol_block.append(
+                        f"<li><details><summary>{chap_label}{chap_desc_span} "
+                        f"<a class='view' href='{chap_index}' aria-label='Open chapter'>view</a></summary>"
+                    )
                     # Sections
                     secs = sorted(chap.glob("section-*.html"), key=sect_key)
                     if secs:
@@ -159,7 +176,13 @@ def build_tree() -> str:
                             sec_md = sec.with_suffix('.md')
                             sec_title = title_from_md(sec_md) or sec_label
                             sec_desc = desc_from_title(sec_title)
-                            vol_block.append(f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a> <span class='desc'>— {sec_desc}</span></li>")
+                            section_desc = sec_desc
+                            if vol.name == "vol-01-foundations":
+                                section_desc = f"{sec_desc} ({chap_desc})"
+                            vol_block.append(
+                                f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a> "
+                                f"<span class='desc'>— {section_desc}</span></li>"
+                            )
                         vol_block.append("</ul>")
                     vol_block.append("</details></li>")
                 vol_block.append("</ul>")
