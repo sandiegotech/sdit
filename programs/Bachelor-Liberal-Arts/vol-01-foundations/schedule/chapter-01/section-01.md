@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter01-section01
-title: "Section 01 — What is a Liberal Education? (LBS 101)"
+title: Section 01 — What is a Liberal Education? (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 1
 section: 1
 course: LBS 101 – The Mental Gym
+description: What is a Liberal Education?
 ---
+
 
 # Section 01 — What is a Liberal Education?
 Course: LBS 101 – The Mental Gym
+
+## Overview
+What is a Liberal Education?
+
 
 ## Learning Session
 Explore These Materials:
@@ -29,4 +35,3 @@ Write one quote from today’s materials that you want to keep:
 
 ## Hard Problem (Optional)
 List 10 required courses for your “ideal university.” What does this reveal about your aims?
-

@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter02-section01
-title: "Section 01 — Logic & Reasoning (LBS 101)"
+title: Section 01 — Logic & Reasoning (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 2
 section: 1
 course: LBS 101 – The Mental Gym
+description: Logic & Reasoning
 ---
+
 
 # Section 01 — Logic & Reasoning
 Course: LBS 101 – The Mental Gym
+
+## Overview
+Logic & Reasoning
+
 
 ## Learning Session
 Explore These Materials:
