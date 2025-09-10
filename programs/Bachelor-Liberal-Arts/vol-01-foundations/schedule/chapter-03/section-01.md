@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter03-section01
-title: Section 01 — The Examined Life (LBS 101)
+title: "Section 01 — The Examined Life (LBS 101)"
 parent_volume: vol-01-foundations
 chapter: 3
 section: 1
 course: LBS 101 – The Mental Gym
-description: The Examined Life
 ---
-
 
 # Section 01 — The Examined Life
 Course: LBS 101 – The Mental Gym
-
-## Overview
-The Examined Life
-
 
 ## Learning Session
 Explore These Materials:

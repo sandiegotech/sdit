@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter02-section05
-title: Section 05 — Creative Constraints (LAB 101)
+title: "Section 05 — Creative Constraints (LAB 101)"
 parent_volume: vol-01-foundations
 chapter: 2
 section: 5
 course: LAB 101 – Creative Intelligence Lab I
-description: Creative Constraints
 ---
-
 
 # Section 05 — Creative Constraints
 Course: LAB 101 – Creative Intelligence Lab I
-
-## Overview
-Creative Constraints
-
 
 ## Learning Session
 Explore These Materials:

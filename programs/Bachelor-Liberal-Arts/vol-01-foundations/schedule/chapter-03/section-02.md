@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter03-section02
-title: Section 02 — Argument & Persuasion (LBS 105)
+title: "Section 02 — Argument & Persuasion (LBS 105)"
 parent_volume: vol-01-foundations
 chapter: 3
 section: 2
 course: LBS 105 – Writing & Communication I
-description: Argument & Persuasion
 ---
-
 
 # Section 02 — Argument & Persuasion
 Course: LBS 105 – Writing & Communication I
-
-## Overview
-Argument & Persuasion
-
 
 ## Learning Session
 Explore These Materials:

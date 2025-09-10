@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter01-section02
-title: Section 02 — The Power of Story (LBS 105)
+title: "Section 02 — The Power of Story (LBS 105)"
 parent_volume: vol-01-foundations
 chapter: 1
 section: 2
 course: LBS 105 – Writing & Communication I
-description: The Power of Story
 ---
-
 
 # Section 02 — The Power of Story
 Course: LBS 105 – Writing & Communication I: Rhetoric and Storytelling
-
-## Overview
-The Power of Story
-
 
 ## Learning Session
 Explore These Materials:
@@ -36,3 +30,4 @@ Write one quote from today’s materials that you want to keep:
 
 ## Hard Problem (Optional)
 Rewrite the same story twice: as a political speech and as a children’s bedtime story. What changes and why?
+

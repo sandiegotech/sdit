@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter01-section04
-title: Section 04 — Observing the Natural World (LBS 120)
+title: "Section 04 — Observing the Natural World (LBS 120)"
 parent_volume: vol-01-foundations
 chapter: 1
 section: 4
 course: LBS 120 – Physics with Lab
-description: Observing the Natural World
 ---
-
 
 # Section 04 — Observing the Natural World
 Course: LBS 120 – Physics with Lab
-
-## Overview
-Observing the Natural World
-
 
 ## Learning Session
 Explore These Materials:
@@ -30,3 +24,4 @@ Explore These Materials:
 1. Simple Motion Experiment — Drop two objects; record and sketch results; note surprises.  
 2. Shadow Tracking — Track a shadow every 15 minutes for 2 hours; what does it suggest about Earth’s motion?  
 3. Reflection — Seeing vs assuming; what changed when I slowed down?
+

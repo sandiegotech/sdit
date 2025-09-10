@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter04-section02
-title: Section 02 — Structure & Flow (LBS 105)
+title: "Section 02 — Structure & Flow (LBS 105)"
 parent_volume: vol-01-foundations
 chapter: 4
 section: 2
 course: LBS 105 – Writing & Communication I
-description: Structure & Flow
 ---
-
 
 # Section 02 — Structure & Flow
 Course: LBS 105 – Writing & Communication I
-
-## Overview
-Structure & Flow
-
 
 ## Learning Session
 Explore These Materials:

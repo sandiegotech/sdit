@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter03-section05
-title: Section 05 — Play as Learning (LAB 101)
+title: "Section 05 — Play as Learning (LAB 101)"
 parent_volume: vol-01-foundations
 chapter: 3
 section: 5
 course: LAB 101 – Creative Intelligence Lab I
-description: Play as Learning
 ---
-
 
 # Section 05 — Play as Learning
 Course: LAB 101 – Creative Intelligence Lab I
-
-## Overview
-Play as Learning
-
 
 ## Learning Session
 Explore These Materials:

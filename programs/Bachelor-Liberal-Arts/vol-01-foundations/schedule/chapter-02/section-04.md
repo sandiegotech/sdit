@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter02-section04
-title: Section 04 — Motion & Measurement (LBS 120)
+title: "Section 04 — Motion & Measurement (LBS 120)"
 parent_volume: vol-01-foundations
 chapter: 2
 section: 4
 course: LBS 120 – Physics with Lab
-description: Motion & Measurement
 ---
-
 
 # Section 04 — Motion & Measurement
 Course: LBS 120 – Physics with Lab
-
-## Overview
-Motion & Measurement
-
 
 ## Learning Session
 Explore These Materials:

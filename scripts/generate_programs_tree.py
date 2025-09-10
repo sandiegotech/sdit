@@ -105,6 +105,27 @@ def desc_from_title(title: str) -> str:
     desc = re.sub(r"\s*\([^)]*\)\s*", "", desc).strip()
     return desc
 
+def strip_tags(html: str) -> str:
+    # Remove tags
+    text = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.I)
+    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    # Collapse whitespace
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def extract_preview(section_html_path: Path, max_chars: int = 320) -> str:
+    try:
+        s = section_html_path.read_text(encoding="utf-8")
+    except Exception:
+        return ""
+    m = re.search(r"<main>([\s\S]*?)</main>", s, flags=re.I)
+    body = m.group(1) if m else s
+    text = strip_tags(body)
+    if len(text) > max_chars:
+        text = text[:max_chars].rstrip() + "…"
+    return text
 
 
 def build_tree() -> str:
@@ -125,7 +146,7 @@ def build_tree() -> str:
         desc_span = f" <span class='desc'>— {vol_desc}</span>" if vol_desc else ""
         vol_block.append(
             f"<details><summary>{vol_label}{desc_span} "
-            f"<a class='view' href='{vol_index}' aria-label='Open volume'>🔗</a></summary>"
+            f"<a class='view' href='{vol_index}' aria-label='Open volume'>view</a></summary>"
         )
         # Chapters
         sched = vol / "schedule"
@@ -141,7 +162,7 @@ def build_tree() -> str:
                     chap_desc_span = f" <span class='desc'>— {chap_desc}</span>" if chap_desc else ""
                     vol_block.append(
                         f"<li><details><summary>{chap_label}{chap_desc_span} "
-                        f"<a class='view' href='{chap_index}' aria-label='Open chapter'>🔗</a></summary>"
+                        f"<a class='view' href='{chap_index}' aria-label='Open chapter'>view</a></summary>"
                     )
                     # Sections
                     secs = sorted(chap.glob("section-*.html"), key=sect_key)
@@ -150,13 +171,17 @@ def build_tree() -> str:
                         for sec in secs:
                             sec_num = sect_key(sec)
                             sec_label = f"Section {sec_num:02d}"
+                            preview = extract_preview(sec)
+                            # Prefer section title-based description
                             sec_md = sec.with_suffix('.md')
-                            fm = read_frontmatter(sec_md)
-                            sec_title = (fm.get("title") if isinstance(fm, dict) else None) or sec_label
-                            sec_desc = (fm.get("description") if isinstance(fm, dict) else None) or desc_from_title(sec_title)
+                            sec_title = title_from_md(sec_md) or sec_label
+                            sec_desc = desc_from_title(sec_title)
+                            section_desc = sec_desc
+                            if vol.name == "vol-01-foundations":
+                                section_desc = f"{sec_desc} ({chap_desc})"
                             vol_block.append(
                                 f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a> "
-                                f"<span class='desc'>— {sec_desc}</span></li>"
+                                f"<span class='desc'>— {section_desc}</span></li>"
                             )
                         vol_block.append("</ul>")
                     vol_block.append("</details></li>")

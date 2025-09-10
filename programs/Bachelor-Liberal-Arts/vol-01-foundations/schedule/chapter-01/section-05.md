@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter01-section05
-title: Section 05 — Mapping the Mind (LAB 101)
+title: "Section 05 — Mapping the Mind (LAB 101)"
 parent_volume: vol-01-foundations
 chapter: 1
 section: 5
 course: LAB 101 – Creative Intelligence Lab I
-description: Mapping the Mind
 ---
-
 
 # Section 05 — Mapping the Mind
 Course: LAB 101 – Creative Intelligence Lab I
-
-## Overview
-Mapping the Mind
-
 
 ## Learning Session
 Explore These Materials:
@@ -30,3 +24,4 @@ Explore These Materials:
 1. Mind Map — Visual map of your mind (interests, questions, sparks).  
 2. Creative Artifact — Turn one idea into a small artifact (poem, sketch, melody, design).  
 3. Reflection — Where do my ideas come from? What did mapping reveal?
+

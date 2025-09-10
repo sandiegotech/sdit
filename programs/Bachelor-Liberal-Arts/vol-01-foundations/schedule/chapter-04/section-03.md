@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter04-section03
-title: Section 03 — Infinity & Limits (LBS 110)
+title: "Section 03 — Infinity & Limits (LBS 110)"
 parent_volume: vol-01-foundations
 chapter: 4
 section: 3
 course: LBS 110 – Mathematics for Modern Thinkers
-description: Infinity & Limits
 ---
-
 
 # Section 03 — Infinity & Limits
 Course: LBS 110 – Mathematics for Modern Thinkers
-
-## Overview
-Infinity & Limits
-
 
 ## Learning Session
 Explore These Materials:

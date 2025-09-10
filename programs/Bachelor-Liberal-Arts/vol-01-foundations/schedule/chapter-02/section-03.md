@@ -1,20 +1,14 @@
 ---
 id: vol01-chapter02-section03
-title: Section 03 — Patterns & Sequences (LBS 110)
+title: "Section 03 — Patterns & Sequences (LBS 110)"
 parent_volume: vol-01-foundations
 chapter: 2
 section: 3
 course: LBS 110 – Mathematics for Modern Thinkers
-description: Patterns & Sequences
 ---
-
 
 # Section 03 — Patterns & Sequences
 Course: LBS 110 – Mathematics for Modern Thinkers
-
-## Overview
-Patterns & Sequences
-
 
 ## Learning Session
 Explore These Materials:
