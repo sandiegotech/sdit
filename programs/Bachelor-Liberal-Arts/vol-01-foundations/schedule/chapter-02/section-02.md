@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter02-section02
-title: "Section 02 — Voice & Style (LBS 105)"
+title: Section 02 — Voice & Style (LBS 105)
 parent_volume: vol-01-foundations
 chapter: 2
 section: 2
 course: LBS 105 – Writing & Communication I
+description: Voice & Style
 ---
+
 
 # Section 02 — Voice & Style
 Course: LBS 105 – Writing & Communication I
+
+## Overview
+Voice & Style
+
 
 ## Learning Session
 Explore These Materials:

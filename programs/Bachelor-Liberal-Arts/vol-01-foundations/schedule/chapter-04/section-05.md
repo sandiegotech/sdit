@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter04-section05
-title: "Section 05 — Storytelling Through Images (LAB 101)"
+title: Section 05 — Storytelling Through Images (LAB 101)
 parent_volume: vol-01-foundations
 chapter: 4
 section: 5
 course: LAB 101 – Creative Intelligence Lab I
+description: Storytelling Through Images
 ---
+
 
 # Section 05 — Storytelling Through Images
 Course: LAB 101 – Creative Intelligence Lab I
+
+## Overview
+Storytelling Through Images
+
 
 ## Learning Session
 Explore These Materials:
