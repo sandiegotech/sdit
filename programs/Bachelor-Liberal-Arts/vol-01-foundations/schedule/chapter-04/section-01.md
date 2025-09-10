@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter04-section01
-title: "Section 01 — Truth & Perspectives (LBS 101)"
+title: Section 01 — Truth & Perspectives (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 4
 section: 1
 course: LBS 101 – The Mental Gym
+description: Truth & Perspectives
 ---
+
 
 # Section 01 — Truth & Perspectives
 Course: LBS 101 – The Mental Gym
+
+## Overview
+Truth & Perspectives
+
 
 ## Learning Session
 Explore These Materials:

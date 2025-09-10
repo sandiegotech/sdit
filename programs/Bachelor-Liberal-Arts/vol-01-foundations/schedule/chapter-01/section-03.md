@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter01-section03
-title: "Section 03 — Mathematics as a Language (LBS 110)"
+title: Section 03 — Mathematics as a Language (LBS 110)
 parent_volume: vol-01-foundations
 chapter: 1
 section: 3
 course: LBS 110 – Mathematics for Modern Thinkers
+description: Mathematics as a Language
 ---
+
 
 # Section 03 — Mathematics as a Language
 Course: LBS 110 – Mathematics for Modern Thinkers
+
+## Overview
+Mathematics as a Language
+
 
 ## Learning Session
 Explore These Materials:
@@ -28,4 +34,3 @@ Explore These Materials:
 
 ### Optional Hard Problem
 Fibonacci spiral or natural ratios collection; does math explain beauty or describe it?
-

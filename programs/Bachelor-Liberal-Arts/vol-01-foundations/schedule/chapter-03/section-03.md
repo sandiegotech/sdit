@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter03-section03
-title: "Section 03 — Ratios & Proportions (LBS 110)"
+title: Section 03 — Ratios & Proportions (LBS 110)
 parent_volume: vol-01-foundations
 chapter: 3
 section: 3
 course: LBS 110 – Mathematics for Modern Thinkers
+description: Ratios & Proportions
 ---
+
 
 # Section 03 — Ratios & Proportions
 Course: LBS 110 – Mathematics for Modern Thinkers
+
+## Overview
+Ratios & Proportions
+
 
 ## Learning Session
 Explore These Materials:

@@ -1,14 +1,20 @@
 ---
 id: vol01-chapter03-section04
-title: "Section 04 — Forces & Balance (LBS 120)"
+title: Section 04 — Forces & Balance (LBS 120)
 parent_volume: vol-01-foundations
 chapter: 3
 section: 4
 course: LBS 120 – Physics with Lab
+description: Forces & Balance
 ---
+
 
 # Section 04 — Forces & Balance
 Course: LBS 120 – Physics with Lab
+
+## Overview
+Forces & Balance
+
 
 ## Learning Session
 Explore These Materials:
