@@ -1,0 +1,38 @@
+name: Build Site Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.md'
+      - 'scripts/build_site.py'
+      - 'scripts/generate_programs_tree.py'
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml
+      - name: Build site and update index
+        run: |
+          python scripts/build_site.py --out .
+          python scripts/generate_programs_tree.py
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m 'chore: rebuild site index [skip ci]'
+            git push
+          fi

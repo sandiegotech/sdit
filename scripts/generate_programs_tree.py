@@ -146,7 +146,7 @@ def build_tree() -> str:
         desc_span = f" <span class='desc'>— {vol_desc}</span>" if vol_desc else ""
         vol_block.append(
             f"<details><summary>{vol_label}{desc_span} "
-            f"<a class='view' href='{vol_index}' aria-label='Open volume'>view</a></summary>"
+            f"<a class='view' href='{vol_index}' aria-label='Open volume'>🔗</a></summary>"
         )
         # Chapters
         sched = vol / "schedule"
@@ -166,7 +166,7 @@ def build_tree() -> str:
                     chap_desc_span = f" <span class='desc'>— {chap_desc}</span>" if chap_desc else ""
                     vol_block.append(
                         f"<li><details><summary>{chap_label}{chap_desc_span} "
-                        f"<a class='view' href='{chap_index}' aria-label='Open chapter'>view</a></summary>"
+                        f"<a class='view' href='{chap_index}' aria-label='Open chapter'>🔗</a></summary>"
                     )
                     # Sections
                     secs = sorted(chap.glob("section-*.html"), key=sect_key)
@@ -218,7 +218,13 @@ def inject_into_index(html_block: str) -> None:
         )
     else:
         eidx += len(end)
-        new = content[:sidx] + f"<!-- PROGRAMS_TREE_START (auto-generated) -->\n" + html_block + "\n" + content[eidx:]
+        new = (
+            content[:sidx]
+            + "<!-- PROGRAMS_TREE_START (auto-generated) -->\n"
+            + html_block
+            + "\n    <!-- PROGRAMS_TREE_END -->"
+            + content[eidx:]
+        )
     INDEX_HTML.write_text(new, encoding="utf-8")
 
 
