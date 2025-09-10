@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter12-section01
+overview: "Examine cultures and worldviews to broaden global understanding."
+Overview: Examine cultures and worldviews to broaden global understanding.
 title: Section 01 — Culture & Worldviews (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 12

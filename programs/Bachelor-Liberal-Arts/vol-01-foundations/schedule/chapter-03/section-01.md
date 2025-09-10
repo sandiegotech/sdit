@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter03-section01
+overview: "Consider what it means to live an examined life and question assumptions."
+Overview: Consider what it means to live an examined life and question assumptions.
 title: Section 01 — The Examined Life (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 3

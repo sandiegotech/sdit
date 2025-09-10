@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter04-section01
+overview: "Explore how perspective shapes truth and recognize bias in observation."
+Overview: Explore how perspective shapes truth and recognize bias in observation.
 title: Section 01 — Truth & Perspectives (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 4

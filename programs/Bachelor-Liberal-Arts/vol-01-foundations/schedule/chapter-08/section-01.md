@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter08-section01
+overview: "Survey ethical frameworks to navigate moral dilemmas with nuance."
+Overview: Survey ethical frameworks to navigate moral dilemmas with nuance.
 title: Section 01 — Ethics & Moral Reasoning (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 8

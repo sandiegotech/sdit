@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter09-section01
+overview: "Apply the scientific method to investigate questions about the world."
+Overview: Apply the scientific method to investigate questions about the world.
 title: Section 01 — Science & Inquiry (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 9
