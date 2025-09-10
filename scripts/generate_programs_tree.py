@@ -158,6 +158,10 @@ def build_tree() -> str:
                     chap_label = labelize(chap.name)
                     chap_title = title_from_md(chap / "index.md") or chap_label
                     chap_desc = desc_from_title(chap_title)
+                    # Allow section-01.md to provide an overview for the chapter
+                    sec0_md = chap / "section-01.md"
+                    fm0 = read_frontmatter(sec0_md)
+                    chap_desc = fm0.get("overview", chap_desc) if fm0 else chap_desc
                     chap_index = (chap / "index.html").relative_to(ROOT).as_posix()
                     chap_desc_span = f" <span class='desc'>— {chap_desc}</span>" if chap_desc else ""
                     vol_block.append(
