@@ -105,28 +105,7 @@ def desc_from_title(title: str) -> str:
     desc = re.sub(r"\s*\([^)]*\)\s*", "", desc).strip()
     return desc
 
-
-
-def build_tree() -> str:
-    if not BASE.exists():
-        return "<p><em>No programs found.</em></p>"
-
-    out: list[str] = []
-    # Render only volumes as top-level dropdowns (no Programs/Bachelor wrappers)
-
-    vol_dirs = sorted([p for p in BASE.glob("vol-*") if p.is_dir()], key=vol_key)
-    blocks: list[str] = []
-    for vol in vol_dirs:
-        vol_label = labelize(vol.name)
-        vol_title = title_from_md(vol / "syllabus.md") or vol_label
-        vol_desc = VOL_DESCRIPTIONS.get(vol.name, desc_from_title(vol_title))
-        vol_index = (vol / "syllabus.html").relative_to(ROOT).as_posix()
-        vol_block: list[str] = []
-        desc_span = f" <span class='desc'>— {vol_desc}</span>" if vol_desc else ""
-        vol_block.append(
-            f"<details><summary>{vol_label}{desc_span} "
             f"<a class='view' href='{vol_index}' aria-label='Open volume'>🔗</a></summary>"
-        )
         # Chapters
         sched = vol / "schedule"
         if sched.exists():
@@ -137,6 +116,10 @@ def build_tree() -> str:
                     chap_label = labelize(chap.name)
                     chap_title = title_from_md(chap / "index.md") or chap_label
                     chap_desc = desc_from_title(chap_title)
+                    # Allow section-01.md to provide an overview for the chapter
+                    sec0_md = chap / "section-01.md"
+                    fm0 = read_frontmatter(sec0_md)
+                    chap_desc = fm0.get("overview", chap_desc) if fm0 else chap_desc
                     chap_index = (chap / "index.html").relative_to(ROOT).as_posix()
                     chap_desc_span = f" <span class='desc'>— {chap_desc}</span>" if chap_desc else ""
                     vol_block.append(
@@ -150,11 +133,9 @@ def build_tree() -> str:
                         for sec in secs:
                             sec_num = sect_key(sec)
                             sec_label = f"Section {sec_num:02d}"
-                            sec_md = sec.with_suffix('.md')
                             fm = read_frontmatter(sec_md)
-                            sec_title = (fm.get("title") if isinstance(fm, dict) else None) or sec_label
-                            sec_desc = (fm.get("description") if isinstance(fm, dict) else None) or desc_from_title(sec_title)
-                            vol_block.append(
+                            overview = fm.get("overview") if fm and sec_num == 1 else None
+                            section_desc = overview or sec_desc
                                 f"<li><a href='{sec.relative_to(ROOT).as_posix()}'>{sec_label}</a> "
                                 f"<span class='desc'>— {sec_desc}</span></li>"
                             )

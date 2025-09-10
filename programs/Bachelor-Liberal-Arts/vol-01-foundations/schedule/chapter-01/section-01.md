@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter01-section01
+overview: "Introduce the idea of a liberal education and define education in your own words."
+Overview: Introduce the idea of a liberal education and define education in your own words.
 title: Section 01 — What is a Liberal Education? (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 1

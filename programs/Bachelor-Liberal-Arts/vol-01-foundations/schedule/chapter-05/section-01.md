@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter05-section01
+overview: "Learn classical rhetoric techniques to persuade and connect with audiences."
+Overview: Learn classical rhetoric techniques to persuade and connect with audiences.
 title: Section 01 — Rhetoric & Persuasion (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 5

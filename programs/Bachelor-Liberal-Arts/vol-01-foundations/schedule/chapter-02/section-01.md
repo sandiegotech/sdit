@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter02-section01
+overview: "Strengthen core reasoning skills and learn how logical arguments are built."
+Overview: Strengthen core reasoning skills and learn how logical arguments are built.
 title: Section 01 — Logic & Reasoning (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 2

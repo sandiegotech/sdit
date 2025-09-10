@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter07-section01
+overview: "See mathematics as a universal language and translate ideas into symbols."
+Overview: See mathematics as a universal language and translate ideas into symbols.
 title: Section 01 — Mathematics as Language (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 7

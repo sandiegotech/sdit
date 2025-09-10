@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter06-section01
+overview: "Use writing as a tool for clear thinking and precise communication."
+Overview: Use writing as a tool for clear thinking and precise communication.
 title: Section 01 — Writing as Clear Thinking (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 6

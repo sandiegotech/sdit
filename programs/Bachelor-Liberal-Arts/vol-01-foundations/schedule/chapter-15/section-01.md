@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter15-section01
+overview: "Synthesize your learning into a personal philosophy of learning and life."
+Overview: Synthesize your learning into a personal philosophy of learning and life.
 title: Section 01 — My Philosophy of Learning (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 15

@@ -1,5 +1,7 @@
 ---
 id: vol01-chapter14-section01
+overview: "Debate how knowledge is formed and justified across disciplines."
+Overview: Debate how knowledge is formed and justified across disciplines.
 title: Section 01 — Philosophy of Knowledge (LBS 101)
 parent_volume: vol-01-foundations
 chapter: 14
