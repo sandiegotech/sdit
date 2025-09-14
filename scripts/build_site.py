@@ -19,6 +19,7 @@ import shutil
 from pathlib import Path
 import argparse
 from typing import Iterable, Dict
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,6 +90,25 @@ def asset_rel(from_path: Path) -> str:
     return rel.replace("\\", "/")
 
 
+def strip_front_matter(text: str) -> tuple[str, dict]:
+    """Remove simple YAML front matter delimited by '---' lines."""
+    if not text.startswith("---\n"):
+        return text, {}
+    end = text.find("\n---\n", 4)
+    if end == -1:
+        return text, {}
+    fm = text[4:end]
+    body = text[end + 5 :]
+    meta: dict[str, str] = {}
+    for line in fm.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or ":" not in line:
+            continue
+        key, val = line.split(":", 1)
+        meta[key.strip()] = val.strip().strip('"')
+    return body.lstrip(), meta
+
+
 def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
     """Convert all .md files under src into .html under dest, preserving structure.
     Returns: list of (title, output_path) for index building.
@@ -97,13 +117,15 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
     entries: list[tuple[str, Path]] = []
     for path in sorted(src.rglob("*.md")):
         md = path.read_text(encoding="utf-8")
-        html = md_to_html(md)
-        # Extract title from first H1 if present
-        title = None
-        for line in md.splitlines():
-            if line.startswith("# "):
-                title = line[2:].strip()
-                break
+        body, meta = strip_front_matter(md)
+        html = md_to_html(body)
+        # Prefer title from front matter
+        title = meta.get("title") if isinstance(meta, dict) else None
+        if not title:
+            for line in body.splitlines():
+                if line.startswith("# "):
+                    title = line[2:].strip()
+                    break
         if not title:
             title = path.stem.replace("-", " ").title()
 
