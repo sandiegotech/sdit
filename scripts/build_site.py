@@ -374,7 +374,15 @@ def main(argv: list[str] | None = None) -> int:
     title_map: Dict[Path, str] = {}
     for title, path in (knowledge_entries + docs_entries + courses_entries + programs_entries):
         title_map[path.resolve()] = title
-    build_index(title_map)
+    # Only generate an index page if one does not already exist. This allows
+    # callers to run the build into the repository root ("--out .") without
+    # clobbering a manually maintained index.html that may contain markers used
+    # by other scripts (e.g. generate_programs_tree.py).
+    index_path = OUT / "index.html"
+    if not index_path.exists():
+        build_index(title_map)
+    # When an existing index is present we assume it will be updated separately
+    # and simply leave it untouched.
     print(f"Wrote static site to {OUT}")
     return 0
 
