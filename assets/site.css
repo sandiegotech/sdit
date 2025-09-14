@@ -49,6 +49,7 @@ main { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
 .hero { text-align: center; margin-bottom: 40px; }
 .hero h2 { font-size: 32px; margin-bottom: 10px; }
 .hero p { font-size: 18px; color: var(--muted); margin-bottom: 20px; }
+.hero .icon { font-size: 40px; margin-bottom: 10px; }
 .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
 .btn { display: inline-block; padding: 10px 20px; background: var(--link); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 500; }
 .btn:hover { opacity: 0.9; }
@@ -69,10 +70,13 @@ main { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .card h3 { margin: 8px 0 6px; font-size: 18px; }
 .card .tagline, .card .desc { color: var(--muted); font-size: 14px; }
+.card .subtitle { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
+.subtitle { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
 .card .icon { font-size: 32px; }
 .card .card-actions { margin-top: 12px; display: flex; gap: 10px; }
 
@@ -90,7 +94,8 @@ main { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .cards-grid .chapter-item a, .cards-grid .section-item a { color: var(--link); text-decoration: none; font-weight: 600; }
 .cards-grid .chapter-item a:hover, .cards-grid .section-item a:hover { text-decoration: underline; }
