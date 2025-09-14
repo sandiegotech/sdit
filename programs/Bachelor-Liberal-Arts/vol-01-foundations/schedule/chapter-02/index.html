@@ -1,27 +1,50 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 2 — SDIT</title>
-  <link rel="stylesheet" href="../../../../../assets/styles.css" />
+  <title>Chapter 2 — The Power of Story — SDIT</title>
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="/assets/js/includes.js" defer></script>
+  <script>
+    function filterSections(event) {
+      const query = event.target.value.toLowerCase();
+      document.querySelectorAll('.section-item').forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+  </script>
 </head>
 <body>
-  <header><h1>Chapter 2</h1></header>
+  <div data-include="/partials/header.html"></div>
   <main>
-  <h1 id="chapter-2">Chapter 2</h1>
-<h2 id="this-chapters-five-courses">This Chapter’s Five Courses</h2>
-<ul>
-<li>Section 01 — LBS 101: Logic &amp; Reasoning — section-01.md</li>
-<li>Section 02 — LBS 105: Voice &amp; Style — section-02.md</li>
-<li>Section 03 — LBS 110: Patterns &amp; Sequences — section-03.md</li>
-<li>Section 04 — LBS 120: Motion &amp; Measurement — section-04.md</li>
-<li>Section 05 — LAB 101: Creative Constraints — section-05.md</li>
-</ul>
+    <div class="breadcrumbs">
+      <a href="/index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">Volume 1</a>
+      <span class="sep">›</span>
+      <strong>Chapter 2</strong>
+    </div>
+    <section class="hero">
+      <div class="icon">📖</div>
+      <h2>The Power of Story</h2>
+      <p class="subtitle">Chapter 02</p>
+      <p class="desc">Discover how narrative shapes memory, identity, and meaning across cultures.</p>
+      <div class="search-bar"><input type="search" placeholder="Search sections" oninput="filterSections(event)" /></div>
+    </section>
+
+    <section>
+      <ul class="cards-grid">
+        <li class="section-item"><a href="section-01.html">Section 01 — LBS 101: Logic &amp; Reasoning</a></li>
+        <li class="section-item"><a href="section-02.html">Section 02 — LBS 105: Voice &amp; Style</a></li>
+        <li class="section-item"><a href="section-03.html">Section 03 — LBS 110: Patterns &amp; Sequences</a></li>
+        <li class="section-item"><a href="section-04.html">Section 04 — LBS 120: Motion &amp; Measurement</a></li>
+        <li class="section-item"><a href="section-05.html">Section 05 — LAB 101: Creative Constraints</a></li>
+      </ul>
+    </section>
   </main>
-  <footer>
-    <p>Built locally from repo content.</p>
-  </footer>
+  <div data-include="/partials/footer.html"></div>
 </body>
 </html>
+
