@@ -85,7 +85,7 @@ Schema: A formal schema is not enforced yet. If you add structure that others wi
 
 - Write public content in Markdown.
 - Keep pages short and scannable; link to deeper details in `knowledge/` when appropriate.
-- There is no static site generator configured yet in this repo. You can render directly on GitHub, or add a site tool (e.g., MkDocs) in a future change.
+- A minimal static site builder (`scripts/build_site.py`) runs in GitHub Actions to regenerate HTML so the published site mirrors the Markdown and YAML sources.
 
 ---
 

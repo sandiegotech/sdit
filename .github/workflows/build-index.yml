@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '**/*.md'
+      - '**/*.yml'
+      - '**/*.yaml'
       - 'scripts/build_site.py'
       - 'scripts/generate_programs_tree.py'
   workflow_dispatch:
