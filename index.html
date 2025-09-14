@@ -4,85 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SDIT Curriculum — Learn</title>
-  <style>
-    :root {
-      --ink: #111;
-      --bg: #fff;
-      --muted: #666;
-      --card: #f9f9f9;
-      --border: #e0e0e0;
-      --link: #0366d6;
-      --highlight: #f3f4f6;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, Segoe UI, Roboto, Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid var(--border); background: var(--highlight); position: sticky; top: 0; z-index: 999; }
-    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
-    nav a { margin-left: 20px; font-size: 16px; color: var(--link); text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 40px 20px; max-width: 960px; margin: 0 auto; }
-    .hero { text-align: center; margin-bottom: 40px; }
-    .hero h2 { font-size: 32px; margin-bottom: 10px; }
-    .hero p { font-size: 18px; color: var(--muted); margin-bottom: 20px; }
-    .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-    .btn { display: inline-block; padding: 10px 20px; background: var(--link); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 500; }
-    .btn:hover { opacity: 0.9; }
-    .search-bar { max-width: 400px; margin: 0 auto 40px; }
-    .search-bar input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; }
-    .volume-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .volume-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; }
-    .volume-card .icon { font-size: 36px; margin-bottom: 10px; }
-    .volume-card h3 { margin: 10px 0; font-size: 20px; }
-    .volume-card .tagline { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
-    footer { margin-top: 60px; text-align: center; padding: 30px; font-size: 14px; color: var(--muted); background: var(--highlight); border-top: 1px solid var(--border); }
-    @media (max-width: 768px) {
-      main { padding: 20px 16px; }
-      header { flex-direction: column; align-items: flex-start; }
-      nav { margin-top: 10px; }
-      header h1 { font-size: 22px; }
-      .hero h2 { font-size: 26px; }
-      .hero p { font-size: 16px; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="/assets/js/includes.js" defer></script>
   <script>
     function filterCards(event) {
       const query = event.target.value.toLowerCase();
       document.querySelectorAll('.volume-card').forEach(card => {
         const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
+        card.style.display = text.includes(query) ? '' : 'none';
       });
     }
-    window.addEventListener('load', () => {
-      try {
-        const nav = performance.getEntriesByType('navigation')[0];
-        const loadMs = nav ? Math.round(nav.domComplete - nav.startTime) : Math.round(performance.now());
-        const bytes = new TextEncoder().encode(document.documentElement.outerHTML).length;
-        const kb = (bytes/1024).toFixed(1);
-        const links = document.querySelectorAll('a').length;
-        const stamp = new Date().toLocaleString();
-        const el = document.getElementById('metrics');
-        if (el) el.textContent = `Load Time: ${loadMs} ms · Page Size: ${kb} KB · Links: ${links} · ${stamp}`;
-      } catch(e) {}
-    });
   </script>
 </head>
 <body>
-  <header>
-    <h1>San Diego Institute of Technology</h1>
-    <nav>
-      <a href="https://www.sandiegotech.org">Home</a>
-      <a href="https://github.com/sandiegotech/sdit">GitHub</a>
-      <a href="https://www.sandiegotech.org/donate">Donate</a>
-      <a href="#volumes">Browse Volumes</a>
-      <a href="#search">Search</a>
-    </nav>
-  </header>
+  <div data-include="/partials/header.html"></div>
   <main>
     <section class="hero">
       <h2>SDIT Open Curriculum</h2>
       <p>A free, open-source education for the curious, creative, and ambitious.</p>
       <div class="cta-buttons">
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html">Start Here</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">Start Here</a>
         <a class="btn" href="#volumes">Browse Volumes</a>
         <a class="btn" href="#search">Search</a>
       </div>
@@ -95,55 +36,52 @@
         <div class="icon">📚</div>
         <h3>Volume 1: Foundations</h3>
         <p class="tagline">Groundwork in thinking, communication, math, science, and creativity.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">View Chapters</a>
       </div>
       <div class="volume-card">
         <div class="icon">⚖️</div>
         <h3>Volume 2: Ethics &amp; Reasoning</h3>
         <p class="tagline">Explore moral philosophy and sharpen logical reasoning.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html">View Chapters</a>
       </div>
       <div class="volume-card">
         <div class="icon">🗣️</div>
         <h3>Volume 3: Communication Rhetoric</h3>
         <p class="tagline">Develop effective communication and persuasive skills.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html">View Chapters</a>
       </div>
       <div class="volume-card">
         <div class="icon">🔬</div>
         <h3>Volume 4: Science Systems</h3>
         <p class="tagline">Investigate scientific principles and complex systems.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html">View Chapters</a>
       </div>
       <div class="volume-card">
         <div class="icon">🎨</div>
         <h3>Volume 5: Design Creativity</h3>
         <p class="tagline">Practice design thinking to unlock creativity.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html">View Chapters</a>
       </div>
       <div class="volume-card">
         <div class="icon">📈</div>
         <h3>Volume 6: Economy History</h3>
         <p class="tagline">Trace economic ideas through historical contexts.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html">View Chapters</a>
       </div>
       <div class="volume-card">
         <div class="icon">💻</div>
         <h3>Volume 7: Technology Society</h3>
         <p class="tagline">Examine technology's role in shaping society.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html">View Chapters</a>
       </div>
       <div class="volume-card">
         <div class="icon">🌟</div>
         <h3>Volume 8: Leadership Citizenship</h3>
         <p class="tagline">Build leadership skills and civic responsibility.</p>
-        <a class="btn" href="programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html">View Chapters</a>
+        <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html">View Chapters</a>
       </div>
     </section>
   </main>
-  <footer>
-    <p>Built with purpose by <strong>SDIT</strong>. <a href="https://github.com/sandiegotech/sdit">View on GitHub</a> · <a href="https://www.sandiegotech.org">Main Site</a></p>
-    <p id="metrics">&nbsp;</p>
-  </footer>
+  <div data-include="/partials/footer.html"></div>
 </body>
 </html>

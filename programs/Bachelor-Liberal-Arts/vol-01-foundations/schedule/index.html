@@ -1,36 +1,60 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Volume 01 — Chapter Schedule Index — SDIT</title>
-  <link rel="stylesheet" href="../../../../assets/styles.css" />
+  <title>Volume 01 — Chapters — SDIT</title>
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="/assets/js/includes.js" defer></script>
+  <script>
+    function filterChapters(event) {
+      const q = event.target.value.toLowerCase();
+      document.querySelectorAll('.chapter-card').forEach(card => {
+        const t = card.innerText.toLowerCase();
+        card.style.display = t.includes(q) ? '' : 'none';
+      });
+    }
+  </script>
 </head>
 <body>
-  <header><h1>Volume 01 — Chapter Schedule Index</h1></header>
+  <div data-include="/partials/header.html"></div>
   <main>
-  <h1 id="chapter-schedule-index-volume-01">Chapter Schedule Index — Volume 01</h1>
-<ul>
-<li>Chapter 01: The Beginning of Inquiry — chapter-01/index.md</li>
-<li>Chapter 02 — chapter-02/index.md</li>
-<li>Chapter 03 — chapter-03/index.md</li>
-<li>Chapter 04 — chapter-04/index.md</li>
-<li>Chapter 05 — chapter-05/index.md</li>
-<li>Chapter 06 — chapter-06/index.md</li>
-<li>Chapter 07 — chapter-07/index.md</li>
-<li>Chapter 08 — chapter-08/index.md</li>
-<li>Chapter 09 — chapter-09/index.md</li>
-<li>Chapter 10 — chapter-10/index.md</li>
-<li>Chapter 11 — chapter-11/index.md</li>
-<li>Chapter 12 — chapter-12/index.md</li>
-<li>Chapter 13 — chapter-13/index.md</li>
-<li>Chapter 14 — chapter-14/index.md</li>
-<li>Chapter 15 — chapter-15/index.md</li>
-</ul>
+    <div class="breadcrumbs">
+      <a href="/index.html">Home</a>
+      <span class="sep">›</span>
+      <span>Volume 1</span>
+      <span class="sep">›</span>
+      <strong>Chapters</strong>
+    </div>
+    <section class="hero">
+      <h2>Volume 1: Foundations</h2>
+      <p class="desc">Explore the foundations of thinking, communication, math, science, and creativity.</p>
+      <div class="search-bar"><input type="search" id="search" placeholder="Search chapters" oninput="filterChapters(event)" /></div>
+    </section>
+
+    <section>
+      <div class="card-grid">
+        <div class="card chapter-card">
+          <h3><a href="chapter-01/index.html">Chapter 01: The Beginning of Inquiry</a></h3>
+          <p class="desc">Awaken disciplined curiosity across liberal learning, story, math, science, and creativity.</p>
+        </div>
+        <div class="card chapter-card"><h3><a href="chapter-02/index.html">Chapter 02</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-03/index.html">Chapter 03</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-04/index.html">Chapter 04</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-05/index.html">Chapter 05</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-06/index.html">Chapter 06</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-07/index.html">Chapter 07</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-08/index.html">Chapter 08</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-09/index.html">Chapter 09</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-10/index.html">Chapter 10</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-11/index.html">Chapter 11</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-12/index.html">Chapter 12</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-13/index.html">Chapter 13</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-14/index.html">Chapter 14</a></h3><p class="desc">Overview coming soon.</p></div>
+        <div class="card chapter-card"><h3><a href="chapter-15/index.html">Chapter 15</a></h3><p class="desc">Overview coming soon.</p></div>
+      </div>
+    </section>
   </main>
-  <footer>
-    <p>Built locally from repo content.</p>
-  </footer>
+  <div data-include="/partials/footer.html"></div>
 </body>
 </html>
