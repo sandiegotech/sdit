@@ -98,8 +98,11 @@ main { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
   width: 36px;
   height: 36px;
 }
-.volume-card h3 { margin: 10px 0; font-size: 20px; }
-.volume-card .tagline { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+.volume-card h3 { margin: 10px 0; font-size: 22px; font-weight: 700; }
+.volume-card .tagline { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
+.volume-card .meta { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+.volume-card .view-link { color: var(--link); text-decoration: none; font-weight: 500; }
+.volume-card .view-link:hover { text-decoration: underline; }
 
 /* Chapters and Sections as cards */
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
