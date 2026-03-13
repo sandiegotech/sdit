@@ -251,7 +251,7 @@ body > header:not(.site-header)::before {
   width: 7rem;
   height: 6rem;
   margin: 0 auto 1rem;
-  background: url("/assets/brand/sdit-crest.png?v=20260313") center/contain no-repeat;
+  background: url("brand/sdit-crest.png?v=20260313") center/contain no-repeat;
 }
 
 body > header:not(.site-header) h1 {

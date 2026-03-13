@@ -4,6 +4,13 @@
   }
   window.__sditLayoutReady = true;
 
+  function resolveSitePath(path) {
+    if (typeof window.__sditResolvePath === "function") {
+      return window.__sditResolvePath(path);
+    }
+    return path;
+  }
+
   const volumeMeta = {
     "vol-01-foundations": {
       title: "Foundations",
@@ -89,7 +96,11 @@
   }
 
   function currentPath() {
-    const path = window.location.pathname || "/";
+    const rawPath = window.location.pathname || "/";
+    const path =
+      typeof window.__sditStripBasePath === "function"
+        ? window.__sditStripBasePath(rawPath)
+        : rawPath;
     return path === "/" ? "/index.html" : path;
   }
 
@@ -292,10 +303,10 @@
     }
 
     return {
-      previousPath: previousPath,
-      nextPath: nextPath,
-      chapterPath: chapterPath,
-      volumePath: basePath + "index.html"
+      previousPath: resolveSitePath(previousPath),
+      nextPath: resolveSitePath(nextPath),
+      chapterPath: resolveSitePath(chapterPath),
+      volumePath: resolveSitePath(basePath + "index.html")
     };
   }
 
@@ -370,14 +381,15 @@
     const grid = createElement("div", "day-rail-grid");
     for (let index = 1; index <= meta.volume.daysPerChapter; index += 1) {
       const link = createElement("a", index === meta.dayNumber ? "is-current" : "", String(index));
-      link.href =
+      link.href = resolveSitePath(
         "/programs/Bachelor-Liberal-Arts/" +
         meta.volumeSlug +
         "/schedule/chapter-" +
         pad(meta.chapterNumber) +
         "/section-" +
         pad(index) +
-        ".html";
+        ".html"
+      );
       link.setAttribute("aria-label", "Open day " + index);
       grid.appendChild(link);
     }
@@ -546,6 +558,9 @@
     enhanceSectionCards();
     appendChapterToolbar();
     enhanceLessonPage();
+    if (typeof window.__sditRewritePaths === "function") {
+      window.__sditRewritePaths(document.body);
+    }
   }
 
   if (document.readyState === "loading") {

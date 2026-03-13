@@ -279,7 +279,32 @@ def write_assets():
     ASSETS.mkdir(parents=True, exist_ok=True)
     # Disable Jekyll processing on GitHub Pages so files are served as-is
     write_file(OUT / ".nojekyll", "")
-    css = """
+    if OUT.resolve() == ROOT.resolve():
+        css = """
+@import url('./site.css');
+
+/* Basic header/footer styling for pages without site-header/footer classes. */
+header:not(.site-header) {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+}
+header:not(.site-header) h1 {
+  margin: 0;
+}
+footer:not(.site-footer) {
+  margin-top: 60px;
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  color: var(--muted);
+  background: transparent;
+  border-top: 1px solid var(--border);
+}
+"""
+    else:
+        css = """
     :root {
       --bg: #0b0d12; --card:#13161d; --elev:#1a1f27; --fg:#e8eaee; --muted:#a2a7b0; --link:#7cc4ff; --accent:#2a9d8f;
     }

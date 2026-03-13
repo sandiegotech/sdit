@@ -1,4 +1,4 @@
-@import url('/assets/site.css');
+@import url('./site.css');
 
 /* Basic header/footer styling for pages without site-header/footer classes. */
 header:not(.site-header) {
