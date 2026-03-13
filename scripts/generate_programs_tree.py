@@ -196,12 +196,14 @@ def build_tree() -> str:
     return "\n".join(blocks)
 
 
-def inject_into_index(html_block: str) -> None:
+def inject_into_index(html_block: str) -> bool:
     content = INDEX_HTML.read_text(encoding="utf-8")
     start = "<!-- PROGRAMS_TREE_START"
     end = "PROGRAMS_TREE_END -->"
     sidx = content.find(start)
     eidx = content.find(end)
+    if sidx == -1 and eidx == -1:
+        return False
     if sidx == -1:
         raise SystemExit("Start marker not found in index.html")
     if eidx == -1:
@@ -226,12 +228,16 @@ def inject_into_index(html_block: str) -> None:
             + content[eidx:]
         )
     INDEX_HTML.write_text(new, encoding="utf-8")
+    return True
 
 
 def main() -> int:
     html = build_tree()
-    inject_into_index(html)
-    print("Updated index.html with Programs tree")
+    updated = inject_into_index(html)
+    if updated:
+        print("Updated index.html with Programs tree")
+    else:
+        print("No PROGRAMS_TREE markers found in index.html; skipped injection")
     return 0
 
 
