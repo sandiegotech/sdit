@@ -1,179 +1,36 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Volume 1 Schedule - SDIT</title>
-  <link rel="stylesheet" href="../../../../assets/site.css" />
-  <script src="../../../../assets/js/site-paths.js" defer></script>
-  <script src="../../../../assets/js/includes.js" defer></script>
-  <script>
-    function filterChapters(event) {
-      const query = event.target.value.toLowerCase();
-      document.querySelectorAll(".chapter-card").forEach(function(card) {
-        const text = card.innerText.toLowerCase();
-        card.classList.toggle("is-hidden", !text.includes(query));
-      });
-    }
-  </script>
+  <title>Volume 01 — Chapter Schedule Index — SDIT</title>
+  <link rel="stylesheet" href="../../../../assets/styles.css" />
 </head>
-<body class="schedule-page">
-  <div data-include="/partials/header.html"></div>
+<body>
+  <header><h1>Volume 01 — Chapter Schedule Index</h1></header>
   <main>
-    <div class="breadcrumbs">
-      <a href="/index.html">Home</a>
-      <span class="sep">/</span>
-      <a href="/programs/Bachelor-Liberal-Arts/index.html">Bachelor of Liberal Arts</a>
-      <span class="sep">/</span>
-      <strong>Volume 1 schedule</strong>
-    </div>
-
-    <section class="hero hero-split">
-      <div class="hero-copy">
-        <p class="eyebrow">Year 1 / Term 1</p>
-        <h2>Volume 1: Foundations</h2>
-        <p class="lead">This semester is the live model for the full degree. Every chapter functions like a weekly arc, and every chapter opens into five daily lessons so learners can work through the program without losing momentum.</p>
-        <div class="cta-buttons">
-          <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html">Open the first day</a>
-          <a class="btn secondary" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/syllabus.html">Read the semester overview</a>
-        </div>
-        <div class="overview-strip">
-          <div class="mini-card">
-            <strong>15</strong>
-            <span>chapter arcs</span>
-          </div>
-          <div class="mini-card">
-            <strong>75</strong>
-            <span>daily lessons</span>
-          </div>
-          <div class="mini-card">
-            <strong>5</strong>
-            <span>course threads</span>
-          </div>
-          <div class="mini-card">
-            <strong>1</strong>
-            <span>clear path through the semester</span>
-          </div>
-        </div>
-      </div>
-      <aside class="hero-panel">
-        <p class="eyebrow">How to use this page</p>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Start with a chapter</h3>
-            <p>Each chapter page gives a cleaner breakdown of the five lesson days inside that arc.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Move day to day</h3>
-            <p>Daily lesson pages include chapter and next-step navigation so users can keep moving.</p>
-          </article>
-        </div>
-      </aside>
-    </section>
-
-    <section class="section-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Semester map</p>
-        <h3>Jump into any chapter.</h3>
-        <p>The sequence below follows the live structure of Volume 1. Search by theme, course thread, or chapter topic to get where you need to go quickly.</p>
-      </div>
-      <div class="search-bar">
-        <input type="search" id="search" placeholder="Search chapters, themes, or topics" oninput="filterChapters(event)" />
-      </div>
-      <section class="card-grid">
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 01</p>
-          <h3><a href="chapter-01/index.html">The Beginning of Inquiry</a></h3>
-          <p class="desc">Awaken disciplined curiosity across liberal learning, story, mathematics, science, and creativity.</p>
-          <p class="meta">5 days / first chapter</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 02</p>
-          <h3><a href="chapter-02/index.html">The Power of Story</a></h3>
-          <p class="desc">Discover how narrative shapes memory, identity, and meaning across cultures.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 03</p>
-          <h3><a href="chapter-03/index.html">Mathematics as Language</a></h3>
-          <p class="desc">See math not just as numbers, but as a universal language of patterns and relationships.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 04</p>
-          <h3><a href="chapter-04/index.html">Observing the Natural World</a></h3>
-          <p class="desc">Learn to observe, describe, and question the living and physical systems around you.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 05</p>
-          <h3><a href="chapter-05/index.html">Mapping the Mind</a></h3>
-          <p class="desc">Explore thought, memory, identity, and meaning through reflection and creative practice.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 06</p>
-          <h3><a href="chapter-06/index.html">Reason and Logic</a></h3>
-          <p class="desc">Practice reasoning, argument structure, and disciplined judgment as tools for clear thinking.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 07</p>
-          <h3><a href="chapter-07/index.html">Human Expression</a></h3>
-          <p class="desc">Understand creativity through language, art, symbolism, and expressive form.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 08</p>
-          <h3><a href="chapter-08/index.html">Scientific Thinking</a></h3>
-          <p class="desc">Investigate how evidence, experiments, and observation reveal truths about the world.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 09</p>
-          <h3><a href="chapter-09/index.html">Society and Culture</a></h3>
-          <p class="desc">Study the patterns of communities, institutions, and cultural exchange.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 10</p>
-          <h3><a href="chapter-10/index.html">Technology and Tools</a></h3>
-          <p class="desc">Examine how tools and machines extend human capacity and reshape thought.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 11</p>
-          <h3><a href="chapter-11/index.html">Philosophy and Ethics</a></h3>
-          <p class="desc">Explore meaning, morality, knowledge, and the search for wisdom.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 12</p>
-          <h3><a href="chapter-12/index.html">Future Horizons</a></h3>
-          <p class="desc">Look ahead to the challenges and opportunities that shape future worlds.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 13</p>
-          <h3><a href="chapter-13/index.html">Technology, Numbers, and Risk</a></h3>
-          <p class="desc">Connect tools of thought, the philosophy of numbers, chaos, randomness, and creative risk.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 14</p>
-          <h3><a href="chapter-14/index.html">Knowledge, Reflection, and Society</a></h3>
-          <p class="desc">Interrogate knowledge through reflective writing, mathematical creativity, and science in public life.</p>
-          <p class="meta">5 days</p>
-        </article>
-        <article class="card chapter-card">
-          <p class="card-kicker">Chapter 15</p>
-          <h3><a href="chapter-15/index.html">Personal Synthesis</a></h3>
-          <p class="desc">Close the semester by articulating your philosophy of learning, science, voice, mathematics, and creativity.</p>
-          <p class="meta">5 days / final chapter</p>
-        </article>
-      </section>
-    </section>
+  <h1 id="chapter-schedule-index-volume-01">Chapter Schedule Index — Volume 01</h1>
+<ul>
+<li>Chapter 01: The Beginning of Inquiry — chapter-01/index.md</li>
+<li>Chapter 02 — chapter-02/index.md</li>
+<li>Chapter 03 — chapter-03/index.md</li>
+<li>Chapter 04 — chapter-04/index.md</li>
+<li>Chapter 05 — chapter-05/index.md</li>
+<li>Chapter 06 — chapter-06/index.md</li>
+<li>Chapter 07 — chapter-07/index.md</li>
+<li>Chapter 08 — chapter-08/index.md</li>
+<li>Chapter 09 — chapter-09/index.md</li>
+<li>Chapter 10 — chapter-10/index.md</li>
+<li>Chapter 11 — chapter-11/index.md</li>
+<li>Chapter 12 — chapter-12/index.md</li>
+<li>Chapter 13 — chapter-13/index.md</li>
+<li>Chapter 14 — chapter-14/index.md</li>
+<li>Chapter 15 — chapter-15/index.md</li>
+</ul>
   </main>
-  <div data-include="/partials/footer.html"></div>
+  <footer>
+    <p>Built locally from repo content.</p>
+  </footer>
 </body>
 </html>
