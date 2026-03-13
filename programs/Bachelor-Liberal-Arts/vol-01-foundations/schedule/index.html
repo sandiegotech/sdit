@@ -4,33 +4,353 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Volume 01 — Chapter Schedule Index — SDIT</title>
-  <link rel="stylesheet" href="../../../../assets/styles.css" />
+  <title>Volume 1 Schedule - SDIT</title>
+  <link rel="stylesheet" href="../../../../assets/site.css" />
+  <script src="../../../../assets/js/site-paths.js" defer></script>
+  <script src="../../../../assets/js/includes.js" defer></script>
+  <script>
+    function filterSchedule(event) {
+      const query = event.target.value.toLowerCase().trim();
+      document.querySelectorAll("[data-search-card]").forEach(function(card) {
+        const text = card.innerText.toLowerCase();
+        card.classList.toggle("is-hidden", query && !text.includes(query));
+      });
+    }
+  </script>
 </head>
-<body>
-  <header><h1>Volume 01 — Chapter Schedule Index</h1></header>
+<body class="schedule-page">
+  <div data-include="/partials/header.html"></div>
   <main>
-  <h1 id="chapter-schedule-index-volume-01">Chapter Schedule Index — Volume 01</h1>
-<ul>
-<li>Chapter 01: The Beginning of Inquiry — chapter-01/index.md</li>
-<li>Chapter 02 — chapter-02/index.md</li>
-<li>Chapter 03 — chapter-03/index.md</li>
-<li>Chapter 04 — chapter-04/index.md</li>
-<li>Chapter 05 — chapter-05/index.md</li>
-<li>Chapter 06 — chapter-06/index.md</li>
-<li>Chapter 07 — chapter-07/index.md</li>
-<li>Chapter 08 — chapter-08/index.md</li>
-<li>Chapter 09 — chapter-09/index.md</li>
-<li>Chapter 10 — chapter-10/index.md</li>
-<li>Chapter 11 — chapter-11/index.md</li>
-<li>Chapter 12 — chapter-12/index.md</li>
-<li>Chapter 13 — chapter-13/index.md</li>
-<li>Chapter 14 — chapter-14/index.md</li>
-<li>Chapter 15 — chapter-15/index.md</li>
-</ul>
+    <section class="hero hero-split">
+      <div class="hero-copy">
+        <p class="eyebrow">Semester schedule</p>
+        <h2>Volume 1: Foundations</h2>
+        <p class="lead">Use this page as the semester map for the live term. Move straight into Day 1, jump to a specific chapter, or follow the published sequence from Chapter 01 through Chapter 15.</p>
+        <div class="cta-buttons">
+          <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html">Start Day 1</a>
+          <a class="btn secondary" href="/programs/Bachelor-Liberal-Arts/index.html">Open the degree</a>
+          <a class="btn ghost" href="/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html">Volume 2 syllabus</a>
+        </div>
+        <div class="mini-points">
+          <span>15 chapters</span>
+          <span>75 daily lessons</span>
+          <span>5 days per chapter</span>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <p class="eyebrow">Current publication</p>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <strong>15</strong>
+            <span>chapter overviews</span>
+          </div>
+          <div class="metric-card">
+            <strong>75</strong>
+            <span>day pages</span>
+          </div>
+          <div class="metric-card">
+            <strong>1</strong>
+            <span>live semester</span>
+          </div>
+          <div class="metric-card">
+            <strong>4</strong>
+            <span>year degree path</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <p class="status-pill is-live">Published now</p>
+          <strong>Year 1 / Term 1</strong>
+          <span>This is the active semester inside the Bachelor of Liberal Arts. Use the chapter directory below to jump in anywhere while keeping the larger program structure visible.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-panel">
+      <div class="section-heading">
+        <p class="eyebrow">How to use it</p>
+        <h3>Three fast ways to move through the semester.</h3>
+        <p>Start with the guided daily flow, jump to a chapter block, or move back out to the full program when you want the wider academic roadmap.</p>
+      </div>
+      <div class="explore-grid">
+        <article class="explore-card">
+          <div>
+            <p class="card-kicker">Daily flow</p>
+            <h3>Begin at the first lesson</h3>
+          </div>
+          <p>The simplest path is to open Day 1 and move forward with the lesson navigation already built into each day page.</p>
+          <div class="link-stack">
+            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html"><span>Day 1</span><small>open the first lesson</small></a>
+            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/index.html"><span>Chapter 1</span><small>opening chapter overview</small></a>
+          </div>
+        </article>
+        <article class="explore-card">
+          <div>
+            <p class="card-kicker">Chapter map</p>
+            <h3>Jump to the point you need</h3>
+          </div>
+          <p>Each chapter is a five-day unit. Use the chapter directory to enter by chapter number or day range.</p>
+          <div class="link-stack">
+            <a class="directory-link" href="#chapter-directory"><span>Open the chapter directory</span><small>all 15 chapters</small></a>
+            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-01.html"><span>Final chapter start</span><small>jump to Chapter 15</small></a>
+          </div>
+        </article>
+        <article class="explore-card">
+          <div>
+            <p class="card-kicker">Program context</p>
+            <h3>Step back to the wider curriculum</h3>
+          </div>
+          <p>When you need the full academic structure, use the degree page, course library, or next-volume syllabus.</p>
+          <div class="link-stack">
+            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/index.html"><span>Degree roadmap</span><small>Years 1-4</small></a>
+            <a class="directory-link" href="/courses/index.html"><span>Course library</span><small>supporting course pages</small></a>
+            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html"><span>Volume 2</span><small>next semester</small></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-panel accent-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Semester structure</p>
+        <h3>The term broken into three clean arcs.</h3>
+        <p>Use these blocks when you want a higher-level view of the semester before choosing a specific chapter.</p>
+      </div>
+      <div class="year-grid">
+        <article class="year-card">
+          <div class="year-card-header">
+            <div>
+              <p class="card-kicker">Opening arc</p>
+              <h3>Chapters 01-05</h3>
+            </div>
+            <span class="status-pill is-live">Days 01-25</span>
+          </div>
+          <div class="term-list">
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/index.html">
+              <strong>Chapter 01</strong>
+              <small>The Beginning of Inquiry</small>
+            </a>
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/index.html">
+              <strong>Chapter 03</strong>
+              <small>Week 3 of the live term</small>
+            </a>
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/index.html">
+              <strong>Chapter 05</strong>
+              <small>End of the first third of the semester</small>
+            </a>
+          </div>
+        </article>
+        <article class="year-card">
+          <div class="year-card-header">
+            <div>
+              <p class="card-kicker">Middle arc</p>
+              <h3>Chapters 06-10</h3>
+            </div>
+            <span class="status-pill is-live">Days 26-50</span>
+          </div>
+          <div class="term-list">
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/index.html">
+              <strong>Chapter 06</strong>
+              <small>Start of the middle run</small>
+            </a>
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/index.html">
+              <strong>Chapter 08</strong>
+              <small>Midpoint of the semester</small>
+            </a>
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/index.html">
+              <strong>Chapter 10</strong>
+              <small>Close of the middle arc</small>
+            </a>
+          </div>
+        </article>
+        <article class="year-card">
+          <div class="year-card-header">
+            <div>
+              <p class="card-kicker">Closing arc</p>
+              <h3>Chapters 11-15</h3>
+            </div>
+            <span class="status-pill is-live">Days 51-75</span>
+          </div>
+          <div class="term-list">
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/index.html">
+              <strong>Chapter 11</strong>
+              <small>Final third begins</small>
+            </a>
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/index.html">
+              <strong>Chapter 13</strong>
+              <small>Late-semester progression</small>
+            </a>
+            <a class="term-card" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/index.html">
+              <strong>Chapter 15</strong>
+              <small>Final chapter of Volume 1</small>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="chapter-directory" class="section-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Chapter directory</p>
+        <h3>All fifteen chapters in one searchable map.</h3>
+        <p>Search by chapter number, week, or day range. Each card links to the chapter overview and the first day in that chapter.</p>
+      </div>
+      <div class="search-bar">
+        <input type="search" placeholder="Search chapter number or day range" oninput="filterSchedule(event)" />
+      </div>
+      <section class="volume-grid">
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 01 / Days 01-05</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/index.html">Chapter 01: The Beginning of Inquiry</a></h3>
+          <p class="desc">Opening questions across liberal learning, story, mathematics, science, and creativity.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html">Begin with Day 1</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 02 / Days 06-10</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/index.html">Chapter 02</a></h3>
+          <p class="desc">Continue the opening run of the semester with the next five-day unit.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-02/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 03 / Days 11-15</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/index.html">Chapter 03</a></h3>
+          <p class="desc">Week 3 of the live term with its own five-day lesson sequence.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-03/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 04 / Days 16-20</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/index.html">Chapter 04</a></h3>
+          <p class="desc">The fourth chapter in the published path, with five additional daily lessons.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-04/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 05 / Days 21-25</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/index.html">Chapter 05</a></h3>
+          <p class="desc">Closes the first third of the semester sequence.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-05/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 06 / Days 26-30</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/index.html">Chapter 06</a></h3>
+          <p class="desc">Starts the middle arc of Volume 1.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-06/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 07 / Days 31-35</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/index.html">Chapter 07</a></h3>
+          <p class="desc">Keeps the mid-semester sequence moving with another five-day block.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-07/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 08 / Days 36-40</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/index.html">Chapter 08</a></h3>
+          <p class="desc">The midpoint of the published semester.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-08/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 09 / Days 41-45</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/index.html">Chapter 09</a></h3>
+          <p class="desc">The ninth five-day unit in the live schedule.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-09/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 10 / Days 46-50</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/index.html">Chapter 10</a></h3>
+          <p class="desc">Closes the middle section of the term.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-10/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 11 / Days 51-55</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/index.html">Chapter 11</a></h3>
+          <p class="desc">Begins the final third of Volume 1.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-11/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 12 / Days 56-60</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/index.html">Chapter 12</a></h3>
+          <p class="desc">The twelfth chapter in the semester sequence.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-12/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 13 / Days 61-65</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/index.html">Chapter 13</a></h3>
+          <p class="desc">Late-semester progression with another five-day lesson run.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-13/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 14 / Days 66-70</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/index.html">Chapter 14</a></h3>
+          <p class="desc">The penultimate chapter of the published term.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-14/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+        <article class="chapter-card" data-search-card>
+          <p class="card-kicker">Week 15 / Days 71-75</p>
+          <h3><a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/index.html">Chapter 15</a></h3>
+          <p class="desc">The final chapter and closing five-day block in Volume 1.</p>
+          <p class="meta">Chapter brief plus 5 day lessons</p>
+          <div class="card-actions">
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/index.html">Open chapter</a>
+            <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-15/section-01.html">Begin chapter</a>
+          </div>
+        </article>
+      </section>
+    </section>
   </main>
-  <footer>
-    <p>Built locally from repo content.</p>
-  </footer>
+  <div data-include="/partials/footer.html"></div>
 </body>
 </html>

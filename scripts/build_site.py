@@ -26,6 +26,9 @@ ROOT = Path(__file__).resolve().parents[1]
 # Defaults; may be overridden via --out
 OUT = ROOT / "dist" / "site"
 ASSETS = OUT / "assets"
+MANUAL_ROOT_HTML = {
+    Path("programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html"),
+}
 
 
 def ensure_markdown():
@@ -131,6 +134,12 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
 
         out_path = dest / path.relative_to(src)
         out_path = out_path.with_suffix(".html")
+
+        if OUT.resolve() == ROOT.resolve():
+            rel_out = Path(out_path.resolve().relative_to(ROOT.resolve()).as_posix())
+            if rel_out in MANUAL_ROOT_HTML and out_path.exists():
+                entries.append((title, out_path))
+                continue
 
         # Prepare template and asset path
         page = tmpl_page(title, html)
