@@ -1,24 +1,21 @@
-/* Legacy stylesheet now forwards to site.css for consistent layout.
-   Ensures chapters and sections use the same centered, clean formatting
-   as the home page. */
 @import url('/assets/site.css');
 
-/* Basic header/footer styling for pages without site-header/footer classes */
-header {
+/* Basic header/footer styling for pages without site-header/footer classes. */
+header:not(.site-header) {
   text-align: center;
   padding: 20px;
   border-bottom: 1px solid var(--border);
-  background: var(--highlight);
+  background: transparent;
 }
-header h1 {
+header:not(.site-header) h1 {
   margin: 0;
 }
-footer {
+footer:not(.site-footer) {
   margin-top: 60px;
   text-align: center;
   padding: 30px;
   font-size: 14px;
   color: var(--muted);
-  background: var(--highlight);
+  background: transparent;
   border-top: 1px solid var(--border);
 }

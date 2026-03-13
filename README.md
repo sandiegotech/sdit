@@ -1,128 +1,131 @@
-# SDIT Curriculum & Knowledge Repository
+# SDIT Open Curriculum
 
-Authoritative, versioned source for San Diego Institute of Technology (SDIT) identity, strategy, programs, and public-facing content. The goal is to keep information organized, human-readable, and easy to validate.
+Open-source curriculum and website for the San Diego Institute of Technology.
 
-- **Website:** https://sandiegotech.github.io/sdit/
-- **Repository:** https://github.com/sandiegotech/sdit
-- **Main site:** https://sandiegotech.org
-- **Learning portal:** https://learn.sandiegotech.org
+This repository publishes a structured academic program that people can read online, move through day by day, and improve in the open. The main program is a four-year Bachelor of Liberal Arts organized by year, volume, chapter, and daily lesson.
 
----
+- Website: https://sandiegotech.github.io/sdit/
+- Repository: https://github.com/sandiegotech/sdit
+- Main site: https://sandiegotech.org
 
-## What’s Inside
+## What This Repo Contains
 
-- `knowledge/`: Canonical YAML describing SDIT.
-  - `knowledge/identity.yaml`: Name, tagline, mission, values.
-  - `knowledge/philosophies.yaml`: Core philosophies and principles.
-  - `knowledge/anchors.yaml`: Strategic anchors.
-  - `knowledge/programs.yaml`: Divisions and programs (e.g., DEUS, MIRA).
-  - `knowledge/research.yaml`: Labs, streams, outputs.
-  - `knowledge/community.yaml`: Fellowships, culture, admissions.
-  - `knowledge/infrastructure.yaml`: Digital, legal, physical.
-  - `knowledge/projects.yaml`: Initiatives and projects.
-  - `knowledge/priorities.yaml`: Near-term goals.
+- `index.html`
+  Main landing page for the curriculum site.
 
-- `docs/`: Public, human-readable Markdown content.
-  - `docs/index.md`: High-level overview.
-  - `docs/faq.md`: Frequently asked questions.
+- `programs/`
+  Degree pages, semester volumes, syllabi, schedules, chapters, and daily lessons.
 
-- `courses/`: Flat list of all courses (one Markdown file per course). No nested core/electives folders. See `courses/INDEX.md` for the generated master list.
+- `courses/`
+  The broader course library outside the day-by-day program flow.
 
-- `programs/`: Volume syllabi and schedules by semester.
-  - `programs/vol-XX-*` with `syllabus.md` (Year/Semester overview) and optional `schedule/` (daily/weekly pages).
+- `knowledge/`
+  Structured YAML files for institutional identity, programs, research, and related reference material.
 
-- `scripts/`: Validation tooling.
-  - `scripts/validate.py`: Minimal YAML shape check (ensures top-level mapping).
+- `assets/`
+  Shared styles, JavaScript, and brand assets.
 
-- `.github/workflows/validate.yml`: CI that runs the validator on every push and pull request.
+- `partials/`
+  Shared site header and footer.
 
----
+- `scripts/`
+  Small utility scripts for validation and site generation.
 
-## Getting Started
+## Current Focus
 
-Prerequisites:
-- Python 3.11+
-- `pip` with access to install `pyyaml`
+The main published path is the Bachelor of Liberal Arts.
 
-Setup and validate locally:
-- `pip install pyyaml`
-- `python scripts/validate.py`
+- 4-year degree structure
+- 8 semester volumes
+- Volume 1 published as a complete day-by-day sequence
+- Additional volumes, course pages, and supporting materials in progress
 
-Build the site locally (mirrors GitHub Pages output):
-- `python scripts/build_site.py --out .`
+## Run The Site Locally
 
-The validator checks that each file in `knowledge/` parses as YAML and uses a top-level mapping. It exits non-zero if any file fails to load or violates this shape.
+Because the site uses shared partials loaded in the browser, use a local server instead of opening files directly.
 
----
+1. From the repo root, start a local server:
 
-## Editing the Knowledge Base
-
-General guidance:
-- Use YAML with a top-level mapping (dictionary) per file.
-- Prefer clear, descriptive keys; avoid unexplained abbreviations.
-- Keep related concepts together; split into additional files when a topic grows.
-- Commit small, focused changes; include context in commit messages.
-
-Minimal example structure:
-
-```yaml
-# Example only — adapt keys to the file’s topic
-name: San Diego Institute of Technology
-mission: Education for the 21st century
-values:
-  - integrity
-  - craft
-  - service
-notes: >
-  Short, human-readable explanation that complements structured fields.
+```bash
+python3 -m http.server 8000
 ```
 
-Schema: A formal schema is not enforced yet. If you add structure that others will reuse, document it in the file with brief comments and keep key names consistent across files.
+2. Open:
 
----
+```text
+http://localhost:8000/
+```
 
-## Docs (`docs/`)
+3. If you change YAML files in `knowledge/`, run:
 
-- Write public content in Markdown.
-- Keep pages short and scannable; link to deeper details in `knowledge/` when appropriate.
-- A minimal static site builder (`scripts/build_site.py`) runs in GitHub Actions to regenerate HTML so the published site mirrors the Markdown and YAML sources.
+```bash
+python3 scripts/validate.py
+```
 
----
+## How To Contribute
 
-## Courses (`courses/`) and Programs (`programs/`)
+Contributions are welcome across curriculum, writing, structure, and UI.
 
-- Courses: keep simple — one Markdown page per course at the top level of `courses/`.
-- Programs: each volume lives under `programs/vol-XX-*/` with a `syllabus.md`. If you add schedules, place them under `programs/vol-XX-*/schedule/`.
-- Master list: regenerate `courses/INDEX.md` and `knowledge/courses.yaml` with:
-  - `python scripts/build_courses_yaml.py`
-  - `python scripts/generate_course_indexes.py`
+You can help by:
 
-Publishing:
-- This repository auto-updates the generated site at the repo root on each push to `main` via GitHub Actions. Configure GitHub Pages to serve from `main` / root (`/`).
+- improving lesson pages
+- fixing typos, broken links, or unclear wording
+- expanding syllabi or course pages
+- improving navigation and layout
+- cleaning up styling and component consistency
+- organizing knowledge base content
 
----
+## Contribution Workflow
 
-## Continuous Integration
+1. Create a branch for your change.
+2. Make a focused update.
+3. Preview the site locally.
+4. Run `python3 scripts/validate.py` if you changed anything in `knowledge/`.
+5. Open a pull request with a short summary of what changed and why.
 
-On each push and pull request, GitHub Actions runs `scripts/validate.py` to sanity-check the YAML in `knowledge/`:
+## Curriculum Contribution Notes
 
-- Workflow file: `.github/workflows/validate.yml`
-- Python 3.11 and `pyyaml` are used to parse files.
-- The job fails if any YAML is invalid or the top-level is not a mapping.
+When contributing to the curriculum, keep the work:
 
----
+- clear
+- academically serious
+- easy to navigate
+- consistent with the rest of the site
 
-## Contributing
+If you edit a lesson or course that has both Markdown and HTML versions checked into the repo, keep both aligned unless you are intentionally changing the source workflow.
 
-- Create a feature branch for each change.
-- Run `python scripts/validate.py` before opening a PR.
-- Keep changes minimal and well-scoped; prefer multiple small PRs over one large PR.
-- In PR descriptions, summarize what changed and why.
+When adding outside resources:
 
----
+- prefer stable public links
+- avoid dead or paywalled sources when possible
+- make sure the resource clearly supports the lesson
 
-## Future Improvements
+## Good First Contributions
 
-- Add JSON Schema-based validation for `knowledge/`.
-- Define course content conventions and templates.
-- Introduce a docs site (e.g., MkDocs) with a simple navigation and deploy workflow.
+- fix broken links in lessons or course pages
+- improve unclear lesson instructions
+- tighten page layout on mobile
+- improve the course library and program navigation
+- add better descriptions to syllabus and course pages
+- clean up inconsistent formatting between related pages
+
+## Pull Request Expectations
+
+Keep pull requests small and easy to review.
+
+A good pull request usually includes:
+
+- a short summary
+- the files changed
+- the reason for the change
+- screenshots for UI edits when helpful
+
+## Notes
+
+- Do not commit secrets or private data.
+- Keep institutional and curriculum content public-safe.
+- Prefer small, clear edits over large unfocused rewrites.
+
+## Questions
+
+If you want to contribute but do not know where to start, open an issue or submit a small cleanup PR first. Curriculum clarity, navigation, and content quality are all useful contributions.
