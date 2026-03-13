@@ -7,130 +7,115 @@ section: 1
 course: LBS 101 – The Mental Gym
 ---
 
-# Section 01 — What is a Liberal Education?
+# Day 01 — What is a Liberal Education?
 **Course:** LBS 101 – The Mental Gym
 
----
+## Session Focus
 
-## Session Overview
+This first day sets the tone for the degree: education as formation, not just information.
 
-This first session is your introduction to the soul of SDIT.
+Move through one foundational reading, two public lectures, and one short audio conversation. Then turn the material into your own position through writing, comparison, and reflection.
 
-You’re not here to memorize facts. You’re here to explore meaning — through reading, conversation, philosophy, reflection, and creative expression. Today’s work is about tuning your internal compass. What is education? What is it for? What kind of learner — and person — do you want to become?
-
----
+> If education is more than training, what kind of person should it form?
 
 ## Learning Objectives
 
-By the end of this session, you will:
+By the end of the session, you should be able to:
 
-- Write a personal definition of "education"
-- Compare classical and modern critiques of the university
-- Visually map your worldview and how education fits into it
-- Reflect on who you're becoming through this process
-
----
+- Write a personal definition of education
+- Compare classical and modern views of the university
+- Map your worldview and where learning fits inside it
+- Reflect on who you want to become through this program
 
 ## Session Flow
 
-### 1. Set Intention
+### 1. Set intention
 
-Before beginning, read your *Student Intentions* page aloud. Take a breath. This session is the start of your archive — the beginning of something real. Let it feel important.
-
----
+Before beginning, read your *Student Intentions* page aloud. Take a breath. This session is the start of your archive, so let it feel important.
 
 ### 2. Read
 
-**Text:** John Henry Newman – *The Idea of a University*, Chapter V: “Knowledge Its Own End”  
+**John Henry Newman - *The Idea of a University*, Chapter V: "Knowledge Its Own End"**  
 [Read online at Newman Reader](https://www.newmanreader.org/works/idea/discourse5.html)
 
----
+Focus on what Newman thinks a university should cultivate in the mind.
 
 ### 3. Watch
 
-- **Harry Lewis – *Excellence Without a Soul*** (Harvard talk; ~20 min)  
-  [Watch on YouTube](https://www.colorado.edu/center/west/2021/05/28/harry-lewis-presents-excellence-without-soul)
+- **Harry Lewis - *Excellence with a Soul***  
+  [Watch on YouTube](https://www.youtube.com/watch?v=b8-S2HzPKDM)
 
-- **Michael Sandel – *The Examined Life*** (Lecture; ~40 min)  
-  [Watch on YouTube](https://sandel.scholars.harvard.edu/galleries/justice-course-videos)
-
----
+- **Michael Sandel - *Justice* Episode 1**  
+  [Watch on YouTube](https://www.youtube.com/watch?v=kBdfcR-8hEY)
 
 ### 4. Listen
 
-**Podcast:** *Philosophy Bites – The Examined Life Today*  
-[Listen on Philosophy Bites](http://philosophybites.com/2011/04/susan-wolf-on-the-meaning-of-life.html)
+**Susan Wolf on meaning in life**  
+[Listen on Philosophy Bites](https://philosophybites.com/podcast/susan-wolf-on-meaning-in-life/)
 
----
+### 5. Reflect while engaging
 
+As you move through the materials, capture:
 
-### 5. Reflect While Engaging
-
-As you move through the materials, capture your reactions:
 - Margin notes
 - Highlighted quotes
 - Small sketches or diagrams
-- Questions that won’t leave you
-
-Use your notebook freely.
-
----
-
-## Key Quote Box
-
-Choose one line or quote from today's session that you want to keep. Write it clearly on the page.
-
-> “_______________________________________________________”
-
----
+- Questions that do not leave you
 
 ## Practice Blocks
 
-### Define Education  
-Write your own definition of “education.” Not what school told you — what *you* believe it is. Be honest. Be clear. Use your own language.
+### Define education
 
----
+Write your own definition of education. Ignore school slogans. Name what you believe education is for and what it should change in a person.
 
-### Compare Perspectives  
-Write a reflection comparing your definition to those of:
+### Compare perspectives
+
+Write a reflection comparing your definition with:
+
 - John Henry Newman
 - Harry Lewis
+- Michael Sandel
 
-Structure your reflection around three ideas:
+Use three headings:
+
 - Where I Agree
 - Where I Diverge
 - What I Carry Forward
 
----
+### Visual mind map
 
-### Visual Mind Map  
-Draw a visual map of your current worldview. Include:
+Draw a map of your current worldview. Include:
+
 - What matters most to you in life
 - How you see the world
 - Where education fits in
-Use drawings, arrows, symbols, or clusters. No need to be neat — be expressive.
 
----
+Use arrows, symbols, clusters, or rough sketches. Clarity matters more than neatness.
 
-### Reflection  
-Journal in response to the following prompts:
+### Reflection
+
+Journal on these prompts:
+
 - Why do I want an education?
 - Who do I hope to become by the end of this program?
-- What kind of life do I want to build — and how does learning fit in?
+- What kind of life do I want to build, and how does learning fit into it?
 
----
+## Key Quote Box
+
+Choose one line from the reading, lecture, or podcast that you want to keep.
+
+> "_______________________________________________________"
 
 ## Hard Problem (Optional)
 
-**Design Your Ideal University**  
-- List 10 courses or experiences that every student would take.  
-- What would you remove from traditional models?  
-- Write a 1–2 page manifesto describing your university’s purpose, structure, and soul.
+**Design your ideal university**
 
----
+- List 10 courses or experiences every student should have.
+- Name what you would remove from traditional models.
+- Write a 1–2 page manifesto describing your university's purpose, structure, and soul.
 
 ## Notes
 
-- This session can be done as fast or slow as needed, no need to rush it. 
-- It’s okay to struggle with these ideas. Wrestling with them is part of the work.  
-- The goal is not to finish quickly — it’s to approah *truthfully*.  
+- This session can be done slowly. No rush.
+- It is normal to struggle with these ideas. The struggle is part of the work.
+- The goal is not to finish quickly. The goal is to approach the work truthfully.
