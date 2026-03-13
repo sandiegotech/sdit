@@ -56,5 +56,5 @@ At the end of this semester, you’ll review your work, distill your top ideas a
 
 ## Structure
 - Overview (this page): semester goals and themes.
-- Courses: see the master [Course List](../../courses/INDEX.md).
-- Schedule: integrated rotation by day in `schedule/` (e.g., [Daily Schedule](schedule/daily.md)).
+- Courses: see the master [Course Library](../../../courses/index.html).
+- Schedule: integrated rotation by day in [the Volume 1 schedule](schedule/index.html).

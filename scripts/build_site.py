@@ -27,6 +27,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "site"
 ASSETS = OUT / "assets"
 MANUAL_ROOT_HTML = {
+    Path("courses/index.html"),
+    Path("programs/index.html"),
+    Path("programs/Bachelor-Liberal-Arts/index.html"),
     Path("programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html"),
 }
 
@@ -102,6 +105,15 @@ def strip_front_matter(text: str) -> tuple[str, dict]:
         return text, {}
     fm = text[4:end]
     body = text[end + 5 :]
+    try:
+        import yaml  # type: ignore
+
+        data = yaml.safe_load(fm) or {}
+        if isinstance(data, dict):
+            return body.lstrip(), data
+    except Exception:
+        pass
+
     meta: dict[str, str] = {}
     for line in fm.splitlines():
         line = line.strip()
@@ -135,11 +147,9 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
         out_path = dest / path.relative_to(src)
         out_path = out_path.with_suffix(".html")
 
-        if OUT.resolve() == ROOT.resolve():
-            rel_out = Path(out_path.resolve().relative_to(ROOT.resolve()).as_posix())
-            if rel_out in MANUAL_ROOT_HTML and out_path.exists():
-                entries.append((title, out_path))
-                continue
+        if should_preserve_root_html(out_path):
+            entries.append((title, out_path))
+            continue
 
         # Prepare template and asset path
         page = tmpl_page(title, html)
@@ -202,6 +212,13 @@ def render_knowledge(src: Path, dest: Path) -> list[tuple[str, Path]]:
     write_file(out_index, page)
 
     return entries
+
+
+def should_preserve_root_html(out_path: Path) -> bool:
+    if OUT.resolve() != ROOT.resolve() or not out_path.exists():
+        return False
+    rel_out = Path(out_path.resolve().relative_to(ROOT.resolve()).as_posix())
+    return rel_out in MANUAL_ROOT_HTML
 
 
 def yaml_to_html(value) -> str:
@@ -390,6 +407,8 @@ def main(argv: list[str] | None = None) -> int:
         (("Courses", OUT / "courses" / "index.html"), "courses"),
         (("Programs", OUT / "programs" / "index.html"), "programs"),
     ):
+        if should_preserve_root_html(out_path):
+            continue
         # list all pages under the section
         entries = []
         for p in sorted((OUT / section_name).rglob("*.html")):

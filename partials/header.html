@@ -1,15 +1,21 @@
 <header class="site-header">
   <div class="site-header-inner">
-    <a class="site-brand" href="/index.html" aria-label="SDIT Open Curriculum home">
-      <span class="site-brand-mark">
-        <img src="/assets/brand/sdit-crest.png?v=20260313" alt="" />
-      </span>
-      <span class="site-brand-copy">
-        <strong>San Diego Institute of Technology</strong>
-        <small>Open Curriculum</small>
-      </span>
-    </a>
-    <nav class="site-nav" aria-label="Primary">
+    <div class="site-brand-row">
+      <a class="site-brand" href="/index.html" aria-label="SDIT Open Curriculum home">
+        <span class="site-brand-mark">
+          <img src="/assets/brand/sdit-crest.png?v=20260313" alt="" />
+        </span>
+        <span class="site-brand-copy">
+          <strong>San Diego Institute of Technology</strong>
+          <small>Open Curriculum</small>
+        </span>
+      </a>
+      <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="site-nav-toggle__label">Menu</span>
+        <span class="site-nav-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
       <a data-nav="home" href="/index.html#about">About</a>
       <a data-nav="degree" href="/programs/Bachelor-Liberal-Arts/index.html">Programs</a>
       <a data-nav="daily" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">Schedule</a>

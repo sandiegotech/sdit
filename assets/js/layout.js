@@ -189,6 +189,42 @@
     });
   }
 
+  function bindMobileNav() {
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector(".site-nav-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (!header || !toggle || !nav || toggle.dataset.bound === "true") {
+      return;
+    }
+
+    function closeNav() {
+      header.classList.remove("is-nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    function syncNavForViewport() {
+      if (window.innerWidth > 760) {
+        closeNav();
+      }
+    }
+
+    toggle.addEventListener("click", function () {
+      const isOpen = header.classList.toggle("is-nav-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeNav();
+      });
+    });
+
+    window.addEventListener("resize", syncNavForViewport);
+    syncNavForViewport();
+    toggle.dataset.bound = "true";
+  }
+
   function enhanceSectionCards() {
     document.querySelectorAll(".section-item").forEach(function (item, index) {
       const link = item.querySelector("a") || item;
@@ -553,6 +589,7 @@
 
   function boot() {
     tagGenericPages();
+    bindMobileNav();
     updateActiveNav();
     enhanceCardGrids();
     enhanceSectionCards();
