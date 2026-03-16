@@ -29,9 +29,13 @@
     h1, h2, h3 { color: #fff; }
     code, pre { background: #0f1219; border-radius: 8px; border: 1px solid #1f2430; }
     pre { padding: 12px; overflow: auto; }
-    dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; }
-    dt { color: #c9cfd8; }
-    dd { margin: 0 0 6px 0; }
+    dl { display: grid; grid-template-columns: minmax(0, max-content) minmax(0, 1fr); gap: 6px 12px; align-items: start; }
+    dt { color: #c9cfd8; overflow-wrap: anywhere; }
+    dd { margin: 0 0 6px 0; min-width: 0; overflow-wrap: anywhere; }
+    @media (max-width: 700px) {
+      dl { grid-template-columns: 1fr; gap: 4px 0; }
+      dd { margin: 0 0 10px; }
+    }
     .desc { color: var(--muted); }
     footer { padding: 20px; color: var(--muted); border-top: 1px solid #1f2430; margin-top: 28px; }
     
