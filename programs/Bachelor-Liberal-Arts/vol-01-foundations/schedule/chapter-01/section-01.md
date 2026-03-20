@@ -119,3 +119,21 @@ Choose one line from the reading, lecture, or podcast that you want to keep.
 - This session can be done slowly. No rush.
 - It is normal to struggle with these ideas. The struggle is part of the work.
 - The goal is not to finish quickly. The goal is to approach the work truthfully.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

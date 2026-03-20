@@ -3,3 +3,8 @@
 *.code-workspace
 .history/
 .VSCodeCounter/
+
+# Local build output (not served by GitHub Pages)
+dist/
+__pycache__/
+*.pyc

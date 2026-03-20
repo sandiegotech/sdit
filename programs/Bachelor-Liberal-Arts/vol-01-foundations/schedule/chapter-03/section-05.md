@@ -28,3 +28,21 @@ Explore These Materials:
 
 ## Hard Problem (Optional)
 Design a 15‑minute classroom warm‑up that uses playful constraints to teach a core idea from one of your courses; write clear rules and success criteria.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

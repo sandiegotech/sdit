@@ -29,3 +29,21 @@ Explore These Materials:
 
 ## Hard Problem (Optional)
 Choose a controversial topic; write two 150‑word arguments for opposing sides that a reasonable person from each side would endorse. Note the constraints that kept you honest.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

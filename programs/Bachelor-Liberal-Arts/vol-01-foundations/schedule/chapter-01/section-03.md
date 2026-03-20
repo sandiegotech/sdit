@@ -121,3 +121,21 @@ Explore the Fibonacci spiral or other natural ratios:
 - Split across sessions if needed—this is exploration, not a test  
 - If you get stuck in abstraction, go tactile—draw, measure, count something real  
 - This session is about developing a mathematical *sensibility*, not mastering formulas
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

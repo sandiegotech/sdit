@@ -1,131 +1,121 @@
 # SDIT Open Curriculum
 
-Open-source curriculum and website for the San Diego Institute of Technology.
-
-This repository publishes a structured academic program that people can read online, move through day by day, and improve in the open. The main program is a four-year Bachelor of Liberal Arts organized by year, volume, chapter, and daily lesson.
+An open-source liberal arts curriculum you can take yourself, fork to your own GitHub, and build on.
 
 - Website: https://sandiegotech.github.io/sdit/
 - Repository: https://github.com/sandiegotech/sdit
-- Main site: https://sandiegotech.org
+
+---
+
+## For Students — Do the Work in Your Own Fork
+
+The curriculum is designed to be taken, not just read. Fork this repo, write your answers directly in the lesson files, and your work lives on your GitHub — publicly or privately, as you choose.
+
+### How it works
+
+1. **Fork this repo** — click Fork in the top right on GitHub. This creates your own copy.
+
+2. **Clone it to your computer**
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/sdit.git
+   cd sdit
+   ```
+
+3. **Open any lesson file and write your answers**
+
+   Every lesson is a Markdown file at a path like:
+   ```
+   programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.md
+   ```
+   At the bottom of each lesson you'll find a `## My Work` section. Replace the placeholders with your actual responses.
+
+4. **Push to your GitHub**
+   ```bash
+   git add .
+   git commit -m "Day 1 complete"
+   git push
+   ```
+
+5. **GitHub automatically rebuilds your site** — the HTML pages are regenerated from your updated markdown and pushed back to your repo within a minute or two.
+
+6. **Enable GitHub Pages** in your repo settings (Settings → Pages → Deploy from branch → main) and your site will be live at `https://YOUR-USERNAME.github.io/sdit/`.
+
+### What you edit
+
+- **Lesson files** (`programs/.../section-NN.md`) — where you write your answers
+- **Nothing else** — HTML files are generated automatically. Never edit them directly.
+
+### What happens automatically
+
+When you push to `main`, GitHub Actions runs the build script and commits the updated HTML. Your site reflects your latest work within about 60 seconds.
+
+---
 
 ## What This Repo Contains
 
-- `index.html`
-  Main landing page for the curriculum site.
+```
+programs/          Degree pages, schedules, chapters, and daily lessons (.md = source)
+courses/           Full course library with syllabi
+knowledge/         Institutional YAML reference files
+assets/            Styles (site.css) and JavaScript
+partials/          Shared site header and footer (loaded dynamically)
+scripts/           Build script (build_site.py) and validators
+guides/            Student guides (AI setup, getting started)
+```
 
-- `programs/`
-  Degree pages, semester volumes, syllabi, schedules, chapters, and daily lessons.
+### The source/generated split
 
-- `courses/`
-  The broader course library outside the day-by-day program flow.
+| File type | Source of truth | Edit directly? |
+|-----------|----------------|---------------|
+| `*.md` in `programs/`, `courses/` | Yes — content source | Yes |
+| `*.html` generated from `.md` | No — generated output | No |
+| `index.html`, `programs/index.html`, manually maintained pages | Yes | Yes |
+| `assets/site.css`, `assets/js/` | Yes | Yes |
 
-- `knowledge/`
-  Structured YAML files for institutional identity, programs, research, and related reference material.
+The build script (`scripts/build_site.py`) converts markdown to HTML. Run it locally with:
+```bash
+python3 scripts/build_site.py --out .
+```
 
-- `assets/`
-  Shared styles, JavaScript, and brand assets.
+---
 
-- `partials/`
-  Shared site header and footer.
+## Run the Site Locally
 
-- `scripts/`
-  Small utility scripts for validation and site generation.
-
-## Current Focus
-
-The main published path is the Bachelor of Liberal Arts.
-
-- 4-year degree structure
-- 8 semester volumes
-- Volume 1 published as a complete day-by-day sequence
-- Additional volumes, course pages, and supporting materials in progress
-
-## Run The Site Locally
-
-Because the site uses shared partials loaded in the browser, use a local server instead of opening files directly.
-
-1. From the repo root, start a local server:
+The site uses shared partials loaded by the browser, so open it via a local server — not by opening files directly.
 
 ```bash
 python3 -m http.server 8000
 ```
 
-2. Open:
+Then open `http://localhost:8000/`
 
-```text
-http://localhost:8000/
-```
+---
 
-3. If you change YAML files in `knowledge/`, run:
-
-```bash
-python3 scripts/validate.py
-```
-
-## How To Contribute
+## Contributing
 
 Contributions are welcome across curriculum, writing, structure, and UI.
 
-You can help by:
+**Workflow:**
+1. Fork and clone the repo
+2. Make your change in a branch
+3. Preview locally with `python3 -m http.server 8000`
+4. Run `python3 scripts/build_site.py --out .` if you changed markdown
+5. Open a pull request
 
-- improving lesson pages
-- fixing typos, broken links, or unclear wording
-- expanding syllabi or course pages
-- improving navigation and layout
-- cleaning up styling and component consistency
-- organizing knowledge base content
+**Keep contributions:**
+- Clear and focused (one thing per PR)
+- Consistent with existing lesson style
+- Using stable, public links for external resources
 
-## Contribution Workflow
+**Good first contributions:**
+- Fix broken links in lessons
+- Improve unclear lesson instructions
+- Add better course descriptions
+- Clean up mobile layout issues
+- Improve accessibility
 
-1. Create a branch for your change.
-2. Make a focused update.
-3. Preview the site locally.
-4. Run `python3 scripts/validate.py` if you changed anything in `knowledge/`.
-5. Open a pull request with a short summary of what changed and why.
-
-## Curriculum Contribution Notes
-
-When contributing to the curriculum, keep the work:
-
-- clear
-- academically serious
-- easy to navigate
-- consistent with the rest of the site
-
-If you edit a lesson or course that has both Markdown and HTML versions checked into the repo, keep both aligned unless you are intentionally changing the source workflow.
-
-When adding outside resources:
-
-- prefer stable public links
-- avoid dead or paywalled sources when possible
-- make sure the resource clearly supports the lesson
-
-## Good First Contributions
-
-- fix broken links in lessons or course pages
-- improve unclear lesson instructions
-- tighten page layout on mobile
-- improve the course library and program navigation
-- add better descriptions to syllabus and course pages
-- clean up inconsistent formatting between related pages
-
-## Pull Request Expectations
-
-Keep pull requests small and easy to review.
-
-A good pull request usually includes:
-
-- a short summary
-- the files changed
-- the reason for the change
-- screenshots for UI edits when helpful
-
-## Notes
-
-- Do not commit secrets or private data.
-- Keep institutional and curriculum content public-safe.
-- Prefer small, clear edits over large unfocused rewrites.
+---
 
 ## Questions
 
-If you want to contribute but do not know where to start, open an issue or submit a small cleanup PR first. Curriculum clarity, navigation, and content quality are all useful contributions.
+Open an issue or start a discussion on GitHub.

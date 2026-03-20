@@ -10,435 +10,627 @@
   <script>
     function filterLibrary(event) {
       const query = event.target.value.toLowerCase().trim();
+      const noResults = document.getElementById('no-results');
+      let anyVisible = false;
 
-      document.querySelectorAll("[data-library-group]").forEach(function (group) {
-        const cards = Array.from(group.querySelectorAll("[data-search-card]"));
-        let visibleCount = 0;
+      document.querySelectorAll('[data-library-group]').forEach(function (group) {
+        const cards = Array.from(group.querySelectorAll('[data-search-card]'));
+        let groupVisible = 0;
 
         cards.forEach(function (card) {
-          const matches = !query || card.innerText.toLowerCase().includes(query);
-          card.classList.toggle("is-hidden", !matches);
-          if (matches) {
-            visibleCount += 1;
-          }
+          const text = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText;
+          const matches = !query || text.toLowerCase().includes(query);
+          card.classList.toggle('is-hidden', !matches);
+          if (matches) { groupVisible++; anyVisible = true; }
         });
 
-        group.classList.toggle("is-hidden", visibleCount === 0);
+        group.classList.toggle('is-hidden', groupVisible === 0);
       });
+
+      if (noResults) {
+        noResults.classList.toggle('is-hidden', anyVisible || !query);
+      }
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.getElementById('library-search');
+      if (input) {
+        input.addEventListener('input', filterLibrary);
+        input.addEventListener('search', filterLibrary);
+      }
+    });
   </script>
 </head>
 <body class="library-page">
   <div data-include="/partials/header.html"></div>
   <main>
-    <div class="breadcrumbs">
-      <a href="/index.html">Home</a>
-      <span class="sep">›</span>
-      <strong>Library</strong>
-    </div>
 
-    <section class="hero hero-split hero-compact">
-      <div class="hero-copy">
-        <p class="eyebrow">Academic library</p>
-        <h1>Browse the full course catalogue.</h1>
-        <p class="lead">This library collects every published course page in one organized directory. Use it when you want the broader catalogue beyond the day-by-day degree sequence.</p>
-        <div class="cta-buttons">
-          <a class="btn" href="#catalogue">Browse the catalogue</a>
-          <a class="btn secondary" href="/programs/Bachelor-Liberal-Arts/index.html">Open the degree</a>
-          <a class="btn ghost" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">Open the live semester</a>
-        </div>
-        <div class="mini-points">
-          <span>35 published courses</span>
-          <span>7 subject clusters</span>
-          <span>Core sequence and elective library in one place</span>
-        </div>
+    <!-- Hero -->
+    <section class="library-hero">
+      <div class="library-hero-copy">
+        <p class="eyebrow">Course library</p>
+        <h1>Browse every course.</h1>
+        <p>35 courses across 7 subject areas. Search by title, topic, or course code — or scroll through the full catalogue below. Each course page includes the syllabus, weekly themes, and a link into the live schedule where the course appears in the degree.</p>
       </div>
-
-      <aside class="hero-panel">
-        <p class="eyebrow">Library overview</p>
-        <div class="metric-grid">
-          <div class="metric-card">
-            <strong>35</strong>
-            <span>course pages</span>
-          </div>
-          <div class="metric-card">
-            <strong>7</strong>
-            <span>subject clusters</span>
-          </div>
-          <div class="metric-card">
-            <strong>10</strong>
-            <span>core and lab courses</span>
-          </div>
-          <div class="metric-card">
-            <strong>25</strong>
-            <span>elective seminars</span>
-          </div>
-        </div>
-        <div class="mini-card">
-          <p class="status-pill is-live">Published catalogue</p>
-          <strong>Shared library index</strong>
-          <span>The library now uses the same header, layout, spacing, and card system as the rest of the site so the catalogue feels like one coherent academic directory.</span>
-        </div>
-      </aside>
-    </section>
-
-    <section class="section-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Use the library</p>
-        <h2>Three clean ways to move through the catalogue</h2>
-        <p>Jump straight to a subject cluster, return to the program structure, or move into the supporting institutional directories.</p>
-      </div>
-      <div class="explore-grid">
-        <article class="explore-card">
-          <div>
-            <p class="card-kicker">Core study</p>
-            <h3>Start with the main academic sequence</h3>
-          </div>
-          <div class="link-stack">
-            <a class="directory-link" href="#core-curriculum"><span>Liberal arts core</span><small>8 courses</small></a>
-            <a class="directory-link" href="#labs-studios"><span>Labs and studios</span><small>2 courses</small></a>
-            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/index.html"><span>Degree roadmap</span><small>full program</small></a>
-          </div>
-        </article>
-
-        <article class="explore-card">
-          <div>
-            <p class="card-kicker">Elective clusters</p>
-            <h3>Browse by discipline</h3>
-          </div>
-          <div class="link-stack">
-            <a class="directory-link" href="#business-leadership"><span>Business and leadership</span><small>5 courses</small></a>
-            <a class="directory-link" href="#humanities-society"><span>Humanities and society</span><small>5 courses</small></a>
-            <a class="directory-link" href="#life-leadership"><span>Life and leadership</span><small>5 courses</small></a>
-            <a class="directory-link" href="#media-design"><span>Media and design</span><small>5 courses</small></a>
-            <a class="directory-link" href="#technology-engineering"><span>Technology and engineering</span><small>5 courses</small></a>
-          </div>
-        </article>
-
-        <article class="explore-card">
-          <div>
-            <p class="card-kicker">Related directories</p>
-            <h3>Move across the institution</h3>
-          </div>
-          <div class="link-stack">
-            <a class="directory-link" href="/index.html#about"><span>About SDIT</span><small>institution overview</small></a>
-            <a class="directory-link" href="/programs/index.html"><span>Programs</span><small>all programs</small></a>
-            <a class="directory-link" href="/knowledge/index.html"><span>Knowledge base</span><small>supporting documents</small></a>
-            <a class="directory-link" href="https://github.com/sandiegotech/sdit"><span>GitHub source</span><small>open repository</small></a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="catalogue" class="section-panel accent-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Search the catalogue</p>
-        <h2>Find a course by code, title, or topic</h2>
-        <p>Search filters the cards below and collapses empty subject sections so the directory stays easy to scan.</p>
-      </div>
-      <div class="search-bar">
-        <input type="search" placeholder="Search LBS 101, ethics, design, AI, leadership..." oninput="filterLibrary(event)" />
-      </div>
-      <div class="overview-strip">
-        <div class="mini-card">
-          <strong>Core</strong>
-          <span>LBS and LAB sequences</span>
-        </div>
-        <div class="mini-card">
-          <strong>Electives</strong>
-          <span>Business, humanities, life, media, tech</span>
-        </div>
-        <div class="mini-card">
-          <strong>Browse mode</strong>
-          <span>Grouped by discipline</span>
-        </div>
-        <div class="mini-card">
-          <strong>Open source</strong>
-          <span>Published from the repo</span>
+      <div class="library-search-wrap">
+        <input
+          id="library-search"
+          type="search"
+          class="library-search-input"
+          placeholder="Search by title, topic, or code — e.g. ethics, LBS 101, AI, writing..."
+          autocomplete="off"
+        />
+        <div class="library-filter-pills">
+          <button class="lib-pill lib-pill--active" onclick="clearFilter(this)">All 35</button>
+          <button class="lib-pill" onclick="setFilter(this, 'lbs lab')">Core</button>
+          <button class="lib-pill" onclick="setFilter(this, 'bus')">Business</button>
+          <button class="lib-pill" onclick="setFilter(this, 'hum')">Humanities</button>
+          <button class="lib-pill" onclick="setFilter(this, 'life')">Life</button>
+          <button class="lib-pill" onclick="setFilter(this, 'media')">Media</button>
+          <button class="lib-pill" onclick="setFilter(this, 'tech')">Technology</button>
         </div>
       </div>
     </section>
 
-    <section id="core-curriculum" class="section-panel" data-library-group>
+    <p id="no-results" class="library-no-results is-hidden">No courses match that search. Try a different keyword or course code.</p>
+
+    <!-- Core: LBS sequence -->
+    <section id="core-lbs" class="section-panel" data-library-group>
       <div class="section-heading">
-        <p class="eyebrow">Core curriculum</p>
-        <h2>Liberal arts sequence</h2>
-        <p>The main academic spine of the degree: inquiry, writing, mathematics, science, ethics, and reasoning.</p>
+        <p class="eyebrow">Core curriculum — LBS sequence</p>
+        <h2>Liberal arts foundation</h2>
+        <p>The main academic spine of the degree. Eight courses covering inquiry, writing, mathematics, science, ethics, and reasoning — the skills every other discipline builds on.</p>
       </div>
-      <div class="card-grid">
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 101</p>
+      <div class="lib-course-grid">
+
+        <article class="lib-card" data-search-card data-keywords="lbs 101 philosophy logic thinking inquiry liberal education mental gym foundation">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 101</span>
+            <span class="lib-tag">Year 1 · Sem 1</span>
+          </div>
           <h3>The Mental Gym</h3>
-          <p class="tagline">Liberal education, inquiry, and habits of clear thought.</p>
-          <a class="view-link" href="/courses/LBS-101-mental-gym.html">Open course</a>
+          <p>Philosophy, logic, and the art of thinking clearly. Learn to question assumptions, recognize flawed reasoning, and build habits of disciplined inquiry.</p>
+          <div class="lib-card-topics">
+            <span>Philosophy</span><span>Logic</span><span>Critical thinking</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-101-mental-gym.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 105</p>
+
+        <article class="lib-card" data-search-card data-keywords="lbs 105 writing communication rhetoric storytelling voice argument persuasion">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 105</span>
+            <span class="lib-tag">Year 1 · Sem 1</span>
+          </div>
           <h3>Writing &amp; Communication I</h3>
-          <p class="tagline">Rhetoric, storytelling, and disciplined expression.</p>
-          <a class="view-link" href="/courses/LBS-105-writing-communication.html">Open course</a>
+          <p>Rhetoric and storytelling. Find your voice, shape compelling arguments, and learn to write with clarity and intention.</p>
+          <div class="lib-card-topics">
+            <span>Writing</span><span>Rhetoric</span><span>Storytelling</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-105-writing-communication.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 110</p>
+
+        <article class="lib-card" data-search-card data-keywords="lbs 110 mathematics math patterns numbers modern thinkers language">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 110</span>
+            <span class="lib-tag">Year 1 · Sem 1</span>
+          </div>
           <h3>Mathematics for Modern Thinkers</h3>
-          <p class="tagline">Mathematics as structure, language, and reasoning.</p>
-          <a class="view-link" href="/courses/LBS-110-mathematics-for-modern-thinkers.html">Open course</a>
+          <p>Math as a language for seeing patterns and meaning — not as memorization. Explore structure, probability, geometry, and numerical reasoning.</p>
+          <div class="lib-card-topics">
+            <span>Mathematics</span><span>Patterns</span><span>Reasoning</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-110-mathematics-for-modern-thinkers.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 120</p>
+
+        <article class="lib-card" data-search-card data-keywords="lbs 120 physics science lab observation experiment natural world discovery">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 120</span>
+            <span class="lib-tag">Year 1 · Sem 1</span>
+          </div>
           <h3>Physics with Lab</h3>
-          <p class="tagline">Observation, physical systems, and experimentation.</p>
-          <a class="view-link" href="/courses/LBS-120-physics-with-lab.html">Open course</a>
+          <p>Observation, experimentation, and discovery. Practice science the way scientists do — with hands-on curiosity and rigorous inquiry.</p>
+          <div class="lib-card-topics">
+            <span>Physics</span><span>Science</span><span>Experimentation</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-120-physics-with-lab.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 201</p>
+
+        <article class="lib-card" data-search-card data-keywords="lbs 201 ethics moral reasoning moral philosophy judgment complexity values">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 201</span>
+            <span class="lib-tag">Year 1 · Sem 2</span>
+          </div>
           <h3>Ethics &amp; Moral Reasoning</h3>
-          <p class="tagline">Moral frameworks, cases, and judgment under complexity.</p>
-          <a class="view-link" href="/courses/LBS-201-ethics-moral-reasoning.html">Open course</a>
+          <p>Moral frameworks, hard cases, and judgment under complexity. Build the foundations for ethical decision-making in your own life and work.</p>
+          <div class="lib-card-topics">
+            <span>Ethics</span><span>Moral philosophy</span><span>Judgment</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-201-ethics-moral-reasoning.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 205</p>
+
+        <article class="lib-card" data-search-card data-keywords="lbs 205 writing communication ii argument evidence style revision prose">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 205</span>
+            <span class="lib-tag">Year 1 · Sem 2</span>
+          </div>
           <h3>Writing &amp; Communication II</h3>
-          <p class="tagline">Argument, evidence, revision, and prose discipline.</p>
-          <a class="view-link" href="/courses/LBS-205-writing-communication-ii.html">Open course</a>
+          <p>Argument, evidence, and prose style. Move from expressive writing to structured, research-backed argumentation with discipline and precision.</p>
+          <div class="lib-card-topics">
+            <span>Writing</span><span>Argument</span><span>Evidence</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-205-writing-communication-ii.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 210</p>
+
+        <article class="lib-card" data-search-card data-keywords="lbs 210 mathematical reasoning proof logic abstract rigorous math">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 210</span>
+            <span class="lib-tag">Year 1 · Sem 2</span>
+          </div>
           <h3>Mathematical Reasoning &amp; Proof</h3>
-          <p class="tagline">Proof, logic, and rigorous mathematical thinking.</p>
-          <a class="view-link" href="/courses/LBS-210-mathematical-reasoning-proof.html">Open course</a>
+          <p>Proof, logic, and rigorous mathematical thinking. Learn to construct and evaluate formal arguments and reason with precision.</p>
+          <div class="lib-card-topics">
+            <span>Mathematics</span><span>Proof</span><span>Logic</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-210-mathematical-reasoning-proof.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LBS 220</p>
+
+        <article class="lib-card" data-search-card data-keywords="lbs 220 scientific method experimental design research evidence hypothesis">
+          <div class="lib-card-head">
+            <span class="lib-code">LBS 220</span>
+            <span class="lib-tag">Year 1 · Sem 2</span>
+          </div>
           <h3>Scientific Method &amp; Experimental Design</h3>
-          <p class="tagline">Research method, evidence, and experimental structure.</p>
-          <a class="view-link" href="/courses/LBS-220-scientific-method-experimental-design.html">Open course</a>
+          <p>Research design, evidence evaluation, and experimental structure. Learn how knowledge is built and how to test ideas reliably.</p>
+          <div class="lib-card-topics">
+            <span>Science</span><span>Research</span><span>Evidence</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LBS-220-scientific-method-experimental-design.html">Open course →</a>
         </article>
+
       </div>
     </section>
 
-    <section id="labs-studios" class="section-panel" data-library-group>
+    <!-- Core: LAB sequence -->
+    <section id="core-lab" class="section-panel" data-library-group>
       <div class="section-heading">
-        <p class="eyebrow">Labs and studios</p>
-        <h2>Practice-driven companion courses</h2>
-        <p>Applied environments where students synthesize ideas, test reasoning, and work through live cases and projects.</p>
+        <p class="eyebrow">Core curriculum — LAB sequence</p>
+        <h2>Labs and studios</h2>
+        <p>Applied environments where students synthesize ideas through creative work, live cases, and structured debate.</p>
       </div>
-      <div class="card-grid">
-        <article class="card" data-search-card>
-          <p class="card-kicker">LAB 101</p>
+      <div class="lib-course-grid">
+
+        <article class="lib-card" data-search-card data-keywords="lab 101 creative intelligence creativity design project making thinking studio">
+          <div class="lib-card-head">
+            <span class="lib-code">LAB 101</span>
+            <span class="lib-tag">Year 1 · Sem 1</span>
+          </div>
           <h3>Creative Intelligence Lab I</h3>
-          <p class="tagline">Creative practice, synthesis, and project-based thinking.</p>
-          <a class="view-link" href="/courses/LAB-101-creative-intelligence-lab.html">Open course</a>
+          <p>Hands-on creative work that builds the habits of an original thinker. Projects, sketches, making, and imaginative exploration across disciplines.</p>
+          <div class="lib-card-topics">
+            <span>Creativity</span><span>Design</span><span>Making</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LAB-101-creative-intelligence-lab.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LAB 201</p>
-          <h3>Reasoning Lab II</h3>
-          <p class="tagline">Cases, debates, and structured argument under pressure.</p>
-          <a class="view-link" href="/courses/LAB-201-reasoning-lab-cases-debates.html">Open course</a>
+
+        <article class="lib-card" data-search-card data-keywords="lab 201 reasoning cases debates argument pressure discussion critical thinking">
+          <div class="lib-card-head">
+            <span class="lib-code">LAB 201</span>
+            <span class="lib-tag">Year 1 · Sem 2</span>
+          </div>
+          <h3>Reasoning Lab II: Cases &amp; Debates</h3>
+          <p>Structured argument under pressure. Work through real cases and live debates that test your ability to reason clearly when the stakes are high.</p>
+          <div class="lib-card-topics">
+            <span>Reasoning</span><span>Debate</span><span>Cases</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LAB-201-reasoning-lab-cases-debates.html">Open course →</a>
         </article>
+
       </div>
     </section>
 
+    <!-- Business -->
     <section id="business-leadership" class="section-panel" data-library-group>
       <div class="section-heading">
         <p class="eyebrow">Business and leadership</p>
-        <h2>Venture design, finance, and organizational judgment</h2>
-        <p>Courses focused on entrepreneurship, markets, decision-making, and responsible leadership in institutions.</p>
+        <h2>Venture, finance, and organizational judgment</h2>
+        <p>Courses on entrepreneurship, markets, negotiation, ethics, and leadership in organizations and institutions.</p>
       </div>
-      <div class="card-grid">
-        <article class="card" data-search-card>
-          <p class="card-kicker">BUS 201</p>
+      <div class="lib-course-grid">
+
+        <article class="lib-card" data-search-card data-keywords="bus 201 entrepreneurship startup design customer discovery prototyping venture lean">
+          <div class="lib-card-head">
+            <span class="lib-code">BUS 201</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Entrepreneurship &amp; Startup Design</h3>
-          <p class="tagline">Customer discovery, prototyping, and venture formation.</p>
-          <a class="view-link" href="/courses/BUS-201-entrepreneurship-startup-design.html">Open course</a>
+          <p>Customer discovery, rapid prototyping, and venture formation. The thinking and tools behind building something new from scratch.</p>
+          <div class="lib-card-topics">
+            <span>Entrepreneurship</span><span>Startups</span><span>Innovation</span>
+          </div>
+          <a class="lib-card-link" href="/courses/BUS-201-entrepreneurship-startup-design.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">BUS 202</p>
+
+        <article class="lib-card" data-search-card data-keywords="bus 202 finance innovators financial models capital resource allocation funding">
+          <div class="lib-card-head">
+            <span class="lib-code">BUS 202</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Finance for Innovators</h3>
-          <p class="tagline">Financial models, capital, and resource allocation.</p>
-          <a class="view-link" href="/courses/BUS-202-finance-for-innovators.html">Open course</a>
+          <p>Financial modeling, capital allocation, and how money moves through ventures and organizations. Finance as a thinking tool, not just accounting.</p>
+          <div class="lib-card-topics">
+            <span>Finance</span><span>Capital</span><span>Modeling</span>
+          </div>
+          <a class="lib-card-link" href="/courses/BUS-202-finance-for-innovators.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">BUS 203</p>
+
+        <article class="lib-card" data-search-card data-keywords="bus 203 organizational leadership negotiation management teams communication">
+          <div class="lib-card-head">
+            <span class="lib-code">BUS 203</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Organizational Leadership &amp; Negotiation</h3>
-          <p class="tagline">Leadership, incentives, and high-stakes communication.</p>
-          <a class="view-link" href="/courses/BUS-203-organizational-leadership-negotiation.html">Open course</a>
+          <p>Leadership, incentive structures, and high-stakes communication. How organizations work and how effective leaders move them.</p>
+          <div class="lib-card-topics">
+            <span>Leadership</span><span>Negotiation</span><span>Organizations</span>
+          </div>
+          <a class="lib-card-link" href="/courses/BUS-203-organizational-leadership-negotiation.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">BUS 204</p>
+
+        <article class="lib-card" data-search-card data-keywords="bus 204 global markets geopolitics trade economics international strategy power">
+          <div class="lib-card-head">
+            <span class="lib-code">BUS 204</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Global Markets &amp; Geopolitics</h3>
-          <p class="tagline">Trade, power, markets, and strategic context.</p>
-          <a class="view-link" href="/courses/BUS-204-global-markets-geopolitics.html">Open course</a>
+          <p>Trade, power, and strategic context. How global markets and geopolitical forces shape every business and institution operating today.</p>
+          <div class="lib-card-topics">
+            <span>Economics</span><span>Geopolitics</span><span>Strategy</span>
+          </div>
+          <a class="lib-card-link" href="/courses/BUS-204-global-markets-geopolitics.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">BUS 205</p>
+
+        <article class="lib-card" data-search-card data-keywords="bus 205 business ethics responsibility accountability corporate stewardship values">
+          <div class="lib-card-head">
+            <span class="lib-code">BUS 205</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Business Ethics &amp; Responsibility</h3>
-          <p class="tagline">Ethics, accountability, and institutional stewardship.</p>
-          <a class="view-link" href="/courses/BUS-205-business-ethics-responsibility.html">Open course</a>
+          <p>Ethics, accountability, and institutional stewardship. What it means to lead responsibly inside organizations and in the broader world.</p>
+          <div class="lib-card-topics">
+            <span>Ethics</span><span>Accountability</span><span>Leadership</span>
+          </div>
+          <a class="lib-card-link" href="/courses/BUS-205-business-ethics-responsibility.html">Open course →</a>
         </article>
+
       </div>
     </section>
 
+    <!-- Humanities -->
     <section id="humanities-society" class="section-panel" data-library-group>
       <div class="section-heading">
         <p class="eyebrow">Humanities and society</p>
         <h2>Philosophy, culture, religion, and civic life</h2>
-        <p>Seminars for serious reading and interpretation across human meaning, public life, and historical understanding.</p>
+        <p>Seminars in human meaning, public life, and historical understanding — for serious reading and careful interpretation.</p>
       </div>
-      <div class="card-grid">
-        <article class="card" data-search-card>
-          <p class="card-kicker">HUM 201</p>
+      <div class="lib-course-grid">
+
+        <article class="lib-card" data-search-card data-keywords="hum 201 philosophy consciousness mind self experience cognition perception awareness">
+          <div class="lib-card-head">
+            <span class="lib-code">HUM 201</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Philosophy of Consciousness</h3>
-          <p class="tagline">Mind, self, experience, and the philosophy of cognition.</p>
-          <a class="view-link" href="/courses/HUM-201-philosophy-of-consciousness.html">Open course</a>
+          <p>Mind, self, and experience. A deep exploration of what consciousness is, how it arises, and what the hardest problems in philosophy of mind reveal about being human.</p>
+          <div class="lib-card-topics">
+            <span>Philosophy</span><span>Mind</span><span>Consciousness</span>
+          </div>
+          <a class="lib-card-link" href="/courses/HUM-201-philosophy-of-consciousness.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">HUM 202</p>
+
+        <article class="lib-card" data-search-card data-keywords="hum 202 political theory civic life democracy power institutions citizenship government">
+          <div class="lib-card-head">
+            <span class="lib-code">HUM 202</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Political Theory &amp; Civic Life</h3>
-          <p class="tagline">Power, institutions, citizenship, and public order.</p>
-          <a class="view-link" href="/courses/HUM-202-political-theory-civic-life.html">Open course</a>
+          <p>Power, institutions, and citizenship. The great traditions of political thought and what they still tell us about public order and democratic life.</p>
+          <div class="lib-card-topics">
+            <span>Politics</span><span>Citizenship</span><span>Theory</span>
+          </div>
+          <a class="lib-card-link" href="/courses/HUM-202-political-theory-civic-life.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">HUM 203</p>
+
+        <article class="lib-card" data-search-card data-keywords="hum 203 cultural anthropology fieldwork culture observation society identity community">
+          <div class="lib-card-head">
+            <span class="lib-code">HUM 203</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Cultural Anthropology &amp; Fieldwork</h3>
-          <p class="tagline">Culture, observation, and interpretive field practice.</p>
-          <a class="view-link" href="/courses/HUM-203-cultural-anthropology-fieldwork.html">Open course</a>
+          <p>Culture, observation, and interpretation. How anthropologists study human society and what fieldwork methods reveal about identity and community.</p>
+          <div class="lib-card-topics">
+            <span>Anthropology</span><span>Culture</span><span>Fieldwork</span>
+          </div>
+          <a class="lib-card-link" href="/courses/HUM-203-cultural-anthropology-fieldwork.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">HUM 204</p>
+
+        <article class="lib-card" data-search-card data-keywords="hum 204 history technology innovation invention industrial change society progress">
+          <div class="lib-card-head">
+            <span class="lib-code">HUM 204</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>History of Technology &amp; Innovation</h3>
-          <p class="tagline">Historical change, invention, and technological society.</p>
-          <a class="view-link" href="/courses/HUM-204-history-of-technology-innovation.html">Open course</a>
+          <p>How technology changes society — and how society shapes technology. The long arc of invention from the printing press to artificial intelligence.</p>
+          <div class="lib-card-topics">
+            <span>History</span><span>Technology</span><span>Innovation</span>
+          </div>
+          <a class="lib-card-link" href="/courses/HUM-204-history-of-technology-innovation.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">HUM 205</p>
+
+        <article class="lib-card" data-search-card data-keywords="hum 205 comparative religion society belief ritual tradition meaning spiritual">
+          <div class="lib-card-head">
+            <span class="lib-code">HUM 205</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Comparative Religion &amp; Society</h3>
-          <p class="tagline">Belief, ritual, tradition, and social meaning.</p>
-          <a class="view-link" href="/courses/HUM-205-comparative-religion-society.html">Open course</a>
+          <p>Belief, ritual, and social meaning. A comparative study of the world's major religious traditions and the role they play in shaping culture and public life.</p>
+          <div class="lib-card-topics">
+            <span>Religion</span><span>Culture</span><span>Society</span>
+          </div>
+          <a class="lib-card-link" href="/courses/HUM-205-comparative-religion-society.html">Open course →</a>
         </article>
+
       </div>
     </section>
 
+    <!-- Life & Leadership -->
     <section id="life-leadership" class="section-panel" data-library-group>
       <div class="section-heading">
         <p class="eyebrow">Life and leadership</p>
-        <h2>Field leadership, performance, and civic formation</h2>
+        <h2>Field practice, performance, and civic formation</h2>
         <p>Courses oriented toward real-world discipline, resilience, health, teaching, and public responsibility.</p>
       </div>
-      <div class="card-grid">
-        <article class="card" data-search-card>
-          <p class="card-kicker">LIFE 201</p>
+      <div class="lib-course-grid">
+
+        <article class="lib-card" data-search-card data-keywords="life 201 outdoor leadership expeditionary skills field planning survival navigation">
+          <div class="lib-card-head">
+            <span class="lib-code">LIFE 201</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Outdoor Leadership &amp; Expeditionary Skills</h3>
-          <p class="tagline">Leadership in the field, planning, and expedition practice.</p>
-          <a class="view-link" href="/courses/LIFE-201-outdoor-leadership-expeditionary-skills.html">Open course</a>
+          <p>Leadership in the field. Planning, navigation, decision-making under pressure, and the physical and mental demands of expeditionary environments.</p>
+          <div class="lib-card-topics">
+            <span>Leadership</span><span>Outdoors</span><span>Expedition</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LIFE-201-outdoor-leadership-expeditionary-skills.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LIFE 202</p>
+
+        <article class="lib-card" data-search-card data-keywords="life 202 health fitness human performance training physiology recovery body">
+          <div class="lib-card-head">
+            <span class="lib-code">LIFE 202</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Health, Fitness &amp; Human Performance</h3>
-          <p class="tagline">Training, physiology, recovery, and durable performance.</p>
-          <a class="view-link" href="/courses/LIFE-202-health-fitness-human-performance.html">Open course</a>
+          <p>Training, physiology, and recovery. Build the physical and mental capacity for durable high performance over a lifetime.</p>
+          <div class="lib-card-topics">
+            <span>Health</span><span>Fitness</span><span>Performance</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LIFE-202-health-fitness-human-performance.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LIFE 203</p>
+
+        <article class="lib-card" data-search-card data-keywords="life 203 psychology creativity flow states attention deep work focus creative process">
+          <div class="lib-card-head">
+            <span class="lib-code">LIFE 203</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Psychology of Creativity &amp; Flow States</h3>
-          <p class="tagline">Attention, creative process, and deep work.</p>
-          <a class="view-link" href="/courses/LIFE-203-psychology-creativity-flow-states.html">Open course</a>
+          <p>Attention, creative process, and deep work. The psychology behind peak creative performance and how to deliberately cultivate it.</p>
+          <div class="lib-card-topics">
+            <span>Psychology</span><span>Creativity</span><span>Flow</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LIFE-203-psychology-creativity-flow-states.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LIFE 204</p>
+
+        <article class="lib-card" data-search-card data-keywords="life 204 education mentorship teaching pedagogy learn teach knowledge transfer">
+          <div class="lib-card-head">
+            <span class="lib-code">LIFE 204</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Education &amp; Mentorship</h3>
-          <p class="tagline">Teaching what you know with clarity and responsibility.</p>
-          <a class="view-link" href="/courses/LIFE-204-education-mentorship-teach-what-you-know.html">Open course</a>
+          <p>Teaching what you know clearly and responsibly. The principles of good pedagogy, mentorship, and knowledge transfer in any context.</p>
+          <div class="lib-card-topics">
+            <span>Teaching</span><span>Mentorship</span><span>Pedagogy</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LIFE-204-education-mentorship-teach-what-you-know.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">LIFE 205</p>
+
+        <article class="lib-card" data-search-card data-keywords="life 205 global citizenship civic engagement service public responsibility community">
+          <div class="lib-card-head">
+            <span class="lib-code">LIFE 205</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Global Citizenship &amp; Civic Engagement</h3>
-          <p class="tagline">Service, public responsibility, and civic participation.</p>
-          <a class="view-link" href="/courses/LIFE-205-global-citizenship-civic-engagement.html">Open course</a>
+          <p>Service, public responsibility, and civic participation. What it means to be a citizen of a community, a country, and the world.</p>
+          <div class="lib-card-topics">
+            <span>Citizenship</span><span>Civic life</span><span>Service</span>
+          </div>
+          <a class="lib-card-link" href="/courses/LIFE-205-global-citizenship-civic-engagement.html">Open course →</a>
         </article>
+
       </div>
     </section>
 
+    <!-- Media & Design -->
     <section id="media-design" class="section-panel" data-library-group>
       <div class="section-heading">
         <p class="eyebrow">Media and design</p>
         <h2>Story, image, sound, and communication craft</h2>
         <p>Creative courses built around narrative, aesthetics, cultural literacy, and the practical work of making media.</p>
       </div>
-      <div class="card-grid">
-        <article class="card" data-search-card>
-          <p class="card-kicker">MEDIA 201</p>
+      <div class="lib-course-grid">
+
+        <article class="lib-card" data-search-card data-keywords="media 201 film visual storytelling cinema image composition narrative sequence">
+          <div class="lib-card-head">
+            <span class="lib-code">MEDIA 201</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Film &amp; Visual Storytelling</h3>
-          <p class="tagline">Image, sequence, composition, and cinematic narrative.</p>
-          <a class="view-link" href="/courses/MEDIA-201-film-visual-storytelling.html">Open course</a>
+          <p>Image, sequence, and cinematic narrative. How films work, how to read them, and how the grammar of visual storytelling shapes meaning.</p>
+          <div class="lib-card-topics">
+            <span>Film</span><span>Visual narrative</span><span>Storytelling</span>
+          </div>
+          <a class="lib-card-link" href="/courses/MEDIA-201-film-visual-storytelling.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">MEDIA 202</p>
+
+        <article class="lib-card" data-search-card data-keywords="media 202 music sound design audio composition listening rhythm sonic">
+          <div class="lib-card-head">
+            <span class="lib-code">MEDIA 202</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Music &amp; Sound Design</h3>
-          <p class="tagline">Listening, composition, and sound as structure and mood.</p>
-          <a class="view-link" href="/courses/MEDIA-202-music-sound-design.html">Open course</a>
+          <p>Listening, composition, and sound as structure and mood. Music as a language and the practical fundamentals of working with audio.</p>
+          <div class="lib-card-topics">
+            <span>Music</span><span>Sound</span><span>Composition</span>
+          </div>
+          <a class="lib-card-link" href="/courses/MEDIA-202-music-sound-design.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">MEDIA 203</p>
+
+        <article class="lib-card" data-search-card data-keywords="media 203 design visual communication layout typography interface information graphic">
+          <div class="lib-card-head">
+            <span class="lib-code">MEDIA 203</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Design &amp; Visual Communication</h3>
-          <p class="tagline">Layout, typography, information design, and interface thinking.</p>
-          <a class="view-link" href="/courses/MEDIA-203-design-visual-communication.html">Open course</a>
+          <p>Layout, typography, and information design. How visual systems communicate and how to build clear, purposeful design from first principles.</p>
+          <div class="lib-card-topics">
+            <span>Design</span><span>Typography</span><span>Visual</span>
+          </div>
+          <a class="lib-card-link" href="/courses/MEDIA-203-design-visual-communication.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">MEDIA 204</p>
+
+        <article class="lib-card" data-search-card data-keywords="media 204 creative writing story craft narrative fiction voice literary revision">
+          <div class="lib-card-head">
+            <span class="lib-code">MEDIA 204</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Creative Writing &amp; Story Craft</h3>
-          <p class="tagline">Narrative voice, revision, and literary structure.</p>
-          <a class="view-link" href="/courses/MEDIA-204-creative-writing-story-craft.html">Open course</a>
+          <p>Narrative voice, revision, and literary structure. The craft of writing fiction, memoir, and personal essay with intention and skill.</p>
+          <div class="lib-card-topics">
+            <span>Creative writing</span><span>Fiction</span><span>Craft</span>
+          </div>
+          <a class="lib-card-link" href="/courses/MEDIA-204-creative-writing-story-craft.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">MEDIA 205</p>
+
+        <article class="lib-card" data-search-card data-keywords="media 205 media culture society influence systems interpretation news information">
+          <div class="lib-card-head">
+            <span class="lib-code">MEDIA 205</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Media, Culture &amp; Society</h3>
-          <p class="tagline">Media systems, influence, and cultural interpretation.</p>
-          <a class="view-link" href="/courses/MEDIA-205-media-culture-society.html">Open course</a>
+          <p>Media systems, influence, and cultural interpretation. How media shapes what we know and believe — and how to engage with it critically.</p>
+          <div class="lib-card-topics">
+            <span>Media</span><span>Culture</span><span>Society</span>
+          </div>
+          <a class="lib-card-link" href="/courses/MEDIA-205-media-culture-society.html">Open course →</a>
         </article>
+
       </div>
     </section>
 
+    <!-- Technology -->
     <section id="technology-engineering" class="section-panel" data-library-group>
       <div class="section-heading">
         <p class="eyebrow">Technology and engineering</p>
-        <h2>Systems, hardware, security, AI, and climate tech</h2>
-        <p>Technical electives that connect engineering practice with operational judgment, safety, and broader social consequence.</p>
+        <h2>Systems, AI, security, hardware, and climate</h2>
+        <p>Technical electives connecting engineering practice with operational judgment, safety, and social consequence.</p>
       </div>
-      <div class="card-grid">
-        <article class="card" data-search-card>
-          <p class="card-kicker">TECH 201</p>
+      <div class="lib-course-grid">
+
+        <article class="lib-card" data-search-card data-keywords="tech 201 unmanned systems uas drone uav safety telemetry field operations flight">
+          <div class="lib-card-head">
+            <span class="lib-code">TECH 201</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Unmanned Systems</h3>
-          <p class="tagline">UAS fundamentals, safety, telemetry, and field operations.</p>
-          <a class="view-link" href="/courses/TECH-201-unmanned-systems.html">Open course</a>
+          <p>UAS fundamentals, safety, telemetry, and field operations. The technical and operational knowledge behind flying unmanned aerial systems responsibly.</p>
+          <div class="lib-card-topics">
+            <span>UAS / Drones</span><span>Aviation</span><span>Field ops</span>
+          </div>
+          <a class="lib-card-link" href="/courses/TECH-201-unmanned-systems.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">TECH 202</p>
+
+        <article class="lib-card" data-search-card data-keywords="tech 202 ai society artificial intelligence machine learning ethics consequences automation">
+          <div class="lib-card-head">
+            <span class="lib-code">TECH 202</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>AI &amp; Society</h3>
-          <p class="tagline">Artificial intelligence, institutions, and social consequences.</p>
-          <a class="view-link" href="/courses/TECH-202-ai-society.html">Open course</a>
+          <p>Artificial intelligence, institutions, and social consequence. How AI systems work, who builds them, and what their spread means for individuals and communities.</p>
+          <div class="lib-card-topics">
+            <span>AI</span><span>Machine learning</span><span>Society</span>
+          </div>
+          <a class="lib-card-link" href="/courses/TECH-202-ai-society.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">TECH 203</p>
+
+        <article class="lib-card" data-search-card data-keywords="tech 203 cybersecurity information warfare security networks hacking defense adversary">
+          <div class="lib-card-head">
+            <span class="lib-code">TECH 203</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Cybersecurity &amp; Information Warfare</h3>
-          <p class="tagline">Security, networks, adversaries, and information conflict.</p>
-          <a class="view-link" href="/courses/TECH-203-cybersecurity-information-warfare.html">Open course</a>
+          <p>Security, networks, and information conflict. How systems are attacked and defended, and the broader strategic role of information in modern conflict.</p>
+          <div class="lib-card-topics">
+            <span>Cybersecurity</span><span>Networks</span><span>Warfare</span>
+          </div>
+          <a class="lib-card-link" href="/courses/TECH-203-cybersecurity-information-warfare.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">TECH 204</p>
+
+        <article class="lib-card" data-search-card data-keywords="tech 204 hardware hacking embedded systems electronics prototyping circuits microcontroller">
+          <div class="lib-card-head">
+            <span class="lib-code">TECH 204</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Hardware Hacking &amp; Embedded Systems</h3>
-          <p class="tagline">Embedded hardware, interfaces, prototyping, and control.</p>
-          <a class="view-link" href="/courses/TECH-204-hardware-hacking-embedded.html">Open course</a>
+          <p>Embedded hardware, interfaces, and prototyping. Get inside the physical layer of computing — circuits, microcontrollers, and hands-on hardware work.</p>
+          <div class="lib-card-topics">
+            <span>Hardware</span><span>Embedded</span><span>Electronics</span>
+          </div>
+          <a class="lib-card-link" href="/courses/TECH-204-hardware-hacking-embedded.html">Open course →</a>
         </article>
-        <article class="card" data-search-card>
-          <p class="card-kicker">TECH 205</p>
+
+        <article class="lib-card" data-search-card data-keywords="tech 205 climate tech energy systems renewable sustainability infrastructure grid">
+          <div class="lib-card-head">
+            <span class="lib-code">TECH 205</span>
+            <span class="lib-tag">Elective</span>
+          </div>
           <h3>Climate Tech &amp; Energy Systems</h3>
-          <p class="tagline">Energy systems, infrastructure, and climate technology.</p>
-          <a class="view-link" href="/courses/TECH-205-climate-tech-energy-systems.html">Open course</a>
+          <p>Energy systems, infrastructure, and climate technology. How the global energy transition works and what technical and policy levers actually matter.</p>
+          <div class="lib-card-topics">
+            <span>Climate</span><span>Energy</span><span>Infrastructure</span>
+          </div>
+          <a class="lib-card-link" href="/courses/TECH-205-climate-tech-energy-systems.html">Open course →</a>
         </article>
+
       </div>
     </section>
+
   </main>
   <div data-include="/partials/footer.html"></div>
+
+  <script>
+    function setFilter(btn, term) {
+      document.querySelectorAll('.lib-pill').forEach(function (p) { p.classList.remove('lib-pill--active'); });
+      btn.classList.add('lib-pill--active');
+      const input = document.getElementById('library-search');
+      input.value = term;
+      filterLibrary({ target: input });
+    }
+    function clearFilter(btn) {
+      document.querySelectorAll('.lib-pill').forEach(function (p) { p.classList.remove('lib-pill--active'); });
+      btn.classList.add('lib-pill--active');
+      const input = document.getElementById('library-search');
+      input.value = '';
+      filterLibrary({ target: input });
+    }
+  </script>
 </body>
 </html>

@@ -29,3 +29,21 @@ Explore These Materials:
 
 ## Hard Problem (Optional)
 Given a recurrence aₙ = 2·aₙ₋₁ + 1 with a₀ = 0, find a closed form for aₙ and justify it informally.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

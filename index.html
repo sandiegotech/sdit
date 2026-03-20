@@ -3,244 +3,179 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SDIT Open Curriculum</title>
+  <title>SDIT — Learn</title>
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/js/site-paths.js" defer></script>
   <script src="assets/js/includes.js" defer></script>
-  <script>
-    function filterCards(event) {
-      const query = event.target.value.toLowerCase();
-      document.querySelectorAll("[data-search-card]").forEach(function(card) {
-        const text = card.innerText.toLowerCase();
-        card.classList.toggle("is-hidden", !text.includes(query));
-      });
-    }
-  </script>
 </head>
 <body class="home-page">
   <div data-include="/partials/header.html"></div>
-  <main>
-    <section class="hero hero-split hero-compact">
-      <div class="hero-copy">
-        <p class="eyebrow">Programs of Study</p>
-        <h2>A clear path through the open curriculum.</h2>
-        <p class="lead">Begin with the program of study, move into the current semester, and continue chapter by chapter and day by day. The Bachelor of Liberal Arts is the principal course of study, with Volume 1 already published as a complete daily sequence.</p>
-        <div class="cta-buttons">
-          <a class="btn" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html">Start Day 1</a>
-          <a class="btn secondary" href="/programs/Bachelor-Liberal-Arts/index.html">Open the degree</a>
-          <a class="btn ghost" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">Browse the live semester</a>
-        </div>
-        <div class="mini-points">
-          <span>4 years / 8 volumes</span>
-          <span>75 published daily lessons</span>
-          <span>Programs, courses, and reference materials linked from one directory</span>
-        </div>
-      </div>
-      <aside class="hero-panel">
-        <p class="eyebrow">Current publication</p>
-        <div class="metric-grid">
-          <div class="metric-card">
-            <strong>4</strong>
-            <span>year degree path</span>
-          </div>
-          <div class="metric-card">
-            <strong>8</strong>
-            <span>semester volumes</span>
-          </div>
-          <div class="metric-card">
-            <strong>15</strong>
-            <span>live chapters</span>
-          </div>
-          <div class="metric-card">
-            <strong>75</strong>
-            <span>day pages</span>
-          </div>
-        </div>
-        <div class="mini-card">
-          <p class="status-pill is-live">Principal program</p>
-          <strong>Bachelor of Liberal Arts</strong>
-          <span>Use the program directory for the full academic roadmap, or proceed directly to the current semester schedule and continue lesson by lesson.</span>
-        </div>
-      </aside>
-    </section>
 
-    <section id="about" class="section-panel">
-      <div class="section-heading">
-        <p class="eyebrow">About SDIT</p>
-        <h3>What this is, what the program is for, and how to take part.</h3>
-        <p>San Diego Institute of Technology is building an open curriculum that is structured like a serious academic program, but published openly so anyone can read it, study it, improve it, and help shape it.</p>
-      </div>
-      <div class="about-grid">
-        <article class="about-card">
-          <div>
-            <p class="card-kicker">The institute</p>
-            <h3>What SDIT is</h3>
-          </div>
-          <p>SDIT is the institutional home for this curriculum. The goal is to organize programs, courses, schedules, and supporting knowledge in one place so the work feels coherent, credible, and easy to navigate.</p>
-          <a class="view-link" href="/knowledge/index.html">Read the knowledge base</a>
-        </article>
-        <article class="about-card">
-          <div>
-            <p class="card-kicker">The program</p>
-            <h3>What this degree is trying to do</h3>
-          </div>
-          <p>The main program is a four-year Bachelor of Liberal Arts built around semester volumes, chapter arcs, and daily lessons. It is designed to make serious study easier to follow, one day at a time, without losing the larger academic structure.</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/index.html">View the program</a>
-        </article>
-        <article class="about-card">
-          <div>
-            <p class="card-kicker">Contributing</p>
-            <h3>How to contribute</h3>
-          </div>
-          <p>The curriculum is open source. You can review the repository, suggest edits, expand content, improve organization, or help develop future volumes and supporting materials.</p>
-          <a class="view-link" href="https://github.com/sandiegotech/sdit">Open the repository</a>
-        </article>
+  <main class="home-main">
+
+    <!-- Entry -->
+    <section class="home-entry">
+      <div class="home-entry-inner">
+        <h1>Four years of education.<br>One day at a time.</h1>
+        <p>
+          A complete liberal arts curriculum built for the age of AI —
+          philosophy, critical reasoning, writing, science, ethics, and more.
+          Free and open. Start today.
+        </p>
+        <a class="home-start-btn" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/before-you-begin.html">
+          Get Started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </section>
 
-    <section id="explore" class="section-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Academic directory</p>
-        <h3>Three clear ways into the curriculum.</h3>
-        <p>Enter from the live program, browse by year and volume, or move into the broader academic library. The aim is a clearer institutional directory rather than a promotional landing page.</p>
-      </div>
-      <div class="explore-grid">
-        <article class="explore-card">
-          <div>
-            <p class="card-kicker">Immediate entry</p>
-            <h3>Open the active course of study</h3>
-          </div>
-          <p>The fastest point of entry is the current semester sequence for Volume 1.</p>
-          <div class="quick-stack">
-            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.html">
-              <span>Day 1</span>
-              <small>first lesson</small>
-            </a>
-            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">
-              <span>Volume 1 schedule</span>
-              <small>chapter and day map</small>
-            </a>
-            <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/index.html">
-              <span>Degree homepage</span>
-              <small>full roadmap</small>
-            </a>
-          </div>
-        </article>
+    <!-- Philosophy / About -->
+    <section id="philosophy" class="home-philosophy">
+      <div class="home-philosophy-inner">
 
-        <article class="explore-card">
-          <div>
-            <p class="card-kicker">Program structure</p>
-            <h3>Review the degree by academic year</h3>
+        <div class="home-phi-intro">
+          <p class="eyebrow">Why this exists</p>
+          <h2>Liberal arts is the operating system. Everything else runs on top of it.</h2>
+          <p>Before you build technology, lead an organization, or make sense of a complicated world — you need to be able to think clearly, write with precision, reason from evidence, and understand how things actually work. That is what a liberal education gives you. Not a credential. A foundation.</p>
+          <p>SDIT starts there, on purpose. The four-year curriculum begins with philosophy, writing, mathematics, science, and creative thinking — the hardest and most durable skills there are. Specialization in technology, leadership, or any other domain comes later, and it goes further because of what came first.</p>
+        </div>
+
+        <div class="home-phi-principles">
+          <div class="home-phi-block">
+            <h3>The foundation comes first</h3>
+            <p>Every specialized discipline — AI, engineering, business, design — is built on top of the fundamentals. The ability to reason clearly, communicate precisely, understand evidence, and think across disciplines isn't a soft skill. It's the skill that makes everything else compound. We teach it first because that's the order that works.</p>
           </div>
-          <div class="directory-stack">
-            <div class="directory-group">
-              <strong>Year 1</strong>
-              <div class="directory-links">
-                <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html"><span>Volume 1: Foundations</span><small>live</small></a>
-                <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html"><span>Volume 2: Ethics and Reasoning</span><small>syllabus</small></a>
+          <div class="home-phi-block">
+            <h3>Open source, by design</h3>
+            <p>This curriculum is published openly and freely — the same way great software is. The goal is a standardized, accredited-aligned liberal arts degree that anyone can access, anywhere, without tuition or enrollment. Education at this level should be a public resource. We publish it that way, and we intend it to grow through use and contribution over time.</p>
+          </div>
+          <div class="home-phi-block">
+            <h3>Cultural literacy for a shared world</h3>
+            <p>We live in a world shaped by technology, institutions, markets, and ideas that most people were never taught to understand. A genuine liberal education — one that covers philosophy, science, history, ethics, mathematics, and communication — gives people the literacy to participate in that world rather than just be carried along by it. That access should be universal.</p>
+          </div>
+          <div class="home-phi-block">
+            <h3>A living curriculum, not a finished one</h3>
+            <p>This is version one. It will not be perfect. There are gaps, rough edges, and chapters still being written. The goal is for it to grow over time — through use, feedback, and open contribution — into something genuinely comprehensive and excellent. It is good enough to start today. It will be better tomorrow.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- The path -->
+    <section class="home-path">
+      <div class="home-path-inner">
+
+        <div class="home-path-header">
+          <p class="eyebrow">Bachelor of Liberal Arts</p>
+          <h2>The full four-year curriculum.</h2>
+          <p>Eight volumes, two per year. Each volume is one semester of study — five courses running in parallel, one lesson per day. Volume 1 is live now. The rest are being written in sequence.</p>
+        </div>
+
+        <div class="home-path-year">
+          <div class="home-path-year-label">
+            <span>Year 1</span>
+          </div>
+          <div class="home-path-volumes">
+            <a class="home-path-vol is-active" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 1</span>
+                <span class="home-path-vol-badge live">Live</span>
               </div>
-            </div>
-            <div class="directory-group">
-              <strong>Years 2-4</strong>
-              <div class="directory-links">
-                <a class="directory-link" href="/programs/Bachelor-Liberal-Arts/index.html#degree-map"><span>Open full roadmap</span><small>Volumes 3-8</small></a>
+              <strong>Foundations</strong>
+              <p>Inquiry, story, mathematics, science, creativity</p>
+              <span class="home-path-vol-detail">15 chapters · 75 lessons</span>
+            </a>
+            <a class="home-path-vol" href="/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 2</span>
+                <span class="home-path-vol-badge syllabus">Syllabus</span>
               </div>
-            </div>
+              <strong>Ethics and Reasoning</strong>
+              <p>Moral philosophy, evidence, logical argument, judgment</p>
+            </a>
           </div>
-        </article>
+        </div>
 
-        <article class="explore-card">
-          <div>
-            <p class="card-kicker">Reference collections</p>
-            <h3>Open the broader institutional library</h3>
+        <div class="home-path-year">
+          <div class="home-path-year-label">
+            <span>Year 2</span>
           </div>
-          <div class="link-stack">
-            <a class="directory-link" href="/courses/index.html"><span>Course library</span><small>all published courses</small></a>
-            <a class="directory-link" href="/knowledge/index.html"><span>Knowledge base</span><small>identity, programs, research</small></a>
-            <a class="directory-link" href="/programs/index.html"><span>Programs</span><small>all program pages</small></a>
-            <a class="directory-link" href="https://github.com/sandiegotech/sdit"><span>GitHub source</span><small>open repository</small></a>
+          <div class="home-path-volumes">
+            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 3</span>
+                <span class="home-path-vol-badge planned">Planned</span>
+              </div>
+              <strong>Communication and Rhetoric</strong>
+              <p>Writing, speaking, persuasion, expressive clarity</p>
+            </a>
+            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 4</span>
+                <span class="home-path-vol-badge planned">Planned</span>
+              </div>
+              <strong>Science and Systems</strong>
+              <p>Scientific models, systems thinking, complex environments</p>
+            </a>
           </div>
-        </article>
+        </div>
+
+        <div class="home-path-year">
+          <div class="home-path-year-label">
+            <span>Year 3</span>
+          </div>
+          <div class="home-path-volumes">
+            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 5</span>
+                <span class="home-path-vol-badge planned">Planned</span>
+              </div>
+              <strong>Design and Creativity</strong>
+              <p>Making things, iterating on ideas, original creative work</p>
+            </a>
+            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 6</span>
+                <span class="home-path-vol-badge planned">Planned</span>
+              </div>
+              <strong>Economy and History</strong>
+              <p>Long-run patterns in institutions, markets, and change</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="home-path-year">
+          <div class="home-path-year-label">
+            <span>Year 4</span>
+          </div>
+          <div class="home-path-volumes">
+            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 7</span>
+                <span class="home-path-vol-badge planned">Planned</span>
+              </div>
+              <strong>Technology and Society</strong>
+              <p>Technical systems, AI, and consequences for human life</p>
+            </a>
+            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Vol. 8</span>
+                <span class="home-path-vol-badge planned">Planned</span>
+              </div>
+              <strong>Leadership and Citizenship</strong>
+              <p>Responsibility, leading institutions, civic life at scale</p>
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section id="catalog" class="section-panel accent-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Curriculum directory</p>
-        <h3>Browse each semester volume in one catalogue.</h3>
-        <p>Search by year, topic, or publication status when you already know the portion of the curriculum you want.</p>
-      </div>
-      <div class="search-bar">
-        <input type="search" placeholder="Search by year, topic, or volume" oninput="filterCards(event)" />
-      </div>
-      <section class="volume-grid">
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 1 / Term 1</p>
-          <span class="status-pill is-live">Live</span>
-          <h3>Volume 1: Foundations</h3>
-          <p class="tagline">Inquiry, story, mathematics, science, and creativity.</p>
-          <p class="meta">15 chapters · 75 daily lessons</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">Open volume</a>
-        </article>
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 1 / Term 2</p>
-          <span class="status-pill is-soon">Syllabus</span>
-          <h3>Volume 2: Ethics and Reasoning</h3>
-          <p class="tagline">Moral philosophy, evidence, experiments, and judgment.</p>
-          <p class="meta">Year 1 continuation</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html">Open volume</a>
-        </article>
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 2 / Term 1</p>
-          <span class="status-pill is-building">Planned</span>
-          <h3>Volume 3: Communication and Rhetoric</h3>
-          <p class="tagline">Writing, speaking, persuasion, and expressive clarity.</p>
-          <p class="meta">Syllabus available</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html">Open volume</a>
-        </article>
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 2 / Term 2</p>
-          <span class="status-pill is-building">Planned</span>
-          <h3>Volume 4: Science and Systems</h3>
-          <p class="tagline">Scientific models, systems thinking, and complex worlds.</p>
-          <p class="meta">Syllabus available</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html">Open volume</a>
-        </article>
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 3 / Term 1</p>
-          <span class="status-pill is-building">Planned</span>
-          <h3>Volume 5: Design and Creativity</h3>
-          <p class="tagline">Design practice, making, and iterative creative work.</p>
-          <p class="meta">Syllabus available</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html">Open volume</a>
-        </article>
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 3 / Term 2</p>
-          <span class="status-pill is-building">Planned</span>
-          <h3>Volume 6: Economy and History</h3>
-          <p class="tagline">Historical context, institutions, and long-run change.</p>
-          <p class="meta">Syllabus available</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html">Open volume</a>
-        </article>
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 4 / Term 1</p>
-          <span class="status-pill is-building">Planned</span>
-          <h3>Volume 7: Technology and Society</h3>
-          <p class="tagline">Technical systems and their social consequences.</p>
-          <p class="meta">Syllabus available</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html">Open volume</a>
-        </article>
-        <article class="volume-card" data-search-card>
-          <p class="card-kicker">Year 4 / Term 2</p>
-          <span class="status-pill is-building">Planned</span>
-          <h3>Volume 8: Leadership and Citizenship</h3>
-          <p class="tagline">Leadership, responsibility, service, and civic life.</p>
-          <p class="meta">Syllabus available</p>
-          <a class="view-link" href="/programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html">Open volume</a>
-        </article>
-      </section>
-    </section>
   </main>
+
   <div data-include="/partials/footer.html"></div>
 </body>
 </html>

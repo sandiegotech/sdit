@@ -114,3 +114,21 @@ Write briefly:
 - This session is open-ended—let it evolve naturally.  
 - If words don’t come, draw shapes, icons, photos, colors.  
 - This is a creative self‑portrait—not polished, just magnetic.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

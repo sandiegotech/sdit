@@ -136,3 +136,21 @@ What changes in structure, tone, vocabulary, and emotional impact? Why?
 - Having trouble understanding a concept? Use the "Knowledge Expert" to help explain the concepts better.
 - If you feel stuck, talk through your emerging story with someone, or record yourself telling it.
 - The goal isn’t polished—it's to discover your narrative voice. Start messy, stay honest.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

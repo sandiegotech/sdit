@@ -1,4 +1,4 @@
-name: Build Site Index
+name: Build Site
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
       - '**/*.md'
       - '**/*.yml'
       - '**/*.yaml'
+      - 'assets/site.css'
+      - 'assets/js/**'
+      - 'partials/**'
       - 'scripts/build_site.py'
       - 'scripts/generate_programs_tree.py'
   workflow_dispatch:
@@ -24,17 +27,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install pyyaml
-      - name: Build site and update index
+      - run: pip install pyyaml markdown
+      - name: Build site
         run: |
-          python scripts/build_site.py --out .
-          python scripts/generate_programs_tree.py
-      - name: Commit changes
+          python3 scripts/build_site.py --out .
+          python3 scripts/generate_programs_tree.py
+      - name: Commit built files
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m 'chore: rebuild site index [skip ci]'
+            git commit -m 'chore: rebuild site [skip ci]'
             git push
           fi

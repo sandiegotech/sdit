@@ -29,3 +29,21 @@ Explore These Materials:
 
 ## Hard Problem (Optional)
 Given two rectangles with the same area but different aspect ratios, argue which better fits a given set of objects; quantify “fit” with a ratio‑based metric you design.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

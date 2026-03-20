@@ -346,101 +346,64 @@
     };
   }
 
+  var COURSE_URLS = {
+    "LBS 101": "/courses/LBS-101-mental-gym.html",
+    "LBS 105": "/courses/LBS-105-writing-communication.html",
+    "LBS 110": "/courses/LBS-110-mathematics-for-modern-thinkers.html",
+    "LBS 120": "/courses/LBS-120-physics-with-lab.html",
+    "LAB 101": "/courses/LAB-101-creative-intelligence-lab.html"
+  };
+
   function buildLessonTopbar(meta, links) {
-    const topbar = createElement("section", "lesson-topbar");
-    const chipRow = createElement("div", "lesson-chip-row");
+    var topbar = createElement("div", "lesson-topbar");
 
-    [
-      meta.volume.year + " / " + meta.volume.term,
-      meta.volume.label + " - " + meta.volume.title,
-      "Chapter " + meta.chapterNumber,
-      "Day " + meta.dayNumber + " of " + meta.volume.daysPerChapter
-    ].forEach(function (item) {
-      chipRow.appendChild(createElement("span", "lesson-chip", item));
-    });
+    var pos = createElement("span", "lesson-pos",
+      "Week " + meta.chapterNumber + " \u00b7 Day " + meta.dayNumber + " of " + meta.volume.daysPerChapter
+    );
 
-    const nav = createElement("div", "lesson-nav");
+    var nav = createElement("div", "lesson-nav");
+    var prev = createElement("a", "", "\u2190 Prev");
+    prev.href = links.previousPath;
+    var chap = createElement("a", "", "Week " + meta.chapterNumber);
+    chap.href = links.chapterPath;
+    var next = createElement("a", "", "Next \u2192");
+    next.href = links.nextPath;
+    nav.appendChild(prev);
+    nav.appendChild(chap);
+    nav.appendChild(next);
 
-    [
-      { href: links.previousPath, label: "Previous" },
-      { href: links.chapterPath, label: "Chapter" },
-      { href: links.nextPath, label: "Next" }
-    ].forEach(function (item) {
-      const link = createElement("a", "", item.label);
-      link.href = item.href;
-      nav.appendChild(link);
-    });
-
-    topbar.appendChild(chipRow);
+    topbar.appendChild(pos);
     topbar.appendChild(nav);
     return topbar;
   }
 
-  function buildLessonSummary(meta, lessonTitle, courseName) {
-    const summary = createElement("section", "lesson-card");
-    summary.appendChild(createElement("p", "eyebrow", "Daily lesson"));
-    summary.appendChild(createElement("h3", "", lessonTitle));
-
-    const detail = createElement(
-      "p",
-      "meta",
-      meta.volume.label +
-        " / " +
-        meta.volume.year +
-        " / Chapter " +
-        meta.chapterNumber +
-        " / Day " +
-        meta.dayNumber +
-        " of " +
-        meta.volume.daysPerChapter
-    );
-    summary.appendChild(detail);
-
-    if (courseName) {
-      summary.appendChild(createElement("p", "meta", courseName));
-    }
-
-    return summary;
-  }
-
   function buildDayRail(meta, links) {
-    const rail = createElement("section", "day-rail");
-    rail.appendChild(createElement("h3", "", "Chapter flow"));
+    var rail = createElement("section", "day-rail");
 
-    const body = createElement(
-      "p",
-      "meta",
-      "Move through this chapter one day at a time or jump back to the full semester map."
-    );
-    rail.appendChild(body);
+    var label = createElement("p", "day-rail-label", "Week " + meta.chapterNumber);
+    rail.appendChild(label);
 
-    const grid = createElement("div", "day-rail-grid");
-    for (let index = 1; index <= meta.volume.daysPerChapter; index += 1) {
-      const link = createElement("a", index === meta.dayNumber ? "is-current" : "", String(index));
-      link.href = resolveSitePath(
-        "/programs/Bachelor-Liberal-Arts/" +
-        meta.volumeSlug +
-        "/schedule/chapter-" +
-        pad(meta.chapterNumber) +
-        "/section-" +
-        pad(index) +
-        ".html"
+    var grid = createElement("div", "day-rail-grid");
+    for (var i = 1; i <= meta.volume.daysPerChapter; i++) {
+      var a = createElement("a", i === meta.dayNumber ? "is-current" : "", String(i));
+      a.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + meta.volumeSlug +
+        "/schedule/chapter-" + pad(meta.chapterNumber) +
+        "/section-" + pad(i) + ".html"
       );
-      link.setAttribute("aria-label", "Open day " + index);
-      grid.appendChild(link);
+      a.setAttribute("aria-label", "Day " + i);
+      grid.appendChild(a);
     }
     rail.appendChild(grid);
 
-    const shortcutRow = createElement("div", "lesson-nav");
-    [
-      { href: links.chapterPath, label: "Chapter overview" },
-      { href: links.volumePath, label: "Semester map" }
-    ].forEach(function (item) {
-      const link = createElement("a", "", item.label);
-      link.href = item.href;
-      shortcutRow.appendChild(link);
-    });
-    rail.appendChild(shortcutRow);
+    var links2 = createElement("div", "lesson-nav");
+    var ch = createElement("a", "", "Week overview");
+    ch.href = links.chapterPath;
+    var vol = createElement("a", "", "Full schedule");
+    vol.href = links.volumePath;
+    links2.appendChild(ch);
+    links2.appendChild(vol);
+    rail.appendChild(links2);
 
     return rail;
   }
@@ -471,6 +434,198 @@
 
     outline.appendChild(list);
     return outline;
+  }
+
+  /* ── Lesson section map ─────────────────────────────────── */
+  var SECTION_CLASS_MAP = {
+    "session-focus": "is-focus",
+    "learning-objectives": "is-objectives",
+    "session-flow": "is-flow",
+    "practice-blocks": "is-practice",
+    "key-quote-box": "is-quote",
+    "hard-problem-optional": "is-challenge",
+    "notes": "is-notes"
+  };
+
+  function getSectionClass(h2) {
+    var id = (h2.id || "").toLowerCase();
+    if (SECTION_CLASS_MAP[id]) return SECTION_CLASS_MAP[id];
+    var text = (h2.textContent || "").toLowerCase();
+    if (/focus|overview/.test(text)) return "is-focus";
+    if (/objective/.test(text)) return "is-objectives";
+    if (/flow|session/.test(text)) return "is-flow";
+    if (/practice|exercise/.test(text)) return "is-practice";
+    if (/quote/.test(text)) return "is-quote";
+    if (/hard|optional/.test(text)) return "is-challenge";
+    if (/note/.test(text)) return "is-notes";
+    return "is-default";
+  }
+
+  function wrapLessonSections(article) {
+    var children = Array.from(article.children);
+    var currentSection = null;
+
+    children.forEach(function (child) {
+      if (child.classList.contains("lesson-topbar") || child.tagName === "H1") {
+        currentSection = null;
+        return;
+      }
+      if (child.tagName === "H2") {
+        var sClass = getSectionClass(child);
+        var section = createElement("div", "lesson-section " + sClass);
+        article.insertBefore(section, child);
+        section.appendChild(child);
+        currentSection = section;
+        return;
+      }
+      if (currentSection) currentSection.appendChild(child);
+    });
+
+    var flowSection = article.querySelector(".lesson-section.is-flow");
+    if (flowSection) wrapFlowSteps(flowSection);
+
+    var practiceSection = article.querySelector(".lesson-section.is-practice");
+    if (practiceSection) wrapPromptCards(practiceSection);
+
+    var objSection = article.querySelector(".lesson-section.is-objectives");
+    if (objSection) {
+      var ul = objSection.querySelector("ul");
+      if (ul) makeChecklist(ul);
+    }
+  }
+
+  function wrapFlowSteps(section) {
+    var children = Array.from(section.children);
+    var h2 = section.querySelector("h2");
+    var currentStep = null;
+
+    children.forEach(function (child) {
+      if (child === h2) return;
+      if (child.tagName === "H3") {
+        var text = (child.textContent || "").toLowerCase();
+        var stepClass = "flow-step";
+        if (/read/.test(text)) stepClass += " flow-step--read";
+        else if (/watch/.test(text)) stepClass += " flow-step--watch";
+        else if (/listen/.test(text)) stepClass += " flow-step--listen";
+        else if (/reflect/.test(text)) stepClass += " flow-step--reflect";
+        else stepClass += " flow-step--intro";
+        var step = createElement("div", stepClass);
+        section.insertBefore(step, child);
+        step.appendChild(child);
+        currentStep = step;
+        return;
+      }
+      if (currentStep) currentStep.appendChild(child);
+    });
+  }
+
+  function wrapPromptCards(section) {
+    var children = Array.from(section.children);
+    var h2 = section.querySelector("h2");
+    var currentCard = null;
+
+    children.forEach(function (child) {
+      if (child === h2) return;
+      if (child.tagName === "H3") {
+        var card = createElement("div", "prompt-card");
+        section.insertBefore(card, child);
+        card.appendChild(child);
+        currentCard = card;
+        return;
+      }
+      if (currentCard) currentCard.appendChild(child);
+    });
+  }
+
+  function makeChecklist(ul) {
+    ul.classList.add("lesson-checklist");
+    Array.from(ul.querySelectorAll("li")).forEach(function (li) {
+      var text = li.textContent.trim();
+      li.innerHTML = "";
+      var label = document.createElement("label");
+      var checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(" " + text));
+      li.appendChild(label);
+    });
+  }
+
+  function getYouTubeID(url) {
+    var match = (url || "").match(/[?&]v=([^&]+)/) || (url || "").match(/youtu\.be\/([^?&]+)/);
+    return match ? match[1] : null;
+  }
+
+  function buildResourceCard(title, linkText, href, parent, insertBeforeEl) {
+    var ytId = getYouTubeID(href);
+    var card = document.createElement("div");
+    card.className = "resource-link-card" + (ytId ? " resource-link-card--video" : "");
+
+    var icon = createElement("span", "resource-link-icon", ytId ? "▶" : "↗");
+    var body = createElement("div", "resource-link-body");
+    var titleEl = createElement("strong", "resource-link-title", title);
+    var sub = document.createElement("a");
+    sub.className = "resource-link-sub";
+    sub.href = href;
+    sub.target = "_blank";
+    sub.rel = "noopener noreferrer";
+    sub.textContent = linkText;
+    body.appendChild(titleEl);
+    body.appendChild(sub);
+    card.appendChild(icon);
+    card.appendChild(body);
+
+    if (insertBeforeEl) {
+      parent.insertBefore(card, insertBeforeEl);
+    } else {
+      parent.appendChild(card);
+    }
+
+    if (ytId) {
+      var embedWrapper = document.createElement("div");
+      embedWrapper.className = "lesson-embed";
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube.com/embed/" + ytId;
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+      iframe.setAttribute("loading", "lazy");
+      embedWrapper.appendChild(iframe);
+      card.parentNode.insertBefore(embedWrapper, card.nextSibling);
+    }
+  }
+
+  function enhanceResourceLinks(article) {
+    var flowSection = article.querySelector(".lesson-section.is-flow");
+    if (!flowSection) return;
+
+    // Handle <p> elements with strong + a (Read / Listen sections)
+    Array.from(flowSection.querySelectorAll(".flow-step p")).forEach(function (p) {
+      var strong = p.querySelector("strong");
+      var link = p.querySelector("a");
+      if (!strong || !link) return;
+      var parent = p.parentNode;
+      buildResourceCard(strong.textContent.trim(), link.textContent.trim(), link.href, parent, p);
+      parent.removeChild(p);
+    });
+
+    // Handle <li> elements with strong + a (Watch sections with ul lists)
+    Array.from(flowSection.querySelectorAll(".flow-step li")).forEach(function (li) {
+      var p = li.querySelector("p") || li;
+      var strong = p.querySelector("strong");
+      var link = p.querySelector("a");
+      if (!strong || !link) return;
+      var ul = li.closest("ul");
+      var insertParent = ul ? ul.parentNode : li.parentNode;
+      var insertBefore = ul ? ul.nextSibling : li.nextSibling;
+      buildResourceCard(strong.textContent.trim(), link.textContent.trim(), link.href, insertParent, insertBefore);
+      li.parentNode && li.parentNode.removeChild(li);
+    });
+
+    // Clean up empty uls
+    Array.from(flowSection.querySelectorAll("ul")).forEach(function (ul) {
+      if (!ul.querySelector("li")) ul.parentNode && ul.parentNode.removeChild(ul);
+    });
   }
 
   function enhanceLessonPage() {
@@ -561,12 +716,28 @@
 
     if (sidebar) {
       sidebar.innerHTML = "";
-      sidebar.appendChild(buildLessonSummary(meta, firstHeading ? firstHeading.textContent.trim() : "Daily lesson", courseName));
       sidebar.appendChild(buildDayRail(meta, links));
-      const outline = buildLessonOutline(article);
-      if (outline) {
-        sidebar.appendChild(outline);
+    }
+
+    if (article) {
+      // Inject course source link after the H1
+      if (firstHeading && courseName) {
+        var courseCode = courseName.split(/[\u2013\-]/)[0].trim();
+        var courseUrl = COURSE_URLS[courseCode];
+        var sourceEl = createElement("p", "lesson-course-source");
+        var sourceText = document.createTextNode(courseName + " \u00b7 ");
+        var sourceLink = createElement("a", "lesson-course-link", "View full course \u2192");
+        if (courseUrl) sourceLink.href = resolveSitePath(courseUrl);
+        sourceEl.appendChild(sourceText);
+        sourceEl.appendChild(sourceLink);
+        if (firstHeading.nextSibling) {
+          article.insertBefore(sourceEl, firstHeading.nextSibling);
+        } else {
+          article.appendChild(sourceEl);
+        }
       }
+      wrapLessonSections(article);
+      enhanceResourceLinks(article);
     }
   }
 

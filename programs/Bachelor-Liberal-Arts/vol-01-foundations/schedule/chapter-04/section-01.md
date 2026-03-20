@@ -29,3 +29,21 @@ Write one quote from today’s materials that you want to keep:
 
 ## Hard Problem (Optional)
 Choose one theory of truth (correspondence, coherence, or pragmatic). Defend it with a concrete case study, and explain how the other two theories would handle the same case.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

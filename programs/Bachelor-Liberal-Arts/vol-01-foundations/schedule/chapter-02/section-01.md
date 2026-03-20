@@ -29,3 +29,21 @@ Write one quote from today’s materials that you want to keep:
 
 ## Hard Problem (Optional)
 Analyze the Liar Paradox (“This statement is false.”) or Russell’s Barber Paradox. What does it reveal about the limits of formal systems vs. natural language?
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_

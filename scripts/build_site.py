@@ -31,6 +31,8 @@ MANUAL_ROOT_HTML = {
     Path("programs/index.html"),
     Path("programs/Bachelor-Liberal-Arts/index.html"),
     Path("programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html"),
+    Path("programs/Bachelor-Liberal-Arts/vol-01-foundations/before-you-begin.html"),
+    Path("guides/using-ai.html"),
 }
 
 
@@ -55,8 +57,22 @@ def md_to_html(md_text: str) -> str:
     ])
 
 
+def inject_student_work_class(html: str) -> str:
+    """Wrap the My Work H2 section and all following content in a .student-work div."""
+    marker = '<h2 id="my-work">'
+    idx = html.find(marker)
+    if idx == -1:
+        # Try alternate id pattern
+        for alt in ['<h2 id="my-work-', '<h2>My Work</h2>']:
+            idx = html.find(alt)
+            if idx != -1:
+                break
+    if idx == -1:
+        return html
+    return html[:idx] + '<div class="student-work">\n' + html[idx:] + '\n</div>'
+
+
 def tmpl_page(title: str, body_html: str, breadcrumb: str = "") -> str:
-    page_header = f"<header><h1>{title}</h1>{breadcrumb}</header>"
     return f"""
 <!doctype html>
 <html lang="en">
@@ -65,15 +81,15 @@ def tmpl_page(title: str, body_html: str, breadcrumb: str = "") -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title} — SDIT</title>
   <link rel="stylesheet" href="{{ASSET_REL}}assets/styles.css" />
+  <script src="{{ASSET_REL}}assets/js/site-paths.js" defer></script>
+  <script src="{{ASSET_REL}}assets/js/includes.js" defer></script>
 </head>
 <body>
-  {page_header}
+  <div data-include="/partials/header.html"></div>
   <main>
   {body_html}
   </main>
-  <footer>
-    <p>Built locally from repo content.</p>
-  </footer>
+  <div data-include="/partials/footer.html"></div>
 </body>
 </html>
 """
@@ -151,11 +167,19 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
             entries.append((title, out_path))
             continue
 
+        # Wrap student work section if present
+        is_lesson = re.search(r"section-\d+\.html$", str(out_path))
+        if is_lesson:
+            html = inject_student_work_class(html)
+
         # Prepare template and asset path
         page = tmpl_page(title, html)
         # Inject the correct asset relative prefix
         rel = asset_rel(out_path)
         page = page.replace("{ASSET_REL}", rel)
+        # Mark generated files so contributors know not to edit HTML directly
+        source_md = path.name
+        page = page.replace("<!doctype html>", f"<!doctype html>\n<!-- Generated from {source_md} — edit the .md file, not this file -->", 1)
         write_file(out_path, page)
         entries.append((title, out_path))
     return entries
@@ -372,6 +396,27 @@ footer:not(.site-footer) {
     footer { padding: 20px; color: var(--muted); border-top: 1px solid #1f2430; margin-top: 28px; }
     """
     write_file(ASSETS / "styles.css", css)
+
+    # When building to a separate output dir, copy JS files and partials so the
+    # site header and footer work when serving the output locally.
+    if OUT.resolve() != ROOT.resolve():
+        js_src = ROOT / "assets" / "js"
+        js_dest = ASSETS / "js"
+        if js_src.exists():
+            js_dest.mkdir(parents=True, exist_ok=True)
+            for f in js_src.iterdir():
+                if f.is_file():
+                    shutil.copy2(f, js_dest / f.name)
+        partials_src = ROOT / "partials"
+        partials_dest = OUT / "partials"
+        if partials_src.exists():
+            partials_dest.mkdir(parents=True, exist_ok=True)
+            for f in partials_src.iterdir():
+                if f.is_file():
+                    shutil.copy2(f, partials_dest / f.name)
+        site_css = ROOT / "assets" / "site.css"
+        if site_css.exists():
+            shutil.copy2(site_css, ASSETS / "site.css")
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -112,3 +112,21 @@ Observe a pendulum or swing at different lengths or speeds. Sketch or photograph
 - This session is intentionally slow—don’t rush observation.  
 - If you feel tempted to explain, pause. Ask "what do I actually see?" before theorizing.  
 - This is practice for patient perception—foundational for all scientific and creative work.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My Answer
+
+_Write your response to today's practice blocks here._
+
+### Key Quote I'm Keeping
+
+> "_Replace this with a quote from today's materials._"
+
+### My Reflection
+
+_What did you take away? What questions are you still sitting with?_
