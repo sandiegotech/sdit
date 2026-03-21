@@ -46,7 +46,7 @@ Don't think about school math. Think about music, movement, architecture, nature
 ### 2. Read (15 min)
 
 **Paul Lockhart — *A Mathematician's Lament* (opening pages)**
-[Read at MAA](https://www.maa.org/sites/default/files/pdf/devlin/Lament.pdf)
+[Read on Internet Archive](https://archive.org/details/AMathematiciansLament)
 
 Read the first 10 pages only. Lockhart's argument is that mathematics is an art — and that the way it's taught destroys the thing that makes it alive.
 
