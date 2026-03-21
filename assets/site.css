@@ -1922,3 +1922,188 @@ body.course-page h1 + p {
   .course-section { padding: 1.1rem 1.2rem; }
   body.course-page h1 { font-size: 1.7rem; }
 }
+
+/* ── Chapter index page ──────────────────────────────────────────────────── */
+body.chapter-page main {
+  max-width: var(--max);
+  display: block;
+}
+
+.chapter-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.chapter-vol-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.chapter-week-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.chapter-hero {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+h1.chapter-title {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 0.85rem;
+  font-weight: 400;
+}
+
+.chapter-week-num { color: var(--accent); }
+
+.chapter-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.7;
+  margin: 0 0 1.75rem;
+}
+
+.chapter-stats {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.chapter-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.chapter-stat strong {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.chapter-stat span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.chapter-day-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.chapter-day-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.4rem 1.25rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.12s;
+  min-height: 150px;
+}
+
+.chapter-day-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(28, 58, 94, 0.1);
+  transform: translateY(-3px);
+}
+
+.chapter-day-num {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.chapter-day-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  flex: 1;
+}
+
+.chapter-day-course {
+  font-size: 0.68rem;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
+  display: block;
+}
+
+.chapter-day-arrow {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-top: 0.5rem;
+  opacity: 0.4;
+  transition: opacity 0.15s;
+  align-self: flex-end;
+  display: block;
+}
+
+.chapter-day-card:hover .chapter-day-arrow { opacity: 1; }
+
+.chapter-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.chapter-nav a {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.chapter-nav a:hover { text-decoration: underline; }
+
+.chapter-nav-schedule {
+  margin: 0 auto;
+  color: var(--muted) !important;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 900px) {
+  .chapter-day-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .chapter-day-grid { grid-template-columns: 1fr 1fr; }
+  .chapter-stats { gap: 1.5rem; }
+  .chapter-hero { padding: 1.5rem 0 1.5rem; }
+}
+
+@media (max-width: 420px) {
+  .chapter-day-grid { grid-template-columns: 1fr; }
+}

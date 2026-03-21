@@ -261,51 +261,137 @@
     });
   }
 
-  function appendChapterToolbar() {
-    const path = currentPath();
-    if (!/\/chapter-\d{2}\/index\.html$/.test(path)) {
-      return;
-    }
+  function enhanceChapterPage() {
+    var path = currentPath();
+    if (!/\/chapter-\d{2}\/index\.html$/.test(path)) return;
 
     document.body.classList.add("chapter-page");
 
-    const hero = document.querySelector(".hero");
-    const sectionItems = document.querySelectorAll(".section-item");
-    if (!hero || !sectionItems.length || hero.querySelector(".chapter-toolbar")) {
-      return;
+    var chapterNumber = getChapterNumber(path);
+    var volumeSlug = getVolumeSlug(path);
+    var volume = getVolumeData(path);
+    if (!chapterNumber || !volume) return;
+
+    var main = document.querySelector("main");
+    if (!main) return;
+
+    // Extract chapter title from H1 ("Chapter 2 — Title" → "Title")
+    var h1 = main.querySelector("h1");
+    var chapterTitle = "";
+    if (h1) {
+      var rawTitle = h1.textContent || "";
+      var titleM = rawTitle.match(/^Chapter\s+\d+\s*[\u2014\-]\s*(.+)$/i);
+      chapterTitle = titleM ? titleM[1].trim() : rawTitle.replace(/^Chapter\s+\d+\s*/i, "").trim();
+    }
+    if (!chapterTitle) chapterTitle = "Week " + chapterNumber;
+
+    // Extract orientation from first <p>
+    var orientationText = "";
+    var firstPara = main.querySelector("p");
+    if (firstPara) orientationText = firstPara.textContent.trim();
+
+    // Parse day list items: "Day 01 — LBS 101: Title" or "Section 01 — LBS 101: Title"
+    var DAY_RE = /^(?:Day|Section)\s+0*(\d+)\s*[\u2014\-]\s*([A-Z]+\s+\d+)\s*:\s*(.+?)(?:\s*[\u2014\-]\s*section-\d+\.md)?$/i;
+    var days = [];
+    Array.from(main.querySelectorAll("li")).forEach(function(li) {
+      var text = (li.textContent || "").trim();
+      var m = text.match(DAY_RE);
+      if (m) {
+        days.push({ num: parseInt(m[1], 10), course: m[2].trim(), title: m[3].trim() });
+      }
+    });
+    // Also parse H3 elements ("### Section 01 — LBS 101: Title")
+    if (!days.length) {
+      Array.from(main.querySelectorAll("h3")).forEach(function(h3) {
+        var text = (h3.textContent || "").trim();
+        var m = text.match(DAY_RE);
+        if (m) {
+          days.push({ num: parseInt(m[1], 10), course: m[2].trim(), title: m[3].trim() });
+        }
+      });
+    }
+    if (!days.length) {
+      for (var i = 1; i <= 5; i++) {
+        days.push({ num: i, course: "", title: "Day " + i });
+      }
     }
 
-    const toolbar = createElement("div", "chapter-toolbar");
-    const volumeData = getVolumeData(path);
-    const chapterNumber = getChapterNumber(path);
+    var basePath = "/programs/Bachelor-Liberal-Arts/" + volumeSlug + "/schedule/";
 
+    // Eyebrow
+    var eyebrow = createElement("div", "chapter-eyebrow");
+    eyebrow.appendChild(createElement("span", "chapter-vol-label",
+      volume.label + " \u00b7 " + volume.year + " \u00b7 " + volume.term));
+    eyebrow.appendChild(createElement("span", "chapter-week-label",
+      "Week " + chapterNumber + " of " + volume.chapters));
+
+    // Hero
+    var hero = createElement("div", "chapter-hero");
+    hero.appendChild(eyebrow);
+    var heroH1 = document.createElement("h1");
+    heroH1.className = "chapter-title";
+    var weekSpan = createElement("span", "chapter-week-num", "Week " + chapterNumber);
+    heroH1.appendChild(weekSpan);
+    heroH1.appendChild(document.createTextNode(" \u2014 " + chapterTitle));
+    hero.appendChild(heroH1);
+
+    if (orientationText) {
+      hero.appendChild(createElement("p", "chapter-intro", orientationText));
+    }
+
+    var stats = createElement("div", "chapter-stats");
     [
-      { value: String(sectionItems.length), label: "daily lessons" },
-      { value: "5", label: "course threads" },
-      {
-        value: volumeData ? volumeData.year : "Volume 1",
-        label: volumeData ? volumeData.term : "schedule"
+      { v: "5", l: "days" },
+      { v: "5", l: "courses" },
+      { v: volume.year, l: volume.term }
+    ].forEach(function(s) {
+      var stat = createElement("div", "chapter-stat");
+      stat.appendChild(createElement("strong", "", s.v));
+      stat.appendChild(createElement("span", "", s.l));
+      stats.appendChild(stat);
+    });
+    hero.appendChild(stats);
+
+    // Day grid
+    var grid = createElement("div", "chapter-day-grid");
+    days.forEach(function(day) {
+      var href = resolveSitePath(
+        basePath + "chapter-" + pad(chapterNumber) + "/section-" + pad(day.num) + ".html"
+      );
+      var card = document.createElement("a");
+      card.className = "chapter-day-card";
+      card.href = href;
+      card.appendChild(createElement("span", "chapter-day-num", "Day " + pad(day.num)));
+      card.appendChild(createElement("span", "chapter-day-title", day.title));
+      if (day.course) {
+        card.appendChild(createElement("span", "chapter-day-course", day.course));
       }
-    ].forEach(function (item) {
-      const card = createElement("div", "mini-card");
-      card.appendChild(createElement("strong", "", item.value));
-      card.appendChild(createElement("span", "", item.label));
-      toolbar.appendChild(card);
+      card.appendChild(createElement("span", "chapter-day-arrow", "\u2192"));
+      grid.appendChild(card);
     });
 
-    if (chapterNumber) {
-      const crumb = document.querySelector(".breadcrumbs strong");
-      if (crumb) {
-        crumb.textContent = "Chapter " + chapterNumber;
-      }
+    // Nav
+    var nav = createElement("div", "chapter-nav");
+    if (chapterNumber > 1) {
+      var prev = createElement("a", "chapter-nav-prev",
+        "\u2190 Week " + (chapterNumber - 1));
+      prev.href = resolveSitePath(basePath + "chapter-" + pad(chapterNumber - 1) + "/index.html");
+      nav.appendChild(prev);
+    }
+    var sched = createElement("a", "chapter-nav-schedule", "\u2630 Full Schedule");
+    sched.href = resolveSitePath(basePath + "index.html");
+    nav.appendChild(sched);
+    if (chapterNumber < volume.chapters) {
+      var next = createElement("a", "chapter-nav-next",
+        "Week " + (chapterNumber + 1) + " \u2192");
+      next.href = resolveSitePath(basePath + "chapter-" + pad(chapterNumber + 1) + "/index.html");
+      nav.appendChild(next);
     }
 
-    const searchInput = document.querySelector(".search-bar input");
-    if (searchInput) {
-      searchInput.setAttribute("placeholder", "Search days, courses, or topics");
-    }
-
-    hero.appendChild(toolbar);
+    main.innerHTML = "";
+    main.appendChild(hero);
+    main.appendChild(grid);
+    main.appendChild(nav);
   }
 
   function formatCourseLabel(label) {
@@ -863,7 +949,7 @@
     updateActiveNav();
     enhanceCardGrids();
     enhanceSectionCards();
-    appendChapterToolbar();
+    enhanceChapterPage();
     enhanceLessonPage();
     enhanceCoursePage();
     if (typeof window.__sditRewritePaths === "function") {

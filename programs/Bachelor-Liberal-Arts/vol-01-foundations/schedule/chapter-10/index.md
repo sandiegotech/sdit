@@ -1,16 +1,18 @@
 ---
 id: vol01-chapter10-overview
-title: "Chapter 10"
+title: "Chapter 10 — Imagination & Complexity"
 parent_volume: vol-01-foundations
 chapter: 10
 ---
 
-# Chapter 10
+# Chapter 10 — Imagination & Complexity
 
-## This Chapter’s Five Courses
-- Section 01 — LBS 101: Imagination & Creativity — section-01.md
-- Section 02 — LBS 105: Writing for Media — section-02.md
-- Section 03 — LBS 110: Chaos & Complexity — section-03.md
-- Section 04 — LBS 120: Heat & Thermodynamics — section-04.md
-- Section 05 — LAB 101: Patterns in Chaos — section-05.md
+The world is not linear. This week, you explore creativity as a serious intellectual practice, confront the mathematics of chaos and complexity, and ask how imagination survives — and thrives — in a disordered world.
 
+## Chapter Sections
+
+- Day 01 — LBS 101: Imagination & Creativity
+- Day 02 — LBS 105: Writing for Media
+- Day 03 — LBS 110: Chaos & Complexity
+- Day 04 — LBS 120: Heat & Thermodynamics
+- Day 05 — LAB 101: Patterns in Chaos

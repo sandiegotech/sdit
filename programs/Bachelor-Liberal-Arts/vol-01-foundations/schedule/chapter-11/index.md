@@ -1,16 +1,18 @@
 ---
 id: vol01-chapter11-overview
-title: "Chapter 11"
+title: "Chapter 11 — Memory, Identity & Making"
 parent_volume: vol-01-foundations
 chapter: 11
 ---
 
-# Chapter 11
+# Chapter 11 — Memory, Identity & Making
 
-## This Chapter’s Five Courses
-- Section 01 — LBS 101: Memory & Learning — section-01.md
-- Section 02 — LBS 105: Writing & Identity — section-02.md
-- Section 03 — LBS 110: Math in Technology — section-03.md
-- Section 04 — LBS 120: Momentum & Collisions — section-04.md
-- Section 05 — LAB 101: Art & Technology — section-05.md
+Who are you becoming? This week asks how memory shapes thought, how writing shapes identity, how mathematics lives inside technology, and what it means to make things with others.
 
+## Chapter Sections
+
+- Day 01 — LBS 101: Memory & Learning
+- Day 02 — LBS 105: Writing & Identity
+- Day 03 — LBS 110: Math in Technology
+- Day 04 — LBS 120: Momentum & Collisions
+- Day 05 — LAB 101: Art & Technology
