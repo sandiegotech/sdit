@@ -1,75 +1,69 @@
 ---
-id: education-mentorship-teach-what-you-know
-title: "Education & Mentorship: Teach What You Know"
-program: electives
-track: applied-life-human-development
-level: 200
+id: life-204
+title: "LIFE-204 — Education & Mentorship: Teach What You Know"
 course_code: LIFE-204
-outcomes:
-  - Design simple lessons and workshops with clear outcomes
-  - Facilitate sessions; give feedback that helps others improve
-  - Build starter curricula and documentation others can reuse
-assessment:
-  - type: lesson-plan
-  - type: facilitation
-  - type: portfolio
-prerequisites: []
-tags: [education, mentorship, teaching, communication]
+level: 200
+tags: [education, mentorship, teaching, facilitation, communication]
 ---
 
-# Education & Mentorship: Teach What You Know
+# LIFE-204 — Education & Mentorship: Teach What You Know
+
+You don't really know something until you can teach it — and the attempt to teach reveals, with uncomfortable precision, the gaps in what you thought you understood.
+
+## The Central Question
+
+> What do you understand well enough to actually teach — and what does trying to teach it reveal?
 
 ## What This Course Is About
-Learn by teaching. Design small lessons, facilitate practice, and mentor peers. Focus on clarity, empathy, and craft.
 
-⸻
+This course is built around a simple but demanding premise: take something you know, and teach it to someone who doesn't. You'll design lessons and workshops with real learning objectives, facilitate practice sessions with real learners, and give feedback that actually helps people improve. The curriculum includes backward design, explanation theory, facilitation skills, and the art of mentorship — but it's all tested in practice, not just discussed in theory. By the end, you'll have a small curriculum you built and delivered, and a clearer understanding of what you actually know.
 
-## Why It Matters
-Teaching multiplies your impact and deepens mastery. Clear explanations and good feedback accelerate teams.
+## Why It Matters Now
 
-⸻
+Teaching is a multiplier. One person who can transmit knowledge and skill effectively can accelerate an entire team or community. In an age where AI can explain almost anything on demand, the human teacher's unique value lies in knowing how to sequence, motivate, adapt, and hold someone accountable through the difficulty of actually learning something.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Write outcome‑focused lesson plans with assessments
-- Facilitate practice and give actionable feedback
-- Package knowledge as reusable guides and templates
-- Reflect on teaching choices and learner needs
+## By the End of This Course, You Will
 
-⸻
+- Design outcome-focused lesson plans using backward design
+- Explain complex ideas clearly using examples, analogies, and well-chosen constraints
+- Facilitate practice sessions that give learners the right kind of challenge at the right time
+- Give feedback that is specific, actionable, and delivered in a way learners can hear
+- Package your knowledge as reusable guides and templates that others can build from
 
-## Deliverables
-- Two lesson plans and one workshop
-- Feedback notes and improvement plans
-- Mini curriculum or guidebook
+## The 15-Day Arc
 
-## Equipment / Tools
-- Slides/whiteboard/tools as needed; templates provided
+**Week 1 — Design**
 
-## 15‑Day Progression
-Day 1 — Learning Goals and Outcomes  
-Day 2 — Lesson Planning; Backward Design  
-Day 3 — Explaining Clearly; Examples and Analogies  
-Day 4 — Practice Design; Drills and Feedback  
-Day 5 — Assessment; Rubrics and Signals  
-Day 6 — Facilitation Basics; Presence and Timing  
-Day 7 — Mentorship; Coaching vs Directing  
-Day 8 — Inclusive Teaching; Accessibility  
-Day 9 — Materials and Templates  
-Day 10 — Workshop 1  
-Day 11 — Observation and Review  
-Day 12 — Workshop 2  
-Day 13 — Iterate and Package  
-Day 14 — Teach‑back  
-Day 15 — Final Portfolio and Reflection  
+- Day 1: Learning goals and outcomes — what does it mean for someone to actually know something?
+- Day 2: Backward design — start with what you want them to be able to do, then build toward it
+- Day 3: Explaining clearly — the role of examples, analogies, and the curse of knowledge
+- Day 4: Practice design — what kind of struggle helps learning, and what kind just frustrates
+- Day 5: Assessment and signals — how do you know whether someone has actually learned?
 
-⸻
+**Week 2 — Facilitate**
+
+- Day 6: Facilitation basics — presence, timing, and the difference between explaining and teaching
+- Day 7: Mentorship — coaching vs. directing, and when to use each
+- Day 8: Inclusive teaching — accessibility, different starting points, and meeting learners where they are
+- Day 9: Materials and templates — making knowledge transferable to people who weren't in the room
+- Day 10: Workshop 1 — teach something you know to a small group, observed and debriefed
+
+**Week 3 — Build and Reflect**
+
+- Day 11: Observation and review — analyze what you saw and heard in your first workshop
+- Day 12: Workshop 2 — revised and improved based on what you learned
+- Day 13: Iterate and package — turn your workshop into a reusable resource
+- Day 14: Teach-back — observe and provide detailed feedback to a peer's session
+- Day 15: Final portfolio and reflection — your curriculum, your facilitation record, and what you'd do differently
+
+## What You'll Make
+
+- Two lesson plans with stated objectives, activities, and assessment criteria
+- A record of two facilitated workshops, including planning notes and post-session reflections
+- A mini curriculum or guidebook — a reusable artifact that captures your expertise in a form others can use
 
 ## Key Practices
-- Show, then do; feedback fast and specific
-- Keep lessons small; one skill at a time
-- Capture and share improvements
 
-## Policies
-- Respect learner privacy; obtain consent for recordings
-
+- Finish with what learners can do, not what you covered — the measure is their capability, not your content
+- Give feedback within 24 hours of observation — specific, behavioral, and connected to the learning objective
+- Make the implicit explicit — the most important things you know are often the things you've forgotten you learned

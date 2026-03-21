@@ -1,77 +1,69 @@
 ---
-id: cybersecurity-information-warfare
-title: "Cybersecurity & Information Warfare"
-program: electives
-track: technology-engineering
-level: 200
+id: tech-203
+title: "TECH-203 — Cybersecurity & Information Warfare"
 course_code: TECH-203
-outcomes:
-  - Explain attacker mindset and common kill chains
-  - Harden systems with baseline controls and monitoring
-  - Analyze influence, deception, and information operations
-assessment:
-  - type: lab
-  - type: brief
-  - type: tabletop
-prerequisites:
-  - Comfortable with basic command line and networks
-tags: [security, networks, threat-modeling, information-ops]
+level: 200
+tags: [cybersecurity, networks, threat-modeling, information-ops, defense]
 ---
 
-# Cybersecurity & Information Warfare
+# TECH-203 — Cybersecurity & Information Warfare
+
+The attacker only has to be right once; the defender has to be right every time — this course teaches you to think like both.
+
+## The Central Question
+
+> In a world where information can be weaponized, what does it mean to defend it?
 
 ## What This Course Is About
-Hands‑on security foundations plus analysis of information operations. Learn threat modeling, hardening, detection, and the human domain of conflict.
 
-⸻
+This course covers two interlocked domains: the technical security of systems and the information security of minds. On the technical side, you'll build threat models, apply baseline controls, and practice detection and incident response in a lab environment. On the information side, you'll analyze how narratives, disinformation campaigns, and influence operations work — and what it takes to counter them. The unifying thread is adversarial thinking: understanding how attackers reason so you can build defenses they can't easily circumvent.
 
-## Why It Matters
-Most failures are preventable. Basic discipline and awareness dramatically reduce risk to people, products, and institutions.
+## Why It Matters Now
 
-⸻
+Most breaches aren't sophisticated zero-days — they're preventable failures of basic practice. And most successful influence operations don't require state resources — they exploit the same cognitive vulnerabilities that have always existed. Understanding both domains makes you a more capable defender of your organization and your own thinking.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Build threat models for systems and teams
-- Apply baseline controls (auth, patching, backups, logging)
-- Detect common attacks; respond and recover
-- Analyze narratives, influence tactics, and counter‑measures
-- Write clear incident and risk briefs
+## By the End of This Course, You Will
 
-⸻
+- Build a threat model for a real system or organization, identifying assets, adversaries, and attack surfaces
+- Apply baseline security controls: authentication, patch management, backups, logging
+- Detect common attack patterns and execute a structured incident response
+- Analyze an information operation for tactics, objectives, and effective counter-measures
+- Write clear incident reports and risk briefs that non-technical stakeholders can act on
 
-## Deliverables
-- Two security labs (hardening + detection)
-- Incident brief from a tabletop exercise
-- Info‑ops case analysis
+## The 15-Day Arc
 
-## Equipment / Tools
-- VM or lab environment; logging/monitoring stack (lightweight)
+**Week 1 — Attack Surfaces**
 
-## 15‑Day Progression
-Day 1 — Security Principles and Adversary Mindset  
-Day 2 — Threat Modeling; Assets and Attack Surfaces  
-Day 3 — Identity and Access; MFA and Least Privilege  
-Day 4 — Patch and Config Management  
-Day 5 — Backups and Recovery  
-Day 6 — Network Basics; Segmentation and Firewalls  
-Day 7 — Logging and Detection  
-Day 8 — Web and App Security Basics  
-Day 9 — Incident Response; Roles and Playbooks  
-Day 10 — Tabletop 1; After‑Action Report  
-Day 11 — Information Environments; Narratives and Memes  
-Day 12 — Campaigns and Counter‑Campaigns  
-Day 13 — Case Studies; Elections, Crises, Conflicts  
-Day 14 — Tabletop 2; Info‑Ops Scenario  
-Day 15 — Final Brief and Recommendations  
+- Day 1: Security principles and the adversary mindset — think like the attacker
+- Day 2: Threat modeling — assets, adversaries, attack surfaces, and STRIDE
+- Day 3: Identity and access — multi-factor authentication and least privilege in practice
+- Day 4: Patch and configuration management — why most breaches are preventable
+- Day 5: Backups and recovery — the thing you don't think about until you need it
 
-⸻
+**Week 2 — Defense and Detection**
+
+- Day 6: Network basics — segmentation, firewalls, and what lives on your network
+- Day 7: Logging and detection — what to collect and how to know when something is wrong
+- Day 8: Web and application security basics — OWASP top ten in plain language
+- Day 9: Incident response — roles, playbooks, and the first 24 hours
+- Day 10: Tabletop exercise 1 — a simulated breach, from detection to after-action report
+
+**Week 3 — Information Warfare**
+
+- Day 11: Information environments — how narratives form, spread, and stick
+- Day 12: Influence operations — the anatomy of a disinformation campaign
+- Day 13: Case studies — elections, crises, and conflicts where information was the weapon
+- Day 14: Tabletop exercise 2 — an information operations scenario with counter-measures
+- Day 15: Final brief and recommendations — your security posture assessment and action plan
+
+## What You'll Make
+
+- Two lab write-ups: one system hardening exercise, one detection and response scenario
+- An incident brief from the tabletop exercise, including timeline, impact assessment, and lessons learned
+- An information operations case analysis documenting tactics, audiences, and effective responses
 
 ## Key Practices
-- Default‑deny mindset; minimize attack surface
-- Verify controls; test incident plans
-- Distinguish signal from noise in information environments
 
-## Policies
-- Legal, ethical participation in labs; no unauthorized testing
-
+- Default-deny mindset — assume the attack will come, build as if it already has
+- Test your controls before an incident, not during one
+- Distinguish signal from noise in information environments — the goal of disinformation is to make that harder

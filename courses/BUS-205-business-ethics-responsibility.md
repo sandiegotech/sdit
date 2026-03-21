@@ -1,78 +1,69 @@
 ---
-id: business-ethics-responsibility
-title: "Business Ethics & Responsibility"
-program: electives
-track: business-leadership
-level: 200
+id: bus-205
+title: "BUS-205 — Business Ethics & Responsibility"
 course_code: BUS-205
-outcomes:
-  - Recognize ethical dimensions in decisions and designs
-  - Apply frameworks for responsible innovation and governance
-  - Write policies that align mission, law, and practice
-assessment:
-  - type: case-study
-  - type: policy-draft
-  - type: reflection
-prerequisites: []
-tags: [ethics, responsibility, governance, policy]
+level: 200
+tags: [ethics, responsibility, governance, policy, stakeholders]
 ---
 
-# Business Ethics & Responsibility
+# BUS-205 — Business Ethics & Responsibility
+
+Every product decision is an ethical decision — most people just don't frame it that way until something goes wrong.
+
+## The Central Question
+
+> At what point does a business become an obligation — to people, to place, to the future?
 
 ## What This Course Is About
-Integrity in practice: how product, hiring, data, and finance choices affect people and communities. Learn to spot issues early and design responsible systems.
 
-⸻
+This course takes ethics out of the philosophy classroom and puts it where it actually lives: in product decisions, hiring practices, data policies, supply chains, and governance structures. You'll analyze real cases where businesses faced genuine ethical dilemmas — not easy ones — and learn practical frameworks for navigating them. You'll also learn to write the policies, risk maps, and incident responses that turn ethical commitments into operational practice. The goal is not moral perfection but moral seriousness.
 
-## Why It Matters
-Trust is an asset you can’t buy back. Ethical habits protect people, reduce risk, and strengthen long‑term value.
+## Why It Matters Now
 
-⸻
+AI systems encode values, data practices affect people's lives, and the supply chains behind consumer products implicate labor conditions and environmental costs that consumers rarely see. The organizations that take this seriously — and build it into their operations rather than treating it as a PR function — are increasingly the ones that survive long-term.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Identify ethical dimensions in everyday business decisions
-- Apply practical frameworks for judgments under uncertainty
-- Draft clear, usable policies aligned with mission and law
-- Map stakeholders and model potential harms and mitigations
-- Communicate issues with courage and empathy
+## By the End of This Course, You Will
 
-⸻
+- Identify ethical dimensions in everyday business decisions before they become crises
+- Apply practical ethical frameworks to real dilemmas where reasonable people disagree
+- Map stakeholders, model potential harms, and design mitigations into processes
+- Draft clear, usable policies on data, AI use, labor practices, or environmental impact
+- Communicate about ethical issues with honesty and appropriate urgency
 
-## Deliverables
-- Case study analyses and decision memos
-- Draft policy (privacy, data retention, AI usage, or equivalent)
-- Reflection on an ethical dilemma and resolution path
+## The 15-Day Arc
 
-## Equipment / Tools
-- Policy templates and checklists (provided)
-- Case library and news sources
+**Week 1 — Foundations**
 
-## 15-Day Progression
-Day 1 — Foundations; Ethical Lenses and Frameworks  
-Day 2 — Stakeholders; Rights and Responsibilities  
-Day 3 — Data Ethics; Privacy, Consent, and Retention  
-Day 4 — AI and Automation; Bias and Fairness  
-Day 5 — Supply Chains; Labor and Sourcing  
-Day 6 — Finance; Conflicts, Anti‑corruption, and Transparency  
-Day 7 — Environmental Impact and ESG  
-Day 8 — Governance; Boards, Controls, and Whistleblowing  
-Day 9 — Policy Writing; From Principles to Procedures  
-Day 10 — Risk Mapping; Harms and Mitigations  
-Day 11 — Incident Response and Crisis Communication  
-Day 12 — Case Clinic 1; Peer Review  
-Day 13 — Case Clinic 2; Red Team  
-Day 14 — Policy Review; Legal and Practical Fit  
-Day 15 — Final Memo and Policy Pack  
+- Day 1: Ethical frameworks — consequentialism, deontology, virtue ethics, and what each gets right
+- Day 2: Stakeholders — who is affected by your decisions and who has standing to object
+- Day 3: Data ethics — privacy, consent, retention, and the obligations that come with personal information
+- Day 4: AI and automation — bias, fairness, and who is accountable when an algorithm causes harm
+- Day 5: Supply chains and labor — the ethical costs hidden in the things you source and sell
 
-⸻
+**Week 2 — Hard Cases**
+
+- Day 6: Finance and transparency — conflicts of interest, anti-corruption, and what disclosure actually requires
+- Day 7: Environmental impact and ESG — what the frameworks measure, and what they miss
+- Day 8: Governance — boards, controls, whistleblowing, and the structures that catch failures early
+- Day 9: Policy writing — from principles to procedures that people can actually follow
+- Day 10: Risk mapping — systematic harms assessment and building mitigations into design
+
+**Week 3 — Practice**
+
+- Day 11: Incident response and crisis communication — how you respond to ethical failures matters as much as whether you had them
+- Day 12: Case clinic 1 — a real case, analyzed in depth, with written recommendations
+- Day 13: Case clinic 2 — red-team your own recommendations
+- Day 14: Policy review — legal fit, practical usability, and the gap between intention and effect
+- Day 15: Final memo and policy pack — your ethical framework, applied to a real domain
+
+## What You'll Make
+
+- Two case analysis memos identifying the ethical dimensions, stakeholder interests, and your recommended path
+- A draft policy on a domain of your choice — data privacy, AI use, labor sourcing, or environmental commitment
+- A risk map showing potential harms from a real product or practice, with mitigations designed in
 
 ## Key Practices
-- Write policies people can actually use
-- Surface risks early; design mitigations into processes
-- Create safe channels for dissent and reporting
 
-## Policies
-- Cite relevant laws and standards where applicable
-- Respect confidentiality in case discussions
- 
+- Surface ethical issues early — the decisions that are hardest to reverse are the ones that happen by default
+- Write policies people can actually use, not principles so vague they mean anything
+- Create space for dissent — the most important ethical conversations in organizations are the ones people are afraid to have

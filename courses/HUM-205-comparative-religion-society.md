@@ -1,74 +1,69 @@
 ---
-id: comparative-religion-society
-title: "Comparative Religion & Society"
-program: electives
-track: humanities-social-sciences
-level: 200
+id: hum-205
+title: "HUM-205 — Comparative Religion & Society"
 course_code: HUM-205
-outcomes:
-  - Describe core beliefs and practices across major traditions
-  - Analyze religion’s role in identity, ethics, and civic life
-  - Write respectful, precise comparisons and case briefs
-assessment:
-  - type: brief
-  - type: presentation
-  - type: reflection
-prerequisites: []
-tags: [religion, society, culture, ethics]
+level: 200
+tags: [religion, society, culture, ethics, pluralism]
 ---
 
-# Comparative Religion & Society
+# HUM-205 — Comparative Religion & Society
+
+Religion shapes law, medicine, politics, technology, and daily life for most of the world's population — understanding it carefully is not optional for anyone trying to understand the world.
+
+## The Central Question
+
+> What does belief do — for individuals, communities, and civilizations?
 
 ## What This Course Is About
-Study religious traditions comparatively, with attention to lived practice and social roles. Emphasis on clarity, respect, and careful description.
 
-⸻
+This course studies religious traditions comparatively and with genuine intellectual seriousness: their core beliefs, ritual practices, ethical frameworks, and social institutions, and how they interact with law, science, politics, and commerce. You'll develop the skills to describe religious communities accurately and respectfully, to compare them without false equivalence or false distinction, and to analyze contemporary cases where religious commitments intersect with public life. The approach is descriptive before evaluative — understanding what people believe and why before asking whether they should.
 
-## Why It Matters
-Religious ideas and communities shape laws, norms, and personal lives. Understanding them improves dialogue and policy.
+## Why It Matters Now
 
-⸻
+Religious communities represent some of the most durable human institutions in history, and religious identity is a primary driver of political behavior across the globe. Any work in international policy, community design, public health, or technology deployment that ignores religious context is working with an incomplete map.
 
-## Course Goals
-By the end, you will be able to:
-- Summarize beliefs, rituals, and institutions across traditions
-- Compare ethical frameworks and social teachings
-- Analyze contemporary cases at the religion–state–society interface
-- Communicate with care across differences
+## By the End of This Course, You Will
 
-⸻
+- Describe core beliefs, practices, and institutions across major world religious traditions with accuracy and fairness
+- Compare ethical frameworks and social teachings across traditions using consistent analytical frameworks
+- Analyze contemporary cases at the intersection of religion, law, and public policy
+- Write comparative briefs that represent different traditions without reducing any of them
+- Communicate across religious differences with precision and respect
 
-## Deliverables
-- Two comparative briefs and one case presentation
-- Field visit reflection (where appropriate)
-- Final synthesis memo
+## The 15-Day Arc
 
-## Equipment / Tools
-- Readings; community guidelines for observation
+**Week 1 — Concepts and Traditions**
 
-## 15‑Day Progression
-Day 1 — What Is Religion? Lenses and Limits  
-Day 2 — Texts and Traditions  
-Day 3 — Ritual and Community  
-Day 4 — Ethics and Law  
-Day 5 — Identity, Conversion, and Pluralism  
-Day 6 — Religion and the State  
-Day 7 — Religion and Markets  
-Day 8 — Science, Technology, and Faith  
-Day 9 — Case 1: Education and Policy  
-Day 10 — Case 2: Health and Autonomy  
-Day 11 — Case 3: Speech and Symbols  
-Day 12 — Field Observation (optional/approved)  
-Day 13 — Writing Workshop  
-Day 14 — Presentations  
-Day 15 — Synthesis and Reflection  
+- Day 1: What is religion? Definitions, limits, and the scholarly approaches that matter
+- Day 2: Texts and traditions — how religious communities form, transmit, and reform their beliefs
+- Day 3: Ritual and community — the practices through which beliefs become embodied
+- Day 4: Ethics and law — how religious traditions generate moral frameworks and legal systems
+- Day 5: Identity, conversion, and pluralism — what happens when traditions meet
 
-⸻
+**Week 2 — Religion in Society**
+
+- Day 6: Religion and the state — the range from theocracy to strict separation and everything between
+- Day 7: Religion and markets — the economic ethics of major traditions and how they interact with capitalism
+- Day 8: Science, technology, and faith — where they conflict, where they coexist, and why
+- Day 9: Case 1 — education and religious freedom in public policy
+- Day 10: Case 2 — health, autonomy, and religious exemptions
+
+**Week 3 — Contemporary Cases**
+
+- Day 11: Case 3 — speech, symbols, and the limits of pluralism
+- Day 12: Field observation or community engagement — encountering a tradition in its own context
+- Day 13: Writing workshop — drafting the comparative brief with rigor and respect
+- Day 14: Presentations — share your case analysis and receive critical feedback
+- Day 15: Synthesis and reflection — what comparative religion reveals about human community
+
+## What You'll Make
+
+- Two comparative briefs examining a belief, practice, or social teaching across at least two traditions
+- A case presentation analyzing a contemporary religion-and-society conflict with multiple stakeholders
+- A synthesis memo reflecting on what the course revealed about religious communities and how you approach them
 
 ## Key Practices
-- Describe before judging; avoid straw men
-- Attribute claims; represent views fairly
-- Use consistent terminology; define terms
 
-## Policies
-- Respect communities and sites; follow observation rules
+- Describe before you evaluate — understanding what people believe comes before deciding whether they should
+- Attribute claims to specific traditions and communities, not to religion in general
+- Use consistent terminology across traditions so comparisons are genuine rather than superficial

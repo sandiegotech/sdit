@@ -1,79 +1,69 @@
 ---
-id: music-sound-design
-title: "Music & Sound Design"
-program: electives
-track: creative-arts-media
-level: 200
+id: media-202
+title: "MEDIA-202 — Music & Sound Design"
 course_code: MEDIA-202
-outcomes:
-  - Compose short pieces and soundscapes with clear intent
-  - Record clean audio; edit, arrange, and mix at a basic level
-  - Use synthesis and sampling to design sounds legally and ethically
-  - Deliver tracks with stems, notes, and proper metadata
-assessment:
-  - type: portfolio
-  - type: critique
-  - type: reflection
-prerequisites: []
-tags: [music, sound, recording, production]
+level: 200
+tags: [music, sound, recording, production, composition]
 ---
 
-# Music & Sound Design
+# MEDIA-202 — Music & Sound Design
+
+Sound is the art form that works on people before they decide to let it — this course teaches you to use that power intentionally.
+
+## The Central Question
+
+> What can sound do that words can't — and how do you make it?
 
 ## What This Course Is About
-Create music and sound for projects and performance. Learn recording, arrangement, synthesis, and mixing through small, finished works.
 
-⸻
+This course teaches music production and sound design through making: you'll record, arrange, synthesize, mix, and finish actual pieces of music and sound. Working in a DAW, you'll develop fluency with the fundamental tools — EQ, dynamics, space, synthesis, and sampling — and apply them to short compositions with specific intent. You'll also collaborate with peers to score a short film or interactive project, because sound design doesn't exist in isolation. No prior music production experience required, but curiosity and a willingness to listen critically are essential.
 
-## Why It Matters
-Sound shapes emotion and attention. Crafting it well improves films, products, and performances—and teaches deep listening.
+## Why It Matters Now
 
-⸻
+Sound is everywhere in digital products, games, films, social content, and physical spaces — and most of it is mediocre because it was added without thought. The ability to design sound with intention — to make something that shapes how people feel before they can articulate why — is a rare and valuable skill.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Record and edit clean audio; manage gain and noise
-- Arrange tracks; use EQ, dynamics, and space effectively
-- Design sounds via synthesis and sampling; document sources
-- Export mixes and stems with levels and metadata
-- Critique and revise based on feedback
+## By the End of This Course, You Will
 
-⸻
+- Record and edit clean audio, managing gain staging and noise throughout the signal chain
+- Arrange a multi-track session with clear structure and intentional sound choices
+- Apply EQ, dynamics, reverb, and synthesis to achieve a specific emotional or functional goal
+- Collaborate on a score for a peer film or installation, working to picture
+- Deliver finished tracks with stems, session files, metadata, and production notes
 
-## Deliverables
-- 3 short works (e.g., 60‑sec theme, ambient piece, sound logo)
-- Session files, stems, and production notes
-- One collaborative score for a peer film or installation
+## The 15-Day Arc
 
-## Equipment / Tools
-- DAW (Reaper, Ableton, Logic, or equivalent)
-- Audio interface or recorder; headphones/mic
-- Sample packs or synths (licensed)
+**Week 1 — Fundamentals**
 
-## 15‑Day Progression
-Day 1 — Listening and Intent  
-Day 2 — Recording Basics; Gain Staging  
-Day 3 — Editing and Arranging  
-Day 4 — EQ and Dynamics  
-Day 5 — Space: Reverb and Delay  
-Day 6 — Synthesis Basics  
-Day 7 — Sampling; Sourcing and Ethics  
-Day 8 — Sound for Picture; Temp Scores  
-Day 9 — Collaboration: Scoring a Short  
-Day 10 — Mix 1: Balance and Headroom  
-Day 11 — Mix 2: Polish and Translation  
-Day 12 — Mastering Basics  
-Day 13 — Metadata and Delivery  
-Day 14 — Critique; Portfolio Build  
-Day 15 — Final Listening Session and Reflection  
+- Day 1: Listening and intent — training your ears before you train your hands
+- Day 2: Recording basics and gain staging — capturing sound without introducing problems
+- Day 3: Editing and arranging — cutting, sequencing, and building a session structure
+- Day 4: EQ and dynamics — shaping frequency content and controlling dynamics with purpose
+- Day 5: Space — reverb, delay, and how sound exists in three dimensions
 
-⸻
+**Week 2 — Creation**
+
+- Day 6: Synthesis basics — how synthesizers work and how to design sounds from scratch
+- Day 7: Sampling — finding, processing, and using recorded material ethically and legally
+- Day 8: Sound for picture — syncing audio to video and what "scoring to picture" actually means
+- Day 9: Collaboration — scoring a peer's short film or project together
+- Day 10: Mix 1 — balance, headroom, and the reference track that keeps you honest
+
+**Week 3 — Finishing**
+
+- Day 11: Mix 2 — polish, translation across playback systems, and the decisions that matter
+- Day 12: Mastering basics — loudness, limiting, and preparing for delivery
+- Day 13: Metadata and delivery formats — organizing your files for the people who will use them
+- Day 14: Critique and portfolio build — honest peer feedback on finished work
+- Day 15: Final listening session and reflection — present your work, explain your choices, hear the response
+
+## What You'll Make
+
+- Three short pieces: a 60-second theme, an ambient sound design piece, and a score for a peer's visual work
+- Session files, stems, and production notes for each piece
+- A listening journal documenting your analytical engagement with existing music throughout the course
 
 ## Key Practices
-- Name and organize tracks; version control sessions
-- Reference mixes; listen on multiple systems
-- Protect hearing; monitor levels
 
-## Policies
-- Use licensed sounds; credit collaborators
- 
+- Name and organize every track from the beginning — sessions get complicated fast, and chaos compounds
+- Reference your mixes on multiple systems before you declare them finished
+- Protect your hearing — ear fatigue is real, and the best engineers take breaks

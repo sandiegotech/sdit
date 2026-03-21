@@ -1,43 +1,69 @@
 ---
 id: lbs-205
-title: "LBS 205 – Writing & Communication II: Argument, Evidence, and Style"
-parent_volume: vol-02-ethics-and-reasoning
+title: "LBS-205 — Writing & Communication II: Argument, Evidence, and Style"
+course_code: LBS-205
 level: 200
-tags: [writing, rhetoric, argument, style]
+tags: [writing, rhetoric, argument, style, evidence]
 ---
 
-# LBS 205 – Writing & Communication II: Argument, Evidence, and Style
+# LBS-205 — Writing & Communication II: Argument, Evidence, and Style
+
+You already know how to write. This course teaches you how to argue — clearly, honestly, and in a way that actually moves people.
+
+## The Central Question
+
+> How do you explain a complicated thing simply — without making it wrong?
 
 ## What This Course Is About
-Strengthen your argumentation: structure claims, marshal evidence, handle counterarguments, and write for different audiences and formats.
 
-## Why It Matters
-Clear, evidence‑based writing moves decisions forward. It is the bridge between analysis and action.
+This course is about the hardest thing in writing: saying something true and complex in a way that a real person will actually understand. You'll work with argument structures, evidence hierarchies, and rhetorical tools — not as academic exercises, but as live problems you have to solve on the page. Every week you'll produce something: a brief, an op-ed, a memo, a public letter. The craft compounds.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Build sound argument structures with credible sources
-- Anticipate and address counterarguments fairly
-- Adjust voice and style for purpose and audience
-- Produce briefs, op‑eds, memos, and presentations
+## Why It Matters Now
 
-## Weekly Themes (15 Weeks)
-1. Argument Structures
-2. Evidence and Sources
-3. Counterarguments
-4. Style and Tone
-5. Rhetorical Devices (Advanced)
-6. Logical Fallacies (Diagnostic)
-7. Data‑Driven Writing
-8. Policy Briefs
-9. Op‑Eds and Public Writing
-10. Presentations and Visuals
-11. Editing and Revision
-12. Collaboration and Peer Review
-13. Writing for Different Audiences
-14. Portfolio Assembly
-15. Final Manifesto/Brief
+In the age of AI-generated content, the ability to make a genuinely well-argued case — one that handles counterarguments fairly and uses evidence honestly — is becoming rarer and more valuable. Clear, evidence-based writing is how individuals still cut through.
+
+## By the End of This Course, You Will
+
+- Build sound argument structures that hold up under scrutiny
+- Marshal evidence from multiple sources and cite it honestly
+- Anticipate counterarguments and engage them without straw-manning
+- Adjust voice and register for different audiences and formats
+- Produce finished briefs, op-eds, memos, and presentations that do real work
+
+## The 15-Day Arc
+
+**Week 1 — Arguments**
+
+- Day 1: What makes an argument — claims, warrants, and evidence
+- Day 2: Structuring a case — deductive vs. inductive approaches
+- Day 3: Evidence hierarchies — what counts as strong support
+- Day 4: Logical fallacies — recognizing and avoiding them in your own work
+- Day 5: First draft workshop — build an argument from scratch and stress-test it
+
+**Week 2 — Style and Audience**
+
+- Day 6: Counterarguments — how to steelman and respond fairly
+- Day 7: Voice and register — writing for experts vs. general readers
+- Day 8: Data-driven writing — presenting numbers without misleading
+- Day 9: Rhetorical devices — anaphora, analogy, contrast, and when to use them
+- Day 10: The policy brief — structure, economy, and actionable recommendations
+
+**Week 3 — Forms and Finishing**
+
+- Day 11: The op-ed — opinion writing that earns its conviction
+- Day 12: The executive memo — precision writing for decision-makers
+- Day 13: Revision as thinking — how rewriting changes the argument
+- Day 14: Peer editing and feedback — reading each other's work with rigor
+- Day 15: Final portfolio presentation — your best work, defended
+
+## What You'll Make
+
+- A policy brief on a real issue, with a clear recommendation and evidence base
+- An op-ed of 700–900 words, suitable for public publication
+- A portfolio of revised short-form pieces demonstrating range and growth
 
 ## Key Practices
-- Draft → feedback → revise cycles; annotated sources; clarity over flourish
 
+- Draft early, revise hard — the first draft is just thinking out loud
+- Read your work aloud before submitting — if you can't say it smoothly, it isn't ready
+- Every claim needs a warrant; every warrant needs to be checked

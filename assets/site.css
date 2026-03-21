@@ -1768,3 +1768,157 @@ body > header:not(.site-header) h1 {
   .chapter-row-body strong { font-size: 0.88rem; }
   .chapter-row-body span { display: none; }
 }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   COURSE PAGES
+   ════════════════════════════════════════════════════════════════════════════ */
+
+body.course-page main {
+  max-width: 780px;
+  display: grid;
+  gap: 0.85rem;
+}
+
+/* Eyebrow: code badge + category */
+.course-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.course-code-badge {
+  font-family: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.22rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(28, 58, 94, 0.18);
+}
+
+.course-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Course title */
+body.course-page h1 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35rem;
+}
+
+/* Course intro sentence (first p after h1) */
+body.course-page h1 + p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0 0 0.5rem;
+  max-width: 60ch;
+}
+
+/* Section cards */
+.course-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.5rem 1.6rem;
+  box-shadow: var(--shadow);
+}
+
+.course-section > h2 {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.course-section ul,
+.course-section ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.course-section li {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 0.3rem;
+}
+
+.course-section p {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.course-section p:last-child { margin-bottom: 0; }
+
+/* Central question */
+.course-section.is-central-q {
+  background: var(--accent-soft);
+  border-color: rgba(28, 58, 94, 0.18);
+}
+
+.course-section.is-central-q blockquote {
+  margin: 0;
+  padding: 0.3rem 0 0.3rem 1.1rem;
+  border-left: 3px solid var(--accent);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.course-section.is-central-q blockquote p { margin: 0; font-size: inherit; color: inherit; }
+
+/* 15-day arc */
+.course-section.is-arc > p { margin: 0; }
+
+.course-section.is-arc strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  margin: 1rem 0 0.4rem;
+}
+
+.course-section.is-arc > p:first-of-type strong { margin-top: 0; }
+
+.course-section.is-arc ul {
+  margin: 0 0 0.2rem;
+}
+
+.course-section.is-arc li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+/* Deliverables */
+.course-section.is-deliverables li {
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  body.course-page main { gap: 0.65rem; }
+  .course-section { padding: 1.1rem 1.2rem; }
+  body.course-page h1 { font-size: 1.7rem; }
+}

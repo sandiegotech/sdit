@@ -351,7 +351,40 @@
     "LBS 105": "/courses/LBS-105-writing-communication.html",
     "LBS 110": "/courses/LBS-110-mathematics-for-modern-thinkers.html",
     "LBS 120": "/courses/LBS-120-physics-with-lab.html",
-    "LAB 101": "/courses/LAB-101-creative-intelligence-lab.html"
+    "LBS 201": "/courses/LBS-201-ethics-moral-reasoning.html",
+    "LBS 205": "/courses/LBS-205-writing-communication-ii.html",
+    "LBS 210": "/courses/LBS-210-mathematical-reasoning-proof.html",
+    "LBS 220": "/courses/LBS-220-scientific-method-experimental-design.html",
+    "LAB 101": "/courses/LAB-101-creative-intelligence-lab.html",
+    "LAB 201": "/courses/LAB-201-reasoning-lab-cases-debates.html",
+    "TECH 101": "/courses/TECH-101-coding-computational-thinking.html",
+    "TECH 201": "/courses/TECH-201-unmanned-systems.html",
+    "TECH 202": "/courses/TECH-202-ai-society.html",
+    "TECH 203": "/courses/TECH-203-cybersecurity-information-warfare.html",
+    "TECH 204": "/courses/TECH-204-hardware-hacking-embedded.html",
+    "TECH 205": "/courses/TECH-205-climate-tech-energy-systems.html",
+    "BUS 201": "/courses/BUS-201-entrepreneurship-startup-design.html",
+    "BUS 202": "/courses/BUS-202-finance-for-innovators.html",
+    "BUS 203": "/courses/BUS-203-organizational-leadership-negotiation.html",
+    "BUS 204": "/courses/BUS-204-global-markets-geopolitics.html",
+    "BUS 205": "/courses/BUS-205-business-ethics-responsibility.html",
+    "DATA 201": "/courses/DATA-201-data-science-visualization.html",
+    "HUM 201": "/courses/HUM-201-philosophy-of-consciousness.html",
+    "HUM 202": "/courses/HUM-202-political-theory-civic-life.html",
+    "HUM 203": "/courses/HUM-203-cultural-anthropology-fieldwork.html",
+    "HUM 204": "/courses/HUM-204-history-of-technology-innovation.html",
+    "HUM 205": "/courses/HUM-205-comparative-religion-society.html",
+    "LIFE 201": "/courses/LIFE-201-outdoor-leadership-expeditionary-skills.html",
+    "LIFE 202": "/courses/LIFE-202-health-fitness-human-performance.html",
+    "LIFE 203": "/courses/LIFE-203-psychology-creativity-flow-states.html",
+    "LIFE 204": "/courses/LIFE-204-education-mentorship-teach-what-you-know.html",
+    "LIFE 205": "/courses/LIFE-205-global-citizenship-civic-engagement.html",
+    "MEDIA 201": "/courses/MEDIA-201-film-visual-storytelling.html",
+    "MEDIA 202": "/courses/MEDIA-202-music-sound-design.html",
+    "MEDIA 203": "/courses/MEDIA-203-design-visual-communication.html",
+    "MEDIA 204": "/courses/MEDIA-204-creative-writing-story-craft.html",
+    "MEDIA 205": "/courses/MEDIA-205-media-culture-society.html",
+    "PSYCH 201": "/courses/PSYCH-201-human-psychology.html"
   };
 
   function buildLessonTopbar(meta, links) {
@@ -741,6 +774,72 @@
     }
   }
 
+  function getCourseCodeFromPath(pathname) {
+    var match = pathname.match(/\/courses\/([A-Z]+-\d+)/);
+    return match ? match[1] : null;
+  }
+
+  function getCourseCategory(code) {
+    var prefix = (code || "").split("-")[0];
+    var cats = {
+      "LBS": "Liberal Arts",
+      "LAB": "Lab",
+      "TECH": "Technology",
+      "BUS": "Business",
+      "HUM": "Humanities",
+      "LIFE": "Life Skills",
+      "MEDIA": "Media & Arts"
+    };
+    return cats[prefix] || "Course";
+  }
+
+  function enhanceCoursePage() {
+    var path = currentPath();
+    if (path.indexOf("/courses/") === -1 || /index\.html$/.test(path)) return;
+
+    document.body.classList.add("course-page");
+
+    var code = getCourseCodeFromPath(path);
+    var main = document.querySelector("main");
+    var h1 = main && main.querySelector("h1");
+    if (!h1 || !code) return;
+
+    // Inject eyebrow with code badge + category
+    var eyebrow = createElement("div", "course-eyebrow");
+    var badge = createElement("span", "course-code-badge", code);
+    var cat = createElement("span", "course-category", getCourseCategory(code));
+    eyebrow.appendChild(badge);
+    eyebrow.appendChild(cat);
+    h1.parentNode.insertBefore(eyebrow, h1);
+
+    // Strip course code prefix from H1 if present (e.g. "LBS-101 — Title" → "Title")
+    var h1Text = h1.textContent || "";
+    var titleMatch = h1Text.match(/^[A-Z]+-\d+\s*[\u2014\-]\s*(.+)$/);
+    if (titleMatch) h1.textContent = titleMatch[1];
+
+    // Wrap H2 sections into course-section cards
+    var children = Array.from(main.children);
+    var currentSection = null;
+    children.forEach(function (child) {
+      if (child === eyebrow || child.tagName === "H1") {
+        currentSection = null;
+        return;
+      }
+      if (child.tagName === "H2") {
+        var text = (child.textContent || "").toLowerCase();
+        var section = createElement("div", "course-section");
+        if (text.indexOf("central question") !== -1) section.classList.add("is-central-q");
+        else if (text.indexOf("arc") !== -1 || text.indexOf("15-day") !== -1) section.classList.add("is-arc");
+        else if (text.indexOf("make") !== -1 || text.indexOf("deliverable") !== -1) section.classList.add("is-deliverables");
+        main.insertBefore(section, child);
+        section.appendChild(child);
+        currentSection = section;
+        return;
+      }
+      if (currentSection) currentSection.appendChild(child);
+    });
+  }
+
   function tagGenericPages() {
     const body = document.body;
     const path = currentPath();
@@ -766,6 +865,7 @@
     enhanceSectionCards();
     appendChapterToolbar();
     enhanceLessonPage();
+    enhanceCoursePage();
     if (typeof window.__sditRewritePaths === "function") {
       window.__sditRewritePaths(document.body);
     }

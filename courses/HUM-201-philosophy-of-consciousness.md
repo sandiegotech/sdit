@@ -1,78 +1,69 @@
 ---
-id: philosophy-of-consciousness
-title: "Philosophy of Consciousness"
-program: electives
-track: humanities-social-sciences
-level: 200
+id: hum-201
+title: "HUM-201 — Philosophy of Consciousness"
 course_code: HUM-201
-outcomes:
-  - Compare major theories of mind and consciousness
-  - Analyze arguments with clear premises, inferences, and objections
-  - Relate scientific findings (neuro/cog sci) to philosophical questions
-  - Write structured essays and concise argument maps
-assessment:
-  - type: essay
-  - type: brief
-  - type: seminar
-prerequisites: []
-tags: [philosophy, mind, cognition, ethics]
+level: 200
+tags: [philosophy, consciousness, mind, AI, ethics]
 ---
 
-# Philosophy of Consciousness
+# HUM-201 — Philosophy of Consciousness
+
+Before you can ask whether an AI is conscious, you have to figure out what consciousness actually is — and nobody has fully answered that question yet.
+
+## The Central Question
+
+> What is it like to be you — and could anything else ever know?
 
 ## What This Course Is About
-Study foundational views of mind and experience: dualism, physicalism, functionalism, panpsychism, and contemporary cognitive science. Practice careful reading, argument mapping, and clear writing.
 
-⸻
+This course investigates the hardest problem in philosophy: what it means to have a subjective experience at all. You'll work through the major theories — dualism, physicalism, functionalism, panpsychism — and the scientific frameworks emerging from neuroscience and cognitive science. You'll analyze what makes a view of mind compelling, where each theory runs into trouble, and what these arguments mean for questions about AI, animal consciousness, and moral status. The method is careful philosophical reading, argument mapping, and structured writing.
 
-## Why It Matters
-Questions about mind shape ethics, AI, and our sense of self. Thinking clearly about them improves decisions in technology, medicine, and society.
+## Why It Matters Now
 
-⸻
+The question of machine consciousness has shifted from thought experiment to policy problem. Courts, corporations, and militaries are making decisions that implicitly assume answers to questions philosophy hasn't resolved. Understanding the arguments — what's actually at stake in the debate between functionalists and biological naturalists — gives you a genuine advantage in navigating those decisions.
 
-## Course Goals
-By the end, you will be able to:
-- Explain and contrast leading theories of consciousness
-- Evaluate arguments using standards of clarity and validity
-- Connect philosophical positions to implications in AI and neuroscience
-- Write analytic essays with strong theses and counterarguments
-- Lead seminars that surface assumptions and alternatives
+## By the End of This Course, You Will
 
-⸻
+- Explain and critically evaluate the major theories of consciousness with precision and fairness
+- Construct and analyze philosophical arguments, identifying premises, inferences, and objections
+- Connect philosophical positions to their implications in AI ethics, neuroscience, and policy
+- Write analytic essays with strong theses, honest counterarguments, and clear conclusions
+- Lead a seminar discussion that surfaces the real disagreements rather than papering over them
 
-## Deliverables
-- Two analytic essays (1500–2000 words)
-- Argument maps for three readings
-- Short brief on an AI or neuro case
+## The 15-Day Arc
 
-## Equipment / Tools
-- Readings packet; argument mapping templates
+**Week 1 — The Problem**
 
-## 15‑Day Progression
-Day 1 — What Is Consciousness? Phenomenology and Questions  
-Day 2 — Dualism and Its Critics  
-Day 3 — Physicalism: Identity and Supervenience  
-Day 4 — Functionalism and Multiple Realizability  
-Day 5 — Qualia and Knowledge Arguments  
-Day 6 — Integrated Information, Global Workspace  
-Day 7 — Panpsychism and Neutral Monism  
-Day 8 — AI and Consciousness: Criteria and Caution  
-Day 9 — Neuroscience: Correlates and Measures  
-Day 10 — Self and Personhood  
-Day 11 — Free Will, Agency, and Responsibility  
-Day 12 — Consciousness and Ethics (Animals, AI, Patients)  
-Day 13 — Student Briefs; Policy/Design Implications  
-Day 14 — Essay Workshop  
-Day 15 — Seminar and Reflection  
+- Day 1: What is consciousness? Phenomenology, qualia, and why this is hard
+- Day 2: Dualism — Descartes, the mind-body problem, and why dualism is still alive
+- Day 3: Physicalism — identity theories, supervenience, and the eliminativist challenge
+- Day 4: Functionalism — multiple realizability and what it would mean for machines
+- Day 5: Qualia and the knowledge argument — Mary's room and the limits of physical explanation
 
-⸻
+**Week 2 — Contemporary Theories**
+
+- Day 6: Integrated Information Theory and Global Workspace Theory — the science-adjacent accounts
+- Day 7: Panpsychism and neutral monism — the view you weren't expecting to take seriously
+- Day 8: AI and consciousness — what criteria would even apply, and how confident should we be?
+- Day 9: Neuroscience and the neural correlates of consciousness — what the science shows and doesn't
+- Day 10: Self, personhood, and continuity — what makes you the same person you were ten years ago?
+
+**Week 3 — Ethics and Applications**
+
+- Day 11: Free will, agency, and moral responsibility — what consciousness has to do with accountability
+- Day 12: Consciousness and ethics — animals, patients in vegetative states, and future AI
+- Day 13: Student briefs — applying your position to a real-world policy or design question
+- Day 14: Essay workshop — peer feedback and revision
+- Day 15: Final seminar and reflection — the question you started with and where you've landed
+
+## What You'll Make
+
+- Two analytic essays of 1,500–2,000 words, each developing and defending an original philosophical argument
+- Argument maps for three assigned readings, identifying premises, inferences, and objections
+- A short brief applying your philosophical position to a real-world AI or neuroscience case
 
 ## Key Practices
-- Argue in good faith; steel‑man opposing views
-- Separate description from evaluation; cite evidence
-- Revise essays after structured peer feedback
 
-## Policies
-- Use course citation style; avoid unsupported claims
-- Participation matters in seminar discussions
-
+- Steelman every position before you argue against it — if you can't make the best case for a view, you don't understand it yet
+- Map arguments before writing essays — clarity about structure prevents pseudo-clarity in prose
+- Revise after peer feedback without defending your first draft — the goal is truth, not consistency

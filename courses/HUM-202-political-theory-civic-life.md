@@ -1,75 +1,69 @@
 ---
-id: political-theory-civic-life
-title: "Political Theory & Civic Life"
-program: electives
-track: humanities-social-sciences
-level: 200
+id: hum-202
+title: "HUM-202 — Political Theory & Civic Life"
 course_code: HUM-202
-outcomes:
-  - Explain key ideas from classical to modern political thought
-  - Analyze institutions, rights, and responsibilities in civic life
-  - Write clear briefs on policy trade‑offs and civic participation
-assessment:
-  - type: brief
-  - type: debate
-  - type: essay
-prerequisites: []
-tags: [politics, civics, law, ethics]
+level: 200
+tags: [politics, civics, justice, democracy, theory]
 ---
 
-# Political Theory & Civic Life
+# HUM-202 — Political Theory & Civic Life
+
+Political theory isn't just history of ideas — it's a toolkit for diagnosing what's wrong with the present and arguing for something better.
+
+## The Central Question
+
+> How should we decide, together, how to live — and who gets a say?
 
 ## What This Course Is About
-Survey political ideas about freedom, authority, justice, and citizenship. Connect theory to contemporary civic problems via debate and writing.
 
-⸻
+This course surveys the major traditions of political thought — from Plato and Aristotle through Hobbes, Locke, and Rousseau to Rawls, Nozick, and contemporary democratic theorists — and connects them to real civic problems. You'll analyze constitutions, courts, media institutions, and policy debates through the frameworks these thinkers offer. Every week involves debate, writing, or structured analysis, because political theory only becomes useful when you can apply it under pressure. The goal is not agreement but rigor: the ability to reason clearly about trade-offs, rights, and the structures through which communities govern themselves.
 
-## Why It Matters
-Healthy civic life requires citizens who can reason about trade‑offs, institutions, and rights. Theory offers durable tools for practical choices.
+## Why It Matters Now
 
-⸻
+Democratic institutions are under pressure worldwide. Understanding the theoretical foundations of those institutions — why they were designed the way they were, what problems they were meant to solve, and how they can fail — is essential for anyone who wants to participate meaningfully in civic life, or who wants to build technology that interacts with it.
 
-## Course Goals
-By the end, you will be able to:
-- Summarize core positions (liberal, republican, democratic, conservative)
-- Analyze constitutions, courts, and administrative power
-- Evaluate policy proposals using principles and evidence
-- Write decision‑ready civic briefs; debate with charity and rigor
+## By the End of This Course, You Will
 
-⸻
+- Summarize and compare core positions in liberal, republican, democratic, and communitarian thought
+- Analyze constitutional structures, courts, and administrative systems using political theory
+- Evaluate policy proposals using principled frameworks and honest evidence
+- Write decision-ready civic briefs that take competing interests seriously
+- Debate political questions with intellectual charity and analytical rigor
 
-## Deliverables
-- Two policy/civic briefs
-- One structured debate with written positions
-- Short essay on citizenship and responsibility
+## The 15-Day Arc
 
-## Equipment / Tools
-- Primary texts and case readings; brief templates
+**Week 1 — Foundations**
 
-## 15‑Day Progression
-Day 1 — Freedom, Authority, Obligation  
-Day 2 — Ancient Roots: Plato, Aristotle, Cicero  
-Day 3 — Social Contract: Hobbes, Locke, Rousseau  
-Day 4 — Liberty and Harm: Mill  
-Day 5 — Justice: Rawls, Nozick, Critics  
-Day 6 — Democracy and Representation  
-Day 7 — Constitutions and Courts  
-Day 8 — Rights, Duties, and Pluralism  
-Day 9 — Administration and Expertise  
-Day 10 — Media, Discourse, and Civic Trust  
-Day 11 — Federalism and Localism  
-Day 12 — Policy Lab: Trade‑offs and Budgets  
-Day 13 — Debate Prep  
-Day 14 — Debate and Deliberation  
-Day 15 — Briefs and Reflection  
+- Day 1: Freedom, authority, and the basic question of political obligation
+- Day 2: Ancient roots — Plato's republic, Aristotle's polis, and why they still matter
+- Day 3: Social contract — Hobbes, Locke, and Rousseau on the origins of legitimate authority
+- Day 4: Liberty and harm — Mill and the arguments that underlie liberal democracy
+- Day 5: Justice — Rawls, Nozick, and the debate that defined 20th-century political philosophy
 
-⸻
+**Week 2 — Institutions**
+
+- Day 6: Democracy and representation — what it means to rule through others
+- Day 7: Constitutions and courts — how written rules constrain and enable political power
+- Day 8: Rights, duties, and pluralism — what to do when legitimate claims conflict
+- Day 9: Administration and expertise — the role of technocracy in democratic societies
+- Day 10: Media, discourse, and civic trust — the information environment that democracy requires
+
+**Week 3 — Application**
+
+- Day 11: Federalism and localism — the question of which level of government should decide what
+- Day 12: Policy lab — apply political theory to a real trade-off with real consequences
+- Day 13: Debate preparation — research, position development, and anticipating objections
+- Day 14: Structured debate and deliberation — argue your position and listen to the response
+- Day 15: Civic brief and reflection — apply what you've learned to a real civic question in your community
+
+## What You'll Make
+
+- Two policy or civic briefs applying theoretical frameworks to real-world political questions
+- A structured debate with written positions and a post-debate reflection on what you learned
+- A short essay on citizenship, obligation, and what you owe to communities you're part of
 
 ## Key Practices
-- Distill arguments; define terms; cite sources
-- Seek common ground; clarify disagreements
-- Write for decisions, not performance
 
-## Policies
-- Respectful debate; evidence over volume
-
+- Define your terms before you argue — most political disagreements are partly about words
+- Seek the strongest version of the opposing view — defeating a straw man proves nothing
+- Write for decisions and civic clarity, not theoretical completeness

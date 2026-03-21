@@ -1,75 +1,69 @@
 ---
-id: global-citizenship-civic-engagement
-title: "Global Citizenship & Civic Engagement"
-program: electives
-track: applied-life-human-development
-level: 200
+id: life-205
+title: "LIFE-205 — Global Citizenship & Civic Engagement"
 course_code: LIFE-205
-outcomes:
-  - Understand civic systems at local, national, and global levels
-  - Engage effectively through service, advocacy, and community projects
-  - Write clear briefs and plans for civic action
-assessment:
-  - type: brief
-  - type: project
-  - type: reflection
-prerequisites: []
-tags: [civics, service, community, policy]
+level: 200
+tags: [civics, service, community, engagement, policy]
 ---
 
-# Global Citizenship & Civic Engagement
+# LIFE-205 — Global Citizenship & Civic Engagement
+
+Citizenship isn't a status — it's a practice, and this course asks you to actually practice it.
+
+## The Central Question
+
+> What do you owe to people you will never meet — and how do you pay it?
 
 ## What This Course Is About
-Practical civics for real communities. Learn institutions, issues, and how to contribute through projects grounded in local needs.
 
-⸻
+This course moves from theory to action. You'll learn how civic institutions work at local, national, and global levels — and then you'll design and execute a real civic engagement project grounded in a real community need. You'll write briefs, conduct interviews, map stakeholders, and present findings publicly. The emphasis is on competence, not just intention: doing good requires understanding systems, earning trust, and following through on commitments, and this course builds all three.
 
-## Why It Matters
-Citizenship is a practice. Clear writing, organized action, and humility turn concern into impact.
+## Why It Matters Now
 
-⸻
+The problems that matter most — climate, inequality, democratic backsliding, global health — require coordinated action across communities and borders. The individuals who can bridge local engagement with global understanding, who can move between the particular and the structural, are the ones who build durable change.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Map civic institutions and points of leverage
-- Design realistic engagement plans with stakeholders
-- Execute small projects and measure outcomes
-- Communicate findings and next steps to the public
+## By the End of This Course, You Will
 
-⸻
+- Map civic institutions at local, national, and international levels and identify points of leverage
+- Research a real community issue, conduct stakeholder interviews, and synthesize findings
+- Design a civic engagement project with realistic scope, measurable goals, and a stakeholder plan
+- Execute at least two project sprints, measure outcomes, and iterate based on what you learn
+- Communicate findings publicly through a written report, presentation, or op-ed
 
-## Deliverables
-- Issue brief with background and options
-- Community engagement plan and outreach artifacts
-- Final project report and presentation
+## The 15-Day Arc
 
-## Equipment / Tools
-- Local data sources, stakeholder contacts, outreach tools
+**Week 1 — Understand**
 
-## 15‑Day Progression
-Day 1 — What Is Citizenship? Rights and Duties  
-Day 2 — Institutions and Process  
-Day 3 — Local Issues and Stakeholders  
-Day 4 — Research Methods and Interviews  
-Day 5 — Writing Briefs; Clarity and Neutrality  
-Day 6 — Project Scoping; SMART Goals  
-Day 7 — Outreach and Communication  
-Day 8 — Partnerships and Ethics  
-Day 9 — Execute Sprint 1  
-Day 10 — Review; Adjust Plan  
-Day 11 — Execute Sprint 2  
-Day 12 — Measure and Document  
-Day 13 — Public Communication; Op‑eds/Presentations  
-Day 14 — Handoff and Sustainability  
-Day 15 — Final Report and Reflection  
+- Day 1: What is citizenship? Rights, duties, and the question of who counts as a neighbor
+- Day 2: Institutions and process — how decisions actually get made at different levels of government
+- Day 3: Local issues and stakeholders — mapping the problem you're going to work on
+- Day 4: Research methods — document analysis, public data, and stakeholder interviews
+- Day 5: Issue brief — synthesize your research into a clear, evidence-based document
 
-⸻
+**Week 2 — Plan and Act**
+
+- Day 6: Project scoping — setting realistic, measurable goals for a fifteen-day engagement
+- Day 7: Outreach and communication — how to reach stakeholders without manipulating or misrepresenting
+- Day 8: Partnerships and ethics — who can you work with, and what obligations does that create?
+- Day 9: Execute sprint 1 — your first concrete actions in the community
+- Day 10: Review and adjust — what happened, what you learned, and what changes next
+
+**Week 3 — Sustain and Communicate**
+
+- Day 11: Execute sprint 2 — build on sprint 1 with the lessons from the debrief
+- Day 12: Measure and document — gathering evidence that your work had the effect you intended
+- Day 13: Public communication — writing about civic work for audiences who weren't involved in it
+- Day 14: Handoff and sustainability — designing your project so it can continue after the course ends
+- Day 15: Final report and reflection — present your work publicly and honestly, including what didn't go as planned
+
+## What You'll Make
+
+- An issue brief on a real civic problem, with background, stakeholder analysis, and policy options
+- A community engagement plan and outreach artifacts documenting your actual interactions
+- A final project report suitable for public sharing, covering what you did, what you found, and what comes next
 
 ## Key Practices
-- Listen first; build trust; follow through
-- Write for decisions and public clarity
-- Document and share results openly
 
-## Policies
-- Respect community norms and privacy; obtain consent for interviews
-
+- Listen before you propose — communities have context you don't, and your plan will be better for it
+- Follow through on every commitment you make, no matter how small — trust is built in the details
+- Document your work in real time; memory flattens complexity and civic work deserves honest records

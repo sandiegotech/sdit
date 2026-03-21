@@ -1,43 +1,69 @@
 ---
 id: lbs-210
-title: "LBS 210 – Mathematical Reasoning & Proof"
-parent_volume: vol-02-ethics-and-reasoning
+title: "LBS-210 — Mathematical Reasoning & Proof"
+course_code: LBS-210
 level: 200
-tags: [mathematics, logic, proof]
+tags: [mathematics, logic, proof, reasoning]
 ---
 
-# LBS 210 – Mathematical Reasoning & Proof
+# LBS-210 — Mathematical Reasoning & Proof
+
+Mathematics isn't just calculation — it's one of the few human activities where you can be completely, irrefutably right, and this course teaches you how to get there.
+
+## The Central Question
+
+> What does it mean to prove something is true — beyond any doubt?
 
 ## What This Course Is About
-Build rigorous thinking through logic, sets, and proof techniques. Communicate mathematics clearly and honestly.
 
-## Why It Matters
-Proof is disciplined reasoning. It trains precision that transfers to engineering, research, and policy.
+You'll learn the core techniques of mathematical proof — direct proof, proof by contradiction, contrapositive, and induction — and apply them to sets, functions, relations, and graphs. More importantly, you'll learn the discipline of mathematical thinking: stating assumptions explicitly, defining terms precisely, and separating what you can show from what you merely suspect. This is the course where rigor becomes a habit.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Use core proof techniques (direct, contradiction, contrapositive, induction)
-- Work with sets, relations, functions, and graphs
-- Model assumptions; separate conjecture from theorem
-- Write clean, readable proofs and explanations
+## Why It Matters Now
 
-## Weekly Themes (15 Weeks)
-1. Logic and Sets
-2. Direct Proof
-3. Contradiction and Contrapositive
-4. Mathematical Induction
-5. Functions and Relations
-6. Counting and Combinatorics
-7. Graphs and Connectivity
-8. Probability Basics
-9. Optimization Intuition
-10. Algorithms and Complexity (Primer)
-11. Modeling and Assumptions
-12. Data and Inference (Bridges)
-13. Uncertainty and Risk
-14. Mathematical Communication
-15. Final Problem Write‑up
+Algorithms, cryptography, AI systems, and data structures all rest on mathematical foundations. More than that, the habit of proof — the practice of saying exactly what you mean and showing that it must be true — is a transferable superpower in any field that requires clear reasoning.
+
+## By the End of This Course, You Will
+
+- Construct and communicate proofs using direct, contradiction, contrapositive, and induction methods
+- Work fluently with sets, relations, functions, and basic graph theory
+- Distinguish conjecture from theorem — and know what it takes to close that gap
+- Write clean, readable mathematical arguments that others can follow and verify
+- Recognize where your reasoning breaks down and fix it
+
+## The 15-Day Arc
+
+**Week 1 — Logic and Structure**
+
+- Day 1: Propositions, connectives, and truth tables
+- Day 2: Sets — definitions, operations, Venn diagrams, power sets
+- Day 3: Quantifiers — for all, there exists, and their negations
+- Day 4: Direct proof — structure, strategy, and worked examples
+- Day 5: Proof workshop — try ten proofs, fail productively
+
+**Week 2 — More Techniques**
+
+- Day 6: Proof by contrapositive — when going backward is easier
+- Day 7: Proof by contradiction — assuming the opposite to find the truth
+- Day 8: Mathematical induction — base cases, inductive steps, and why it works
+- Day 9: Functions and relations — injections, surjections, equivalences
+- Day 10: Counting and combinatorics — permutations, combinations, and the pigeonhole principle
+
+**Week 3 — Applications and Communication**
+
+- Day 11: Graphs — vertices, edges, paths, and connectivity
+- Day 12: Probability basics — sample spaces, events, and simple calculations
+- Day 13: Algorithms and complexity — what does "efficient" mean mathematically?
+- Day 14: Mathematical communication — writing proofs that a reader can trust
+- Day 15: Final problem write-up — one hard problem, fully solved and explained
+
+## What You'll Make
+
+- A proof portfolio: ten proofs across multiple techniques, annotated with your reasoning process
+- A written solution to a novel problem, with full exposition and reflection on failed attempts
+- A short guide explaining one proof technique to someone who has never seen it before
 
 ## Key Practices
-- State assumptions; define terms; show steps; reflect on limits
 
+- State your assumptions before you start — every proof begins with what you're allowed to use
+- Define every term you use — mathematical precision starts with language
+- When stuck, try small examples and look for the pattern before constructing the proof

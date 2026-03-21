@@ -1,78 +1,69 @@
 ---
-id: global-markets-geopolitics
-title: "Global Markets & Geopolitics"
-program: electives
-track: business-leadership
-level: 200
+id: bus-204
+title: "BUS-204 — Global Markets & Geopolitics"
 course_code: BUS-204
-outcomes:
-  - Understand macro forces shaping markets and supply chains
-  - Analyze risk and opportunity across regions and regulations
-  - Communicate implications for product, pricing, and entry
-assessment:
-  - type: brief
-  - type: presentation
-  - type: reading-journal
-prerequisites: []
-tags: [markets, geopolitics, strategy, risk]
+level: 200
+tags: [markets, geopolitics, strategy, supply-chains, risk]
 ---
 
-# Global Markets & Geopolitics
+# BUS-204 — Global Markets & Geopolitics
+
+The semiconductor shortage that shut down car factories wasn't a surprise to people who understood supply chains — this course is about developing that kind of peripheral vision.
+
+## The Central Question
+
+> How does the world actually decide who gets what — and who makes the rules?
 
 ## What This Course Is About
-Map how policy, trade, technology, and conflict shape markets and supply chains. Learn to brief decision‑makers clearly and anticipate second‑order effects.
 
-⸻
+This course maps the forces that shape global markets and supply chains: trade policy, sanctions, currency flows, industrial policy, and the geopolitical competition that increasingly runs underneath all of it. You'll learn to build country and sector briefings, analyze regulatory risk, and write decision-ready memos for leaders who need to act on ambiguous information. The emphasis is on analytical clarity and honest uncertainty — knowing what the data supports and what it doesn't.
 
-## Why It Matters
-Geopolitics shows up in chips, energy, logistics, and capital flows. Understanding the terrain reduces surprises and improves strategic bets.
+## Why It Matters Now
 
-⸻
+Technology supply chains now run through a handful of chokepoints — semiconductor fabs, rare earth processors, undersea cables — that have become explicit instruments of geopolitical competition. Any builder, investor, or policymaker operating internationally needs to understand this terrain. This course builds the tools.
 
-## Course Goals
-By the end of this course, you will be able to:
-- Build concise country and sector briefings
-- Analyze regulatory risk (export controls, sanctions, data laws)
-- Map supply chains and exposure to shocks
-- Write actionable memos with options and contingencies
-- Present findings succinctly to non‑experts
+## By the End of This Course, You Will
 
-⸻
+- Build concise, evidence-based country and sector briefings
+- Analyze regulatory risk — export controls, sanctions, data localization, and antitrust
+- Map supply chain exposure to geopolitical shocks and identify mitigation options
+- Write actionable memos with clear options and contingencies
+- Track fast-moving developments and update your analysis as facts change
 
-## Deliverables
-- Two country briefs and one sector brief
-- Risk map with mitigations for a product/supply chain
-- Final presentation and written memo
+## The 15-Day Arc
 
-## Equipment / Tools
-- Open-source data sources; news and think‑tank feeds
-- Brief templates (provided) and citation manager
+**Week 1 — The Terrain**
 
-## 15-Day Progression
-Day 1 — Frameworks: Power, Institutions, and Interdependence  
-Day 2 — Trade Basics; Comparative Advantage vs Security  
-Day 3 — Supply Chains; Concentration and Chokepoints  
-Day 4 — Sanctions and Export Controls  
-Day 5 — Energy and Commodities; Price Shocks  
-Day 6 — Currency and Capital Flows  
-Day 7 — Industrial Policy; Subsidies and Standards  
-Day 8 — Country Brief 1: Research and Drafting  
-Day 9 — Sector Deep Dive: Semiconductors, Energy, or Pharma  
-Day 10 — Regulation: Data, Privacy, and Localization  
-Day 11 — Scenario Planning: Crises and Contingencies  
-Day 12 — Red‑teaming and Assumption Testing  
-Day 13 — Signal Tracking; Sources and Methods  
-Day 14 — Briefing Practice; Slides and Story  
-Day 15 — Final Brief and Presentation  
+- Day 1: Frameworks — power, institutions, and the logic of interdependence
+- Day 2: Trade basics — comparative advantage, supply chain economics, and the security premium
+- Day 3: Supply chains — concentration, chokepoints, and what "single point of failure" really means
+- Day 4: Sanctions and export controls — how they work, how they're evaded, and what they can and can't do
+- Day 5: Energy and commodities — price shocks, resource dependencies, and the geopolitics of green tech
 
-⸻
+**Week 2 — Regulation and Risk**
+
+- Day 6: Currency and capital flows — exchange rates, capital controls, and financial interdependence
+- Day 7: Industrial policy — subsidies, standards, and the return of strategic competition
+- Day 8: Country brief workshop — research, draft, and critique a country briefing
+- Day 9: Sector deep dive — semiconductors, critical minerals, or pharmaceutical supply chains
+- Day 10: Data, privacy, and localization — the regulatory patchwork that shapes digital markets
+
+**Week 3 — Analysis and Judgment**
+
+- Day 11: Scenario planning — how to think about crises, contingencies, and low-probability high-impact events
+- Day 12: Red-teaming your analysis — find the assumptions you haven't questioned
+- Day 13: Signal tracking — sources, methods, and distinguishing news from intelligence
+- Day 14: Briefing practice — slides, story, and the ruthless compression that good briefings require
+- Day 15: Final brief and presentation — your sector or country analysis, delivered and defended
+
+## What You'll Make
+
+- Two country briefs and one sector brief, each with evidence base and key uncertainties documented
+- A supply chain risk map with identified exposures and prioritized mitigations
+- A final briefing memo with scenario analysis and recommended actions
 
 ## Key Practices
-- Separate signal from noise; track sources systematically
-- Write for decisions: options, trade‑offs, and recommendations
-- Update priors quickly as facts change
 
-## Policies
-- Cite all sources; include dates and links
-- Keep archives of briefs and data; version control your work
- 
+- Separate signal from noise — the goal of systematic source tracking is to reduce surprise, not eliminate it
+- Write for decisions: every brief should end with options, trade-offs, and a recommendation
+- Update your priors quickly when facts change — being wrong is fine; staying wrong is not
