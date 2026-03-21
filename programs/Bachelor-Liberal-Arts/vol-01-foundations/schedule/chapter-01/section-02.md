@@ -1,141 +1,134 @@
 ---
 id: vol01-chapter01-section02
-title: "Section 02 — The Power of Story (LBS 105)"
-parent_volume: vol‑01‑foundations
+title: "Day 02 — What Do You Have to Say?"
+parent_volume: vol-01-foundations
 chapter: 1
 section: 2
-course: LBS 105 – Writing & Communication I
+course: LBS 105 – Writing & Communication I
 ---
 
-# Section 02 — The Power of Story  
-**Course:** LBS 105 – Writing & Communication I: Rhetoric & Storytelling
-
----
-
-## Session Overview
-
-Stories are at the heart of how we think, feel, and connect. In this session, you’ll explore the mechanics of persuasion and narrative—from classic rhetorical foundations to modern storytelling—so that you can both analyze and craft stories with intention.
-
-You’ll read theory, watch inspiring visuals, listen to real storytellers, write your own narrative, and reflect deeply on the meaning and power of storytelling in your life.
+# Day 02 — What Do You Have to Say?
+**Course:** LBS 105 – Writing & Communication I
 
 ---
 
-## Learning Objectives
+## Session Focus
 
-By the end of this session, you will:
+AI can write a grammatically correct essay on any topic in seconds. It can match tones, hit word counts, and cite sources. What it cannot do is have lived something and need to say it.
 
-- Recognize rhetorical and storytelling techniques in classic and modern sources
-- Analyze what makes stories persuasive, memorable, and authentic
-- Write and revise your own story with awareness of style and technique
-- Reflect on the role of storytelling in shaping your voice and purpose
+That is the whole game now. Not correct writing. *Necessary* writing — the kind that comes from a specific person who has seen something, felt something, or understood something that would be lost if they didn't write it down.
+
+> *"A writer only begins a book. A reader finishes it."* — Samuel Johnson
+
+Today you figure out what you actually have to say.
+
+---
+
+## What You'll Do Today
+
+**Time:** ~60 minutes
+**Output:** One 300-word piece that only you could have written
 
 ---
 
 ## Session Flow
 
-### 1. Set Intention  
+### 1. Begin with this question (5 min)
 
-Begin by recalling why storytelling matters to you. Maybe share a memorable story you heard or wrote, aloud or with a friend. Center yourself in the power of narrative.
+Write your immediate answer:
 
----
+> **What is one thing you know — from your own life, experience, or observation — that most people don't?**
 
-### 2. Read  
-
-- **Aristotle, _Rhetoric_, Book I excerpt: “On persuasion”**  
-  [Read the excerpt online](https://classics.mit.edu/Aristotle/rhetoric.1.i.html) (navigate to relevant section)
-
-- **Chimamanda Ngozi Adichie, “The Danger of a Single Story”** (essay)  
-  [Read the essay at The New Yorker](https://www.newyorker.com/magazine/2009/10/12/the-danger-of-a-single-story)
+It doesn't have to be profound. It could be how a specific kind of silence feels, or what you noticed working a job nobody talks about, or how a relationship changed your thinking. Just write the thing you actually know.
 
 ---
 
-### 3. Watch  
+### 2. Read (15 min)
 
-- **Chimamanda Ngozi Adichie — _The Danger of a Single Story_** (TED Talk, ~18 min)  
-  [Watch on YouTube](https://www.youtube.com/watch?v=D9Ihs241zeg)
+**George Orwell — "Why I Write" (1946)**
+[Read at Orwell Foundation](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/why-i-write/)
 
-- **Pixar in a Box: Introduction to Storytelling** (~25 min)  
-  [Watch on Khan Academy](https://www.khanacademy.org/partner-content/pixar/storytelling) (scroll to “Intro to Storytelling”)
-
----
-
-### 4. Listen  
-
-**The Moth storytelling podcast** — one episode (~20–30 min)  
-[Choose a memorable episode](https://themoth.org/podcast) and listen attentively to how the storyteller builds tension, voice, and emotional impact.
+Orwell names four motives for writing. Notice which ones you recognize in yourself. Notice which ones you don't.
 
 ---
 
-### 5. Reflect While Engaging  
+### 3. Watch (15 min)
 
-Take notes as you read, watch, and listen:
-- What rhetorical moves stand out?
-- Which narrative elements (voice, detail, pacing) stick with you?
-- Sketch images, quote phrases, ask questions in your margin or notebook.
+**David Foster Wallace — "This Is Water" (commencement speech, 2005)**
+[Watch on YouTube](https://www.youtube.com/watch?v=8CrOL-ydFMI)
+
+This speech is about attention — what you choose to notice, and how that choice shapes everything. Writing is, at its core, a record of what you paid attention to.
+
+---
+
+### 4. One note before you write
+
+Orwell's fourth motive — *political purpose* — is worth pausing on. He means the broadest possible version: wanting to push the world in a direction. Not politics as parties. Politics as *caring about something enough to try to change how people see it.*
+
+Ask yourself: what do I actually care about enough to want others to see differently?
+
+---
+
+## Practice Block
+
+### Write 300 words that only you could write
+
+Go back to what you wrote in Step 1. Now write it properly — not as a list or a note, but as a piece of writing with sentences, a voice, and some shape.
+
+Guidelines:
+- No research. No AI. Just you and what you know.
+- Write in first person. Use "I."
+- It can be about anything: a place, a person, a moment, a skill, a realization, a question you can't shake.
+- 300 words exactly, or close. Constraint forces precision.
+
+This piece goes in your archive. It's the first real record of your voice in this program.
+
+---
+
+## AI Lens (Optional)
+
+When you're done, paste your 300 words into your AI assistant and ask it to "rewrite this in a polished, formal essay style."
+
+Read what it produces. Then ask yourself:
+- What did it keep?
+- What did it remove?
+- Does the rewrite sound like you?
+
+This is not a test of AI versus human. It's a test of what your voice actually *is* — and what happens to it when it's averaged into something generic.
 
 ---
 
 ## Key Quote Box
 
-Select one line or passage from today’s materials that resonates deeply with you:
+Find one line from Orwell, Wallace, or your own writing today that you want to keep.
 
-> “_______________________________________________________”
-
----
-
-## Practice Blocks
-
-### Analyze a Story  
-Pick one story you encountered—Aristotle’s write-up, Adichie’s essay, or The Moth episode.  
-List **three techniques** that made it compelling—think of pacing, imagery, emotional build, rhetorical devices, or speaker voice.
+> "____________________________________________________________"
 
 ---
 
-### Write Your Own Story  
-Create a **two-page narrative**, real or imagined, using at least one rhetorical or storytelling technique (e.g., contrast, repetition, vivid detail, strong opening, personal voice).
+## Reflection to Carry Forward
+
+At the end of today, write one sentence answering this:
+
+> What do I want to say — over the course of this entire program — that I haven't said yet?
+
+Don't answer fully. Just point toward it.
 
 ---
 
-### Peer Reflection (Optional)  
-Read your story aloud to someone else (or record yourself).  
-Note moments that felt powerful or flat. Ask:
-- What phrase struck you?
-- Where did your attention drift?
-- What clarified, and what confused?
+## Hard Problem (Optional)
 
----
+Orwell says great prose is like "a pane of glass." You don't notice the writing — you see straight through to the thing being said.
 
-### Creative Rewrite  
-Take the story you just wrote and **rewrite it in a different style or voice**—for example:
-- Shift from formal to conversational
-- Change tone (humorous → serious, introspective → dramatic)
-
-Reflect on what shifted in mood, clarity, or tension.
-
----
-
-### Reflection  
-Write a short reflection (a few paragraphs) responding to these prompts:
-- What does storytelling mean to me?
-- How might storytelling shape my thinking, learning, or future work?
-
----
-
-## Hard Problem (Optional) 
-
-Pick your two-page story and **rewrite it twice**:
-1. As a **political speech**—incorporate rhetoric, repetition, calls to action.
-2. As a **children’s bedtime story**—simple language, warmth, and soothing tone.
-
-What changes in structure, tone, vocabulary, and emotional impact? Why?
+Find a piece of writing you love — a paragraph, a page, anything. Analyze what makes it transparent. Then try to rewrite a paragraph of your own piece to be more like glass.
 
 ---
 
 ## Notes
 
-- Having trouble understanding a concept? Use the "Knowledge Expert" to help explain the concepts better.
-- If you feel stuck, talk through your emerging story with someone, or record yourself telling it.
-- The goal isn’t polished—it's to discover your narrative voice. Start messy, stay honest.
+- 300 words is short on purpose. Editing is harder than writing. Fill the space, then cut.
+- If you don't know what to write about, write about not knowing what to write about. That's a real thing too.
+- The goal isn't to produce something impressive. It's to produce something true.
 
 ---
 
@@ -143,14 +136,14 @@ What changes in structure, tone, vocabulary, and emotional impact? Why?
 
 Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
 
-### My Answer
+### My 300 Words
 
-_Write your response to today's practice blocks here._
+_Write your piece here._
 
 ### Key Quote I'm Keeping
 
-> "_Replace this with a quote from today's materials._"
+> "_Replace this with a line from today's materials or your own writing._"
 
-### My Reflection
+### What I Want to Say
 
-_What did you take away? What questions are you still sitting with?_
+_Your one sentence pointing toward what you want to say by the end of this program._

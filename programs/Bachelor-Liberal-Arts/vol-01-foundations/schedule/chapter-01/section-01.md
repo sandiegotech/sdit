@@ -1,124 +1,133 @@
 ---
 id: vol01-chapter01-section01
-title: "Section 01 — What is a Liberal Education? (LBS 101)"
+title: "Day 01 — What Does It Mean to Be Educated Now?"
 parent_volume: vol-01-foundations
 chapter: 1
 section: 1
 course: LBS 101 – The Mental Gym
 ---
 
-# Day 01 — What is a Liberal Education?
+# Day 01 — What Does It Mean to Be Educated Now?
 **Course:** LBS 101 – The Mental Gym
+
+---
 
 ## Session Focus
 
-This first day sets the tone for the degree: education as formation, not just information.
+A machine can now pass any exam, write any essay, and answer almost any question faster than you can.
 
-Move through one foundational reading, two public lectures, and one short audio conversation. Then turn the material into your own position through writing, comparison, and reflection.
+So what is education actually for?
 
-> If education is more than training, what kind of person should it form?
+That is the question this entire degree — and this first session — is built around. Not as a crisis. As an invitation. Because if the old answers no longer work, you get to think from scratch. And thinking from scratch is exactly what a liberal education trains you to do.
 
-## Learning Objectives
+> *"The goal of education is not to fill a bucket, but to light a fire."* — W.B. Yeats
 
-By the end of the session, you should be able to:
+---
 
-- Write a personal definition of education
-- Compare classical and modern views of the university
-- Map your worldview and where learning fits inside it
-- Reflect on who you want to become through this program
+## What You'll Do Today
+
+**Time:** ~60 minutes
+**Output:** One page of writing + one key quote you'll keep for the whole program
+
+---
 
 ## Session Flow
 
-### 1. Set intention
+### 1. Begin with this question (5 min)
 
-Before beginning, read your *Student Intentions* page aloud. Take a breath. This session is the start of your archive, so let it feel important.
+Before you read or watch anything, open your notebook and write your immediate, unfiltered answer to this:
 
-### 2. Read
+> **What is education for?**
 
-**John Henry Newman - *The Idea of a University*, Chapter V: "Knowledge Its Own End"**  
-[Read online at Newman Reader](https://www.newmanreader.org/works/idea/discourse5.html)
+Don't edit. Don't second-guess. Just write for 5 minutes straight. Whatever comes out is the right starting point.
 
-Focus on what Newman thinks a university should cultivate in the mind.
+Set it aside. You'll come back to it at the end.
 
-### 3. Watch
+---
 
-- **Harry Lewis - *Excellence with a Soul***  
-  [Watch on YouTube](https://www.youtube.com/watch?v=b8-S2HzPKDM)
+### 2. Read (20 min)
 
-- **Michael Sandel - *Justice* Episode 1**  
-  [Watch on YouTube](https://www.youtube.com/watch?v=kBdfcR-8hEY)
+**John Henry Newman — *The Idea of a University*, Discourse V: "Knowledge Its Own End"**
+[Read at Newman Reader](https://www.newmanreader.org/works/idea/discourse5.html)
 
-### 4. Listen
+Written in 1852 — but it's the clearest argument ever made that education is not job training. It is the cultivation of the mind itself.
 
-**Susan Wolf on meaning in life**  
-[Listen on Philosophy Bites](https://philosophybites.com/podcast/susan-wolf-on-meaning-in-life/)
+Read slowly. Newman is dense. Don't try to absorb everything. Look for the one line that feels most true — or most wrong.
 
-### 5. Reflect while engaging
+---
 
-As you move through the materials, capture:
+### 3. Watch (15 min)
 
-- Margin notes
-- Highlighted quotes
-- Small sketches or diagrams
-- Questions that do not leave you
+**Michael Sandel — *Justice*, Episode 1: "The Moral Side of Murder"**
+[Watch on YouTube](https://www.youtube.com/watch?v=kBdfcR-8hEY)
 
-## Practice Blocks
+Don't worry about following every argument. Watch how Sandel *teaches*. Notice what it feels like when a question you thought was obvious turns out to be genuinely hard. That feeling is what this program is trying to produce in you — every day.
 
-### Define education
+---
 
-Write your own definition of education. Ignore school slogans. Name what you believe education is for and what it should change in a person.
+### 4. Sit with one more question (5 min)
 
-### Compare perspectives
+Before you write, consider this:
 
-Write a reflection comparing your definition with:
+> If AI can pass any exam, learn any fact, and write any essay — what is the one thing it *cannot* do that makes your education worth something?
 
-- John Henry Newman
-- Harry Lewis
-- Michael Sandel
+Don't answer yet. Just let it sit.
 
-Use three headings:
+---
 
-- Where I Agree
-- Where I Diverge
-- What I Carry Forward
+## Practice Block
 
-### Visual mind map
+### Your Education Manifesto (one page)
 
-Draw a map of your current worldview. Include:
+Write one page — no more, no less — answering this:
 
-- What matters most to you in life
-- How you see the world
-- Where education fits in
+**What do I believe education is for, and what kind of person do I want it to make me?**
 
-Use arrows, symbols, clusters, or rough sketches. Clarity matters more than neatness.
+Guidelines:
+- Ignore what you're "supposed" to say. Write what you actually think.
+- You can agree with Newman, disagree, or take something entirely different.
+- Use the word "I" freely. This is personal, not academic.
+- Don't summarize the reading. React to it.
 
-### Reflection
+This page is your baseline. You will read it again on the last day of this program. The distance between who you are now and who you are then is the whole point.
 
-Journal on these prompts:
-
-- Why do I want an education?
-- Who do I hope to become by the end of this program?
-- What kind of life do I want to build, and how does learning fit into it?
+---
 
 ## Key Quote Box
 
-Choose one line from the reading, lecture, or podcast that you want to keep.
+Find one line — from Newman, from Sandel, or from your own writing today — that you want to keep.
 
-> "_______________________________________________________"
+> "____________________________________________________________"
+
+Write it somewhere you'll see it. It becomes part of your archive.
+
+---
+
+## Return to your first answer
+
+Go back to what you wrote in Step 1. Read it without judgment.
+
+Then ask: Did anything shift? Did Newman challenge something you assumed? Did Sandel's students remind you of a question you'd already given up on?
+
+You don't need to rewrite it. Just notice.
+
+---
 
 ## Hard Problem (Optional)
 
-**Design your ideal university**
+The year is 2035. AI tutors are better than any human teacher at transmitting information. Students can learn any skill, any subject, from an AI in a fraction of the time.
 
-- List 10 courses or experiences every student should have.
-- Name what you would remove from traditional models.
-- Write a 1–2 page manifesto describing your university's purpose, structure, and soul.
+In this world: **Is there still a reason for a four-year degree?**
+
+Argue both sides. Then take a position.
+
+---
 
 ## Notes
 
-- This session can be done slowly. No rush.
-- It is normal to struggle with these ideas. The struggle is part of the work.
-- The goal is not to finish quickly. The goal is to approach the work truthfully.
+- You don't have to finish the Newman reading entirely. Read enough to find your quote and form a reaction.
+- If the writing block feels hard, that's correct. You're not summarizing — you're thinking. That's harder.
+- This session is meant to feel significant. Not heavy. Let it.
 
 ---
 
@@ -126,14 +135,14 @@ Choose one line from the reading, lecture, or podcast that you want to keep.
 
 Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
 
-### My Answer
+### My Education Manifesto
 
-_Write your response to today's practice blocks here._
+_Write your one-page response here._
 
 ### Key Quote I'm Keeping
 
-> "_Replace this with a quote from today's materials._"
+> "_Replace this with a line from today's materials or your own writing._"
 
-### My Reflection
+### What Shifted
 
-_What did you take away? What questions are you still sitting with?_
+_After returning to your first answer: what changed, if anything? What question are you sitting with?_
