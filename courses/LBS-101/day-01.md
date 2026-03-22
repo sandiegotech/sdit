@@ -22,24 +22,19 @@ That is the question this entire degree — and this first session — is built 
 
 ---
 
-## What You'll Do Today
+## Session Flow
 
-**Time:** ~60 minutes
-**Output:** One page of writing + one key quote you'll keep for the whole program
+**Time:** ~60 minutes | **Output:** One page of writing + one key quote you'll keep for the whole program
 
 ---
 
-## Session Flow
-
 ### 1. Begin with this question (5 min)
 
-Before you read or watch anything, open your notebook and write your immediate, unfiltered answer to this:
+Before you read or watch anything, write your immediate, unfiltered answer. Don't edit. Don't second-guess. Just write.
 
 > **What is education for?**
 
-Don't edit. Don't second-guess. Just write for 5 minutes straight. Whatever comes out is the right starting point.
-
-Set it aside. You'll come back to it at the end.
+_Your answer (5 min — unfiltered):_
 
 ---
 
@@ -51,6 +46,8 @@ Set it aside. You'll come back to it at the end.
 Written in 1852 — but it's the clearest argument ever made that education is not job training. It is the cultivation of the mind itself.
 
 Read slowly. Newman is dense. Don't try to absorb everything. Look for the one line that feels most true — or most wrong.
+
+_The line that stood out, and your reaction to it:_
 
 ---
 
@@ -65,11 +62,9 @@ Don't worry about following every argument. Watch how Sandel *teaches*. Notice w
 
 ### 4. Sit with one more question (5 min)
 
-Before you write, consider this:
-
 > If AI can pass any exam, learn any fact, and write any essay — what is the one thing it *cannot* do that makes your education worth something?
 
-Don't answer yet. Just let it sit.
+_Your answer:_
 
 ---
 
@@ -89,15 +84,15 @@ Guidelines:
 
 This page is your baseline. You will read it again on the last day of this program. The distance between who you are now and who you are then is the whole point.
 
+_Your manifesto:_
+
 ---
 
-## Key Quote Box
+## Key Quote
 
 Find one line — from Newman, from Sandel, or from your own writing today — that you want to keep.
 
-> "____________________________________________________________"
-
-Write it somewhere you'll see it. It becomes part of your archive.
+_Your key quote (copy the line exactly):_
 
 ---
 
@@ -105,9 +100,9 @@ Write it somewhere you'll see it. It becomes part of your archive.
 
 Go back to what you wrote in Step 1. Read it without judgment.
 
-Then ask: Did anything shift? Did Newman challenge something you assumed? Did Sandel's students remind you of a question you'd already given up on?
+Did anything shift? Did Newman challenge something you assumed? Did Sandel's students remind you of a question you'd already given up on?
 
-You don't need to rewrite it. Just notice.
+_What shifted, if anything? What question are you sitting with now?_
 
 ---
 
@@ -119,6 +114,8 @@ In this world: **Is there still a reason for a four-year degree?**
 
 Argue both sides. Then take a position.
 
+_Both sides — then your position:_
+
 ---
 
 ## Notes
@@ -126,21 +123,3 @@ Argue both sides. Then take a position.
 - You don't have to finish the Newman reading entirely. Read enough to find your quote and form a reaction.
 - If the writing block feels hard, that's correct. You're not summarizing — you're thinking. That's harder.
 - This session is meant to feel significant. Not heavy. Let it.
-
----
-
-## My Work
-
-Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
-
-### My Education Manifesto
-
-_Write your one-page response here._
-
-### Key Quote I'm Keeping
-
-> "_Replace this with a line from today's materials or your own writing._"
-
-### What Shifted
-
-_After returning to your first answer: what changed, if anything? What question are you sitting with?_
