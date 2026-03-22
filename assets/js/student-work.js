@@ -97,7 +97,7 @@
     // Textarea
     var ta = document.createElement("textarea");
     ta.className = "response-textarea";
-    ta.placeholder = placeholder.textContent.replace(/^_|_$/g, "").trim();
+    ta.placeholder = placeholder.textContent.trim();
     ta.rows = 6;
     ta.value = saved;
     ta.setAttribute("aria-label", heading);
@@ -132,6 +132,19 @@
     });
   }
 
+  // ── Helpers ────────────────────────────────────────────────────────────────
+
+  /** True if a <p> element's sole meaningful content is an <em> (i.e. a placeholder). */
+  function isPlaceholderEm(p) {
+    var trimmed = p.textContent.trim();
+    if (!trimmed) return false;
+    // All visible text must be inside <em> tags
+    var ems = p.querySelectorAll("em");
+    if (!ems.length) return false;
+    var emText = Array.prototype.map.call(ems, function (e) { return e.textContent; }).join("").trim();
+    return emText === trimmed;
+  }
+
   // ── Find and wire My Work section ──────────────────────────────────────────
 
   function enhance() {
@@ -146,7 +159,9 @@
     }
     if (!myWorkH2) return;
 
-    // Collect all ### sub-headings and their following placeholder paragraph
+    // Collect all ### sub-headings and their following placeholder paragraph.
+    // Placeholders are <p><em>text</em></p> or <blockquote><p><em>text</em></p></blockquote>
+    // — markdown strips the _ markers, leaving only <em> content.
     var node = myWorkH2.nextElementSibling;
     var currentHeading = null;
 
@@ -155,15 +170,18 @@
 
       if (node.tagName === "H3") {
         currentHeading = node.textContent.trim();
-      } else if (
-        currentHeading &&
-        node.tagName === "P" &&
-        node.querySelector("em") &&
-        node.textContent.trim().match(/^_/)
-      ) {
-        // This is a placeholder like _Write your response here._
-        buildField(node, currentHeading);
-        // node is now replaced — nextElementSibling still works from parent
+      } else if (currentHeading) {
+        // Plain paragraph placeholder: <p><em>...</em></p>
+        if (node.tagName === "P" && isPlaceholderEm(node)) {
+          buildField(node, currentHeading);
+        }
+        // Blockquote placeholder (e.g. Key Quote): <blockquote><p><em>...</em></p></blockquote>
+        else if (node.tagName === "BLOCKQUOTE") {
+          var inner = node.querySelector("p");
+          if (inner && isPlaceholderEm(inner)) {
+            buildField(node, currentHeading);
+          }
+        }
       }
 
       node = node.nextElementSibling;
