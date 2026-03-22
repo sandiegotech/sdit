@@ -168,7 +168,7 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
             continue
 
         # Wrap student work section if present
-        is_lesson = re.search(r"section-\d+\.html$", str(out_path))
+        is_lesson = re.search(r"(section-\d+|day-\d+)\.html$", str(out_path))
         if is_lesson:
             html = inject_student_work_class(html)
 

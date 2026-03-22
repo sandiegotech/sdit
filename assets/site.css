@@ -1923,6 +1923,65 @@ body.course-page h1 + p {
   body.course-page h1 { font-size: 1.7rem; }
 }
 
+/* ── Course day grid (on course overview pages) ─────────────────────────── */
+.course-days-section > h2 {
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  letter-spacing: 0.08em !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.course-days-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.6rem;
+}
+
+.course-day-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 0.65rem 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.course-day-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.course-day-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.course-day-arrow {
+  font-size: 0.75rem;
+  color: var(--accent);
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+.course-day-card:hover .course-day-arrow { opacity: 1; }
+
+@media (max-width: 700px) {
+  .course-days-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 460px) {
+  .course-days-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ── Chapter index page ──────────────────────────────────────────────────── */
 body.chapter-page main {
   max-width: var(--max);

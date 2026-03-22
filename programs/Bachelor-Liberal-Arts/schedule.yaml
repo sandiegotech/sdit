@@ -1,0 +1,146 @@
+id: bachelor-liberal-arts
+title: Bachelor of Liberal Arts
+slug: bla
+
+volumes:
+  - id: vol-01-foundations
+    vol: 1
+    title: Foundations
+    label: Volume 1
+    year: "Year 1"
+    term: "Term 1"
+    weeks:
+      - week: 1
+        title: "The Beginning of Inquiry"
+        sessions:
+          - { course: LBS-101, day: 1, title: "What is a Liberal Education?" }
+          - { course: LBS-105, day: 1, title: "The Power of Story" }
+          - { course: LBS-110, day: 1, title: "Mathematics as a Language" }
+          - { course: LBS-120, day: 1, title: "Observing the Natural World" }
+          - { course: LAB-101, day: 1, title: "Mapping the Mind" }
+
+      - week: 2
+        title: "Sharpening the Tools"
+        sessions:
+          - { course: LBS-101, day: 2, title: "Logic & Reasoning" }
+          - { course: LBS-105, day: 2, title: "Voice & Style" }
+          - { course: LBS-110, day: 2, title: "Patterns & Sequences" }
+          - { course: LBS-120, day: 2, title: "Motion & Measurement" }
+          - { course: LAB-101, day: 2, title: "Creative Constraints" }
+
+      - week: 3
+        title: "The Examined Life"
+        sessions:
+          - { course: LBS-101, day: 3, title: "The Examined Life" }
+          - { course: LBS-105, day: 3, title: "Argument & Persuasion" }
+          - { course: LBS-110, day: 3, title: "Ratios & Proportions" }
+          - { course: LBS-120, day: 3, title: "Forces & Balance" }
+          - { course: LAB-101, day: 3, title: "Play as Learning" }
+
+      - week: 4
+        title: "Truth, Structure & Beauty"
+        sessions:
+          - { course: LBS-101, day: 4, title: "Truth & Perspectives" }
+          - { course: LBS-105, day: 4, title: "Structure & Flow" }
+          - { course: LBS-110, day: 4, title: "Infinity & Limits" }
+          - { course: LBS-120, day: 4, title: "Energy & Work" }
+          - { course: LAB-101, day: 4, title: "Storytelling Through Images" }
+
+      - week: 5
+        title: "The Art of Communication"
+        sessions:
+          - { course: LBS-101, day: 5, title: "Rhetoric & Persuasion" }
+          - { course: LBS-105, day: 5, title: "Audience Awareness" }
+          - { course: LBS-110, day: 5, title: "Probability & Uncertainty" }
+          - { course: LBS-120, day: 5, title: "Sound & Vibration" }
+          - { course: LAB-101, day: 5, title: "Improvisation & Surprise" }
+
+      - week: 6
+        title: "Clarity Through Evidence"
+        sessions:
+          - { course: LBS-101, day: 6, title: "Writing as Clear Thinking" }
+          - { course: LBS-105, day: 6, title: "Writing as Clear Thinking" }
+          - { course: LBS-110, day: 6, title: "Statistics as Storytelling" }
+          - { course: LBS-120, day: 6, title: "Light & Perception" }
+          - { course: LAB-101, day: 6, title: "Sound & Rhythm" }
+
+      - week: 7
+        title: "Systems & Sources"
+        sessions:
+          - { course: LBS-101, day: 7, title: "Mathematics as Language" }
+          - { course: LBS-105, day: 7, title: "Writing from Sources" }
+          - { course: LBS-110, day: 7, title: "Geometry in Nature" }
+          - { course: LBS-120, day: 7, title: "Gravity & Orbits" }
+          - { course: LAB-101, day: 7, title: "Design with Found Objects" }
+
+      - week: 8
+        title: "Ethics & Aesthetics"
+        sessions:
+          - { course: LBS-101, day: 8, title: "Ethics & Moral Reasoning" }
+          - { course: LBS-105, day: 8, title: "Revision as Discovery" }
+          - { course: LBS-110, day: 8, title: "Symmetry & Beauty" }
+          - { course: LBS-120, day: 8, title: "Electricity & Circuits" }
+          - { course: LAB-101, day: 8, title: "Collaboration & Exchange" }
+
+      - week: 9
+        title: "Inquiry, Tradition & Pattern"
+        sessions:
+          - { course: LBS-101, day: 9, title: "Science & Inquiry" }
+          - { course: LBS-105, day: 9, title: "Storytelling in Oral Traditions" }
+          - { course: LBS-110, day: 9, title: "Numbers in Music" }
+          - { course: LBS-120, day: 9, title: "Waves in Nature" }
+          - { course: LAB-101, day: 9, title: "Creative Spaces" }
+
+      - week: 10
+        title: "Imagination & Complexity"
+        sessions:
+          - { course: LBS-101, day: 10, title: "Imagination & Creativity" }
+          - { course: LBS-105, day: 10, title: "Writing for Media" }
+          - { course: LBS-110, day: 10, title: "Chaos & Complexity" }
+          - { course: LBS-120, day: 10, title: "Heat & Thermodynamics" }
+          - { course: LAB-101, day: 10, title: "Patterns in Chaos" }
+
+      - week: 11
+        title: "Memory, Identity & Making"
+        sessions:
+          - { course: LBS-101, day: 11, title: "Memory & Learning" }
+          - { course: LBS-105, day: 11, title: "Writing & Identity" }
+          - { course: LBS-110, day: 11, title: "Math in Technology" }
+          - { course: LBS-120, day: 11, title: "Momentum & Collisions" }
+          - { course: LAB-101, day: 11, title: "Art & Technology" }
+
+      - week: 12
+        title: "Culture, Scale & Community"
+        sessions:
+          - { course: LBS-101, day: 12, title: "Culture & Worldviews" }
+          - { course: LBS-105, day: 12, title: "Writing in Community" }
+          - { course: LBS-110, day: 12, title: "Visualizing Data" }
+          - { course: LBS-120, day: 12, title: "Scale of the Universe" }
+          - { course: LAB-101, day: 12, title: "Creativity Across Cultures" }
+
+      - week: 13
+        title: "Technology & the Extended Mind"
+        sessions:
+          - { course: LBS-101, day: 13, title: "Technology & Tools of Thought" }
+          - { course: LBS-105, day: 13, title: "Writing & Technology" }
+          - { course: LBS-110, day: 13, title: "The Philosophy of Numbers" }
+          - { course: LBS-120, day: 13, title: "Chaos & Randomness" }
+          - { course: LAB-101, day: 13, title: "Creative Risks" }
+
+      - week: 14
+        title: "Knowledge, Synthesis & Reflection"
+        sessions:
+          - { course: LBS-101, day: 14, title: "Philosophy of Knowledge" }
+          - { course: LBS-105, day: 14, title: "Writing as Reflection" }
+          - { course: LBS-110, day: 14, title: "Math as Creativity" }
+          - { course: LBS-120, day: 14, title: "Science & Society" }
+          - { course: LAB-101, day: 14, title: "Creative Flow" }
+
+      - week: 15
+        title: "Your Personal Manifesto"
+        sessions:
+          - { course: LBS-101, day: 15, title: "My Philosophy of Learning" }
+          - { course: LBS-105, day: 15, title: "My Manifesto of Voice" }
+          - { course: LBS-110, day: 15, title: "My Math Philosophy" }
+          - { course: LBS-120, day: 15, title: "My Philosophy of Science" }
+          - { course: LAB-101, day: 15, title: "Creative Manifesto" }

@@ -355,9 +355,20 @@
     // Day grid
     var grid = createElement("div", "chapter-day-grid");
     days.forEach(function(day) {
-      var href = resolveSitePath(
-        basePath + "chapter-" + pad(chapterNumber) + "/section-" + pad(day.num) + ".html"
-      );
+      // Resolve course URL — prefer /courses/COURSE-ID/day-NN.html with program context
+      var courseId = day.course ? day.course.replace(/\s+/, "-").toUpperCase() : null;
+      var href;
+      if (courseId && COURSE_DIRS[courseId]) {
+        href = resolveSitePath(
+          "/courses/" + courseId + "/day-" + pad(day.num) + ".html" +
+          "?prog=bla&vol=" + volumeSlug + "&week=" + chapterNumber + "&pos=" + day.num
+        );
+      } else {
+        // Fall back to old section URL for courses not yet migrated
+        href = resolveSitePath(
+          basePath + "chapter-" + pad(chapterNumber) + "/section-" + pad(day.num) + ".html"
+        );
+      }
       var card = document.createElement("a");
       card.className = "chapter-day-card";
       card.href = href;
@@ -432,46 +443,73 @@
     };
   }
 
-  var COURSE_URLS = {
-    "LBS 101": "/courses/LBS-101-mental-gym.html",
-    "LBS 105": "/courses/LBS-105-writing-communication.html",
-    "LBS 110": "/courses/LBS-110-mathematics-for-modern-thinkers.html",
-    "LBS 120": "/courses/LBS-120-physics-with-lab.html",
-    "LBS 201": "/courses/LBS-201-ethics-moral-reasoning.html",
-    "LBS 205": "/courses/LBS-205-writing-communication-ii.html",
-    "LBS 210": "/courses/LBS-210-mathematical-reasoning-proof.html",
-    "LBS 220": "/courses/LBS-220-scientific-method-experimental-design.html",
-    "LAB 101": "/courses/LAB-101-creative-intelligence-lab.html",
-    "LAB 201": "/courses/LAB-201-reasoning-lab-cases-debates.html",
-    "TECH 101": "/courses/TECH-101-coding-computational-thinking.html",
-    "TECH 201": "/courses/TECH-201-unmanned-systems.html",
-    "TECH 202": "/courses/TECH-202-ai-society.html",
-    "TECH 203": "/courses/TECH-203-cybersecurity-information-warfare.html",
-    "TECH 204": "/courses/TECH-204-hardware-hacking-embedded.html",
-    "TECH 205": "/courses/TECH-205-climate-tech-energy-systems.html",
-    "BUS 201": "/courses/BUS-201-entrepreneurship-startup-design.html",
-    "BUS 202": "/courses/BUS-202-finance-for-innovators.html",
-    "BUS 203": "/courses/BUS-203-organizational-leadership-negotiation.html",
-    "BUS 204": "/courses/BUS-204-global-markets-geopolitics.html",
-    "BUS 205": "/courses/BUS-205-business-ethics-responsibility.html",
-    "DATA 201": "/courses/DATA-201-data-science-visualization.html",
-    "HUM 201": "/courses/HUM-201-philosophy-of-consciousness.html",
-    "HUM 202": "/courses/HUM-202-political-theory-civic-life.html",
-    "HUM 203": "/courses/HUM-203-cultural-anthropology-fieldwork.html",
-    "HUM 204": "/courses/HUM-204-history-of-technology-innovation.html",
-    "HUM 205": "/courses/HUM-205-comparative-religion-society.html",
-    "LIFE 201": "/courses/LIFE-201-outdoor-leadership-expeditionary-skills.html",
-    "LIFE 202": "/courses/LIFE-202-health-fitness-human-performance.html",
-    "LIFE 203": "/courses/LIFE-203-psychology-creativity-flow-states.html",
-    "LIFE 204": "/courses/LIFE-204-education-mentorship-teach-what-you-know.html",
-    "LIFE 205": "/courses/LIFE-205-global-citizenship-civic-engagement.html",
-    "MEDIA 201": "/courses/MEDIA-201-film-visual-storytelling.html",
-    "MEDIA 202": "/courses/MEDIA-202-music-sound-design.html",
-    "MEDIA 203": "/courses/MEDIA-203-design-visual-communication.html",
-    "MEDIA 204": "/courses/MEDIA-204-creative-writing-story-craft.html",
-    "MEDIA 205": "/courses/MEDIA-205-media-culture-society.html",
-    "PSYCH 201": "/courses/PSYCH-201-human-psychology.html"
+  // Courses that have their own subdirectory (canonical library courses)
+  var COURSE_DIRS = {
+    "LBS-101": true,
+    "LBS-105": true,
+    "LBS-110": true,
+    "LBS-120": true,
+    "LAB-101": true
   };
+
+  function courseUrl(code) {
+    // code is like "LBS-101" or "LBS 101"
+    var normalized = code.replace(/\s+/, "-").toUpperCase();
+    if (COURSE_DIRS[normalized]) return "/courses/" + normalized + "/";
+    // Flat legacy courses
+    var flat = {
+      "LBS-201": "/courses/LBS-201-ethics-moral-reasoning.html",
+      "LBS-205": "/courses/LBS-205-writing-communication-ii.html",
+      "LBS-210": "/courses/LBS-210-mathematical-reasoning-proof.html",
+      "LBS-220": "/courses/LBS-220-scientific-method-experimental-design.html",
+      "LAB-201": "/courses/LAB-201-reasoning-lab-cases-debates.html",
+      "TECH-101": "/courses/TECH-101-coding-computational-thinking.html",
+      "TECH-201": "/courses/TECH-201-unmanned-systems.html",
+      "TECH-202": "/courses/TECH-202-ai-society.html",
+      "TECH-203": "/courses/TECH-203-cybersecurity-information-warfare.html",
+      "TECH-204": "/courses/TECH-204-hardware-hacking-embedded.html",
+      "TECH-205": "/courses/TECH-205-climate-tech-energy-systems.html",
+      "BUS-201": "/courses/BUS-201-entrepreneurship-startup-design.html",
+      "BUS-202": "/courses/BUS-202-finance-for-innovators.html",
+      "BUS-203": "/courses/BUS-203-organizational-leadership-negotiation.html",
+      "BUS-204": "/courses/BUS-204-global-markets-geopolitics.html",
+      "BUS-205": "/courses/BUS-205-business-ethics-responsibility.html",
+      "DATA-201": "/courses/DATA-201-data-science-visualization.html",
+      "HUM-201": "/courses/HUM-201-philosophy-of-consciousness.html",
+      "HUM-202": "/courses/HUM-202-political-theory-civic-life.html",
+      "HUM-203": "/courses/HUM-203-cultural-anthropology-fieldwork.html",
+      "HUM-204": "/courses/HUM-204-history-of-technology-innovation.html",
+      "HUM-205": "/courses/HUM-205-comparative-religion-society.html",
+      "LIFE-201": "/courses/LIFE-201-outdoor-leadership-expeditionary-skills.html",
+      "LIFE-202": "/courses/LIFE-202-health-fitness-human-performance.html",
+      "LIFE-203": "/courses/LIFE-203-psychology-creativity-flow-states.html",
+      "LIFE-204": "/courses/LIFE-204-education-mentorship-teach-what-you-know.html",
+      "LIFE-205": "/courses/LIFE-205-global-citizenship-civic-engagement.html",
+      "MEDIA-201": "/courses/MEDIA-201-film-visual-storytelling.html",
+      "MEDIA-202": "/courses/MEDIA-202-music-sound-design.html",
+      "MEDIA-203": "/courses/MEDIA-203-design-visual-communication.html",
+      "MEDIA-204": "/courses/MEDIA-204-creative-writing-story-craft.html",
+      "MEDIA-205": "/courses/MEDIA-205-media-culture-society.html",
+      "PSYCH-201": "/courses/PSYCH-201-human-psychology.html"
+    };
+    return flat[normalized] || null;
+  }
+
+  // Legacy map keyed by "LBS 101" style (space-separated) for backward compat
+  var COURSE_URLS = {};
+  (function() {
+    var codes = [
+      "LBS 101","LBS 105","LBS 110","LBS 120","LAB 101",
+      "LBS 201","LBS 205","LBS 210","LBS 220","LAB 201",
+      "TECH 101","TECH 201","TECH 202","TECH 203","TECH 204","TECH 205",
+      "BUS 201","BUS 202","BUS 203","BUS 204","BUS 205",
+      "DATA 201","HUM 201","HUM 202","HUM 203","HUM 204","HUM 205",
+      "LIFE 201","LIFE 202","LIFE 203","LIFE 204","LIFE 205",
+      "MEDIA 201","MEDIA 202","MEDIA 203","MEDIA 204","MEDIA 205",
+      "PSYCH 201"
+    ];
+    codes.forEach(function(c) { COURSE_URLS[c] = courseUrl(c); });
+  })();
 
   function buildLessonTopbar(meta, links) {
     var topbar = createElement("div", "lesson-topbar");
@@ -747,8 +785,148 @@
     });
   }
 
+  function enhanceCourseLessonPage(path) {
+    var courseId  = (path.match(/\/courses\/([A-Z]+-\d+)\//) || [])[1];
+    var dayNumber = parseInt((path.match(/\/day-(\d{2})\.html$/) || [])[1] || "0", 10);
+    if (!courseId || !dayNumber) return;
+
+    document.body.classList.add("lesson-page");
+
+    var ctx  = getProgramContext();
+    var main = document.querySelector("main");
+    if (!main) return;
+
+    // Wrap content into lesson shell
+    var nodesToMove = Array.from(main.childNodes);
+    var shell   = createElement("div", "lesson-shell");
+    var article = createElement("article", "lesson-content");
+    var sidebar = createElement("aside", "lesson-sidebar");
+    nodesToMove.forEach(function(n) { article.appendChild(n); });
+    main.innerHTML = "";
+    shell.appendChild(article);
+    shell.appendChild(sidebar);
+    main.appendChild(shell);
+
+    // ── Topbar ────────────────────────────────────────────────
+    var topbar = createElement("div", "lesson-topbar");
+    var posLabel;
+    if (ctx) {
+      posLabel = createElement("span", "lesson-pos",
+        "Vol. " + ctx.vol.replace(/^vol-0*(\d+).*/, "$1") +
+        " \u00b7 Week " + ctx.week + " \u00b7 Day " + ctx.pos + " of 5"
+      );
+    } else {
+      posLabel = createElement("span", "lesson-pos",
+        courseId + " \u00b7 Day " + dayNumber + " of 15"
+      );
+    }
+
+    var topNav = createElement("div", "lesson-nav");
+    if (ctx) {
+      var backWeek = createElement("a", "",
+        "\u2190 Week " + ctx.week);
+      backWeek.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + ctx.vol +
+        "/schedule/chapter-" + pad(ctx.week) + "/index.html"
+      );
+      var backSched = createElement("a", "", "Full Schedule");
+      backSched.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + ctx.vol + "/schedule/index.html"
+      );
+      topNav.appendChild(backWeek);
+      topNav.appendChild(backSched);
+    } else {
+      if (dayNumber > 1) {
+        var p = createElement("a", "", "\u2190 Day " + (dayNumber - 1));
+        p.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(dayNumber - 1) + ".html");
+        topNav.appendChild(p);
+      }
+      var cLink = createElement("a", "", courseId);
+      cLink.href = resolveSitePath("/courses/" + courseId + "/");
+      topNav.appendChild(cLink);
+      if (dayNumber < 15) {
+        var nx = createElement("a", "", "Day " + (dayNumber + 1) + " \u2192");
+        nx.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(dayNumber + 1) + ".html");
+        topNav.appendChild(nx);
+      }
+    }
+    topbar.appendChild(posLabel);
+    topbar.appendChild(topNav);
+    if (!article.querySelector(".lesson-topbar")) {
+      article.insertBefore(topbar, article.firstChild);
+    }
+
+    // ── Sidebar rail ──────────────────────────────────────────
+    var rail  = createElement("section", "day-rail");
+    var rlabel = createElement("p", "day-rail-label",
+      ctx ? "Week " + ctx.week : courseId);
+    rail.appendChild(rlabel);
+
+    var railGrid = createElement("div", "day-rail-grid");
+    var totalDays = ctx ? 5 : 15;
+    var currentNum = ctx ? ctx.pos : dayNumber;
+    for (var i = 1; i <= totalDays; i++) {
+      var a = createElement("a", i === currentNum ? "is-current" : "", String(i));
+      if (ctx) {
+        // Navigate between course days via week overview (we don't know sibling course IDs here)
+        a.href = resolveSitePath(
+          "/programs/Bachelor-Liberal-Arts/" + ctx.vol +
+          "/schedule/chapter-" + pad(ctx.week) + "/index.html"
+        );
+        a.setAttribute("title", "Day " + i + " — go to week overview");
+      } else {
+        a.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(i) + ".html");
+      }
+      a.setAttribute("aria-label", "Day " + i);
+      railGrid.appendChild(a);
+    }
+    rail.appendChild(railGrid);
+
+    var railLinks = createElement("div", "lesson-nav");
+    var overviewLink = createElement("a", "", "Course overview");
+    overviewLink.href = resolveSitePath("/courses/" + courseId + "/");
+    railLinks.appendChild(overviewLink);
+    if (ctx) {
+      var weekLink = createElement("a", "", "Week " + ctx.week + " overview");
+      weekLink.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + ctx.vol +
+        "/schedule/chapter-" + pad(ctx.week) + "/index.html"
+      );
+      railLinks.appendChild(weekLink);
+    }
+    rail.appendChild(railLinks);
+    sidebar.appendChild(rail);
+
+    // ── Course source link ────────────────────────────────────
+    var firstH1 = article.querySelector("h1");
+    var courseLabel = Array.from(article.querySelectorAll("p")).find(function(p) {
+      return /^Course:\s*/i.test(p.textContent.trim());
+    });
+    if (courseLabel && firstH1) {
+      var courseName = formatCourseLabel(courseLabel);
+      var codeKey = courseName.split(/[\u2013\-]/)[0].trim();
+      var cUrl = COURSE_URLS[codeKey] || resolveSitePath("/courses/" + courseId + "/");
+      var src = createElement("p", "lesson-course-source");
+      src.appendChild(document.createTextNode(courseName + " \u00b7 "));
+      var srcLink = createElement("a", "lesson-course-link", "View full course \u2192");
+      srcLink.href = resolveSitePath(cUrl);
+      src.appendChild(srcLink);
+      var after = firstH1.nextSibling;
+      if (after) article.insertBefore(src, after);
+      else article.appendChild(src);
+    }
+
+    wrapLessonSections(article);
+    enhanceResourceLinks(article);
+  }
+
   function enhanceLessonPage() {
     const path = currentPath();
+    const isCourseDayPage = /\/courses\/[A-Z]+-\d+\/day-\d{2}\.html$/.test(path);
+    if (isCourseDayPage) {
+      enhanceCourseLessonPage(path);
+      return;
+    }
     if (!/\/section-\d{2}\.html$/.test(path)) {
       return;
     }
@@ -861,8 +1039,23 @@
   }
 
   function getCourseCodeFromPath(pathname) {
-    var match = pathname.match(/\/courses\/([A-Z]+-\d+)/);
-    return match ? match[1] : null;
+    // /courses/LBS-101/index.html  or  /courses/LBS-101/day-01.html  → "LBS-101"
+    var m = pathname.match(/\/courses\/([A-Z]+-\d+)\//);
+    if (m) return m[1];
+    // /courses/LBS-101-mental-gym.html  → "LBS-101"
+    var m2 = pathname.match(/\/courses\/([A-Z]+-\d+)/);
+    return m2 ? m2[1] : null;
+  }
+
+  function getProgramContext() {
+    if (typeof URLSearchParams === "undefined") return null;
+    var sp = new URLSearchParams(window.location.search);
+    var prog = sp.get("prog");
+    var vol  = sp.get("vol");
+    var week = parseInt(sp.get("week") || "0", 10);
+    var pos  = parseInt(sp.get("pos")  || "0", 10);
+    if (!prog || !vol || !week || !pos) return null;
+    return { prog: prog, vol: vol, week: week, pos: pos };
   }
 
   function getCourseCategory(code) {
@@ -881,7 +1074,11 @@
 
   function enhanceCoursePage() {
     var path = currentPath();
-    if (path.indexOf("/courses/") === -1 || /index\.html$/.test(path)) return;
+    if (path.indexOf("/courses/") === -1) return;
+    // Allow /courses/LBS-101/index.html but exclude the top-level /courses/index.html
+    if (/^\/courses\/index\.html$/.test(path)) return;
+    // Exclude day pages — those are handled by enhanceCourseLessonPage
+    if (/\/day-\d{2}\.html$/.test(path)) return;
 
     document.body.classList.add("course-page");
 
@@ -924,6 +1121,24 @@
       }
       if (currentSection) currentSection.appendChild(child);
     });
+
+    // If this is a library course (subdirectory), append a 15-day grid
+    if (COURSE_DIRS[code] && /\/courses\/[A-Z]+-\d+\/(index\.html)?$/.test(path)) {
+      var daysSection = createElement("div", "course-section course-days-section");
+      var daysH2 = createElement("h2", "", "15 Daily Sessions");
+      daysSection.appendChild(daysH2);
+      var daysGrid = createElement("div", "course-days-grid");
+      for (var di = 1; di <= 15; di++) {
+        var dc = document.createElement("a");
+        dc.className = "course-day-card";
+        dc.href = resolveSitePath("/courses/" + code + "/day-" + pad(di) + ".html");
+        dc.appendChild(createElement("span", "course-day-num", "Day " + pad(di)));
+        dc.appendChild(createElement("span", "course-day-arrow", "\u2192"));
+        daysGrid.appendChild(dc);
+      }
+      daysSection.appendChild(daysGrid);
+      main.appendChild(daysSection);
+    }
   }
 
   function tagGenericPages() {
