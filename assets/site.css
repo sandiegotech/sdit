@@ -2166,3 +2166,53 @@ h1.chapter-title {
 @media (max-width: 420px) {
   .chapter-day-grid { grid-template-columns: 1fr; }
 }
+
+/* ─── Student response fields ─────────────────────────────────────────────── */
+
+.response-field {
+  margin: 0.75rem 0 1.5rem;
+  position: relative;
+}
+
+.response-textarea {
+  width: 100%;
+  min-height: 8rem;
+  padding: 0.875rem 1rem;
+  border: 1.5px solid var(--border, #e5e7eb);
+  border-radius: 8px;
+  background: var(--surface, #fff);
+  color: var(--ink, #111318);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  overflow: hidden; /* allows JS auto-resize */
+}
+
+.response-textarea:focus {
+  outline: none;
+  border-color: var(--accent, #2563eb);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent, #2563eb) 15%, transparent);
+}
+
+.response-textarea::placeholder {
+  color: var(--muted, #6b7280);
+  font-style: italic;
+}
+
+.response-status {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  min-height: 1.1em;
+  color: var(--muted, #6b7280);
+  text-align: right;
+  transition: opacity 0.2s;
+}
+
+.response-status--saving { color: var(--muted, #6b7280); }
+.response-status--saved  { color: #16a34a; }
+.response-status--local  { color: #ca8a04; }
+.response-status--error  { color: #dc2626; }

@@ -9,11 +9,11 @@ An open-source liberal arts curriculum you can take yourself, fork to your own G
 
 ## For Students — Do the Work in Your Own Fork
 
-The curriculum is designed to be taken, not just read. Fork this repo, write your answers directly in the lesson files, and your work lives on your GitHub — publicly or privately, as you choose.
+The curriculum is designed to be taken, not just read. Fork this repo, run the local server, write your answers in the browser, and your work saves back to your files and syncs to your GitHub automatically.
 
-### How it works
+### Quick Start
 
-1. **Fork this repo** — click Fork in the top right on GitHub. This creates your own copy.
+1. **Fork this repo** — click Fork in the top right on GitHub.
 
 2. **Clone it to your computer**
    ```bash
@@ -21,58 +21,65 @@ The curriculum is designed to be taken, not just read. Fork this repo, write you
    cd sdit
    ```
 
-3. **Open any lesson file and write your answers**
-
-   Every lesson is a Markdown file at a path like:
-   ```
-   programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/chapter-01/section-01.md
-   ```
-   At the bottom of each lesson you'll find a `## My Work` section. Replace the placeholders with your actual responses.
-
-4. **Push to your GitHub**
+3. **Start the local server**
    ```bash
-   git add .
-   git commit -m "Day 1 complete"
+   python3 serve.py
+   ```
+   Your browser will open at `http://localhost:3001`. That's all you need.
+
+4. **Do the work** — navigate to any lesson, scroll to **My Work**, and type your responses directly in the page. They save automatically.
+
+5. **Push to GitHub** — the server saves and pushes in the background after each response. Or push manually:
+   ```bash
    git push
    ```
 
-5. **GitHub automatically rebuilds your site** — the HTML pages are regenerated from your updated markdown and pushed back to your repo within a minute or two.
-
 6. **Enable GitHub Pages** in your repo settings (Settings → Pages → Deploy from branch → main) and your site will be live at `https://YOUR-USERNAME.github.io/sdit/`.
 
-### What you edit
+### How responses are saved
 
-- **Lesson files** (`programs/.../section-NN.md`) — where you write your answers
-- **Nothing else** — HTML files are generated automatically. Never edit them directly.
+When you type in a My Work field:
+- Your response saves to **localStorage** instantly (survives page refresh)
+- On `localhost`, it also writes back to the source `.md` file and triggers a `git push`
+- On GitHub Pages (published site), it saves to localStorage only — visible to you in the browser
 
-### What happens automatically
+### Where lesson files live
 
-When you push to `main`, GitHub Actions runs the build script and commits the updated HTML. Your site reflects your latest work within about 60 seconds.
+Every course has its own directory:
+
+```
+courses/LBS-101/day-01.md    ← Day 1 of The Mental Gym
+courses/LBS-105/day-03.md    ← Day 3 of Writing & Communication
+courses/LBS-110/day-07.md    ← Day 7 of Mathematics for Modern Thinkers
+...
+```
+
+Each file has a `## My Work` section at the bottom where your responses go. The `serve.py` server writes your browser input directly into these files.
 
 ---
 
 ## What This Repo Contains
 
 ```
-programs/          Degree pages, schedules, chapters, and daily lessons (.md = source)
-courses/           Full course library with syllabi
+courses/           Course library — each course owns its day files (source of truth)
+programs/          Degree programs assembled from the course library
 knowledge/         Institutional YAML reference files
-assets/            Styles (site.css) and JavaScript
+assets/            Styles (site.css) and JavaScript (layout.js, student-work.js)
 partials/          Shared site header and footer (loaded dynamically)
-scripts/           Build script (build_site.py) and validators
-guides/            Student guides (AI setup, getting started)
+scripts/           Build script (build_site.py)
+serve.py           Local development server with student response saving
 ```
 
 ### The source/generated split
 
 | File type | Source of truth | Edit directly? |
 |-----------|----------------|---------------|
-| `*.md` in `programs/`, `courses/` | Yes — content source | Yes |
+| `*.md` in `courses/` | Yes — content source | Yes |
 | `*.html` generated from `.md` | No — generated output | No |
-| `index.html`, `programs/index.html`, manually maintained pages | Yes | Yes |
+| `index.html`, manually maintained pages | Yes | Yes |
 | `assets/site.css`, `assets/js/` | Yes | Yes |
 
-The build script (`scripts/build_site.py`) converts markdown to HTML. Run it locally with:
+The build script (`scripts/build_site.py`) converts Markdown to HTML. `serve.py` runs it automatically. To run it manually:
 ```bash
 python3 scripts/build_site.py --out .
 ```
@@ -81,13 +88,15 @@ python3 scripts/build_site.py --out .
 
 ## Run the Site Locally
 
-The site uses shared partials loaded by the browser, so open it via a local server — not by opening files directly.
-
 ```bash
-python3 -m http.server 8000
+python3 serve.py
 ```
 
-Then open `http://localhost:8000/`
+Opens at `http://localhost:3001`. The server handles:
+- Serving the static site
+- Saving student responses to `.md` files
+- Rebuilding HTML after each save
+- Pushing to GitHub
 
 ---
 
@@ -98,7 +107,7 @@ Contributions are welcome across curriculum, writing, structure, and UI.
 **Workflow:**
 1. Fork and clone the repo
 2. Make your change in a branch
-3. Preview locally with `python3 -m http.server 8000`
+3. Preview locally with `python3 serve.py`
 4. Run `python3 scripts/build_site.py --out .` if you changed markdown
 5. Open a pull request
 
