@@ -12,13 +12,17 @@ course: LBS 101 – The Mental Gym
 
 ## Session Focus
 
-A machine can now pass any exam, write any essay, and answer almost any question faster than you can.
-
-So what is education actually for?
-
-That is the question this entire degree — and this first session — is built around. Not as a crisis. As an invitation. Because if the old answers no longer work, you get to think from scratch. And thinking from scratch is exactly what a liberal education trains you to do.
+Before you read anything, sit with this:
 
 > *"The goal of education is not to fill a bucket, but to light a fire."* — W.B. Yeats
+
+What does that actually mean? Who decided that? Is it true?
+
+A machine can now pass any exam, write any essay, and answer almost any question faster than you can. So if education was about filling the bucket — information, credentials, correct answers — that version is over.
+
+Which means you get to ask the real question from scratch: **what is education actually for?**
+
+That is what this entire degree — and this first session — is built around. Not as a crisis. As an invitation. Because being forced to ask from scratch is exactly what a liberal education trains you to do.
 
 ---
 
@@ -56,7 +60,9 @@ _The line that stood out, and your reaction to it:_
 **Michael Sandel — *Justice*, Episode 1: "The Moral Side of Murder"**
 [Watch on YouTube](https://www.youtube.com/watch?v=kBdfcR-8hEY)
 
-Don't worry about following every argument. Watch how Sandel *teaches*. Notice what it feels like when a question you thought was obvious turns out to be genuinely hard. That feeling is what this program is trying to produce in you — every day.
+Don't worry about following every argument. Watch how Sandel *teaches*. Pay attention to the moment — and there will be one — when a student realizes the question they thought was obvious is genuinely hard. Watch their face. Notice what that feels like from the inside.
+
+That feeling of a question opening up unexpectedly — suddenly having more room than you thought — is what this program is designed to produce in you every day. Get familiar with it. You're going to feel it a lot.
 
 ---
 
@@ -118,8 +124,46 @@ _Both sides — then your position:_
 
 ---
 
+## Before Tomorrow
+
+On your way home, or before you sleep tonight — ask someone you trust this question:
+
+**"What do you think education is actually for?"**
+
+Don't debate them. Don't offer your answer. Just listen. Notice how their answer differs from yours. Notice whether it surprises you.
+
+You don't have to agree with them. You don't even have to respond. Just carry their answer alongside your own.
+
+---
+
 ## Notes
 
 - You don't have to finish the Newman reading entirely. Read enough to find your quote and form a reaction.
 - If the writing block feels hard, that's correct. You're not summarizing — you're thinking. That's harder.
 - This session is meant to feel significant. Not heavy. Let it.
+
+---
+
+## My Work
+
+Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
+
+### My First Answer (unfiltered)
+
+_What you wrote before reading anything — your immediate, unedited answer to "What is education for?"_
+
+### The Line That Stood Out
+
+_The Newman line that felt most true or most wrong, and your reaction to it._
+
+### My Education Manifesto
+
+_One page. What you believe education is for, and who you want it to make you._
+
+### My Key Quote
+
+> "_The line you're keeping — from Newman, Sandel, or your own writing today._"
+
+### What Shifted
+
+_What changed between your first answer and now? What question are you sitting with?_

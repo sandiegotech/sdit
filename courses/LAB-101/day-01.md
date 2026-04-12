@@ -18,7 +18,9 @@ This is the only session in the program with one rule and no reading list.
 
 That's it.
 
-But here's why it matters: creativity isn't a talent. It's a practice. And the first step of the practice is showing up and making something even when you don't know if it will be good. Especially when you don't know.
+Here's why it matters now, specifically: AI can generate in seconds. An image, a song, a story, a logo — technically competent, instantly. What it cannot do is *mean* something by making it. The act of making — the struggle, the choosing, the stopping and starting and throwing away and trying again — is how you find out what you think and who you are. That part doesn't get automated.
+
+Creativity isn't a talent. It's a practice. And the first step is showing up and making something before you're ready. Especially before you're ready.
 
 > *"You can't use up creativity. The more you use, the more you have."* — Maya Angelou
 
@@ -143,6 +145,16 @@ Make the same thing again — but with one severe constraint:
 - If you made sound: repeat it at a different tempo.
 
 Constraint is one of the most powerful creative tools there is. What does limiting yourself force you to see about what actually matters in the thing you made?
+
+---
+
+## Before Tomorrow
+
+Before you sleep tonight, make one more small thing. Smaller than what you made today. Give yourself 5 minutes maximum.
+
+Don't plan it. Don't judge it. Just make something and set it next to the first one.
+
+Two things exist now that didn't exist this morning. That's how an archive begins.
 
 ---
 

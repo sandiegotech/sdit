@@ -46,7 +46,9 @@ It doesn't have to be profound. It could be how a specific kind of silence feels
 **George Orwell — "Why I Write" (1946)**
 [Read at Orwell Foundation](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/why-i-write/)
 
-Orwell names four motives for writing. Notice which ones you recognize in yourself. Notice which ones you don't.
+Before you read: take 30 seconds and write down your honest answer to *why you write* — or why you avoid it.
+
+Orwell names four motives. One of them will stop you mid-sentence because it's yours. Read looking for that one.
 
 ---
 
@@ -119,6 +121,16 @@ Don't answer fully. Just point toward it.
 Orwell says great prose is like "a pane of glass." You don't notice the writing — you see straight through to the thing being said.
 
 Find a piece of writing you love — a paragraph, a page, anything. Analyze what makes it transparent. Then try to rewrite a paragraph of your own piece to be more like glass.
+
+---
+
+## Before Tomorrow
+
+Today, find one sentence — anywhere in your environment. On a sign, in a book, in a text message, on packaging, anywhere.
+
+Look for a sentence that could only have been written by one specific person. Not polished. Not correct. Just *true in a way that only one person would have said it.*
+
+Notice how rare that actually is. And notice what it feels like when you find it.
 
 ---
 

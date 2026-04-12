@@ -33,28 +33,38 @@ This is harder than it sounds. And it's one of the most important things you'll 
 
 ## Session Flow
 
-### 1. Begin with this question (5 min)
+### 1. Before anything else (2 min)
 
-Write your immediate answer:
+Look at a glass or cup of water sitting near you. Or pick any ordinary object in reach.
 
-> **When was the last time you looked at something without immediately trying to explain or categorize it? What did you actually see?**
+Set a timer for 2 minutes. Write down exactly what you see. No explanations — just what is physically present.
 
-If you can't remember a specific moment, write about what it would feel like to stop explaining and just look.
+Go.
 
 ---
 
-### 2. Read (15 min)
+### 2. Begin with this question (5 min)
+
+Read what you just wrote. How much of it is actual observation, and how much is naming, categorizing, or already explaining?
+
+> **When was the last time you looked at something without immediately trying to explain or categorize it? What did you actually see?**
+
+If you can't remember a specific moment, that's interesting in itself. Write about why.
+
+---
+
+### 3. Read (15 min)
 
 **Richard Feynman — "The Pleasure of Finding Things Out" (excerpt)**
 [Read at MIT Media Lab](https://learning.media.mit.edu/courses/mas713/readings/Finding_Things_Out.pdf)
 
 Read the first 10–12 pages. Feynman describes what it feels like to be genuinely curious about how things work — not to pass a test, but because the world is strange and interesting and worth looking at directly.
 
-Pay attention to the story about the flower. That story is the whole session.
+Pay attention to the story about the flower. A father and son walking. The boy asks what makes the bird move. The father says "nobody knows" — and means it as the most honest thing a scientist can say. That story is the whole session.
 
 ---
 
-### 3. Watch (10 min)
+### 4. Watch (10 min)
 
 **Veritasium — "Is Most Published Research Wrong?"**
 [Watch on YouTube](https://www.youtube.com/watch?v=42QuXLucH3Q)
@@ -63,7 +73,7 @@ This isn't about the research replication crisis specifically. Watch it as a les
 
 ---
 
-### 4. Your observation session (10 min)
+### 5. Your observation session (10 min)
 
 Find something that is physically moving or changing. Outside is best, but a window works. A candle flame, running water, or a fan also work.
 
@@ -132,6 +142,16 @@ Pick the phenomenon you observed today. Now explain it — actually explain it, 
 Where do you get stuck? What do you actually understand versus what have you just memorized the name for?
 
 Write down the exact moment where your explanation runs out. That boundary — the edge of your actual understanding — is the most valuable thing you found today.
+
+---
+
+## Before Tomorrow
+
+Tonight, find something moving — a candle, a tap dripping, leaves in wind, people walking outside, steam from a cup.
+
+Watch it for 3 minutes. No explanations. Just: what happened, in what order, at what speed?
+
+Try to last the full 3 minutes without a single *because*. Notice exactly when your mind jumps to interpret. That jump — that reflex — is what you're here to examine.
 
 ---
 
