@@ -57,7 +57,11 @@ Focus on: what does he think mathematics actually is? Do you agree?
 **Vi Hart — "Spirals, Fibonacci, and Being a Plant"**
 [Watch on YouTube](https://www.youtube.com/watch?v=ahXIMUkSXX0)
 
-Vi Hart draws and talks at the same time. Watch her notice structure in something as ordinary as a sunflower. The point isn't to memorize Fibonacci numbers. The point is to see that pattern is everywhere, and that noticing it is a skill you can build.
+Before you press play: find a photograph of a sunflower or pinecone — on your phone, in a book, anywhere. Count the spirals going clockwise. Then count them going counter-clockwise. Write both numbers down.
+
+Then watch.
+
+Vi Hart draws and talks at the same time. The two numbers you just counted are not a coincidence — and once you understand why, you will never look at a sunflower, a pinecone, a spiral shell, or a head of cabbage the same way again. The pattern is in all of them.
 
 ---
 
@@ -129,6 +133,16 @@ Take one pattern from your journal and go deeper:
 - If you described this pattern to someone who had never seen it, what would you need them to understand first?
 
 This is what mathematicians actually do: find a pattern, test its limits, then prove why it holds.
+
+---
+
+## Before Tomorrow
+
+On your next walk — or whenever you leave this room — count. Look for repetition in anything: tiles, fence posts, steps, branches, windows, brickwork, shadows.
+
+When you notice three patterns you've never consciously paid attention to before, you'll know something has shifted.
+
+You can't unsee a pattern once you've truly seen it. That's the whole point of today.
 
 ---
 
