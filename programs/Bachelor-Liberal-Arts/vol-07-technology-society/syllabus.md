@@ -1,6 +1,6 @@
 ---
 id: vol-07-technology-society
-title: "Volume 07 — Technology & Society | Liberal Education 2.0"
+title: "Volume 07 — Technology & Society"
 program: liberal-education-2
 level: 400
 tags: [technology, society, leadership]

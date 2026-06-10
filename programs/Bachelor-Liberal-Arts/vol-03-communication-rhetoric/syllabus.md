@@ -1,6 +1,6 @@
 ---
 id: vol-03-communication-rhetoric
-title: "Volume 03 — Communication & Rhetoric | Liberal Education 2.0"
+title: "Volume 03 — Communication & Rhetoric"
 program: liberal-education-2
 level: 200
 tags: [communication, rhetoric, argument, media]

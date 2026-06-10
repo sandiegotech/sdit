@@ -227,6 +227,115 @@ def journey_footer_html(journey: str, eyebrow: str, card_title: str, card_sub: s
     return "\n".join(parts)
 
 
+DAILY_SUBSCRIBE_HTML = """
+<aside class="daily-subscribe">
+  <strong>Get the Daily by email</strong>
+  <p>One spark of coolness every weekday morning — a photo, a song, a video, a story.
+  Nothing for sale, ever. Email delivery is launching soon; until then, every issue lives here.</p>
+  <!-- TODO(newsletter): replace this note with the email provider's embed form
+       (Buttondown / beehiiv / etc.) once an account exists. -->
+</aside>
+"""
+
+
+def render_daily() -> list[tuple[str, Path]]:
+    """The Daily — render daily/NNN.md issues and the auto-generated archive.
+
+    Each issue gets a masthead (issue number + weekday), the rendered body,
+    previous/next links, and the subscribe block. The archive index is built
+    from front matter, newest first, and doubles as the section landing page.
+    """
+    src = ROOT / "daily"
+    if not src.exists():
+        return []
+    ensure_markdown()
+
+    issues = []
+    for p in sorted(src.glob("*.md")):
+        body, meta = strip_front_matter(p.read_text(encoding="utf-8"))
+        if not isinstance(meta, dict) or "issue" not in meta:
+            continue
+        issues.append({
+            "num": int(meta["issue"]),
+            "weekday": str(meta.get("weekday", "")),
+            "title": str(meta.get("title", p.stem)),
+            "dek": str(meta.get("dek", "")),
+            "body": body,
+            "stem": p.stem,
+        })
+    issues.sort(key=lambda i: i["num"])
+
+    entries: list[tuple[str, Path]] = []
+    for idx, it in enumerate(issues):
+        masthead = (
+            f'<p class="daily-masthead">The Daily · Issue {it["num"]:03d}'
+            + (f' · {it["weekday"]}' if it["weekday"] else "") + "</p>"
+        )
+        nav_bits = []
+        if idx > 0:
+            prev = issues[idx - 1]
+            nav_bits.append(f'<a href="{prev["stem"]}.html">← {prev["title"]}</a>')
+        nav_bits.append('<a href="index.html">All issues</a>')
+        if idx + 1 < len(issues):
+            nxt = issues[idx + 1]
+            nav_bits.append(f'<a href="{nxt["stem"]}.html">{nxt["title"]} →</a>')
+        footer = (
+            '<nav class="daily-issue-footer">' + " · ".join(nav_bits) + "</nav>"
+            + DAILY_SUBSCRIBE_HTML
+        )
+
+        html = masthead + md_to_html(it["body"]) + footer
+        out_path = OUT / "daily" / f"{it['stem']}.html"
+        page = tmpl_page(it["title"], html)
+        page = page.replace("{ASSET_REL}", asset_rel(out_path))
+        page = page.replace(
+            "<!doctype html>",
+            f"<!doctype html>\n<!-- Generated from daily/{it['stem']}.md — edit the .md file, not this file -->",
+            1,
+        )
+        write_file(out_path, page)
+        entries.append((it["title"], out_path))
+
+    # Archive index, newest first.
+    cards = []
+    for it in reversed(issues):
+        cards.append(
+            f'<a class="daily-card" href="{it["stem"]}.html">'
+            f'<span class="daily-card-meta">Issue {it["num"]:03d} · {it["weekday"]}</span>'
+            f'<strong>{it["title"]}</strong>'
+            + (f'<p>{it["dek"]}</p>' if it["dek"] else "")
+            + "</a>"
+        )
+    cards_html = "\n".join(cards)
+    index_html = f"""
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Free · No account · Mon–Fri</p>
+    <h1>The Daily</h1>
+    <p class="lead">One spark of coolness every weekday — a photo, a song, a video, and a story from art, science, and culture. On Fridays: a film, an album, and a book for the weekend.</p>
+  </div>
+</section>
+
+{DAILY_SUBSCRIBE_HTML}
+
+<section class="section-panel">
+  <div class="section-heading">
+    <p class="eyebrow">All issues</p>
+    <h2>The archive</h2>
+  </div>
+  <div class="daily-archive">
+{cards_html}
+  </div>
+</section>
+"""
+    out_index = OUT / "daily" / "index.html"
+    page = tmpl_page("The Daily", index_html)
+    page = page.replace("{ASSET_REL}", asset_rel(out_index))
+    write_file(out_index, page)
+    entries.append(("The Daily", out_index))
+    return entries
+
+
 def render_schedule_sections() -> list[tuple[str, Path]]:
     """Generate the daily-practice pages from the course library (single source of truth).
 
@@ -544,6 +653,7 @@ def main(argv: list[str] | None = None) -> int:
     # After the trees: section pages are derived from courses/ + schedule.yaml and
     # must win over any stale committed copies.
     schedule_entries = render_schedule_sections()
+    daily_entries = render_daily()
 
     # Add simple section index pages where no manual one is preserved.
     for (title, out_path), section_name in (
@@ -568,7 +678,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # Build title map for pretty labels in the tree
     title_map: Dict[Path, str] = {}
-    for title, path in (knowledge_entries + institute_entries + courses_entries + programs_entries + schedule_entries):
+    for title, path in (knowledge_entries + institute_entries + courses_entries + programs_entries + schedule_entries + daily_entries):
         title_map[path.resolve()] = title
     # Only generate an index page if one does not already exist. This allows
     # callers to run the build into the repository root ("--out .") without
