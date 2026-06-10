@@ -1,6 +1,6 @@
 ---
 id: vol-04-science-systems
-title: "Volume 04 — Science & Systems | Liberal Education 2.0"
+title: "Volume 04 — Science & Systems"
 program: liberal-education-2
 level: 200
 tags: [science, systems, design, engineering]

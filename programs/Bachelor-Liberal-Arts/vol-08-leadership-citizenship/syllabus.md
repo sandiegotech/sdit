@@ -1,6 +1,6 @@
 ---
 id: vol-08-leadership-citizenship
-title: "Volume 08 — Leadership & Citizenship | Liberal Education 2.0"
+title: "Volume 08 — Leadership & Citizenship"
 program: liberal-education-2
 level: 400
 tags: [leadership, citizenship, capstone]

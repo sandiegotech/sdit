@@ -1,6 +1,6 @@
 ---
 id: vol-02-ethics-and-reasoning
-title: "Volume 02 — Ethics & Reasoning | Liberal Education 2.0"
+title: "Volume 02 — Ethics & Reasoning"
 program: liberal-education-2
 level: 100
 tags: [liberal-education, ethics, reasoning]

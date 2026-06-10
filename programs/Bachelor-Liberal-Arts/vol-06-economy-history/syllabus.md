@@ -1,6 +1,6 @@
 ---
 id: vol-06-economy-history
-title: "Volume 06 — Economy & History | Liberal Education 2.0"
+title: "Volume 06 — Economy & History"
 program: liberal-education-2
 level: 300
 tags: [economy, history, society]

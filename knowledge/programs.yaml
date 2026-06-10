@@ -1,34 +1,40 @@
 __meta__:
   title: Programs
-  description: Canonical list of educational programs, tracks, and labs with stable IDs.
-  intended_use: Source for Programs pages and cross-linking to courses; IDs must match course/module references.
+  description: The three layers of an SDIT education, plus the open curriculum archive.
+  intended_use: Source for Programs pages and cross-linking; IDs must remain stable.
 programs:
-  - id: liberal-education-2
-    name: Liberal Education 2.0
+  - id: perspectives
+    layer: 1
+    name: Perspectives
+    status: first lessons in production
     description: >
-      Interdisciplinary core with Mental Gym and tree-of-knowledge model; project-based validation in lieu of grades.
-    volumes:
-      - vol-01-foundations
-      - vol-02-ethics-and-reasoning
-      - vol-03-communication-rhetoric
-      - vol-04-science-systems
-      - vol-05-design-creativity
-      - vol-06-economy-history
-      - vol-07-technology-society
-      - vol-08-leadership-citizenship
-    courses:
-      - creative-intelligence
-      - wild-card-lab
-      - mental-models-lab
-  - id: engineering
-    name: Engineering Programs
-    tracks:
-      - drones
-      - spectrum
-      - ai-systems
-  - id: labs-studios
-    name: Labs & Studios
-    items:
-      - mental-models-lab
-      - creative-intelligence
-      - wild-card-lab
+      Short, free, standalone lessons — hour-long lectures and films, each
+      complete in itself, made for people who will never enroll. The public
+      face, the content engine, the recruiting funnel, and the legal head start.
+  - id: intensives
+    layer: 2
+    name: Intensives
+    status: planned — Project One is the founding pilot
+    description: >
+      Short paid non-degree programs: a two-week summer intensive, weekend
+      workshops, a single Canon seminar with a build project. Small and real.
+  - id: bst
+    layer: 3
+    name: Bachelor of Science in Technology
+    status: working framework — see knowledge/degree.yaml and institute/the-degree.md
+    description: >
+      120 semester units, 8 semesters. One shared baseline in Years 1-2;
+      concentration (Intelligent Systems, Applied Engineering, or Computational
+      Media & Design) plus choice in Years 3-4; Physical Culture throughout;
+      defended original work at the end.
+    concentrations: [intelligent-systems, applied-engineering, computational-media-design]
+
+archive:
+  - id: liberal-education-2
+    name: Bachelor of Liberal Arts (open curriculum)
+    status: legacy archive — superseded June 2026 by the BST framework
+    description: >
+      The original 8-volume open liberal arts curriculum. Volume 1 (75 lessons)
+      remains published as free open courseware; its lessons are source material
+      for Perspectives.
+    path: programs/Bachelor-Liberal-Arts/

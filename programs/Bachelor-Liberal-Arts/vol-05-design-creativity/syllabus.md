@@ -1,6 +1,6 @@
 ---
 id: vol-05-design-creativity
-title: "Volume 05 — Design & Creativity | Liberal Education 2.0"
+title: "Volume 05 — Design & Creativity"
 program: liberal-education-2
 level: 300
 tags: [design, creativity, projects]

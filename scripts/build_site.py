@@ -5,7 +5,7 @@ Build a minimal static site to browse repo content offline.
 Outputs to: dist/site
 
 Features:
-- Converts Markdown under docs/, courses/, and programs/ to HTML
+- Converts Markdown under courses/ and programs/ to HTML
 - Renders knowledge/*.yaml into simple HTML pages
 - Generates a top-level index with organized navigation
 
@@ -80,7 +80,7 @@ def tmpl_page(title: str, body_html: str, breadcrumb: str = "") -> str:
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title} — SDIT</title>
-  <link rel="stylesheet" href="{{ASSET_REL}}assets/styles.css" />
+  <link rel="stylesheet" href="{{ASSET_REL}}assets/site.css" />
   <script src="{{ASSET_REL}}assets/js/site-paths.js" defer></script>
   <script src="{{ASSET_REL}}assets/js/includes.js" defer></script>
 </head>
@@ -172,8 +172,29 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
         if is_lesson:
             html = inject_student_work_class(html)
 
+        # Course day pages: canonical lesson id + a "next in this course" card,
+        # so responses unify across routes and every lesson ends with a pull forward.
+        day_match = re.match(r"^courses/([^/]+)/day-(\d+)$", path.relative_to(ROOT).with_suffix("").as_posix())
+        canonical = None
+        if day_match:
+            course_dir, day_num = day_match.group(1), int(day_match.group(2))
+            canonical = f"/courses/{course_dir}/day-{day_num:02d}"
+            next_md = ROOT / "courses" / course_dir / f"day-{day_num + 1:02d}.md"
+            if next_md.exists():
+                _, next_meta = strip_front_matter(next_md.read_text(encoding="utf-8"))
+                next_title = (next_meta.get("title") or f"Day {day_num + 1:02d}") if isinstance(next_meta, dict) else f"Day {day_num + 1:02d}"
+                html += journey_footer_html(
+                    journey=f"Day {day_num} of 15 in this course",
+                    eyebrow="Next in this course",
+                    card_title=re.sub(r"^Day \d+\s*[—–-]\s*", "", str(next_title)),
+                    card_sub=str(meta.get("course") or "") if isinstance(meta, dict) else "",
+                    href=f"day-{day_num + 1:02d}.html",
+                )
+
         # Prepare template and asset path
         page = tmpl_page(title, html)
+        if canonical:
+            page = page.replace("</head>", f'  <meta name="sdit-lesson" content="{canonical}" />\n</head>', 1)
         # Inject the correct asset relative prefix
         rel = asset_rel(out_path)
         page = page.replace("{ASSET_REL}", rel)
@@ -182,6 +203,247 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
         page = page.replace("<!doctype html>", f"<!doctype html>\n<!-- Generated from {source_md} — edit the .md file, not this file -->", 1)
         write_file(out_path, page)
         entries.append((title, out_path))
+    return entries
+
+
+def journey_footer_html(journey: str, eyebrow: str, card_title: str, card_sub: str,
+                        href: str, week_map: str = "", note: str = "") -> str:
+    """The end-of-lesson journey chrome: where you are, and the pull to tomorrow."""
+    import html as _html
+    parts = ['<aside class="lesson-journey">']
+    parts.append(f'<p class="lesson-journey-meta">{_html.escape(journey)}</p>')
+    if week_map:
+        parts.append(week_map)
+    parts.append(
+        f'<a class="lesson-tomorrow-card" href="{_html.escape(href)}">'
+        f'<span class="lesson-tomorrow-eyebrow">{_html.escape(eyebrow)}</span>'
+        f'<strong>{_html.escape(card_title)}</strong>'
+        + (f'<span class="lesson-tomorrow-sub">{_html.escape(card_sub)}</span>' if card_sub else "")
+        + '<span class="lesson-tomorrow-cta">Continue the practice →</span>'
+        f'</a>'
+    )
+    parts.append(f'<p class="lesson-selfpace">{_html.escape(note or "Self-paced — tomorrow means whenever you come back.")}</p>')
+    parts.append("</aside>")
+    return "\n".join(parts)
+
+
+DAILY_SUBSCRIBE_HTML = """
+<aside class="daily-subscribe">
+  <strong>Get the Daily by email</strong>
+  <p>One spark of coolness every weekday morning — a photo, a song, a video, a story.
+  Nothing for sale, ever. Email delivery is launching soon; until then, every issue lives here.</p>
+  <!-- TODO(newsletter): replace this note with the email provider's embed form
+       (Buttondown / beehiiv / etc.) once an account exists. -->
+</aside>
+"""
+
+
+def render_daily() -> list[tuple[str, Path]]:
+    """The Daily — render daily/NNN.md issues and the auto-generated archive.
+
+    Each issue gets a masthead (issue number + weekday), the rendered body,
+    previous/next links, and the subscribe block. The archive index is built
+    from front matter, newest first, and doubles as the section landing page.
+    """
+    src = ROOT / "daily"
+    if not src.exists():
+        return []
+    ensure_markdown()
+
+    issues = []
+    for p in sorted(src.glob("*.md")):
+        body, meta = strip_front_matter(p.read_text(encoding="utf-8"))
+        if not isinstance(meta, dict) or "issue" not in meta:
+            continue
+        issues.append({
+            "num": int(meta["issue"]),
+            "weekday": str(meta.get("weekday", "")),
+            "title": str(meta.get("title", p.stem)),
+            "dek": str(meta.get("dek", "")),
+            "body": body,
+            "stem": p.stem,
+        })
+    issues.sort(key=lambda i: i["num"])
+
+    entries: list[tuple[str, Path]] = []
+    for idx, it in enumerate(issues):
+        masthead = (
+            f'<p class="daily-masthead">The Daily · Issue {it["num"]:03d}'
+            + (f' · {it["weekday"]}' if it["weekday"] else "") + "</p>"
+        )
+        nav_bits = []
+        if idx > 0:
+            prev = issues[idx - 1]
+            nav_bits.append(f'<a href="{prev["stem"]}.html">← {prev["title"]}</a>')
+        nav_bits.append('<a href="index.html">All issues</a>')
+        if idx + 1 < len(issues):
+            nxt = issues[idx + 1]
+            nav_bits.append(f'<a href="{nxt["stem"]}.html">{nxt["title"]} →</a>')
+        footer = (
+            '<nav class="daily-issue-footer">' + " · ".join(nav_bits) + "</nav>"
+            + DAILY_SUBSCRIBE_HTML
+        )
+
+        html = masthead + md_to_html(it["body"]) + footer
+        out_path = OUT / "daily" / f"{it['stem']}.html"
+        page = tmpl_page(it["title"], html)
+        page = page.replace("{ASSET_REL}", asset_rel(out_path))
+        page = page.replace(
+            "<!doctype html>",
+            f"<!doctype html>\n<!-- Generated from daily/{it['stem']}.md — edit the .md file, not this file -->",
+            1,
+        )
+        write_file(out_path, page)
+        entries.append((it["title"], out_path))
+
+    # Archive index, newest first.
+    cards = []
+    for it in reversed(issues):
+        cards.append(
+            f'<a class="daily-card" href="{it["stem"]}.html">'
+            f'<span class="daily-card-meta">Issue {it["num"]:03d} · {it["weekday"]}</span>'
+            f'<strong>{it["title"]}</strong>'
+            + (f'<p>{it["dek"]}</p>' if it["dek"] else "")
+            + "</a>"
+        )
+    cards_html = "\n".join(cards)
+    index_html = f"""
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Free · No account · Mon–Fri</p>
+    <h1>The Daily</h1>
+    <p class="lead">One spark of coolness every weekday — a photo, a song, a video, and a story from art, science, and culture. On Fridays: a film, an album, and a book for the weekend.</p>
+  </div>
+</section>
+
+{DAILY_SUBSCRIBE_HTML}
+
+<section class="section-panel">
+  <div class="section-heading">
+    <p class="eyebrow">All issues</p>
+    <h2>The archive</h2>
+  </div>
+  <div class="daily-archive">
+{cards_html}
+  </div>
+</section>
+"""
+    out_index = OUT / "daily" / "index.html"
+    page = tmpl_page("The Daily", index_html)
+    page = page.replace("{ASSET_REL}", asset_rel(out_index))
+    write_file(out_index, page)
+    entries.append(("The Daily", out_index))
+    return entries
+
+
+def render_schedule_sections() -> list[tuple[str, Path]]:
+    """Generate the daily-practice pages from the course library (single source of truth).
+
+    programs/Bachelor-Liberal-Arts/schedule.yaml interleaves the five foundation
+    courses into weeks: chapter-WW/section-DD is one course session. Each page is
+    built from the canonical courses/<course>/day-NN.md, carries a canonical-lesson
+    meta tag (responses unify across the course and schedule routes), and ends with
+    the journey footer: day-of-volume context, a this-week map, and a Tomorrow card.
+    """
+    import html as _html
+    import yaml
+
+    ensure_markdown()
+    entries: list[tuple[str, Path]] = []
+    sched_path = ROOT / "programs" / "Bachelor-Liberal-Arts" / "schedule.yaml"
+    if not sched_path.exists():
+        return entries
+    sched = yaml.safe_load(sched_path.read_text(encoding="utf-8")) or {}
+
+    for vol in sched.get("volumes") or []:
+        weeks = vol.get("weeks") or []
+        if not weeks:
+            continue
+        vol_id = vol.get("id")
+        vol_label = f"{vol.get('label', '')}: {vol.get('title', '')}".strip(": ")
+        base = OUT / "programs" / "Bachelor-Liberal-Arts" / vol_id / "schedule"
+
+        # Flatten to an ordered list of sessions with source metadata.
+        flat = []  # (week_no, week_title, slot, course, day)
+        for w in weeks:
+            for slot, sess in enumerate(w.get("sessions") or [], start=1):
+                flat.append((w["week"], w.get("title", ""), slot, sess["course"], int(sess["day"])))
+        total = len(flat)
+
+        # Pre-read titles/course labels from the canonical md front matter.
+        info: dict[tuple[str, int], dict] = {}
+        for _, _, _, course, day in flat:
+            src = ROOT / "courses" / course / f"day-{day:02d}.md"
+            if not src.exists():
+                continue
+            body, meta = strip_front_matter(src.read_text(encoding="utf-8"))
+            raw_title = str((meta or {}).get("title") or f"Day {day:02d}")
+            info[(course, day)] = {
+                "body": body,
+                "title": re.sub(r"^Day \d+\s*[—–-]\s*", "", raw_title),
+                "course_label": str((meta or {}).get("course") or course),
+            }
+
+        for n, (week_no, week_title, slot, course, day) in enumerate(flat, start=1):
+            rec = info.get((course, day))
+            if rec is None:
+                print(f"  schedule: missing courses/{course}/day-{day:02d}.md — section skipped")
+                continue
+
+            # Program-day framing: the journey strip carries day-of-volume context,
+            # so strip the course-relative "Day NN —" prefix from the lesson heading.
+            body = re.sub(r"^# Day \d+\s*[—–-]\s*", "# ", rec["body"], count=1, flags=re.M)
+            html = inject_student_work_class(md_to_html(body))
+
+            # This-week map: five pills, current one marked.
+            pills = []
+            for w2, _, s2, c2, d2 in flat:
+                if w2 != week_no:
+                    continue
+                t2 = info.get((c2, d2), {}).get("title", "")
+                if s2 == slot:
+                    pills.append(f'<span class="lesson-week-pill is-current" title="{_html.escape(t2)}">Day {s2}</span>')
+                else:
+                    pills.append(f'<a class="lesson-week-pill" href="../chapter-{week_no:02d}/section-{s2:02d}.html" title="{_html.escape(t2)}">Day {s2}</a>')
+            week_map = (
+                f'<p class="lesson-week-label">Week {week_no} — {_html.escape(week_title)}</p>'
+                f'<div class="lesson-week-map">{"".join(pills)}</div>'
+            )
+
+            journey = f"Day {n} of {total} · Week {week_no} of {len(weeks)} · {vol_label}"
+            if n < total:
+                nw, nwt, ns, nc, nd = flat[n]
+                nxt = info.get((nc, nd), {})
+                eyebrow = f"Tomorrow · Week {nw} begins" if nw != week_no else f"Tomorrow · Day {n + 1} of {total}"
+                footer = journey_footer_html(
+                    journey=journey, eyebrow=eyebrow,
+                    card_title=nxt.get("title", "The next session"),
+                    card_sub=nxt.get("course_label", nc),
+                    href=f"../chapter-{nw:02d}/section-{ns:02d}.html",
+                    week_map=week_map,
+                )
+            else:
+                footer = journey_footer_html(
+                    journey=journey, eyebrow="You finished Volume 1",
+                    card_title="Foundations, complete. Volume 2: Ethics and Reasoning is next.",
+                    card_sub="Four years. Eight volumes. This was the first.",
+                    href="/programs/Bachelor-Liberal-Arts/index.html",
+                    week_map=week_map,
+                    note="Go back and reread your Day 1 manifesto before you move on.",
+                )
+            html += footer
+
+            out_path = base / f"chapter-{week_no:02d}" / f"section-{slot:02d}.html"
+            page = tmpl_page(rec["title"], html)
+            page = page.replace("</head>", f'  <meta name="sdit-lesson" content="/courses/{course}/day-{day:02d}" />\n</head>', 1)
+            page = page.replace("{ASSET_REL}", asset_rel(out_path))
+            page = page.replace(
+                "<!doctype html>",
+                f"<!doctype html>\n<!-- Generated from courses/{course}/day-{day:02d}.md via schedule.yaml — edit those, not this file -->",
+                1,
+            )
+            write_file(out_path, page)
+            entries.append((rec["title"], out_path))
     return entries
 
 
@@ -317,7 +579,6 @@ def build_index(title_map: Dict[Path, str]) -> None:
     sections.append(f"<details class='root'><summary>Knowledge</summary>{tree_html(OUT / 'knowledge')}</details>")
     sections.append(f"<details class='root'><summary>Programs</summary>{tree_html(OUT / 'programs')}</details>")
     sections.append(f"<details class='root'><summary>Courses</summary>{tree_html(OUT / 'courses')}</details>")
-    sections.append(f"<details class='root'><summary>Docs</summary>{tree_html(OUT / 'docs')}</details>")
 
     intro = "<p>Browse SDIT content organized by repository structure.</p>"
     html = tmpl_page("SDIT Content Index", intro + "\n" + "\n".join(sections))
@@ -326,76 +587,16 @@ def build_index(title_map: Dict[Path, str]) -> None:
 
 
 def write_assets():
+    """Prepare the output's static assets.
+
+    Single source of truth for styling is assets/site.css. When building in
+    place (OUT == ROOT) the source assets already live in assets/, so nothing
+    needs copying. When building to a separate dir, copy the static source
+    (CSS, JS, partials, brand) into the output so it is a complete site.
+    """
     ASSETS.mkdir(parents=True, exist_ok=True)
     # Disable Jekyll processing on GitHub Pages so files are served as-is
     write_file(OUT / ".nojekyll", "")
-    if OUT.resolve() == ROOT.resolve():
-        css = """
-@import url('./site.css');
-
-/* Basic header/footer styling for pages without site-header/footer classes. */
-header:not(.site-header) {
-  text-align: center;
-  padding: 20px;
-  border-bottom: 1px solid var(--border);
-  background: transparent;
-}
-header:not(.site-header) h1 {
-  margin: 0;
-}
-footer:not(.site-footer) {
-  margin-top: 60px;
-  text-align: center;
-  padding: 30px;
-  font-size: 14px;
-  color: var(--muted);
-  background: transparent;
-  border-top: 1px solid var(--border);
-}
-"""
-    else:
-        css = """
-    :root {
-      --bg: #0b0d12; --card:#13161d; --elev:#1a1f27; --fg:#e8eaee; --muted:#a2a7b0; --link:#7cc4ff; --accent:#2a9d8f;
-    }
-    * { box-sizing: border-box; }
-    html { font-size: 16px; }
-    body {
-      margin: 0; font-family: Inter, -apple-system, Segoe UI, Roboto, system-ui, sans-serif;
-      color: var(--fg); background: radial-gradient(1200px 600px at 10% -10%, #10141b 0%, var(--bg) 50%);
-      line-height: 1.7;
-    }
-    header { padding: 24px 20px; border-bottom: 1px solid #1f2430; background: linear-gradient(180deg, #0f1320 0%, rgba(0,0,0,0) 100%); }
-    header h1 { margin: 0 0 6px; font-size: 22px; letter-spacing: .3px; }
-    main { padding: 22px; max-width: 1040px; margin: 0 auto; }
-    section { background: var(--card); padding: 14px 16px; margin: 12px 0; border-radius: 10px; border: 1px solid #1f2430; }
-    /* Collapsible tree (details/summary) */
-    details { background: var(--card); border-radius: 10px; padding: 8px 12px; margin: 10px 0; border: 1px solid #1f2430; }
-    details[open] { padding-bottom: 10px; }
-    details > summary { cursor: pointer; list-style: none; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-    details > summary::-webkit-details-marker { display: none; }
-    details > summary::marker { content: ""; }
-    details > summary::before { content: "▸"; display: inline-block; width: 1em; color: var(--muted); transition: transform .15s ease; }
-    details[open] > summary::before { content: "▾"; }
-    details ul { margin: 6px 0 0 18px; padding-left: 10px; }
-    li { margin: 3px 0; }
-    ul { padding-left: 20px; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1, h2, h3 { color: #fff; }
-    code, pre { background: #0f1219; border-radius: 8px; border: 1px solid #1f2430; }
-    pre { padding: 12px; overflow: auto; }
-    dl { display: grid; grid-template-columns: minmax(0, max-content) minmax(0, 1fr); gap: 6px 12px; align-items: start; }
-    dt { color: #c9cfd8; overflow-wrap: anywhere; }
-    dd { margin: 0 0 6px 0; min-width: 0; overflow-wrap: anywhere; }
-    @media (max-width: 700px) {
-      dl { grid-template-columns: 1fr; gap: 4px 0; }
-      dd { margin: 0 0 10px; }
-    }
-    .desc { color: var(--muted); }
-    footer { padding: 20px; color: var(--muted); border-top: 1px solid #1f2430; margin-top: 28px; }
-    """
-    write_file(ASSETS / "styles.css", css)
 
     # When building to a separate output dir, copy JS files and partials so the
     # site header and footer work when serving the output locally.
@@ -446,13 +647,16 @@ def main(argv: list[str] | None = None) -> int:
     write_assets()
 
     knowledge_entries = render_knowledge(ROOT / "knowledge", OUT / "knowledge")
-    docs_entries = render_markdown_tree(ROOT / "docs", OUT / "docs")
+    institute_entries = render_markdown_tree(ROOT / "institute", OUT / "institute")
     courses_entries = render_markdown_tree(ROOT / "courses", OUT / "courses")
     programs_entries = render_markdown_tree(ROOT / "programs", OUT / "programs")
+    # After the trees: section pages are derived from courses/ + schedule.yaml and
+    # must win over any stale committed copies.
+    schedule_entries = render_schedule_sections()
+    daily_entries = render_daily()
 
-    # Add simple section index pages for docs/ and courses/
+    # Add simple section index pages where no manual one is preserved.
     for (title, out_path), section_name in (
-        (("Docs", OUT / "docs" / "index.html"), "docs"),
         (("Courses", OUT / "courses" / "index.html"), "courses"),
         (("Programs", OUT / "programs" / "index.html"), "programs"),
     ):
@@ -474,7 +678,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # Build title map for pretty labels in the tree
     title_map: Dict[Path, str] = {}
-    for title, path in (knowledge_entries + docs_entries + courses_entries + programs_entries):
+    for title, path in (knowledge_entries + institute_entries + courses_entries + programs_entries + schedule_entries + daily_entries):
         title_map[path.resolve()] = title
     # Only generate an index page if one does not already exist. This allows
     # callers to run the build into the repository root ("--out .") without

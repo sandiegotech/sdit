@@ -1,6 +1,6 @@
 ---
 id: vol-01-foundations
-title: "Volume 01 — foundations | Liberal Education 2.0"
+title: "Volume 01 — foundations"
 program: liberal-education-2
 level: 100
 outcomes:

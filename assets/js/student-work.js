@@ -25,6 +25,10 @@
   }
 
   function lessonPath() {
+    // Canonical lesson id when the page declares one — the same lesson is served
+    // at both /courses/... and the schedule route, and responses must be one set.
+    var meta = document.querySelector('meta[name="sdit-lesson"]');
+    if (meta && meta.content) return meta.content;
     // /courses/LBS-101/day-01.html  →  /courses/LBS-101/day-01
     return location.pathname.replace(/\.html$/, "");
   }
