@@ -1,0 +1,146 @@
+__meta__:
+  title: Degree Architecture — Bachelor of Science in Technology
+  description: >
+    The machine-readable contract for the SDIT Bachelor of Science in Technology:
+    120 semester units across ten threads, one shared baseline in Years 1-2,
+    concentration + choice in Years 3-4, annual portfolio gates against the five
+    institutional outcomes, and a defended original work at the end.
+  intended_use: >
+    Single source of truth for degree structure. Mirrors the founding framework
+    (institute/the-degree.md) in structured form; drives program pages, future
+    catalog generation, and the BPPE/WSCUC evidence file. The prose framework is
+    canonical — when this file and the framework disagree, fix this file.
+  status: working-framework  # to be developed to catalog grade for BPPE/WSCUC
+  supersedes: >
+    The 2026-06 CBE Bachelor of Liberal Arts architecture. The BLA volumes and
+    course library remain published as the open curriculum archive; the BST is
+    the institution's degree.
+  source_documents:
+    plan: institute/sdit-bible.md
+    framework: institute/the-degree.md
+
+# ---------------------------------------------------------------------------
+# 1. THE DEGREE
+# ---------------------------------------------------------------------------
+degree:
+  id: bst
+  name: Bachelor of Science in Technology
+  total_units: 120          # semester units
+  semesters: 8
+  model: >
+    Traditional semester units with grades (transcripts require them); the
+    portfolio is the primary artifact. Dual-register design: every course has a
+    catalog name (accreditation- and transfer-legible) and a teaching frame
+    (how it is actually delivered).
+  structural_philosophy: >
+    Identical baseline for every student in Years 1-2 (zero electives — the
+    shared formation is the product); specialization and choice in Years 3-4.
+  standing_test: "Would the founder genuinely want to take it? If not, redesign or cut."
+  concentration_declared: end of Year 2
+
+# ---------------------------------------------------------------------------
+# 2. UNIT ARCHITECTURE — the ten threads
+# ---------------------------------------------------------------------------
+threads:
+  - { id: canon,         name: The Canon,                          units: 16, structure: "HUM 101-402, 2 units/semester x 8", method: "Double Feature: text + film + album as one conversation; each term ends in a made, defended response" }
+  - { id: math-science,  name: Mathematics & Science Core,         units: 24, structure: "Six 4-unit courses, Years 1-2 (+1 in Year 3)", method: "Every concept physical before formal — the ocean, the ramp, the studio as lab" }
+  - { id: computation,   name: Computation & Intelligent Systems,  units: 24, structure: "Six 4-unit courses across all years", method: "AI tools open, instrumented, and critiqued from day one; direction and verification as the skill" }
+  - { id: rhetoric,      name: Rhetoric & Epistemics,              units: 8,  structure: "Two 4-unit courses, Years 1-2", method: "Heavy line-edited output; epistemic self-defense" }
+  - { id: signal,        name: Culture & Signal,                   units: 4,  structure: "1 unit/year x 4", method: "How music, images, scenes, and signals actually move; ends by shipping a real cultural artifact" }
+  - { id: workshop,      name: The Workshop (Bottega),             units: 16, structure: "2 units/semester x 8", method: "Every semester on a project team that ships; external clients from Year 2; portfolio review + public exhibition" }
+  - { id: concentration, name: Concentration,                      units: 12, structure: "Three 4-unit advanced courses, Years 3-4" }
+  - { id: open-studio,   name: Open Studio Electives,              units: 8,  structure: "Years 3-4 only; rotating practitioner-taught slate", method: "Visiting Masters, Language & Abroad, Deep Cuts, Cross-Concentration; how the curriculum absorbs the new without rewriting the core" }
+  - { id: field-term,    name: Field Term,                         units: 4,  structure: "FLD 301 — one placed term, Year 3, embedded in a partner organization" }
+  - { id: capstone,      name: Thesis / Venture Capstone,          units: 4,  structure: "CAP 401-402, Year 4; defended original work: research thesis, an engineered system that works, or a venture that exists" }
+
+physical_culture:
+  status: graduation-required, non-credit, co-curricular
+  spine: surfing
+  core: [skateboarding, snowboarding, motorcycling, freediving, sailing]
+  combat: jiu-jitsu or boxing
+  foreign_term: annual visiting-practitioner tradition (Muay Thai, rugby sevens, pelota, kendo, surf lifesaving)
+  commitment: certified instructors, lifeguard/EMT coverage, counsel-reviewed waivers, insurance from day one
+
+teaching_requirement:
+  status: Year 4, non-credit, graduation-required
+  rule: every fourth-year leads first-years in Workshop, Canon section, or Physical Culture
+
+# ---------------------------------------------------------------------------
+# 3. CONCENTRATIONS — declared end of Year 2
+# ---------------------------------------------------------------------------
+concentrations:
+  - id: intelligent-systems
+    name: Intelligent Systems
+    scope: machine learning, autonomy, AI engineering and deployment
+    courses: [Autonomy & Robotics, Applied Deep Learning, "AI Safety, Evaluation & Deployment"]
+  - id: applied-engineering
+    name: Applied Engineering
+    scope: hardware, robotics, fabrication, embedded and physical systems
+    courses: [Mechanical Design & Fabrication, Embedded Systems & Sensors, Energy & Ocean Systems]
+  - id: computational-media-design
+    name: Computational Media & Design
+    scope: interfaces, film, music technology, human-machine experience
+    courses: [Interactive Systems & Interfaces, Film & Sound Production, Simulation & Generative Media]
+
+# ---------------------------------------------------------------------------
+# 4. THE FOUR YEARS AT A GLANCE
+# ---------------------------------------------------------------------------
+years:
+  - year: 1
+    fall:   [HUM 101, MATH 110, PHYS 110, CS 110, RHET 110, SIG 101, WKSP 101]
+    spring: [HUM 102, MATH 120, PHYS 120, CS 120, WKSP 102]
+    milestone: public exhibition
+  - year: 2
+    fall:   [HUM 201, MATH 210, CS 210, RHET 210, WKSP 201]
+    spring: [HUM 202, MATH 220, CS 220, SIG 201, WKSP 202]
+    milestone: concentration declared
+  - year: 3
+    fall:   [HUM 301, CS 310, Concentration I, SIG 301, WKSP 301]
+    spring: [Field Term, HUM 302, WKSP 302]
+    milestone: field term
+  - year: 4
+    fall:   [HUM 401, CS 320, Concentration II, Elective, WKSP 401, CAP 401]
+    spring: [HUM 402, Concentration III, Elective, SIG 401, WKSP 402, CAP 402]
+    milestone: defense + teaching
+
+# ---------------------------------------------------------------------------
+# 5. GATES & ASSESSMENT
+# ---------------------------------------------------------------------------
+assessment:
+  annual_gates: >
+    End of each year: portfolio review + written and oral examination against
+    the five outcomes (Judgment, Command of Intelligence, Craft, Articulation,
+    Breadth of Mind). See knowledge/outcomes.yaml.
+  ai_policy: >
+    AI-native, not AI-dependent: AI tools open and studied everywhere, AND
+    periodic unassisted examinations in writing, mathematics, and code. The
+    institution certifies the human, so it must regularly observe the human unaided.
+  grades: exist (transcripts require them); the portfolio is the primary artifact
+  outcome_mapping: >
+    Every course description at catalog grade states learning outcomes mapped to
+    the five institutional outcomes — the WSCUC Standard 2 evidence file.
+
+scale_commitments:
+  founding_cohorts: 30-50
+  seminar_cap: 15
+  faculty: practitioner-scholars with a documented equivalent-professional-standing rubric
+
+# ---------------------------------------------------------------------------
+# 6. COMPLIANCE PATHWAY — what this file does NOT make true
+# ---------------------------------------------------------------------------
+compliance:
+  stages:
+    - { stage: 0, name: Incorporate & Govern,            timing: Year 0,    gate: "nonprofit incorporation, independent board, audit-capable books" }
+    - { stage: 1, name: BPPE Approval to Operate,        timing: Years 0-2, gate: "REQUIRED before lawfully enrolling degree students or promising degrees; 12-24 months" }
+    - { stage: 2, name: Operate & WSCUC Eligibility,     timing: Years 2-4, gate: "founding cohort under BPPE approval; eligibility is a preliminary finding, not a status" }
+    - { stage: 3, name: Candidacy -> Initial Accreditation, timing: Years 4-8, gate: "at least one graduated class before Initial Accreditation review" }
+  realistic_total: 7-10 years from founding
+  legal_head_start: >
+    Layers 1-2 (Perspectives free lessons; small non-degree Intensives) operate
+    legally before BPPE approval. Free general-interest education requires no
+    state approval; verify exemption boundaries with counsel before charging
+    tuition for anything vocational-sounding.
+  honest_language: >
+    Until BPPE approval, no public 'degree' offers or claims. The published
+    curriculum is an open educational resource; the founding-cohort covenant is
+    total transparency about pre-accreditation status.

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SDIT — Learn</title>
+  <title>SDIT — San Diego Institute of Technology</title>
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/js/site-paths.js" defer></script>
   <script src="assets/js/includes.js" defer></script>
@@ -16,14 +16,15 @@
     <!-- Entry -->
     <section class="home-entry">
       <div class="home-entry-inner">
-        <h1>Four years of education.<br>One day at a time.</h1>
+        <h1>Technology, art, craft, science, and philosophy.<br>One discipline.</h1>
         <p>
-          A complete liberal arts curriculum built for the age of AI —
-          philosophy, critical reasoning, writing, science, ethics, and more.
-          Free and open. Start today.
+          SDIT exists to produce people whose value compounds as machine intelligence
+          advances — judgment, taste, command of intelligent systems, and the craft
+          instinct to make real things. Read <a href="/institute/sdit-bible.html">the plan</a>,
+          explore <a href="/institute/the-degree.html">the degree</a>, or start learning now.
         </p>
-        <a class="home-start-btn" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/before-you-begin.html">
-          Get Started
+        <a class="home-start-btn" id="home-cta" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/before-you-begin.html">
+          <span id="home-cta-label">Start the Open Lessons</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -31,47 +32,148 @@
       </div>
     </section>
 
-    <!-- Philosophy / About -->
+    <!-- How it works -->
+    <section class="home-philosophy">
+      <div class="home-philosophy-inner">
+        <div class="home-phi-intro">
+          <p class="eyebrow">How it works</p>
+          <h2>Open a lesson. Think. Write. Come back.</h2>
+          <p>No account, no enrollment, no cost. The site remembers where you left off on this device, and every lesson is built to be returned to — this year, next year, in five years.</p>
+        </div>
+        <div class="home-phi-principles">
+          <div class="home-phi-block">
+            <h3>1 · One lesson a day</h3>
+            <p>The curriculum runs in daily lessons — a focused hour of reading, watching, and thinking. Follow the schedule in order, or wander the library and follow your curiosity. Both are correct.</p>
+          </div>
+          <div class="home-phi-block">
+            <h3>2 · Write on the page</h3>
+            <p>Lessons ask you real questions and give you space to answer right there in the page. Your words save automatically in your browser — and if you fork the repo, they save to files you own forever.</p>
+          </div>
+          <div class="home-phi-block">
+            <h3>3 · Your work becomes a portfolio</h3>
+            <p>Nothing here can be answered by copying a machine — the questions are about your life, your projects, your judgment. What accumulates is proof of effort: a record worth revisiting to see how your own mind has changed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
     <section id="philosophy" class="home-philosophy">
       <div class="home-philosophy-inner">
 
         <div class="home-phi-intro">
-          <p class="eyebrow">Why this exists</p>
-          <h2>Liberal arts is the operating system. Everything else runs on top of it.</h2>
-          <p>Before you build technology, lead an organization, or make sense of a complicated world — you need to be able to think clearly, write with precision, reason from evidence, and understand how things actually work. That is what a liberal education gives you. Not a credential. A foundation.</p>
-          <p>SDIT starts there, on purpose. The four-year curriculum begins with philosophy, writing, mathematics, science, and creative thinking — the hardest and most durable skills there are. Specialization in technology, leadership, or any other domain comes later, and it goes further because of what came first.</p>
+          <p class="eyebrow">The premise</p>
+          <h2>The Post-Industrial Renaissance.</h2>
+          <p>Industrial-era education was built to produce specialists for a world of stable professions. That world is ending. The institutions that matter next will not be "AI universities" teaching tools that depreciate in eighteen months — they will be the ones that produce people whose value <em>compounds</em> as machine intelligence advances.</p>
+          <p>Technology, art, craft, science, and philosophy are one discipline, artificially divided by the industrial university. SDIT reunites them.</p>
         </div>
 
         <div class="home-phi-principles">
           <div class="home-phi-block">
-            <h3>The foundation comes first</h3>
-            <p>Every specialized discipline — AI, engineering, business, design — is built on top of the fundamentals. The ability to reason clearly, communicate precisely, understand evidence, and think across disciplines isn't a soft skill. It's the skill that makes everything else compound. We teach it first because that's the order that works.</p>
+            <h3>The bottega</h3>
+            <p>Learning happens inside real work, under masters, in a workshop that ships. Every semester, every student is on a project team that builds something real — assessed by portfolio review and public exhibition, not seat time.</p>
           </div>
           <div class="home-phi-block">
-            <h3>Open source, by design</h3>
-            <p>This curriculum is published openly and freely — the same way great software is. The goal is a standardized, accredited-aligned liberal arts degree that anyone can access, anywhere, without tuition or enrollment. Education at this level should be a public resource. We publish it that way, and we intend it to grow through use and contribution over time.</p>
+            <h3>Bell Labs rigor</h3>
+            <p>Deep technical rigor in service of building, not credentialing. Calculus, mechanics, linear algebra, machine learning — the full core, taught physical-before-formal, with periodic unassisted examinations. The institution certifies the human.</p>
           </div>
           <div class="home-phi-block">
-            <h3>Cultural literacy for a shared world</h3>
-            <p>We live in a world shaped by technology, institutions, markets, and ideas that most people were never taught to understand. A genuine liberal education — one that covers philosophy, science, history, ethics, mathematics, and communication — gives people the literacy to participate in that world rather than just be carried along by it. That access should be universal.</p>
+            <h3>The waterman tradition</h3>
+            <p>Physical mastery, courage, and judgment as part of the formation of the whole person. San Diego is the laboratory: the ocean teaches physics, the culture teaches media, the terrain teaches engineering.</p>
           </div>
           <div class="home-phi-block">
-            <h3>A living curriculum, not a finished one</h3>
-            <p>This is version one. It will not be perfect. There are gaps, rough edges, and chapters still being written. The goal is for it to grow over time — through use, feedback, and open contribution — into something genuinely comprehensive and excellent. It is good enough to start today. It will be better tomorrow.</p>
+            <h3>The dual register</h3>
+            <p>Keep the names, transform the delivery. The catalog says <em>Mechanics, Calculus I, Probability &amp; Statistics</em> — the classroom is Scripps Pier, the ramp, the recording studio. The credential is the interface; the portfolio is the truth.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- The path -->
+    <!-- The five outcomes -->
+    <section class="home-philosophy">
+      <div class="home-philosophy-inner">
+        <div class="home-phi-intro">
+          <p class="eyebrow">What SDIT certifies</p>
+          <h2>Five outcomes, assessed at annual gates.</h2>
+          <p><strong>Judgment</strong> — rigorous reasoning under uncertainty. <strong>Command of Intelligence</strong> — directing, building, and evaluating AI systems as a native medium. <strong>Craft</strong> — conceiving, designing, and physically realizing working artifacts. <strong>Articulation</strong> — writing and speaking with clarity and force. <strong>Breadth of Mind</strong> — history, philosophy, literature, science, and living culture as one continuous conversation.</p>
+          <p>Every year ends in a gate: portfolio review plus written and oral examination against all five. The portfolio is the primary artifact.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The three layers -->
     <section class="home-path">
       <div class="home-path-inner">
 
         <div class="home-path-header">
-          <p class="eyebrow">Bachelor of Liberal Arts</p>
-          <h2>The full four-year curriculum.</h2>
-          <p>Eight volumes, two per year. Each volume is one semester of study — five courses running in parallel, one lesson per day. Volume 1 is live now. The rest are being written in sequence.</p>
+          <p class="eyebrow">How the institution grows</p>
+          <h2>Three layers, in order, in public.</h2>
+          <p>Perspectives now → Intensives next → the Degree when authorized. Each layer feeds the next, with proof at every step.</p>
+        </div>
+
+        <div class="home-path-year">
+          <div class="home-path-year-label">
+            <span>Layer 1</span>
+          </div>
+          <div class="home-path-volumes">
+            <a class="home-path-vol is-active" href="/courses/index.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Open</span>
+                <span class="home-path-vol-badge live">Live</span>
+              </div>
+              <strong>Perspectives</strong>
+              <p>Short, free, standalone lessons — complete in themselves, made for people who will never enroll. The open curriculum library is the seed.</p>
+              <span class="home-path-vol-detail">Free · no enrollment · begins now</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="home-path-year">
+          <div class="home-path-year-label">
+            <span>Layer 2</span>
+          </div>
+          <div class="home-path-volumes">
+            <a class="home-path-vol" href="/institute/sdit-bible.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Bridge</span>
+                <span class="home-path-vol-badge planned">Planned</span>
+              </div>
+              <strong>Intensives</strong>
+              <p>Short paid non-degree programs — a two-week summer intensive, weekend workshops, a Canon seminar with a build project. Project One lives here.</p>
+              <span class="home-path-vol-detail">Small · real · non-degree</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="home-path-year">
+          <div class="home-path-year-label">
+            <span>Layer 3</span>
+          </div>
+          <div class="home-path-volumes">
+            <a class="home-path-vol" href="/institute/the-degree.html">
+              <div class="home-path-vol-meta">
+                <span class="home-path-vol-num">Core</span>
+                <span class="home-path-vol-badge syllabus">Framework</span>
+              </div>
+              <strong>The Degree — BS in Technology</strong>
+              <p>120 units, 8 semesters. Shared formation in Years 1–2; concentration and choice in Years 3–4; physical culture throughout; a defended original work at the end.</p>
+              <span class="home-path-vol-detail">When authorized — BPPE first, then WSCUC</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- The degree at a glance -->
+    <section class="home-path">
+      <div class="home-path-inner">
+
+        <div class="home-path-header">
+          <p class="eyebrow">Bachelor of Science in Technology</p>
+          <h2>Four years at a glance.</h2>
+          <p>Ten threads: the Canon, Mathematics &amp; Science, Computation &amp; Intelligent Systems, Rhetoric &amp; Epistemics, Culture &amp; Signal, the Workshop, Concentration, Open Studio, Field Term, Capstone. Concentration declared at the end of Year 2 — Intelligent Systems, Applied Engineering, or Computational Media &amp; Design.</p>
         </div>
 
         <div class="home-path-year">
@@ -79,22 +181,20 @@
             <span>Year 1</span>
           </div>
           <div class="home-path-volumes">
-            <a class="home-path-vol is-active" href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 1</span>
-                <span class="home-path-vol-badge live">Live</span>
+                <span class="home-path-vol-num">Fall</span>
               </div>
-              <strong>Foundations</strong>
-              <p>Inquiry, story, mathematics, science, creativity</p>
-              <span class="home-path-vol-detail">15 chapters · 75 lessons</span>
+              <strong>The shared formation begins</strong>
+              <p>HUM 101 · MATH 110 · PHYS 110 · CS 110 · RHET 110 · SIG 101 · WKSP 101</p>
             </a>
-            <a class="home-path-vol" href="/programs/Bachelor-Liberal-Arts/vol-02-ethics-and-reasoning/syllabus.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 2</span>
-                <span class="home-path-vol-badge syllabus">Syllabus</span>
+                <span class="home-path-vol-num">Spring</span>
+                <span class="home-path-vol-badge syllabus">Public exhibition</span>
               </div>
-              <strong>Ethics and Reasoning</strong>
-              <p>Moral philosophy, evidence, logical argument, judgment</p>
+              <strong>Physical before formal</strong>
+              <p>HUM 102 · MATH 120 · PHYS 120 · CS 120 · WKSP 102</p>
             </a>
           </div>
         </div>
@@ -104,21 +204,20 @@
             <span>Year 2</span>
           </div>
           <div class="home-path-volumes">
-            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-03-communication-rhetoric/syllabus.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 3</span>
-                <span class="home-path-vol-badge planned">Planned</span>
+                <span class="home-path-vol-num">Fall</span>
               </div>
-              <strong>Communication and Rhetoric</strong>
-              <p>Writing, speaking, persuasion, expressive clarity</p>
+              <strong>The on-ramp to machine learning</strong>
+              <p>HUM 201 · MATH 210 · CS 210 · RHET 210 · WKSP 201</p>
             </a>
-            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-04-science-systems/syllabus.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 4</span>
-                <span class="home-path-vol-badge planned">Planned</span>
+                <span class="home-path-vol-num">Spring</span>
+                <span class="home-path-vol-badge syllabus">Concentration declared</span>
               </div>
-              <strong>Science and Systems</strong>
-              <p>Scientific models, systems thinking, complex environments</p>
+              <strong>The baseline completes</strong>
+              <p>HUM 202 · MATH 220 · CS 220 · SIG 201 · WKSP 202</p>
             </a>
           </div>
         </div>
@@ -128,21 +227,20 @@
             <span>Year 3</span>
           </div>
           <div class="home-path-volumes">
-            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-05-design-creativity/syllabus.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 5</span>
-                <span class="home-path-vol-badge planned">Planned</span>
+                <span class="home-path-vol-num">Fall</span>
               </div>
-              <strong>Design and Creativity</strong>
-              <p>Making things, iterating on ideas, original creative work</p>
+              <strong>Specialization begins</strong>
+              <p>HUM 301 · CS 310 · Concentration I · SIG 301 · WKSP 301</p>
             </a>
-            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-06-economy-history/syllabus.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 6</span>
-                <span class="home-path-vol-badge planned">Planned</span>
+                <span class="home-path-vol-num">Spring</span>
+                <span class="home-path-vol-badge syllabus">Field term</span>
               </div>
-              <strong>Economy and History</strong>
-              <p>Long-run patterns in institutions, markets, and change</p>
+              <strong>Embedded in the real world</strong>
+              <p>Field Term · HUM 302 · WKSP 302</p>
             </a>
           </div>
         </div>
@@ -152,25 +250,35 @@
             <span>Year 4</span>
           </div>
           <div class="home-path-volumes">
-            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-07-technology-society/syllabus.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 7</span>
-                <span class="home-path-vol-badge planned">Planned</span>
+                <span class="home-path-vol-num">Fall</span>
               </div>
-              <strong>Technology and Society</strong>
-              <p>Technical systems, AI, and consequences for human life</p>
+              <strong>The original work</strong>
+              <p>HUM 401 · CS 320 · Concentration II · Elective · WKSP 401 · CAP 401</p>
             </a>
-            <a class="home-path-vol is-planned" href="/programs/Bachelor-Liberal-Arts/vol-08-leadership-citizenship/syllabus.html">
+            <a class="home-path-vol" href="/institute/the-degree.html">
               <div class="home-path-vol-meta">
-                <span class="home-path-vol-num">Vol. 8</span>
-                <span class="home-path-vol-badge planned">Planned</span>
+                <span class="home-path-vol-num">Spring</span>
+                <span class="home-path-vol-badge syllabus">Defense + teaching</span>
               </div>
-              <strong>Leadership and Citizenship</strong>
-              <p>Responsibility, leading institutions, civic life at scale</p>
+              <strong>Defended before outside examiners</strong>
+              <p>HUM 402 · Concentration III · Elective · SIG 401 · WKSP 402 · CAP 402</p>
             </a>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Open curriculum archive -->
+    <section class="home-philosophy">
+      <div class="home-philosophy-inner">
+        <div class="home-phi-intro">
+          <p class="eyebrow">Open courseware</p>
+          <h2>The open curriculum.</h2>
+          <p>Free, self-paced lessons published as open courseware — <a href="/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html">75 daily lessons</a> across philosophy, writing, mathematics, science, and creative practice, plus a <a href="/courses/index.html">library of 40 courses</a>. Fork the repo, do the work in your own copy, and your responses become your portfolio. This material seeds Perspectives and will grow with the institution.</p>
+        </div>
       </div>
     </section>
 

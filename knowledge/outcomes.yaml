@@ -1,0 +1,78 @@
+__meta__:
+  title: The Five Outcomes — Assessment Framework
+  description: >
+    The five capacities SDIT certifies, assessed at annual gates: Judgment,
+    Command of Intelligence, Craft, Articulation, Breadth of Mind. Includes the
+    thread-to-outcome map for the Bachelor of Science in Technology.
+  intended_use: >
+    Source of truth for institutional outcomes and the thread-level curriculum
+    map. Course-level outcome mappings are written at catalog grade (every
+    course description maps to these five) and become the WSCUC Standard 2
+    evidence file. Read with knowledge/degree.yaml.
+  status: working-framework
+  supersedes: the 2026-06 BLA ten-PLO competency map (archived in git history)
+  source_documents:
+    plan: institute/sdit-bible.md   # §V The Five Outcomes
+    framework: institute/the-degree.md  # §8 Gates & Assessment
+
+# ---------------------------------------------------------------------------
+# THE FIVE OUTCOMES — everything SDIT certifies reduces to these
+# ---------------------------------------------------------------------------
+outcomes:
+  - id: judgment
+    name: Judgment
+    statement: Rigorous reasoning under uncertainty.
+  - id: command-of-intelligence
+    name: Command of Intelligence
+    statement: Directing, building, and evaluating AI systems as a native medium.
+  - id: craft
+    name: Craft
+    statement: Conceiving, designing, and physically realizing working artifacts.
+  - id: articulation
+    name: Articulation
+    statement: Writing and speaking with clarity and force.
+  - id: breadth-of-mind
+    name: Breadth of Mind
+    statement: History, philosophy, literature, science, and living culture as one continuous conversation.
+
+# ---------------------------------------------------------------------------
+# HOW THEY ARE ASSESSED
+# ---------------------------------------------------------------------------
+assessment:
+  annual_gates:
+    when: end of each year
+    form: portfolio review + written and oral examination against all five outcomes
+  unassisted_examinations:
+    rule: >
+      Periodic unassisted examinations in writing, mathematics, and code. AI
+      tools are open and studied everywhere — and the institution certifies the
+      human, so it must regularly observe the human unaided.
+  primary_artifact: the portfolio (grades exist because transcripts require them)
+  capstone: >
+    CAP 401-402 defended original work — research thesis, an engineered system
+    that works, or a venture that exists — public defense before faculty and
+    outside examiners; the terminal demonstration of all five outcomes.
+
+# ---------------------------------------------------------------------------
+# THREAD -> OUTCOME MAP
+# P = primary (the thread exists to build this) · S = supporting
+# Course-level mapping is written at catalog grade.
+# ---------------------------------------------------------------------------
+thread_outcome_map:
+  - { thread: The Canon,                         judgment: S, command-of-intelligence: ~, craft: ~, articulation: S, breadth-of-mind: P }
+  - { thread: Mathematics & Science Core,        judgment: P, command-of-intelligence: ~, craft: S, articulation: ~, breadth-of-mind: S }
+  - { thread: Computation & Intelligent Systems, judgment: S, command-of-intelligence: P, craft: S, articulation: ~, breadth-of-mind: ~ }
+  - { thread: Rhetoric & Epistemics,             judgment: P, command-of-intelligence: ~, craft: ~, articulation: P, breadth-of-mind: ~ }
+  - { thread: Culture & Signal,                  judgment: ~, command-of-intelligence: S, craft: S, articulation: S, breadth-of-mind: P }
+  - { thread: The Workshop (Bottega),            judgment: S, command-of-intelligence: S, craft: P, articulation: ~, breadth-of-mind: ~ }
+  - { thread: Concentration,                     judgment: S, command-of-intelligence: P, craft: P, articulation: ~, breadth-of-mind: ~ }
+  - { thread: Open Studio Electives,             judgment: ~, command-of-intelligence: ~, craft: S, articulation: ~, breadth-of-mind: S }
+  - { thread: Field Term,                        judgment: P, command-of-intelligence: S, craft: S, articulation: S, breadth-of-mind: ~ }
+  - { thread: Thesis / Venture Capstone,         judgment: P, command-of-intelligence: P, craft: P, articulation: P, breadth-of-mind: P }
+  - { thread: Physical Culture (non-credit),     judgment: P, command-of-intelligence: ~, craft: S, articulation: ~, breadth-of-mind: S }
+
+coverage_note: >
+  Every outcome has at least one P thread in Years 1-2 (shared formation) and is
+  re-proven at every annual gate; the capstone is P across all five. This is the
+  skeleton of the Standard 2 evidence file — flesh arrives with catalog-grade
+  course descriptions.

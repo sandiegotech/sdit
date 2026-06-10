@@ -9,6 +9,7 @@ Opens the site at http://localhost:3001. Student responses are saved to the
 my-work/ directory, rebuilt to HTML, and pushed to GitHub automatically.
 """
 
+import argparse
 import http.server
 import json
 import re
@@ -22,6 +23,10 @@ from pathlib import Path
 PORT = 3001
 ROOT = Path(__file__).parent.resolve()
 MY_WORK = ROOT / "my-work"
+
+# Auto commit+push after each saved response. Off by default so reviewing the
+# site locally can never push unrelated working-tree changes; enable with --push.
+AUTO_PUSH = False
 
 
 # ── my-work/ helpers ──────────────────────────────────────────────────────────
@@ -171,10 +176,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         result = save_response(file_path, heading, content)
         if result["ok"]:
             print(f"  saved  {file_path} → {heading}")
-            threading.Thread(
-                target=lambda: (rebuild(), git_push(f"Response: {heading}")),
-                daemon=True,
-            ).start()
+
+            def after_save(h=heading):
+                rebuild()
+                if AUTO_PUSH:
+                    git_push(f"Response: {h}")
+
+            threading.Thread(target=after_save, daemon=True).start()
 
         self.send_json(result)
 
@@ -194,11 +202,21 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="SDIT local server")
+    parser.add_argument("--push", action="store_true",
+                        help="auto-commit and push saved responses to git")
+    parser.add_argument("--no-browser", action="store_true",
+                        help="do not open the browser automatically")
+    args = parser.parse_args()
+    AUTO_PUSH = args.push
+
     server = http.server.HTTPServer(("", PORT), Handler)
     url = f"http://localhost:{PORT}/index.html"
     print(f"\n  SDIT local server")
-    print(f"  {url}\n")
-    threading.Timer(0.5, webbrowser.open, args=(url,)).start()
+    print(f"  {url}")
+    print(f"  auto-push: {'ON' if AUTO_PUSH else 'off (responses save locally; run with --push to enable)'}\n")
+    if not args.no_browser:
+        threading.Timer(0.5, webbrowser.open, args=(url,)).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:

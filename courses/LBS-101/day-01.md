@@ -1,169 +1,67 @@
 ---
 id: lbs101-day-01
-title: "Day 01 — What Does It Mean to Be Educated Now?"
+title: "Day 01 — What Is Education Actually For?"
 day: 1
 course: LBS 101 – The Mental Gym
 ---
 
-# Day 01 — What Does It Mean to Be Educated Now?
-**Course:** LBS 101 – The Mental Gym
-
----
-
-## Session Focus
-
-Before you read anything, sit with this:
+# Day 01 — What Is Education Actually For?
 
 > *"The goal of education is not to fill a bucket, but to light a fire."* — W.B. Yeats
 
-What does that actually mean? Who decided that? Is it true?
-
-A machine can now pass any exam, write any essay, and answer almost any question faster than you can. So if education was about filling the bucket — information, credentials, correct answers — that version is over.
-
-Which means you get to ask the real question from scratch: **what is education actually for?**
-
-That is what this entire degree — and this first session — is built around. Not as a crisis. As an invitation. Because being forced to ask from scratch is exactly what a liberal education trains you to do.
+Ten minutes. One photograph, one film, one piece of music, one question. That's Day 1.
 
 ---
 
-## Session Flow
+## Look
 
-**Time:** ~60 minutes | **Output:** One page of writing + one key quote you'll keep for the whole program
+<figure class="day-figure">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/NASA-Apollo8-Dec24-Earthrise.jpg" alt="Earthrise — the Earth rising over the lunar horizon, photographed from Apollo 8, December 24, 1968" loading="lazy" />
+  <figcaption><strong>Earthrise.</strong> December 24, 1968. Bill Anders was sent a quarter-million miles to photograph the Moon. Then the Earth came up over the horizon, and he grabbed the camera for a photo nobody assigned. It became one of the most important photographs ever taken.</figcaption>
+</figure>
 
----
+They went to the Moon to study it — and discovered the Earth.
 
-### 1. Begin with this question (5 min)
+That's what real learning does. You go in for the facts, and you come back with new eyes. The facts were never the point.
 
-Before you read or watch anything, write your immediate, unfiltered answer. Don't edit. Don't second-guess. Just write.
+Here's the thing: a machine can now pass any exam and answer almost any question faster than you can. If education was about collecting facts — the bucket — that game is over. What's left is the part that was always the real part. In 1852, John Henry Newman said it best:
 
-> **What is education for?**
+> "Knowledge is capable of being its own end. Such is the constitution of the human mind, that any kind of knowledge, if it be really such, is its own reward."
 
-_Your answer (5 min — unfiltered):_
-
----
-
-### 2. Read (20 min)
-
-**John Henry Newman — *The Idea of a University*, Discourse V: "Knowledge Its Own End"**
-[Read at Newman Reader](https://www.newmanreader.org/works/idea/discourse5.html)
-
-Written in 1852 — but it's the clearest argument ever made that education is not job training. It is the cultivation of the mind itself.
-
-Read slowly. Newman is dense. Don't try to absorb everything. Look for the one line that feels most true — or most wrong.
-
-_The line that stood out, and your reaction to it:_
+Not a means to a job. A mind that is *lit* — curious, alive, interesting to live inside. The fire, not the bucket.
 
 ---
 
-### 3. Watch (15 min)
+## Watch
 
-**Michael Sandel — *Justice*, Episode 1: "The Moral Side of Murder"**
-[Watch on YouTube](https://www.youtube.com/watch?v=kBdfcR-8hEY)
+Nine minutes, made in 1977, still unbeaten. A picnic blanket in Chicago — then out to the edge of the known universe, then back down into a single atom inside a sleeping man's hand.
 
-Don't worry about following every argument. Watch how Sandel *teaches*. Pay attention to the moment — and there will be one — when a student realizes the question they thought was obvious is genuinely hard. Watch their face. Notice what that feels like from the inside.
+<div class="lesson-embed"><iframe src="https://www.youtube.com/embed/0fKBhvDjuy0" title="Powers of Ten (1977)" allowfullscreen loading="lazy"></iframe></div>
 
-That feeling of a question opening up unexpectedly — suddenly having more room than you thought — is what this program is designed to produce in you every day. Get familiar with it. You're going to feel it a lot.
-
----
-
-### 4. Sit with one more question (5 min)
-
-> If AI can pass any exam, learn any fact, and write any essay — what is the one thing it *cannot* do that makes your education worth something?
-
-_Your answer:_
+*Watch how your sense of "normal" gets destroyed twice — once by the very big, once by the very small. That feeling is the fire catching.*
 
 ---
 
-## Practice Block
+## Listen, and carry the question
 
-### Your Education Manifesto (one page)
+Press play. Then, if you can, step away from the screen — walk, stare out a window, lie on the floor. For the length of the piece, carry this one question:
 
-Write one page — no more, no less — answering this:
+**If a machine can know everything, what's left that's worth learning?**
 
-**What do I believe education is for, and what kind of person do I want it to make me?**
+<div class="lesson-embed"><iframe src="https://www.youtube.com/embed/rVN1B-tUpgs" title="Max Richter — On the Nature of Daylight" allowfullscreen loading="lazy"></iframe></div>
 
-Guidelines:
-- Ignore what you're "supposed" to say. Write what you actually think.
-- You can agree with Newman, disagree, or take something entirely different.
-- Use the word "I" freely. This is personal, not academic.
-- Don't summarize the reading. React to it.
+*Or use your own — the song that makes you feel most alive. You already know which one. No right answer, no writing required. If a good line comes to you, keep it somewhere. Future you will want it.*
 
-This page is your baseline. You will read it again on the last day of this program. The distance between who you are now and who you are then is the whole point.
-
-_Your manifesto:_
+That's it. **Day 1 is done.**
 
 ---
 
-## Key Quote
+## If you're still curious
 
-Find one line — from Newman, from Sandel, or from your own writing today — that you want to keep.
+Three doors. Open one, or none — they'll be here tomorrow too.
 
-_Your key quote (copy the line exactly):_
+**Watch a master teach.** [Michael Sandel — *Justice*, Episode 1](https://www.youtube.com/watch?v=kBdfcR-8hEY) (Harvard's most famous course). Even the first ten minutes: watch for the moment a student realizes the question they thought was obvious is genuinely hard.
 
----
+**Read the deep cut.** [Newman's full discourse, "Knowledge Its Own End"](https://www.newmanreader.org/works/idea/discourse5.html) — 1852, dense, glorious. Don't study it. Hunt for one line that feels either deeply true or completely wrong.
 
-## Return to your first answer
-
-Go back to what you wrote in Step 1. Read it without judgment.
-
-Did anything shift? Did Newman challenge something you assumed? Did Sandel's students remind you of a question you'd already given up on?
-
-_What shifted, if anything? What question are you sitting with now?_
-
----
-
-## Hard Problem (Optional)
-
-The year is 2035. AI tutors are better than any human teacher at transmitting information. Students can learn any skill, any subject, from an AI in a fraction of the time.
-
-In this world: **Is there still a reason for a four-year degree?**
-
-Argue both sides. Then take a position.
-
-_Both sides — then your position:_
-
----
-
-## Before Tomorrow
-
-On your way home, or before you sleep tonight — ask someone you trust this question:
-
-**"What do you think education is actually for?"**
-
-Don't debate them. Don't offer your answer. Just listen. Notice how their answer differs from yours. Notice whether it surprises you.
-
-You don't have to agree with them. You don't even have to respond. Just carry their answer alongside your own.
-
----
-
-## Notes
-
-- You don't have to finish the Newman reading entirely. Read enough to find your quote and form a reaction.
-- If the writing block feels hard, that's correct. You're not summarizing — you're thinking. That's harder.
-- This session is meant to feel significant. Not heavy. Let it.
-
----
-
-## My Work
-
-Write your responses below. Edit this file, push to GitHub, and your answers will appear on your site.
-
-### My First Answer (unfiltered)
-
-_What you wrote before reading anything — your immediate, unedited answer to "What is education for?"_
-
-### The Line That Stood Out
-
-_The Newman line that felt most true or most wrong, and your reaction to it._
-
-### My Education Manifesto
-
-_One page. What you believe education is for, and who you want it to make you._
-
-### My Key Quote
-
-> "_The line you're keeping — from Newman, Sandel, or your own writing today._"
-
-### What Shifted
-
-_What changed between your first answer and now? What question are you sitting with?_
+**Ask someone.** Tonight, ask a person you trust: *"What do you think education is actually for?"* Don't debate. Just listen to how their answer differs from yours.

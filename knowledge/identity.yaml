@@ -1,21 +1,35 @@
 __meta__:
   title: Identity
-  description: Canonical organization identity (name, mission, tagline, positioning, formality).
+  description: Canonical organization identity (name, mission, premise, model, positioning).
   intended_use: Source-of-truth for About/landing copy; informs tone, outreach, and policy text.
 identity:
   name: San Diego Institute of Technology (SDIT)
-  form: Nonprofit educational and research institute (pre-accreditation credibility phase)
-  mission: >
-    To be the Bell Labs of the 21st century—a post-industrial renaissance hub uniting
-    technology, design, engineering, music, art, and liberal education.
-  tagline: "A hands-on institute where technology and culture meet — inspiration, innovation, integrity."
-  long_term_goals:
-    - Become the most advanced research and engineering organization in the world
-    - Be the top producer of talent, improving members’ quality of life
-    - Shape a Post-Industrial Renaissance movement
+  form: Nonprofit educational and research institute (pre-BPPE, pre-accreditation; Layers 1-2 operating legally now)
+  premise: >
+    Industrial-era education produced specialists for a world of stable
+    professions; that world is ending. SDIT produces people whose value
+    compounds as machine intelligence advances — judgment, taste, epistemic
+    self-defense, command of intelligent systems, and the craft instinct to
+    make real things in the physical world.
+  thesis: >
+    The Post-Industrial Renaissance: technology, art, craft, science, and
+    philosophy are one discipline, artificially divided by the industrial
+    university. SDIT reunites them.
+  model:
+    lineages: [Renaissance bottega, Bell Labs / early MIT, the waterman tradition]
+    place: "San Diego is the laboratory — the ocean teaches physics, the culture teaches media, the terrain teaches engineering."
+    governing_rule: "Dual register: keep the names, transform the delivery. The credential is the interface; the portfolio is the truth."
+  layers:
+    - { layer: 1, name: Perspectives, what: "short free standalone lessons — open to everyone, no state approval needed, begins now" }
+    - { layer: 2, name: Intensives,   what: "short paid non-degree programs — the bridge; Project One lives here" }
+    - { layer: 3, name: The Degree,   what: "four-year Bachelor of Science in Technology — the core, when authorized" }
+  tagline: "Technology, art, craft, science, and philosophy — one discipline."
   positioning:
-    prestige_peers: [Harvard, MIT, Stanford]
-    ethos: open knowledge, shipped projects, intellectual integrity
+    precedents: [Deep Springs, Olin College, Scripps Institution of Oceanography]
+    cautionary: "Black Mountain College — legendary pedagogy, no structure, dead. SDIT takes the pedagogy AND the structure."
   formality:
-    status: early-stage
-    accreditation: exploring WSCUC path
+    status: founding
+    pathway: "BPPE approval to operate -> WSCUC eligibility -> candidacy -> initial accreditation (realistic total 7-10 years)"
+  source_documents:
+    plan: institute/sdit-bible.md
+    framework: institute/the-degree.md

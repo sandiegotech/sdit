@@ -29,7 +29,7 @@ The curriculum is designed to be taken, not just read. Fork this repo, run the l
 
 4. **Do the work** — navigate to any lesson, scroll to **My Work**, and type your responses directly in the page. They save automatically.
 
-5. **Push to GitHub** — the server saves and pushes in the background after each response. Or push manually:
+5. **Push to GitHub** — run the server with `python3 serve.py --push` to auto-commit and push each response, or push manually whenever you like:
    ```bash
    git push
    ```
@@ -38,10 +38,11 @@ The curriculum is designed to be taken, not just read. Fork this repo, run the l
 
 ### How responses are saved
 
-When you type in a My Work field:
+When you type in a response field:
 - Your response saves to **localStorage** instantly (survives page refresh)
-- On `localhost`, it also writes back to the source `.md` file and triggers a `git push`
+- On `localhost`, it also writes to a markdown file under `my-work/` (and auto-pushes if the server was started with `--push`)
 - On GitHub Pages (published site), it saves to localStorage only — visible to you in the browser
+- The site also remembers your **last lesson** on each device and offers to continue from it on the homepage
 
 ### Where lesson files live
 
@@ -61,9 +62,10 @@ Each file has a `## My Work` section at the bottom where your responses go. The 
 ## What This Repo Contains
 
 ```
-courses/           Course library — each course owns its day files (source of truth)
-programs/          Degree programs assembled from the course library
-knowledge/         Institutional YAML reference files
+institute/         The founding documents — The Plan (sdit-bible.md) and The Degree (the-degree.md)
+courses/           Open course library — each course owns its day files (source of truth)
+programs/          Open curriculum archive (Bachelor of Liberal Arts volumes)
+knowledge/         Institutional YAML reference files (degree, outcomes, identity, programs)
 assets/            Styles (site.css) and JavaScript (layout.js, student-work.js)
 partials/          Shared site header and footer (loaded dynamically)
 scripts/           Build script (build_site.py)
