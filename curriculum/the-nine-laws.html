@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Nine Laws — The Curriculum — SDIT</title>
+  <meta name="description" content="The Nine Laws of Course Design — the one-page standard every SDIT course must obey. Download it, share it, frame it.">
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script src="../assets/js/site-paths.js" defer></script>
+  <script src="../assets/js/includes.js" defer></script>
+  <style>
+    .laws-sheet {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+      text-align: center;
+    }
+    .laws-sheet .laws-crest { height: 3.2rem; width: auto; margin: 0 auto 1.4rem; }
+    .laws-sheet .laws-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 1rem;
+    }
+    .laws-sheet h1 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(2rem, 5vw, 2.9rem);
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 0 0 0.9rem;
+    }
+    .laws-sheet .laws-sub {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--marine);
+      margin: 0 0 2.25rem;
+    }
+    .laws-list {
+      text-align: left;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      counter-reset: law;
+      border-top: 1px solid var(--hairline);
+    }
+    .laws-list li {
+      counter-increment: law;
+      display: grid;
+      grid-template-columns: 2.6rem 1fr;
+      gap: 1rem;
+      padding: 0.85rem 0.25rem;
+      border-bottom: 1px solid var(--hairline);
+      margin: 0;
+    }
+    .laws-list li::before {
+      content: counter(law, upper-roman);
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--gold);
+      text-align: right;
+      padding-top: 0.05rem;
+    }
+    .laws-list strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.1rem;
+    }
+    .laws-list span { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    .laws-outcomes {
+      margin: 2rem 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .laws-outcomes b { color: var(--gold); font-weight: 500; }
+    .laws-colophon {
+      margin-top: 1.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .laws-actions { margin-top: 2.25rem; }
+    .laws-actions a { margin: 0 0.9rem; }
+    @media print {
+      @page { margin: 0.85cm; }
+      .laws-sheet { padding: 0.25rem 0 0; max-width: none; }
+      .laws-sheet h1 { font-size: 1.65rem; margin-bottom: 0.3rem; }
+      .laws-sheet .laws-sub { font-size: 0.88rem; margin-bottom: 0.7rem; }
+      .laws-sheet .laws-crest { height: 2rem; margin-bottom: 0.45rem; }
+      .laws-sheet .laws-eyebrow { font-size: 0.58rem; margin-bottom: 0.5rem; }
+      .laws-list li { padding: 0.28rem 0.25rem; grid-template-columns: 2rem 1fr; gap: 0.7rem; }
+      .laws-list li::before { font-size: 0.95rem; }
+      .laws-list strong { font-size: 0.86rem; margin-bottom: 0; }
+      .laws-list span { font-size: 0.7rem; line-height: 1.35; }
+      .laws-outcomes { margin-top: 0.7rem; font-size: 0.56rem; line-height: 1.7; }
+      .laws-colophon { margin-top: 0.6rem; font-size: 0.52rem; }
+      .laws-actions { display: none; }
+    }
+  </style>
+</head>
+<body class="laws-page">
+  <div data-include="/partials/header.html"></div>
+
+  <main>
+    <section class="laws-sheet">
+      <img class="laws-crest" src="/assets/brand/sdit-crest.png" alt="" />
+      <p class="laws-eyebrow">San Diego Institute of Technology · The Curriculum</p>
+      <h1>The Nine Laws of Course Design</h1>
+      <p class="laws-sub">Use science to make your art better. Use art to make your science better.</p>
+
+      <ol class="laws-list">
+        <li><div><strong>The Founder's Test</strong><span>Would the founder genuinely want to take this course? If not, redesign or cut.</span></div></li>
+        <li><div><strong>The Dual Register</strong><span>Keep the names, transform the delivery. The catalog says Calculus I; the classroom is the ocean, the ramp, the studio.</span></div></li>
+        <li><div><strong>Physical Before Formal</strong><span>No concept arrives as notation first. Force is a bottom turn before it is a vector.</span></div></li>
+        <li><div><strong>The Double Feature</strong><span>Ideas travel in company — a text, a film, an album, discussed as one conversation. Media embedded, never linked away.</span></div></li>
+        <li><div><strong>It Ends in a Made Thing</strong><span>Every course closes with an artifact, defended or exhibited. Understanding is only completed in the making.</span></div></li>
+        <li><div><strong>A Day Looks Easy</strong><span>One idea, one thing to experience, one question — done in minutes. Depth waits behind optional doors. Overwhelm is a design failure.</span></div></li>
+        <li><div><strong>AI-Native, Not AI-Dependent</strong><span>The tools stay open in every course — and the human is regularly examined unaided.</span></div></li>
+        <li><div><strong>Open to Everyone</strong><span>Every course published in full, free, to anyone on Earth, without asking permission — and readable without an account. Non-negotiable and permanent.</span></div></li>
+        <li><div><strong>Day by Day, or It Doesn't Ship</strong><span>A syllabus is a promise; the daily path is the course. Nothing is called live until a learner knows exactly what to do each day.</span></div></li>
+      </ol>
+
+      <p class="laws-outcomes">Every course serves the five outcomes —<br><b>Judgment · Command of Intelligence · Craft · Articulation · Breadth of Mind</b></p>
+      <p class="laws-colophon">MMXXVI · learn.sandiegotech.org</p>
+
+      <p class="laws-actions">
+        <a class="cta" href="/downloads/sdit-nine-laws.pdf" download>Download the PDF</a>
+        <a class="cta" href="#" onclick="window.print();return false;">Print it</a>
+      </p>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+</body>
+</html>

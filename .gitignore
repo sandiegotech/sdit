@@ -17,3 +17,9 @@ __pycache__/
 # Build output (generated; never committed — deployed via GitHub Actions)
 dist/
 _site/
+
+# Local working plan (private)
+PLAN.md
+
+# Internal documents — never published
+private/

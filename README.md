@@ -1,8 +1,17 @@
-# SDIT Open Curriculum
+# SDIT — The Curriculum
 
-An open-source liberal arts curriculum you can take yourself, fork to your own GitHub, and build on.
+The open curriculum of the San Diego Institute of Technology — the learning site (learn.sandiegotech.org). The Institute itself, daily updates, and everything else live on the main site (sandiegotech.org); this repo is entirely for those who want to learn.
 
-- Website: https://sandiegotech.github.io/sdit/
+One degree framework — the **BA in Technology** (`curriculum/index.html`) — with a concentration declared at the end of Year 2 (`curriculum/four-years.html`):
+
+- **Media** — things people watch, hear, and feel
+- **Design** — things people use
+- **Engineering** — things that work on their own
+
+Years 1–2 are the Foundation, identical for everyone — the artist learns engineering, the engineer learns art — and the whole catalog is roughly forty courses; eight depth studios, shared across overlapping concentration lists, carry the focus. Every course is built to one standard: it ends in a made thing, and it ships day by day.
+
+- Website: https://learn.sandiegotech.org
+- Main site: https://www.sandiegotech.org
 - Repository: https://github.com/sandiegotech/sdit
 
 ---
@@ -49,9 +58,9 @@ When you type in a response field:
 Every course has its own directory:
 
 ```
-courses/LBS-101/day-01.md    ← Day 1 of The Mental Gym
-courses/LBS-105/day-03.md    ← Day 3 of Writing & Communication
-courses/LBS-110/day-07.md    ← Day 7 of Mathematics for Modern Thinkers
+courses/HUM-101/day-01.md    ← Day 1 of The Ancient World
+courses/MATH-110/day-01.md   ← Day 1 of The Mathematics of Motion
+courses/CS-110/day-01.md     ← Day 1 of Speaking to Machines
 ...
 ```
 
@@ -62,13 +71,15 @@ Each file has a `## My Work` section at the bottom where your responses go. The 
 ## What This Repo Contains
 
 ```
-institute/         The founding documents — The Plan (sdit-bible.md) and The Degree (the-degree.md)
-courses/           Open course library — each course owns its day files (source of truth)
-programs/          Open curriculum archive (Bachelor of Liberal Arts volumes)
-knowledge/         Institutional YAML reference files (degree, outcomes, identity, programs)
-assets/            Styles (site.css) and JavaScript (layout.js, student-work.js)
-partials/          Shared site header and footer (loaded dynamically)
-scripts/           Build script (build_site.py)
+curriculum/        The Curriculum — degree requirements, the four-years map, the schedule
+courses/           The catalog — each course owns its day files (source of truth)
+institute/         Founding documents — The Plan, The Degree
+knowledge/         Institutional YAML reference files (degree, catalog, outcomes, identity, programs)
+accreditation.html Where authorization stands, stated plainly
+downloads/         Generated PDFs (degree map, the Nine Laws)
+assets/            Styles (site.css, charter design system) and JavaScript
+partials/          Shared masthead header and colophon footer (loaded dynamically)
+scripts/           Build & scaffold scripts (build_site.py, scaffold_catalog.py, validate.py)
 serve.py           Local development server with student response saving
 ```
 
@@ -85,6 +96,10 @@ The build script (`scripts/build_site.py`) converts Markdown to HTML. `serve.py`
 ```bash
 python3 scripts/build_site.py --out .
 ```
+
+### The course registry
+
+`knowledge/catalog.yaml` is the single source of truth for the catalog's structure — every course's code, registers, outcomes, and status. `scripts/scaffold_catalog.py` generates a templated `courses/<CODE>/index.md` for any registry course that doesn't have one yet (it never overwrites). After scaffolding, the markdown is the live content source: write lessons as `courses/<CODE>/day-NN.md`, link them from the course's `index.md`, and rebuild.
 
 ---
 

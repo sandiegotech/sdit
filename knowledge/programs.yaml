@@ -1,16 +1,17 @@
 __meta__:
   title: Programs
-  description: The three layers of an SDIT education, plus the open curriculum archive.
+  description: The three layers of an SDIT education.
   intended_use: Source for Programs pages and cross-linking; IDs must remain stable.
 programs:
   - id: perspectives
     layer: 1
     name: Perspectives
-    status: first lessons in production
+    status: live via The Daily (sandiegotech.org/daily.html); standalone lessons in production
     description: >
       Short, free, standalone lessons — hour-long lectures and films, each
       complete in itself, made for people who will never enroll. The public
       face, the content engine, the recruiting funnel, and the legal head start.
+      The Daily, the weekday newsletter, lives on the main site.
   - id: intensives
     layer: 2
     name: Intensives
@@ -18,23 +19,18 @@ programs:
     description: >
       Short paid non-degree programs: a two-week summer intensive, weekend
       workshops, a single Canon seminar with a build project. Small and real.
-  - id: bst
+  - id: bat
     layer: 3
-    name: Bachelor of Science in Technology
-    status: working framework — see knowledge/degree.yaml and institute/the-degree.md
+    name: Bachelor of Arts in Technology
+    status: working framework — see curriculum/index.html and institute/the-degree.md
     description: >
-      120 semester units, 8 semesters. One shared baseline in Years 1-2;
-      concentration (Intelligent Systems, Applied Engineering, or Computational
-      Media & Design) plus choice in Years 3-4; Physical Culture throughout;
-      defended original work at the end.
-    concentrations: [intelligent-systems, applied-engineering, computational-media-design]
+      The degree. 120 semester units, 8 semesters, one program. Years 1-2 are
+      the Foundation, identical for every student — a common language and
+      framework. At the end of Year 2 each student declares a concentration,
+      chosen from experience: Media (things people watch, hear, and feel),
+      Design (things people use), or Engineering (things that work on their
+      own). Four depth studios in the concentration plus the Crossing — one
+      studio from outside it, required. Field Term, defended capstone,
+      Physical Culture throughout.
+    path: curriculum/index.html
 
-archive:
-  - id: liberal-education-2
-    name: Bachelor of Liberal Arts (open curriculum)
-    status: legacy archive — superseded June 2026 by the BST framework
-    description: >
-      The original 8-volume open liberal arts curriculum. Volume 1 (75 lessons)
-      remains published as free open courseware; its lessons are source material
-      for Perspectives.
-    path: programs/Bachelor-Liberal-Arts/
