@@ -3,7 +3,7 @@
  *
  * - Visiting any lesson records it as your "last lesson" and adds it to the
  *   visited set (localStorage, this device only).
- * - On the homepage, the main CTA becomes "Continue — <lesson>" when a last
+ * - On the homepage, the main CTA becomes "Resume — <lesson>" when a last
  *   lesson exists, with a count of responses saved on this device.
  * - Anywhere lessons are listed, links you have already visited get a ✓.
  */
@@ -30,10 +30,7 @@
   }
 
   function isLessonPath(pathname) {
-    return (
-      /\/courses\/[^/]+\/day-\d+\.html$/.test(pathname) ||
-      /\/schedule\/chapter-\d+\/section-\d+\.html$/.test(pathname)
-    );
+    return /\/courses\/[^/]+\/day-\d+(\.html)?$/.test(pathname);
   }
 
   function cleanTitle() {
@@ -80,17 +77,32 @@
     if (!last || !last.path) return;
 
     var label = document.getElementById("home-cta-label");
-    if (label) label.textContent = "Continue — " + (last.title || "your last lesson");
+    if (label) label.textContent = "Resume — " + (last.title || "your last lesson");
     cta.setAttribute("href", last.path);
 
     var sub = document.createElement("p");
     sub.className = "home-cta-sub";
     var n = countResponses();
-    var startHref = resolveSitePath("/programs/Bachelor-Liberal-Arts/vol-01-foundations/before-you-begin.html");
+    var startHref = resolveSitePath("/curriculum/schedule.html");
     sub.innerHTML =
       (n ? n + " response" + (n === 1 ? "" : "s") + " saved on this device · " : "") +
       '<a href="' + startHref + '">or start from the beginning</a>';
     cta.parentNode.appendChild(sub);
+  }
+
+  // ── Masthead ribbon: resume from any page ──────────────────────────────────
+
+  function enhanceMasthead() {
+    var chip = document.getElementById("masthead-resume");
+    if (!chip) return;
+    var last = safeParse(localStorage.getItem(LAST_KEY), null);
+    if (!last || !last.path) return;
+    if (location.pathname === last.path) return; // already there
+    var m = (last.title || "").match(/^Day\s+0?(\d+)/);
+    chip.textContent = m ? "Resume · Day " + m[1] : "Resume lesson";
+    if (last.title) chip.setAttribute("title", last.title);
+    chip.setAttribute("href", last.path);
+    chip.hidden = false;
   }
 
   // ── Mark visited lessons wherever they are linked ───────────────────────────
@@ -115,6 +127,7 @@
   function init() {
     recordVisit();
     enhanceHome();
+    enhanceMasthead();
     markVisitedLinks();
   }
 

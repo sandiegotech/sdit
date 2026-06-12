@@ -34,7 +34,7 @@ AUTO_PUSH = False
 def work_path(file_path: str) -> Path:
     """
     Derive the my-work/ save path from a URL path.
-    /courses/LBS-101/day-01.html  →  my-work/courses/LBS-101/day-01.md
+    /courses/HUM-101/day-01.html  →  my-work/courses/HUM-101/day-01.md
     """
     clean = file_path.lstrip("/")
     clean = re.sub(r"\.(html|md)$", "", clean)

@@ -51,9 +51,9 @@ Perspectives is simultaneously:
 Short paid programs: a two-week summer intensive, weekend workshops, a single Canon seminar with a build project. Non-degree, small, real. This is where **Project One** lives — the founding pilot that proves the pedagogy, produces the imagery, and becomes page one of every application. *(Regulatory note: avocational and general-interest programs are generally outside BPPE's degree-granting regime, but verify the exemption boundaries with counsel before charging tuition for anything that sounds vocational.)*
 
 ### Layer 3 — The Degree (the core)
-The four-year Bachelor of Science in Technology — fully specified in [the companion document](/institute/the-degree.html). Same rigorous baseline for every student in the first two years; specialization and choice in the back half; physical culture throughout; a defended original work at the end. Designed so that the founder would genuinely want to take it — that is the standing test for every course added or cut.
+One four-year degree — the **Bachelor of Arts in Technology** — fully specified in [the companion document](/institute/the-degree.html). Identical baseline for every student in the first two years, so the artist and the engineer speak the same language; then a sharpened focus — a concentration in **Media** (things people watch, hear, and feel), **Design** (things people use), or **Engineering** (things that work on their own) — declared at the end of Year 2, from experience rather than at the door. Four depth studios in the declared concentration in the back half, plus the Crossing — one full depth studio from outside it, required of everyone; physical culture throughout; a defended original work at the end. Only eight depth studios in the whole catalog distinguish the concentrations, and one program is the honest accreditation unit. Designed so that the founder would genuinely want to take any of the three — that is the standing test for every course added or cut.
 
-The layers are also the growth sequence: **Perspectives now → Intensives next → Degree when authorized.** The institution becomes real in public, in order, with proof at each step.
+The layers are also the growth sequence: **Perspectives now → Intensives next → the Degree when authorized.** The institution becomes real in public, in order, with proof at each step.
 
 ## V. The Five Outcomes
 
@@ -99,4 +99,4 @@ The realistic arc for a private degree-granting institution in California seekin
 
 ---
 
-*Companion document: [The Degree — Working Framework for the Bachelor of Science in Technology](/institute/the-degree.html).*
+*Companion document: [The Degree — Working Framework for the Bachelor of Arts in Technology](/institute/the-degree.html).*

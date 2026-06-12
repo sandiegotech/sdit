@@ -1,0 +1,240 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Catalog — SDIT</title>
+  <link rel="stylesheet" href="../dist/site/assets/site.css" />
+  <script src="../dist/site/assets/js/site-paths.js" defer></script>
+  <script src="../dist/site/assets/js/includes.js" defer></script>
+</head>
+<body>
+  <div data-include="/partials/header.html"></div>
+  <main>
+  <p class=desc>Single source of truth for every course in the catalog of the BA in Technology (one degree; a concentration — Media, Design, or Engineering — declared at the end of Year 2). scripts/scaffold_catalog.py generates courses/<dir>/index.md templates from this file (skipping any that already exist); after scaffolding, the markdown files are the live content source and this registry tracks structure & status.
+</p>
+<h2>threads</h2>
+<ul>
+<li><dl>
+<dt>id</dt><dd>canon</dd><dt>name</dt><dd>The Canon</dd><dt>note</dt><dd>A text + a film + an album, every unit, all eight semesters.</dd>
+</dl></li><li><dl>
+<dt>id</dt><dd>math-science</dd><dt>name</dt><dd>Mathematics &amp; Science</dd><dt>note</dt><dd>Physical before formal — the ocean, the ramp, the studio.</dd>
+</dl></li><li><dl>
+<dt>id</dt><dd>computation</dd><dt>name</dt><dd>Computation &amp; Intelligent Systems</dd><dt>note</dt><dd>Code and AI as a native medium; unassisted exams keep it honest.</dd>
+</dl></li><li><dl>
+<dt>id</dt><dd>rhetoric</dd><dt>name</dt><dd>Rhetoric &amp; Epistemics</dd><dt>note</dt><dd>Writing with force; knowing what&#x27;s true.</dd>
+</dl></li><li><dl>
+<dt>id</dt><dd>signal</dd><dt>name</dt><dd>Culture &amp; Signal</dd><dt>note</dt><dd>One unit per year — how music, images, scenes, and signals move.</dd>
+</dl></li><li><dl>
+<dt>id</dt><dd>workshop</dd><dt>name</dt><dd>The Workshop</dd><dt>note</dt><dd>Every semester, a project team that ships.</dd>
+</dl></li><li><dl>
+<dt>id</dt><dd>field-capstone</dd><dt>name</dt><dd>Field Term &amp; Capstone</dd><dt>note</dt><dd>A real organization in Year 3; a defended original work in Year 4.</dd>
+</dl></li><li><dl>
+<dt>id</dt><dd>depth</dd><dt>name</dt><dd>The Depths</dd><dt>note</dt><dd>Eight studios; your concentration prescribes four — the Crossing adds one from outside it.</dd>
+</dl></li>
+</ul>
+<h2>courses</h2>
+<ul>
+<li><dl>
+<dt>code</dt><dd>HUM 101</dd><dt>dir</dt><dd>HUM-101</dd><dt>name</dt><dd>The Ancient World</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>1</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>day1</dd><dt>catalog_register</dt><dd>Survey of ancient Mediterranean literature and philosophy — Homer, the tragedians, Thucydides, Plato.</dd><dt>teaching_frame</dt><dd>The Double Feature — The Odyssey + The Endless Summer; Republic + The Matrix. The text, a film, and an album, discussed as one conversation.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A made response — essay, short film, recorded piece, or designed object — defended in seminar.</dd><dt>description</dt><dd>The oldest stories we have are survival manuals for being human, and they are still about you. Eight weeks inside Homer, the tragedians, and Plato — each unit paired with a film and an album so the conversation crosses three thousand years without slowing down.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>HUM 102</dd><dt>dir</dt><dd>HUM-102</dd><dt>name</dt><dd>Rome to the Renaissance</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>2</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Roman, medieval, and Renaissance texts — Aurelius, Augustine, Dante, Machiavelli, da Vinci&#x27;s notebooks.</dd><dt>teaching_frame</dt><dd>Aurelius + Dogtown and Z-Boys; da Vinci&#x27;s notebooks as the founding model of the artist-engineer.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A made response defended in seminar.</dd><dt>description</dt><dd>From the Stoic emperor to the workshop of Verrocchio — the long arc that ends in the bottega, where art and engineering were one job. Da Vinci&#x27;s notebooks are the founding documents of this institution&#x27;s premise.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>HUM 201</dd><dt>dir</dt><dd>HUM-201</dd><dt>name</dt><dd>The Enlightenment</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>3</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Political and economic philosophy of the Enlightenment — Hobbes, Locke, Smith, the American founders.</dd><dt>teaching_frame</dt><dd>The arguments that built the modern world, read as live questions — not museum pieces.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A made response defended in seminar.</dd><dt>description</dt><dd>Rights, markets, contracts, constitutions — the operating system the modern world still runs on, read in the original and argued in seminar.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>HUM 202</dd><dt>dir</dt><dd>HUM-202</dd><dt>name</dt><dd>The Industrial Mind</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>4</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Nineteenth-century thought — Marx, Darwin, Nietzsche, Shelley.</dd><dt>teaching_frame</dt><dd>Frankenstein + Blade Runner + the birth of electronic music. The century that invented the machine and the anxiety about it.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A made response defended in seminar.</dd><dt>description</dt><dd>The century that built the factory, the theory of evolution, and the first fears about what we make. Shelley&#x27;s question — what do you owe the thing you created? — is now an engineering requirement.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>HUM 301</dd><dt>dir</dt><dd>HUM-301</dd><dt>name</dt><dd>The Age of Intelligence</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>5</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Twentieth- and twenty-first-century writings on computation and intelligence — Turing, Wiener, the cybernetics and alignment corpus; science fiction as forecasting.</dd><dt>teaching_frame</dt><dd>Reading the field&#x27;s founding papers next to the fiction that predicted them.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>intelligence</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A made response defended in seminar.</dd><dt>description</dt><dd>Turing&#x27;s 1950 paper, Wiener&#x27;s warnings, and the alignment debate — read alongside the science fiction that keeps getting there first.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>HUM 302</dd><dt>dir</dt><dd>HUM-302</dd><dt>name</dt><dd>Ethics &amp; Statecraft</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>6</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Ethics of technology and power — just war theory, statecraft, the responsibilities of builders.</dd><dt>teaching_frame</dt><dd>The builder&#x27;s responsibility, argued through real cases.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A made response defended in seminar.</dd><dt>description</dt><dd>What you build changes who has power. This course is the standing argument about what that obliges you to do.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>HUM 401</dd><dt>dir</dt><dd>HUM-401</dd><dt>name</dt><dd>The California Canon</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>7</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Literature of California — Steinbeck, Didion, Chandler, Thompson.</dd><dt>teaching_frame</dt><dd>Surf and skate cinema as founding myth; the place SDIT lives, read as a text.</dd><dt>outcomes</dt><dd><ul>
+<li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A made response defended in seminar.</dd><dt>description</dt><dd>The laboratory this institution lives in, read as literature — from the Salinas Valley to the Z-Boys, the state that keeps inventing the future and writing it down.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>HUM 402</dd><dt>dir</dt><dd>HUM-402</dd><dt>name</dt><dd>The Long View</dd><dt>units</dt><dd>2</dd><dt>thread</dt><dd>canon</dd><dt>semester</dt><dd>8</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Capstone colloquium — civilizational rise and decline; thesis work presented against the whole sequence.</dd><dt>teaching_frame</dt><dd>Your capstone, argued against everything you have read in four years.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>The capstone colloquium presentation.</dd><dt>description</dt><dd>The final seminar. Civilizations rise and fall on judgment, craft, and signal — and your capstone gets presented against the whole four-year conversation.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>MATH 110</dd><dt>dir</dt><dd>MATH-110</dd><dt>name</dt><dd>Calculus I</dd><dt>display</dt><dd>The Mathematics of Motion</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>math-science</dd><dt>semester</dt><dd>1</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>day1</dd><dt>catalog_register</dt><dd>Differential calculus — limits, derivatives, optimization, with applications.</dd><dt>teaching_frame</dt><dd>Motion: ramp transitions, racing lines, swell decay. Every concept physical before formal.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>craft</li>
+</ul></dd><dt>artifact</dt><dd>A motion study — a real moving thing measured, modeled, and explained with the calculus that governs it.</dd><dt>description</dt><dd>Calculus is the mathematics of change, and you already have the intuition — every drop-in, every braking point, every fading swell is a derivative you can feel. This course attaches the notation to what your body already knows.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>MATH 120</dd><dt>dir</dt><dd>MATH-120</dd><dt>name</dt><dd>Calculus II</dd><dt>display</dt><dd>The Mathematics of Sound</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>math-science</dd><dt>semester</dt><dd>2</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Integral calculus and series — integration, applications, infinite series, Fourier introduction.</dd><dt>teaching_frame</dt><dd>Sound: harmonics and Fourier through synthesizers and the studio.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>craft</li>
+</ul></dd><dt>artifact</dt><dd>A sound built from first principles — a patch or piece whose harmonic structure you can derive and defend.</dd><dt>description</dt><dd>Integration and infinite series, taught through the studio: every sound you have ever loved is a sum of sines, and the synthesizer is the lab bench where you prove it.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>PHYS 110</dd><dt>dir</dt><dd>PHYS-110</dd><dt>name</dt><dd>Mechanics</dd><dt>display</dt><dd>How Things Move</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>math-science</dd><dt>semester</dt><dd>1</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>day1</dd><dt>catalog_register</dt><dd>Classical mechanics — kinematics, forces, energy, momentum, rotation; laboratory.</dd><dt>teaching_frame</dt><dd>The ocean and the board — forces on a rail, pumping a transition, bottom turns, lean angle. Lab on the sand and in the water.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>craft</li>
+</ul></dd><dt>artifact</dt><dd>A force analysis of a real maneuver — measured, diagrammed, defended.</dd><dt>description</dt><dd>Forces, energy, and momentum, learned where they actually live — on the wave, the ramp, and the road. The lab is the beach; the problem sets are things you can feel in your knees.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>PHYS 120</dd><dt>dir</dt><dd>PHYS-120</dd><dt>name</dt><dd>Waves, Energy &amp; Fluids</dd><dt>display</dt><dd>Why Waves Break</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>math-science</dd><dt>semester</dt><dd>2</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Wave mechanics, thermodynamics, and fluid dynamics; laboratory.</dd><dt>teaching_frame</dt><dd>Swell generation, refraction at Point Loma, why Black&#x27;s breaks (bathymetric focusing); board hydrodynamics and fin theory; marine-layer thermodynamics.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>craft</li>
+</ul></dd><dt>artifact</dt><dd>A shaped board with design calculations, defended.</dd><dt>description</dt><dd>Why Black&#x27;s breaks, why fins hold, why the marine layer burns off at eleven — the physics of the place, ending in a board you shaped with math you can show.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>MATH 210</dd><dt>dir</dt><dd>MATH-210</dd><dt>name</dt><dd>Linear Algebra</dd><dt>display</dt><dd>The Mathematics of Images</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>math-science</dd><dt>semester</dt><dd>3</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Vector spaces, matrices, linear transformations, eigenvalues.</dd><dt>teaching_frame</dt><dd>Images and audio — every photograph, every mix session, every AI model is matrices. The secret on-ramp to machine learning.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>intelligence</li>
+</ul></dd><dt>artifact</dt><dd>An image or audio transformation built by hand from matrix operations — then found again inside a working model.</dd><dt>description</dt><dd>The mathematics every photograph, mix session, and neural network is made of. By the end you can read a model&#x27;s insides because you have built the operations yourself.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>MATH 220</dd><dt>dir</dt><dd>MATH-220</dd><dt>name</dt><dd>Probability &amp; Statistics</dd><dt>display</dt><dd>Forecasting &amp; Games</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>math-science</dd><dt>semester</dt><dd>4</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Probability theory, distributions, inference, regression.</dd><dt>teaching_frame</dt><dd>Forecasting and games — swell models, prediction markets, poker, A/B tests. The native mathematics of the AI age.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>intelligence</li>
+</ul></dd><dt>artifact</dt><dd>A forecast with skin in the game — made, tracked, and scored in public.</dd><dt>description</dt><dd>Uncertainty is the native condition of the AI age, and this is its grammar: forecasts, bets, base rates, and the discipline of being scored on what you predicted.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>CS 110</dd><dt>dir</dt><dd>CS-110</dd><dt>name</dt><dd>Programming Fundamentals</dd><dt>display</dt><dd>Speaking to Machines</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>computation</dd><dt>semester</dt><dd>1</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>day1</dd><dt>catalog_register</dt><dd>Introduction to programming — variables, control flow, functions, data, debugging.</dd><dt>teaching_frame</dt><dd>AI tools open, instrumented, and critiqued from day one. The skill is direction and verification.</dd><dt>outcomes</dt><dd><ul>
+<li>intelligence</li><li>craft</li>
+</ul></dd><dt>artifact</dt><dd>A small working program that does something you actually wanted done — written with AI in the loop and verified without it.</dd><dt>description</dt><dd>Code is the most literal language ever invented — the machine does exactly what you say, which is how you find out what you actually said. Taught AI-native from the first hour: the tools stay open, and the skill graded is direction and verification.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>CS 120</dd><dt>dir</dt><dd>CS-120</dd><dt>name</dt><dd>Computational Thinking &amp; Systems</dd><dt>display</dt><dd>How Machines Think</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>computation</dd><dt>semester</dt><dd>2</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Computer organization and systems — logic gates, memory, processors, operating systems, networks.</dd><dt>teaching_frame</dt><dd>How machines actually work, from logic gates up.</dd><dt>outcomes</dt><dd><ul>
+<li>intelligence</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A working computer built upward from gates — simulated or breadboarded — that runs a program you wrote.</dd><dt>description</dt><dd>No magic anywhere in the stack: from a transistor to a logic gate to a processor to the page you are reading, every layer explained by building it.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>CS 210</dd><dt>dir</dt><dd>CS-210</dd><dt>name</dt><dd>Data Structures &amp; Algorithms</dd><dt>display</dt><dd>Making Things Fast</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>computation</dd><dt>semester</dt><dd>3</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Data structures, algorithm design and analysis, complexity.</dd><dt>teaching_frame</dt><dd>The classic course, taught against real performance problems you can measure.</dd><dt>outcomes</dt><dd><ul>
+<li>intelligence</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A measurably faster program — profiled, redesigned, and benchmarked, with the analysis to show why.</dd><dt>description</dt><dd>The difference between code that works and code that works at scale. Structures and algorithms taught by making slow things fast and proving why.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>CS 220</dd><dt>dir</dt><dd>CS-220</dd><dt>name</dt><dd>Machine Learning I</dd><dt>display</dt><dd>Teaching Machines</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>computation</dd><dt>semester</dt><dd>4</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Foundations of machine learning — models, training, evaluation, limits.</dd><dt>teaching_frame</dt><dd>What a model is, how it trains, what it can and cannot know.</dd><dt>outcomes</dt><dd><ul>
+<li>intelligence</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A model trained from scratch on data you gathered — with an honest evaluation of where it fails.</dd><dt>description</dt><dd>The machine that learned to finish your sentences is not a mystery — it is matrices, gradients, and data. Build small models from scratch so the big ones stop being magic.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>CS 310</dd><dt>dir</dt><dd>CS-310</dd><dt>name</dt><dd>Machine Learning II / AI Systems Engineering</dd><dt>display</dt><dd>Engineering Intelligence</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>5</dd><dt>concentrations</dt><dd><ul>
+<li>engineering</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Applied machine learning systems — deployment, evaluation, agents, failure modes.</dd><dt>teaching_frame</dt><dd>Real systems in the world — what breaks, what lies, what scales.</dd><dt>outcomes</dt><dd><ul>
+<li>intelligence</li><li>craft</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A deployed AI system with real users, an evaluation harness, and a documented failure analysis.</dd><dt>description</dt><dd>Models are easy; systems are hard. Deployment, evaluation, agents, and failure modes — the engineering discipline of making machine intelligence dependable.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>CS 320</dd><dt>dir</dt><dd>CS-320</dd><dt>name</dt><dd>Human-AI Collaboration as Craft</dd><dt>display</dt><dd>Working with Intelligence</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>computation</dd><dt>semester</dt><dd>7</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Advanced practicum in human-AI collaboration — delegation, verification, evaluation, taste.</dd><dt>teaching_frame</dt><dd>The studied practice of working with machine intelligence — the craft the whole age runs on.</dd><dt>outcomes</dt><dd><ul>
+<li>intelligence</li><li>judgment</li><li>craft</li>
+</ul></dd><dt>artifact</dt><dd>A substantial work produced with AI as instrument — with a full account of what was delegated, what was verified, and why the judgment calls were yours.</dd><dt>description</dt><dd>By Year 4 you have used these tools everywhere; now the practice itself becomes the subject. Delegation, verification, and taste — studied, drilled, and graded.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>RHET 110</dd><dt>dir</dt><dd>RHET-110</dd><dt>name</dt><dd>Writing Seminar</dd><dt>display</dt><dd>Writing That Lands</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>rhetoric</dd><dt>semester</dt><dd>3</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>College writing — argument, evidence, structure, revision.</dd><dt>teaching_frame</dt><dd>Heavy output, line-edited. You write constantly; everything comes back marked.</dd><dt>outcomes</dt><dd><ul>
+<li>articulation</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A portfolio of revised essays — first drafts and finals side by side, so the distance is visible.</dd><dt>description</dt><dd>Writing is thinking made auditable. Heavy output, line-edited, every week — because clarity on the page is clarity in the head, and both are trained the same way: by revision.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>RHET 210</dd><dt>dir</dt><dd>RHET-210</dd><dt>name</dt><dd>Epistemic Self-Defense</dd><dt>display</dt><dd>Knowing What&#x27;s True</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>rhetoric</dd><dt>semester</dt><dd>4</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Logic, statistical reasoning, cognitive bias, media literacy.</dd><dt>teaching_frame</dt><dd>Propaganda, information warfare, and the engineered feed — how to know what&#x27;s true when the environment is adversarial.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>intelligence</li>
+</ul></dd><dt>artifact</dt><dd>A forensic teardown of a real piece of persuasion — its claims, techniques, and the truth of the matter, documented.</dd><dt>description</dt><dd>Your information environment is built by people who want things from you. Logic, statistics, bias, and propaganda analysis — the martial art of knowing what&#x27;s true.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>SIG 101</dd><dt>dir</dt><dd>SIG-101</dd><dt>name</dt><dd>How Music Moves</dd><dt>units</dt><dd>1</dd><dt>thread</dt><dd>signal</dd><dt>semester</dt><dd>2</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>The music industry and its technologies — recording, production, distribution, economics.</dd><dt>teaching_frame</dt><dd>How a song actually reaches the world — from the room it was recorded in to the algorithm that surfaced it.</dd><dt>outcomes</dt><dd><ul>
+<li>breadth</li><li>craft</li>
+</ul></dd><dt>artifact</dt><dd>A released track or a documented production breakdown of one.</dd><dt>description</dt><dd>Recording, production, labels and independence, streaming economics — the full path a song travels from a room to your morning.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>SIG 201</dd><dt>dir</dt><dd>SIG-201</dd><dt>name</dt><dd>How Images Move</dd><dt>units</dt><dd>1</dd><dt>thread</dt><dd>signal</dd><dt>semester</dt><dd>4</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Visual media systems — cinema, short-form ecosystems, documentary, attention economics.</dd><dt>teaching_frame</dt><dd>Why some images travel and others die — craft, platforms, and the economics of attention.</dd><dt>outcomes</dt><dd><ul>
+<li>breadth</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A short visual piece released into a real feed, with a written account of how it moved.</dd><dt>description</dt><dd>Cinema, short-form ecosystems, documentary craft, and the attention economy that decides what gets seen.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>SIG 301</dd><dt>dir</dt><dd>SIG-301</dd><dt>name</dt><dd>How Scenes Form</dd><dt>units</dt><dd>1</dd><dt>thread</dt><dd>signal</dd><dt>semester</dt><dd>5</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Sociology of cultural movements — subcultures, scenes, and innovation diffusion.</dd><dt>teaching_frame</dt><dd>Subcultures as R&amp;D labs: punk, hip-hop, skate, surf, internet scenes — how small groups invent what everyone uses later.</dd><dt>outcomes</dt><dd><ul>
+<li>breadth</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A field study of a living scene — documented from inside.</dd><dt>description</dt><dd>Every technology and art form you love was invented by a small scene before it was an industry. How those rooms work, studied closely.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>SIG 401</dd><dt>dir</dt><dd>SIG-401</dd><dt>name</dt><dd>How to Build a Signal</dd><dt>units</dt><dd>1</dd><dt>thread</dt><dd>signal</dd><dt>semester</dt><dd>8</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Capstone in media practice — curation, distribution, audience.</dd><dt>teaching_frame</dt><dd>Taste, curation, distribution in the AI era. You ship a real cultural artifact to a real audience.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>articulation</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A real cultural artifact shipped to a real audience — with the numbers.</dd><dt>description</dt><dd>Four years of taking culture in; now you put something back out and watch what the world does with it.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>WKSP 101–402</dd><dt>dir</dt><dd>WKSP-101</dd><dt>name</dt><dd>The Workshop (Bottega)</dd><dt>units</dt><dd>2 per semester</dd><dt>thread</dt><dd>workshop</dd><dt>semester</dt><dd>1</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>day1</dd><dt>catalog_register</dt><dd>Project-based fabrication and design practicum, taken every semester (WKSP 101 through 402).</dd><dt>teaching_frame</dt><dd>A project team that ships — boards, amplifier and pedal electronics, motorcycle mechanics, camera rigs, drones and ocean sensors. External clients from Year 2; public exhibition every year.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>The shipped project, exhibited publicly, every single semester.</dd><dt>description</dt><dd>The bottega — the room where mastery is transmitted through making. Every semester, every student, on a project team that ships something real. The materials rotate through the region&#x27;s craft traditions; the standard never does.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>FLD 301</dd><dt>dir</dt><dd>FLD-301</dd><dt>name</dt><dd>Field Term</dd><dt>display</dt><dd>The Field Term</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>field-capstone</dd><dt>semester</dt><dd>6</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Supervised field placement in a partner organization, with faculty advising.</dd><dt>teaching_frame</dt><dd>One full term embedded in an engineering firm, lab, studio, label, or venture — under a designated mentor, doing real work.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>judgment</li><li>articulation</li>
+</ul></dd><dt>artifact</dt><dd>Mentor evaluation, portfolio of field work, and a written field report.</dd><dt>description</dt><dd>A full term inside a working organization. Not an internship to decorate a résumé — a placement with a mentor, real responsibilities, and a written account of what the work taught you.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>CAP 401–402</dd><dt>dir</dt><dd>CAP-401</dd><dt>name</dt><dd>Thesis / Venture Capstone</dd><dt>display</dt><dd>The Capstone</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>field-capstone</dd><dt>semester</dt><dd>7</dd><dt>degrees</dt><dd>both</dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Two-semester capstone — proposal, execution, and public defense of an original work.</dd><dt>teaching_frame</dt><dd>Three accepted forms: a research thesis; an engineered system that works; a venture that exists — incorporated, with users. Defended publicly before faculty and outside examiners.</dd><dt>outcomes</dt><dd><ul>
+<li>judgment</li><li>intelligence</li><li>craft</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>The defended original work itself.</dd><dt>description</dt><dd>The whole degree converges here — one original work, a year in the making, defended in public. A thesis, a system that runs, or a venture that exists. The five outcomes, demonstrated at once.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>ART 310</dd><dt>dir</dt><dd>ART-310</dd><dt>name</dt><dd>Interactive Media &amp; Interfaces</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>5</dd><dt>concentrations</dt><dd><ul>
+<li>media</li><li>design</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Interactive systems design — interfaces, games, installations, human factors.</dd><dt>teaching_frame</dt><dd>The designed experience — what it feels like to use a thing, studied and built.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>intelligence</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>An interactive piece with real users — playable, usable, observed.</dd><dt>description</dt><dd>Games, installations, interfaces — the art form where the audience acts. Design, build, and watch real people use what you made.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>ART 320</dd><dt>dir</dt><dd>ART-320</dd><dt>name</dt><dd>Film &amp; the Moving Image</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>5</dd><dt>concentrations</dt><dd><ul>
+<li>media</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Film production — cinematography, editing, sound, narrative.</dd><dt>teaching_frame</dt><dd>Camera, edit, story. You ship a short film, start to finish.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>articulation</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A finished short film, screened.</dd><dt>description</dt><dd>The complete craft of the moving image — from the shot you planned to the cut that finally works — ending in a short film with your name on it, screened for an audience.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>ART 330</dd><dt>dir</dt><dd>ART-330</dd><dt>name</dt><dd>Music Production &amp; Sound Design</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>6</dd><dt>concentrations</dt><dd><ul>
+<li>media</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Audio production — recording, synthesis, mixing, sound design.</dd><dt>teaching_frame</dt><dd>The studio as instrument — every fader a decision, every mix an argument.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>judgment</li><li>breadth</li>
+</ul></dd><dt>artifact</dt><dd>A produced and mixed piece of music or sound design, released or screened.</dd><dt>description</dt><dd>Recording, synthesis, mixing, and the design of sound itself — the studio treated as the instrument it is, built on the Fourier you already own from Calculus II.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>ART 410</dd><dt>dir</dt><dd>ART-410</dd><dt>name</dt><dd>Generative Media &amp; Creative Code</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>7</dd><dt>concentrations</dt><dd><ul>
+<li>media</li><li>design</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Computational art — procedural and generative methods, AI-assisted media.</dd><dt>teaching_frame</dt><dd>AI and procedure as artistic material — the newest medium, handled with taste.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>intelligence</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A generative work where the system is yours — the rules authored, the output curated, the taste defended.</dd><dt>description</dt><dd>The medium that did not exist ten years ago. Procedural systems and machine intelligence as raw material — where the artist&#x27;s job moves up a level, to the rules and the taste.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>ENGR 310</dd><dt>dir</dt><dd>ENGR-310</dd><dt>name</dt><dd>Mechanical Design &amp; Fabrication</dd><dt>display</dt><dd>Design &amp; Fabrication</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>5</dd><dt>concentrations</dt><dd><ul>
+<li>design</li><li>engineering</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Mechanical engineering design — CAD, materials, manufacturing processes, tolerance.</dd><dt>teaching_frame</dt><dd>CAD to shop floor; tolerance is a moral category.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>A designed and fabricated mechanism that works — drawings, tolerances, and the physical thing.</dd><dt>description</dt><dd>From the sketch to the CAD model to the part in your hand — and the discipline of tolerance, where honesty becomes measurable.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>ENGR 320</dd><dt>dir</dt><dd>ENGR-320</dd><dt>name</dt><dd>Embedded Systems &amp; Sensors</dd><dt>display</dt><dd>Machines That Sense</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>6</dd><dt>concentrations</dt><dd><ul>
+<li>design</li><li>engineering</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Embedded computing — microcontrollers, firmware, sensors, signal acquisition.</dd><dt>teaching_frame</dt><dd>Firmware, ocean sensors, instruments that survive saltwater.</dd><dt>outcomes</dt><dd><ul>
+<li>craft</li><li>intelligence</li>
+</ul></dd><dt>artifact</dt><dd>A working instrument deployed in the field — gathering real data in a hostile environment.</dd><dt>description</dt><dd>Computers that live in things — and in this curriculum, things that live in saltwater. Firmware, sensors, and the engineering humility the ocean teaches.
+</dd>
+</dl></li><li><dl>
+<dt>code</dt><dd>ENGR 410</dd><dt>dir</dt><dd>ENGR-410</dd><dt>name</dt><dd>Robotics &amp; Autonomous Systems</dd><dt>display</dt><dd>Robots in the World</dd><dt>units</dt><dd>4</dd><dt>thread</dt><dd>depth</dd><dt>semester</dt><dd>7</dd><dt>concentrations</dt><dd><ul>
+<li>engineering</li>
+</ul></dd><dt>status</dt><dd>syllabus</dd><dt>catalog_register</dt><dd>Robotics — perception, control, planning, autonomy.</dd><dt>teaching_frame</dt><dd>Perception, control, autonomy in the physical world — where the demo meets the parking lot.</dd><dt>outcomes</dt><dd><ul>
+<li>intelligence</li><li>craft</li><li>judgment</li>
+</ul></dd><dt>artifact</dt><dd>An autonomous system demonstrated live, in the world, doing its job.</dd><dt>description</dt><dd>Everything converges: mechanics, embedded systems, machine learning, and the unforgiving physical world. The machine has to work in the parking lot, not the slide deck.
+</dd>
+</dl></li>
+</ul>
+  </main>
+  <div data-include="/partials/footer.html"></div>
+</body>
+</html>

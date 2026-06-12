@@ -1,28 +1,27 @@
-<header class="site-header">
-  <div class="site-header-inner">
-    <div class="site-brand-row">
-      <a class="site-brand" href="/index.html" aria-label="SDIT home">
-        <span class="site-brand-mark">
-          <img src="/assets/brand/sdit-crest.png?v=20260313" alt="" />
-        </span>
-        <span class="site-brand-copy">
-          <strong>San Diego Institute of Technology</strong>
-          <small>Education for the Age of AI</small>
-        </span>
-      </a>
-      <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="site-nav-toggle__label">Menu</span>
-        <span class="site-nav-toggle__icon" aria-hidden="true"></span>
-      </button>
-    </div>
-    <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a data-nav="daily" href="/daily/index.html">The Daily</a>
-      <a data-nav="lessons" href="/programs/Bachelor-Liberal-Arts/index.html">Lessons</a>
-      <a data-nav="library" href="/courses/index.html">Library</a>
-      <a class="nav-cta" href="https://www.sandiegotech.org/donate">Support</a>
+<header class="masthead masthead--learn">
+  <div class="frame masthead-inner">
+    <a href="/index.html" class="wordmark"><img class="masthead-crest" src="/assets/brand/sdit-shield-gold.svg" alt="" width="36" height="36" /><span>San Diego Institute of Technology<small>The Curriculum</small></span></a>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="toc" aria-label="Site">
+      <a data-nav="curriculum" href="/curriculum/index.html">Curriculum</a>
+      <a data-nav="courses" href="/courses/index.html">Courses</a>
+      <a data-nav="schedule" href="/curriculum/schedule.html">Schedule</a>
+      <a id="masthead-resume" class="toc-resume" href="#" hidden></a>
     </nav>
   </div>
 </header>
+<script>
+  (function () {
+    var btn = document.querySelector('.masthead .hamburger');
+    if (!btn || btn.dataset.bound === 'true') return;
+    btn.dataset.bound = 'true';
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      document.querySelector('.masthead .toc').classList.toggle('is-open');
+    });
+  })();
+</script>
 <script src="/assets/js/layout.js" defer></script>
 <script src="/assets/js/student-work.js" defer></script>
 <script src="/assets/js/resume.js" defer></script>

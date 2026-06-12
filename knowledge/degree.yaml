@@ -1,10 +1,11 @@
 __meta__:
-  title: Degree Architecture — Bachelor of Science in Technology
+  title: Degree Architecture — Bachelor of Arts in Technology
   description: >
-    The machine-readable contract for the SDIT Bachelor of Science in Technology:
-    120 semester units across ten threads, one shared baseline in Years 1-2,
-    concentration + choice in Years 3-4, annual portfolio gates against the five
-    institutional outcomes, and a defended original work at the end.
+    The machine-readable contract for the SDIT Bachelor of Arts in Technology:
+    one degree, 120 semester units across eleven threads, a shared two-year
+    Foundation, a concentration (Media, Design, or Engineering) declared at
+    the end of Year 2, the required Crossing, annual portfolio gates against
+    the five institutional outcomes, and a defended original work at the end.
   intended_use: >
     Single source of truth for degree structure. Mirrors the founding framework
     (institute/the-degree.md) in structured form; drives program pages, future
@@ -12,9 +13,9 @@ __meta__:
     canonical — when this file and the framework disagree, fix this file.
   status: working-framework  # to be developed to catalog grade for BPPE/WSCUC
   supersedes: >
-    The 2026-06 CBE Bachelor of Liberal Arts architecture. The BLA volumes and
-    course library remain published as the open curriculum archive; the BST is
-    the institution's degree.
+    The 2026-06 two-degree (BA + BS) architecture and its two-path successor,
+    consolidated into one BA in Technology with three concentrations; and the
+    earlier CBE Bachelor of Liberal Arts.
   source_documents:
     plan: institute/sdit-bible.md
     framework: institute/the-degree.md
@@ -23,8 +24,8 @@ __meta__:
 # 1. THE DEGREE
 # ---------------------------------------------------------------------------
 degree:
-  id: bst
-  name: Bachelor of Science in Technology
+  id: bat
+  name: Bachelor of Arts in Technology
   total_units: 120          # semester units
   semesters: 8
   model: >
@@ -33,23 +34,30 @@ degree:
     catalog name (accreditation- and transfer-legible) and a teaching frame
     (how it is actually delivered).
   structural_philosophy: >
-    Identical baseline for every student in Years 1-2 (zero electives — the
-    shared formation is the product); specialization and choice in Years 3-4.
+    One degree. Identical baseline for every student in Years 1-2 — the
+    Foundation (zero electives; the shared formation is the product): a common
+    language and framework for everyone. Nothing is declared at the door,
+    because at the door nobody truly knows. At the end of Year 2 each student
+    sharpens their focus by declaring a concentration — Media, Design, or
+    Engineering — chosen from two years of made work; four depth studios in
+    the declared concentration in Years 3-4, plus the Crossing — one full
+    depth studio from outside it, required of everyone.
   standing_test: "Would the founder genuinely want to take it? If not, redesign or cut."
-  concentration_declared: end of Year 2
+  concentration_declared: end of Year 2 (the Declaration)
 
 # ---------------------------------------------------------------------------
-# 2. UNIT ARCHITECTURE — the ten threads
+# 2. UNIT ARCHITECTURE — the eleven threads
 # ---------------------------------------------------------------------------
 threads:
   - { id: canon,         name: The Canon,                          units: 16, structure: "HUM 101-402, 2 units/semester x 8", method: "Double Feature: text + film + album as one conversation; each term ends in a made, defended response" }
-  - { id: math-science,  name: Mathematics & Science Core,         units: 24, structure: "Six 4-unit courses, Years 1-2 (+1 in Year 3)", method: "Every concept physical before formal — the ocean, the ramp, the studio as lab" }
-  - { id: computation,   name: Computation & Intelligent Systems,  units: 24, structure: "Six 4-unit courses across all years", method: "AI tools open, instrumented, and critiqued from day one; direction and verification as the skill" }
+  - { id: math-science,  name: Mathematics & Science Core,         units: 24, structure: "Six 4-unit courses, Years 1-2", method: "Every concept physical before formal — the ocean, the ramp, the studio as lab" }
+  - { id: computation,   name: Computation & Intelligent Systems,  units: 20, structure: "CS 110/120/210/220 (Years 1-2) + CS 320 (Year 4)", method: "AI tools open, instrumented, and critiqued from day one; direction and verification as the skill" }
   - { id: rhetoric,      name: Rhetoric & Epistemics,              units: 8,  structure: "Two 4-unit courses, Years 1-2", method: "Heavy line-edited output; epistemic self-defense" }
   - { id: signal,        name: Culture & Signal,                   units: 4,  structure: "1 unit/year x 4", method: "How music, images, scenes, and signals actually move; ends by shipping a real cultural artifact" }
   - { id: workshop,      name: The Workshop (Bottega),             units: 16, structure: "2 units/semester x 8", method: "Every semester on a project team that ships; external clients from Year 2; portfolio review + public exhibition" }
-  - { id: concentration, name: Concentration,                      units: 12, structure: "Three 4-unit advanced courses, Years 3-4" }
-  - { id: open-studio,   name: Open Studio Electives,              units: 8,  structure: "Years 3-4 only; rotating practitioner-taught slate", method: "Visiting Masters, Language & Abroad, Deep Cuts, Cross-Concentration; how the curriculum absorbs the new without rewriting the core" }
+  - { id: depth,         name: Concentration Depth,                units: 16, structure: "Four 4-unit depth studios in the declared concentration, Years 3-4" }
+  - { id: crossing,      name: The Crossing,                       units: 4,  structure: "One depth studio from outside the declared concentration — required of everyone" }
+  - { id: open-studio,   name: Open Studio Elective,               units: 4,  structure: "One course from the rotating practitioner-taught slate, Year 4", method: "Visiting Masters, Language & Abroad, Deep Cuts, Cross-Concentration; how the curriculum absorbs the new without rewriting the core" }
   - { id: field-term,    name: Field Term,                         units: 4,  structure: "FLD 301 — one placed term, Year 3, embedded in a partner organization" }
   - { id: capstone,      name: Thesis / Venture Capstone,          units: 4,  structure: "CAP 401-402, Year 4; defended original work: research thesis, an engineered system that works, or a venture that exists" }
 
@@ -66,41 +74,52 @@ teaching_requirement:
   rule: every fourth-year leads first-years in Workshop, Canon section, or Physical Culture
 
 # ---------------------------------------------------------------------------
-# 3. CONCENTRATIONS — declared end of Year 2
+# 3. THE CONCENTRATIONS — declared end of Year 2 (the Declaration)
 # ---------------------------------------------------------------------------
+depth_catalog_note: >
+  Eight 4-unit depth studios total. Each concentration prescribes four; the
+  lists overlap by design — Design shares studios with both Media and
+  Engineering, because design is where made things meet people.
 concentrations:
-  - id: intelligent-systems
-    name: Intelligent Systems
-    scope: machine learning, autonomy, AI engineering and deployment
-    courses: [Autonomy & Robotics, Applied Deep Learning, "AI Safety, Evaluation & Deployment"]
-  - id: applied-engineering
-    name: Applied Engineering
-    scope: hardware, robotics, fabrication, embedded and physical systems
-    courses: [Mechanical Design & Fabrication, Embedded Systems & Sensors, Energy & Ocean Systems]
-  - id: computational-media-design
-    name: Computational Media & Design
-    scope: interfaces, film, music technology, human-machine experience
-    courses: [Interactive Systems & Interfaces, Film & Sound Production, Simulation & Generative Media]
+  - id: media
+    name: Media
+    tagline: things people watch, hear, and feel
+    scope: film, music production, interactive story, generative media
+    studios: ["ART 320 — Film & the Moving Image", "ART 330 — Music Production & Sound Design", "ART 310 — Interactive Media & Interfaces", "ART 410 — Generative Media & Creative Code"]
+  - id: design
+    name: Design
+    tagline: things people use
+    scope: interfaces, interaction, fabrication, physical computing
+    studios: ["ART 310 — Interactive Media & Interfaces", "ART 410 — Generative Media & Creative Code", "ENGR 310 — Mechanical Design & Fabrication", "ENGR 320 — Embedded Systems & Sensors"]
+  - id: engineering
+    name: Engineering
+    tagline: things that work on their own
+    scope: AI systems, embedded sensors, robotics
+    studios: ["CS 310 — Machine Learning II / AI Systems Engineering", "ENGR 310 — Mechanical Design & Fabrication", "ENGR 320 — Embedded Systems & Sensors", "ENGR 410 — Robotics & Autonomous Systems"]
+map: curriculum/four-years.html
+crossing_rule: >
+  Every student takes one depth studio from outside their concentration. The
+  founding thesis made structural: the artist engineers; the engineer makes art.
 
 # ---------------------------------------------------------------------------
 # 4. THE FOUR YEARS AT A GLANCE
 # ---------------------------------------------------------------------------
 years:
   - year: 1
-    fall:   [HUM 101, MATH 110, PHYS 110, CS 110, RHET 110, SIG 101, WKSP 101]
-    spring: [HUM 102, MATH 120, PHYS 120, CS 120, WKSP 102]
+    fall:   [HUM 101, MATH 110, PHYS 110, CS 110, WKSP 101]
+    spring: [HUM 102, MATH 120, PHYS 120, CS 120, SIG 101, WKSP 102]
     milestone: public exhibition
   - year: 2
-    fall:   [HUM 201, MATH 210, CS 210, RHET 210, WKSP 201]
-    spring: [HUM 202, MATH 220, CS 220, SIG 201, WKSP 202]
-    milestone: concentration declared
+    fall:   [HUM 201, MATH 210, CS 210, RHET 110, WKSP 201]
+    spring: [HUM 202, MATH 220, CS 220, RHET 210, SIG 201, WKSP 202]
+    milestone: the Declaration — concentration chosen (Media, Design, or Engineering)
   - year: 3
-    fall:   [HUM 301, CS 310, Concentration I, SIG 301, WKSP 301]
-    spring: [Field Term, HUM 302, WKSP 302]
+    fall:   [HUM 301, Depth I, Depth II, SIG 301, WKSP 301]
+    spring: [Field Term, HUM 302, Depth III, WKSP 302]
     milestone: field term
   - year: 4
-    fall:   [HUM 401, CS 320, Concentration II, Elective, WKSP 401, CAP 401]
-    spring: [HUM 402, Concentration III, Elective, SIG 401, WKSP 402, CAP 402]
+    fall:   [HUM 401, CS 320, Depth IV, CAP 401, WKSP 401]
+    spring: [HUM 402, The Crossing, Open Studio, SIG 401, CAP 402, WKSP 402]
     milestone: defense + teaching
 
 # ---------------------------------------------------------------------------

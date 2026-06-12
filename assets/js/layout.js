@@ -162,7 +162,7 @@
   }
 
   function updateActiveNav() {
-    const navLinks = document.querySelectorAll(".site-nav a[data-nav]");
+    const navLinks = document.querySelectorAll(".learn-nav a[data-nav], .masthead .toc a[data-nav], .site-nav a[data-nav]");
     if (!navLinks.length) {
       return;
     }
@@ -170,14 +170,15 @@
     const path = currentPath();
     let current = "home";
 
-    if (path.indexOf("/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/") !== -1) {
-      current = "daily";
-    } else if (path.indexOf("/programs/") !== -1) {
-      current = "degree";
-    } else if (path.indexOf("/courses/") !== -1 || path.indexOf("/knowledge/") !== -1) {
-      current = "library";
-    } else if (path.indexOf("github.com/sandiegotech/sdit") !== -1) {
-      current = "github";
+    if (path.indexOf("/curriculum/schedule") !== -1 || path.indexOf("/curriculum/day-by-day") !== -1) {
+      current = "schedule";
+    } else if (path.indexOf("/curriculum") !== -1) {
+      current = "curriculum";
+    } else if (
+      path.indexOf("/courses") !== -1 ||
+      path.indexOf("/knowledge") !== -1
+    ) {
+      current = "courses";
     }
 
     navLinks.forEach(function (link) {

@@ -1,0 +1,646 @@
+__meta__:
+  title: The Catalog
+  description: >
+    Single source of truth for every course in the catalog of the
+    BA in Technology (one degree; a concentration — Media, Design, or
+    Engineering — declared at the end of Year 2). scripts/scaffold_catalog.py
+    generates courses/<dir>/index.md templates from this file (skipping
+    any that already exist); after scaffolding, the markdown files are
+    the live content source and this registry tracks structure & status.
+  intended_use: Course registry; IDs and dir names must remain stable.
+
+threads:
+  - id: canon
+    name: The Canon
+    note: A text + a film + an album, every unit, all eight semesters.
+  - id: math-science
+    name: Mathematics & Science
+    note: Physical before formal — the ocean, the ramp, the studio.
+  - id: computation
+    name: Computation & Intelligent Systems
+    note: Code and AI as a native medium; unassisted exams keep it honest.
+  - id: rhetoric
+    name: Rhetoric & Epistemics
+    note: Writing with force; knowing what's true.
+  - id: signal
+    name: Culture & Signal
+    note: One unit per year — how music, images, scenes, and signals move.
+  - id: workshop
+    name: The Workshop
+    note: Every semester, a project team that ships.
+  - id: field-capstone
+    name: Field Term & Capstone
+    note: A real organization in Year 3; a defended original work in Year 4.
+  - id: depth
+    name: The Depths
+    note: Eight studios; your concentration prescribes four — the Crossing adds one from outside it.
+
+courses:
+  # ── The Canon ──────────────────────────────────────────────────────
+  - code: HUM 101
+    dir: HUM-101
+    name: The Ancient World
+    units: 2
+    thread: canon
+    semester: 1
+    degrees: both
+    status: day1
+    catalog_register: Survey of ancient Mediterranean literature and philosophy — Homer, the tragedians, Thucydides, Plato.
+    teaching_frame: The Double Feature — The Odyssey + The Endless Summer; Republic + The Matrix. The text, a film, and an album, discussed as one conversation.
+    outcomes: [judgment, articulation, breadth]
+    artifact: A made response — essay, short film, recorded piece, or designed object — defended in seminar.
+    description: >
+      The oldest stories we have are survival manuals for being human, and
+      they are still about you. Eight weeks inside Homer, the tragedians,
+      and Plato — each unit paired with a film and an album so the
+      conversation crosses three thousand years without slowing down.
+  - code: HUM 102
+    dir: HUM-102
+    name: Rome to the Renaissance
+    units: 2
+    thread: canon
+    semester: 2
+    degrees: both
+    status: syllabus
+    catalog_register: Roman, medieval, and Renaissance texts — Aurelius, Augustine, Dante, Machiavelli, da Vinci's notebooks.
+    teaching_frame: Aurelius + Dogtown and Z-Boys; da Vinci's notebooks as the founding model of the artist-engineer.
+    outcomes: [judgment, articulation, breadth]
+    artifact: A made response defended in seminar.
+    description: >
+      From the Stoic emperor to the workshop of Verrocchio — the long arc
+      that ends in the bottega, where art and engineering were one job.
+      Da Vinci's notebooks are the founding documents of this institution's
+      premise.
+  - code: HUM 201
+    dir: HUM-201
+    name: The Enlightenment
+    units: 2
+    thread: canon
+    semester: 3
+    degrees: both
+    status: syllabus
+    catalog_register: Political and economic philosophy of the Enlightenment — Hobbes, Locke, Smith, the American founders.
+    teaching_frame: The arguments that built the modern world, read as live questions — not museum pieces.
+    outcomes: [judgment, articulation, breadth]
+    artifact: A made response defended in seminar.
+    description: >
+      Rights, markets, contracts, constitutions — the operating system the
+      modern world still runs on, read in the original and argued in seminar.
+  - code: HUM 202
+    dir: HUM-202
+    name: The Industrial Mind
+    units: 2
+    thread: canon
+    semester: 4
+    degrees: both
+    status: syllabus
+    catalog_register: Nineteenth-century thought — Marx, Darwin, Nietzsche, Shelley.
+    teaching_frame: Frankenstein + Blade Runner + the birth of electronic music. The century that invented the machine and the anxiety about it.
+    outcomes: [judgment, articulation, breadth]
+    artifact: A made response defended in seminar.
+    description: >
+      The century that built the factory, the theory of evolution, and the
+      first fears about what we make. Shelley's question — what do you owe
+      the thing you created? — is now an engineering requirement.
+  - code: HUM 301
+    dir: HUM-301
+    name: The Age of Intelligence
+    units: 2
+    thread: canon
+    semester: 5
+    degrees: both
+    status: syllabus
+    catalog_register: Twentieth- and twenty-first-century writings on computation and intelligence — Turing, Wiener, the cybernetics and alignment corpus; science fiction as forecasting.
+    teaching_frame: Reading the field's founding papers next to the fiction that predicted them.
+    outcomes: [judgment, intelligence, breadth]
+    artifact: A made response defended in seminar.
+    description: >
+      Turing's 1950 paper, Wiener's warnings, and the alignment debate —
+      read alongside the science fiction that keeps getting there first.
+  - code: HUM 302
+    dir: HUM-302
+    name: Ethics & Statecraft
+    units: 2
+    thread: canon
+    semester: 6
+    degrees: both
+    status: syllabus
+    catalog_register: Ethics of technology and power — just war theory, statecraft, the responsibilities of builders.
+    teaching_frame: The builder's responsibility, argued through real cases.
+    outcomes: [judgment, articulation, breadth]
+    artifact: A made response defended in seminar.
+    description: >
+      What you build changes who has power. This course is the standing
+      argument about what that obliges you to do.
+  - code: HUM 401
+    dir: HUM-401
+    name: The California Canon
+    units: 2
+    thread: canon
+    semester: 7
+    degrees: both
+    status: syllabus
+    catalog_register: Literature of California — Steinbeck, Didion, Chandler, Thompson.
+    teaching_frame: Surf and skate cinema as founding myth; the place SDIT lives, read as a text.
+    outcomes: [articulation, breadth]
+    artifact: A made response defended in seminar.
+    description: >
+      The laboratory this institution lives in, read as literature — from
+      the Salinas Valley to the Z-Boys, the state that keeps inventing the
+      future and writing it down.
+  - code: HUM 402
+    dir: HUM-402
+    name: The Long View
+    units: 2
+    thread: canon
+    semester: 8
+    degrees: both
+    status: syllabus
+    catalog_register: Capstone colloquium — civilizational rise and decline; thesis work presented against the whole sequence.
+    teaching_frame: Your capstone, argued against everything you have read in four years.
+    outcomes: [judgment, articulation, breadth]
+    artifact: The capstone colloquium presentation.
+    description: >
+      The final seminar. Civilizations rise and fall on judgment, craft,
+      and signal — and your capstone gets presented against the whole
+      four-year conversation.
+
+  # ── Mathematics & Science ──────────────────────────────────────────
+  - code: MATH 110
+    dir: MATH-110
+    name: Calculus I
+    display: The Mathematics of Motion
+    units: 4
+    thread: math-science
+    semester: 1
+    degrees: both
+    status: day1
+    catalog_register: Differential calculus — limits, derivatives, optimization, with applications.
+    teaching_frame: "Motion: ramp transitions, racing lines, swell decay. Every concept physical before formal."
+    outcomes: [judgment, craft]
+    artifact: A motion study — a real moving thing measured, modeled, and explained with the calculus that governs it.
+    description: >
+      Calculus is the mathematics of change, and you already have the
+      intuition — every drop-in, every braking point, every fading swell
+      is a derivative you can feel. This course attaches the notation to
+      what your body already knows.
+  - code: MATH 120
+    dir: MATH-120
+    name: Calculus II
+    display: The Mathematics of Sound
+    units: 4
+    thread: math-science
+    semester: 2
+    degrees: both
+    status: syllabus
+    catalog_register: Integral calculus and series — integration, applications, infinite series, Fourier introduction.
+    teaching_frame: "Sound: harmonics and Fourier through synthesizers and the studio."
+    outcomes: [judgment, craft]
+    artifact: A sound built from first principles — a patch or piece whose harmonic structure you can derive and defend.
+    description: >
+      Integration and infinite series, taught through the studio: every
+      sound you have ever loved is a sum of sines, and the synthesizer is
+      the lab bench where you prove it.
+  - code: PHYS 110
+    dir: PHYS-110
+    name: Mechanics
+    display: How Things Move
+    units: 4
+    thread: math-science
+    semester: 1
+    degrees: both
+    status: day1
+    catalog_register: Classical mechanics — kinematics, forces, energy, momentum, rotation; laboratory.
+    teaching_frame: The ocean and the board — forces on a rail, pumping a transition, bottom turns, lean angle. Lab on the sand and in the water.
+    outcomes: [judgment, craft]
+    artifact: A force analysis of a real maneuver — measured, diagrammed, defended.
+    description: >
+      Forces, energy, and momentum, learned where they actually live — on
+      the wave, the ramp, and the road. The lab is the beach; the problem
+      sets are things you can feel in your knees.
+  - code: PHYS 120
+    dir: PHYS-120
+    name: Waves, Energy & Fluids
+    display: Why Waves Break
+    units: 4
+    thread: math-science
+    semester: 2
+    degrees: both
+    status: syllabus
+    catalog_register: Wave mechanics, thermodynamics, and fluid dynamics; laboratory.
+    teaching_frame: Swell generation, refraction at Point Loma, why Black's breaks (bathymetric focusing); board hydrodynamics and fin theory; marine-layer thermodynamics.
+    outcomes: [judgment, craft]
+    artifact: A shaped board with design calculations, defended.
+    description: >
+      Why Black's breaks, why fins hold, why the marine layer burns off at
+      eleven — the physics of the place, ending in a board you shaped with
+      math you can show.
+  - code: MATH 210
+    dir: MATH-210
+    name: Linear Algebra
+    display: The Mathematics of Images
+    units: 4
+    thread: math-science
+    semester: 3
+    degrees: both
+    status: syllabus
+    catalog_register: Vector spaces, matrices, linear transformations, eigenvalues.
+    teaching_frame: Images and audio — every photograph, every mix session, every AI model is matrices. The secret on-ramp to machine learning.
+    outcomes: [judgment, intelligence]
+    artifact: An image or audio transformation built by hand from matrix operations — then found again inside a working model.
+    description: >
+      The mathematics every photograph, mix session, and neural network is
+      made of. By the end you can read a model's insides because you have
+      built the operations yourself.
+  - code: MATH 220
+    dir: MATH-220
+    name: Probability & Statistics
+    display: Forecasting & Games
+    units: 4
+    thread: math-science
+    semester: 4
+    degrees: both
+    status: syllabus
+    catalog_register: Probability theory, distributions, inference, regression.
+    teaching_frame: Forecasting and games — swell models, prediction markets, poker, A/B tests. The native mathematics of the AI age.
+    outcomes: [judgment, intelligence]
+    artifact: A forecast with skin in the game — made, tracked, and scored in public.
+    description: >
+      Uncertainty is the native condition of the AI age, and this is its
+      grammar: forecasts, bets, base rates, and the discipline of being
+      scored on what you predicted.
+
+  # ── Computation & Intelligent Systems ──────────────────────────────
+  - code: CS 110
+    dir: CS-110
+    name: Programming Fundamentals
+    display: Speaking to Machines
+    units: 4
+    thread: computation
+    semester: 1
+    degrees: both
+    status: day1
+    catalog_register: Introduction to programming — variables, control flow, functions, data, debugging.
+    teaching_frame: AI tools open, instrumented, and critiqued from day one. The skill is direction and verification.
+    outcomes: [intelligence, craft]
+    artifact: A small working program that does something you actually wanted done — written with AI in the loop and verified without it.
+    description: >
+      Code is the most literal language ever invented — the machine does
+      exactly what you say, which is how you find out what you actually
+      said. Taught AI-native from the first hour: the tools stay open, and
+      the skill graded is direction and verification.
+  - code: CS 120
+    dir: CS-120
+    name: Computational Thinking & Systems
+    display: How Machines Think
+    units: 4
+    thread: computation
+    semester: 2
+    degrees: both
+    status: syllabus
+    catalog_register: Computer organization and systems — logic gates, memory, processors, operating systems, networks.
+    teaching_frame: How machines actually work, from logic gates up.
+    outcomes: [intelligence, judgment]
+    artifact: A working computer built upward from gates — simulated or breadboarded — that runs a program you wrote.
+    description: >
+      No magic anywhere in the stack: from a transistor to a logic gate to
+      a processor to the page you are reading, every layer explained by
+      building it.
+  - code: CS 210
+    dir: CS-210
+    name: Data Structures & Algorithms
+    display: Making Things Fast
+    units: 4
+    thread: computation
+    semester: 3
+    degrees: both
+    status: syllabus
+    catalog_register: Data structures, algorithm design and analysis, complexity.
+    teaching_frame: The classic course, taught against real performance problems you can measure.
+    outcomes: [intelligence, judgment]
+    artifact: A measurably faster program — profiled, redesigned, and benchmarked, with the analysis to show why.
+    description: >
+      The difference between code that works and code that works at scale.
+      Structures and algorithms taught by making slow things fast and
+      proving why.
+  - code: CS 220
+    dir: CS-220
+    name: Machine Learning I
+    display: Teaching Machines
+    units: 4
+    thread: computation
+    semester: 4
+    degrees: both
+    status: syllabus
+    catalog_register: Foundations of machine learning — models, training, evaluation, limits.
+    teaching_frame: What a model is, how it trains, what it can and cannot know.
+    outcomes: [intelligence, judgment]
+    artifact: A model trained from scratch on data you gathered — with an honest evaluation of where it fails.
+    description: >
+      The machine that learned to finish your sentences is not a mystery —
+      it is matrices, gradients, and data. Build small models from scratch
+      so the big ones stop being magic.
+  - code: CS 310
+    dir: CS-310
+    name: Machine Learning II / AI Systems Engineering
+    display: Engineering Intelligence
+    units: 4
+    thread: depth
+    semester: 5
+    concentrations: [engineering]
+    status: syllabus
+    catalog_register: Applied machine learning systems — deployment, evaluation, agents, failure modes.
+    teaching_frame: Real systems in the world — what breaks, what lies, what scales.
+    outcomes: [intelligence, craft, judgment]
+    artifact: A deployed AI system with real users, an evaluation harness, and a documented failure analysis.
+    description: >
+      Models are easy; systems are hard. Deployment, evaluation, agents,
+      and failure modes — the engineering discipline of making machine
+      intelligence dependable.
+  - code: CS 320
+    dir: CS-320
+    name: Human-AI Collaboration as Craft
+    display: Working with Intelligence
+    units: 4
+    thread: computation
+    semester: 7
+    degrees: both
+    status: syllabus
+    catalog_register: Advanced practicum in human-AI collaboration — delegation, verification, evaluation, taste.
+    teaching_frame: The studied practice of working with machine intelligence — the craft the whole age runs on.
+    outcomes: [intelligence, judgment, craft]
+    artifact: A substantial work produced with AI as instrument — with a full account of what was delegated, what was verified, and why the judgment calls were yours.
+    description: >
+      By Year 4 you have used these tools everywhere; now the practice
+      itself becomes the subject. Delegation, verification, and taste —
+      studied, drilled, and graded.
+
+  # ── Rhetoric & Epistemics ──────────────────────────────────────────
+  - code: RHET 110
+    dir: RHET-110
+    name: Writing Seminar
+    display: Writing That Lands
+    units: 4
+    thread: rhetoric
+    semester: 3
+    degrees: both
+    status: syllabus
+    catalog_register: College writing — argument, evidence, structure, revision.
+    teaching_frame: Heavy output, line-edited. You write constantly; everything comes back marked.
+    outcomes: [articulation, judgment]
+    artifact: A portfolio of revised essays — first drafts and finals side by side, so the distance is visible.
+    description: >
+      Writing is thinking made auditable. Heavy output, line-edited, every
+      week — because clarity on the page is clarity in the head, and both
+      are trained the same way: by revision.
+  - code: RHET 210
+    dir: RHET-210
+    name: Epistemic Self-Defense
+    display: Knowing What's True
+    units: 4
+    thread: rhetoric
+    semester: 4
+    degrees: both
+    status: syllabus
+    catalog_register: Logic, statistical reasoning, cognitive bias, media literacy.
+    teaching_frame: Propaganda, information warfare, and the engineered feed — how to know what's true when the environment is adversarial.
+    outcomes: [judgment, intelligence]
+    artifact: A forensic teardown of a real piece of persuasion — its claims, techniques, and the truth of the matter, documented.
+    description: >
+      Your information environment is built by people who want things from
+      you. Logic, statistics, bias, and propaganda analysis — the martial
+      art of knowing what's true.
+
+  # ── Culture & Signal ───────────────────────────────────────────────
+  - code: SIG 101
+    dir: SIG-101
+    name: How Music Moves
+    units: 1
+    thread: signal
+    semester: 2
+    degrees: both
+    status: syllabus
+    catalog_register: The music industry and its technologies — recording, production, distribution, economics.
+    teaching_frame: How a song actually reaches the world — from the room it was recorded in to the algorithm that surfaced it.
+    outcomes: [breadth, craft]
+    artifact: A released track or a documented production breakdown of one.
+    description: >
+      Recording, production, labels and independence, streaming economics —
+      the full path a song travels from a room to your morning.
+  - code: SIG 201
+    dir: SIG-201
+    name: How Images Move
+    units: 1
+    thread: signal
+    semester: 4
+    degrees: both
+    status: syllabus
+    catalog_register: Visual media systems — cinema, short-form ecosystems, documentary, attention economics.
+    teaching_frame: Why some images travel and others die — craft, platforms, and the economics of attention.
+    outcomes: [breadth, judgment]
+    artifact: A short visual piece released into a real feed, with a written account of how it moved.
+    description: >
+      Cinema, short-form ecosystems, documentary craft, and the attention
+      economy that decides what gets seen.
+  - code: SIG 301
+    dir: SIG-301
+    name: How Scenes Form
+    units: 1
+    thread: signal
+    semester: 5
+    degrees: both
+    status: syllabus
+    catalog_register: Sociology of cultural movements — subcultures, scenes, and innovation diffusion.
+    teaching_frame: "Subcultures as R&D labs: punk, hip-hop, skate, surf, internet scenes — how small groups invent what everyone uses later."
+    outcomes: [breadth, judgment]
+    artifact: A field study of a living scene — documented from inside.
+    description: >
+      Every technology and art form you love was invented by a small scene
+      before it was an industry. How those rooms work, studied closely.
+  - code: SIG 401
+    dir: SIG-401
+    name: How to Build a Signal
+    units: 1
+    thread: signal
+    semester: 8
+    degrees: both
+    status: syllabus
+    catalog_register: Capstone in media practice — curation, distribution, audience.
+    teaching_frame: Taste, curation, distribution in the AI era. You ship a real cultural artifact to a real audience.
+    outcomes: [craft, articulation, judgment]
+    artifact: A real cultural artifact shipped to a real audience — with the numbers.
+    description: >
+      Four years of taking culture in; now you put something back out and
+      watch what the world does with it.
+
+  # ── The Workshop ───────────────────────────────────────────────────
+  - code: WKSP 101–402
+    dir: WKSP-101
+    name: The Workshop (Bottega)
+    units: 2 per semester
+    thread: workshop
+    semester: 1
+    degrees: both
+    status: day1
+    catalog_register: Project-based fabrication and design practicum, taken every semester (WKSP 101 through 402).
+    teaching_frame: A project team that ships — boards, amplifier and pedal electronics, motorcycle mechanics, camera rigs, drones and ocean sensors. External clients from Year 2; public exhibition every year.
+    outcomes: [craft, judgment]
+    artifact: The shipped project, exhibited publicly, every single semester.
+    description: >
+      The bottega — the room where mastery is transmitted through making.
+      Every semester, every student, on a project team that ships something
+      real. The materials rotate through the region's craft traditions; the
+      standard never does.
+
+  # ── Field Term & Capstone ──────────────────────────────────────────
+  - code: FLD 301
+    dir: FLD-301
+    name: Field Term
+    display: The Field Term
+    units: 4
+    thread: field-capstone
+    semester: 6
+    degrees: both
+    status: syllabus
+    catalog_register: Supervised field placement in a partner organization, with faculty advising.
+    teaching_frame: One full term embedded in an engineering firm, lab, studio, label, or venture — under a designated mentor, doing real work.
+    outcomes: [craft, judgment, articulation]
+    artifact: Mentor evaluation, portfolio of field work, and a written field report.
+    description: >
+      A full term inside a working organization. Not an internship to
+      decorate a résumé — a placement with a mentor, real responsibilities,
+      and a written account of what the work taught you.
+  - code: CAP 401–402
+    dir: CAP-401
+    name: Thesis / Venture Capstone
+    display: The Capstone
+    units: 4
+    thread: field-capstone
+    semester: 7
+    degrees: both
+    status: syllabus
+    catalog_register: Two-semester capstone — proposal, execution, and public defense of an original work.
+    teaching_frame: "Three accepted forms: a research thesis; an engineered system that works; a venture that exists — incorporated, with users. Defended publicly before faculty and outside examiners."
+    outcomes: [judgment, intelligence, craft, articulation, breadth]
+    artifact: The defended original work itself.
+    description: >
+      The whole degree converges here — one original work, a year in the
+      making, defended in public. A thesis, a system that runs, or a
+      venture that exists. The five outcomes, demonstrated at once.
+
+  # ── The Depths — Media studios ─────────────────────────────────────
+  - code: ART 310
+    dir: ART-310
+    name: Interactive Media & Interfaces
+    units: 4
+    thread: depth
+    semester: 5
+    concentrations: [media, design]
+    status: syllabus
+    catalog_register: Interactive systems design — interfaces, games, installations, human factors.
+    teaching_frame: The designed experience — what it feels like to use a thing, studied and built.
+    outcomes: [craft, intelligence, judgment]
+    artifact: An interactive piece with real users — playable, usable, observed.
+    description: >
+      Games, installations, interfaces — the art form where the audience
+      acts. Design, build, and watch real people use what you made.
+  - code: ART 320
+    dir: ART-320
+    name: Film & the Moving Image
+    units: 4
+    thread: depth
+    semester: 5
+    concentrations: [media]
+    status: syllabus
+    catalog_register: Film production — cinematography, editing, sound, narrative.
+    teaching_frame: Camera, edit, story. You ship a short film, start to finish.
+    outcomes: [craft, articulation, breadth]
+    artifact: A finished short film, screened.
+    description: >
+      The complete craft of the moving image — from the shot you planned to
+      the cut that finally works — ending in a short film with your name
+      on it, screened for an audience.
+  - code: ART 330
+    dir: ART-330
+    name: Music Production & Sound Design
+    units: 4
+    thread: depth
+    semester: 6
+    concentrations: [media]
+    status: syllabus
+    catalog_register: Audio production — recording, synthesis, mixing, sound design.
+    teaching_frame: The studio as instrument — every fader a decision, every mix an argument.
+    outcomes: [craft, judgment, breadth]
+    artifact: A produced and mixed piece of music or sound design, released or screened.
+    description: >
+      Recording, synthesis, mixing, and the design of sound itself — the
+      studio treated as the instrument it is, built on the Fourier you
+      already own from Calculus II.
+  - code: ART 410
+    dir: ART-410
+    name: Generative Media & Creative Code
+    units: 4
+    thread: depth
+    semester: 7
+    concentrations: [media, design]
+    status: syllabus
+    catalog_register: Computational art — procedural and generative methods, AI-assisted media.
+    teaching_frame: AI and procedure as artistic material — the newest medium, handled with taste.
+    outcomes: [craft, intelligence, judgment]
+    artifact: A generative work where the system is yours — the rules authored, the output curated, the taste defended.
+    description: >
+      The medium that did not exist ten years ago. Procedural systems and
+      machine intelligence as raw material — where the artist's job moves
+      up a level, to the rules and the taste.
+
+  # ── The Depths — Engineering studios ───────────────────────────────
+  - code: ENGR 310
+    dir: ENGR-310
+    name: Mechanical Design & Fabrication
+    display: Design & Fabrication
+    units: 4
+    thread: depth
+    semester: 5
+    concentrations: [design, engineering]
+    status: syllabus
+    catalog_register: Mechanical engineering design — CAD, materials, manufacturing processes, tolerance.
+    teaching_frame: CAD to shop floor; tolerance is a moral category.
+    outcomes: [craft, judgment]
+    artifact: A designed and fabricated mechanism that works — drawings, tolerances, and the physical thing.
+    description: >
+      From the sketch to the CAD model to the part in your hand — and the
+      discipline of tolerance, where honesty becomes measurable.
+  - code: ENGR 320
+    dir: ENGR-320
+    name: Embedded Systems & Sensors
+    display: Machines That Sense
+    units: 4
+    thread: depth
+    semester: 6
+    concentrations: [design, engineering]
+    status: syllabus
+    catalog_register: Embedded computing — microcontrollers, firmware, sensors, signal acquisition.
+    teaching_frame: Firmware, ocean sensors, instruments that survive saltwater.
+    outcomes: [craft, intelligence]
+    artifact: A working instrument deployed in the field — gathering real data in a hostile environment.
+    description: >
+      Computers that live in things — and in this curriculum, things that
+      live in saltwater. Firmware, sensors, and the engineering humility
+      the ocean teaches.
+  - code: ENGR 410
+    dir: ENGR-410
+    name: Robotics & Autonomous Systems
+    display: Robots in the World
+    units: 4
+    thread: depth
+    semester: 7
+    concentrations: [engineering]
+    status: syllabus
+    catalog_register: Robotics — perception, control, planning, autonomy.
+    teaching_frame: Perception, control, autonomy in the physical world — where the demo meets the parking lot.
+    outcomes: [intelligence, craft, judgment]
+    artifact: An autonomous system demonstrated live, in the world, doing its job.
+    description: >
+      Everything converges: mechanics, embedded systems, machine learning,
+      and the unforgiving physical world. The machine has to work in the
+      parking lot, not the slide deck.

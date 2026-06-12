@@ -22,7 +22,7 @@ identity:
   layers:
     - { layer: 1, name: Perspectives, what: "short free standalone lessons — open to everyone, no state approval needed, begins now" }
     - { layer: 2, name: Intensives,   what: "short paid non-degree programs — the bridge; Project One lives here" }
-    - { layer: 3, name: The Degree,   what: "four-year Bachelor of Science in Technology — the core, when authorized" }
+    - { layer: 3, name: The Degree,   what: "four-year Bachelor of Arts in Technology — one degree, a concentration declared end of Year 2 — the core, when authorized" }
   tagline: "Technology, art, craft, science, and philosophy — one discipline."
   positioning:
     precedents: [Deep Springs, Olin College, Scripps Institution of Oceanography]
