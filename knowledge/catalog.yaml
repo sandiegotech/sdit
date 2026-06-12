@@ -477,6 +477,7 @@ courses:
   - code: WKSP 101–402
     dir: WKSP-101
     name: The Workshop (Bottega)
+    display: The Workshop
     units: 2 per semester
     thread: workshop
     semester: 1

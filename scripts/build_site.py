@@ -423,6 +423,10 @@ def main(argv: list[str] | None = None) -> int:
         OUT.mkdir(parents=True, exist_ok=True)
     write_assets()
 
+    # The schedule and course day lists pull from the course day files.
+    import sync_courses
+    sync_courses.main()
+
     knowledge_entries = render_knowledge(ROOT / "knowledge", OUT / "knowledge")
     institute_entries = render_markdown_tree(ROOT / "institute", OUT / "institute")
     courses_entries = render_markdown_tree(ROOT / "courses", OUT / "courses")
