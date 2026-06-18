@@ -35,13 +35,6 @@
   function courseOf(p) { var m = (p || "").match(/\/courses\/([A-Z]+-\d+)\//); return m ? m[1] : null; }
   function dayOf(p) { var m = (p || "").match(/\/day-(\d{2})(?:\.html)?$/); return m ? parseInt(m[1], 10) : null; }
 
-  function localLastCourse() {
-    try {
-      var last = JSON.parse(localStorage.getItem("sdit:resume:last") || "null");
-      return last && last.path ? courseOf(last.path) : null;
-    } catch (e) { return null; }
-  }
-
   // Pick the current course and which of its days are done.
   function resolveState(progressLessons) {
     var here = location.pathname.match(LESSON_RE);
@@ -63,7 +56,7 @@
       });
     });
 
-    var courseId = onLessonCourse || recentCourse || localLastCourse();
+    var courseId = onLessonCourse || recentCourse;
     var completed = (courseId && byCourse[courseId])
       ? Object.keys(byCourse[courseId]).map(Number)
       : [];
