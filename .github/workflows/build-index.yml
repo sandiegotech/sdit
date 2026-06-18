@@ -31,7 +31,6 @@ jobs:
       - name: Build site
         run: |
           python3 scripts/build_site.py --out .
-          python3 scripts/generate_programs_tree.py
       - name: Commit built files
         run: |
           git config user.name 'github-actions[bot]'
