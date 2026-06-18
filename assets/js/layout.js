@@ -279,6 +279,15 @@
 
   /* ── Course day pages (/courses/CODE/day-NN.html) ─────────── */
 
+  var _catalogPromise = null;
+  function fetchCatalog() {
+    if (_catalogPromise) return _catalogPromise;
+    _catalogPromise = fetch(resolveSitePath("/assets/catalog.json"))
+      .then(function (r) { return r.ok ? r.json() : { courses: {} }; })
+      .catch(function () { return { courses: {} }; });
+    return _catalogPromise;
+  }
+
   function enhanceCourseLessonPage(path) {
     var courseId  = (path.match(/\/courses\/([A-Z]+-\d+)\//) || [])[1];
     var dayNumber = parseInt((path.match(/\/day-(\d{2})(?:\.html)?$/) || [])[1] || "0", 10);
@@ -289,65 +298,87 @@
     var main = document.querySelector("main");
     if (!main) return;
 
-    // Wrap content into lesson shell
+    // Wrap content into the lesson shell
     var nodesToMove = Array.from(main.childNodes);
     var shell   = createElement("div", "lesson-shell");
     var article = createElement("article", "lesson-content");
     var sidebar = createElement("aside", "lesson-sidebar");
-    nodesToMove.forEach(function(n) { article.appendChild(n); });
+    nodesToMove.forEach(function (n) { article.appendChild(n); });
     main.innerHTML = "";
     shell.appendChild(article);
     shell.appendChild(sidebar);
     main.appendChild(shell);
 
-    // ── Topbar ────────────────────────────────────────────────
+    wrapLessonSections(article);
+    enhanceResourceLinks(article);
+
+    // The topbar and rail are driven by the catalog, so they only ever point
+    // at days that actually exist — no broken links to unpublished days.
+    fetchCatalog().then(function (catalog) {
+      buildLessonChrome(article, sidebar, catalog, courseId, dayNumber);
+    });
+  }
+
+  function buildLessonChrome(article, sidebar, catalog, courseId, dayNumber) {
+    var course  = (catalog.courses || {})[courseId] || {};
+    var days    = course.days || [];                 // published: [{n, path, title}]
+    var planned = course.plannedDays || (days.length || 1);
+    var pub = {};
+    days.forEach(function (d) { pub[d.n] = d; });
+    var lastN = Math.max(planned, days.length ? days[days.length - 1].n : 0);
+
+    function dayHref(n) { return resolveSitePath("/courses/" + courseId + "/day-" + pad(n) + ".html"); }
+    function overviewHref() { return resolveSitePath("/courses/" + courseId + "/"); }
+
+    // Nearest published neighbours (skip any gaps)
+    var prevN = null, nextN = null;
+    for (var p = dayNumber - 1; p >= 1; p--) { if (pub[p]) { prevN = p; break; } }
+    for (var x = dayNumber + 1; x <= lastN; x++) { if (pub[x]) { nextN = x; break; } }
+
+    // ── Topbar ──
     var topbar = createElement("div", "lesson-topbar");
-    var posLabel = createElement("span", "lesson-pos",
-      courseId + " · Day " + dayNumber + " of 15"
-    );
-
+    topbar.appendChild(createElement("span", "lesson-pos",
+      courseId + " · Day " + dayNumber + " of " + planned));
     var topNav = createElement("div", "lesson-nav");
-    if (dayNumber > 1) {
-      var p = createElement("a", "", "← Day " + (dayNumber - 1));
-      p.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(dayNumber - 1) + ".html");
-      topNav.appendChild(p);
+    if (prevN) {
+      var pa = createElement("a", "", "← Day " + prevN);
+      pa.href = dayHref(prevN);
+      topNav.appendChild(pa);
     }
-    var cLink = createElement("a", "", courseId);
-    cLink.href = resolveSitePath("/courses/" + courseId + "/");
+    var cLink = createElement("a", "", "Overview");
+    cLink.href = overviewHref();
     topNav.appendChild(cLink);
-    if (dayNumber < 15) {
-      var nx = createElement("a", "", "Day " + (dayNumber + 1) + " →");
-      nx.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(dayNumber + 1) + ".html");
-      topNav.appendChild(nx);
+    if (nextN) {
+      var na = createElement("a", "", "Day " + nextN + " →");
+      na.href = dayHref(nextN);
+      topNav.appendChild(na);
     }
-    topbar.appendChild(posLabel);
     topbar.appendChild(topNav);
-    if (!article.querySelector(".lesson-topbar")) {
-      article.insertBefore(topbar, article.firstChild);
-    }
+    article.insertBefore(topbar, article.firstChild);
 
-    // ── Sidebar rail ──────────────────────────────────────────
-    var rail  = createElement("section", "day-rail");
+    // ── Day rail: published days are links; planned-but-unpublished are locked ──
+    var rail = createElement("section", "day-rail");
     rail.appendChild(createElement("p", "day-rail-label", courseId));
-
     var railGrid = createElement("div", "day-rail-grid");
-    for (var i = 1; i <= 15; i++) {
-      var a = createElement("a", i === dayNumber ? "is-current" : "", String(i));
-      a.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(i) + ".html");
-      a.setAttribute("aria-label", "Day " + i);
-      railGrid.appendChild(a);
+    for (var i = 1; i <= lastN; i++) {
+      if (pub[i]) {
+        var a = createElement("a", i === dayNumber ? "is-current" : "", String(i));
+        a.href = dayHref(i);
+        a.setAttribute("aria-label", "Day " + i + (pub[i].title ? " — " + pub[i].title : ""));
+        railGrid.appendChild(a);
+      } else {
+        var s = createElement("span", "is-locked", String(i));
+        s.setAttribute("aria-label", "Day " + i + " — coming soon");
+        railGrid.appendChild(s);
+      }
     }
     rail.appendChild(railGrid);
-
     var railLinks = createElement("div", "lesson-nav");
     var overviewLink = createElement("a", "", "Course overview");
-    overviewLink.href = resolveSitePath("/courses/" + courseId + "/");
+    overviewLink.href = overviewHref();
     railLinks.appendChild(overviewLink);
     rail.appendChild(railLinks);
     sidebar.appendChild(rail);
-
-    wrapLessonSections(article);
-    enhanceResourceLinks(article);
   }
 
   function enhanceLessonPage() {

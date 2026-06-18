@@ -238,10 +238,15 @@
     if (!A || !A.configured() || !A.isSignedIn()) return;
     waitForMasthead(function () {
       personalizeNav();
+      // On a lesson day page the lesson topbar already shows course + progress,
+      // so the strip would be redundant — skip it there.
+      var onLessonPage = /\/courses\/[A-Z]+-\d+\/day-\d{2}/.test(location.pathname);
       Promise.all([loadCatalog(), A.progress()]).then(function (res) {
         try {
-          var state = resolveState(res[1]);
-          render(res[0], state.courseId, state.completedDays);
+          if (!onLessonPage) {
+            var state = resolveState(res[1]);
+            render(res[0], state.courseId, state.completedDays);
+          }
           renderHomeDashboard(res[0], res[1]);
         } catch (e) { /* never blank the page on a rendering error */ }
       });

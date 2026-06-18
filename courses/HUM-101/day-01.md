@@ -9,8 +9,6 @@ course: HUM 101 — The Ancient World
 
 Ten minutes. One painted cup, eight lines of poetry, one question.
 
----
-
 ## Look
 
 <figure class="day-figure">
@@ -28,8 +26,6 @@ Here is how the whole poem opens — the oldest "previously on..." in Western li
 
 *Ingenious* — that's the whole course in one word. Homer's hero isn't the strongest man in the story. He's the best problem-solver.
 
----
-
 ## Carry the question
 
 For the rest of today, carry this one:
@@ -39,8 +35,6 @@ For the rest of today, carry this one:
 No right answer, no writing required.
 
 That's it. **Day 1 is done.**
-
----
 
 ## If you're still curious
 
