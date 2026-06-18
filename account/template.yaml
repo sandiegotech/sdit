@@ -1,0 +1,84 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SDIT account service — the Card. Passwordless sign-in (email code) and
+  cloud sync of student work. One DynamoDB table, one Lambda, one HTTP API.
+
+Parameters:
+  SessionSecret:
+    Type: String
+    NoEcho: true
+    Description: HMAC secret for signing session tokens. Generate with `openssl rand -hex 32`.
+  MailFrom:
+    Type: String
+    Default: ''
+    Description: >
+      SES-verified From address for sign-in code emails (e.g. no-reply@sandiegotech.org).
+      Leave blank to log codes to CloudWatch instead of sending email (useful before SES is set up).
+  AllowOrigin:
+    Type: String
+    Default: 'https://learn.sandiegotech.org,http://localhost:3001'
+    Description: Comma-separated browser origins allowed to call the API (CORS).
+
+Globals:
+  Function:
+    Runtime: nodejs20.x
+    Timeout: 10
+    MemorySize: 256
+    Architectures: [arm64]
+
+Resources:
+  AccountTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: sdit-account
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+        - AttributeName: sk
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+        - AttributeName: sk
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+
+  # CORS is handled in the function (see src/lib/http.mjs) against the
+  # ALLOW_ORIGIN allow-list, so the API itself needs no CORS config.
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+
+  AccountFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: index.handler
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref AccountTable
+          SESSION_SECRET: !Ref SessionSecret
+          MAIL_FROM: !Ref MailFrom
+          ALLOW_ORIGIN: !Ref AllowOrigin
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref AccountTable
+        - Statement:
+            - Effect: Allow
+              Action: ['ses:SendEmail']
+              Resource: '*'
+      Events:
+        Any:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /{proxy+}
+            Method: ANY
+
+Outputs:
+  ApiUrl:
+    Description: Base URL for the account API. Set this as window.SDIT_ACCOUNT_API in partials/header.html.
+    Value: !GetAtt HttpApi.ApiEndpoint

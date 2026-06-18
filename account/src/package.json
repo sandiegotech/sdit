@@ -1,0 +1,8 @@
+{
+  "name": "sdit-account",
+  "version": "0.1.0",
+  "description": "SDIT account service — passwordless sign-in and work sync",
+  "type": "module",
+  "private": true,
+  "license": "MIT"
+}

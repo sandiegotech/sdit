@@ -7,9 +7,16 @@
       <a data-nav="courses" href="/courses/index.html">Courses</a>
       <a data-nav="schedule" href="/curriculum/schedule.html">Schedule</a>
       <a id="masthead-resume" class="toc-resume" href="#" hidden></a>
+      <span id="sdit-account" class="masthead-account"></span>
     </nav>
   </div>
 </header>
+<script>
+  // The SDIT Card. Set this to the account service's ApiUrl (see account/README.md)
+  // to switch on sign-in + cloud sync. Left blank, the site runs on localStorage
+  // alone and no sign-in UI appears.
+  window.SDIT_ACCOUNT_API = window.SDIT_ACCOUNT_API || "https://2yuxbioi45.execute-api.us-west-2.amazonaws.com";
+</script>
 <script>
   (function () {
     var btn = document.querySelector('.masthead .hamburger');
@@ -23,5 +30,6 @@
   })();
 </script>
 <script src="/assets/js/layout.js" defer></script>
+<script src="/assets/js/account.js" defer></script>
 <script src="/assets/js/student-work.js" defer></script>
 <script src="/assets/js/resume.js" defer></script>

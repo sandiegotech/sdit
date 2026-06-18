@@ -1665,3 +1665,89 @@ a.door .door-kicker, a.door .door-title, a.door .door-desc { display: block; }
   line-height: 1.4;
 }
 
+
+/* ── The Card: header chip + sign-in dialog ──────────────────────────────── */
+.masthead-account { display: inline-flex; align-items: center; margin-left: 0.85rem; }
+.account-link {
+  font: inherit;
+  font-size: 0.72rem;
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.85;
+}
+.account-link:hover { opacity: 1; }
+.account-chip { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; }
+.account-role {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+}
+.account-chip .account-link { border-color: transparent; text-decoration: underline; padding: 0.2rem 0.2rem; }
+
+.account-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+.account-overlay[hidden] { display: none; }
+.account-panel {
+  position: relative;
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 26rem;
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.account-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted, #888);
+}
+.account-title { margin: 0 0 0.3rem; font-size: 1.15rem; }
+.account-sub { margin: 0 0 1.2rem; color: var(--muted, #666); font-size: 0.85rem; }
+.account-form { display: block; }
+.account-label { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted, #777); margin-bottom: 0.35rem; }
+.account-input {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.account-step[hidden] { display: none; }
+.account-msg { min-height: 1.1rem; margin: 0.6rem 0 0; font-size: 0.8rem; color: #b3261e; }
+.account-submit {
+  margin-top: 1rem;
+  width: 100%;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.65rem;
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+}
+.account-submit:disabled { opacity: 0.55; cursor: default; }
+

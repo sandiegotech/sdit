@@ -37,6 +37,10 @@
     return "sdit:" + lessonPath() + "::" + heading;
   }
 
+  function signedInToAccount() {
+    return !!(window.SDITAccount && window.SDITAccount.isSignedIn());
+  }
+
   function debounce(fn, delay) {
     var t;
     return function () {
@@ -140,7 +144,12 @@
     var debouncedSave = debounce(function () {
       var val = ta.value;
       localStorage.setItem(key, val);
-      if (isLocalhost()) {
+      if (signedInToAccount()) {
+        setStatus(status, "saving");
+        window.SDITAccount.saveWork(lessonPath(), heading, val).then(function (okSaved) {
+          setStatus(status, okSaved ? "saved" : "local");
+        });
+      } else if (isLocalhost()) {
         saveToServer(heading, val, status);
       } else {
         setStatus(status, "local");
@@ -182,7 +191,10 @@
   // ── Init ───────────────────────────────────────────────────────────────────
 
   function init() {
-    if (isLocalhost()) {
+    if (signedInToAccount()) {
+      // Signed in: responses live in the account and follow you across devices.
+      window.SDITAccount.loadWork(lessonPath()).then(enhance);
+    } else if (isLocalhost()) {
       loadFromServer(enhance);
     } else {
       enhance({});
