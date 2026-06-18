@@ -1867,3 +1867,56 @@ a.door .door-kicker, a.door .door-title, a.door .door-desc { display: block; }
 .my-browse { margin: 1.75rem 0 0; }
 .my-browse a { font-size: 0.85rem; }
 
+/* homepage: the three ways in (Visitor / Student / The Daily) */
+.ways { margin: 2.5rem 0 0; }
+.ways-head { font-size: 1.5rem; margin: 0 0 1.4rem; }
+.ways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+.way {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  background: var(--color-background-primary, #fff);
+}
+.way--feature { border-color: #8a6d1f; box-shadow: inset 0 2px 0 #8a6d1f; }
+.way-kicker {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted, #8a8a82);
+  margin: 0 0 0.4rem;
+}
+.way-title { font-size: 1.25rem; margin: 0 0 0.6rem; }
+.way-desc { font-size: 0.92rem; line-height: 1.5; margin: 0 0 1.2rem; flex: 1; }
+.way-cta {
+  align-self: flex-start;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.way-cta:hover { opacity: 0.9; }
+.way-subscribe { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.way-input {
+  flex: 1;
+  min-width: 9rem;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+.way-msg { flex-basis: 100%; min-height: 1rem; font-size: 0.78rem; color: var(--muted, #777); }
+.start-explore { margin: 2.5rem 0 0; font-size: 0.95rem; line-height: 1.6; }
+

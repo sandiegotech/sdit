@@ -76,6 +76,7 @@
       return request("/subscribe", { method: "POST", body: { email: email } });
     },
     signOut: function () { setToken(null); setProfile(null); },
+    openSignIn: function () { openDialog(); },
 
     progress: function () {
       if (!this.isSignedIn()) return Promise.resolve([]);
@@ -219,11 +220,42 @@
     if (dialog) dialog.overlay.hidden = true;
   }
 
+  // ── Homepage engagement controls ───────────────────────────────────────────
+  // [data-sdit-signin] → open the Visitor sign-in dialog.
+  // [data-sdit-subscribe] (a <form> with an email input) → join The Daily.
+
+  function wireEngagement() {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-sdit-signin]"), function (b) {
+      if (b._sditWired) return;
+      b._sditWired = true;
+      b.addEventListener("click", function (e) { e.preventDefault(); openDialog(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-sdit-subscribe]"), function (form) {
+      if (form._sditWired) return;
+      form._sditWired = true;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var input = form.querySelector('input[type="email"]');
+        var msg = form.querySelector(".way-msg");
+        var email = ((input && input.value) || "").trim();
+        if (!email) return;
+        if (msg) msg.textContent = "Adding you…";
+        Account.subscribe(email).then(function () {
+          if (msg) msg.textContent = "You're on the list. Watch your inbox.";
+          if (input) input.value = "";
+        }).catch(function () {
+          if (msg) msg.textContent = "That didn't go through — try again.";
+        });
+      });
+    });
+  }
+
   // ── Init ─────────────────────────────────────────────────────────────────────
 
   function init() {
     render();
     refreshProfile();
+    wireEngagement();
   }
 
   window.SDITAccount = Account;
