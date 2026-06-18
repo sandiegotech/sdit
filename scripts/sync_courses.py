@@ -19,10 +19,10 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from catalog import TOTAL_DAYS, load_catalog, day_info
+
 ROOT = Path(__file__).resolve().parents[1]
-CATALOG = ROOT / "knowledge" / "catalog.yaml"
 SCHEDULE = ROOT / "curriculum" / "schedule.html"
-TOTAL_DAYS = 15
 
 # Monday-to-Friday rhythm for the shared Foundation semesters:
 # books, mathematics, science, computation, the Workshop.
@@ -31,42 +31,6 @@ WEEKDAY_ORDER = {
     2: ["HUM", "MATH", "PHYS", "CS", "SIG", "WKSP"],
 }
 WEEKDAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-
-
-def load_catalog():
-    import yaml
-    return yaml.safe_load(CATALOG.read_text(encoding="utf-8"))
-
-
-def parse_front_matter(text: str):
-    m = re.match(r"^---\n(.*?)\n---\n(.*)$", text, re.S)
-    if not m:
-        return {}, text
-    meta = {}
-    for line in m.group(1).splitlines():
-        if ":" in line:
-            k, v = line.split(":", 1)
-            meta[k.strip()] = v.strip().strip('"')
-    return meta, m.group(2)
-
-
-def day_info(course_dir: Path, n: int):
-    """Return (title, dek) for day n, or None if the file doesn't exist."""
-    f = course_dir / f"day-{n:02d}.md"
-    if not f.exists():
-        return None
-    meta, body = parse_front_matter(f.read_text(encoding="utf-8"))
-    title = meta.get("title", f"Day {n:02d}")
-    title = re.sub(r"^Day\s+\d+\s*[—–-]\s*", "", title).strip()
-    # Dek = first non-empty body line after the H1
-    dek = ""
-    for line in body.splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or line.startswith("---"):
-            continue
-        dek = line
-        break
-    return title, dek
 
 
 def sync_course_days() -> int:

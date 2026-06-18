@@ -108,31 +108,11 @@ def asset_rel(from_path: Path) -> str:
 
 
 def strip_front_matter(text: str) -> tuple[str, dict]:
-    """Remove simple YAML front matter delimited by '---' lines."""
-    if not text.startswith("---\n"):
-        return text, {}
-    end = text.find("\n---\n", 4)
-    if end == -1:
-        return text, {}
-    fm = text[4:end]
-    body = text[end + 5 :]
-    try:
-        import yaml  # type: ignore
+    """Remove YAML front matter; returns (body, meta). See scripts/frontmatter.py."""
+    import frontmatter
 
-        data = yaml.safe_load(fm) or {}
-        if isinstance(data, dict):
-            return body.lstrip(), data
-    except Exception:
-        pass
-
-    meta: dict[str, str] = {}
-    for line in fm.splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or ":" not in line:
-            continue
-        key, val = line.split(":", 1)
-        meta[key.strip()] = val.strip().strip('"')
-    return body.lstrip(), meta
+    meta, body = frontmatter.parse(text)
+    return body, meta
 
 
 def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:

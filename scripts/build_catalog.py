@@ -13,14 +13,13 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import sync_courses  # same scripts/ directory
+from catalog import TOTAL_DAYS, load_catalog, day_info
 
 ROOT = Path(__file__).resolve().parents[1]
-TOTAL_DAYS = sync_courses.TOTAL_DAYS
 
 
 def build_catalog() -> dict:
-    catalog = sync_courses.load_catalog()
+    catalog = load_catalog()
     courses = {}
     for c in catalog.get("courses", []):
         dir_name = c.get("dir")
@@ -31,7 +30,7 @@ def build_catalog() -> dict:
             continue
         days = []
         for n in range(1, TOTAL_DAYS + 1):
-            info = sync_courses.day_info(course_dir, n)
+            info = day_info(course_dir, n)
             if not info:
                 continue
             title, _dek = info
