@@ -427,6 +427,10 @@ def main(argv: list[str] | None = None) -> int:
     import sync_courses
     sync_courses.main()
 
+    # Browser-fetchable course index for the signed-in course-mode header.
+    import build_catalog
+    build_catalog.main(ASSETS)
+
     knowledge_entries = render_knowledge(ROOT / "knowledge", OUT / "knowledge")
     institute_entries = render_markdown_tree(ROOT / "institute", OUT / "institute")
     courses_entries = render_markdown_tree(ROOT / "courses", OUT / "courses")

@@ -42,6 +42,7 @@ function route(method, path, event) {
   if (method === 'POST' && path === '/auth/request') return authRequest(event);
   if (method === 'POST' && path === '/auth/verify') return authVerify(event);
   if (method === 'GET' && path === '/me') return me(event);
+  if (method === 'GET' && path === '/progress') return getProgress(event);
   if (method === 'GET' && path === '/work') return getWork(event);
   if (method === 'PUT' && path === '/work') return putWork(event);
   return notFound();
@@ -93,6 +94,12 @@ async function me(event) {
   const profile = await db.getProfile(session.sub);
   if (!profile) return unauthorized();
   return ok({ profile: publicProfile(profile) });
+}
+
+async function getProgress(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  return ok({ lessons: await db.listProgress(session.sub) });
 }
 
 async function getWork(event) {

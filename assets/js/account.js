@@ -73,6 +73,13 @@
     },
     signOut: function () { setToken(null); setProfile(null); },
 
+    progress: function () {
+      if (!this.isSignedIn()) return Promise.resolve([]);
+      return request("/progress")
+        .then(function (d) { return d.lessons || []; })
+        .catch(function () { return []; });
+    },
+
     loadWork: function (lesson) {
       if (!this.isSignedIn()) return Promise.resolve({});
       return request("/work?lesson=" + encodeURIComponent(lesson))

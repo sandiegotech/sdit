@@ -145,3 +145,24 @@ export async function loadWork(email, lesson) {
   for (const item of r.Items || []) responses[item.heading] = item.content;
   return responses;
 }
+
+/**
+ * Progress across all lessons: the distinct lessons the user has saved work in,
+ * each with the most recent update. Powers the signed-in course-mode header.
+ */
+export async function listProgress(email) {
+  const r = await doc.send(new QueryCommand({
+    TableName: TABLE,
+    KeyConditionExpression: 'pk = :p AND begins_with(sk, :s)',
+    ExpressionAttributeValues: { ':p': userPk(email), ':s': 'WORK#' },
+    ProjectionExpression: 'lesson, updatedAt',
+  }));
+  const latest = {};
+  for (const item of r.Items || []) {
+    if (!item.lesson) continue;
+    if (!latest[item.lesson] || item.updatedAt > latest[item.lesson]) {
+      latest[item.lesson] = item.updatedAt;
+    }
+  }
+  return Object.keys(latest).map((lesson) => ({ lesson, updatedAt: latest[lesson] }));
+}

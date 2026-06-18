@@ -1,0 +1,322 @@
+{
+  "courses": {
+    "HUM-101": {
+      "code": "HUM 101",
+      "name": "The Ancient World",
+      "thread": "canon",
+      "semester": 1,
+      "plannedDays": 15,
+      "days": [
+        {
+          "n": 1,
+          "path": "/courses/HUM-101/day-01",
+          "title": "The Oldest Story Is About You"
+        }
+      ]
+    },
+    "HUM-102": {
+      "code": "HUM 102",
+      "name": "Rome to the Renaissance",
+      "thread": "canon",
+      "semester": 2,
+      "plannedDays": 15,
+      "days": []
+    },
+    "HUM-201": {
+      "code": "HUM 201",
+      "name": "The Enlightenment",
+      "thread": "canon",
+      "semester": 3,
+      "plannedDays": 15,
+      "days": []
+    },
+    "HUM-202": {
+      "code": "HUM 202",
+      "name": "The Industrial Mind",
+      "thread": "canon",
+      "semester": 4,
+      "plannedDays": 15,
+      "days": []
+    },
+    "HUM-301": {
+      "code": "HUM 301",
+      "name": "The Age of Intelligence",
+      "thread": "canon",
+      "semester": 5,
+      "plannedDays": 15,
+      "days": []
+    },
+    "HUM-302": {
+      "code": "HUM 302",
+      "name": "Ethics & Statecraft",
+      "thread": "canon",
+      "semester": 6,
+      "plannedDays": 15,
+      "days": []
+    },
+    "HUM-401": {
+      "code": "HUM 401",
+      "name": "The California Canon",
+      "thread": "canon",
+      "semester": 7,
+      "plannedDays": 15,
+      "days": []
+    },
+    "HUM-402": {
+      "code": "HUM 402",
+      "name": "The Long View",
+      "thread": "canon",
+      "semester": 8,
+      "plannedDays": 15,
+      "days": []
+    },
+    "MATH-110": {
+      "code": "MATH 110",
+      "name": "The Mathematics of Motion",
+      "thread": "math-science",
+      "semester": 1,
+      "plannedDays": 15,
+      "days": [
+        {
+          "n": 1,
+          "path": "/courses/MATH-110/day-01",
+          "title": "Zoom In Until It's Straight"
+        }
+      ]
+    },
+    "MATH-120": {
+      "code": "MATH 120",
+      "name": "The Mathematics of Sound",
+      "thread": "math-science",
+      "semester": 2,
+      "plannedDays": 15,
+      "days": []
+    },
+    "PHYS-110": {
+      "code": "PHYS 110",
+      "name": "How Things Move",
+      "thread": "math-science",
+      "semester": 1,
+      "plannedDays": 15,
+      "days": [
+        {
+          "n": 1,
+          "path": "/courses/PHYS-110/day-01",
+          "title": "The Wave Is a Lecture"
+        }
+      ]
+    },
+    "PHYS-120": {
+      "code": "PHYS 120",
+      "name": "Why Waves Break",
+      "thread": "math-science",
+      "semester": 2,
+      "plannedDays": 15,
+      "days": []
+    },
+    "MATH-210": {
+      "code": "MATH 210",
+      "name": "The Mathematics of Images",
+      "thread": "math-science",
+      "semester": 3,
+      "plannedDays": 15,
+      "days": []
+    },
+    "MATH-220": {
+      "code": "MATH 220",
+      "name": "Forecasting & Games",
+      "thread": "math-science",
+      "semester": 4,
+      "plannedDays": 15,
+      "days": []
+    },
+    "CS-110": {
+      "code": "CS 110",
+      "name": "Speaking to Machines",
+      "thread": "computation",
+      "semester": 1,
+      "plannedDays": 15,
+      "days": [
+        {
+          "n": 1,
+          "path": "/courses/CS-110/day-01",
+          "title": "The Very Fast, Very Literal Apprentice"
+        }
+      ]
+    },
+    "CS-120": {
+      "code": "CS 120",
+      "name": "How Machines Think",
+      "thread": "computation",
+      "semester": 2,
+      "plannedDays": 15,
+      "days": []
+    },
+    "CS-210": {
+      "code": "CS 210",
+      "name": "Making Things Fast",
+      "thread": "computation",
+      "semester": 3,
+      "plannedDays": 15,
+      "days": []
+    },
+    "CS-220": {
+      "code": "CS 220",
+      "name": "Teaching Machines",
+      "thread": "computation",
+      "semester": 4,
+      "plannedDays": 15,
+      "days": []
+    },
+    "CS-310": {
+      "code": "CS 310",
+      "name": "Engineering Intelligence",
+      "thread": "depth",
+      "semester": 5,
+      "plannedDays": 15,
+      "days": []
+    },
+    "CS-320": {
+      "code": "CS 320",
+      "name": "Working with Intelligence",
+      "thread": "computation",
+      "semester": 7,
+      "plannedDays": 15,
+      "days": []
+    },
+    "RHET-110": {
+      "code": "RHET 110",
+      "name": "Writing That Lands",
+      "thread": "rhetoric",
+      "semester": 3,
+      "plannedDays": 15,
+      "days": []
+    },
+    "RHET-210": {
+      "code": "RHET 210",
+      "name": "Knowing What's True",
+      "thread": "rhetoric",
+      "semester": 4,
+      "plannedDays": 15,
+      "days": []
+    },
+    "SIG-101": {
+      "code": "SIG 101",
+      "name": "How Music Moves",
+      "thread": "signal",
+      "semester": 2,
+      "plannedDays": 15,
+      "days": []
+    },
+    "SIG-201": {
+      "code": "SIG 201",
+      "name": "How Images Move",
+      "thread": "signal",
+      "semester": 4,
+      "plannedDays": 15,
+      "days": []
+    },
+    "SIG-301": {
+      "code": "SIG 301",
+      "name": "How Scenes Form",
+      "thread": "signal",
+      "semester": 5,
+      "plannedDays": 15,
+      "days": []
+    },
+    "SIG-401": {
+      "code": "SIG 401",
+      "name": "How to Build a Signal",
+      "thread": "signal",
+      "semester": 8,
+      "plannedDays": 15,
+      "days": []
+    },
+    "WKSP-101": {
+      "code": "WKSP 101\u2013402",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 1,
+      "plannedDays": 15,
+      "days": [
+        {
+          "n": 1,
+          "path": "/courses/WKSP-101/day-01",
+          "title": "Make Anything"
+        }
+      ]
+    },
+    "FLD-301": {
+      "code": "FLD 301",
+      "name": "The Field Term",
+      "thread": "field-capstone",
+      "semester": 6,
+      "plannedDays": 15,
+      "days": []
+    },
+    "CAP-401": {
+      "code": "CAP 401\u2013402",
+      "name": "The Capstone",
+      "thread": "field-capstone",
+      "semester": 7,
+      "plannedDays": 15,
+      "days": []
+    },
+    "ART-310": {
+      "code": "ART 310",
+      "name": "Interactive Media & Interfaces",
+      "thread": "depth",
+      "semester": 5,
+      "plannedDays": 15,
+      "days": []
+    },
+    "ART-320": {
+      "code": "ART 320",
+      "name": "Film & the Moving Image",
+      "thread": "depth",
+      "semester": 5,
+      "plannedDays": 15,
+      "days": []
+    },
+    "ART-330": {
+      "code": "ART 330",
+      "name": "Music Production & Sound Design",
+      "thread": "depth",
+      "semester": 6,
+      "plannedDays": 15,
+      "days": []
+    },
+    "ART-410": {
+      "code": "ART 410",
+      "name": "Generative Media & Creative Code",
+      "thread": "depth",
+      "semester": 7,
+      "plannedDays": 15,
+      "days": []
+    },
+    "ENGR-310": {
+      "code": "ENGR 310",
+      "name": "Design & Fabrication",
+      "thread": "depth",
+      "semester": 5,
+      "plannedDays": 15,
+      "days": []
+    },
+    "ENGR-320": {
+      "code": "ENGR 320",
+      "name": "Machines That Sense",
+      "thread": "depth",
+      "semester": 6,
+      "plannedDays": 15,
+      "days": []
+    },
+    "ENGR-410": {
+      "code": "ENGR 410",
+      "name": "Robots in the World",
+      "thread": "depth",
+      "semester": 7,
+      "plannedDays": 15,
+      "days": []
+    }
+  }
+}

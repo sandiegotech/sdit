@@ -1751,3 +1751,79 @@ a.door .door-kicker, a.door .door-title, a.door .door-desc { display: block; }
 }
 .account-submit:disabled { opacity: 0.55; cursor: default; }
 
+
+/* ── Course mode: the signed-in learning strip under the masthead ─────────── */
+.course-strip {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.018);
+}
+.course-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.55rem 1.5rem;
+}
+.course-strip-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+.course-strip-eyebrow {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted, #8a8a82);
+}
+.course-strip-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.course-strip-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 0;
+}
+.course-bar {
+  flex: 1;
+  max-width: 22rem;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.course-bar > span {
+  display: block;
+  height: 100%;
+  background: #8a6d1f; /* the SDIT gold */
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+.course-strip-count {
+  font-size: 0.72rem;
+  color: var(--muted, #777);
+  white-space: nowrap;
+}
+.course-continue {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.course-continue:hover { opacity: 0.9; }
+@media (max-width: 640px) {
+  .course-strip-inner { gap: 0.7rem 1rem; padding: 0.5rem 1rem; flex-wrap: wrap; }
+  .course-strip-progress { order: 3; flex-basis: 100%; }
+}
+
