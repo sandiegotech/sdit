@@ -50,7 +50,11 @@
       body: opts.body ? JSON.stringify(opts.body) : undefined,
     }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (data) {
-        if (!r.ok) throw new Error(data.error || ("HTTP " + r.status));
+        if (!r.ok) {
+          var err = new Error(data.error || ("HTTP " + r.status));
+          err.status = r.status;
+          throw err;
+        }
         return data;
       });
     });
@@ -94,12 +98,14 @@
     },
   };
 
-  // Re-check the session in the background; sign out cleanly if it's stale.
+  // Re-check the session in the background. Only a definitive 401 (bad/expired
+  // token) signs you out — network blips, cold starts and 5xx must NOT, or a
+  // single hiccup on navigation would drop the session.
   function refreshProfile() {
     if (!API || !token()) return;
     request("/me")
       .then(function (d) { setProfile(d.profile); })
-      .catch(function () { Account.signOut(); });
+      .catch(function (err) { if (err && err.status === 401) Account.signOut(); });
   }
 
   // ── UI: header chip + sign-in dialog ───────────────────────────────────────
@@ -120,9 +126,14 @@
     return node;
   }
 
-  function render() {
+  function render(tries) {
+    if (!API) return;
     var mount = document.getElementById("sdit-account");
-    if (!mount || !API) return;
+    if (!mount) {
+      // The header partial loads asynchronously — wait for the mount point.
+      if ((tries || 0) < 40) setTimeout(function () { render((tries || 0) + 1); }, 100);
+      return;
+    }
     mount.innerHTML = "";
 
     if (Account.isSignedIn()) {

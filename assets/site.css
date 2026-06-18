@@ -1827,3 +1827,43 @@ a.door .door-kicker, a.door .door-title, a.door .door-desc { display: block; }
   .course-strip-progress { order: 3; flex-basis: 100%; }
 }
 
+/* personalized nav + "My Courses" dashboard (signed in) */
+.toc a.nav-mine { font-weight: 600; }
+.my-home { max-width: 60rem; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+.my-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted, #8a8a82);
+  margin: 0 0 0.35rem;
+}
+.my-title { font-size: 1.9rem; margin: 0 0 2rem; }
+.my-courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+.my-course {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-background-primary, #fff);
+  transition: border-color 0.2s ease;
+}
+.my-course:hover { border-color: rgba(0, 0, 0, 0.32); }
+.my-course-name { display: block; font-size: 1.1rem; font-weight: 600; line-height: 1.25; }
+.my-course-code {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--muted, #8a8a82);
+  margin: 0.1rem 0 0.85rem;
+}
+.my-course .course-bar { display: block; max-width: none; margin-bottom: 0.55rem; }
+.my-course-meta { display: block; font-size: 0.8rem; color: var(--muted, #666); }
+.my-browse { margin: 1.75rem 0 0; }
+.my-browse a { font-size: 0.85rem; }
+

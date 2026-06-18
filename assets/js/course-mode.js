@@ -141,6 +141,89 @@
     document.body.classList.add("has-course-strip");
   }
 
+  // When signed in, the nav is about your work, not the whole catalog.
+  function personalizeNav() {
+    var nav = document.querySelector(".masthead .toc");
+    if (!nav || nav.querySelector(".nav-mine")) return;
+    Array.prototype.forEach.call(
+      nav.querySelectorAll("a[data-nav='curriculum'], a[data-nav='courses']"),
+      function (a) { a.style.display = "none"; }
+    );
+    var mine = el("a", "nav-mine");
+    mine.href = resolveSitePath("/index.html");
+    mine.textContent = "My Courses";
+    nav.insertBefore(mine, nav.firstChild);
+    var browse = el("a", "nav-browse");
+    browse.href = resolveSitePath("/courses/index.html");
+    browse.textContent = "Browse";
+    nav.insertBefore(browse, mine.nextSibling);
+  }
+
+  // Replace the marketing homepage with a personal dashboard of your courses.
+  function renderHomeDashboard(catalog, progressLessons) {
+    var p = location.pathname;
+    if (p !== "/" && p !== "/index.html") return;
+    var main = document.querySelector("main");
+    if (!main) return;
+
+    var courses = catalog.courses || {};
+    var byCourse = {};
+    progressLessons.forEach(function (row) {
+      var c = courseOf(row.lesson), n = dayOf(row.lesson);
+      if (!c || !n) return;
+      if (!byCourse[c]) byCourse[c] = {};
+      byCourse[c][n] = true;
+    });
+    var started = Object.keys(byCourse).filter(function (c) { return courses[c]; });
+
+    function card(courseId, completed) {
+      var course = courses[courseId];
+      if (!course) return null;
+      var planned = course.plannedDays || 15;
+      var nextDay = null;
+      for (var i = 0; i < course.days.length; i++) {
+        if (completed.indexOf(course.days[i].n) === -1) { nextDay = course.days[i]; break; }
+      }
+      var pct = Math.max(0, Math.min(100, Math.round((completed.length / planned) * 100)));
+      var verb = nextDay ? ((completed.length ? "Continue" : "Begin") + " →") : "Course overview →";
+      var a = el("a", "my-course");
+      a.href = nextDay ? resolveSitePath(nextDay.path + ".html") : resolveSitePath("/courses/" + courseId + "/");
+      a.innerHTML =
+        '<span class="my-course-name">' + esc(course.name) + "</span>" +
+        '<span class="my-course-code">' + esc(course.code) + "</span>" +
+        '<span class="course-bar"><span style="width:' + pct + '%"></span></span>' +
+        '<span class="my-course-meta">' + completed.length + " of " + planned + " days · " + verb + "</span>";
+      return a;
+    }
+
+    var wrap = el("div", "frame my-home");
+    var eyebrow = el("p", "my-eyebrow");
+    eyebrow.textContent = started.length ? "Your coursework" : "Start here";
+    var h1 = el("h1", "my-title");
+    h1.textContent = started.length ? "Pick up where you left off" : "Begin the Foundation";
+    wrap.appendChild(eyebrow);
+    wrap.appendChild(h1);
+
+    var grid = el("div", "my-courses");
+    var cards = [];
+    if (started.length) {
+      started.forEach(function (cid) { cards.push(card(cid, Object.keys(byCourse[cid]).map(Number))); });
+    } else {
+      var firstId = firstCourseWithDays(courses);
+      if (firstId) cards.push(card(firstId, []));
+    }
+    cards.filter(Boolean).forEach(function (c) { grid.appendChild(c); });
+    if (!grid.childNodes.length) return; // nothing to show — leave the page alone
+    wrap.appendChild(grid);
+
+    var browse = el("p", "my-browse");
+    browse.innerHTML = '<a href="' + resolveSitePath("/courses/index.html") + '">Browse all courses →</a>';
+    wrap.appendChild(browse);
+
+    main.innerHTML = "";
+    main.appendChild(wrap);
+  }
+
   function waitForMasthead(cb) {
     var tries = 0;
     (function check() {
@@ -154,9 +237,13 @@
     var A = window.SDITAccount;
     if (!A || !A.configured() || !A.isSignedIn()) return;
     waitForMasthead(function () {
+      personalizeNav();
       Promise.all([loadCatalog(), A.progress()]).then(function (res) {
-        var state = resolveState(res[1]);
-        render(res[0], state.courseId, state.completedDays);
+        try {
+          var state = resolveState(res[1]);
+          render(res[0], state.courseId, state.completedDays);
+          renderHomeDashboard(res[0], res[1]);
+        } catch (e) { /* never blank the page on a rendering error */ }
       });
     });
   }
