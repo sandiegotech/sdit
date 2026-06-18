@@ -13,23 +13,9 @@
   }
   window.__sditLayoutReady = true;
 
-  function resolveSitePath(path) {
-    if (typeof window.__sditResolvePath === "function") {
-      return window.__sditResolvePath(path);
-    }
-    return path;
-  }
-
-  function pad(value) {
-    return String(value).padStart(2, "0");
-  }
-
-  function slugify(value) {
-    return String(value)
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-  }
+  var SDIT = window.SDIT;
+  var resolveSitePath = SDIT.resolvePath;
+  var pad = SDIT.pad;
 
   function createElement(tagName, className, text) {
     const element = document.createElement(tagName);
@@ -279,18 +265,11 @@
 
   /* ── Course day pages (/courses/CODE/day-NN.html) ─────────── */
 
-  var _catalogPromise = null;
-  function fetchCatalog() {
-    if (_catalogPromise) return _catalogPromise;
-    _catalogPromise = fetch(resolveSitePath("/assets/catalog.json"))
-      .then(function (r) { return r.ok ? r.json() : { courses: {} }; })
-      .catch(function () { return { courses: {} }; });
-    return _catalogPromise;
-  }
+  var fetchCatalog = SDIT.getCatalog;
 
   function enhanceCourseLessonPage(path) {
-    var courseId  = (path.match(/\/courses\/([A-Z]+-\d+)\//) || [])[1];
-    var dayNumber = parseInt((path.match(/\/day-(\d{2})(?:\.html)?$/) || [])[1] || "0", 10);
+    var courseId  = SDIT.courseOf(path);
+    var dayNumber = SDIT.dayOf(path) || 0;
     if (!courseId || !dayNumber) return;
 
     document.body.classList.add("lesson-page");

@@ -10,30 +10,13 @@
 (function () {
   "use strict";
 
-  var LESSON_RE = /\/courses\/([A-Z]+-\d+)\/day-(\d{2})(?:\.html)?$/;
-  var catalogPromise = null;
-
-  function resolveSitePath(p) {
-    return typeof window.__sditResolvePath === "function" ? window.__sditResolvePath(p) : p;
-  }
-
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
-    });
-  }
-
-  function loadCatalog() {
-    if (!catalogPromise) {
-      catalogPromise = fetch(resolveSitePath("/assets/catalog.json"))
-        .then(function (r) { return r.ok ? r.json() : { courses: {} }; })
-        .catch(function () { return { courses: {} }; });
-    }
-    return catalogPromise;
-  }
-
-  function courseOf(p) { var m = (p || "").match(/\/courses\/([A-Z]+-\d+)\//); return m ? m[1] : null; }
-  function dayOf(p) { var m = (p || "").match(/\/day-(\d{2})(?:\.html)?$/); return m ? parseInt(m[1], 10) : null; }
+  var SDIT = window.SDIT;
+  var resolveSitePath = SDIT.resolvePath;
+  var esc = SDIT.esc;
+  var courseOf = SDIT.courseOf;
+  var dayOf = SDIT.dayOf;
+  var LESSON_RE = SDIT.LESSON_RE;
+  var loadCatalog = SDIT.getCatalog;
 
   // Pick the current course and which of its days are done.
   function resolveState(progressLessons) {
