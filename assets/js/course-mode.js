@@ -135,12 +135,14 @@
     nav.insertBefore(browse, mine.nextSibling);
   }
 
-  // Replace the marketing homepage with a personal dashboard of your courses.
+  // Fill the logged-in portal with a personal dashboard of your courses.
+  // The portal container is already in the page and shown before paint, so
+  // this never flashes the marketing home.
   function renderHomeDashboard(catalog, progressLessons) {
     var p = location.pathname;
     if (p !== "/" && p !== "/index.html") return;
-    var main = document.querySelector("main");
-    if (!main) return;
+    var portal = document.getElementById("sdit-portal");
+    if (!portal) return;
 
     var courses = catalog.courses || {};
     var byCourse = {};
@@ -196,8 +198,8 @@
     browse.innerHTML = '<a href="' + resolveSitePath("/courses/index.html") + '">Browse all courses →</a>';
     wrap.appendChild(browse);
 
-    main.innerHTML = "";
-    main.appendChild(wrap);
+    portal.innerHTML = "";
+    portal.appendChild(wrap);
   }
 
   function waitForMasthead(cb) {

@@ -35,6 +35,8 @@
   function setProfile(p) {
     if (p) localStorage.setItem(PROFILE_KEY, JSON.stringify(p));
     else localStorage.removeItem(PROFILE_KEY);
+    // Keep the portal/marketing toggle in sync with auth state after load.
+    document.documentElement.classList.toggle("sdit-authed", !!p);
     render();
   }
 

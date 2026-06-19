@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Start Learning — San Diego Institute of Technology</title>
   <meta name="description" content="Start learning. One degree — the BA in Technology — with a two-year shared Foundation and a concentration in Media, Design, or Engineering. All course material open to everyone, ten minutes a day.">
+  <!-- Set the signed-in class before first paint so the marketing home never flashes. -->
+  <script>try{if(localStorage.getItem('sdit:session')&&localStorage.getItem('sdit:profile'))document.documentElement.className+=' sdit-authed';}catch(e){}</script>
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/js/site-paths.js" defer></script>
   <script src="assets/js/includes.js" defer></script>
@@ -13,7 +15,7 @@
   <div data-include="/partials/header.html"></div>
 
   <main>
-    <div class="frame">
+    <div class="frame sdit-marketing">
 
       <!-- ============ START ============ -->
       <section class="start-hero">
@@ -81,6 +83,12 @@
         Every lesson is <strong>open and free to read</strong> — no account required. A free <strong>Visitor Card</strong> adds saving and sync across your devices; <strong>students</strong> are admitted by application. SDIT is in its founding phase and <strong>not yet authorized to grant degrees</strong> — see <a href="/accreditation.html">Accreditation</a> for exactly where that stands. The full catalog and requirements live in <a href="/curriculum/index.html">The Curriculum</a>.
       </p>
 
+    </div>
+
+    <!-- The logged-in portal. Shown instead of the marketing home when signed in
+         (toggled before paint by the head script); filled by course-mode.js. -->
+    <div id="sdit-portal" class="sdit-portal" aria-live="polite">
+      <div class="frame my-home"><p class="my-eyebrow">Loading your courses…</p></div>
     </div>
   </main>
 

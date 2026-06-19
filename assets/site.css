@@ -1681,6 +1681,12 @@ a.join-path:hover { border-color: var(--gold); background: var(--gold-dim); }
 
 /* personalized nav + "My Courses" dashboard (signed in) */
 .toc a.nav-mine { font-weight: 600; }
+
+/* Logged-in portal: hide the marketing home, show the portal. Toggled before
+   first paint by the head script in index.html, so there's no flash. */
+.sdit-portal { display: none; }
+html.sdit-authed .sdit-marketing { display: none; }
+html.sdit-authed .sdit-portal { display: block; }
 .my-home { max-width: 60rem; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 .my-eyebrow {
   font-size: 0.7rem;
