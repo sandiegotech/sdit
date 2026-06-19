@@ -115,6 +115,23 @@ def strip_front_matter(text: str) -> tuple[str, dict]:
     return body, meta
 
 
+_PLANNED_BY_DIR = None
+
+
+def course_planned_days(dir_name: str) -> int:
+    """Planned day count for a course dir — catalog-driven, cached."""
+    import catalog
+
+    global _PLANNED_BY_DIR
+    if _PLANNED_BY_DIR is None:
+        _PLANNED_BY_DIR = {
+            c["dir"]: catalog.planned_days(c)
+            for c in catalog.load_catalog().get("courses", [])
+            if c.get("dir")
+        }
+    return _PLANNED_BY_DIR.get(dir_name, catalog.DEFAULT_DAYS)
+
+
 def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
     """Convert all .md files under src into .html under dest, preserving structure.
     Returns: list of (title, output_path) for index building.
@@ -159,7 +176,7 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
                 _, next_meta = strip_front_matter(next_md.read_text(encoding="utf-8"))
                 next_title = (next_meta.get("title") or f"Day {day_num + 1:02d}") if isinstance(next_meta, dict) else f"Day {day_num + 1:02d}"
                 html += journey_footer_html(
-                    journey=f"Day {day_num} of 15 in this course",
+                    journey=f"Day {day_num} of {course_planned_days(course_dir)} in this course",
                     eyebrow="Next in this course",
                     card_title=re.sub(r"^Day \d+\s*[—–-]\s*", "", str(next_title)),
                     card_sub=str(meta.get("course") or "") if isinstance(meta, dict) else "",

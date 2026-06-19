@@ -19,7 +19,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from catalog import TOTAL_DAYS, load_catalog, day_info
+from catalog import DEFAULT_DAYS, planned_days, load_catalog, day_info
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEDULE = ROOT / "curriculum" / "schedule.html"
@@ -33,16 +33,18 @@ WEEKDAY_ORDER = {
 WEEKDAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 
-def sync_course_days() -> int:
+def sync_course_days(catalog) -> int:
     """Regenerate 'The Daily Path' sections in every course index.md with markers."""
+    planned_by_dir = {c["dir"]: planned_days(c) for c in catalog.get("courses", []) if c.get("dir")}
     changed = 0
     for index_md in sorted((ROOT / "courses").glob("*/index.md")):
         src = index_md.read_text(encoding="utf-8")
         if "<!-- sdit:days:begin -->" not in src:
             continue
         course_dir = index_md.parent
+        planned = planned_by_dir.get(course_dir.name, DEFAULT_DAYS)
         blocks = []
-        for n in range(1, TOTAL_DAYS + 1):
+        for n in range(1, planned + 1):
             info = day_info(course_dir, n)
             if info:
                 title, dek = info
@@ -91,9 +93,10 @@ def sync_schedule(catalog) -> int:
     if "<!-- sdit:weeks:begin -->" not in src:
         return 0
     courses = semester_courses(catalog, semester=1)
+    max_week = max((planned_days(c) for c in courses), default=DEFAULT_DAYS)
 
     sections = []
-    for week in range(1, TOTAL_DAYS + 1):
+    for week in range(1, max_week + 1):
         rows = []
         for i, c in enumerate(courses):
             info = day_info(ROOT / "courses" / c["dir"], week)
@@ -139,7 +142,7 @@ def sync_schedule(catalog) -> int:
 
 def main() -> int:
     catalog = load_catalog()
-    n = sync_course_days()
+    n = sync_course_days(catalog)
     s = sync_schedule(catalog)
     print(f"sync_courses: {n} course page(s) updated, schedule {'updated' if s else 'unchanged'}")
     return 0

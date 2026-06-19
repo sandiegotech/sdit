@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from catalog import TOTAL_DAYS, load_catalog, day_info
+from catalog import planned_days, published_days, load_catalog, day_info
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -29,7 +29,7 @@ def build_catalog() -> dict:
         if not course_dir.exists():
             continue
         days = []
-        for n in range(1, TOTAL_DAYS + 1):
+        for n in published_days(course_dir):
             info = day_info(course_dir, n)
             if not info:
                 continue
@@ -44,7 +44,7 @@ def build_catalog() -> dict:
             "name": c.get("display") or c.get("name") or c.get("code", dir_name),
             "thread": c.get("thread", ""),
             "semester": c.get("semester"),
-            "plannedDays": TOTAL_DAYS,
+            "plannedDays": planned_days(c),
             "days": days,
         }
     return {"courses": courses}
