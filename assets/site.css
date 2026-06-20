@@ -1427,74 +1427,6 @@ a.join-path:hover { border-color: var(--gold); background: var(--gold-dim); }
 }
 .masthead--learn .wordmark span { line-height: 1.3; }
 
-/* ================================================================
-   START PAGE — the homepage is a decision, not a document.
-   ================================================================ */
-.start-hero {
-  padding: 3.5rem 0 2.5rem;
-  text-align: center;
-}
-.start-hero .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.4rem;
-}
-.start-hero h1 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(2.6rem, 6vw, 4.4rem);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0 0 1.1rem;
-}
-.start-hero h1 em { font-style: italic; color: var(--marine); }
-.start-hero .start-sub {
-  font-family: var(--font-display);
-  font-size: 1.22rem;
-  line-height: 1.5;
-  color: var(--muted);
-  max-width: 34rem;
-  margin: 0 auto;
-}
-
-/* How it works — three quiet facts */
-.start-how {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 3rem 0 0;
-  padding-top: 2rem;
-  border-top: 1px solid var(--hairline);
-}
-.start-how div { text-align: center; }
-.start-how strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 0.25rem;
-}
-.start-how span { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }@media (max-width: 640px) {
-  .start-how { grid-template-columns: 1fr; gap: 1.4rem; }
-}
-
-/* Quiet fine-print strip at the bottom of the start page */
-.start-fine {
-  margin: 3rem 0 0;
-  padding: 1.6rem 0 0;
-  border-top: 1px solid var(--hairline);
-  text-align: center;
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-.start-fine a { color: var(--marine); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.start-fine a:hover { color: var(--gold); }
-
 /* ── Friendly course names on path pages ─────────────────────────── */
 .sem-courses .c-cat {
   display: block;
@@ -1687,6 +1619,29 @@ a.join-path:hover { border-color: var(--gold); background: var(--gold-dim); }
 .sdit-portal { display: none; }
 html.sdit-authed .sdit-marketing { display: none; }
 html.sdit-authed .sdit-portal { display: block; }
+
+/* learn front door (signed out): browse + sign in, no marketing pitch */
+.learn-entry { max-width: 40rem; margin: 0 auto; padding: 4rem 0 2rem; text-align: center; }
+.learn-entry .eyebrow { color: var(--gold); }
+.learn-entry h1 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem); margin: 0.4rem 0 0.9rem;
+}
+.learn-entry h1 em { font-style: italic; color: var(--marine); }
+.learn-entry-sub {
+  font-size: 1.05rem; line-height: 1.6; color: var(--muted);
+  margin: 0 auto 1.9rem; max-width: 32rem;
+}
+.learn-entry-actions { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+.learn-cta {
+  font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em;
+  padding: 0.7rem 1.3rem; border-radius: 999px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  text-decoration: none; cursor: pointer;
+}
+.learn-cta:hover { opacity: 0.9; }
+.learn-cta--ghost { background: none; color: var(--ink); border-color: var(--hairline); }
+.learn-entry-meta { margin-top: 1.7rem; font-size: 0.85rem; color: var(--muted); }
 .my-home { max-width: 60rem; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 .my-eyebrow {
   font-size: 0.7rem;
@@ -1725,56 +1680,4 @@ html.sdit-authed .sdit-portal { display: block; }
 .my-browse { margin: 1.75rem 0 0; }
 .my-browse a { font-size: 0.85rem; }
 
-/* homepage: the three ways in (Visitor / Student / The Daily) */
-.ways { margin: 2.5rem 0 0; }
-.ways-head { font-size: 1.5rem; margin: 0 0 1.4rem; }
-.ways-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1rem;
-}
-.way {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 14px;
-  background: var(--color-background-primary, #fff);
-}
-.way--feature { border-color: #8a6d1f; box-shadow: inset 0 2px 0 #8a6d1f; }
-.way-kicker {
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--muted, #8a8a82);
-  margin: 0 0 0.4rem;
-}
-.way-title { font-size: 1.25rem; margin: 0 0 0.6rem; }
-.way-desc { font-size: 0.92rem; line-height: 1.5; margin: 0 0 1.2rem; flex: 1; }
-.way-cta {
-  align-self: flex-start;
-  font: inherit;
-  font-size: 0.84rem;
-  font-weight: 600;
-  padding: 0.5rem 1.05rem;
-  border-radius: 999px;
-  background: #1a1a1a;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-.way-cta:hover { opacity: 0.9; }
-.way-subscribe { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-.way-input {
-  flex: 1;
-  min-width: 9rem;
-  font: inherit;
-  font-size: 0.9rem;
-  padding: 0.5rem 0.7rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
-.way-msg { flex-basis: 100%; min-height: 1rem; font-size: 0.78rem; color: var(--muted, #777); }
-.start-explore { margin: 2.5rem 0 0; font-size: 0.95rem; line-height: 1.6; }
 
