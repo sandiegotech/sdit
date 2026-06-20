@@ -8,6 +8,9 @@
  *   GET  /me                                  → { profile }            (Bearer)
  *   GET  /work?lesson=<path>                  → { responses }          (Bearer)
  *   PUT  /work           { lesson, heading, content }                  (Bearer)
+ *   GET  /enrollments                         → { courses: [id] }      (Bearer)
+ *   POST /enroll         { course }                                    (Bearer)
+ *   POST /unenroll       { course }                                    (Bearer)
  */
 
 import { ok, bad, unauthorized, notFound, json, parseBody, corsHeaders } from './lib/http.mjs';
@@ -16,6 +19,7 @@ import { sendCode } from './lib/email.mjs';
 import * as db from './lib/db.mjs';
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const COURSE_RE = /^[A-Z]+-\d+$/;
 const MAX_ATTEMPTS = 5;
 
 export async function handler(event) {
@@ -45,6 +49,9 @@ function route(method, path, event) {
   if (method === 'GET' && path === '/progress') return getProgress(event);
   if (method === 'GET' && path === '/work') return getWork(event);
   if (method === 'PUT' && path === '/work') return putWork(event);
+  if (method === 'GET' && path === '/enrollments') return getEnrollments(event);
+  if (method === 'POST' && path === '/enroll') return postEnroll(event);
+  if (method === 'POST' && path === '/unenroll') return postUnenroll(event);
   return notFound();
 }
 
@@ -116,6 +123,31 @@ async function putWork(event) {
   const { lesson, heading, content } = parseBody(event);
   if (!lesson || !heading) return bad('lesson and heading are required');
   await db.saveWork(session.sub, lesson, heading, content ?? '');
+  return ok({ ok: true });
+}
+
+async function getEnrollments(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const rows = await db.listEnrollments(session.sub);
+  return ok({ courses: rows.map((r) => r.courseId) });
+}
+
+async function postEnroll(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const { course } = parseBody(event);
+  if (!course || !COURSE_RE.test(course)) return bad('A valid course id is required');
+  await db.enroll(session.sub, course);
+  return ok({ ok: true });
+}
+
+async function postUnenroll(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const { course } = parseBody(event);
+  if (!course) return bad('course is required');
+  await db.unenroll(session.sub, course);
   return ok({ ok: true });
 }
 

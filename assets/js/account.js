@@ -99,6 +99,21 @@
         .then(function () { return true; })
         .catch(function () { return false; });
     },
+
+    enrollments: function () {
+      if (!this.isSignedIn()) return Promise.resolve([]);
+      return request("/enrollments")
+        .then(function (d) { return d.courses || []; })
+        .catch(function () { return []; });
+    },
+    enroll: function (course) {
+      return request("/enroll", { method: "POST", body: { course: course } })
+        .then(function () { return true; }).catch(function () { return false; });
+    },
+    unenroll: function (course) {
+      return request("/unenroll", { method: "POST", body: { course: course } })
+        .then(function () { return true; }).catch(function () { return false; });
+    },
   };
 
   // Re-check the session in the background. Only a definitive 401 (bad/expired

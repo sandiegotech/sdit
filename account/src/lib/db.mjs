@@ -166,3 +166,32 @@ export async function listProgress(email) {
   }
   return Object.keys(latest).map((lesson) => ({ lesson, updatedAt: latest[lesson] }));
 }
+
+// ── Enrollments ──────────────────────────────────────────────────────────────
+// USER#<email> / ENROLL#<courseId> — the courses a person has added to "My Courses".
+
+const enrollSk = (courseId) => `ENROLL#${courseId}`;
+
+export async function enroll(email, courseId) {
+  await doc.send(new PutCommand({
+    TableName: TABLE,
+    Item: { pk: userPk(email), sk: enrollSk(courseId), courseId, enrolledAt: now() },
+  }));
+}
+
+export async function unenroll(email, courseId) {
+  await doc.send(new DeleteCommand({
+    TableName: TABLE,
+    Key: { pk: userPk(email), sk: enrollSk(courseId) },
+  }));
+}
+
+export async function listEnrollments(email) {
+  const r = await doc.send(new QueryCommand({
+    TableName: TABLE,
+    KeyConditionExpression: 'pk = :p AND begins_with(sk, :s)',
+    ExpressionAttributeValues: { ':p': userPk(email), ':s': 'ENROLL#' },
+    ProjectionExpression: 'courseId, enrolledAt',
+  }));
+  return (r.Items || []).map((i) => ({ courseId: i.courseId, enrolledAt: i.enrolledAt }));
+}

@@ -138,7 +138,7 @@
   // Fill the logged-in portal with a personal dashboard of your courses.
   // The portal container is already in the page and shown before paint, so
   // this never flashes the marketing home.
-  function renderHomeDashboard(catalog, progressLessons) {
+  function renderHomeDashboard(catalog, progressLessons, enrolled) {
     var p = location.pathname;
     if (p !== "/" && p !== "/index.html") return;
     var portal = document.getElementById("sdit-portal");
@@ -152,18 +152,20 @@
       if (!byCourse[c]) byCourse[c] = {};
       byCourse[c][n] = true;
     });
-    var started = Object.keys(byCourse).filter(function (c) { return courses[c]; });
+    function doneFor(cid) { return byCourse[cid] ? Object.keys(byCourse[cid]).map(Number) : []; }
 
     function card(courseId, completed) {
       var course = courses[courseId];
       if (!course) return null;
       var planned = course.plannedDays || 15;
+      var days = course.days || [];
       var nextDay = null;
-      for (var i = 0; i < course.days.length; i++) {
-        if (completed.indexOf(course.days[i].n) === -1) { nextDay = course.days[i]; break; }
+      for (var i = 0; i < days.length; i++) {
+        if (completed.indexOf(days[i].n) === -1) { nextDay = days[i]; break; }
       }
       var pct = Math.max(0, Math.min(100, Math.round((completed.length / planned) * 100)));
-      var verb = nextDay ? ((completed.length ? "Continue" : "Begin") + " →") : "Course overview →";
+      var verb = nextDay ? ((completed.length ? "Continue" : "Begin") + " →")
+        : (days.length ? "Course overview →" : "Coming soon");
       var a = el("a", "my-course");
       a.href = nextDay ? resolveSitePath(nextDay.path + ".html") : resolveSitePath("/courses/" + courseId + "/");
       a.innerHTML =
@@ -176,23 +178,26 @@
 
     var wrap = el("div", "frame my-home");
     var eyebrow = el("p", "my-eyebrow");
-    eyebrow.textContent = started.length ? "Your coursework" : "Start here";
     var h1 = el("h1", "my-title");
-    h1.textContent = started.length ? "Pick up where you left off" : "Begin the Foundation";
-    wrap.appendChild(eyebrow);
-    wrap.appendChild(h1);
+    var mine = (enrolled || []).filter(function (c) { return courses[c]; });
 
-    var grid = el("div", "my-courses");
-    var cards = [];
-    if (started.length) {
-      started.forEach(function (cid) { cards.push(card(cid, Object.keys(byCourse[cid]).map(Number))); });
+    if (mine.length) {
+      eyebrow.textContent = "Your coursework";
+      h1.textContent = "My Courses";
+      wrap.appendChild(eyebrow);
+      wrap.appendChild(h1);
+      var grid = el("div", "my-courses");
+      mine.forEach(function (cid) { var c = card(cid, doneFor(cid)); if (c) grid.appendChild(c); });
+      if (grid.childNodes.length) wrap.appendChild(grid);
     } else {
-      var firstId = firstCourseWithDays(courses);
-      if (firstId) cards.push(card(firstId, []));
+      eyebrow.textContent = "My Courses";
+      h1.textContent = "Add your first course";
+      wrap.appendChild(eyebrow);
+      wrap.appendChild(h1);
+      var empty = el("p", "my-empty");
+      empty.textContent = "Browse the curriculum and add courses to build your own track. Your progress then shows up here.";
+      wrap.appendChild(empty);
     }
-    cards.filter(Boolean).forEach(function (c) { grid.appendChild(c); });
-    if (!grid.childNodes.length) return; // nothing to show — leave the page alone
-    wrap.appendChild(grid);
 
     var browse = el("p", "my-browse");
     browse.innerHTML = '<a href="' + resolveSitePath("/courses/index.html") + '">Browse all courses →</a>';
@@ -200,6 +205,43 @@
 
     portal.innerHTML = "";
     portal.appendChild(wrap);
+  }
+
+  // On the courses catalog page, let signed-in users add/remove courses.
+  function enhanceCoursesPage(catalog, enrolled) {
+    if (!/\/courses\/?(index\.html)?$/.test(location.pathname)) return;
+    var courses = catalog.courses || {};
+    var set = {};
+    (enrolled || []).forEach(function (c) { set[c] = true; });
+
+    function paint(btn, courseId) {
+      var on = !!set[courseId];
+      btn.textContent = on ? "✓ Added" : "+ Add";
+      btn.className = "enroll-btn" + (on ? " is-enrolled" : "");
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('a[href*="/courses/"]'), function (a) {
+      var m = (a.getAttribute("href") || "").match(/\/courses\/([A-Z]+-\d+)\//);
+      if (!m || !courses[m[1]]) return;
+      var courseId = m[1];
+      var row = a.closest("tr");
+      if (!row || row.querySelector(".enroll-btn")) return;
+      var btn = el("button", "enroll-btn");
+      btn.type = "button";
+      paint(btn, courseId);
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var A = window.SDITAccount;
+        var next = !set[courseId];
+        btn.disabled = true;
+        (next ? A.enroll(courseId) : A.unenroll(courseId)).then(function (okk) {
+          btn.disabled = false;
+          if (okk) { set[courseId] = next; paint(btn, courseId); }
+        });
+      });
+      (row.lastElementChild || row).appendChild(btn);
+    });
   }
 
   function waitForMasthead(cb) {
@@ -219,13 +261,15 @@
       // On a lesson day page the lesson topbar already shows course + progress,
       // so the strip would be redundant — skip it there.
       var onLessonPage = /\/courses\/[A-Z]+-\d+\/day-\d{2}/.test(location.pathname);
-      Promise.all([loadCatalog(), A.progress()]).then(function (res) {
+      Promise.all([loadCatalog(), A.progress(), A.enrollments()]).then(function (res) {
         try {
+          var catalog = res[0], progress = res[1], enrolled = res[2];
           if (!onLessonPage) {
-            var state = resolveState(res[1]);
-            render(res[0], state.courseId, state.completedDays);
+            var state = resolveState(progress);
+            render(catalog, state.courseId, state.completedDays);
           }
-          renderHomeDashboard(res[0], res[1]);
+          renderHomeDashboard(catalog, progress, enrolled);
+          enhanceCoursesPage(catalog, enrolled);
         } catch (e) { /* never blank the page on a rendering error */ }
       });
     });
