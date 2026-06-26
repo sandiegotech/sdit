@@ -32,9 +32,6 @@
           s.setAttribute(a.name, value);
         }
         s.text = old.textContent;
-        // Dynamically-inserted scripts default to async (load-order) execution;
-        // force document order so shared deps (utils.js) run before consumers.
-        if (s.src) s.async = false;
         // Use head for external scripts, body for inline
         (s.src ? document.head : document.body).appendChild(s);
         old.remove();

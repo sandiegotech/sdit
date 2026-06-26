@@ -1,27 +1,12 @@
-name: Checks
+name: Validate Knowledge
 on: [push, pull_request]
 jobs:
-  checks:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      # Pin the build deps so the drift-check rebuild matches the committed HTML.
-      - run: pip install pyyaml==6.0.3 markdown==3.9 pytest
-
-      - name: Validate catalog
-        run: python scripts/validate.py
-
-      - name: Unit tests
-        run: pytest -q scripts/tests
-
-      - name: Built site is committed (no drift)
-        run: |
-          python scripts/build_site.py --out .
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "::error::Committed site is out of date. Run 'python3 scripts/build_site.py --out .' and commit the result."
-            git --no-pager diff --stat
-            exit 1
-          fi
+      - run: pip install pyyaml
+      - run: python scripts/validate.py

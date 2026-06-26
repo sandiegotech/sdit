@@ -25,20 +25,12 @@
   }
 
   function lessonPath() {
-    // Canonical lesson id when the page declares one — the same lesson is served
-    // at both /courses/... and the schedule route, and responses must be one set.
-    var meta = document.querySelector('meta[name="sdit-lesson"]');
-    if (meta && meta.content) return meta.content;
-    // /courses/HUM-101/day-01.html  →  /courses/HUM-101/day-01
+    // /courses/LBS-101/day-01.html  →  /courses/LBS-101/day-01
     return location.pathname.replace(/\.html$/, "");
   }
 
   function storageKey(heading) {
     return "sdit:" + lessonPath() + "::" + heading;
-  }
-
-  function signedInToAccount() {
-    return !!(window.SDITAccount && window.SDITAccount.isSignedIn());
   }
 
   function debounce(fn, delay) {
@@ -144,12 +136,7 @@
     var debouncedSave = debounce(function () {
       var val = ta.value;
       localStorage.setItem(key, val);
-      if (signedInToAccount()) {
-        setStatus(status, "saving");
-        window.SDITAccount.saveWork(lessonPath(), heading, val).then(function (okSaved) {
-          setStatus(status, okSaved ? "saved" : "local");
-        });
-      } else if (isLocalhost()) {
+      if (isLocalhost()) {
         saveToServer(heading, val, status);
       } else {
         setStatus(status, "local");
@@ -191,10 +178,7 @@
   // ── Init ───────────────────────────────────────────────────────────────────
 
   function init() {
-    if (signedInToAccount()) {
-      // Signed in: responses live in the account and follow you across devices.
-      window.SDITAccount.loadWork(lessonPath()).then(enhance);
-    } else if (isLocalhost()) {
+    if (isLocalhost()) {
       loadFromServer(enhance);
     } else {
       enhance({});

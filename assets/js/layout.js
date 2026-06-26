@@ -1,21 +1,88 @@
-/**
- * layout.js — page chrome for the SDIT curriculum site.
- *
- * - Highlights the active masthead nav item.
- * - Course day pages (/courses/CODE/day-NN.html): wraps content in the
- *   lesson shell (topbar, day rail, sectioned content, resource cards).
- * - Course overview pages (/courses/CODE/): code badge eyebrow and
- *   sectioned content cards.
- */
 (function () {
   if (window.__sditLayoutReady) {
     return;
   }
   window.__sditLayoutReady = true;
 
-  var SDIT = window.SDIT;
-  var resolveSitePath = SDIT.resolvePath;
-  var pad = SDIT.pad;
+  function resolveSitePath(path) {
+    if (typeof window.__sditResolvePath === "function") {
+      return window.__sditResolvePath(path);
+    }
+    return path;
+  }
+
+  const volumeMeta = {
+    "vol-01-foundations": {
+      title: "Foundations",
+      label: "Volume 1",
+      year: "Year 1",
+      term: "Term 1",
+      chapters: 15,
+      daysPerChapter: 5,
+      schedulePath: "/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/index.html",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    },
+    "vol-02-ethics-and-reasoning": {
+      title: "Ethics and Reasoning",
+      label: "Volume 2",
+      year: "Year 1",
+      term: "Term 2",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    },
+    "vol-03-communication-rhetoric": {
+      title: "Communication and Rhetoric",
+      label: "Volume 3",
+      year: "Year 2",
+      term: "Term 1",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    },
+    "vol-04-science-systems": {
+      title: "Science and Systems",
+      label: "Volume 4",
+      year: "Year 2",
+      term: "Term 2",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    },
+    "vol-05-design-creativity": {
+      title: "Design and Creativity",
+      label: "Volume 5",
+      year: "Year 3",
+      term: "Term 1",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    },
+    "vol-06-economy-history": {
+      title: "Economy and History",
+      label: "Volume 6",
+      year: "Year 3",
+      term: "Term 2",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    },
+    "vol-07-technology-society": {
+      title: "Technology and Society",
+      label: "Volume 7",
+      year: "Year 4",
+      term: "Term 1",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    },
+    "vol-08-leadership-citizenship": {
+      title: "Leadership and Citizenship",
+      label: "Volume 8",
+      year: "Year 4",
+      term: "Term 2",
+      programPath: "/programs/Bachelor-Liberal-Arts/index.html"
+    }
+  };
+
+  function pad(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function slugify(value) {
+    return String(value)
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
 
   function createElement(tagName, className, text) {
     const element = document.createElement(tagName);
@@ -37,10 +104,65 @@
     return path === "/" ? "/index.html" : path;
   }
 
-  /* ── Masthead nav ─────────────────────────────────────────── */
+  function getVolumeSlug(pathname) {
+    const match = pathname.match(/\/(vol-\d{2}-[^/]+)/);
+    return match ? match[1] : null;
+  }
+
+  function getChapterNumber(pathname) {
+    const match = pathname.match(/\/chapter-(\d{2})\//);
+    return match ? Number(match[1]) : null;
+  }
+
+  function getDayNumber(pathname) {
+    const match = pathname.match(/\/section-(\d{2})\.html$/);
+    return match ? Number(match[1]) : null;
+  }
+
+  function getVolumeData(pathname) {
+    const slug = getVolumeSlug(pathname);
+    return slug ? volumeMeta[slug] || null : null;
+  }
+
+  function wrapAsGrid(items) {
+    if (!items.length) {
+      return;
+    }
+
+    const first = items[0];
+    const parent = first.parentElement;
+    if (!parent || parent.classList.contains("cards-grid")) {
+      return;
+    }
+
+    const grid = document.createElement("div");
+    grid.className = "cards-grid";
+    parent.insertBefore(grid, first);
+
+    const directChildren = Array.from(parent.children).filter(function (child) {
+      return child.classList.contains("chapter-item") || child.classList.contains("section-item");
+    });
+
+    directChildren.forEach(function (child) {
+      grid.appendChild(child);
+    });
+  }
+
+  function enhanceCardGrids() {
+    const chapterItems = Array.from(document.querySelectorAll(".chapter-item"));
+    const sectionItems = Array.from(document.querySelectorAll(".section-item"));
+
+    if (chapterItems.length) {
+      wrapAsGrid(chapterItems);
+    }
+
+    if (sectionItems.length) {
+      wrapAsGrid(sectionItems);
+    }
+  }
 
   function updateActiveNav() {
-    const navLinks = document.querySelectorAll(".masthead .toc a[data-nav]");
+    const navLinks = document.querySelectorAll(".site-nav a[data-nav]");
     if (!navLinks.length) {
       return;
     }
@@ -48,15 +170,14 @@
     const path = currentPath();
     let current = "home";
 
-    if (path.indexOf("/curriculum/schedule") !== -1 || path.indexOf("/curriculum/day-by-day") !== -1) {
-      current = "schedule";
-    } else if (path.indexOf("/curriculum") !== -1) {
-      current = "curriculum";
-    } else if (
-      path.indexOf("/courses") !== -1 ||
-      path.indexOf("/knowledge") !== -1
-    ) {
-      current = "courses";
+    if (path.indexOf("/programs/Bachelor-Liberal-Arts/vol-01-foundations/schedule/") !== -1) {
+      current = "daily";
+    } else if (path.indexOf("/programs/") !== -1) {
+      current = "degree";
+    } else if (path.indexOf("/courses/") !== -1 || path.indexOf("/knowledge/") !== -1) {
+      current = "library";
+    } else if (path.indexOf("github.com/sandiegotech/sdit") !== -1) {
+      current = "github";
     }
 
     navLinks.forEach(function (link) {
@@ -68,8 +189,411 @@
     });
   }
 
-  /* ── Lesson section map ───────────────────────────────────── */
+  function bindMobileNav() {
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector(".site-nav-toggle");
+    const nav = document.querySelector(".site-nav");
 
+    if (!header || !toggle || !nav || toggle.dataset.bound === "true") {
+      return;
+    }
+
+    function closeNav() {
+      header.classList.remove("is-nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    function syncNavForViewport() {
+      if (window.innerWidth > 760) {
+        closeNav();
+      }
+    }
+
+    toggle.addEventListener("click", function () {
+      const isOpen = header.classList.toggle("is-nav-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeNav();
+      });
+    });
+
+    window.addEventListener("resize", syncNavForViewport);
+    syncNavForViewport();
+    toggle.dataset.bound = "true";
+  }
+
+  function enhanceSectionCards() {
+    document.querySelectorAll(".section-item").forEach(function (item, index) {
+      const link = item.querySelector("a") || item;
+      const strong = link.querySelector("strong");
+      const sectionMeta = link.querySelector(".section-meta");
+      const rawText = (strong ? strong.textContent : link.textContent || "").trim();
+      const dayMatch = rawText.match(/Section\s+(\d+)/i);
+      const dayValue = dayMatch ? pad(dayMatch[1]) : pad(index + 1);
+
+      if (!link.querySelector(".day-badge")) {
+        link.insertBefore(createElement("span", "day-badge", "Day " + dayValue), link.firstChild);
+      }
+
+      if (strong) {
+        strong.classList.add("section-item__title");
+        strong.textContent = strong.textContent.replace(/^Section/i, "Day");
+      } else if (!link.querySelector(".section-item__title")) {
+        const title = createElement("span", "section-item__title");
+        title.textContent = rawText
+          .replace(/\s+[-\u2014]\s+section-\d+\.md$/i, "")
+          .replace(/^Section/i, "Day");
+        link.textContent = "";
+        link.appendChild(createElement("span", "day-badge", "Day " + dayValue));
+        link.appendChild(title);
+      }
+
+      if (sectionMeta) {
+        sectionMeta.classList.add("section-meta");
+      }
+
+      if (!link.querySelector(".section-arrow")) {
+        link.appendChild(createElement("span", "section-arrow", "Open lesson"));
+      }
+    });
+  }
+
+  function enhanceChapterPage() {
+    var path = currentPath();
+    if (!/\/chapter-\d{2}\/index\.html$/.test(path)) return;
+
+    document.body.classList.add("chapter-page");
+
+    var chapterNumber = getChapterNumber(path);
+    var volumeSlug = getVolumeSlug(path);
+    var volume = getVolumeData(path);
+    if (!chapterNumber || !volume) return;
+
+    var main = document.querySelector("main");
+    if (!main) return;
+
+    // Extract chapter title from H1 ("Chapter 2 — Title" → "Title")
+    var h1 = main.querySelector("h1");
+    var chapterTitle = "";
+    if (h1) {
+      var rawTitle = h1.textContent || "";
+      var titleM = rawTitle.match(/^Chapter\s+\d+\s*[\u2014\-]\s*(.+)$/i);
+      chapterTitle = titleM ? titleM[1].trim() : rawTitle.replace(/^Chapter\s+\d+\s*/i, "").trim();
+    }
+    if (!chapterTitle) chapterTitle = "Week " + chapterNumber;
+
+    // Extract orientation from first <p>
+    var orientationText = "";
+    var firstPara = main.querySelector("p");
+    if (firstPara) orientationText = firstPara.textContent.trim();
+
+    // Parse day list items: "Day 01 — LBS 101: Title" or "Section 01 — LBS 101: Title"
+    var DAY_RE = /^(?:Day|Section)\s+0*(\d+)\s*[\u2014\-]\s*([A-Z]+\s+\d+)\s*:\s*(.+?)(?:\s*[\u2014\-]\s*section-\d+\.md)?$/i;
+    var days = [];
+    Array.from(main.querySelectorAll("li")).forEach(function(li) {
+      var text = (li.textContent || "").trim();
+      var m = text.match(DAY_RE);
+      if (m) {
+        days.push({ num: parseInt(m[1], 10), course: m[2].trim(), title: m[3].trim() });
+      }
+    });
+    // Also parse H3 elements ("### Section 01 — LBS 101: Title")
+    if (!days.length) {
+      Array.from(main.querySelectorAll("h3")).forEach(function(h3) {
+        var text = (h3.textContent || "").trim();
+        var m = text.match(DAY_RE);
+        if (m) {
+          days.push({ num: parseInt(m[1], 10), course: m[2].trim(), title: m[3].trim() });
+        }
+      });
+    }
+    if (!days.length) {
+      for (var i = 1; i <= 5; i++) {
+        days.push({ num: i, course: "", title: "Day " + i });
+      }
+    }
+
+    var basePath = "/programs/Bachelor-Liberal-Arts/" + volumeSlug + "/schedule/";
+
+    // Eyebrow
+    var eyebrow = createElement("div", "chapter-eyebrow");
+    eyebrow.appendChild(createElement("span", "chapter-vol-label",
+      volume.label + " \u00b7 " + volume.year + " \u00b7 " + volume.term));
+    eyebrow.appendChild(createElement("span", "chapter-week-label",
+      "Week " + chapterNumber + " of " + volume.chapters));
+
+    // Hero
+    var hero = createElement("div", "chapter-hero");
+    hero.appendChild(eyebrow);
+    var heroH1 = document.createElement("h1");
+    heroH1.className = "chapter-title";
+    var weekSpan = createElement("span", "chapter-week-num", "Week " + chapterNumber);
+    heroH1.appendChild(weekSpan);
+    heroH1.appendChild(document.createTextNode(" \u2014 " + chapterTitle));
+    hero.appendChild(heroH1);
+
+    if (orientationText) {
+      hero.appendChild(createElement("p", "chapter-intro", orientationText));
+    }
+
+    var stats = createElement("div", "chapter-stats");
+    [
+      { v: "5", l: "days" },
+      { v: "5", l: "courses" },
+      { v: volume.year, l: volume.term }
+    ].forEach(function(s) {
+      var stat = createElement("div", "chapter-stat");
+      stat.appendChild(createElement("strong", "", s.v));
+      stat.appendChild(createElement("span", "", s.l));
+      stats.appendChild(stat);
+    });
+    hero.appendChild(stats);
+
+    // Day grid
+    var grid = createElement("div", "chapter-day-grid");
+    days.forEach(function(day) {
+      // Resolve course URL — prefer /courses/COURSE-ID/day-NN.html with program context
+      var courseId = day.course ? day.course.replace(/\s+/, "-").toUpperCase() : null;
+      var href;
+      if (courseId && COURSE_DIRS[courseId]) {
+        href = resolveSitePath(
+          "/courses/" + courseId + "/day-" + pad(day.num) + ".html" +
+          "?prog=bla&vol=" + volumeSlug + "&week=" + chapterNumber + "&pos=" + day.num
+        );
+      } else {
+        // Fall back to old section URL for courses not yet migrated
+        href = resolveSitePath(
+          basePath + "chapter-" + pad(chapterNumber) + "/section-" + pad(day.num) + ".html"
+        );
+      }
+      var card = document.createElement("a");
+      card.className = "chapter-day-card";
+      card.href = href;
+      card.appendChild(createElement("span", "chapter-day-num", "Day " + pad(day.num)));
+      card.appendChild(createElement("span", "chapter-day-title", day.title));
+      if (day.course) {
+        card.appendChild(createElement("span", "chapter-day-course", day.course));
+      }
+      card.appendChild(createElement("span", "chapter-day-arrow", "\u2192"));
+      grid.appendChild(card);
+    });
+
+    // Nav
+    var nav = createElement("div", "chapter-nav");
+    if (chapterNumber > 1) {
+      var prev = createElement("a", "chapter-nav-prev",
+        "\u2190 Week " + (chapterNumber - 1));
+      prev.href = resolveSitePath(basePath + "chapter-" + pad(chapterNumber - 1) + "/index.html");
+      nav.appendChild(prev);
+    }
+    var sched = createElement("a", "chapter-nav-schedule", "\u2630 Full Schedule");
+    sched.href = resolveSitePath(basePath + "index.html");
+    nav.appendChild(sched);
+    if (chapterNumber < volume.chapters) {
+      var next = createElement("a", "chapter-nav-next",
+        "Week " + (chapterNumber + 1) + " \u2192");
+      next.href = resolveSitePath(basePath + "chapter-" + pad(chapterNumber + 1) + "/index.html");
+      nav.appendChild(next);
+    }
+
+    main.innerHTML = "";
+    main.appendChild(hero);
+    main.appendChild(grid);
+    main.appendChild(nav);
+  }
+
+  function formatCourseLabel(label) {
+    const text = label.textContent.trim();
+    const courseText = text.replace(/^Course:\s*/i, "");
+    label.textContent = "";
+    label.classList.add("course-label");
+    label.appendChild(createElement("strong", "", "Course"));
+    label.appendChild(document.createTextNode(" " + courseText));
+    return courseText;
+  }
+
+  function buildLessonLinks(volumeSlug, chapterNumber, dayNumber, chapterCount, daysPerChapter) {
+    const basePath = "/programs/Bachelor-Liberal-Arts/" + volumeSlug + "/schedule/";
+    const chapterPath = basePath + "chapter-" + pad(chapterNumber) + "/index.html";
+    let previousPath = chapterPath;
+    let nextPath = basePath + "index.html";
+
+    if (dayNumber > 1) {
+      previousPath = basePath + "chapter-" + pad(chapterNumber) + "/section-" + pad(dayNumber - 1) + ".html";
+    } else if (chapterNumber > 1) {
+      previousPath = basePath + "chapter-" + pad(chapterNumber - 1) + "/section-" + pad(daysPerChapter) + ".html";
+    }
+
+    if (dayNumber < daysPerChapter) {
+      nextPath = basePath + "chapter-" + pad(chapterNumber) + "/section-" + pad(dayNumber + 1) + ".html";
+    } else if (chapterNumber < chapterCount) {
+      nextPath = basePath + "chapter-" + pad(chapterNumber + 1) + "/section-01.html";
+    } else {
+      nextPath = "/programs/Bachelor-Liberal-Arts/index.html";
+    }
+
+    return {
+      previousPath: resolveSitePath(previousPath),
+      nextPath: resolveSitePath(nextPath),
+      chapterPath: resolveSitePath(chapterPath),
+      volumePath: resolveSitePath(basePath + "index.html")
+    };
+  }
+
+  // Courses that have their own subdirectory (canonical library courses)
+  var COURSE_DIRS = {
+    "LBS-101": true,
+    "LBS-105": true,
+    "LBS-110": true,
+    "LBS-120": true,
+    "LAB-101": true
+  };
+
+  function courseUrl(code) {
+    // code is like "LBS-101" or "LBS 101"
+    var normalized = code.replace(/\s+/, "-").toUpperCase();
+    if (COURSE_DIRS[normalized]) return "/courses/" + normalized + "/";
+    // Flat legacy courses
+    var flat = {
+      "LBS-201": "/courses/LBS-201-ethics-moral-reasoning.html",
+      "LBS-205": "/courses/LBS-205-writing-communication-ii.html",
+      "LBS-210": "/courses/LBS-210-mathematical-reasoning-proof.html",
+      "LBS-220": "/courses/LBS-220-scientific-method-experimental-design.html",
+      "LAB-201": "/courses/LAB-201-reasoning-lab-cases-debates.html",
+      "TECH-101": "/courses/TECH-101-coding-computational-thinking.html",
+      "TECH-201": "/courses/TECH-201-unmanned-systems.html",
+      "TECH-202": "/courses/TECH-202-ai-society.html",
+      "TECH-203": "/courses/TECH-203-cybersecurity-information-warfare.html",
+      "TECH-204": "/courses/TECH-204-hardware-hacking-embedded.html",
+      "TECH-205": "/courses/TECH-205-climate-tech-energy-systems.html",
+      "BUS-201": "/courses/BUS-201-entrepreneurship-startup-design.html",
+      "BUS-202": "/courses/BUS-202-finance-for-innovators.html",
+      "BUS-203": "/courses/BUS-203-organizational-leadership-negotiation.html",
+      "BUS-204": "/courses/BUS-204-global-markets-geopolitics.html",
+      "BUS-205": "/courses/BUS-205-business-ethics-responsibility.html",
+      "DATA-201": "/courses/DATA-201-data-science-visualization.html",
+      "HUM-201": "/courses/HUM-201-philosophy-of-consciousness.html",
+      "HUM-202": "/courses/HUM-202-political-theory-civic-life.html",
+      "HUM-203": "/courses/HUM-203-cultural-anthropology-fieldwork.html",
+      "HUM-204": "/courses/HUM-204-history-of-technology-innovation.html",
+      "HUM-205": "/courses/HUM-205-comparative-religion-society.html",
+      "LIFE-201": "/courses/LIFE-201-outdoor-leadership-expeditionary-skills.html",
+      "LIFE-202": "/courses/LIFE-202-health-fitness-human-performance.html",
+      "LIFE-203": "/courses/LIFE-203-psychology-creativity-flow-states.html",
+      "LIFE-204": "/courses/LIFE-204-education-mentorship-teach-what-you-know.html",
+      "LIFE-205": "/courses/LIFE-205-global-citizenship-civic-engagement.html",
+      "MEDIA-201": "/courses/MEDIA-201-film-visual-storytelling.html",
+      "MEDIA-202": "/courses/MEDIA-202-music-sound-design.html",
+      "MEDIA-203": "/courses/MEDIA-203-design-visual-communication.html",
+      "MEDIA-204": "/courses/MEDIA-204-creative-writing-story-craft.html",
+      "MEDIA-205": "/courses/MEDIA-205-media-culture-society.html",
+      "PSYCH-201": "/courses/PSYCH-201-human-psychology.html"
+    };
+    return flat[normalized] || null;
+  }
+
+  // Legacy map keyed by "LBS 101" style (space-separated) for backward compat
+  var COURSE_URLS = {};
+  (function() {
+    var codes = [
+      "LBS 101","LBS 105","LBS 110","LBS 120","LAB 101",
+      "LBS 201","LBS 205","LBS 210","LBS 220","LAB 201",
+      "TECH 101","TECH 201","TECH 202","TECH 203","TECH 204","TECH 205",
+      "BUS 201","BUS 202","BUS 203","BUS 204","BUS 205",
+      "DATA 201","HUM 201","HUM 202","HUM 203","HUM 204","HUM 205",
+      "LIFE 201","LIFE 202","LIFE 203","LIFE 204","LIFE 205",
+      "MEDIA 201","MEDIA 202","MEDIA 203","MEDIA 204","MEDIA 205",
+      "PSYCH 201"
+    ];
+    codes.forEach(function(c) { COURSE_URLS[c] = courseUrl(c); });
+  })();
+
+  function buildLessonTopbar(meta, links) {
+    var topbar = createElement("div", "lesson-topbar");
+
+    var pos = createElement("span", "lesson-pos",
+      "Week " + meta.chapterNumber + " \u00b7 Day " + meta.dayNumber + " of " + meta.volume.daysPerChapter
+    );
+
+    var nav = createElement("div", "lesson-nav");
+    var prev = createElement("a", "", "\u2190 Prev");
+    prev.href = links.previousPath;
+    var chap = createElement("a", "", "Week " + meta.chapterNumber);
+    chap.href = links.chapterPath;
+    var next = createElement("a", "", "Next \u2192");
+    next.href = links.nextPath;
+    nav.appendChild(prev);
+    nav.appendChild(chap);
+    nav.appendChild(next);
+
+    topbar.appendChild(pos);
+    topbar.appendChild(nav);
+    return topbar;
+  }
+
+  function buildDayRail(meta, links) {
+    var rail = createElement("section", "day-rail");
+
+    var label = createElement("p", "day-rail-label", "Week " + meta.chapterNumber);
+    rail.appendChild(label);
+
+    var grid = createElement("div", "day-rail-grid");
+    for (var i = 1; i <= meta.volume.daysPerChapter; i++) {
+      var a = createElement("a", i === meta.dayNumber ? "is-current" : "", String(i));
+      a.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + meta.volumeSlug +
+        "/schedule/chapter-" + pad(meta.chapterNumber) +
+        "/section-" + pad(i) + ".html"
+      );
+      a.setAttribute("aria-label", "Day " + i);
+      grid.appendChild(a);
+    }
+    rail.appendChild(grid);
+
+    var links2 = createElement("div", "lesson-nav");
+    var ch = createElement("a", "", "Week overview");
+    ch.href = links.chapterPath;
+    var vol = createElement("a", "", "Full schedule");
+    vol.href = links.volumePath;
+    links2.appendChild(ch);
+    links2.appendChild(vol);
+    rail.appendChild(links2);
+
+    return rail;
+  }
+
+  function buildLessonOutline(article) {
+    const headings = Array.from(article.querySelectorAll("h2, h3")).filter(function (heading) {
+      return !heading.closest(".lesson-topbar");
+    });
+
+    if (!headings.length) {
+      return null;
+    }
+
+    const outline = createElement("section", "lesson-outline");
+    outline.appendChild(createElement("h3", "", "On this page"));
+    const list = createElement("ul", "");
+
+    headings.forEach(function (heading) {
+      if (!heading.id) {
+        heading.id = slugify(heading.textContent || "section");
+      }
+      const item = createElement("li", "");
+      const link = createElement("a", "", heading.textContent || "");
+      link.href = "#" + heading.id;
+      item.appendChild(link);
+      list.appendChild(item);
+    });
+
+    outline.appendChild(list);
+    return outline;
+  }
+
+  /* ── Lesson section map ─────────────────────────────────── */
   var SECTION_CLASS_MAP = {
     "session-focus": "is-focus",
     "learning-objectives": "is-objectives",
@@ -184,8 +708,6 @@
     });
   }
 
-  /* ── Resource cards (Read / Watch / Listen links) ─────────── */
-
   function getYouTubeID(url) {
     var match = (url || "").match(/[?&]v=([^&]+)/) || (url || "").match(/youtu\.be\/([^?&]+)/);
     return match ? match[1] : null;
@@ -263,131 +785,289 @@
     });
   }
 
-  /* ── Course day pages (/courses/CODE/day-NN.html) ─────────── */
-
-  var fetchCatalog = SDIT.getCatalog;
-
   function enhanceCourseLessonPage(path) {
-    var courseId  = SDIT.courseOf(path);
-    var dayNumber = SDIT.dayOf(path) || 0;
+    var courseId  = (path.match(/\/courses\/([A-Z]+-\d+)\//) || [])[1];
+    var dayNumber = parseInt((path.match(/\/day-(\d{2})\.html$/) || [])[1] || "0", 10);
     if (!courseId || !dayNumber) return;
 
     document.body.classList.add("lesson-page");
 
+    var ctx  = getProgramContext();
     var main = document.querySelector("main");
     if (!main) return;
 
-    // Wrap content into the lesson shell
+    // Wrap content into lesson shell
     var nodesToMove = Array.from(main.childNodes);
     var shell   = createElement("div", "lesson-shell");
     var article = createElement("article", "lesson-content");
     var sidebar = createElement("aside", "lesson-sidebar");
-    nodesToMove.forEach(function (n) { article.appendChild(n); });
+    nodesToMove.forEach(function(n) { article.appendChild(n); });
     main.innerHTML = "";
     shell.appendChild(article);
     shell.appendChild(sidebar);
     main.appendChild(shell);
 
-    wrapLessonSections(article);
-    enhanceResourceLinks(article);
-
-    // The topbar and rail are driven by the catalog, so they only ever point
-    // at days that actually exist — no broken links to unpublished days.
-    fetchCatalog().then(function (catalog) {
-      buildLessonChrome(article, sidebar, catalog, courseId, dayNumber);
-    });
-  }
-
-  function buildLessonChrome(article, sidebar, catalog, courseId, dayNumber) {
-    var course  = (catalog.courses || {})[courseId] || {};
-    var days    = course.days || [];                 // published: [{n, path, title}]
-    var planned = course.plannedDays || (days.length || 1);
-    var pub = {};
-    days.forEach(function (d) { pub[d.n] = d; });
-    var lastN = Math.max(planned, days.length ? days[days.length - 1].n : 0);
-
-    function dayHref(n) { return resolveSitePath("/courses/" + courseId + "/day-" + pad(n) + ".html"); }
-    function overviewHref() { return resolveSitePath("/courses/" + courseId + "/"); }
-
-    // Nearest published neighbours (skip any gaps)
-    var prevN = null, nextN = null;
-    for (var p = dayNumber - 1; p >= 1; p--) { if (pub[p]) { prevN = p; break; } }
-    for (var x = dayNumber + 1; x <= lastN; x++) { if (pub[x]) { nextN = x; break; } }
-
-    // ── Topbar ──
+    // ── Topbar ────────────────────────────────────────────────
     var topbar = createElement("div", "lesson-topbar");
-    topbar.appendChild(createElement("span", "lesson-pos",
-      courseId + " · Day " + dayNumber + " of " + planned));
-    var topNav = createElement("div", "lesson-nav");
-    if (prevN) {
-      var pa = createElement("a", "", "← Day " + prevN);
-      pa.href = dayHref(prevN);
-      topNav.appendChild(pa);
+    var posLabel;
+    if (ctx) {
+      posLabel = createElement("span", "lesson-pos",
+        "Vol. " + ctx.vol.replace(/^vol-0*(\d+).*/, "$1") +
+        " \u00b7 Week " + ctx.week + " \u00b7 Day " + ctx.pos + " of 5"
+      );
+    } else {
+      posLabel = createElement("span", "lesson-pos",
+        courseId + " \u00b7 Day " + dayNumber + " of 15"
+      );
     }
-    var cLink = createElement("a", "", "Overview");
-    cLink.href = overviewHref();
-    topNav.appendChild(cLink);
-    if (nextN) {
-      var na = createElement("a", "", "Day " + nextN + " →");
-      na.href = dayHref(nextN);
-      topNav.appendChild(na);
-    }
-    topbar.appendChild(topNav);
-    article.insertBefore(topbar, article.firstChild);
 
-    // ── Day rail: published days are links; planned-but-unpublished are locked ──
-    var rail = createElement("section", "day-rail");
-    rail.appendChild(createElement("p", "day-rail-label", courseId));
-    var railGrid = createElement("div", "day-rail-grid");
-    for (var i = 1; i <= lastN; i++) {
-      if (pub[i]) {
-        var a = createElement("a", i === dayNumber ? "is-current" : "", String(i));
-        a.href = dayHref(i);
-        a.setAttribute("aria-label", "Day " + i + (pub[i].title ? " — " + pub[i].title : ""));
-        railGrid.appendChild(a);
-      } else {
-        var s = createElement("span", "is-locked", String(i));
-        s.setAttribute("aria-label", "Day " + i + " — coming soon");
-        railGrid.appendChild(s);
+    var topNav = createElement("div", "lesson-nav");
+    if (ctx) {
+      var backWeek = createElement("a", "",
+        "\u2190 Week " + ctx.week);
+      backWeek.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + ctx.vol +
+        "/schedule/chapter-" + pad(ctx.week) + "/index.html"
+      );
+      var backSched = createElement("a", "", "Full Schedule");
+      backSched.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + ctx.vol + "/schedule/index.html"
+      );
+      topNav.appendChild(backWeek);
+      topNav.appendChild(backSched);
+    } else {
+      if (dayNumber > 1) {
+        var p = createElement("a", "", "\u2190 Day " + (dayNumber - 1));
+        p.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(dayNumber - 1) + ".html");
+        topNav.appendChild(p);
+      }
+      var cLink = createElement("a", "", courseId);
+      cLink.href = resolveSitePath("/courses/" + courseId + "/");
+      topNav.appendChild(cLink);
+      if (dayNumber < 15) {
+        var nx = createElement("a", "", "Day " + (dayNumber + 1) + " \u2192");
+        nx.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(dayNumber + 1) + ".html");
+        topNav.appendChild(nx);
       }
     }
+    topbar.appendChild(posLabel);
+    topbar.appendChild(topNav);
+    if (!article.querySelector(".lesson-topbar")) {
+      article.insertBefore(topbar, article.firstChild);
+    }
+
+    // ── Sidebar rail ──────────────────────────────────────────
+    var rail  = createElement("section", "day-rail");
+    var rlabel = createElement("p", "day-rail-label",
+      ctx ? "Week " + ctx.week : courseId);
+    rail.appendChild(rlabel);
+
+    var railGrid = createElement("div", "day-rail-grid");
+    var totalDays = ctx ? 5 : 15;
+    var currentNum = ctx ? ctx.pos : dayNumber;
+    for (var i = 1; i <= totalDays; i++) {
+      var a = createElement("a", i === currentNum ? "is-current" : "", String(i));
+      if (ctx) {
+        // Navigate between course days via week overview (we don't know sibling course IDs here)
+        a.href = resolveSitePath(
+          "/programs/Bachelor-Liberal-Arts/" + ctx.vol +
+          "/schedule/chapter-" + pad(ctx.week) + "/index.html"
+        );
+        a.setAttribute("title", "Day " + i + " — go to week overview");
+      } else {
+        a.href = resolveSitePath("/courses/" + courseId + "/day-" + pad(i) + ".html");
+      }
+      a.setAttribute("aria-label", "Day " + i);
+      railGrid.appendChild(a);
+    }
     rail.appendChild(railGrid);
+
     var railLinks = createElement("div", "lesson-nav");
     var overviewLink = createElement("a", "", "Course overview");
-    overviewLink.href = overviewHref();
+    overviewLink.href = resolveSitePath("/courses/" + courseId + "/");
     railLinks.appendChild(overviewLink);
+    if (ctx) {
+      var weekLink = createElement("a", "", "Week " + ctx.week + " overview");
+      weekLink.href = resolveSitePath(
+        "/programs/Bachelor-Liberal-Arts/" + ctx.vol +
+        "/schedule/chapter-" + pad(ctx.week) + "/index.html"
+      );
+      railLinks.appendChild(weekLink);
+    }
     rail.appendChild(railLinks);
     sidebar.appendChild(rail);
+
+    // ── Course source link ────────────────────────────────────
+    var firstH1 = article.querySelector("h1");
+    var courseLabel = Array.from(article.querySelectorAll("p")).find(function(p) {
+      return /^Course:\s*/i.test(p.textContent.trim());
+    });
+    if (courseLabel && firstH1) {
+      var courseName = formatCourseLabel(courseLabel);
+      var codeKey = courseName.split(/[\u2013\-]/)[0].trim();
+      var cUrl = COURSE_URLS[codeKey] || resolveSitePath("/courses/" + courseId + "/");
+      var src = createElement("p", "lesson-course-source");
+      src.appendChild(document.createTextNode(courseName + " \u00b7 "));
+      var srcLink = createElement("a", "lesson-course-link", "View full course \u2192");
+      srcLink.href = resolveSitePath(cUrl);
+      src.appendChild(srcLink);
+      var after = firstH1.nextSibling;
+      if (after) article.insertBefore(src, after);
+      else article.appendChild(src);
+    }
+
+    wrapLessonSections(article);
+    enhanceResourceLinks(article);
   }
 
   function enhanceLessonPage() {
     const path = currentPath();
-    if (/\/courses\/[A-Z]+-\d+\/day-\d{2}(\.html)?$/.test(path)) {
+    const isCourseDayPage = /\/courses\/[A-Z]+-\d+\/day-\d{2}\.html$/.test(path);
+    if (isCourseDayPage) {
       enhanceCourseLessonPage(path);
+      return;
+    }
+    if (!/\/section-\d{2}\.html$/.test(path)) {
+      return;
+    }
+
+    const volumeSlug = getVolumeSlug(path);
+    const volume = getVolumeData(path);
+    const chapterNumber = getChapterNumber(path);
+    const dayNumber = getDayNumber(path);
+    const main = document.querySelector("main");
+
+    if (!volumeSlug || !volume || !chapterNumber || !dayNumber || !main) {
+      return;
+    }
+
+    document.body.classList.add("lesson-page");
+
+    const breadcrumbs = main.querySelector(".breadcrumbs");
+    if (breadcrumbs) {
+      const activeCrumb = breadcrumbs.querySelector("strong");
+      if (activeCrumb) {
+        activeCrumb.textContent = "Day " + dayNumber;
+      }
+    }
+
+    const firstHeading = main.querySelector("h1");
+    if (firstHeading && /^Section\s+/i.test(firstHeading.textContent || "")) {
+      firstHeading.textContent = (firstHeading.textContent || "").replace(/^Section/i, "Day");
+    }
+
+    let courseName = "";
+    const courseLabel = Array.from(main.querySelectorAll("p")).find(function (paragraph) {
+      return /^Course:\s*/i.test(paragraph.textContent.trim());
+    });
+    if (courseLabel) {
+      courseName = formatCourseLabel(courseLabel);
+    }
+
+    let shell = main.querySelector(".lesson-shell");
+    let article;
+    let sidebar;
+
+    if (!shell) {
+      const nodesToMove = Array.from(main.childNodes).filter(function (node) {
+        return node !== breadcrumbs;
+      });
+
+      shell = createElement("div", "lesson-shell");
+      article = createElement("article", "lesson-content");
+      sidebar = createElement("aside", "lesson-sidebar");
+
+      nodesToMove.forEach(function (node) {
+        article.appendChild(node);
+      });
+
+      main.innerHTML = "";
+      if (breadcrumbs) {
+        main.appendChild(breadcrumbs);
+      }
+      shell.appendChild(article);
+      shell.appendChild(sidebar);
+      main.appendChild(shell);
+    } else {
+      article = shell.querySelector(".lesson-content");
+      sidebar = shell.querySelector(".lesson-sidebar");
+    }
+
+    const meta = {
+      volumeSlug: volumeSlug,
+      volume: volume,
+      chapterNumber: chapterNumber,
+      dayNumber: dayNumber
+    };
+    const links = buildLessonLinks(
+      meta.volumeSlug,
+      meta.chapterNumber,
+      meta.dayNumber,
+      meta.volume.chapters,
+      meta.volume.daysPerChapter
+    );
+
+    if (article && !article.querySelector(".lesson-topbar")) {
+      article.insertBefore(buildLessonTopbar(meta, links), article.firstChild);
+    }
+
+    if (sidebar) {
+      sidebar.innerHTML = "";
+      sidebar.appendChild(buildDayRail(meta, links));
+    }
+
+    if (article) {
+      // Inject course source link after the H1
+      if (firstHeading && courseName) {
+        var courseCode = courseName.split(/[\u2013\-]/)[0].trim();
+        var courseUrl = COURSE_URLS[courseCode];
+        var sourceEl = createElement("p", "lesson-course-source");
+        var sourceText = document.createTextNode(courseName + " \u00b7 ");
+        var sourceLink = createElement("a", "lesson-course-link", "View full course \u2192");
+        if (courseUrl) sourceLink.href = resolveSitePath(courseUrl);
+        sourceEl.appendChild(sourceText);
+        sourceEl.appendChild(sourceLink);
+        if (firstHeading.nextSibling) {
+          article.insertBefore(sourceEl, firstHeading.nextSibling);
+        } else {
+          article.appendChild(sourceEl);
+        }
+      }
+      wrapLessonSections(article);
+      enhanceResourceLinks(article);
     }
   }
 
-  /* ── Course overview pages (/courses/CODE/) ───────────────── */
-
   function getCourseCodeFromPath(pathname) {
-    var m = pathname.match(/\/courses\/([A-Z]+-\d+)(\/|$)/);
-    return m ? m[1] : null;
+    // /courses/LBS-101/index.html  or  /courses/LBS-101/day-01.html  → "LBS-101"
+    var m = pathname.match(/\/courses\/([A-Z]+-\d+)\//);
+    if (m) return m[1];
+    // /courses/LBS-101-mental-gym.html  → "LBS-101"
+    var m2 = pathname.match(/\/courses\/([A-Z]+-\d+)/);
+    return m2 ? m2[1] : null;
+  }
+
+  function getProgramContext() {
+    if (typeof URLSearchParams === "undefined") return null;
+    var sp = new URLSearchParams(window.location.search);
+    var prog = sp.get("prog");
+    var vol  = sp.get("vol");
+    var week = parseInt(sp.get("week") || "0", 10);
+    var pos  = parseInt(sp.get("pos")  || "0", 10);
+    if (!prog || !vol || !week || !pos) return null;
+    return { prog: prog, vol: vol, week: week, pos: pos };
   }
 
   function getCourseCategory(code) {
     var prefix = (code || "").split("-")[0];
     var cats = {
-      "HUM": "The Canon",
-      "MATH": "Mathematics & Science",
-      "PHYS": "Mathematics & Science",
-      "CS": "Computation",
-      "RHET": "Rhetoric & Epistemics",
-      "SIG": "Culture & Signal",
-      "WKSP": "The Workshop",
-      "ART": "Depth Studio",
-      "ENGR": "Depth Studio",
-      "FLD": "Field Term",
-      "CAP": "Capstone"
+      "LBS": "Liberal Arts",
+      "LAB": "Lab",
+      "TECH": "Technology",
+      "BUS": "Business",
+      "HUM": "Humanities",
+      "LIFE": "Life Skills",
+      "MEDIA": "Media & Arts"
     };
     return cats[prefix] || "Course";
   }
@@ -395,10 +1075,10 @@
   function enhanceCoursePage() {
     var path = currentPath();
     if (path.indexOf("/courses/") === -1) return;
-    // Allow /courses/CODE/ but exclude the top-level catalog page
-    if (/^\/courses\/(index(\.html)?)?$/.test(path)) return;
+    // Allow /courses/LBS-101/index.html but exclude the top-level /courses/index.html
+    if (/^\/courses\/index\.html$/.test(path)) return;
     // Exclude day pages — those are handled by enhanceCourseLessonPage
-    if (/\/day-\d{2}(\.html)?$/.test(path)) return;
+    if (/\/day-\d{2}\.html$/.test(path)) return;
 
     document.body.classList.add("course-page");
 
@@ -407,15 +1087,17 @@
     var h1 = main && main.querySelector("h1");
     if (!h1 || !code) return;
 
-    // Inject eyebrow with code badge + thread
+    // Inject eyebrow with code badge + category
     var eyebrow = createElement("div", "course-eyebrow");
-    eyebrow.appendChild(createElement("span", "course-code-badge", code));
-    eyebrow.appendChild(createElement("span", "course-category", getCourseCategory(code)));
+    var badge = createElement("span", "course-code-badge", code);
+    var cat = createElement("span", "course-category", getCourseCategory(code));
+    eyebrow.appendChild(badge);
+    eyebrow.appendChild(cat);
     h1.parentNode.insertBefore(eyebrow, h1);
 
-    // Strip course code prefix from H1 if present ("CS 110 — Title" → "Title")
+    // Strip course code prefix from H1 if present (e.g. "LBS-101 — Title" → "Title")
     var h1Text = h1.textContent || "";
-    var titleMatch = h1Text.match(/^[A-Z]+[\s-]\d+\s*[—\-]\s*(.+)$/);
+    var titleMatch = h1Text.match(/^[A-Z]+-\d+\s*[\u2014\-]\s*(.+)$/);
     if (titleMatch) h1.textContent = titleMatch[1];
 
     // Wrap H2 sections into course-section cards
@@ -427,7 +1109,11 @@
         return;
       }
       if (child.tagName === "H2") {
+        var text = (child.textContent || "").toLowerCase();
         var section = createElement("div", "course-section");
+        if (text.indexOf("central question") !== -1) section.classList.add("is-central-q");
+        else if (text.indexOf("arc") !== -1 || text.indexOf("15-day") !== -1) section.classList.add("is-arc");
+        else if (text.indexOf("make") !== -1 || text.indexOf("deliverable") !== -1) section.classList.add("is-deliverables");
         main.insertBefore(section, child);
         section.appendChild(child);
         currentSection = section;
@@ -435,12 +1121,50 @@
       }
       if (currentSection) currentSection.appendChild(child);
     });
+
+    // If this is a library course (subdirectory), append a 15-day grid
+    if (COURSE_DIRS[code] && /\/courses\/[A-Z]+-\d+\/(index\.html)?$/.test(path)) {
+      var daysSection = createElement("div", "course-section course-days-section");
+      var daysH2 = createElement("h2", "", "15 Daily Sessions");
+      daysSection.appendChild(daysH2);
+      var daysGrid = createElement("div", "course-days-grid");
+      for (var di = 1; di <= 15; di++) {
+        var dc = document.createElement("a");
+        dc.className = "course-day-card";
+        dc.href = resolveSitePath("/courses/" + code + "/day-" + pad(di) + ".html");
+        dc.appendChild(createElement("span", "course-day-num", "Day " + pad(di)));
+        dc.appendChild(createElement("span", "course-day-arrow", "\u2192"));
+        daysGrid.appendChild(dc);
+      }
+      daysSection.appendChild(daysGrid);
+      main.appendChild(daysSection);
+    }
   }
 
-  /* ── Boot ─────────────────────────────────────────────────── */
+  function tagGenericPages() {
+    const body = document.body;
+    const path = currentPath();
+
+    if (path === "/index.html") {
+      body.classList.add("home-page");
+    }
+
+    if (path === "/programs/index.html") {
+      body.classList.add("programs-page");
+    }
+
+    if (path === "/programs/Bachelor-Liberal-Arts/index.html") {
+      body.classList.add("program-page");
+    }
+  }
 
   function boot() {
+    tagGenericPages();
+    bindMobileNav();
     updateActiveNav();
+    enhanceCardGrids();
+    enhanceSectionCards();
+    enhanceChapterPage();
     enhanceLessonPage();
     enhanceCoursePage();
     if (typeof window.__sditRewritePaths === "function") {

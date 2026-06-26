@@ -1,17 +1,8 @@
-# SDIT — The Curriculum
+# SDIT Open Curriculum
 
-The open curriculum of the San Diego Institute of Technology — the learning site (learn.sandiegotech.org). The Institute itself, daily updates, and everything else live on the main site (sandiegotech.org); this repo is entirely for those who want to learn.
+An open-source liberal arts curriculum you can take yourself, fork to your own GitHub, and build on.
 
-One degree framework — the **BA in Technology** (`curriculum/index.html`) — with a concentration declared at the end of Year 2 (`curriculum/four-years.html`):
-
-- **Media** — things people watch, hear, and feel
-- **Design** — things people use
-- **Engineering** — things that work on their own
-
-Years 1–2 are the Foundation, identical for everyone — the artist learns engineering, the engineer learns art — and the whole catalog is roughly forty courses; eight depth studios, shared across overlapping concentration lists, carry the focus. Every course is built to one standard: it ends in a made thing, and it ships day by day.
-
-- Website: https://learn.sandiegotech.org
-- Main site: https://www.sandiegotech.org
+- Website: https://sandiegotech.github.io/sdit/
 - Repository: https://github.com/sandiegotech/sdit
 
 ---
@@ -38,7 +29,7 @@ The curriculum is designed to be taken, not just read. Fork this repo, run the l
 
 4. **Do the work** — navigate to any lesson, scroll to **My Work**, and type your responses directly in the page. They save automatically.
 
-5. **Push to GitHub** — run the server with `python3 serve.py --push` to auto-commit and push each response, or push manually whenever you like:
+5. **Push to GitHub** — the server saves and pushes in the background after each response. Or push manually:
    ```bash
    git push
    ```
@@ -47,20 +38,19 @@ The curriculum is designed to be taken, not just read. Fork this repo, run the l
 
 ### How responses are saved
 
-When you type in a response field:
+When you type in a My Work field:
 - Your response saves to **localStorage** instantly (survives page refresh)
-- On `localhost`, it also writes to a markdown file under `my-work/` (and auto-pushes if the server was started with `--push`)
+- On `localhost`, it also writes back to the source `.md` file and triggers a `git push`
 - On GitHub Pages (published site), it saves to localStorage only — visible to you in the browser
-- The site also remembers your **last lesson** on each device and offers to continue from it on the homepage
 
 ### Where lesson files live
 
 Every course has its own directory:
 
 ```
-courses/HUM-101/day-01.md    ← Day 1 of The Ancient World
-courses/MATH-110/day-01.md   ← Day 1 of The Mathematics of Motion
-courses/CS-110/day-01.md     ← Day 1 of Speaking to Machines
+courses/LBS-101/day-01.md    ← Day 1 of The Mental Gym
+courses/LBS-105/day-03.md    ← Day 3 of Writing & Communication
+courses/LBS-110/day-07.md    ← Day 7 of Mathematics for Modern Thinkers
 ...
 ```
 
@@ -71,15 +61,12 @@ Each file has a `## My Work` section at the bottom where your responses go. The 
 ## What This Repo Contains
 
 ```
-curriculum/        The Curriculum — degree requirements, the four-years map, the schedule
-courses/           The catalog — each course owns its day files (source of truth)
-institute/         Founding documents — The Plan, The Degree
-knowledge/         Institutional YAML reference files (degree, catalog, outcomes, identity, programs)
-accreditation.html Where authorization stands, stated plainly
-downloads/         Generated PDFs (degree map, the Nine Laws)
-assets/            Styles (site.css, charter design system) and JavaScript
-partials/          Shared masthead header and colophon footer (loaded dynamically)
-scripts/           Build & scaffold scripts (build_site.py, scaffold_catalog.py, validate.py)
+courses/           Course library — each course owns its day files (source of truth)
+programs/          Degree programs assembled from the course library
+knowledge/         Institutional YAML reference files
+assets/            Styles (site.css) and JavaScript (layout.js, student-work.js)
+partials/          Shared site header and footer (loaded dynamically)
+scripts/           Build script (build_site.py)
 serve.py           Local development server with student response saving
 ```
 
@@ -96,10 +83,6 @@ The build script (`scripts/build_site.py`) converts Markdown to HTML. `serve.py`
 ```bash
 python3 scripts/build_site.py --out .
 ```
-
-### The course registry
-
-`knowledge/catalog.yaml` is the single source of truth for the catalog's structure — every course's code, registers, outcomes, and status. `scripts/scaffold_catalog.py` generates a templated `courses/<CODE>/index.md` for any registry course that doesn't have one yet (it never overwrites). After scaffolding, the markdown is the live content source: write lessons as `courses/<CODE>/day-NN.md`, link them from the course's `index.md`, and rebuild.
 
 ---
 
