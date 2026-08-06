@@ -2,7 +2,7 @@ __meta__:
   title: The Five Outcomes — Assessment Framework
   description: >
     The five capacities SDIT certifies, assessed at annual gates: Judgment,
-    Command of Intelligence, Craft, Articulation, Breadth of Mind. Includes the
+    Command of Intelligence, Workmanship, Articulation, Breadth of Mind. Includes the
     thread-to-outcome map for the Bachelor of Arts in Technology.
   intended_use: >
     Source of truth for institutional outcomes and the thread-level curriculum
@@ -26,7 +26,7 @@ outcomes:
     name: Command of Intelligence
     statement: Directing, building, and evaluating AI systems as a native medium.
   - id: craft
-    name: Craft
+    name: Workmanship
     statement: Conceiving, designing, and physically realizing working artifacts.
   - id: articulation
     name: Articulation

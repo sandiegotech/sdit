@@ -25,7 +25,7 @@ COURSES = ROOT / "courses"
 OUTCOME_NAMES = {
     "judgment": "Judgment",
     "intelligence": "Command of Intelligence",
-    "craft": "Craft",
+    "craft": "Workmanship",
     "articulation": "Articulation",
     "breadth": "Breadth of Mind",
 }

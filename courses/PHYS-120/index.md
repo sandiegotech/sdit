@@ -19,7 +19,7 @@ status: syllabus
 ## Outcomes Served
 
 - **Judgment**
-- **Craft**
+- **Workmanship**
 
 ## What This Course Is About
 

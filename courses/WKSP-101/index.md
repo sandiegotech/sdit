@@ -29,13 +29,13 @@ One day a week on the page, about ten minutes a sitting — and then your hands 
 
 By the end of this course you can:
 
-1. Scope a project you can actually finish in a semester, and finish it. → *Judgment · Craft*
-2. Use basic fabrication tools and materials safely and competently. → *Craft*
+1. Scope a project you can actually finish in a semester, and finish it. → *Judgment · Workmanship*
+2. Use basic fabrication tools and materials safely and competently. → *Workmanship*
 3. Take critique, iterate, and show the difference between draft and final. → *Judgment*
 4. Document a build so someone else could follow it — photos, notes, decisions. → *Articulation*
 5. Exhibit finished work in public and talk about it. → *Articulation*
 
-*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Craft, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 

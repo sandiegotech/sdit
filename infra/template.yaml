@@ -1,0 +1,245 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Hosting for learn.sandiegotech.org — S3 origin behind CloudFront, with the
+  account API mounted at /api/* on the same distribution.
+
+  Same-origin is the point: with the site and the API sharing one address, the
+  browser will carry an HttpOnly session cookie between them, so the session no
+  longer has to sit in JavaScript-readable storage. It also means no CORS.
+
+  Deploy with `./deploy.sh` (see README.md). The account service itself lives in
+  ../account and deploys separately — this stack only points at it.
+
+Parameters:
+  DomainName:
+    Type: String
+    Default: learn.sandiegotech.org
+    Description: Public hostname served by this distribution.
+
+  CertificateArn:
+    Type: String
+    Description: >
+      ACM certificate ARN covering DomainName. MUST be issued in us-east-1 —
+      CloudFront reads certificates from that region only, regardless of where
+      the rest of the stack lives.
+
+  ApiDomain:
+    Type: String
+    Description: >
+      Host of the account API's HTTP endpoint, with no scheme and no trailing
+      slash — e.g. 2yuxbioi45.execute-api.us-west-2.amazonaws.com. This is the
+      ApiUrl output of the sdit-account stack with https:// stripped.
+
+Resources:
+
+  # ── Site bucket ─────────────────────────────────────────────────────────────
+  # Private. CloudFront reaches it through Origin Access Control; nothing is
+  # reachable directly over the bucket URL.
+  SiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      # Deliberately NOT named after the domain: dots in a bucket name break the
+      # TLS handshake from CloudFront, since *.s3.<region>.amazonaws.com cannot
+      # match a host with extra dot-separated labels.
+      BucketName: !Sub '${AWS::StackName}-site'
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  SiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref SiteBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: 's3:GetObject'
+            Resource: !Sub '${SiteBucket.Arn}/*'
+            Condition:
+              StringEquals:
+                'AWS:SourceArn': !Sub 'arn:aws:cloudfront::${AWS::AccountId}:distribution/${Distribution}'
+
+  OriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub 'sdit-oac-${DomainName}'
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  # ── Edge functions ──────────────────────────────────────────────────────────
+
+  # S3's REST origin resolves neither directory indexes nor extensionless URLs,
+  # both of which GitHub Pages handled. This site has both shapes — 41 folders
+  # with an index.html, and 32 lesson pages like courses/HUM-101/day-01.html —
+  # and a viewer-request function gets exactly one shot at the origin with no
+  # way to fall back. So it has to decide which shape a path is.
+  #
+  # The decision: assume a page (.html) unless the path is a known directory.
+  # That way /courses/HUM-101/day-01 resolves, which matters because lesson URLs
+  # are what students bookmark and what The Daily links to.
+  IndexRewriteFunction:
+    Type: AWS::CloudFront::Function
+    Properties:
+      Name: !Sub 'sdit-index-rewrite-${AWS::StackName}'
+      AutoPublish: true
+      FunctionConfig:
+        Comment: Resolve directory indexes and extensionless page URLs.
+        Runtime: cloudfront-js-2.0
+      FunctionCode: |
+        function handler(event) {
+          var request = event.request;
+          var uri = request.uri;
+
+          if (uri.endsWith('/')) {
+            request.uri = uri + 'index.html';
+            return request;
+          }
+
+          if (!uri.includes('.')) {
+            // Course folders are matched by pattern rather than listed, so
+            // adding a course needs no change here. Everything else that owns
+            // an index.html is named outright — deploy.sh fails if the repo
+            // grows a directory this rule would miss.
+            var DIRS = ['courses', 'curriculum', 'knowledge'];
+            var key = uri.replace(/^\/+/, '').replace(/\/+$/, '');
+            var isDir = DIRS.indexOf(key) !== -1 || /^courses\/[A-Z]+-\d+$/.test(key);
+
+            // Redirect rather than serve, matching what GitHub Pages does.
+            // Serving index.html at both /courses and /courses/ would make one
+            // page reachable at two indexable URLs — and only 2 of 73 pages
+            // here carry a canonical tag to sort that out.
+            if (isDir) {
+              var qs = '';
+              for (var k in request.querystring) {
+                qs += (qs ? '&' : '?') + k + '=' + request.querystring[k].value;
+              }
+              return {
+                statusCode: 301,
+                statusDescription: 'Moved Permanently',
+                headers: { location: { value: uri + '/' + qs } }
+              };
+            }
+            request.uri = uri + '.html';
+          }
+          return request;
+        }
+
+  # The Lambda serves its routes at the root (/subscribe, /auth/verify, ...),
+  # but this distribution receives them under /api. Stripping the prefix here
+  # rather than changing the Lambda keeps the API byte-identical whether it is
+  # called through CloudFront or hit directly — which matters when debugging.
+  ApiPrefixFunction:
+    Type: AWS::CloudFront::Function
+    Properties:
+      Name: !Sub 'sdit-api-prefix-${AWS::StackName}'
+      AutoPublish: true
+      FunctionConfig:
+        Comment: Strip the /api prefix before the request reaches API Gateway.
+        Runtime: cloudfront-js-2.0
+      FunctionCode: |
+        function handler(event) {
+          var request = event.request;
+          request.uri = request.uri.replace(/^\/api/, '');
+          if (request.uri === '') {
+            request.uri = '/';
+          }
+          return request;
+        }
+
+  # ── Distribution ────────────────────────────────────────────────────────────
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        Comment: !Sub 'SDIT — ${DomainName}'
+        Aliases:
+          - !Ref DomainName
+        DefaultRootObject: index.html
+        HttpVersion: http2and3
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          AcmCertificateArn: !Ref CertificateArn
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+
+        Origins:
+          - Id: s3
+            DomainName: !GetAtt SiteBucket.RegionalDomainName
+            OriginAccessControlId: !GetAtt OriginAccessControl.Id
+            S3OriginConfig: {}
+
+          - Id: api
+            DomainName: !Ref ApiDomain
+            CustomOriginConfig:
+              OriginProtocolPolicy: https-only
+              OriginSSLProtocols: [TLSv1.2]
+
+        DefaultCacheBehavior:
+          TargetOriginId: s3
+          ViewerProtocolPolicy: redirect-to-https
+          Compress: true
+          AllowedMethods: [GET, HEAD, OPTIONS]
+          # Managed-CachingOptimized
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+          FunctionAssociations:
+            - EventType: viewer-request
+              FunctionARN: !GetAtt IndexRewriteFunction.FunctionMetadata.FunctionARN
+
+        CacheBehaviors:
+          - PathPattern: /api/*
+            TargetOriginId: api
+            ViewerProtocolPolicy: https-only
+            AllowedMethods: [GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE]
+            # Managed-CachingDisabled — never cache an authenticated response.
+            CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad
+            # Managed-AllViewerExceptHostHeader — forwards cookies, auth headers
+            # and body, but NOT Host. API Gateway rejects an unexpected Host, so
+            # the plain AllViewer policy would 403 every request here.
+            OriginRequestPolicyId: b689b0a8-53d0-40ab-baf2-68738e2966ac
+            FunctionAssociations:
+              - EventType: viewer-request
+                FunctionARN: !GetAtt ApiPrefixFunction.FunctionMetadata.FunctionARN
+
+        CustomErrorResponses:
+          - ErrorCode: 403
+            ResponseCode: 404
+            ResponsePagePath: /404.html
+            ErrorCachingMinTTL: 60
+          - ErrorCode: 404
+            ResponseCode: 404
+            ResponsePagePath: /404.html
+            ErrorCachingMinTTL: 60
+
+Outputs:
+  DistributionId:
+    Description: Needed to invalidate the cache after a deploy.
+    Value: !Ref Distribution
+
+  DistributionDomain:
+    Description: >
+      Test URL. Verify the site here BEFORE pointing DNS at it — while this is
+      unverified, GitHub Pages is still serving the real domain.
+    Value: !GetAtt Distribution.DomainName
+
+  BucketName:
+    Description: Sync the site into this bucket to publish.
+    Value: !Ref SiteBucket
+
+  DnsTarget:
+    Description: >
+      Final step only. At Cloudflare, CNAME learn.sandiegotech.org to this value,
+      set to DNS only (grey cloud) — proxying stacks a second CDN in front of
+      CloudFront and breaks certificate matching.
+    Value: !GetAtt Distribution.DomainName

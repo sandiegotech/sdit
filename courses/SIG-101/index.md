@@ -19,7 +19,7 @@ status: syllabus
 ## Outcomes Served
 
 - **Breadth of Mind**
-- **Craft**
+- **Workmanship**
 
 ## What This Course Is About
 

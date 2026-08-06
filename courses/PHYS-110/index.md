@@ -29,13 +29,13 @@ One day a week, about ten minutes a sitting, building toward real measurement, h
 
 By the end of this course you can:
 
-1. Apply Newton's laws to analyze real one- and two-dimensional motion, including friction and circular motion. → *Craft*
+1. Apply Newton's laws to analyze real one- and two-dimensional motion, including friction and circular motion. → *Workmanship*
 2. Use conservation of energy and momentum to predict outcomes you can then check by measurement. → *Judgment*
 3. Design a simple measurement, estimate its uncertainty, and say honestly what the data can and cannot support. → *Judgment · Command of Intelligence*
 4. Keep a lab notebook that another student could reproduce your work from. → *Articulation*
 5. Demonstrate the above unassisted, in periodic written examinations. → *Command of Intelligence*
 
-*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Craft, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 

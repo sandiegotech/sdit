@@ -29,13 +29,13 @@ One day a week, about ten minutes a sitting, with problems that start in the wor
 
 By the end of this course you can:
 
-1. Evaluate limits and compute derivatives of polynomial, trigonometric, exponential, and composed functions. → *Craft*
+1. Evaluate limits and compute derivatives of polynomial, trigonometric, exponential, and composed functions. → *Workmanship*
 2. Model position, velocity, and acceleration from real motion, and interpret a derivative physically before symbolically. → *Judgment*
-3. Solve optimization and related-rates problems drawn from physical situations, and defend the setup, not just the answer. → *Judgment · Craft*
+3. Solve optimization and related-rates problems drawn from physical situations, and defend the setup, not just the answer. → *Judgment · Workmanship*
 4. Move fluently between graphical, numerical, and symbolic representations of the same behavior. → *Breadth of Mind*
 5. Demonstrate the above unassisted, in periodic written examinations. → *Command of Intelligence*
 
-*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Craft, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 

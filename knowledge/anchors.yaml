@@ -7,8 +7,8 @@ strategic_anchors:
     name: "$49 Education Project"
     description: Accessible liberal arts education package (books, films, exercises, AI-assisted)
   - id: ship-stfu
-    name: "Ship//STFU"
-    description: Credibility through actually shipped projects; no empty theory
+    name: "Proof by Making"
+    description: Credibility comes from finished work, built in public
   - id: mira
     name: "Mullen Institute of Radical Arts (MIRA)"
     description: Arts wing inspired by Rodney Mullen; cultural counterpoint to DEUS

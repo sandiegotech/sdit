@@ -20,7 +20,7 @@ status: syllabus
 
 - **Judgment**
 - **Command of Intelligence**
-- **Craft**
+- **Workmanship**
 - **Articulation**
 - **Breadth of Mind**
 

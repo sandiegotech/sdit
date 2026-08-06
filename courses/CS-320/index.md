@@ -20,7 +20,7 @@ status: syllabus
 
 - **Command of Intelligence**
 - **Judgment**
-- **Craft**
+- **Workmanship**
 
 ## What This Course Is About
 

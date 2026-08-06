@@ -61,7 +61,7 @@ Everything SDIT certifies reduces to five capacities, assessed at annual gates:
 
 1. **Judgment** — rigorous reasoning under uncertainty.
 2. **Command of Intelligence** — directing, building, and evaluating AI systems as a native medium.
-3. **Craft** — conceiving, designing, and physically realizing working artifacts.
+3. **Workmanship** — conceiving, designing, and physically realizing working artifacts.
 4. **Articulation** — writing and speaking with clarity and force.
 5. **Breadth of Mind** — history, philosophy, literature, science, and living culture as one continuous conversation.
 

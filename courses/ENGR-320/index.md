@@ -18,7 +18,7 @@ status: syllabus
 
 ## Outcomes Served
 
-- **Craft**
+- **Workmanship**
 - **Command of Intelligence**
 
 ## What This Course Is About

@@ -162,7 +162,7 @@ The full semester-by-semester map: [The Four Years](/curriculum/four-years.html)
 
 ## 8. Gates & Assessment
 
-- **Annual Gates (end of each year):** portfolio review + written and oral examination against the five outcomes (Judgment, Command of Intelligence, Craft, Articulation, Breadth of Mind).
+- **Annual Gates (end of each year):** portfolio review + written and oral examination against the five outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind).
 - **AI-native, not AI-dependent:** AI tools are open and studied everywhere, **and** students pass periodic unassisted examinations in writing, mathematics, and code. The institution certifies the human, so it must regularly observe the human unaided.
 - **Grades exist** (transcripts require them); the portfolio is the primary artifact.
 - Every course description at catalog grade states learning outcomes mapped to the five institutional outcomes — this mapping is the WSCUC Standard 2 evidence file; an internal alignment standard enforces it course by course.

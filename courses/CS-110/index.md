@@ -29,13 +29,13 @@ One day a week, about ten minutes a sitting, hands on the keys from Day 1, build
 
 By the end of this course you can:
 
-1. Write, run, and debug programs using variables, control flow, functions, and basic data structures. → *Craft*
+1. Write, run, and debug programs using variables, control flow, functions, and basic data structures. → *Workmanship*
 2. Decompose a real problem into steps a machine can execute, and explain the decomposition. → *Judgment*
 3. Direct AI tools to produce code — and verify, test, and correct what comes back. → *Command of Intelligence*
 4. Explain any line of your program, unassisted, out loud or in writing. → *Articulation · Command of Intelligence*
-5. Ship a small working program and document what it does and why. → *Craft*
+5. Ship a small working program and document what it does and why. → *Workmanship*
 
-*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Craft, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 

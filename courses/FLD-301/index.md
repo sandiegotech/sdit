@@ -18,7 +18,7 @@ status: syllabus
 
 ## Outcomes Served
 
-- **Craft**
+- **Workmanship**
 - **Judgment**
 - **Articulation**
 

@@ -19,7 +19,7 @@ status: syllabus
 ## Outcomes Served
 
 - **Command of Intelligence**
-- **Craft**
+- **Workmanship**
 - **Judgment**
 
 ## What This Course Is About

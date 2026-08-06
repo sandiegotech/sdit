@@ -32,9 +32,9 @@ By the end of this course you can:
 1. Read an ancient primary text closely and accurately reconstruct its central argument. → *Breadth of Mind*
 2. Trace one idea across a text, a film, and an album, and defend the connection with evidence from all three. → *Judgment*
 3. Write short critical responses that make a claim, support it from the text, and survive line-editing. → *Articulation*
-4. Produce a made response — essay, short film, recorded piece, or designed object — and defend it in seminar. → *Craft · Articulation*
+4. Produce a made response — essay, short film, recorded piece, or designed object — and defend it in seminar. → *Workmanship · Articulation*
 
-*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Craft, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
