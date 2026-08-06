@@ -1,13 +1,13 @@
 ---
 id: cs-320
-title: "CS 320 — Human-AI Collaboration as Craft"
+title: "CS 320 — Human-AI Collaboration"
 course_code: CS 320
 units: 4
 thread: Computation & Intelligent Systems
 status: syllabus
 ---
 
-# CS 320 — Human-AI Collaboration as Craft
+# CS 320 — Human-AI Collaboration
 
 **Computation & Intelligent Systems** · 4 units · Required core — everyone takes it
 

@@ -359,7 +359,7 @@ courses:
       intelligence dependable.
   - code: CS 320
     dir: CS-320
-    name: Human-AI Collaboration as Craft
+    name: Human-AI Collaboration
     display: Working with Intelligence
     units: 4
     thread: computation
@@ -367,7 +367,7 @@ courses:
     degrees: both
     status: syllabus
     catalog_register: Advanced practicum in human-AI collaboration — delegation, verification, evaluation, taste.
-    teaching_frame: The studied practice of working with machine intelligence — the craft the whole age runs on.
+    teaching_frame: The studied practice of working with machine intelligence — the discipline the whole age runs on.
     outcomes: [intelligence, judgment, craft]
     artifact: A substantial work produced with AI as instrument — with a full account of what was delegated, what was verified, and why the judgment calls were yours.
     description: >

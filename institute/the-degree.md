@@ -79,7 +79,7 @@ Every unit pairs **the text + a film + an album**, discussed as one conversation
 | CS 120 — Computational Thinking & Systems | How machines actually work, from logic gates up. |
 | CS 210 — Data Structures & Algorithms | Making slow things fast, and proving why. |
 | CS 220 — Machine Learning I | What a model is, how it trains, what it can and cannot know. |
-| CS 320 — Human-AI Collaboration as Craft (Year 4, everyone) | The studied practice of working with machine intelligence: delegation, verification, taste. |
+| CS 320 — Human-AI Collaboration (Year 4, everyone) | The studied practice of working with machine intelligence: delegation, verification, taste. |
 
 ### Rhetoric & Epistemics
 
