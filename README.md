@@ -128,3 +128,10 @@ Contributions are welcome across curriculum, writing, structure, and UI.
 ## Questions
 
 Open an issue or start a discussion on GitHub.
+
+## Rights
+
+The curriculum — courses, knowledge files, and everything written — is
+CC BY-NC 4.0: free to read, share, teach from, and adapt with credit to the
+San Diego Institute of Technology; commercial use reserved to the Institute.
+The scripts and the account worker are MIT. See [LICENSE.md](LICENSE.md).
