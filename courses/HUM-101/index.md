@@ -60,59 +60,59 @@ Ten minutes. One painted cup, eight lines of poetry, one question.
 
 ### Day 02 — *coming soon*
 
-Being written — publishes with Week 2. All five courses advance together, week by week.
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
 
 ### Day 03 — *coming soon*
 
-Being written — publishes with Week 3. All five courses advance together, week by week.
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
 
 ### Day 04 — *coming soon*
 
-Being written — publishes with Week 4. All five courses advance together, week by week.
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
 
 ### Day 05 — *coming soon*
 
-Being written — publishes with Week 5. All five courses advance together, week by week.
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
 
 ### Day 06 — *coming soon*
 
-Being written — publishes with Week 6. All five courses advance together, week by week.
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
 
 ### Day 07 — *coming soon*
 
-Being written — publishes with Week 7. All five courses advance together, week by week.
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
 
 ### Day 08 — *coming soon*
 
-Being written — publishes with Week 8. All five courses advance together, week by week.
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
 
 ### Day 09 — *coming soon*
 
-Being written — publishes with Week 9. All five courses advance together, week by week.
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
 
 ### Day 10 — *coming soon*
 
-Being written — publishes with Week 10. All five courses advance together, week by week.
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
 
 ### Day 11 — *coming soon*
 
-Being written — publishes with Week 11. All five courses advance together, week by week.
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
 
 ### Day 12 — *coming soon*
 
-Being written — publishes with Week 12. All five courses advance together, week by week.
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
 
 ### Day 13 — *coming soon*
 
-Being written — publishes with Week 13. All five courses advance together, week by week.
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
 
 ### Day 14 — *coming soon*
 
-Being written — publishes with Week 14. All five courses advance together, week by week.
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
 
 ### Day 15 — *coming soon*
 
-Being written — publishes with Week 15. All five courses advance together, week by week.
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
 <!-- sdit:days:end -->
 
 ---

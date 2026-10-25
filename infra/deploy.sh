@@ -61,7 +61,7 @@ done
 # form, which is exactly the form nobody tests. Catch it at deploy time.
 UNKNOWN=$(cd "$SITE_ROOT" && find . -name index.html \
     -not -path './.git/*' -not -path './account/*' -not -path './infra/*' \
-    -not -path './node_modules/*' \
+    -not -path './node_modules/*' -not -path './dist/*' \
   | sed 's|^\./||; s|/index\.html$||' \
   | grep -v '^index\.html$' \
   | grep -vE '^(courses|curriculum|knowledge|programs/Bachelor-Liberal-Arts)$' \
@@ -87,6 +87,7 @@ aws s3 sync "$SITE_ROOT" "s3://$BUCKET" \
   --exclude "account/*" \
   --exclude "infra/*" \
   --exclude "scripts/*" \
+  --exclude "dist/*" \
   --exclude "my-work/*" \
   --exclude "serve.py" \
   --exclude "CNAME" \

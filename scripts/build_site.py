@@ -139,6 +139,10 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
     ensure_markdown()
     entries: list[tuple[str, Path]] = []
     for path in sorted(src.rglob("*.md")):
+        if path.name == "arc.md":
+            # The course arc is the authoring plan for its days (see PLAN.md);
+            # it is source, not site, and never renders.
+            continue
         md = path.read_text(encoding="utf-8")
         body, meta = strip_front_matter(md)
         html = md_to_html(body)

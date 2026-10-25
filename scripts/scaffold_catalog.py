@@ -18,6 +18,8 @@ from pathlib import Path
 
 import yaml
 
+from catalog import planned_days
+
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "knowledge" / "catalog.yaml"
 COURSES = ROOT / "courses"
@@ -31,6 +33,7 @@ OUTCOME_NAMES = {
 }
 
 STATUS_LINES = {
+    "live": "Every day of this course is live below.",
     "day1": "Day 1 is live below; the rest of the daily path is being written.",
     "building": "The daily path for this course is being written now.",
     "syllabus": "This course is at syllabus stage — the daily path is not yet written, so it is not yet live.",
@@ -106,7 +109,7 @@ def main() -> int:
         )
 
         day_lines = []
-        for n in range(1, 16):
+        for n in range(1, planned_days(c) + 1):
             day_md = cdir / f"day-{n:02d}.md"
             if day_md.exists():
                 # Title from the day file's front matter if present

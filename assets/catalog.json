@@ -5,6 +5,7 @@
       "name": "The Ancient World",
       "thread": "canon",
       "semester": 1,
+      "status": "day1",
       "plannedDays": 15,
       "days": [
         {
@@ -19,6 +20,7 @@
       "name": "Rome to the Renaissance",
       "thread": "canon",
       "semester": 2,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -27,6 +29,7 @@
       "name": "The Enlightenment",
       "thread": "canon",
       "semester": 3,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -35,6 +38,7 @@
       "name": "The Industrial Mind",
       "thread": "canon",
       "semester": 4,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -43,6 +47,7 @@
       "name": "The Age of Intelligence",
       "thread": "canon",
       "semester": 5,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -51,6 +56,7 @@
       "name": "Ethics & Statecraft",
       "thread": "canon",
       "semester": 6,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -59,6 +65,7 @@
       "name": "The California Canon",
       "thread": "canon",
       "semester": 7,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -67,6 +74,7 @@
       "name": "The Long View",
       "thread": "canon",
       "semester": 8,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -75,6 +83,7 @@
       "name": "The Mathematics of Motion",
       "thread": "math-science",
       "semester": 1,
+      "status": "day1",
       "plannedDays": 15,
       "days": [
         {
@@ -89,6 +98,7 @@
       "name": "The Mathematics of Sound",
       "thread": "math-science",
       "semester": 2,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -97,6 +107,7 @@
       "name": "How Things Move",
       "thread": "math-science",
       "semester": 1,
+      "status": "day1",
       "plannedDays": 15,
       "days": [
         {
@@ -111,6 +122,7 @@
       "name": "Why Waves Break",
       "thread": "math-science",
       "semester": 2,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -119,6 +131,7 @@
       "name": "The Mathematics of Images",
       "thread": "math-science",
       "semester": 3,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -127,6 +140,7 @@
       "name": "Forecasting & Games",
       "thread": "math-science",
       "semester": 4,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -135,6 +149,7 @@
       "name": "Speaking to Machines",
       "thread": "computation",
       "semester": 1,
+      "status": "day1",
       "plannedDays": 15,
       "days": [
         {
@@ -149,6 +164,7 @@
       "name": "How Machines Think",
       "thread": "computation",
       "semester": 2,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -157,6 +173,7 @@
       "name": "Making Things Fast",
       "thread": "computation",
       "semester": 3,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -165,6 +182,7 @@
       "name": "Teaching Machines",
       "thread": "computation",
       "semester": 4,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -173,6 +191,7 @@
       "name": "Engineering Intelligence",
       "thread": "depth",
       "semester": 5,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -181,6 +200,7 @@
       "name": "Working with Intelligence",
       "thread": "computation",
       "semester": 7,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -189,6 +209,7 @@
       "name": "Writing That Lands",
       "thread": "rhetoric",
       "semester": 3,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -197,6 +218,7 @@
       "name": "Knowing What's True",
       "thread": "rhetoric",
       "semester": 4,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -205,6 +227,7 @@
       "name": "How Music Moves",
       "thread": "signal",
       "semester": 2,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -213,6 +236,7 @@
       "name": "How Images Move",
       "thread": "signal",
       "semester": 4,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -221,6 +245,7 @@
       "name": "How Scenes Form",
       "thread": "signal",
       "semester": 5,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -229,14 +254,16 @@
       "name": "How to Build a Signal",
       "thread": "signal",
       "semester": 8,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
     "WKSP-101": {
-      "code": "WKSP 101\u2013402",
+      "code": "WKSP 101",
       "name": "The Workshop",
       "thread": "workshop",
       "semester": 1,
+      "status": "day1",
       "plannedDays": 15,
       "days": [
         {
@@ -246,19 +273,93 @@
         }
       ]
     },
+    "WKSP-102": {
+      "code": "WKSP 102",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 2,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
+    "WKSP-201": {
+      "code": "WKSP 201",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 3,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
+    "WKSP-202": {
+      "code": "WKSP 202",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 4,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
+    "WKSP-301": {
+      "code": "WKSP 301",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 5,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
+    "WKSP-302": {
+      "code": "WKSP 302",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 6,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
+    "WKSP-401": {
+      "code": "WKSP 401",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 7,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
+    "WKSP-402": {
+      "code": "WKSP 402",
+      "name": "The Workshop",
+      "thread": "workshop",
+      "semester": 8,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
     "FLD-301": {
       "code": "FLD 301",
       "name": "The Field Term",
       "thread": "field-capstone",
       "semester": 6,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
     "CAP-401": {
-      "code": "CAP 401\u2013402",
-      "name": "The Capstone",
+      "code": "CAP 401",
+      "name": "The Capstone Begins",
       "thread": "field-capstone",
       "semester": 7,
+      "status": "syllabus",
+      "plannedDays": 15,
+      "days": []
+    },
+    "CAP-402": {
+      "code": "CAP 402",
+      "name": "The Capstone, Defended",
+      "thread": "field-capstone",
+      "semester": 8,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -267,6 +368,7 @@
       "name": "Interactive Media & Interfaces",
       "thread": "depth",
       "semester": 5,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -275,6 +377,7 @@
       "name": "Film & the Moving Image",
       "thread": "depth",
       "semester": 5,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -283,6 +386,7 @@
       "name": "Music Production & Sound Design",
       "thread": "depth",
       "semester": 6,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -291,6 +395,7 @@
       "name": "Generative Media & Creative Code",
       "thread": "depth",
       "semester": 7,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -299,6 +404,7 @@
       "name": "Design & Fabrication",
       "thread": "depth",
       "semester": 5,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -307,6 +413,7 @@
       "name": "Machines That Sense",
       "thread": "depth",
       "semester": 6,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     },
@@ -315,6 +422,7 @@
       "name": "Robots in the World",
       "thread": "depth",
       "semester": 7,
+      "status": "syllabus",
       "plannedDays": 15,
       "days": []
     }

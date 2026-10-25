@@ -1,20 +1,20 @@
 ---
 id: cap-401
-title: "CAP 401–402 — Thesis / Venture Capstone"
-course_code: CAP 401–402
-units: 4
+title: "CAP 401 — Thesis / Venture Capstone I"
+course_code: CAP 401
+units: 2
 thread: Field Term & Capstone
 status: syllabus
 ---
 
-# CAP 401–402 — Thesis / Venture Capstone
+# CAP 401 — Thesis / Venture Capstone I
 
-**Field Term & Capstone** · 4 units · Required core — everyone takes it
+**Field Term & Capstone** · 2 units · Required core — everyone takes it
 
 ## The Two Registers
 
-- **Catalog register:** Two-semester capstone — proposal, execution, and public defense of an original work.
-- **Teaching frame:** Three accepted forms: a research thesis; an engineered system that works; a venture that exists — incorporated, with users. Defended publicly before faculty and outside examiners.
+- **Catalog register:** Capstone I — proposal and scoping of an original work; execution begins under faculty advising.
+- **Teaching frame:** Three accepted forms: a research thesis; an engineered system that works; a venture that exists — incorporated, with users. This semester: the proposal, the scope, and the first real work.
 
 ## Outcomes Served
 
@@ -26,11 +26,11 @@ status: syllabus
 
 ## What This Course Is About
 
-The whole degree converges here — one original work, a year in the making, defended in public. A thesis, a system that runs, or a venture that exists. The five outcomes, demonstrated at once.
+The whole degree converges here — one original work, a year in the making. This semester you choose its form, argue its scope, and start building it for real.
 
 ## The Made Thing
 
-The defended original work itself.
+An accepted capstone proposal and the first working piece of the thing itself.
 
 ## The Daily Path
 

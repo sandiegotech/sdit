@@ -35,13 +35,15 @@ def main(argv) -> int:
         if gaps_only and pub >= planned:
             continue
         bar = "#" * pub + "." * max(0, planned - pub)
-        rows.append((str(c.get("semester") or "-"), d, f"{pub}/{planned}", bar, c.get("status", "")))
+        arc = "arc" if (cdir / "arc.md").exists() else "-"
+        rows.append((str(c.get("semester") or "-"), d, f"{pub}/{planned}", bar, arc, c.get("status", "")))
 
     w = max((len(r[1]) for r in rows), default=6)
-    print(f"{'sem':>3}  {'course':<{w}}  {'days':>6}  progress")
-    for sem, d, days, bar, status in rows:
-        print(f"{sem:>3}  {d:<{w}}  {days:>6}  {bar}  {status}")
-    print(f"\n{total_pub}/{total_planned} days published across {len(courses)} courses.")
+    print(f"{'sem':>3}  {'course':<{w}}  {'days':>6}  {'progress':<16} {'arc':<4} status")
+    for sem, d, days, bar, arc, status in rows:
+        print(f"{sem:>3}  {d:<{w}}  {days:>6}  {bar:<16} {arc:<4} {status}")
+    arcs = sum(1 for r in rows if r[4] == "arc")
+    print(f"\n{total_pub}/{total_planned} days published across {len(courses)} courses; {arcs} arc(s) written.")
     return 0
 
 

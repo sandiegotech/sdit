@@ -44,6 +44,7 @@ def build_catalog() -> dict:
             "name": c.get("display") or c.get("name") or c.get("code", dir_name),
             "thread": c.get("thread", ""),
             "semester": c.get("semester"),
+            "status": c.get("status", ""),
             "plannedDays": planned_days(c),
             "days": days,
         }

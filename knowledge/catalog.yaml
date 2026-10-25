@@ -8,6 +8,18 @@ __meta__:
     any that already exist); after scaffolding, the markdown files are
     the live content source and this registry tracks structure & status.
   intended_use: Course registry; IDs and dir names must remain stable.
+  fields:
+    days_planned: >
+      The course's length in day lessons — an explicit decision on every course,
+      never a default. Fifteen everywhere, including the one-unit Culture & Signal
+      courses: the site's promise is that every course in a semester advances
+      together, week by week. Units measure the weight of the made thing, not
+      the number of days.
+    status: >
+      planned (registered, nothing written) · syllabus (index page exists, no
+      days) · building (days being written, none published) · day1 (at least
+      one day live) · live (every planned day published and the index page at
+      catalog grade). validate.py enforces each against the files on disk.
 
 threads:
   - id: canon
@@ -41,6 +53,7 @@ courses:
     dir: HUM-101
     name: The Ancient World
     units: 2
+    days_planned: 15
     thread: canon
     semester: 1
     degrees: both
@@ -58,6 +71,7 @@ courses:
     dir: HUM-102
     name: Rome to the Renaissance
     units: 2
+    days_planned: 15
     thread: canon
     semester: 2
     degrees: both
@@ -75,6 +89,7 @@ courses:
     dir: HUM-201
     name: The Enlightenment
     units: 2
+    days_planned: 15
     thread: canon
     semester: 3
     degrees: both
@@ -90,6 +105,7 @@ courses:
     dir: HUM-202
     name: The Industrial Mind
     units: 2
+    days_planned: 15
     thread: canon
     semester: 4
     degrees: both
@@ -106,6 +122,7 @@ courses:
     dir: HUM-301
     name: The Age of Intelligence
     units: 2
+    days_planned: 15
     thread: canon
     semester: 5
     degrees: both
@@ -121,6 +138,7 @@ courses:
     dir: HUM-302
     name: Ethics & Statecraft
     units: 2
+    days_planned: 15
     thread: canon
     semester: 6
     degrees: both
@@ -136,6 +154,7 @@ courses:
     dir: HUM-401
     name: The California Canon
     units: 2
+    days_planned: 15
     thread: canon
     semester: 7
     degrees: both
@@ -152,6 +171,7 @@ courses:
     dir: HUM-402
     name: The Long View
     units: 2
+    days_planned: 15
     thread: canon
     semester: 8
     degrees: both
@@ -171,6 +191,7 @@ courses:
     name: Calculus I
     display: The Mathematics of Motion
     units: 4
+    days_planned: 15
     thread: math-science
     semester: 1
     degrees: both
@@ -189,6 +210,7 @@ courses:
     name: Calculus II
     display: The Mathematics of Sound
     units: 4
+    days_planned: 15
     thread: math-science
     semester: 2
     degrees: both
@@ -206,6 +228,7 @@ courses:
     name: Mechanics
     display: How Things Move
     units: 4
+    days_planned: 15
     thread: math-science
     semester: 1
     degrees: both
@@ -223,6 +246,7 @@ courses:
     name: Waves, Energy & Fluids
     display: Why Waves Break
     units: 4
+    days_planned: 15
     thread: math-science
     semester: 2
     degrees: both
@@ -240,6 +264,7 @@ courses:
     name: Linear Algebra
     display: The Mathematics of Images
     units: 4
+    days_planned: 15
     thread: math-science
     semester: 3
     degrees: both
@@ -257,6 +282,7 @@ courses:
     name: Probability & Statistics
     display: Forecasting & Games
     units: 4
+    days_planned: 15
     thread: math-science
     semester: 4
     degrees: both
@@ -276,6 +302,7 @@ courses:
     name: Programming Fundamentals
     display: Speaking to Machines
     units: 4
+    days_planned: 15
     thread: computation
     semester: 1
     degrees: both
@@ -294,6 +321,7 @@ courses:
     name: Computational Thinking & Systems
     display: How Machines Think
     units: 4
+    days_planned: 15
     thread: computation
     semester: 2
     degrees: both
@@ -311,6 +339,7 @@ courses:
     name: Data Structures & Algorithms
     display: Making Things Fast
     units: 4
+    days_planned: 15
     thread: computation
     semester: 3
     degrees: both
@@ -328,6 +357,7 @@ courses:
     name: Machine Learning I
     display: Teaching Machines
     units: 4
+    days_planned: 15
     thread: computation
     semester: 4
     degrees: both
@@ -345,6 +375,7 @@ courses:
     name: Machine Learning II / AI Systems Engineering
     display: Engineering Intelligence
     units: 4
+    days_planned: 15
     thread: depth
     semester: 5
     concentrations: [engineering]
@@ -362,6 +393,7 @@ courses:
     name: Human-AI Collaboration
     display: Working with Intelligence
     units: 4
+    days_planned: 15
     thread: computation
     semester: 7
     degrees: both
@@ -381,6 +413,7 @@ courses:
     name: Writing Seminar
     display: Writing That Lands
     units: 4
+    days_planned: 15
     thread: rhetoric
     semester: 3
     degrees: both
@@ -398,6 +431,7 @@ courses:
     name: Epistemic Self-Defense
     display: Knowing What's True
     units: 4
+    days_planned: 15
     thread: rhetoric
     semester: 4
     degrees: both
@@ -416,6 +450,7 @@ courses:
     dir: SIG-101
     name: How Music Moves
     units: 1
+    days_planned: 15
     thread: signal
     semester: 2
     degrees: both
@@ -431,6 +466,7 @@ courses:
     dir: SIG-201
     name: How Images Move
     units: 1
+    days_planned: 15
     thread: signal
     semester: 4
     degrees: both
@@ -446,6 +482,7 @@ courses:
     dir: SIG-301
     name: How Scenes Form
     units: 1
+    days_planned: 15
     thread: signal
     semester: 5
     degrees: both
@@ -461,6 +498,7 @@ courses:
     dir: SIG-401
     name: How to Build a Signal
     units: 1
+    days_planned: 15
     thread: signal
     semester: 8
     degrees: both
@@ -474,24 +512,136 @@ courses:
       watch what the world does with it.
 
   # ── The Workshop ───────────────────────────────────────────────────
-  - code: WKSP 101–402
+  # One course per semester, WKSP 101–402. Same thread, same standard, same
+  # Friday; the materials rotate through the region's craft traditions.
+  - code: WKSP 101
     dir: WKSP-101
-    name: The Workshop (Bottega)
+    name: The Workshop
     display: The Workshop
-    units: 2 per semester
+    units: 2
+    days_planned: 15
     thread: workshop
     semester: 1
     degrees: both
     status: day1
-    catalog_register: Project-based fabrication and design practicum, taken every semester (WKSP 101 through 402).
-    teaching_frame: A project team that ships — boards, amplifier and pedal electronics, motorcycle mechanics, camera rigs, drones and ocean sensors. External clients from Year 2; public exhibition every year.
+    catalog_register: Project-based fabrication and design practicum — course 1 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: "A project team that ships — boards, amplifier and pedal electronics, motorcycle mechanics, camera rigs, drones and ocean sensors. Semester 1's law is simpler: make anything, and finish it."
     outcomes: [craft, judgment]
-    artifact: The shipped project, exhibited publicly, every single semester.
+    artifact: The shipped project, exhibited publicly.
     description: >
-      The bottega — the room where mastery is transmitted through making.
-      Every semester, every student, on a project team that ships something
-      real. The materials rotate through the region's craft traditions; the
-      standard never does.
+      The bottega — the room where mastery is transmitted through making. Every semester, every student, on a project team that ships something real. Semester 1 is your first build: small, finished, and yours.
+  - code: WKSP 102
+    dir: WKSP-102
+    name: The Workshop
+    display: The Workshop
+    units: 2
+    days_planned: 15
+    thread: workshop
+    semester: 2
+    degrees: both
+    status: syllabus
+    catalog_register: Project-based fabrication and design practicum — course 2 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: A project team that ships — and this semester, ships to the year-end public exhibition. People you don't know will look at the thing you made.
+    outcomes: [craft, judgment, articulation]
+    artifact: The shipped project, shown at the year-end public exhibition.
+    description: >
+      The second build, carried to the public exhibition that closes Year 1. Finishing was Semester 1's skill; showing is this one's.
+  - code: WKSP 201
+    dir: WKSP-201
+    name: The Workshop
+    display: The Workshop
+    units: 2
+    days_planned: 15
+    thread: workshop
+    semester: 3
+    degrees: both
+    status: syllabus
+    catalog_register: Project-based fabrication and design practicum — course 3 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: External clients begin. The team ships for someone who is not you, on their brief, to their deadline.
+    outcomes: [craft, judgment]
+    artifact: A client project, shipped and documented.
+    description: >
+      Year 2 of the Workshop brings the first outside client. The standard does not change; the person you answer to does.
+  - code: WKSP 202
+    dir: WKSP-202
+    name: The Workshop
+    display: The Workshop
+    units: 2
+    days_planned: 15
+    thread: workshop
+    semester: 4
+    degrees: both
+    status: syllabus
+    catalog_register: Project-based fabrication and design practicum — course 4 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: A client project carried to the end of the Foundation — the body of made work you declare your concentration from.
+    outcomes: [craft, judgment]
+    artifact: A client project, shipped, and a portfolio review ahead of the Declaration.
+    description: >
+      The last Workshop of the Foundation. By its end you have four shipped builds and enough evidence to choose Media, Design, or Engineering from experience rather than at the door.
+  - code: WKSP 301
+    dir: WKSP-301
+    name: The Workshop
+    display: The Workshop
+    units: 2
+    days_planned: 15
+    thread: workshop
+    semester: 5
+    degrees: both
+    status: syllabus
+    catalog_register: Project-based fabrication and design practicum — course 5 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: The Workshop in your concentration's materials, with a client — boards, electronics, rigs, drones, sensors; the rotation continues.
+    outcomes: [craft, judgment]
+    artifact: A client project, shipped and documented.
+    description: >
+      Year 3 of the Workshop runs beside your first depth studios. The materials follow your concentration; the client and the deadline stay real.
+  - code: WKSP 302
+    dir: WKSP-302
+    name: The Workshop
+    display: The Workshop
+    units: 2
+    days_planned: 15
+    thread: workshop
+    semester: 6
+    degrees: both
+    status: syllabus
+    catalog_register: Project-based fabrication and design practicum — course 6 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: A project team that ships while the Field Term runs alongside. The Workshop keeps the hands moving.
+    outcomes: [craft, judgment]
+    artifact: The shipped project, documented.
+    description: >
+      The Workshop continues through the Field Term semester — a lighter build, on purpose, so the placement gets the weight.
+  - code: WKSP 401
+    dir: WKSP-401
+    name: The Workshop
+    display: The Workshop
+    units: 2
+    days_planned: 15
+    thread: workshop
+    semester: 7
+    degrees: both
+    status: syllabus
+    catalog_register: Project-based fabrication and design practicum — course 7 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: You lead first-years now. Every fourth-year leads a Workshop team — you don't know it until you can teach it.
+    outcomes: [craft, judgment, articulation]
+    artifact: A first-year team's shipped project, led by you, and your account of leading it.
+    description: >
+      The teaching requirement, made concrete: a fourth-year runs a first-year team through its first build. The thing shipped is theirs; the responsibility is yours.
+  - code: WKSP 402
+    dir: WKSP-402
+    name: The Workshop
+    display: The Workshop
+    units: 2
+    days_planned: 15
+    thread: workshop
+    semester: 8
+    degrees: both
+    status: syllabus
+    catalog_register: Project-based fabrication and design practicum — course 8 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
+    teaching_frame: The final exhibition. The last build, shown in public beside the capstone.
+    outcomes: [craft, judgment]
+    artifact: The final build, exhibited publicly.
+    description: >
+      Eight semesters of making end in the room they started in. The last Workshop build is exhibited beside the defended capstone.
 
   # ── Field Term & Capstone ──────────────────────────────────────────
   - code: FLD 301
@@ -499,6 +649,7 @@ courses:
     name: Field Term
     display: The Field Term
     units: 4
+    days_planned: 15
     thread: field-capstone
     semester: 6
     degrees: both
@@ -511,29 +662,48 @@ courses:
       A full term inside a working organization. Not an internship to
       decorate a résumé — a placement with a mentor, real responsibilities,
       and a written account of what the work taught you.
-  - code: CAP 401–402
+  - code: CAP 401
     dir: CAP-401
-    name: Thesis / Venture Capstone
-    display: The Capstone
-    units: 4
+    name: Thesis / Venture Capstone I
+    display: The Capstone Begins
+    units: 2
+    days_planned: 15
     thread: field-capstone
     semester: 7
     degrees: both
     status: syllabus
-    catalog_register: Two-semester capstone — proposal, execution, and public defense of an original work.
-    teaching_frame: "Three accepted forms: a research thesis; an engineered system that works; a venture that exists — incorporated, with users. Defended publicly before faculty and outside examiners."
+    catalog_register: Capstone I — proposal and scoping of an original work; execution begins under faculty advising.
+    teaching_frame: "Three accepted forms: a research thesis; an engineered system that works; a venture that exists — incorporated, with users. This semester: the proposal, the scope, and the first real work."
+    outcomes: [judgment, intelligence, craft, articulation, breadth]
+    artifact: An accepted capstone proposal and the first working piece of the thing itself.
+    description: >
+      The whole degree converges here — one original work, a year in the
+      making. This semester you choose its form, argue its scope, and start
+      building it for real.
+  - code: CAP 402
+    dir: CAP-402
+    name: Thesis / Venture Capstone II
+    display: The Capstone, Defended
+    units: 2
+    days_planned: 15
+    thread: field-capstone
+    semester: 8
+    degrees: both
+    status: syllabus
+    catalog_register: Capstone II — completion and public defense of the original work before faculty and outside examiners.
+    teaching_frame: The finished work, defended in public. A thesis, a system that runs, or a venture that exists — presented against the whole four-year sequence.
     outcomes: [judgment, intelligence, craft, articulation, breadth]
     artifact: The defended original work itself.
     description: >
-      The whole degree converges here — one original work, a year in the
-      making, defended in public. A thesis, a system that runs, or a
-      venture that exists. The five outcomes, demonstrated at once.
+      The year-long work is finished and defended in public before faculty
+      and outside examiners. The five outcomes, demonstrated at once.
 
   # ── The Depths — Media studios ─────────────────────────────────────
   - code: ART 310
     dir: ART-310
     name: Interactive Media & Interfaces
     units: 4
+    days_planned: 15
     thread: depth
     semester: 5
     concentrations: [media, design]
@@ -549,6 +719,7 @@ courses:
     dir: ART-320
     name: Film & the Moving Image
     units: 4
+    days_planned: 15
     thread: depth
     semester: 5
     concentrations: [media]
@@ -565,6 +736,7 @@ courses:
     dir: ART-330
     name: Music Production & Sound Design
     units: 4
+    days_planned: 15
     thread: depth
     semester: 6
     concentrations: [media]
@@ -581,6 +753,7 @@ courses:
     dir: ART-410
     name: Generative Media & Creative Code
     units: 4
+    days_planned: 15
     thread: depth
     semester: 7
     concentrations: [media, design]
@@ -600,6 +773,7 @@ courses:
     name: Mechanical Design & Fabrication
     display: Design & Fabrication
     units: 4
+    days_planned: 15
     thread: depth
     semester: 5
     concentrations: [design, engineering]
@@ -616,6 +790,7 @@ courses:
     name: Embedded Systems & Sensors
     display: Machines That Sense
     units: 4
+    days_planned: 15
     thread: depth
     semester: 6
     concentrations: [design, engineering]
@@ -633,6 +808,7 @@ courses:
     name: Robotics & Autonomous Systems
     display: Robots in the World
     units: 4
+    days_planned: 15
     thread: depth
     semester: 7
     concentrations: [engineering]
