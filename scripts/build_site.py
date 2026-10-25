@@ -91,7 +91,12 @@ def tmpl_page(title: str, body_html: str, breadcrumb: str = "") -> str:
 
 
 def write_file(path: Path, content: str) -> None:
+    """Write only when the content differs. An unchanged page keeps its
+    modification time, so `aws s3 sync` (which compares size and mtime)
+    does not re-upload the whole site after every build."""
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists() and path.read_text(encoding="utf-8") == content:
+        return
     path.write_text(content, encoding="utf-8")
 
 

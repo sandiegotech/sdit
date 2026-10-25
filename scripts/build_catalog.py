@@ -55,9 +55,10 @@ def main(out_dir: Path | None = None) -> int:
     out_dir = out_dir or (ROOT / "assets")
     out_dir.mkdir(parents=True, exist_ok=True)
     data = build_catalog()
-    (out_dir / "catalog.json").write_text(
-        json.dumps(data, indent=2) + "\n", encoding="utf-8"
-    )
+    out = out_dir / "catalog.json"
+    text = json.dumps(data, indent=2) + "\n"
+    if not (out.exists() and out.read_text(encoding="utf-8") == text):
+        out.write_text(text, encoding="utf-8")  # unchanged files keep their mtime
     n_days = sum(len(c["days"]) for c in data["courses"].values())
     print(f"build_catalog: {len(data['courses'])} courses, {n_days} published days")
     return 0
