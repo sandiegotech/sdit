@@ -14,9 +14,12 @@ sys.path.insert(0, str(HERE))         # tests/
 import test_frontmatter
 import test_catalog
 import test_validate
+import test_arcs
+import test_publishing
+import test_degree_path
 
 passed = failed = 0
-for module in (test_frontmatter, test_catalog, test_validate):
+for module in (test_frontmatter, test_catalog, test_validate, test_arcs, test_publishing, test_degree_path):
     for name in sorted(dir(module)):
         if not name.startswith("test_"):
             continue

@@ -54,65 +54,65 @@ Three things, assessed together: the **mentor evaluation** — a one-page form o
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — Walk In With Three Rolls
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 5 June 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — The Apprentice's Angel
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 12 June 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — Eight Objections, Answered
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 19 June 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — Write Down What Was Promised
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 26 June 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — Ask Benedetto How They Go on Ice
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 3 July 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — Write Down the One That Contradicts You
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 10 July 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — Fly It as a Kite First
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 17 July 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — Errata
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 24 July 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — Afflicted With the Belief
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 31 July 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — The Water-American
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 7 August 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — Ten Things I Can Do
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 14 August 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — Retrospect
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 21 August 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — The Little Book With Dots
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 28 August 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Thirty-Two Words to Dayton
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 4 September 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — The Most Important Event
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 11 September 2028.
 <!-- sdit:days:end -->
 
 ---

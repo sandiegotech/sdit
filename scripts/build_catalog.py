@@ -13,6 +13,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import arcs
+import publishing
 from catalog import planned_days, published_days, load_catalog, day_info
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,6 +41,17 @@ def build_catalog() -> dict:
                 "path": f"/courses/{dir_name}/day-{n:02d}",
                 "title": title,
             })
+        arc = arcs.load_arc(course_dir)
+        planned = []
+        for n in range(1, planned_days(c) + 1):
+            info = day_info(course_dir, n)
+            arc_day = arc.day(n) if arc else None
+            when = publishing.week_date(c["semester"], n) if c.get("semester") else None
+            planned.append({
+                "n": n,
+                "title": info[0] if info else (arc_day.title if arc_day else ""),
+                "publishes": None if info or not when else when.isoformat(),
+            })
         courses[dir_name] = {
             "code": c.get("code", dir_name),
             "name": c.get("display") or c.get("name") or c.get("code", dir_name),
@@ -47,6 +60,7 @@ def build_catalog() -> dict:
             "status": c.get("status", ""),
             "plannedDays": planned_days(c),
             "days": days,
+            "planned": planned,
         }
     return {"courses": courses}
 

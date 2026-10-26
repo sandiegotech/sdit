@@ -53,65 +53,65 @@ A generative work where the system is yours: one system in one medium — image,
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — No Two Alike, All the Same Work
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 18 September 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — Mozart Rolls Dice
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 25 September 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — The Loom Was First
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 2 October 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — The Brief
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 9 October 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — Noise Is a Material
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 16 October 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — Three Rules, Then a Universe
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 23 October 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — Grow It
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 30 October 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — Run It a Thousand Times
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 6 November 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — The Model Is Material
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 13 November 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — Train It on Yourself
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 20 November 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — Whose Work Is It
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 27 November 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — Freeze the Rule
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 4 December 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — Curate
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 11 December 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Live
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 18 December 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — The Rules on the Wall
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 25 December 2028.
 <!-- sdit:days:end -->
 
 ---

@@ -51,65 +51,65 @@ A forecast: one piece — a short story, a short film, a recorded piece, or a de
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Fiction Got There First
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 21 February 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — Maelzel's Chess-Player
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 28 February 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — The Imitation Game
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 6 March 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — Lady Lovelace's Objection
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 13 March 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — The Governor
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 20 March 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — The Human Use of Human Beings
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 27 March 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — The Doomsday Machine
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 3 April 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — Robot Is a Czech Word
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 10 April 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — The Machine Stops
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 17 April 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — The Book of the Machines
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 24 April 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — The Broom That Would Not Stop
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 1 May 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — What Would Make It Wrong?
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 8 May 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — A Machine Among the Choir
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 15 May 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Unassisted: Can Machines Think?
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 22 May 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — Defend the Forecast
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 29 May 2028.
 <!-- sdit:days:end -->
 
 ---

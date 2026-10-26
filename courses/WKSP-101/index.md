@@ -58,61 +58,61 @@ Ten minutes — and for once, only two of them are reading. This is the Workshop
 
 [Begin Day 01 →](day-01.html)
 
-### Day 02 — *coming soon*
+### Day 02 — The Room Has a Master in It
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 4 January 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — Small Enough to Finish
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 11 January 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — Three Photos and a Sentence
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 18 January 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — Measure Twice
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 25 January 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — The Tool Is a Teacher
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 1 February 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — Describe Before You Judge
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 8 February 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — Rough, Then Fine
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 15 February 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — The Thing Pushes Back
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 22 February 2027.
 
-### Day 10 — *coming soon*
+### Day 10 — Halfway Is a Lie
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 1 March 2027.
 
-### Day 11 — *coming soon*
+### Day 11 — Hands Only
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 8 March 2027.
 
-### Day 12 — *coming soon*
+### Day 12 — A Picture Someone Could Build From
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 15 March 2027.
 
-### Day 13 — *coming soon*
+### Day 13 — Finish Means Finished
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 22 March 2027.
 
-### Day 14 — *coming soon*
+### Day 14 — Say It in Two Minutes
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 29 March 2027.
 
-### Day 15 — *coming soon*
+### Day 15 — It Ships
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 5 April 2027.
 <!-- sdit:days:end -->
 
 ---

@@ -53,65 +53,65 @@ The final build, in a tradition you chose, exhibited publicly beside the defende
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — Tell Me If Anything Was Ever Done
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 1 January 2029.
 
-### Day 02 — *coming soon*
+### Day 02 — The Last Brief You Write for Yourself
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 8 January 2029.
 
-### Day 03 — *coming soon*
+### Day 03 — A Sensor That Moves, If You Want It
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 15 January 2029.
 
-### Day 04 — *coming soon*
+### Day 04 — The Second Pass
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 22 January 2029.
 
-### Day 05 — *coming soon*
+### Day 05 — The Room Beside the Defense
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 29 January 2029.
 
-### Day 06 — *coming soon*
+### Day 06 — Hands Remember
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 5 February 2029.
 
-### Day 07 — *coming soon*
+### Day 07 — The Outside Eye
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 12 February 2029.
 
-### Day 08 — *coming soon*
+### Day 08 — The Final Log Is for the Archive
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 19 February 2029.
 
-### Day 09 — *coming soon*
+### Day 09 — The First-Years Are Downstairs
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 26 February 2029.
 
-### Day 10 — *coming soon*
+### Day 10 — Hang It Beside the Capstone
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 5 March 2029.
 
-### Day 11 — *coming soon*
+### Day 11 — Hands Only, Last Time
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 12 March 2029.
 
-### Day 12 — *coming soon*
+### Day 12 — Eight Paragraphs
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 19 March 2029.
 
-### Day 13 — *coming soon*
+### Day 13 — The Public
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 26 March 2029.
 
-### Day 14 — *coming soon*
+### Day 14 — The Account of Eight Semesters
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 2 April 2029.
 
-### Day 15 — *coming soon*
+### Day 15 — The Bed Odysseus Built
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 9 April 2029.
 <!-- sdit:days:end -->
 
 ---

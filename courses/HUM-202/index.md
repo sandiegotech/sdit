@@ -52,65 +52,65 @@ A made response to one of the century's four questions — an essay, a short fil
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Creature Reads
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 8 November 2027.
 
-### Day 02 — *coming soon*
+### Day 02 — I Ought to Be Thy Adam
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 15 November 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — A Teenager, a Rainy Summer, and a Frog's Leg
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 22 November 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — Circuits That Live and Die
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 29 November 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — The Tangled Bank
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 6 December 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — Four Years, Ten Thousand Miles
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 13 December 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — The Overwhelming Indifference
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 20 December 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — The Shift Change
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 27 December 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — All That Is Solid Melts Into Air
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 3 January 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — The Working Day
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 10 January 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — We Are the Robots
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 17 January 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — We Have Killed Him
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 24 January 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — Would You Live It Again?
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 31 January 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Become Who You Are
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 7 February 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — What Do You Owe It?
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 14 February 2028.
 <!-- sdit:days:end -->
 
 ---

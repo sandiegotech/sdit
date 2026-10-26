@@ -53,65 +53,65 @@ A real cultural artifact shipped to a real audience — with the numbers. Accept
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Key With the Leather Thong
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 1 January 2029.
 
-### Day 02 — *coming soon*
+### Day 02 — The Cabinet
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 8 January 2029.
 
-### Day 03 — *coming soon*
+### Day 03 — Signal, Noise, Channel
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 15 January 2029.
 
-### Day 04 — *coming soon*
+### Day 04 — Common Sense Sold 120,000 Copies
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 22 January 2029.
 
-### Day 05 — *coming soon*
+### Day 05 — Anyone With a Copier Is a Press
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 29 January 2029.
 
-### Day 06 — *coming soon*
+### Day 06 — A Signal Is a Schedule
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 5 February 2029.
 
-### Day 07 — *coming soon*
+### Day 07 — Poor Richard Owned His List
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 12 February 2029.
 
-### Day 08 — *coming soon*
+### Day 08 — Rent the Theater Yourself
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 19 February 2029.
 
-### Day 09 — *coming soon*
+### Day 09 — Dürer's Rhinoceros Was Wrong Five Thousand Times
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 26 February 2029.
 
-### Day 10 — *coming soon*
+### Day 10 — A Human Is in the Box
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 5 March 2029.
 
-### Day 11 — *coming soon*
+### Day 11 — Ship Means a Date
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 12 March 2029.
 
-### Day 12 — *coming soon*
+### Day 12 — The Pump Handle
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 19 March 2029.
 
-### Day 13 — *coming soon*
+### Day 13 — Seventy-Five Thousand Mouths
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 26 March 2029.
 
-### Day 14 — *coming soon*
+### Day 14 — Bernays Wrote It Down
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 2 April 2029.
 
-### Day 15 — *coming soon*
+### Day 15 — The Numbers, Out Loud
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 9 April 2029.
 <!-- sdit:days:end -->
 
 ---

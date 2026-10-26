@@ -54,65 +54,65 @@ By the end of this course you can:
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — Publish the Abstract
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 1 January 2029.
 
-### Day 02 — *coming soon*
+### Day 02 — The Commission d'Examen
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 8 January 2029.
 
-### Day 03 — *coming soon*
+### Day 03 — Leonardo Didn't Finish
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 15 January 2029.
 
-### Day 04 — *coming soon*
+### Day 04 — Le Mans, 8 August 1908
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 22 January 2029.
 
-### Day 05 — *coming soon*
+### Day 05 — Explain the Stove
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 29 January 2029.
 
-### Day 06 — *coming soon*
+### Day 06 — The Claim in Three Pages
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 5 February 2029.
 
-### Day 07 — *coming soon*
+### Day 07 — Difficulties on Theory
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 12 February 2029.
 
-### Day 08 — *coming soon*
+### Day 08 — Rudder and Compass
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 19 February 2029.
 
-### Day 09 — *coming soon*
+### Day 09 — Freeze It
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 26 February 2029.
 
-### Day 10 — *coming soon*
+### Day 10 — Letters to Mr. Collinson
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 5 March 2029.
 
-### Day 11 — *coming soon*
+### Day 11 — Bring the Candle
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 12 March 2029.
 
-### Day 12 — *coming soon*
+### Day 12 — Oxford, June 1860
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 19 March 2029.
 
-### Day 13 — *coming soon*
+### Day 13 — Five Witnesses on the Sand
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 26 March 2029.
 
-### Day 14 — *coming soon*
+### Day 14 — Tell Me If Anything Was Ever Done
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 2 April 2029.
 
-### Day 15 — *coming soon*
+### Day 15 — There Is Grandeur
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 9 April 2029.
 <!-- sdit:days:end -->
 
 ---

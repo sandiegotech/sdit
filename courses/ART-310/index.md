@@ -53,65 +53,65 @@ An interactive piece — a small game, an installation, or an interface — with
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Audience Acts
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 21 February 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — The Door That Needs a Sign
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 28 February 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — The Loop
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 6 March 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — The Brief
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 13 March 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — Paper First
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 20 March 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — Juice
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 27 March 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — Rules Make Play
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 3 April 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — Watch, Don't Talk
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 10 April 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — Two Hundred Identical Lights
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 17 April 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — The Body Sets the Target
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 24 April 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — Rooms, Not Screens
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 1 May 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — The Coin Box Is Honest
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 8 May 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — The Machine at the Table
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 15 May 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Take Something Out
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 22 May 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — Observed in Use
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 29 May 2028.
 <!-- sdit:days:end -->
 
 ---

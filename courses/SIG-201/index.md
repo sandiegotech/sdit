@@ -51,65 +51,65 @@ A short visual piece — thirty seconds to three minutes, shot and cut by you �
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Horse Left the Ground
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 8 November 2027.
 
-### Day 02 — *coming soon*
+### Day 02 — Fifty Seconds and One Frame
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 15 November 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — The Cut Makes the Meaning
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 22 November 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — Nanook's Igloo Had No Roof
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 29 November 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — One Photograph Fed a Camp
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 6 December 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — You Press the Button
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 13 December 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — Earthrise Took Four Days to Land
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 20 December 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — The Camcorder Was a Studio
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 27 December 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — Hall H: Attention Is the Scarce Thing
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 3 January 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — The Loop Is the Oldest Moving Image
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 10 January 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — The Feed Is a Slot Machine
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 17 January 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — The Poster Was the Thumbnail
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 24 January 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — The Navy Was the Biggest Studio in Town
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 31 January 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — The Rose Diagram
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 7 February 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — Let Go, Then Watch
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 14 February 2028.
 <!-- sdit:days:end -->
 
 ---

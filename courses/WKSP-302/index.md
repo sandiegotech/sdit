@@ -53,65 +53,65 @@ One ocean sensor in a housing the team made, calibrated, deployed for at least s
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — One Instrument, One Week, One Number
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 5 June 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — Saltwater Eats Everything
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 12 June 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — One Variable
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 19 June 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — The Housing Is the Build
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 26 June 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — Calibrate Against Something True
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 3 July 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — A Week Is 168 Hours
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 10 July 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — A Sensor That Moves
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 17 July 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — The Remote Crit
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 24 July 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — Three Photos and a Plot
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 31 July 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — Deploy
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 7 August 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — Hands Only
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 14 August 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — Retrieve
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 21 August 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — The Plot Is the Made Thing
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 28 August 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Lighter, on Purpose
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 4 September 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — One Number That's True
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 11 September 2028.
 <!-- sdit:days:end -->
 
 ---

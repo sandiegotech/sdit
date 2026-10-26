@@ -55,10 +55,17 @@ def _data(course):
     return {"threads": [{"id": "canon"}, {"id": "depth"}], "courses": [course]}
 
 
+def _arc(n_days: int) -> str:
+    rows = "\n".join(f"| {n} | T | thing | idea | question? | read · watch · ask |" for n in range(1, n_days + 1))
+    return ("---\ncourse: X 101 — Thing\nsemester: 1\ndays: %d\n---\n\n# Arc\n\n"
+            "## The fifteen days\n\n| Day | Title | Thing | Idea | Question | Doors |\n|---|---|---|---|---|---|\n%s\n" % (n_days, rows))
+
+
 def _write_course(root: Path, course: dict, days: int, index_tpl=INDEX_SCAFFOLD, skip=()):
     d = root / course["dir"]
     d.mkdir(parents=True)
     (d / "index.md").write_text(index_tpl.format(status=course["status"]))
+    (d / "arc.md").write_text(_arc(course.get("days_planned") or 3))
     for n in range(1, days + 1):
         if n in skip:
             continue
@@ -141,3 +148,43 @@ def test_unregistered_course_directory_fails():
         errors = []
         validate.validate_catalog(errors, _data(c), root)
     assert any("STRAY-999" in e for e in errors)
+
+
+def test_arc_is_required_and_must_match_days_planned():
+    c = _course()
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        _write_course(root, c, 0)
+        (root / c["dir"] / "arc.md").unlink()
+        errors = []
+        validate.validate_catalog(errors, _data(c), root)
+    assert any("has no arc.md" in e for e in errors)
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        _write_course(root, c, 0)
+        (root / c["dir"] / "arc.md").write_text(_arc(2))
+        errors = []
+        validate.validate_catalog(errors, _data(c), root)
+    assert any("plans 2 days" in e for e in errors)
+
+
+def test_published_title_must_match_arc():
+    c = _course(status="day1")
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        _write_course(root, c, 1)
+        (root / c["dir"] / "day-01.md").write_text('---\nid: x\ntitle: "Day 01 — Other"\nday: 1\n---\n\n# Other\n\ndek\n')
+        errors = []
+        validate.validate_catalog(errors, _data(c), root)
+    assert any("but the arc calls it" in e for e in errors)
+
+
+def test_calendar_rules():
+    errors = []
+    validate.validate_calendar(errors, {"publishing": {"first_release": "2027-01-05"},
+                                        "semesters": [{"n": i, "weeks": 15} for i in range(1, 9)]})
+    assert any("not a Monday" in e for e in errors)
+    errors = []
+    validate.validate_calendar(errors, {"publishing": {"first_release": "2027-01-04"},
+                                        "semesters": [{"n": i, "weeks": 15} for i in range(1, 8)]})
+    assert any("1 to 8" in e for e in errors)

@@ -304,6 +304,13 @@
     var planned = course.plannedDays || (days.length || 1);
     var pub = {};
     days.forEach(function (d) { pub[d.n] = d; });
+    var plan = {};
+    (course.planned || []).forEach(function (d) { plan[d.n] = d; });
+    function shortDate(iso) {
+      if (!iso) return "";
+      var d = new Date(iso + "T12:00:00");
+      return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+    }
     var lastN = Math.max(planned, days.length ? days[days.length - 1].n : 0);
 
     function dayHref(n) { return resolveSitePath("/courses/" + courseId + "/day-" + pad(n) + ".html"); }
@@ -347,15 +354,33 @@
         railGrid.appendChild(a);
       } else {
         var s = createElement("span", "is-locked", String(i));
-        s.setAttribute("aria-label", "Day " + i + " — coming soon");
+        var p = plan[i] || {};
+        var label = "Day " + i + (p.title ? " — " + p.title : "") +
+          (p.publishes ? " — publishes " + shortDate(p.publishes) : " — being written");
+        s.setAttribute("aria-label", label);
+        s.setAttribute("title", label);
         railGrid.appendChild(s);
       }
     }
     rail.appendChild(railGrid);
+    // Name the next unpublished day and when it arrives, so a locked day is a
+    // promise with a date rather than a dead end.
+    for (var u = dayNumber + 1; u <= lastN; u++) {
+      if (!pub[u] && plan[u]) {
+        var next = createElement("p", "day-rail-next",
+          "Day " + u + (plan[u].title ? " · " + plan[u].title : "") +
+          (plan[u].publishes ? " · publishes " + shortDate(plan[u].publishes) : ""));
+        rail.appendChild(next);
+        break;
+      }
+    }
     var railLinks = createElement("div", "lesson-nav");
     var overviewLink = createElement("a", "", "Course overview");
     overviewLink.href = overviewHref();
     railLinks.appendChild(overviewLink);
+    var pathLink = createElement("a", "", "The Path");
+    pathLink.href = resolveSitePath("/curriculum/day-by-day.html");
+    railLinks.appendChild(pathLink);
     rail.appendChild(railLinks);
     sidebar.appendChild(rail);
   }

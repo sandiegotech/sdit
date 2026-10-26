@@ -52,65 +52,65 @@ A case brief on one real built thing from the field you are entering or from you
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — What You Build Changes Who Has Power
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 5 June 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — Three Conditions
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 12 June 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — Proportion
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 19 June 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — The Builder's Bench
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 26 June 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — The Petition
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 3 July 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — Now I Am Become Death
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 10 July 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — Every Gun That Is Made
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 17 July 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — Nature Cannot Be Fooled
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 24 July 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — The Phone Call
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 31 July 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — The Software Was the Operator
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 7 August 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — The Arsenal and the Scholar
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 14 August 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — The Strong Do What They Can
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 21 August 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — Politics and the English Language
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 28 August 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Unassisted: The Cold Case
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 4 September 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — The Tribunal
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 11 September 2028.
 <!-- sdit:days:end -->
 
 ---

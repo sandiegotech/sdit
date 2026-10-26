@@ -29,6 +29,7 @@ from pathlib import Path
 
 import yaml
 
+import arcs
 import catalog as catalog_mod
 import frontmatter
 
@@ -164,6 +165,26 @@ def validate_course(c: dict, i: int, threads: set, courses_root: Path, errors: l
             if missing:
                 err(f"has status `live` but index.md lacks {', '.join(missing)}")
 
+    # The arc is the plan for every day, so it must parse, cover every planned
+    # day, and agree with each published day's title.
+    arc_file = cdir / "arc.md"
+    if not arc_file.exists():
+        err("has no arc.md (every course is planned day by day before it is written)")
+    else:
+        try:
+            arc = arcs.parse_arc(arc_file.read_text(encoding="utf-8"), f"courses/{d}/arc.md")
+        except arcs.ArcError as e:
+            errors.append(f"{e}")
+            arc = None
+        if arc is not None and _positive_int(planned) and max(arc.days) != planned:
+            err(f"arc.md plans {max(arc.days)} days but the registry says days_planned: {planned}")
+        if arc is not None:
+            for n in days:
+                info = catalog_mod.day_info(cdir, n)
+                a = arc.day(n)
+                if info and a and arcs.normalize_title(info[0]) != arcs.normalize_title(a.title):
+                    err(f"day-{n:02d}.md is titled '{info[0]}' but the arc calls it '{a.title}'; make them agree")
+
     if index_md.exists() and status:
         meta, _ = frontmatter.parse(index_md.read_text(encoding="utf-8"))
         fm_status = meta.get("status")
@@ -209,9 +230,38 @@ def validate_catalog(errors, data: dict | None = None, courses_root: Path = COUR
                 errors.append(f"courses/{p.name}/ exists but is not in catalog.yaml")
 
 
+def validate_calendar(errors, data: dict | None = None):
+    """The publishing calendar must describe eight fifteen-week semesters and a
+    first release on a Monday, or every date on the site is wrong."""
+    import datetime as dt
+    path = KNOWLEDGE / "calendar.yaml"
+    if data is None:
+        if not path.exists():
+            errors.append("knowledge/calendar.yaml is missing")
+            return
+        data = load(path) or {}
+    pub = data.get("publishing") or {}
+    first = pub.get("first_release")
+    if isinstance(first, str):
+        try:
+            first = dt.date.fromisoformat(first)
+        except ValueError:
+            first = None
+    if not isinstance(first, dt.date):
+        errors.append("calendar.yaml: publishing.first_release must be a date")
+    elif first.weekday() != 0:
+        errors.append(f"calendar.yaml: first_release {first} is not a Monday")
+    sems = data.get("semesters") or []
+    if [s.get("n") for s in sems] != list(range(1, 9)):
+        errors.append("calendar.yaml: semesters must be listed 1 to 8 in order")
+    if any(s.get("weeks") != 15 for s in sems):
+        errors.append("calendar.yaml: every semester has 15 weeks (days_planned is 15 everywhere)")
+
+
 def main() -> int:
     errors: list[str] = []
     validate_yaml_files(errors)
+    validate_calendar(errors)
     validate_catalog(errors)
     if errors:
         for e in errors:

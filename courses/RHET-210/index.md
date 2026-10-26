@@ -53,65 +53,65 @@ A forensic teardown of one real piece of persuasion — a poster, a speech, a ch
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — Someone Put This Here
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 8 November 2027.
 
-### Day 02 — *coming soon*
+### Day 02 — No Frogs Are Poetical
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 15 November 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — Thirty-Eight Ways to Win Without Being Right
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 22 November 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — Proportion Your Belief
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 29 November 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — The Pump on Broad Street
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 6 December 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — Nightingale's Wedges
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 13 December 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — Twelve Sailors, Six Cures
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 20 December 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — Lies, Damned Lies, and Attribution
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 27 December 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — Knowing Doesn't Fix It
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 3 January 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — Conan Doyle Believed in Fairies
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 10 January 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — Not the First Story That Came My Way
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 17 January 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — Torches of Freedom
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 24 January 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — Destroy This Mad Brute
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 31 January 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — The Feed Is a Factory
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 7 February 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — Nature Cannot Be Fooled
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 14 February 2028.
 <!-- sdit:days:end -->
 
 ---

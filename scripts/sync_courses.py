@@ -23,6 +23,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+import arcs
+import publishing
 from catalog import DEFAULT_DAYS, planned_days, load_catalog, day_info
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -108,11 +110,14 @@ def sync_course_days(catalog) -> int:
                         block += f"{dek}\n\n"
                     block += f"[Begin Day {n:02d} →](day-{n:02d}.html)\n"
                 else:
-                    block = (
-                        f"### Day {n:02d} — *coming soon*\n\n"
-                        f"Being written — publishes with Week {n}. "
-                        f"Every course in the semester advances together, week by week.\n"
-                    )
+                    arc = arcs.load_arc(course_dir)
+                    arc_day = arc.day(n) if arc else None
+                    when = publishing.week_date(course["semester"], n) if course and course.get("semester") else None
+                    when_line = f"Publishes {publishing.long_date(when)}." if when else "Being written."
+                    if arc_day:
+                        block = f"### Day {n:02d} — {arc_day.title}\n\n{when_line}\n"
+                    else:
+                        block = f"### Day {n:02d} — *coming soon*\n\n{when_line}\n"
                 blocks.append(block)
             generated = "<!-- sdit:days:begin -->\n" + "\n".join(blocks) + "<!-- sdit:days:end -->"
             new = re.sub(

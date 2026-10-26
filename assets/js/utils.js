@@ -29,7 +29,9 @@
   var _catalog = null;
   function getCatalog() {
     if (!_catalog) {
-      _catalog = fetch(resolvePath("/assets/catalog.json"))
+      // no-cache = revalidate with the server every time (a cheap conditional
+      // request), so a Monday release shows up without anyone clearing a cache.
+      _catalog = fetch(resolvePath("/assets/catalog.json"), { cache: "no-cache" })
         .then(function (r) { return r.ok ? r.json() : { courses: {} }; })
         .catch(function () { return { courses: {} }; });
     }

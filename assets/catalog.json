@@ -13,6 +13,83 @@
           "path": "/courses/HUM-101/day-01",
           "title": "The Oldest Story Is About You"
         }
+      ],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Oldest Story Is About You",
+          "publishes": null
+        },
+        {
+          "n": 2,
+          "title": "My Name Is Nobody",
+          "publishes": "2027-01-04"
+        },
+        {
+          "n": 3,
+          "title": "Strangers at the Door",
+          "publishes": "2027-01-11"
+        },
+        {
+          "n": 4,
+          "title": "The Bed Is Nailed to the Floor",
+          "publishes": "2027-01-18"
+        },
+        {
+          "n": 5,
+          "title": "It Begins With Rage, Not War",
+          "publishes": "2027-01-25"
+        },
+        {
+          "n": 6,
+          "title": "Hector Takes Off the Helmet",
+          "publishes": "2027-02-01"
+        },
+        {
+          "n": 7,
+          "title": "Priam Kisses the Hands",
+          "publishes": "2027-02-08"
+        },
+        {
+          "n": 8,
+          "title": "Two Laws on the Same Hot Day",
+          "publishes": "2027-02-15"
+        },
+        {
+          "n": 9,
+          "title": "The First Jury",
+          "publishes": "2027-02-22"
+        },
+        {
+          "n": 10,
+          "title": "The Strong Do What They Can",
+          "publishes": "2027-03-01"
+        },
+        {
+          "n": 11,
+          "title": "The Plague Tells the Truth",
+          "publishes": "2027-03-08"
+        },
+        {
+          "n": 12,
+          "title": "The Cave",
+          "publishes": "2027-03-15"
+        },
+        {
+          "n": 13,
+          "title": "The Ring That Makes You Invisible",
+          "publishes": "2027-03-22"
+        },
+        {
+          "n": 14,
+          "title": "What the Music Does to the City",
+          "publishes": "2027-03-29"
+        },
+        {
+          "n": 15,
+          "title": "Defend It Out Loud",
+          "publishes": "2027-04-05"
+        }
       ]
     },
     "HUM-102": {
@@ -22,7 +99,84 @@
       "semester": 2,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Get Up",
+          "publishes": "2027-04-12"
+        },
+        {
+          "n": 2,
+          "title": "Empty Pools",
+          "publishes": "2027-04-19"
+        },
+        {
+          "n": 3,
+          "title": "Written in a Tent",
+          "publishes": "2027-04-26"
+        },
+        {
+          "n": 4,
+          "title": "You Could Leave Life Right Now",
+          "publishes": "2027-05-03"
+        },
+        {
+          "n": 5,
+          "title": "The Pears",
+          "publishes": "2027-05-10"
+        },
+        {
+          "n": 6,
+          "title": "Take and Read",
+          "publishes": "2027-05-17"
+        },
+        {
+          "n": 7,
+          "title": "What, Then, Is Time?",
+          "publishes": "2027-05-24"
+        },
+        {
+          "n": 8,
+          "title": "Midway",
+          "publishes": "2027-05-31"
+        },
+        {
+          "n": 9,
+          "title": "Why Virgil?",
+          "publishes": "2027-06-07"
+        },
+        {
+          "n": 10,
+          "title": "Odysseus in Hell",
+          "publishes": "2027-06-14"
+        },
+        {
+          "n": 11,
+          "title": "Climbing Is Lighter",
+          "publishes": "2027-06-21"
+        },
+        {
+          "n": 12,
+          "title": "Written From Exile",
+          "publishes": "2027-06-28"
+        },
+        {
+          "n": 13,
+          "title": "Feared, Not Hated",
+          "publishes": "2027-07-05"
+        },
+        {
+          "n": 14,
+          "title": "Knowing How to See",
+          "publishes": "2027-07-12"
+        },
+        {
+          "n": 15,
+          "title": "The Bottega",
+          "publishes": "2027-07-19"
+        }
+      ]
     },
     "HUM-201": {
       "code": "HUM 201",
@@ -31,7 +185,84 @@
       "semester": 3,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The War of Everyone Against Everyone",
+          "publishes": "2027-07-26"
+        },
+        {
+          "n": 2,
+          "title": "Covenants Without the Sword",
+          "publishes": "2027-08-02"
+        },
+        {
+          "n": 3,
+          "title": "Inside Leviathan",
+          "publishes": "2027-08-09"
+        },
+        {
+          "n": 4,
+          "title": "Mixing Your Labor",
+          "publishes": "2027-08-16"
+        },
+        {
+          "n": 5,
+          "title": "Enough, and as Good, Left for Others",
+          "publishes": "2027-08-23"
+        },
+        {
+          "n": 6,
+          "title": "This Land",
+          "publishes": "2027-08-30"
+        },
+        {
+          "n": 7,
+          "title": "The Pin Factory",
+          "publishes": "2027-09-06"
+        },
+        {
+          "n": 8,
+          "title": "The Invisible Hand Appears Once",
+          "publishes": "2027-09-13"
+        },
+        {
+          "n": 9,
+          "title": "As Stupid and Ignorant as It Is Possible to Become",
+          "publishes": "2027-09-20"
+        },
+        {
+          "n": 10,
+          "title": "Common Sense",
+          "publishes": "2027-09-27"
+        },
+        {
+          "n": 11,
+          "title": "Self-Evident",
+          "publishes": "2027-10-04"
+        },
+        {
+          "n": 12,
+          "title": "Faction",
+          "publishes": "2027-10-11"
+        },
+        {
+          "n": 13,
+          "title": "Ambition Against Ambition",
+          "publishes": "2027-10-18"
+        },
+        {
+          "n": 14,
+          "title": "The Room Where Equals Argue",
+          "publishes": "2027-10-25"
+        },
+        {
+          "n": 15,
+          "title": "The Earth Belongs to the Living",
+          "publishes": "2027-11-01"
+        }
+      ]
     },
     "HUM-202": {
       "code": "HUM 202",
@@ -40,7 +271,84 @@
       "semester": 4,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Creature Reads",
+          "publishes": "2027-11-08"
+        },
+        {
+          "n": 2,
+          "title": "I Ought to Be Thy Adam",
+          "publishes": "2027-11-15"
+        },
+        {
+          "n": 3,
+          "title": "A Teenager, a Rainy Summer, and a Frog's Leg",
+          "publishes": "2027-11-22"
+        },
+        {
+          "n": 4,
+          "title": "Circuits That Live and Die",
+          "publishes": "2027-11-29"
+        },
+        {
+          "n": 5,
+          "title": "The Tangled Bank",
+          "publishes": "2027-12-06"
+        },
+        {
+          "n": 6,
+          "title": "Four Years, Ten Thousand Miles",
+          "publishes": "2027-12-13"
+        },
+        {
+          "n": 7,
+          "title": "The Overwhelming Indifference",
+          "publishes": "2027-12-20"
+        },
+        {
+          "n": 8,
+          "title": "The Shift Change",
+          "publishes": "2027-12-27"
+        },
+        {
+          "n": 9,
+          "title": "All That Is Solid Melts Into Air",
+          "publishes": "2028-01-03"
+        },
+        {
+          "n": 10,
+          "title": "The Working Day",
+          "publishes": "2028-01-10"
+        },
+        {
+          "n": 11,
+          "title": "We Are the Robots",
+          "publishes": "2028-01-17"
+        },
+        {
+          "n": 12,
+          "title": "We Have Killed Him",
+          "publishes": "2028-01-24"
+        },
+        {
+          "n": 13,
+          "title": "Would You Live It Again?",
+          "publishes": "2028-01-31"
+        },
+        {
+          "n": 14,
+          "title": "Become Who You Are",
+          "publishes": "2028-02-07"
+        },
+        {
+          "n": 15,
+          "title": "What Do You Owe It?",
+          "publishes": "2028-02-14"
+        }
+      ]
     },
     "HUM-301": {
       "code": "HUM 301",
@@ -49,7 +357,84 @@
       "semester": 5,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Fiction Got There First",
+          "publishes": "2028-02-21"
+        },
+        {
+          "n": 2,
+          "title": "Maelzel's Chess-Player",
+          "publishes": "2028-02-28"
+        },
+        {
+          "n": 3,
+          "title": "The Imitation Game",
+          "publishes": "2028-03-06"
+        },
+        {
+          "n": 4,
+          "title": "Lady Lovelace's Objection",
+          "publishes": "2028-03-13"
+        },
+        {
+          "n": 5,
+          "title": "The Governor",
+          "publishes": "2028-03-20"
+        },
+        {
+          "n": 6,
+          "title": "The Human Use of Human Beings",
+          "publishes": "2028-03-27"
+        },
+        {
+          "n": 7,
+          "title": "The Doomsday Machine",
+          "publishes": "2028-04-03"
+        },
+        {
+          "n": 8,
+          "title": "Robot Is a Czech Word",
+          "publishes": "2028-04-10"
+        },
+        {
+          "n": 9,
+          "title": "The Machine Stops",
+          "publishes": "2028-04-17"
+        },
+        {
+          "n": 10,
+          "title": "The Book of the Machines",
+          "publishes": "2028-04-24"
+        },
+        {
+          "n": 11,
+          "title": "The Broom That Would Not Stop",
+          "publishes": "2028-05-01"
+        },
+        {
+          "n": 12,
+          "title": "What Would Make It Wrong?",
+          "publishes": "2028-05-08"
+        },
+        {
+          "n": 13,
+          "title": "A Machine Among the Choir",
+          "publishes": "2028-05-15"
+        },
+        {
+          "n": 14,
+          "title": "Unassisted: Can Machines Think?",
+          "publishes": "2028-05-22"
+        },
+        {
+          "n": 15,
+          "title": "Defend the Forecast",
+          "publishes": "2028-05-29"
+        }
+      ]
     },
     "HUM-302": {
       "code": "HUM 302",
@@ -58,7 +443,84 @@
       "semester": 6,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "What You Build Changes Who Has Power",
+          "publishes": "2028-06-05"
+        },
+        {
+          "n": 2,
+          "title": "Three Conditions",
+          "publishes": "2028-06-12"
+        },
+        {
+          "n": 3,
+          "title": "Proportion",
+          "publishes": "2028-06-19"
+        },
+        {
+          "n": 4,
+          "title": "The Builder's Bench",
+          "publishes": "2028-06-26"
+        },
+        {
+          "n": 5,
+          "title": "The Petition",
+          "publishes": "2028-07-03"
+        },
+        {
+          "n": 6,
+          "title": "Now I Am Become Death",
+          "publishes": "2028-07-10"
+        },
+        {
+          "n": 7,
+          "title": "Every Gun That Is Made",
+          "publishes": "2028-07-17"
+        },
+        {
+          "n": 8,
+          "title": "Nature Cannot Be Fooled",
+          "publishes": "2028-07-24"
+        },
+        {
+          "n": 9,
+          "title": "The Phone Call",
+          "publishes": "2028-07-31"
+        },
+        {
+          "n": 10,
+          "title": "The Software Was the Operator",
+          "publishes": "2028-08-07"
+        },
+        {
+          "n": 11,
+          "title": "The Arsenal and the Scholar",
+          "publishes": "2028-08-14"
+        },
+        {
+          "n": 12,
+          "title": "The Strong Do What They Can",
+          "publishes": "2028-08-21"
+        },
+        {
+          "n": 13,
+          "title": "Politics and the English Language",
+          "publishes": "2028-08-28"
+        },
+        {
+          "n": 14,
+          "title": "Unassisted: The Cold Case",
+          "publishes": "2028-09-04"
+        },
+        {
+          "n": 15,
+          "title": "The Tribunal",
+          "publishes": "2028-09-11"
+        }
+      ]
     },
     "HUM-401": {
       "code": "HUM 401",
@@ -67,7 +529,84 @@
       "semester": 7,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Hide Houses at La Playa",
+          "publishes": "2028-09-18"
+        },
+        {
+          "n": 2,
+          "title": "Where the Frontier Ran Out",
+          "publishes": "2028-09-25"
+        },
+        {
+          "n": 3,
+          "title": "The Land of Little Rain",
+          "publishes": "2028-10-02"
+        },
+        {
+          "n": 4,
+          "title": "Migrant Mother",
+          "publishes": "2028-10-09"
+        },
+        {
+          "n": 5,
+          "title": "The Night He Saw the Film",
+          "publishes": "2028-10-16"
+        },
+        {
+          "n": 6,
+          "title": "Salinas",
+          "publishes": "2028-10-23"
+        },
+        {
+          "n": 7,
+          "title": "With the Sun Not Shining",
+          "publishes": "2028-10-30"
+        },
+        {
+          "n": 8,
+          "title": "Down These Mean Streets",
+          "publishes": "2028-11-06"
+        },
+        {
+          "n": 9,
+          "title": "The Second Coming",
+          "publishes": "2028-11-13"
+        },
+        {
+          "n": 10,
+          "title": "Holy Water",
+          "publishes": "2028-11-20"
+        },
+        {
+          "n": 11,
+          "title": "The Wave Speech",
+          "publishes": "2028-11-27"
+        },
+        {
+          "n": 12,
+          "title": "A Royal Sport",
+          "publishes": "2028-12-04"
+        },
+        {
+          "n": 13,
+          "title": "The Pump House",
+          "publishes": "2028-12-11"
+        },
+        {
+          "n": 14,
+          "title": "Unassisted: Write the Square Mile",
+          "publishes": "2028-12-18"
+        },
+        {
+          "n": 15,
+          "title": "Read It at the Water",
+          "publishes": "2028-12-25"
+        }
+      ]
     },
     "HUM-402": {
       "code": "HUM 402",
@@ -76,7 +615,84 @@
       "semester": 8,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Ozymandias",
+          "publishes": "2029-01-01"
+        },
+        {
+          "n": 2,
+          "title": "The Walls of Uruk",
+          "publishes": "2029-01-08"
+        },
+        {
+          "n": 3,
+          "title": "Standing in the Forum",
+          "publishes": "2029-01-15"
+        },
+        {
+          "n": 4,
+          "title": "Round One: The Thing in One Minute",
+          "publishes": "2029-01-22"
+        },
+        {
+          "n": 5,
+          "title": "Four Generations",
+          "publishes": "2029-01-29"
+        },
+        {
+          "n": 6,
+          "title": "Complexity Has a Bill",
+          "publishes": "2029-02-05"
+        },
+        {
+          "n": 7,
+          "title": "Round Two: The Tangled Bank",
+          "publishes": "2029-02-12"
+        },
+        {
+          "n": 8,
+          "title": "The Bed Made From a Living Tree",
+          "publishes": "2029-02-19"
+        },
+        {
+          "n": 9,
+          "title": "Past the Pillars",
+          "publishes": "2029-02-26"
+        },
+        {
+          "n": 10,
+          "title": "Round Three: How Soon It Is All Forgotten",
+          "publishes": "2029-03-05"
+        },
+        {
+          "n": 11,
+          "title": "San Diego Has Risen Four Times",
+          "publishes": "2029-03-12"
+        },
+        {
+          "n": 12,
+          "title": "The Whole Earth Is Their Sepulchre",
+          "publishes": "2029-03-19"
+        },
+        {
+          "n": 13,
+          "title": "Round Four: What a Life Is For",
+          "publishes": "2029-03-26"
+        },
+        {
+          "n": 14,
+          "title": "Unassisted: Five Minutes, No Notes",
+          "publishes": "2029-04-02"
+        },
+        {
+          "n": 15,
+          "title": "The Colloquium",
+          "publishes": "2029-04-09"
+        }
+      ]
     },
     "MATH-110": {
       "code": "MATH 110",
@@ -91,6 +707,83 @@
           "path": "/courses/MATH-110/day-01",
           "title": "Zoom In Until It's Straight"
         }
+      ],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Zoom In Until It's Straight",
+          "publishes": null
+        },
+        {
+          "n": 2,
+          "title": "Right Now Is Two Frames Apart",
+          "publishes": "2027-01-04"
+        },
+        {
+          "n": 3,
+          "title": "The Closer You Get",
+          "publishes": "2027-01-11"
+        },
+        {
+          "n": 4,
+          "title": "The Steepest Part of the Face",
+          "publishes": "2027-01-18"
+        },
+        {
+          "n": 5,
+          "title": "A Square Grows by a Strip",
+          "publishes": "2027-01-25"
+        },
+        {
+          "n": 6,
+          "title": "Felt in the Knees",
+          "publishes": "2027-02-01"
+        },
+        {
+          "n": 7,
+          "title": "Gears Inside Gears",
+          "publishes": "2027-02-08"
+        },
+        {
+          "n": 8,
+          "title": "The Buoy Is a Clock",
+          "publishes": "2027-02-15"
+        },
+        {
+          "n": 9,
+          "title": "Half of What's Left",
+          "publishes": "2027-02-22"
+        },
+        {
+          "n": 10,
+          "title": "The Racing Line",
+          "publishes": "2027-03-01"
+        },
+        {
+          "n": 11,
+          "title": "Where the Pocket Becomes the Vert",
+          "publishes": "2027-03-08"
+        },
+        {
+          "n": 12,
+          "title": "The Shadow of the Pier",
+          "publishes": "2027-03-15"
+        },
+        {
+          "n": 13,
+          "title": "Somewhere You Went Exactly Average",
+          "publishes": "2027-03-22"
+        },
+        {
+          "n": 14,
+          "title": "The Glide",
+          "publishes": "2027-03-29"
+        },
+        {
+          "n": 15,
+          "title": "The Motion Study",
+          "publishes": "2027-04-05"
+        }
       ]
     },
     "MATH-120": {
@@ -100,7 +793,84 @@
       "semester": 2,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Every Sound Is a Sum",
+          "publishes": "2027-04-12"
+        },
+        {
+          "n": 2,
+          "title": "Stitch It Back Together",
+          "publishes": "2027-04-19"
+        },
+        {
+          "n": 3,
+          "title": "Forty-Four Thousand Slices",
+          "publishes": "2027-04-26"
+        },
+        {
+          "n": 4,
+          "title": "The Odometer and the Speedometer",
+          "publishes": "2027-05-03"
+        },
+        {
+          "n": 5,
+          "title": "Speed Up the Tape",
+          "publishes": "2027-05-10"
+        },
+        {
+          "n": 6,
+          "title": "A Tone Times a Fade",
+          "publishes": "2027-05-17"
+        },
+        {
+          "n": 7,
+          "title": "The Blank at Ten Stations",
+          "publishes": "2027-05-24"
+        },
+        {
+          "n": 8,
+          "title": "Loud Is the Average of the Square",
+          "publishes": "2027-05-31"
+        },
+        {
+          "n": 9,
+          "title": "The Tail That Never Ends",
+          "publishes": "2027-06-07"
+        },
+        {
+          "n": 10,
+          "title": "Echo, Echo, Echo",
+          "publishes": "2027-06-14"
+        },
+        {
+          "n": 11,
+          "title": "One, a Half, a Third",
+          "publishes": "2027-06-21"
+        },
+        {
+          "n": 12,
+          "title": "Drawbars",
+          "publishes": "2027-06-28"
+        },
+        {
+          "n": 13,
+          "title": "The Polynomial That Learned to Sing",
+          "publishes": "2027-07-05"
+        },
+        {
+          "n": 14,
+          "title": "The Ear Is a Prism",
+          "publishes": "2027-07-12"
+        },
+        {
+          "n": 15,
+          "title": "A Sound From First Principles",
+          "publishes": "2027-07-19"
+        }
+      ]
     },
     "PHYS-110": {
       "code": "PHYS 110",
@@ -115,6 +885,83 @@
           "path": "/courses/PHYS-110/day-01",
           "title": "The Wave Is a Lecture"
         }
+      ],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Wave Is a Lecture",
+          "publishes": null
+        },
+        {
+          "n": 2,
+          "title": "The Hammer and the Feather",
+          "publishes": "2027-01-04"
+        },
+        {
+          "n": 3,
+          "title": "Which Way Is the Push",
+          "publishes": "2027-01-11"
+        },
+        {
+          "n": 4,
+          "title": "Nothing Is Pushing",
+          "publishes": "2027-01-18"
+        },
+        {
+          "n": 5,
+          "title": "Twice the Board, Half the Turn",
+          "publishes": "2027-01-25"
+        },
+        {
+          "n": 6,
+          "title": "What Comes Back",
+          "publishes": "2027-02-01"
+        },
+        {
+          "n": 7,
+          "title": "The Rail That Holds",
+          "publishes": "2027-02-08"
+        },
+        {
+          "n": 8,
+          "title": "Lean Angle",
+          "publishes": "2027-02-15"
+        },
+        {
+          "n": 9,
+          "title": "Pumping",
+          "publishes": "2027-02-22"
+        },
+        {
+          "n": 10,
+          "title": "Two Boards in the Lineup",
+          "publishes": "2027-03-01"
+        },
+        {
+          "n": 11,
+          "title": "Where You Carry It",
+          "publishes": "2027-03-08"
+        },
+        {
+          "n": 12,
+          "title": "The Kickflip Has an Axis",
+          "publishes": "2027-03-15"
+        },
+        {
+          "n": 13,
+          "title": "Arms In",
+          "publishes": "2027-03-22"
+        },
+        {
+          "n": 14,
+          "title": "Predicted and Observed",
+          "publishes": "2027-03-29"
+        },
+        {
+          "n": 15,
+          "title": "The Maneuver",
+          "publishes": "2027-04-05"
+        }
       ]
     },
     "PHYS-120": {
@@ -124,7 +971,84 @@
       "semester": 2,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Canyon Under Black's",
+          "publishes": "2027-04-12"
+        },
+        {
+          "n": 2,
+          "title": "The Machine Is the Wave",
+          "publishes": "2027-04-19"
+        },
+        {
+          "n": 3,
+          "title": "The Long Ones Arrive First",
+          "publishes": "2027-04-26"
+        },
+        {
+          "n": 4,
+          "title": "Sets and Lulls",
+          "publishes": "2027-05-03"
+        },
+        {
+          "n": 5,
+          "title": "The Bend at Point Loma",
+          "publishes": "2027-05-10"
+        },
+        {
+          "n": 6,
+          "title": "Standing Up and Falling Over",
+          "publishes": "2027-05-17"
+        },
+        {
+          "n": 7,
+          "title": "Rooms That Hum",
+          "publishes": "2027-05-24"
+        },
+        {
+          "n": 8,
+          "title": "Hot Sand, Cold Water",
+          "publishes": "2027-05-31"
+        },
+        {
+          "n": 9,
+          "title": "Why It Lifts at Eleven",
+          "publishes": "2027-06-07"
+        },
+        {
+          "n": 10,
+          "title": "The Engine Called the Sea Breeze",
+          "publishes": "2027-06-14"
+        },
+        {
+          "n": 11,
+          "title": "Ears at Twenty Feet",
+          "publishes": "2027-06-21"
+        },
+        {
+          "n": 12,
+          "title": "The Rip Is a Pipe",
+          "publishes": "2027-06-28"
+        },
+        {
+          "n": 13,
+          "title": "Why Fins Hold",
+          "publishes": "2027-07-05"
+        },
+        {
+          "n": 14,
+          "title": "Franklin Calms the Pond",
+          "publishes": "2027-07-12"
+        },
+        {
+          "n": 15,
+          "title": "The Board on the Rack",
+          "publishes": "2027-07-19"
+        }
+      ]
     },
     "MATH-210": {
       "code": "MATH 210",
@@ -133,7 +1057,84 @@
       "semester": 3,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "A Photograph Is a Spreadsheet",
+          "publishes": "2027-07-26"
+        },
+        {
+          "n": 2,
+          "title": "Arrows and Pixels",
+          "publishes": "2027-08-02"
+        },
+        {
+          "n": 3,
+          "title": "Any Color From Three",
+          "publishes": "2027-08-09"
+        },
+        {
+          "n": 4,
+          "title": "Brightness Is a Dot Product",
+          "publishes": "2027-08-16"
+        },
+        {
+          "n": 5,
+          "title": "The Transform Tool",
+          "publishes": "2027-08-23"
+        },
+        {
+          "n": 6,
+          "title": "Order Matters",
+          "publishes": "2027-08-30"
+        },
+        {
+          "n": 7,
+          "title": "Three Unknowns, Three Knobs",
+          "publishes": "2027-09-06"
+        },
+        {
+          "n": 8,
+          "title": "How Much Did It Stretch",
+          "publishes": "2027-09-13"
+        },
+        {
+          "n": 9,
+          "title": "Flatten",
+          "publishes": "2027-09-20"
+        },
+        {
+          "n": 10,
+          "title": "Undo, If You Can",
+          "publishes": "2027-09-27"
+        },
+        {
+          "n": 11,
+          "title": "Mid and Side",
+          "publishes": "2027-10-04"
+        },
+        {
+          "n": 12,
+          "title": "The Directions That Stay Put",
+          "publishes": "2027-10-11"
+        },
+        {
+          "n": 13,
+          "title": "Keep the Big Ones",
+          "publishes": "2027-10-18"
+        },
+        {
+          "n": 14,
+          "title": "The Layer",
+          "publishes": "2027-10-25"
+        },
+        {
+          "n": 15,
+          "title": "Built by Hand, Found in the Model",
+          "publishes": "2027-11-01"
+        }
+      ]
     },
     "MATH-220": {
       "code": "MATH 220",
@@ -142,7 +1143,84 @@
       "semester": 4,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Ox at the Fair",
+          "publishes": "2027-11-08"
+        },
+        {
+          "n": 2,
+          "title": "The Problem of Points",
+          "publishes": "2027-11-15"
+        },
+        {
+          "n": 3,
+          "title": "What You've Seen Changes What's Left",
+          "publishes": "2027-11-22"
+        },
+        {
+          "n": 4,
+          "title": "The Buoy Says",
+          "publishes": "2027-11-29"
+        },
+        {
+          "n": 5,
+          "title": "Pot Odds",
+          "publishes": "2027-12-06"
+        },
+        {
+          "n": 6,
+          "title": "Heads, a Hundred Times",
+          "publishes": "2027-12-13"
+        },
+        {
+          "n": 7,
+          "title": "The One-in-a-Hundred Wave",
+          "publishes": "2027-12-20"
+        },
+        {
+          "n": 8,
+          "title": "The Bell on the Board",
+          "publishes": "2027-12-27"
+        },
+        {
+          "n": 9,
+          "title": "Error Bars",
+          "publishes": "2028-01-03"
+        },
+        {
+          "n": 10,
+          "title": "Did It Work",
+          "publishes": "2028-01-10"
+        },
+        {
+          "n": 11,
+          "title": "Taller Fathers, Shorter Sons",
+          "publishes": "2028-01-17"
+        },
+        {
+          "n": 12,
+          "title": "The Line Through the Buoy Data",
+          "publishes": "2028-01-24"
+        },
+        {
+          "n": 13,
+          "title": "The Forecast Factory",
+          "publishes": "2028-01-31"
+        },
+        {
+          "n": 14,
+          "title": "The Score",
+          "publishes": "2028-02-07"
+        },
+        {
+          "n": 15,
+          "title": "Scored in Public",
+          "publishes": "2028-02-14"
+        }
+      ]
     },
     "CS-110": {
       "code": "CS 110",
@@ -157,6 +1235,83 @@
           "path": "/courses/CS-110/day-01",
           "title": "The Very Fast, Very Literal Apprentice"
         }
+      ],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Very Fast, Very Literal Apprentice",
+          "publishes": null
+        },
+        {
+          "n": 2,
+          "title": "The First Program Was Written by Hand",
+          "publishes": "2027-01-04"
+        },
+        {
+          "n": 3,
+          "title": "A Name for a Thing",
+          "publishes": "2027-01-11"
+        },
+        {
+          "n": 4,
+          "title": "Again, Again, Until",
+          "publishes": "2027-01-18"
+        },
+        {
+          "n": 5,
+          "title": "If It's Raining",
+          "publishes": "2027-01-25"
+        },
+        {
+          "n": 6,
+          "title": "Give the Move a Name",
+          "publishes": "2027-02-01"
+        },
+        {
+          "n": 7,
+          "title": "Where the Bug Was",
+          "publishes": "2027-02-08"
+        },
+        {
+          "n": 8,
+          "title": "Tools Closed",
+          "publishes": "2027-02-15"
+        },
+        {
+          "n": 9,
+          "title": "Lists of Things",
+          "publishes": "2027-02-22"
+        },
+        {
+          "n": 10,
+          "title": "Pairs of Things",
+          "publishes": "2027-03-01"
+        },
+        {
+          "n": 11,
+          "title": "What Did You Actually Want?",
+          "publishes": "2027-03-08"
+        },
+        {
+          "n": 12,
+          "title": "Prove It Works",
+          "publishes": "2027-03-15"
+        },
+        {
+          "n": 13,
+          "title": "Plausible Is Not True",
+          "publishes": "2027-03-22"
+        },
+        {
+          "n": 14,
+          "title": "Tools Closed, Again",
+          "publishes": "2027-03-29"
+        },
+        {
+          "n": 15,
+          "title": "Ship It",
+          "publishes": "2027-04-05"
+        }
       ]
     },
     "CS-120": {
@@ -166,7 +1321,84 @@
       "semester": 2,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "No Magic Anywhere",
+          "publishes": "2027-04-12"
+        },
+        {
+          "n": 2,
+          "title": "A Switch That Flips a Switch",
+          "publishes": "2027-04-19"
+        },
+        {
+          "n": 3,
+          "title": "Everything from NAND",
+          "publishes": "2027-04-26"
+        },
+        {
+          "n": 4,
+          "title": "Adding with Switches",
+          "publishes": "2027-05-03"
+        },
+        {
+          "n": 5,
+          "title": "Negative Numbers and One Clever Box",
+          "publishes": "2027-05-10"
+        },
+        {
+          "n": 6,
+          "title": "Remembering Is a Loop",
+          "publishes": "2027-05-17"
+        },
+        {
+          "n": 7,
+          "title": "Numbered Houses",
+          "publishes": "2027-05-24"
+        },
+        {
+          "n": 8,
+          "title": "Tools Closed: Draw It",
+          "publishes": "2027-05-31"
+        },
+        {
+          "n": 9,
+          "title": "The Heartbeat",
+          "publishes": "2027-06-07"
+        },
+        {
+          "n": 10,
+          "title": "Holes in a Card Are an Order",
+          "publishes": "2027-06-14"
+        },
+        {
+          "n": 11,
+          "title": "Wiring the CPU",
+          "publishes": "2027-06-21"
+        },
+        {
+          "n": 12,
+          "title": "The Program That Runs the Programs",
+          "publishes": "2027-06-28"
+        },
+        {
+          "n": 13,
+          "title": "Packets Across the Sea",
+          "publishes": "2027-07-05"
+        },
+        {
+          "n": 14,
+          "title": "Tools Closed: Trace It",
+          "publishes": "2027-07-12"
+        },
+        {
+          "n": 15,
+          "title": "The Oldest Computer",
+          "publishes": "2027-07-19"
+        }
+      ]
     },
     "CS-210": {
       "code": "CS 210",
@@ -175,7 +1407,84 @@
       "semester": 3,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Fast Is a Measurement",
+          "publishes": "2027-07-26"
+        },
+        {
+          "n": 2,
+          "title": "Twice the Input, How Much Longer?",
+          "publishes": "2027-08-02"
+        },
+        {
+          "n": 3,
+          "title": "Half the Phone Book",
+          "publishes": "2027-08-09"
+        },
+        {
+          "n": 4,
+          "title": "Lines and Stacks",
+          "publishes": "2027-08-16"
+        },
+        {
+          "n": 5,
+          "title": "The Baseline",
+          "publishes": "2027-08-23"
+        },
+        {
+          "n": 6,
+          "title": "A Number for Every Name",
+          "publishes": "2027-08-30"
+        },
+        {
+          "n": 7,
+          "title": "Sorting on the Floor",
+          "publishes": "2027-09-06"
+        },
+        {
+          "n": 8,
+          "title": "Tools Closed: Say How Fast",
+          "publishes": "2027-09-13"
+        },
+        {
+          "n": 9,
+          "title": "Trees",
+          "publishes": "2027-09-20"
+        },
+        {
+          "n": 10,
+          "title": "The Redesign",
+          "publishes": "2027-09-27"
+        },
+        {
+          "n": 11,
+          "title": "Maps Are Graphs",
+          "publishes": "2027-10-04"
+        },
+        {
+          "n": 12,
+          "title": "Memory Is Also Time",
+          "publishes": "2027-10-11"
+        },
+        {
+          "n": 13,
+          "title": "Measure, Don't Trust",
+          "publishes": "2027-10-18"
+        },
+        {
+          "n": 14,
+          "title": "Tools Closed: Prove It",
+          "publishes": "2027-10-25"
+        },
+        {
+          "n": 15,
+          "title": "Show the Speedup",
+          "publishes": "2027-11-01"
+        }
+      ]
     },
     "CS-220": {
       "code": "CS 220",
@@ -184,7 +1493,84 @@
       "semester": 4,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "A Line Through the Points",
+          "publishes": "2027-11-08"
+        },
+        {
+          "n": 2,
+          "title": "One Honest Measurement a Day",
+          "publishes": "2027-11-15"
+        },
+        {
+          "n": 3,
+          "title": "Warmer, Colder",
+          "publishes": "2027-11-22"
+        },
+        {
+          "n": 4,
+          "title": "What the Model Is Allowed to See",
+          "publishes": "2027-11-29"
+        },
+        {
+          "n": 5,
+          "title": "The First Fit",
+          "publishes": "2027-12-06"
+        },
+        {
+          "n": 6,
+          "title": "The Horse That Learned the Examiner",
+          "publishes": "2027-12-13"
+        },
+        {
+          "n": 7,
+          "title": "A Neuron Is a Weighted Vote",
+          "publishes": "2027-12-20"
+        },
+        {
+          "n": 8,
+          "title": "Tools Closed: One Step by Hand",
+          "publishes": "2027-12-27"
+        },
+        {
+          "n": 9,
+          "title": "Stack the Votes",
+          "publishes": "2028-01-03"
+        },
+        {
+          "n": 10,
+          "title": "Four Kinds of Right and Wrong",
+          "publishes": "2028-01-10"
+        },
+        {
+          "n": 11,
+          "title": "What It Cannot Know",
+          "publishes": "2028-01-17"
+        },
+        {
+          "n": 12,
+          "title": "Look at Every One",
+          "publishes": "2028-01-24"
+        },
+        {
+          "n": 13,
+          "title": "The Big Ones Are the Same Thing",
+          "publishes": "2028-01-31"
+        },
+        {
+          "n": 14,
+          "title": "Tools Closed: Read the Matrix",
+          "publishes": "2028-02-07"
+        },
+        {
+          "n": 15,
+          "title": "Eight Minutes of Arc",
+          "publishes": "2028-02-14"
+        }
+      ]
     },
     "CS-310": {
       "code": "CS 310",
@@ -193,7 +1579,84 @@
       "semester": 5,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Model Is the Smallest Part",
+          "publishes": "2028-02-21"
+        },
+        {
+          "n": 2,
+          "title": "Ship the Smallest True Thing",
+          "publishes": "2028-02-28"
+        },
+        {
+          "n": 3,
+          "title": "The Harness Before the Feature",
+          "publishes": "2028-03-06"
+        },
+        {
+          "n": 4,
+          "title": "The Horse Could Not Count",
+          "publishes": "2028-03-13"
+        },
+        {
+          "n": 5,
+          "title": "Show It Breaking",
+          "publishes": "2028-03-20"
+        },
+        {
+          "n": 6,
+          "title": "It Will Say Things That Are Not So",
+          "publishes": "2028-03-27"
+        },
+        {
+          "n": 7,
+          "title": "Someone Will Type Something Hostile",
+          "publishes": "2028-04-03"
+        },
+        {
+          "n": 8,
+          "title": "The World Moves Under the Model",
+          "publishes": "2028-04-10"
+        },
+        {
+          "n": 9,
+          "title": "An Agent Is a Loop With Hands",
+          "publishes": "2028-04-17"
+        },
+        {
+          "n": 10,
+          "title": "What It Did at Three in the Morning",
+          "publishes": "2028-04-24"
+        },
+        {
+          "n": 11,
+          "title": "With the Tools Closed",
+          "publishes": "2028-05-01"
+        },
+        {
+          "n": 12,
+          "title": "Cost Is a Design Constraint",
+          "publishes": "2028-05-08"
+        },
+        {
+          "n": 13,
+          "title": "Design the Day It Is Wrong",
+          "publishes": "2028-05-15"
+        },
+        {
+          "n": 14,
+          "title": "Write the Accident Report",
+          "publishes": "2028-05-22"
+        },
+        {
+          "n": 15,
+          "title": "Real Users, Live",
+          "publishes": "2028-05-29"
+        }
+      ]
     },
     "CS-320": {
       "code": "CS 320",
@@ -202,7 +1665,84 @@
       "semester": 7,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Master's Hand and the Apprentice's",
+          "publishes": "2028-09-18"
+        },
+        {
+          "n": 2,
+          "title": "The Ledger",
+          "publishes": "2028-09-25"
+        },
+        {
+          "n": 3,
+          "title": "Choose the Work",
+          "publishes": "2028-10-02"
+        },
+        {
+          "n": 4,
+          "title": "Write the Brief",
+          "publishes": "2028-10-09"
+        },
+        {
+          "n": 5,
+          "title": "Verify at the Seams",
+          "publishes": "2028-10-16"
+        },
+        {
+          "n": 6,
+          "title": "The Court That Agreed",
+          "publishes": "2028-10-23"
+        },
+        {
+          "n": 7,
+          "title": "Build the Eval",
+          "publishes": "2028-10-30"
+        },
+        {
+          "n": 8,
+          "title": "Tools Closed: Make the Unit Yourself",
+          "publishes": "2028-11-06"
+        },
+        {
+          "n": 9,
+          "title": "Taste Is a Decision",
+          "publishes": "2028-11-13"
+        },
+        {
+          "n": 10,
+          "title": "The Average Is the Enemy",
+          "publishes": "2028-11-20"
+        },
+        {
+          "n": 11,
+          "title": "What It Cost",
+          "publishes": "2028-11-27"
+        },
+        {
+          "n": 12,
+          "title": "Whose Name Is On It",
+          "publishes": "2028-12-04"
+        },
+        {
+          "n": 13,
+          "title": "When Not to Use It",
+          "publishes": "2028-12-11"
+        },
+        {
+          "n": 14,
+          "title": "Tools Closed: Defend the Calls",
+          "publishes": "2028-12-18"
+        },
+        {
+          "n": 15,
+          "title": "The Angel in the Corner",
+          "publishes": "2028-12-25"
+        }
+      ]
     },
     "RHET-110": {
       "code": "RHET 110",
@@ -211,7 +1751,84 @@
       "semester": 3,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Two Hundred and Seventy-Two Words",
+          "publishes": "2027-07-26"
+        },
+        {
+          "n": 2,
+          "title": "Omit Needless Words",
+          "publishes": "2027-08-02"
+        },
+        {
+          "n": 3,
+          "title": "A Slave Was Made a Man",
+          "publishes": "2027-08-09"
+        },
+        {
+          "n": 4,
+          "title": "We Hold These Truths",
+          "publishes": "2027-08-16"
+        },
+        {
+          "n": 5,
+          "title": "Addie Card, Twelve Years",
+          "publishes": "2027-08-23"
+        },
+        {
+          "n": 6,
+          "title": "The Race Is Not to the Swift",
+          "publishes": "2027-08-30"
+        },
+        {
+          "n": 7,
+          "title": "I Went to the Woods",
+          "publishes": "2027-09-06"
+        },
+        {
+          "n": 8,
+          "title": "All Gaul Is Divided Into Three Parts",
+          "publishes": "2027-09-13"
+        },
+        {
+          "n": 9,
+          "title": "Call Me Ishmael",
+          "publishes": "2027-09-20"
+        },
+        {
+          "n": 10,
+          "title": "Whitman on Wax",
+          "publishes": "2027-09-27"
+        },
+        {
+          "n": 11,
+          "title": "Writing Maketh an Exact Man",
+          "publishes": "2027-10-04"
+        },
+        {
+          "n": 12,
+          "title": "The Man Inside the Turk",
+          "publishes": "2027-10-11"
+        },
+        {
+          "n": 13,
+          "title": "A Letter to Tacitus",
+          "publishes": "2027-10-18"
+        },
+        {
+          "n": 14,
+          "title": "Franklin and the Spectator",
+          "publishes": "2027-10-25"
+        },
+        {
+          "n": 15,
+          "title": "Here Is an Honest Book",
+          "publishes": "2027-11-01"
+        }
+      ]
     },
     "RHET-210": {
       "code": "RHET 210",
@@ -220,7 +1837,84 @@
       "semester": 4,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Someone Put This Here",
+          "publishes": "2027-11-08"
+        },
+        {
+          "n": 2,
+          "title": "No Frogs Are Poetical",
+          "publishes": "2027-11-15"
+        },
+        {
+          "n": 3,
+          "title": "Thirty-Eight Ways to Win Without Being Right",
+          "publishes": "2027-11-22"
+        },
+        {
+          "n": 4,
+          "title": "Proportion Your Belief",
+          "publishes": "2027-11-29"
+        },
+        {
+          "n": 5,
+          "title": "The Pump on Broad Street",
+          "publishes": "2027-12-06"
+        },
+        {
+          "n": 6,
+          "title": "Nightingale's Wedges",
+          "publishes": "2027-12-13"
+        },
+        {
+          "n": 7,
+          "title": "Twelve Sailors, Six Cures",
+          "publishes": "2027-12-20"
+        },
+        {
+          "n": 8,
+          "title": "Lies, Damned Lies, and Attribution",
+          "publishes": "2027-12-27"
+        },
+        {
+          "n": 9,
+          "title": "Knowing Doesn't Fix It",
+          "publishes": "2028-01-03"
+        },
+        {
+          "n": 10,
+          "title": "Conan Doyle Believed in Fairies",
+          "publishes": "2028-01-10"
+        },
+        {
+          "n": 11,
+          "title": "Not the First Story That Came My Way",
+          "publishes": "2028-01-17"
+        },
+        {
+          "n": 12,
+          "title": "Torches of Freedom",
+          "publishes": "2028-01-24"
+        },
+        {
+          "n": 13,
+          "title": "Destroy This Mad Brute",
+          "publishes": "2028-01-31"
+        },
+        {
+          "n": 14,
+          "title": "The Feed Is a Factory",
+          "publishes": "2028-02-07"
+        },
+        {
+          "n": 15,
+          "title": "Nature Cannot Be Fooled",
+          "publishes": "2028-02-14"
+        }
+      ]
     },
     "SIG-101": {
       "code": "SIG 101",
@@ -229,7 +1923,84 @@
       "semester": 2,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Song Left the Room in 1877",
+          "publishes": "2027-04-12"
+        },
+        {
+          "n": 2,
+          "title": "A Room You Can Hear",
+          "publishes": "2027-04-19"
+        },
+        {
+          "n": 3,
+          "title": "The Whisper That Needed a Microphone",
+          "publishes": "2027-04-26"
+        },
+        {
+          "n": 4,
+          "title": "Tape Lets You Lie",
+          "publishes": "2027-05-03"
+        },
+        {
+          "n": 5,
+          "title": "Where Things Sit",
+          "publishes": "2027-05-10"
+        },
+        {
+          "n": 6,
+          "title": "The Loud War",
+          "publishes": "2027-05-17"
+        },
+        {
+          "n": 7,
+          "title": "The Container Shapes the Song",
+          "publishes": "2027-05-24"
+        },
+        {
+          "n": 8,
+          "title": "Two Copyrights on Every Song",
+          "publishes": "2027-05-31"
+        },
+        {
+          "n": 9,
+          "title": "The Casbah and What a Label Is",
+          "publishes": "2027-06-07"
+        },
+        {
+          "n": 10,
+          "title": "The Border Blaster",
+          "publishes": "2027-06-14"
+        },
+        {
+          "n": 11,
+          "title": "From Owning to Renting",
+          "publishes": "2027-06-21"
+        },
+        {
+          "n": 12,
+          "title": "A Fraction of a Cent",
+          "publishes": "2027-06-28"
+        },
+        {
+          "n": 13,
+          "title": "The Algorithm That Surfaced It",
+          "publishes": "2027-07-05"
+        },
+        {
+          "n": 14,
+          "title": "The Breakdown",
+          "publishes": "2027-07-12"
+        },
+        {
+          "n": 15,
+          "title": "Release Day, and the Morning After",
+          "publishes": "2027-07-19"
+        }
+      ]
     },
     "SIG-201": {
       "code": "SIG 201",
@@ -238,7 +2009,84 @@
       "semester": 4,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Horse Left the Ground",
+          "publishes": "2027-11-08"
+        },
+        {
+          "n": 2,
+          "title": "Fifty Seconds and One Frame",
+          "publishes": "2027-11-15"
+        },
+        {
+          "n": 3,
+          "title": "The Cut Makes the Meaning",
+          "publishes": "2027-11-22"
+        },
+        {
+          "n": 4,
+          "title": "Nanook's Igloo Had No Roof",
+          "publishes": "2027-11-29"
+        },
+        {
+          "n": 5,
+          "title": "One Photograph Fed a Camp",
+          "publishes": "2027-12-06"
+        },
+        {
+          "n": 6,
+          "title": "You Press the Button",
+          "publishes": "2027-12-13"
+        },
+        {
+          "n": 7,
+          "title": "Earthrise Took Four Days to Land",
+          "publishes": "2027-12-20"
+        },
+        {
+          "n": 8,
+          "title": "The Camcorder Was a Studio",
+          "publishes": "2027-12-27"
+        },
+        {
+          "n": 9,
+          "title": "Hall H: Attention Is the Scarce Thing",
+          "publishes": "2028-01-03"
+        },
+        {
+          "n": 10,
+          "title": "The Loop Is the Oldest Moving Image",
+          "publishes": "2028-01-10"
+        },
+        {
+          "n": 11,
+          "title": "The Feed Is a Slot Machine",
+          "publishes": "2028-01-17"
+        },
+        {
+          "n": 12,
+          "title": "The Poster Was the Thumbnail",
+          "publishes": "2028-01-24"
+        },
+        {
+          "n": 13,
+          "title": "The Navy Was the Biggest Studio in Town",
+          "publishes": "2028-01-31"
+        },
+        {
+          "n": 14,
+          "title": "The Rose Diagram",
+          "publishes": "2028-02-07"
+        },
+        {
+          "n": 15,
+          "title": "Let Go, Then Watch",
+          "publishes": "2028-02-14"
+        }
+      ]
     },
     "SIG-301": {
       "code": "SIG 301",
@@ -247,7 +2095,84 @@
       "semester": 5,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "A Rec Room in the Bronx, 1973",
+          "publishes": "2028-02-21"
+        },
+        {
+          "n": 2,
+          "title": "Scenius",
+          "publishes": "2028-02-28"
+        },
+        {
+          "n": 3,
+          "title": "Pop an Ollie",
+          "publishes": "2028-03-06"
+        },
+        {
+          "n": 4,
+          "title": "A Navy Book at Windansea",
+          "publishes": "2028-03-13"
+        },
+        {
+          "n": 5,
+          "title": "The Password",
+          "publishes": "2028-03-20"
+        },
+        {
+          "n": 6,
+          "title": "The Che Caf\u00e9's Rules",
+          "publishes": "2028-03-27"
+        },
+        {
+          "n": 7,
+          "title": "The Drum Machine Nobody Wanted",
+          "publishes": "2028-04-03"
+        },
+        {
+          "n": 8,
+          "title": "A Scene Builds a Park",
+          "publishes": "2028-04-10"
+        },
+        {
+          "n": 9,
+          "title": "The Border Is a Mixer",
+          "publishes": "2028-04-17"
+        },
+        {
+          "n": 10,
+          "title": "Homebrew: A Garage and a Newsletter",
+          "publishes": "2028-04-24"
+        },
+        {
+          "n": 11,
+          "title": "Hybrid Corn and the S-Curve",
+          "publishes": "2028-05-01"
+        },
+        {
+          "n": 12,
+          "title": "The Bridge Person",
+          "publishes": "2028-05-08"
+        },
+        {
+          "n": 13,
+          "title": "The Veranda",
+          "publishes": "2028-05-15"
+        },
+        {
+          "n": 14,
+          "title": "The Scene Gets a Name and Dies",
+          "publishes": "2028-05-22"
+        },
+        {
+          "n": 15,
+          "title": "Hand It Back",
+          "publishes": "2028-05-29"
+        }
+      ]
     },
     "SIG-401": {
       "code": "SIG 401",
@@ -256,7 +2181,84 @@
       "semester": 8,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Key With the Leather Thong",
+          "publishes": "2029-01-01"
+        },
+        {
+          "n": 2,
+          "title": "The Cabinet",
+          "publishes": "2029-01-08"
+        },
+        {
+          "n": 3,
+          "title": "Signal, Noise, Channel",
+          "publishes": "2029-01-15"
+        },
+        {
+          "n": 4,
+          "title": "Common Sense Sold 120,000 Copies",
+          "publishes": "2029-01-22"
+        },
+        {
+          "n": 5,
+          "title": "Anyone With a Copier Is a Press",
+          "publishes": "2029-01-29"
+        },
+        {
+          "n": 6,
+          "title": "A Signal Is a Schedule",
+          "publishes": "2029-02-05"
+        },
+        {
+          "n": 7,
+          "title": "Poor Richard Owned His List",
+          "publishes": "2029-02-12"
+        },
+        {
+          "n": 8,
+          "title": "Rent the Theater Yourself",
+          "publishes": "2029-02-19"
+        },
+        {
+          "n": 9,
+          "title": "D\u00fcrer's Rhinoceros Was Wrong Five Thousand Times",
+          "publishes": "2029-02-26"
+        },
+        {
+          "n": 10,
+          "title": "A Human Is in the Box",
+          "publishes": "2029-03-05"
+        },
+        {
+          "n": 11,
+          "title": "Ship Means a Date",
+          "publishes": "2029-03-12"
+        },
+        {
+          "n": 12,
+          "title": "The Pump Handle",
+          "publishes": "2029-03-19"
+        },
+        {
+          "n": 13,
+          "title": "Seventy-Five Thousand Mouths",
+          "publishes": "2029-03-26"
+        },
+        {
+          "n": 14,
+          "title": "Bernays Wrote It Down",
+          "publishes": "2029-04-02"
+        },
+        {
+          "n": 15,
+          "title": "The Numbers, Out Loud",
+          "publishes": "2029-04-09"
+        }
+      ]
     },
     "WKSP-101": {
       "code": "WKSP 101",
@@ -271,6 +2273,83 @@
           "path": "/courses/WKSP-101/day-01",
           "title": "Make Anything"
         }
+      ],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Make Anything",
+          "publishes": null
+        },
+        {
+          "n": 2,
+          "title": "The Room Has a Master in It",
+          "publishes": "2027-01-04"
+        },
+        {
+          "n": 3,
+          "title": "Small Enough to Finish",
+          "publishes": "2027-01-11"
+        },
+        {
+          "n": 4,
+          "title": "Three Photos and a Sentence",
+          "publishes": "2027-01-18"
+        },
+        {
+          "n": 5,
+          "title": "Measure Twice",
+          "publishes": "2027-01-25"
+        },
+        {
+          "n": 6,
+          "title": "The Tool Is a Teacher",
+          "publishes": "2027-02-01"
+        },
+        {
+          "n": 7,
+          "title": "Describe Before You Judge",
+          "publishes": "2027-02-08"
+        },
+        {
+          "n": 8,
+          "title": "Rough, Then Fine",
+          "publishes": "2027-02-15"
+        },
+        {
+          "n": 9,
+          "title": "The Thing Pushes Back",
+          "publishes": "2027-02-22"
+        },
+        {
+          "n": 10,
+          "title": "Halfway Is a Lie",
+          "publishes": "2027-03-01"
+        },
+        {
+          "n": 11,
+          "title": "Hands Only",
+          "publishes": "2027-03-08"
+        },
+        {
+          "n": 12,
+          "title": "A Picture Someone Could Build From",
+          "publishes": "2027-03-15"
+        },
+        {
+          "n": 13,
+          "title": "Finish Means Finished",
+          "publishes": "2027-03-22"
+        },
+        {
+          "n": 14,
+          "title": "Say It in Two Minutes",
+          "publishes": "2027-03-29"
+        },
+        {
+          "n": 15,
+          "title": "It Ships",
+          "publishes": "2027-04-05"
+        }
       ]
     },
     "WKSP-102": {
@@ -280,7 +2359,84 @@
       "semester": 2,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "A Board Is a Stack of Decisions",
+          "publishes": "2027-04-12"
+        },
+        {
+          "n": 2,
+          "title": "Foam, Wood, or Seven Plies",
+          "publishes": "2027-04-19"
+        },
+        {
+          "n": 3,
+          "title": "Rocker First",
+          "publishes": "2027-04-26"
+        },
+        {
+          "n": 4,
+          "title": "The Template Is the DNA",
+          "publishes": "2027-05-03"
+        },
+        {
+          "n": 5,
+          "title": "Seven Plies in a Press",
+          "publishes": "2027-05-10"
+        },
+        {
+          "n": 6,
+          "title": "A Fin Is a Wing",
+          "publishes": "2027-05-17"
+        },
+        {
+          "n": 7,
+          "title": "Rough, Then Fine, in Foam",
+          "publishes": "2027-05-24"
+        },
+        {
+          "n": 8,
+          "title": "Resin Has a Clock",
+          "publishes": "2027-05-31"
+        },
+        {
+          "n": 9,
+          "title": "Strangers in the Room",
+          "publishes": "2027-06-07"
+        },
+        {
+          "n": 10,
+          "title": "The Placard",
+          "publishes": "2027-06-14"
+        },
+        {
+          "n": 11,
+          "title": "Hands Only, Round Two",
+          "publishes": "2027-06-21"
+        },
+        {
+          "n": 12,
+          "title": "Into the Water",
+          "publishes": "2027-06-28"
+        },
+        {
+          "n": 13,
+          "title": "Dings Are Data",
+          "publishes": "2027-07-05"
+        },
+        {
+          "n": 14,
+          "title": "Hang It Right",
+          "publishes": "2027-07-12"
+        },
+        {
+          "n": 15,
+          "title": "Shown",
+          "publishes": "2027-07-19"
+        }
+      ]
     },
     "WKSP-201": {
       "code": "WKSP 201",
@@ -289,7 +2445,84 @@
       "semester": 3,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Someone Who Is Not You",
+          "publishes": "2027-07-26"
+        },
+        {
+          "n": 2,
+          "title": "A Small Voltage That Wants to Be Bigger",
+          "publishes": "2027-08-02"
+        },
+        {
+          "n": 3,
+          "title": "The Brief, Written Down",
+          "publishes": "2027-08-09"
+        },
+        {
+          "n": 4,
+          "title": "Solder Is a Joint, Not a Glue",
+          "publishes": "2027-08-16"
+        },
+        {
+          "n": 5,
+          "title": "The Breadboard Version",
+          "publishes": "2027-08-23"
+        },
+        {
+          "n": 6,
+          "title": "Read the Schematic Like a Map",
+          "publishes": "2027-08-30"
+        },
+        {
+          "n": 7,
+          "title": "The Client's Ears",
+          "publishes": "2027-09-06"
+        },
+        {
+          "n": 8,
+          "title": "Noise Is Information",
+          "publishes": "2027-09-13"
+        },
+        {
+          "n": 9,
+          "title": "Three Photos and a Schematic",
+          "publishes": "2027-09-20"
+        },
+        {
+          "n": 10,
+          "title": "Tolerance Is Honesty",
+          "publishes": "2027-09-27"
+        },
+        {
+          "n": 11,
+          "title": "Hands Only",
+          "publishes": "2027-10-04"
+        },
+        {
+          "n": 12,
+          "title": "Box It",
+          "publishes": "2027-10-11"
+        },
+        {
+          "n": 13,
+          "title": "Plug It In for Them",
+          "publishes": "2027-10-18"
+        },
+        {
+          "n": 14,
+          "title": "The Invoice Is a Document Too",
+          "publishes": "2027-10-25"
+        },
+        {
+          "n": 15,
+          "title": "Shipped, Documented",
+          "publishes": "2027-11-01"
+        }
+      ]
     },
     "WKSP-202": {
       "code": "WKSP 202",
@@ -298,7 +2531,84 @@
       "semester": 4,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "A Machine Someone Depends On",
+          "publishes": "2027-11-08"
+        },
+        {
+          "n": 2,
+          "title": "Look Inside Before You Touch",
+          "publishes": "2027-11-15"
+        },
+        {
+          "n": 3,
+          "title": "Symptoms, Not Parts",
+          "publishes": "2027-11-22"
+        },
+        {
+          "n": 4,
+          "title": "Four Strokes, by Hand",
+          "publishes": "2027-11-29"
+        },
+        {
+          "n": 5,
+          "title": "Torque Is a Promise",
+          "publishes": "2027-12-06"
+        },
+        {
+          "n": 6,
+          "title": "Three Fluids and a Fire",
+          "publishes": "2027-12-13"
+        },
+        {
+          "n": 7,
+          "title": "The Harness Is a Nervous System",
+          "publishes": "2027-12-20"
+        },
+        {
+          "n": 8,
+          "title": "The Crit at the Lift",
+          "publishes": "2027-12-27"
+        },
+        {
+          "n": 9,
+          "title": "The Service Log",
+          "publishes": "2028-01-03"
+        },
+        {
+          "n": 10,
+          "title": "Running",
+          "publishes": "2028-01-10"
+        },
+        {
+          "n": 11,
+          "title": "Hands Only",
+          "publishes": "2028-01-17"
+        },
+        {
+          "n": 12,
+          "title": "Tolerance Is a Moral Category",
+          "publishes": "2028-01-24"
+        },
+        {
+          "n": 13,
+          "title": "The Ride",
+          "publishes": "2028-01-31"
+        },
+        {
+          "n": 14,
+          "title": "Four Builds on One Table",
+          "publishes": "2028-02-07"
+        },
+        {
+          "n": 15,
+          "title": "Declare It",
+          "publishes": "2028-02-14"
+        }
+      ]
     },
     "WKSP-301": {
       "code": "WKSP 301",
@@ -307,7 +2617,84 @@
       "semester": 5,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Shot They Can't Get",
+          "publishes": "2028-02-21"
+        },
+        {
+          "n": 2,
+          "title": "Someone Did This in 1959 with What They Had",
+          "publishes": "2028-02-28"
+        },
+        {
+          "n": 3,
+          "title": "The Brief Has a Frame Rate",
+          "publishes": "2028-03-06"
+        },
+        {
+          "n": 4,
+          "title": "A Rig Is a Lever",
+          "publishes": "2028-03-13"
+        },
+        {
+          "n": 5,
+          "title": "Write the Test Before the Build",
+          "publishes": "2028-03-20"
+        },
+        {
+          "n": 6,
+          "title": "Light Is the Payload",
+          "publishes": "2028-03-27"
+        },
+        {
+          "n": 7,
+          "title": "Three Concentrations, One Bench",
+          "publishes": "2028-04-03"
+        },
+        {
+          "n": 8,
+          "title": "Firmware Is a Material",
+          "publishes": "2028-04-10"
+        },
+        {
+          "n": 9,
+          "title": "Three Photos and a Test Log",
+          "publishes": "2028-04-17"
+        },
+        {
+          "n": 10,
+          "title": "Weight Is the Enemy",
+          "publishes": "2028-04-24"
+        },
+        {
+          "n": 11,
+          "title": "Hands Only",
+          "publishes": "2028-05-01"
+        },
+        {
+          "n": 12,
+          "title": "In the Water with the Client",
+          "publishes": "2028-05-08"
+        },
+        {
+          "n": 13,
+          "title": "The Edit Is the Proof",
+          "publishes": "2028-05-15"
+        },
+        {
+          "n": 14,
+          "title": "The Cyclopes Make One Shield",
+          "publishes": "2028-05-22"
+        },
+        {
+          "n": 15,
+          "title": "Shipped, Documented",
+          "publishes": "2028-05-29"
+        }
+      ]
     },
     "WKSP-302": {
       "code": "WKSP 302",
@@ -316,7 +2703,84 @@
       "semester": 6,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "One Instrument, One Week, One Number",
+          "publishes": "2028-06-05"
+        },
+        {
+          "n": 2,
+          "title": "Saltwater Eats Everything",
+          "publishes": "2028-06-12"
+        },
+        {
+          "n": 3,
+          "title": "One Variable",
+          "publishes": "2028-06-19"
+        },
+        {
+          "n": 4,
+          "title": "The Housing Is the Build",
+          "publishes": "2028-06-26"
+        },
+        {
+          "n": 5,
+          "title": "Calibrate Against Something True",
+          "publishes": "2028-07-03"
+        },
+        {
+          "n": 6,
+          "title": "A Week Is 168 Hours",
+          "publishes": "2028-07-10"
+        },
+        {
+          "n": 7,
+          "title": "A Sensor That Moves",
+          "publishes": "2028-07-17"
+        },
+        {
+          "n": 8,
+          "title": "The Remote Crit",
+          "publishes": "2028-07-24"
+        },
+        {
+          "n": 9,
+          "title": "Three Photos and a Plot",
+          "publishes": "2028-07-31"
+        },
+        {
+          "n": 10,
+          "title": "Deploy",
+          "publishes": "2028-08-07"
+        },
+        {
+          "n": 11,
+          "title": "Hands Only",
+          "publishes": "2028-08-14"
+        },
+        {
+          "n": 12,
+          "title": "Retrieve",
+          "publishes": "2028-08-21"
+        },
+        {
+          "n": 13,
+          "title": "The Plot Is the Made Thing",
+          "publishes": "2028-08-28"
+        },
+        {
+          "n": 14,
+          "title": "Lighter, on Purpose",
+          "publishes": "2028-09-04"
+        },
+        {
+          "n": 15,
+          "title": "One Number That's True",
+          "publishes": "2028-09-11"
+        }
+      ]
     },
     "WKSP-401": {
       "code": "WKSP 401",
@@ -325,7 +2789,84 @@
       "semester": 7,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "You Don't Know It Until You Can Teach It",
+          "publishes": "2028-09-18"
+        },
+        {
+          "n": 2,
+          "title": "Their Day 1 Is This Week",
+          "publishes": "2028-09-25"
+        },
+        {
+          "n": 3,
+          "title": "The Brief Is Theirs",
+          "publishes": "2028-10-02"
+        },
+        {
+          "n": 4,
+          "title": "Show Once, Then Step Back",
+          "publishes": "2028-10-09"
+        },
+        {
+          "n": 5,
+          "title": "Running the Crit",
+          "publishes": "2028-10-16"
+        },
+        {
+          "n": 6,
+          "title": "Two Logs",
+          "publishes": "2028-10-23"
+        },
+        {
+          "n": 7,
+          "title": "Let Them Fail Small",
+          "publishes": "2028-10-30"
+        },
+        {
+          "n": 8,
+          "title": "Safety Is Yours",
+          "publishes": "2028-11-06"
+        },
+        {
+          "n": 9,
+          "title": "What the Exam Reveals",
+          "publishes": "2028-11-13"
+        },
+        {
+          "n": 10,
+          "title": "When to Hand It Over",
+          "publishes": "2028-11-20"
+        },
+        {
+          "n": 11,
+          "title": "Your Hands Only",
+          "publishes": "2028-11-27"
+        },
+        {
+          "n": 12,
+          "title": "Four Weeks Left, the Date Does Not Move",
+          "publishes": "2028-12-04"
+        },
+        {
+          "n": 13,
+          "title": "Their Finish, Not Yours",
+          "publishes": "2028-12-11"
+        },
+        {
+          "n": 14,
+          "title": "The Account",
+          "publishes": "2028-12-18"
+        },
+        {
+          "n": 15,
+          "title": "Handed Over",
+          "publishes": "2028-12-25"
+        }
+      ]
     },
     "WKSP-402": {
       "code": "WKSP 402",
@@ -334,7 +2875,84 @@
       "semester": 8,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Tell Me If Anything Was Ever Done",
+          "publishes": "2029-01-01"
+        },
+        {
+          "n": 2,
+          "title": "The Last Brief You Write for Yourself",
+          "publishes": "2029-01-08"
+        },
+        {
+          "n": 3,
+          "title": "A Sensor That Moves, If You Want It",
+          "publishes": "2029-01-15"
+        },
+        {
+          "n": 4,
+          "title": "The Second Pass",
+          "publishes": "2029-01-22"
+        },
+        {
+          "n": 5,
+          "title": "The Room Beside the Defense",
+          "publishes": "2029-01-29"
+        },
+        {
+          "n": 6,
+          "title": "Hands Remember",
+          "publishes": "2029-02-05"
+        },
+        {
+          "n": 7,
+          "title": "The Outside Eye",
+          "publishes": "2029-02-12"
+        },
+        {
+          "n": 8,
+          "title": "The Final Log Is for the Archive",
+          "publishes": "2029-02-19"
+        },
+        {
+          "n": 9,
+          "title": "The First-Years Are Downstairs",
+          "publishes": "2029-02-26"
+        },
+        {
+          "n": 10,
+          "title": "Hang It Beside the Capstone",
+          "publishes": "2029-03-05"
+        },
+        {
+          "n": 11,
+          "title": "Hands Only, Last Time",
+          "publishes": "2029-03-12"
+        },
+        {
+          "n": 12,
+          "title": "Eight Paragraphs",
+          "publishes": "2029-03-19"
+        },
+        {
+          "n": 13,
+          "title": "The Public",
+          "publishes": "2029-03-26"
+        },
+        {
+          "n": 14,
+          "title": "The Account of Eight Semesters",
+          "publishes": "2029-04-02"
+        },
+        {
+          "n": 15,
+          "title": "The Bed Odysseus Built",
+          "publishes": "2029-04-09"
+        }
+      ]
     },
     "FLD-301": {
       "code": "FLD 301",
@@ -343,7 +2961,84 @@
       "semester": 6,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Walk In With Three Rolls",
+          "publishes": "2028-06-05"
+        },
+        {
+          "n": 2,
+          "title": "The Apprentice's Angel",
+          "publishes": "2028-06-12"
+        },
+        {
+          "n": 3,
+          "title": "Eight Objections, Answered",
+          "publishes": "2028-06-19"
+        },
+        {
+          "n": 4,
+          "title": "Write Down What Was Promised",
+          "publishes": "2028-06-26"
+        },
+        {
+          "n": 5,
+          "title": "Ask Benedetto How They Go on Ice",
+          "publishes": "2028-07-03"
+        },
+        {
+          "n": 6,
+          "title": "Write Down the One That Contradicts You",
+          "publishes": "2028-07-10"
+        },
+        {
+          "n": 7,
+          "title": "Fly It as a Kite First",
+          "publishes": "2028-07-17"
+        },
+        {
+          "n": 8,
+          "title": "Errata",
+          "publishes": "2028-07-24"
+        },
+        {
+          "n": 9,
+          "title": "Afflicted With the Belief",
+          "publishes": "2028-07-31"
+        },
+        {
+          "n": 10,
+          "title": "The Water-American",
+          "publishes": "2028-08-07"
+        },
+        {
+          "n": 11,
+          "title": "Ten Things I Can Do",
+          "publishes": "2028-08-14"
+        },
+        {
+          "n": 12,
+          "title": "Retrospect",
+          "publishes": "2028-08-21"
+        },
+        {
+          "n": 13,
+          "title": "The Little Book With Dots",
+          "publishes": "2028-08-28"
+        },
+        {
+          "n": 14,
+          "title": "Thirty-Two Words to Dayton",
+          "publishes": "2028-09-04"
+        },
+        {
+          "n": 15,
+          "title": "The Most Important Event",
+          "publishes": "2028-09-11"
+        }
+      ]
     },
     "CAP-401": {
       "code": "CAP 401",
@@ -352,7 +3047,84 @@
       "semester": 7,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "I Think",
+          "publishes": "2028-09-18"
+        },
+        {
+          "n": 2,
+          "title": "Thesis, System, or Venture",
+          "publishes": "2028-09-25"
+        },
+        {
+          "n": 3,
+          "title": "Add My Mite",
+          "publishes": "2028-10-02"
+        },
+        {
+          "n": 4,
+          "title": "One Page, Still Standing",
+          "publishes": "2028-10-09"
+        },
+        {
+          "n": 5,
+          "title": "Sit on a Fence and Watch the Birds",
+          "publishes": "2028-10-16"
+        },
+        {
+          "n": 6,
+          "title": "Smashed",
+          "publishes": "2028-10-23"
+        },
+        {
+          "n": 7,
+          "title": "The Junto's Questions",
+          "publishes": "2028-10-30"
+        },
+        {
+          "n": 8,
+          "title": "Date the First Page",
+          "publishes": "2028-11-06"
+        },
+        {
+          "n": 9,
+          "title": "Fifty Subscribers",
+          "publishes": "2028-11-13"
+        },
+        {
+          "n": 10,
+          "title": "Test It Two or Three Times",
+          "publishes": "2028-11-20"
+        },
+        {
+          "n": 11,
+          "title": "Lilienthal's Tables Were Wrong",
+          "publishes": "2028-11-27"
+        },
+        {
+          "n": 12,
+          "title": "Like Confessing a Murder",
+          "publishes": "2028-12-04"
+        },
+        {
+          "n": 13,
+          "title": "Written the Same Day",
+          "publishes": "2028-12-11"
+        },
+        {
+          "n": 14,
+          "title": "A Thousand Glides",
+          "publishes": "2028-12-18"
+        },
+        {
+          "n": 15,
+          "title": "The Shed",
+          "publishes": "2028-12-25"
+        }
+      ]
     },
     "CAP-402": {
       "code": "CAP 402",
@@ -361,7 +3133,84 @@
       "semester": 8,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Publish the Abstract",
+          "publishes": "2029-01-01"
+        },
+        {
+          "n": 2,
+          "title": "The Commission d'Examen",
+          "publishes": "2029-01-08"
+        },
+        {
+          "n": 3,
+          "title": "Leonardo Didn't Finish",
+          "publishes": "2029-01-15"
+        },
+        {
+          "n": 4,
+          "title": "Le Mans, 8 August 1908",
+          "publishes": "2029-01-22"
+        },
+        {
+          "n": 5,
+          "title": "Explain the Stove",
+          "publishes": "2029-01-29"
+        },
+        {
+          "n": 6,
+          "title": "The Claim in Three Pages",
+          "publishes": "2029-02-05"
+        },
+        {
+          "n": 7,
+          "title": "Difficulties on Theory",
+          "publishes": "2029-02-12"
+        },
+        {
+          "n": 8,
+          "title": "Rudder and Compass",
+          "publishes": "2029-02-19"
+        },
+        {
+          "n": 9,
+          "title": "Freeze It",
+          "publishes": "2029-02-26"
+        },
+        {
+          "n": 10,
+          "title": "Letters to Mr. Collinson",
+          "publishes": "2029-03-05"
+        },
+        {
+          "n": 11,
+          "title": "Bring the Candle",
+          "publishes": "2029-03-12"
+        },
+        {
+          "n": 12,
+          "title": "Oxford, June 1860",
+          "publishes": "2029-03-19"
+        },
+        {
+          "n": 13,
+          "title": "Five Witnesses on the Sand",
+          "publishes": "2029-03-26"
+        },
+        {
+          "n": 14,
+          "title": "Tell Me If Anything Was Ever Done",
+          "publishes": "2029-04-02"
+        },
+        {
+          "n": 15,
+          "title": "There Is Grandeur",
+          "publishes": "2029-04-09"
+        }
+      ]
     },
     "ART-310": {
       "code": "ART 310",
@@ -370,7 +3219,84 @@
       "semester": 5,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Audience Acts",
+          "publishes": "2028-02-21"
+        },
+        {
+          "n": 2,
+          "title": "The Door That Needs a Sign",
+          "publishes": "2028-02-28"
+        },
+        {
+          "n": 3,
+          "title": "The Loop",
+          "publishes": "2028-03-06"
+        },
+        {
+          "n": 4,
+          "title": "The Brief",
+          "publishes": "2028-03-13"
+        },
+        {
+          "n": 5,
+          "title": "Paper First",
+          "publishes": "2028-03-20"
+        },
+        {
+          "n": 6,
+          "title": "Juice",
+          "publishes": "2028-03-27"
+        },
+        {
+          "n": 7,
+          "title": "Rules Make Play",
+          "publishes": "2028-04-03"
+        },
+        {
+          "n": 8,
+          "title": "Watch, Don't Talk",
+          "publishes": "2028-04-10"
+        },
+        {
+          "n": 9,
+          "title": "Two Hundred Identical Lights",
+          "publishes": "2028-04-17"
+        },
+        {
+          "n": 10,
+          "title": "The Body Sets the Target",
+          "publishes": "2028-04-24"
+        },
+        {
+          "n": 11,
+          "title": "Rooms, Not Screens",
+          "publishes": "2028-05-01"
+        },
+        {
+          "n": 12,
+          "title": "The Coin Box Is Honest",
+          "publishes": "2028-05-08"
+        },
+        {
+          "n": 13,
+          "title": "The Machine at the Table",
+          "publishes": "2028-05-15"
+        },
+        {
+          "n": 14,
+          "title": "Take Something Out",
+          "publishes": "2028-05-22"
+        },
+        {
+          "n": 15,
+          "title": "Observed in Use",
+          "publishes": "2028-05-29"
+        }
+      ]
     },
     "ART-320": {
       "code": "ART 320",
@@ -379,7 +3305,84 @@
       "semester": 5,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Where You Stand Is the Film",
+          "publishes": "2028-02-21"
+        },
+        {
+          "n": 2,
+          "title": "Two Shots Make a Third Thing",
+          "publishes": "2028-02-28"
+        },
+        {
+          "n": 3,
+          "title": "The Steps",
+          "publishes": "2028-03-06"
+        },
+        {
+          "n": 4,
+          "title": "The Brief",
+          "publishes": "2028-03-13"
+        },
+        {
+          "n": 5,
+          "title": "Light Is the Subject",
+          "publishes": "2028-03-20"
+        },
+        {
+          "n": 6,
+          "title": "The Frame Is a Sentence",
+          "publishes": "2028-03-27"
+        },
+        {
+          "n": 7,
+          "title": "The Shot List Is a Promise",
+          "publishes": "2028-04-03"
+        },
+        {
+          "n": 8,
+          "title": "Dailies",
+          "publishes": "2028-04-10"
+        },
+        {
+          "n": 9,
+          "title": "Cut on the Blink",
+          "publishes": "2028-04-17"
+        },
+        {
+          "n": 10,
+          "title": "Knife",
+          "publishes": "2028-04-24"
+        },
+        {
+          "n": 11,
+          "title": "Four Stems",
+          "publishes": "2028-05-01"
+        },
+        {
+          "n": 12,
+          "title": "Picture Lock",
+          "publishes": "2028-05-08"
+        },
+        {
+          "n": 13,
+          "title": "The Last Lie",
+          "publishes": "2028-05-15"
+        },
+        {
+          "n": 14,
+          "title": "Say It in One Sentence",
+          "publishes": "2028-05-22"
+        },
+        {
+          "n": 15,
+          "title": "The Room Is the Last Edit",
+          "publishes": "2028-05-29"
+        }
+      ]
     },
     "ART-330": {
       "code": "ART 330",
@@ -388,7 +3391,84 @@
       "semester": 6,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Room Is the First Instrument",
+          "publishes": "2028-06-05"
+        },
+        {
+          "n": 2,
+          "title": "Where You Stand Is the Mix",
+          "publishes": "2028-06-12"
+        },
+        {
+          "n": 3,
+          "title": "An Ear With a Shape",
+          "publishes": "2028-06-19"
+        },
+        {
+          "n": 4,
+          "title": "The Brief and the Release Date",
+          "publishes": "2028-06-26"
+        },
+        {
+          "n": 5,
+          "title": "Attack, Then Everything After",
+          "publishes": "2028-07-03"
+        },
+        {
+          "n": 6,
+          "title": "Subtract",
+          "publishes": "2028-07-10"
+        },
+        {
+          "n": 7,
+          "title": "A Hand Faster Than a Hand",
+          "publishes": "2028-07-17"
+        },
+        {
+          "n": 8,
+          "title": "Three Speakers",
+          "publishes": "2028-07-24"
+        },
+        {
+          "n": 9,
+          "title": "Two Ears",
+          "publishes": "2028-07-31"
+        },
+        {
+          "n": 10,
+          "title": "The Inaudible Made Audible",
+          "publishes": "2028-08-07"
+        },
+        {
+          "n": 11,
+          "title": "The Reference and the Lie",
+          "publishes": "2028-08-14"
+        },
+        {
+          "n": 12,
+          "title": "Mix Lock",
+          "publishes": "2028-08-21"
+        },
+        {
+          "n": 13,
+          "title": "Louder Is Not Better",
+          "publishes": "2028-08-28"
+        },
+        {
+          "n": 14,
+          "title": "The Record Made the Music",
+          "publishes": "2028-09-04"
+        },
+        {
+          "n": 15,
+          "title": "Release",
+          "publishes": "2028-09-11"
+        }
+      ]
     },
     "ART-410": {
       "code": "ART 410",
@@ -397,7 +3477,84 @@
       "semester": 7,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "No Two Alike, All the Same Work",
+          "publishes": "2028-09-18"
+        },
+        {
+          "n": 2,
+          "title": "Mozart Rolls Dice",
+          "publishes": "2028-09-25"
+        },
+        {
+          "n": 3,
+          "title": "The Loom Was First",
+          "publishes": "2028-10-02"
+        },
+        {
+          "n": 4,
+          "title": "The Brief",
+          "publishes": "2028-10-09"
+        },
+        {
+          "n": 5,
+          "title": "Noise Is a Material",
+          "publishes": "2028-10-16"
+        },
+        {
+          "n": 6,
+          "title": "Three Rules, Then a Universe",
+          "publishes": "2028-10-23"
+        },
+        {
+          "n": 7,
+          "title": "Grow It",
+          "publishes": "2028-10-30"
+        },
+        {
+          "n": 8,
+          "title": "Run It a Thousand Times",
+          "publishes": "2028-11-06"
+        },
+        {
+          "n": 9,
+          "title": "The Model Is Material",
+          "publishes": "2028-11-13"
+        },
+        {
+          "n": 10,
+          "title": "Train It on Yourself",
+          "publishes": "2028-11-20"
+        },
+        {
+          "n": 11,
+          "title": "Whose Work Is It",
+          "publishes": "2028-11-27"
+        },
+        {
+          "n": 12,
+          "title": "Freeze the Rule",
+          "publishes": "2028-12-04"
+        },
+        {
+          "n": 13,
+          "title": "Curate",
+          "publishes": "2028-12-11"
+        },
+        {
+          "n": 14,
+          "title": "Live",
+          "publishes": "2028-12-18"
+        },
+        {
+          "n": 15,
+          "title": "The Rules on the Wall",
+          "publishes": "2028-12-25"
+        }
+      ]
     },
     "ENGR-310": {
       "code": "ENGR 310",
@@ -406,7 +3563,84 @@
       "semester": 5,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "The Part Outlives the Drawing",
+          "publishes": "2028-02-21"
+        },
+        {
+          "n": 2,
+          "title": "Tolerance Is a Moral Category",
+          "publishes": "2028-02-28"
+        },
+        {
+          "n": 3,
+          "title": "Three Views and the Truth",
+          "publishes": "2028-03-06"
+        },
+        {
+          "n": 4,
+          "title": "Metal Remembers",
+          "publishes": "2028-03-13"
+        },
+        {
+          "n": 5,
+          "title": "Make It From Paper First",
+          "publishes": "2028-03-20"
+        },
+        {
+          "n": 6,
+          "title": "A Fit Is a Relationship",
+          "publishes": "2028-03-27"
+        },
+        {
+          "n": 7,
+          "title": "Four Ways to Make a Part",
+          "publishes": "2028-04-03"
+        },
+        {
+          "n": 8,
+          "title": "Measure Twice, Then Doubt It",
+          "publishes": "2028-04-10"
+        },
+        {
+          "n": 9,
+          "title": "Where the Load Turns the Corner",
+          "publishes": "2028-04-17"
+        },
+        {
+          "n": 10,
+          "title": "The Drawing Review",
+          "publishes": "2028-04-24"
+        },
+        {
+          "n": 11,
+          "title": "Read the Drawing Cold",
+          "publishes": "2028-05-01"
+        },
+        {
+          "n": 12,
+          "title": "The Air Here Eats Steel",
+          "publishes": "2028-05-08"
+        },
+        {
+          "n": 13,
+          "title": "Assemble, Then Tell the Truth",
+          "publishes": "2028-05-15"
+        },
+        {
+          "n": 14,
+          "title": "Run It Until It Breaks",
+          "publishes": "2028-05-22"
+        },
+        {
+          "n": 15,
+          "title": "Judged by the Number",
+          "publishes": "2028-05-29"
+        }
+      ]
     },
     "ENGR-320": {
       "code": "ENGR 320",
@@ -415,7 +3649,84 @@
       "semester": 6,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "A Bucket on a Rope",
+          "publishes": "2028-06-05"
+        },
+        {
+          "n": 2,
+          "title": "A Computer the Size of a Stamp",
+          "publishes": "2028-06-12"
+        },
+        {
+          "n": 3,
+          "title": "What a Sensor Actually Returns",
+          "publishes": "2028-06-19"
+        },
+        {
+          "n": 4,
+          "title": "Seal It",
+          "publishes": "2028-06-26"
+        },
+        {
+          "n": 5,
+          "title": "Show the Raw Trace",
+          "publishes": "2028-07-03"
+        },
+        {
+          "n": 6,
+          "title": "Time Is the Hardest Sensor",
+          "publishes": "2028-07-10"
+        },
+        {
+          "n": 7,
+          "title": "Power Is the Budget",
+          "publishes": "2028-07-17"
+        },
+        {
+          "n": 8,
+          "title": "Radio Is a Sensor Pointed at Air",
+          "publishes": "2028-07-24"
+        },
+        {
+          "n": 9,
+          "title": "Assume It Will Crash",
+          "publishes": "2028-07-31"
+        },
+        {
+          "n": 10,
+          "title": "The Line Had Rotted",
+          "publishes": "2028-08-07"
+        },
+        {
+          "n": 11,
+          "title": "Read the Trace",
+          "publishes": "2028-08-14"
+        },
+        {
+          "n": 12,
+          "title": "Deploy Day",
+          "publishes": "2028-08-21"
+        },
+        {
+          "n": 13,
+          "title": "The Data Comes Home Dirty",
+          "publishes": "2028-08-28"
+        },
+        {
+          "n": 14,
+          "title": "Read the River",
+          "publishes": "2028-09-04"
+        },
+        {
+          "n": 15,
+          "title": "Your Number Enters the Record",
+          "publishes": "2028-09-11"
+        }
+      ]
     },
     "ENGR-410": {
       "code": "ENGR 410",
@@ -424,7 +3735,84 @@
       "semester": 7,
       "status": "syllabus",
       "plannedDays": 15,
-      "days": []
+      "days": [],
+      "planned": [
+        {
+          "n": 1,
+          "title": "Seven Miles Into the Desert",
+          "publishes": "2028-09-18"
+        },
+        {
+          "n": 2,
+          "title": "Sense, Think, Act, Sense Again",
+          "publishes": "2028-09-25"
+        },
+        {
+          "n": 3,
+          "title": "Where Am I?",
+          "publishes": "2028-10-02"
+        },
+        {
+          "n": 4,
+          "title": "Seeing Is Guessing",
+          "publishes": "2028-10-09"
+        },
+        {
+          "n": 5,
+          "title": "Drive in a Straight Line",
+          "publishes": "2028-10-16"
+        },
+        {
+          "n": 6,
+          "title": "Control Is a Conversation With Error",
+          "publishes": "2028-10-23"
+        },
+        {
+          "n": 7,
+          "title": "Plan the Path, Expect the Cone",
+          "publishes": "2028-10-30"
+        },
+        {
+          "n": 8,
+          "title": "Wheels, Legs, Hulls, Rotors",
+          "publishes": "2028-11-06"
+        },
+        {
+          "n": 9,
+          "title": "When to Let It Learn",
+          "publishes": "2028-11-13"
+        },
+        {
+          "n": 10,
+          "title": "Rehearsal in the Lot",
+          "publishes": "2028-11-20"
+        },
+        {
+          "n": 11,
+          "title": "Fly It by Hand",
+          "publishes": "2028-11-27"
+        },
+        {
+          "n": 12,
+          "title": "Safety Is the First Feature",
+          "publishes": "2028-12-04"
+        },
+        {
+          "n": 13,
+          "title": "The Job, Not the Demo",
+          "publishes": "2028-12-11"
+        },
+        {
+          "n": 14,
+          "title": "Robots Fall Down",
+          "publishes": "2028-12-18"
+        },
+        {
+          "n": 15,
+          "title": "Live, One Take, in the Lot",
+          "publishes": "2028-12-25"
+        }
+      ]
     }
   }
 }

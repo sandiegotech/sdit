@@ -59,61 +59,61 @@ Ten minutes. One video, one trick, one question. No equations today.
 
 [Begin Day 01 →](day-01.html)
 
-### Day 02 — *coming soon*
+### Day 02 — Right Now Is Two Frames Apart
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 4 January 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — The Closer You Get
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 11 January 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — The Steepest Part of the Face
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 18 January 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — A Square Grows by a Strip
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 25 January 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — Felt in the Knees
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 1 February 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — Gears Inside Gears
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 8 February 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — The Buoy Is a Clock
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 15 February 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — Half of What's Left
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 22 February 2027.
 
-### Day 10 — *coming soon*
+### Day 10 — The Racing Line
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 1 March 2027.
 
-### Day 11 — *coming soon*
+### Day 11 — Where the Pocket Becomes the Vert
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 8 March 2027.
 
-### Day 12 — *coming soon*
+### Day 12 — The Shadow of the Pier
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 15 March 2027.
 
-### Day 13 — *coming soon*
+### Day 13 — Somewhere You Went Exactly Average
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 22 March 2027.
 
-### Day 14 — *coming soon*
+### Day 14 — The Glide
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 29 March 2027.
 
-### Day 15 — *coming soon*
+### Day 15 — The Motion Study
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 5 April 2027.
 <!-- sdit:days:end -->
 
 ---

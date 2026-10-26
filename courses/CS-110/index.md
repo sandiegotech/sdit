@@ -59,61 +59,61 @@ Ten minutes. One machine made of junk, one idea, one question. You will not inst
 
 [Begin Day 01 →](day-01.html)
 
-### Day 02 — *coming soon*
+### Day 02 — The First Program Was Written by Hand
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 4 January 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — A Name for a Thing
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 11 January 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — Again, Again, Until
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 18 January 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — If It's Raining
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 25 January 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — Give the Move a Name
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 1 February 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — Where the Bug Was
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 8 February 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — Tools Closed
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 15 February 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — Lists of Things
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 22 February 2027.
 
-### Day 10 — *coming soon*
+### Day 10 — Pairs of Things
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 1 March 2027.
 
-### Day 11 — *coming soon*
+### Day 11 — What Did You Actually Want?
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 8 March 2027.
 
-### Day 12 — *coming soon*
+### Day 12 — Prove It Works
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 15 March 2027.
 
-### Day 13 — *coming soon*
+### Day 13 — Plausible Is Not True
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 22 March 2027.
 
-### Day 14 — *coming soon*
+### Day 14 — Tools Closed, Again
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 29 March 2027.
 
-### Day 15 — *coming soon*
+### Day 15 — Ship It
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 5 April 2027.
 <!-- sdit:days:end -->
 
 ---

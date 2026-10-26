@@ -52,65 +52,65 @@ A field study of a living scene you belong to or can enter honestly — 2,500 to
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — A Rec Room in the Bronx, 1973
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 21 February 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — Scenius
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 28 February 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — Pop an Ollie
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 6 March 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — A Navy Book at Windansea
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 13 March 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — The Password
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 20 March 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — The Che Café's Rules
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 27 March 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — The Drum Machine Nobody Wanted
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 3 April 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — A Scene Builds a Park
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 10 April 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — The Border Is a Mixer
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 17 April 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — Homebrew: A Garage and a Newsletter
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 24 April 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — Hybrid Corn and the S-Curve
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 1 May 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — The Bridge Person
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 8 May 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — The Veranda
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 15 May 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — The Scene Gets a Name and Dies
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 22 May 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — Hand It Back
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 29 May 2028.
 <!-- sdit:days:end -->
 
 ---

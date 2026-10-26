@@ -52,65 +52,65 @@ A sound built from first principles — a patch or a short piece whose harmonic 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — Every Sound Is a Sum
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 12 April 2027.
 
-### Day 02 — *coming soon*
+### Day 02 — Stitch It Back Together
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 19 April 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — Forty-Four Thousand Slices
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 26 April 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — The Odometer and the Speedometer
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 3 May 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — Speed Up the Tape
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 10 May 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — A Tone Times a Fade
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 17 May 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — The Blank at Ten Stations
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 24 May 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — Loud Is the Average of the Square
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 31 May 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — The Tail That Never Ends
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 7 June 2027.
 
-### Day 10 — *coming soon*
+### Day 10 — Echo, Echo, Echo
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 14 June 2027.
 
-### Day 11 — *coming soon*
+### Day 11 — One, a Half, a Third
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 21 June 2027.
 
-### Day 12 — *coming soon*
+### Day 12 — Drawbars
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 28 June 2027.
 
-### Day 13 — *coming soon*
+### Day 13 — The Polynomial That Learned to Sing
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 5 July 2027.
 
-### Day 14 — *coming soon*
+### Day 14 — The Ear Is a Prism
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 12 July 2027.
 
-### Day 15 — *coming soon*
+### Day 15 — A Sound From First Principles
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 19 July 2027.
 <!-- sdit:days:end -->
 
 ---

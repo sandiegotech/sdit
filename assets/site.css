@@ -1692,3 +1692,56 @@ html.sdit-authed .sdit-portal { display: block; }
 .enroll-btn:disabled { opacity: 0.5; cursor: default; }
 
 
+
+
+/* ---- The Path ---- */
+.ledger .is-upcoming {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--muted);
+}
+.ledger .is-upcoming .l-name { color: var(--ink-soft, var(--ink)); opacity: 0.72; }
+.path-ledger { margin-top: 0.5rem; }
+.path-ledger a, .path-ledger .is-upcoming { padding: 0.7rem 0; }
+.path-ledger .l-name { font-size: 1.05rem; }
+.path-week {
+  margin: 2rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.path-week span { margin-left: 0.75rem; color: var(--muted); font-weight: 400; }
+.path-span { margin: 0 0 0.25rem; font-size: 0.95rem; }
+.path-note { margin: 0.75rem 0 0; font-size: 0.88rem; color: var(--muted); }
+.path-weeks > summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.25rem 0 0.75rem;
+}
+.path-weeks[open] > summary { color: var(--gold); }
+@media (max-width: 540px) {
+  .ledger .is-upcoming { grid-template-columns: 1fr; }
+}
+
+/* Lesson footer: next in this course, next on the Path. */
+.lesson-next { display: grid; gap: 0.75rem; }
+@media (min-width: 720px) { .lesson-next { grid-template-columns: 1fr 1fr; } }
+.lesson-tomorrow-card.is-upcoming {
+  border-left-color: var(--border);
+  background: transparent;
+}
+.lesson-tomorrow-card.is-upcoming .lesson-tomorrow-eyebrow,
+.lesson-tomorrow-card.is-upcoming .lesson-tomorrow-cta { color: var(--muted); }
+.lesson-selfpace a { color: inherit; }
+.day-rail-next { margin: 0.6rem 0 0; font-size: 0.8rem; color: var(--muted); line-height: 1.4; }

@@ -53,65 +53,65 @@ A piece of amplifier or pedal electronics built for a named musician who plugs i
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — Someone Who Is Not You
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 26 July 2027.
 
-### Day 02 — *coming soon*
+### Day 02 — A Small Voltage That Wants to Be Bigger
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 2 August 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — The Brief, Written Down
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 9 August 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — Solder Is a Joint, Not a Glue
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 16 August 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — The Breadboard Version
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 23 August 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — Read the Schematic Like a Map
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 30 August 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — The Client's Ears
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 6 September 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — Noise Is Information
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 13 September 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — Three Photos and a Schematic
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 20 September 2027.
 
-### Day 10 — *coming soon*
+### Day 10 — Tolerance Is Honesty
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 27 September 2027.
 
-### Day 11 — *coming soon*
+### Day 11 — Hands Only
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 4 October 2027.
 
-### Day 12 — *coming soon*
+### Day 12 — Box It
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 11 October 2027.
 
-### Day 13 — *coming soon*
+### Day 13 — Plug It In for Them
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 18 October 2027.
 
-### Day 14 — *coming soon*
+### Day 14 — The Invoice Is a Document Too
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 25 October 2027.
 
-### Day 15 — *coming soon*
+### Day 15 — Shipped, Documented
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 1 November 2027.
 <!-- sdit:days:end -->
 
 ---

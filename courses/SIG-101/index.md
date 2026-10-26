@@ -51,65 +51,65 @@ A released track or a documented production breakdown of one. The track is yours
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Song Left the Room in 1877
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 12 April 2027.
 
-### Day 02 — *coming soon*
+### Day 02 — A Room You Can Hear
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 19 April 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — The Whisper That Needed a Microphone
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 26 April 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — Tape Lets You Lie
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 3 May 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — Where Things Sit
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 10 May 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — The Loud War
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 17 May 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — The Container Shapes the Song
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 24 May 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — Two Copyrights on Every Song
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 31 May 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — The Casbah and What a Label Is
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 7 June 2027.
 
-### Day 10 — *coming soon*
+### Day 10 — The Border Blaster
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 14 June 2027.
 
-### Day 11 — *coming soon*
+### Day 11 — From Owning to Renting
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 21 June 2027.
 
-### Day 12 — *coming soon*
+### Day 12 — A Fraction of a Cent
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 28 June 2027.
 
-### Day 13 — *coming soon*
+### Day 13 — The Algorithm That Surfaced It
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 5 July 2027.
 
-### Day 14 — *coming soon*
+### Day 14 — The Breakdown
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 12 July 2027.
 
-### Day 15 — *coming soon*
+### Day 15 — Release Day, and the Morning After
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 19 July 2027.
 <!-- sdit:days:end -->
 
 ---

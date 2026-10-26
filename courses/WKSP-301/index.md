@@ -53,65 +53,65 @@ A camera rig or housing built for a named photographer or filmmaker, tested to a
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Shot They Can't Get
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 21 February 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — Someone Did This in 1959 with What They Had
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 28 February 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — The Brief Has a Frame Rate
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 6 March 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — A Rig Is a Lever
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 13 March 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — Write the Test Before the Build
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 20 March 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — Light Is the Payload
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 27 March 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — Three Concentrations, One Bench
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 3 April 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — Firmware Is a Material
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 10 April 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — Three Photos and a Test Log
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 17 April 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — Weight Is the Enemy
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 24 April 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — Hands Only
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 1 May 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — In the Water with the Client
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 8 May 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — The Edit Is the Proof
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 15 May 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — The Cyclopes Make One Shield
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 22 May 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — Shipped, Documented
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 29 May 2028.
 <!-- sdit:days:end -->
 
 ---

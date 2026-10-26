@@ -53,65 +53,65 @@ A board — surfboard, handplane, or skateboard deck — finished, ridden, repai
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — A Board Is a Stack of Decisions
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 12 April 2027.
 
-### Day 02 — *coming soon*
+### Day 02 — Foam, Wood, or Seven Plies
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 19 April 2027.
 
-### Day 03 — *coming soon*
+### Day 03 — Rocker First
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 26 April 2027.
 
-### Day 04 — *coming soon*
+### Day 04 — The Template Is the DNA
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 3 May 2027.
 
-### Day 05 — *coming soon*
+### Day 05 — Seven Plies in a Press
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 10 May 2027.
 
-### Day 06 — *coming soon*
+### Day 06 — A Fin Is a Wing
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 17 May 2027.
 
-### Day 07 — *coming soon*
+### Day 07 — Rough, Then Fine, in Foam
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 24 May 2027.
 
-### Day 08 — *coming soon*
+### Day 08 — Resin Has a Clock
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 31 May 2027.
 
-### Day 09 — *coming soon*
+### Day 09 — Strangers in the Room
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 7 June 2027.
 
-### Day 10 — *coming soon*
+### Day 10 — The Placard
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 14 June 2027.
 
-### Day 11 — *coming soon*
+### Day 11 — Hands Only, Round Two
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 21 June 2027.
 
-### Day 12 — *coming soon*
+### Day 12 — Into the Water
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 28 June 2027.
 
-### Day 13 — *coming soon*
+### Day 13 — Dings Are Data
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 5 July 2027.
 
-### Day 14 — *coming soon*
+### Day 14 — Hang It Right
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 12 July 2027.
 
-### Day 15 — *coming soon*
+### Day 15 — Shown
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 19 July 2027.
 <!-- sdit:days:end -->
 
 ---

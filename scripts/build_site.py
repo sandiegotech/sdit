@@ -173,24 +173,15 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
         if is_lesson:
             html = inject_student_work_class(html)
 
-        # Course day pages: canonical lesson id + a "next in this course" card,
-        # so responses unify across routes and every lesson ends with a pull forward.
+        # Course day pages: a canonical lesson id, and the end-of-day chrome that
+        # pulls the learner forward: the next day in this course, and the next
+        # day on the Path (which crosses courses in the weekly rhythm).
         day_match = re.match(r"^courses/([^/]+)/day-(\d+)$", path.relative_to(ROOT).with_suffix("").as_posix())
         canonical = None
         if day_match:
             course_dir, day_num = day_match.group(1), int(day_match.group(2))
             canonical = f"/courses/{course_dir}/day-{day_num:02d}"
-            next_md = ROOT / "courses" / course_dir / f"day-{day_num + 1:02d}.md"
-            if next_md.exists():
-                _, next_meta = strip_front_matter(next_md.read_text(encoding="utf-8"))
-                next_title = (next_meta.get("title") or f"Day {day_num + 1:02d}") if isinstance(next_meta, dict) else f"Day {day_num + 1:02d}"
-                html += journey_footer_html(
-                    journey=f"Day {day_num} of {course_planned_days(course_dir)} in this course",
-                    eyebrow="Next in this course",
-                    card_title=re.sub(r"^Day \d+\s*[—–-]\s*", "", str(next_title)),
-                    card_sub=str(meta.get("course") or "") if isinstance(meta, dict) else "",
-                    href=f"day-{day_num + 1:02d}.html",
-                )
+            html += lesson_footer_html(course_dir, day_num, meta if isinstance(meta, dict) else {})
 
         # Prepare template and asset path
         page = tmpl_page(title, html)
@@ -207,27 +198,61 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
     return entries
 
 
-def journey_footer_html(journey: str, eyebrow: str, card_title: str, card_sub: str,
-                        href: str, week_map: str = "", note: str = "") -> str:
-    """The end-of-lesson journey chrome: where you are, and the pull to tomorrow."""
+def _card(eyebrow: str, title: str, sub: str, href: str | None, cta: str) -> str:
     import html as _html
-    parts = ['<aside class="lesson-journey">']
-    parts.append(f'<p class="lesson-journey-meta">{_html.escape(journey)}</p>')
-    if week_map:
-        parts.append(week_map)
-    parts.append(
-        f'<a class="lesson-tomorrow-card" href="{_html.escape(href)}">'
+    inner = (
         f'<span class="lesson-tomorrow-eyebrow">{_html.escape(eyebrow)}</span>'
-        f'<strong>{_html.escape(card_title)}</strong>'
-        + (f'<span class="lesson-tomorrow-sub">{_html.escape(card_sub)}</span>' if card_sub else "")
-        + '<span class="lesson-tomorrow-cta">Continue the practice →</span>'
-        f'</a>'
+        f'<strong>{_html.escape(title)}</strong>'
+        + (f'<span class="lesson-tomorrow-sub">{_html.escape(sub)}</span>' if sub else "")
+        + f'<span class="lesson-tomorrow-cta">{_html.escape(cta)}</span>'
     )
-    parts.append(f'<p class="lesson-selfpace">{_html.escape(note or "Self-paced — tomorrow means whenever you come back.")}</p>')
-    parts.append("</aside>")
+    if href:
+        return f'<a class="lesson-tomorrow-card" href="{_html.escape(href)}">{inner}</a>'
+    return f'<div class="lesson-tomorrow-card is-upcoming">{inner}</div>'
+
+
+def _step_card(eyebrow: str, step) -> str:
+    import publishing
+    if step.kind == "gate":
+        return _card(eyebrow, step.title, "Your answers again, and what changed.",
+                     step.href if step.published else None,
+                     "Continue →" if step.published else "Opens at the end of the semester")
+    c = step.course or {}
+    sub = f"{step.label} · {c.get('code', '')} · {c.get('display') or c.get('name', '')}".strip(" ·")
+    if step.published:
+        return _card(eyebrow, step.title, sub, step.href, "Continue the practice →")
+    when = f"Publishes {publishing.long_date(step.publishes)}" if step.publishes else "Being written"
+    return _card(eyebrow, step.title, sub, None, when)
+
+
+def lesson_footer_html(course_dir: str, n: int, meta: dict) -> str:
+    """The end-of-day chrome: where you are on the Path, and what comes next."""
+    import html as _html
+    import degree_path
+
+    here = degree_path.day_step(course_dir, n)
+    planned = course_planned_days(course_dir)
+    where = f"Day {n} of {planned} in this course"
+    if here:
+        where += f" · Semester {here.semester}, Week {here.week}"
+    cards = []
+    if n < planned:
+        nxt = degree_path.day_step(course_dir, n + 1)
+        if nxt:
+            cards.append(_step_card("Next in this course", nxt))
+    else:
+        cards.append(_card("This course is complete", "Back to the course",
+                           "The made thing is what remains.", "index.html", "Course overview →"))
+    on_path = degree_path.next_on_path(course_dir, n)
+    if on_path and on_path.key != (course_dir, n + 1):
+        cards.append(_step_card("Next on the Path", on_path))
+    parts = ['<aside class="lesson-journey">',
+             f'<p class="lesson-journey-meta">{_html.escape(where)}</p>',
+             '<div class="lesson-next">', *cards, '</div>',
+             '<p class="lesson-selfpace">Self-paced: the next day is there whenever you come back. '
+             '<a href="/curriculum/day-by-day.html">The whole Path →</a></p>',
+             '</aside>']
     return "\n".join(parts)
-
-
 
 
 def render_knowledge(src: Path, dest: Path) -> list[tuple[str, Path]]:
@@ -436,6 +461,11 @@ def main(argv: list[str] | None = None) -> int:
     # Browser-fetchable course index for the signed-in course-mode header.
     import build_catalog
     build_catalog.main(ASSETS)
+
+    # The Path: every day of the degree, in order, with publish dates.
+    import degree_path
+    page = degree_path.render_path_page()
+    write_file(OUT / "curriculum" / "day-by-day.html", page)
 
     knowledge_entries = render_knowledge(ROOT / "knowledge", OUT / "knowledge")
     institute_entries = render_markdown_tree(ROOT / "institute", OUT / "institute")

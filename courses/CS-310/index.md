@@ -54,65 +54,65 @@ A deployed AI system with real users, an evaluation harness, and a documented fa
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-### Day 01 — *coming soon*
+### Day 01 — The Model Is the Smallest Part
 
-Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+Publishes Monday, 21 February 2028.
 
-### Day 02 — *coming soon*
+### Day 02 — Ship the Smallest True Thing
 
-Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+Publishes Monday, 28 February 2028.
 
-### Day 03 — *coming soon*
+### Day 03 — The Harness Before the Feature
 
-Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+Publishes Monday, 6 March 2028.
 
-### Day 04 — *coming soon*
+### Day 04 — The Horse Could Not Count
 
-Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+Publishes Monday, 13 March 2028.
 
-### Day 05 — *coming soon*
+### Day 05 — Show It Breaking
 
-Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+Publishes Monday, 20 March 2028.
 
-### Day 06 — *coming soon*
+### Day 06 — It Will Say Things That Are Not So
 
-Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+Publishes Monday, 27 March 2028.
 
-### Day 07 — *coming soon*
+### Day 07 — Someone Will Type Something Hostile
 
-Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+Publishes Monday, 3 April 2028.
 
-### Day 08 — *coming soon*
+### Day 08 — The World Moves Under the Model
 
-Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+Publishes Monday, 10 April 2028.
 
-### Day 09 — *coming soon*
+### Day 09 — An Agent Is a Loop With Hands
 
-Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+Publishes Monday, 17 April 2028.
 
-### Day 10 — *coming soon*
+### Day 10 — What It Did at Three in the Morning
 
-Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+Publishes Monday, 24 April 2028.
 
-### Day 11 — *coming soon*
+### Day 11 — With the Tools Closed
 
-Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+Publishes Monday, 1 May 2028.
 
-### Day 12 — *coming soon*
+### Day 12 — Cost Is a Design Constraint
 
-Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+Publishes Monday, 8 May 2028.
 
-### Day 13 — *coming soon*
+### Day 13 — Design the Day It Is Wrong
 
-Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+Publishes Monday, 15 May 2028.
 
-### Day 14 — *coming soon*
+### Day 14 — Write the Accident Report
 
-Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+Publishes Monday, 22 May 2028.
 
-### Day 15 — *coming soon*
+### Day 15 — Real Users, Live
 
-Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+Publishes Monday, 29 May 2028.
 <!-- sdit:days:end -->
 
 ---
