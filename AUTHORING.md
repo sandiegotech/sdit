@@ -127,7 +127,7 @@ Three doors. Open one, or none — they'll be here tomorrow too.
 
 The thing on the page must be **public domain, openly licensed, or embeddable by its publisher**. Never invent a source.
 
-- **Images:** Wikimedia Commons only. Open the file's Commons page and confirm it exists and its license allows reuse before you use it. Use the `upload.wikimedia.org` image address from that page. Give the maker and date in the caption.
+- **Images:** Wikimedia Commons only. Open the file's Commons page and confirm it exists and its license allows reuse before you use it. Use the `upload.wikimedia.org` address from that page, in its 1280-pixel form (`…/commons/thumb/<a>/<ab>/<File>.jpg/1280px-<File>.jpg`; Commons serves the standard widths 640, 800, 1024, 1280, 1920, and nothing in between): originals are often several megabytes and the page is read on phones. Give the maker and date in the caption, and the photographer when the license asks for attribution (CC BY, CC BY-SA).
 - **Texts:** Project Gutenberg, the Internet Archive's public-domain scans, or a Lectio edition. Lectio editions exist for The Odyssey, The Iliad, The Republic, Meditations, The Aeneid, The Divine Comedy, The Prince, Confessions, Nicomachean Ethics, Gilgamesh, The Analects, and Hamlet; when the text is one of these, quote the Lectio edition.
 - **Video:** an official channel's video, embedded through `youtube-nocookie.com`. If you cannot confirm the channel is the rights holder, make it a door, not the thing on the page.
 - **Anything in copyright** (most books after 1929, nearly all films and albums): quote under fifteen words at most, and send the reader to buy, borrow, or stream it. It is a door.

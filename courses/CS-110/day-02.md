@@ -15,7 +15,7 @@ Ten minutes on the page. One table from 1843, your first three lines, and the fi
 ## Look
 
 <figure class="day-figure">
-  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Diagram_for_the_computation_of_Bernoulli_numbers.jpg" alt="A printed table from 1843 with numbered operations down the left, columns of variables across the top, and the result of each step written in the cells" loading="lazy" />
+  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Diagram_for_the_computation_of_Bernoulli_numbers.jpg/1280px-Diagram_for_the_computation_of_Bernoulli_numbers.jpg" alt="A printed table from 1843 with numbered operations down the left, columns of variables across the top, and the result of each step written in the cells" loading="lazy" />
   <figcaption><strong>Note G.</strong> Ada Lovelace, 1843. Each row is one operation for Charles Babbage's Analytical Engine; the columns track what every variable holds after it. The machine was never built. The program is complete anyway.</figcaption>
 </figure>
 

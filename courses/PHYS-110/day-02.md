@@ -15,7 +15,7 @@ Ten minutes on the page. One astronaut, two objects, one experiment you repeat i
 ## Look
 
 <figure class="day-figure">
-  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Astronaut_David_Scott_watching_hammer_and_feather_fall_to_lunar_surface_%28S71-43788%29.jpg" alt="A grainy television frame from the Moon: astronaut David Scott in a white suit stands beside the lunar module, having just released a hammer and a feather, which are falling together" loading="lazy" />
+  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Astronaut_David_Scott_watching_hammer_and_feather_fall_to_lunar_surface_%28S71-43788%29.jpg/1280px-Astronaut_David_Scott_watching_hammer_and_feather_fall_to_lunar_surface_%28S71-43788%29.jpg" alt="A grainy television frame from the Moon: astronaut David Scott in a white suit stands beside the lunar module, having just released a hammer and a feather, which are falling together" loading="lazy" />
   <figcaption><strong>Apollo 15, 2 August 1971.</strong> Commander David Scott holds a geology hammer in one hand and a falcon feather in the other, and lets go. They hit the dust at the same instant. NASA, public domain; <a href="https://commons.wikimedia.org/wiki/File:Apollo_15_feather_and_hammer_drop.ogv">the thirty-second film is on Wikimedia Commons</a>.</figcaption>
 </figure>
 

@@ -15,7 +15,7 @@ Ten minutes on the page. One cup from a foundry, one honest fact about this cour
 ## Look
 
 <figure class="day-figure">
-  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Hephaistos_Thetis_at_Kylix_by_the_Foundry_Painter_Antikensammlung_Berlin_F2294.jpg" alt="Red-figure painting inside a Greek drinking cup: the god Hephaestus, seated, hands a finished shield to the goddess Thetis; armor hangs on the wall behind them" loading="lazy" />
+  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Hephaistos_Thetis_at_Kylix_by_the_Foundry_Painter_Antikensammlung_Berlin_F2294.jpg/1280px-Hephaistos_Thetis_at_Kylix_by_the_Foundry_Painter_Antikensammlung_Berlin_F2294.jpg" alt="Red-figure painting inside a Greek drinking cup: the god Hephaestus, seated, hands a finished shield to the goddess Thetis; armor hangs on the wall behind them" loading="lazy" />
   <figcaption><strong>Hephaestus hands Thetis the armor.</strong> Inside a drinking cup made in Athens about 480 BC by a painter we know only as the Foundry Painter, because the outside of this same cup shows a bronze foundry at work: furnace, hammers, a statue in pieces, men who know what they are doing. Berlin, Antikensammlung F2294.</figcaption>
 </figure>
 

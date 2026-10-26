@@ -15,7 +15,7 @@ Ten minutes on the page. Twelve photographs of a horse, one word taken apart, on
 ## Look
 
 <figure class="day-figure">
-  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/d/d2/The_Horse_in_Motion_high_res.jpg" alt="Eadweard Muybridge's card The Horse in Motion: twelve small photographs in sequence of a galloping horse and rider, with the title and a description printed around them" loading="lazy" />
+  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/The_Horse_in_Motion_high_res.jpg/1280px-The_Horse_in_Motion_high_res.jpg" alt="Eadweard Muybridge's card The Horse in Motion: twelve small photographs in sequence of a galloping horse and rider, with the title and a description printed around them" loading="lazy" />
   <figcaption><strong>The Horse in Motion.</strong> Eadweard Muybridge, 1878. Twelve cameras along a track at Palo Alto, each tripped by a thread as the horse ran through it. Frame two settles a bet: all four hooves are off the ground. Nobody had ever seen that, because nobody can see one twenty-fifth of a second.</figcaption>
 </figure>
 
