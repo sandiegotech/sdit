@@ -1,0 +1,570 @@
+{
+ "name": "Rowan Hale",
+ "note": "A sample portfolio. Rowan Hale is a fictional learner, written to show what four years of answers and made things look like here. Nothing on this page belongs to a real person.",
+ "answers": [
+  {
+   "lesson": "/begin",
+   "heading": "commitment",
+   "content": "2026-12-28",
+   "at": "2026-12-28T09:00:00Z"
+  },
+  {
+   "lesson": "/begin",
+   "heading": "education",
+   "content": "Getting a degree so I can get a better job. Honestly that's most of it. Maybe also proving to myself I can finish something.",
+   "at": "2026-12-28T09:00:00Z"
+  },
+  {
+   "lesson": "/begin",
+   "heading": "make",
+   "content": "An app, probably. Something people use.",
+   "at": "2026-12-28T09:00:00Z"
+  },
+  {
+   "lesson": "/begin",
+   "heading": "believe",
+   "content": "That you're either a math person or you're not, and I'm not.",
+   "at": "2026-12-28T09:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-101/day-01",
+   "heading": "answer",
+   "content": "My phone at night. The mast is leaving it in the kitchen, which I did for a week. I slept better and missed nothing.",
+   "at": "2026-12-29T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/MATH-110/day-03",
+   "heading": "answer",
+   "content": "The tide line on the steps at the Cove. It keeps getting closer to the next step and never quite touches it before it turns.",
+   "at": "2027-01-12T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/PHYS-110/day-06",
+   "heading": "answer",
+   "content": "I pushed off the wall in the pool and the wall pushed me across the lane. It didn't feel like the wall did anything.",
+   "at": "2027-02-02T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/CS-110/day-02",
+   "heading": "answer",
+   "content": "Text me the buoy reading at 6 a.m. so I know whether to bother.",
+   "at": "2027-01-05T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/WKSP-101/day-01",
+   "heading": "answer",
+   "content": "A paper airplane that flies straight. It took eleven tries and throwing away the first ten without arguing with myself.",
+   "at": "2026-12-29T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-102/day-02",
+   "heading": "answer",
+   "content": "Losing the job at the shop. It looked like a loss. It's the reason I have time for this.",
+   "at": "2027-04-20T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/MATH-120/day-05",
+   "heading": "answer",
+   "content": "Played a voice memo at double speed. The pitch went up an octave. Same sound, half the time, twice the frequency.",
+   "at": "2027-05-11T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/PHYS-120/day-08",
+   "heading": "answer",
+   "content": "Black's sand burned, the water was cold. Same sun. Water takes more energy to warm up, which is why the marine layer happens.",
+   "at": "2027-06-01T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/CS-120/day-04",
+   "heading": "answer",
+   "content": "1101 plus 0111. The carry ran all the way to the left and made a fifth bit. Twenty.",
+   "at": "2027-05-04T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/SIG-101/day-03",
+   "heading": "answer",
+   "content": "Whisper. A room loses it at ten feet. The phone keeps every breath.",
+   "at": "2027-04-27T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-201/day-04",
+   "heading": "answer",
+   "content": "The company owns it. I read the contract. Locke would have had questions.",
+   "at": "2027-08-17T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/MATH-210/day-03",
+   "heading": "answer",
+   "content": "Paint: three tubes and white. The screen: red, green, blue. My grandmother's spices, which is a stretch.",
+   "at": "2027-08-10T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/RHET-110/day-02",
+   "heading": "answer",
+   "content": "\"I think that it is probably important to note that\" became nothing. That third was me being afraid to say it.",
+   "at": "2027-08-03T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/CS-210/day-06",
+   "heading": "answer",
+   "content": "A word in my notes. I used to search the whole file. Now the program jumps straight to it.",
+   "at": "2027-08-31T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-202/day-01",
+   "heading": "answer",
+   "content": "A shelf I built got used as a step stool. I went back and made it stronger instead of telling them to stop.",
+   "at": "2027-11-09T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/MATH-220/day-06",
+   "heading": "answer",
+   "content": "Whether the 7:10 bus is late. It's late more than half the time. About 60 out of 100 before I'd stop calling it chance.",
+   "at": "2027-12-14T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/RHET-210/day-05",
+   "heading": "answer",
+   "content": "\"Four out of five surfers prefer\" on a wax ad. Out of how many? It didn't say. I looked. Thirty.",
+   "at": "2027-12-07T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/CS-220/day-09",
+   "heading": "answer",
+   "content": "Choosing a wave: I weigh the size, the crowd, and my mood, and then I weigh how much to trust the mood.",
+   "at": "2028-01-04T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/WKSP-202/day-14",
+   "heading": "answer",
+   "content": "The wiring on the carburetor job. Nobody else wanted it, so I took it.",
+   "at": "2028-02-08T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-301/day-02",
+   "heading": "answer",
+   "content": "If it surprised me in a way it couldn't have been told to. I haven't seen it yet.",
+   "at": "2028-02-29T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/ART-310/day-04",
+   "heading": "answer",
+   "content": "The barista at the café on Newport. She'll meet it on the counter at 7 a.m. with no time.",
+   "at": "2028-03-14T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/ENGR-310/day-07",
+   "heading": "answer",
+   "content": "My fin box was cast. You can see the seam where the mold closed.",
+   "at": "2028-04-04T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/SIG-301/day-03",
+   "heading": "answer",
+   "content": "A trick at the bowl that only exists because someone filmed it and the others copied it.",
+   "at": "2028-03-07T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-302/day-05",
+   "heading": "answer",
+   "content": "\"This sensor makes it cheap to watch the coast, and cheap to watch the people on it.\"",
+   "at": "2028-07-04T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/FLD-301/day-06",
+   "heading": "answer",
+   "content": "I assumed the salt was the enemy. It was the cable chafing on the piling. I noticed in week four.",
+   "at": "2028-07-11T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/ENGR-320/day-10",
+   "heading": "answer",
+   "content": "The pier mount. It held through two storms, so I stopped looking. The bracket had rusted halfway through.",
+   "at": "2028-08-08T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-401/day-03",
+   "heading": "answer",
+   "content": "The Colorado, mostly, by way of an aqueduct I've never seen.",
+   "at": "2028-10-03T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/CS-320/day-02",
+   "heading": "answer",
+   "content": "I asked a model to clean my sensor data and didn't write down what it removed. I wrote it down after.",
+   "at": "2028-09-26T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/ART-410/day-09",
+   "heading": "answer",
+   "content": "The rule that the kelp grows toward the light, and the choice of which forty out of four thousand to keep.",
+   "at": "2028-11-14T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/CAP-401/day-04",
+   "heading": "answer",
+   "content": "A coastal temperature and tide sensor anyone can build for forty dollars. It's done when three people who aren't me build one and their numbers match the pier's.",
+   "at": "2028-10-10T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-402/day-14",
+   "heading": "answer",
+   "content": "That I'd been wrong on Day 0 and I was glad I wrote it down.",
+   "at": "2029-04-03T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/ART-320/day-05",
+   "heading": "answer",
+   "content": "A window, north, about the size of a door. It made my roommate's face look like a painting.",
+   "at": "2028-03-21T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/CAP-402/day-13",
+   "heading": "answer",
+   "content": "Five people: two scientists, a lifeguard, a teacher, and my mother. They saw three sensors agree with the pier to a tenth of a degree.",
+   "at": "2029-03-27T18:00:00Z"
+  },
+  {
+   "lesson": "/courses/SIG-401/day-11",
+   "heading": "answer",
+   "content": "Said it to my roommate: the kit ships on the first of May. Then I shipped it.",
+   "at": "2029-03-13T18:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-1",
+   "heading": "education",
+   "content": "Less about the job than I thought. It's being able to look at something, a wave, a poem, a cup in a museum, and actually see it. I didn't know I couldn't.",
+   "at": "2027-04-10T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-1",
+   "heading": "make",
+   "content": "Something physical. I want to finish a board before summer.",
+   "at": "2027-04-10T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-1",
+   "heading": "believe",
+   "content": "That I'm not a math person. Less sure now. Calculus on a skate ramp is just paying attention.",
+   "at": "2027-04-10T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-1",
+   "heading": "made",
+   "content": "A three-minute film about my phone, a motion study of a drop-in, and a box of things I finished in the Workshop.",
+   "at": "2027-04-10T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-1",
+   "heading": "changed",
+   "content": "I finish things. Day 1 said finishing was the assignment and I didn't believe it.",
+   "at": "2027-04-10T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-2",
+   "heading": "education",
+   "content": "Learning to make things that work and to say why they work. The board taught me more than any lecture: the numbers either hold water or they don't.",
+   "at": "2027-07-24T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-2",
+   "heading": "make",
+   "content": "A working computer from gates, which I didn't think was possible for me. And a better board.",
+   "at": "2027-07-24T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-2",
+   "heading": "believe",
+   "content": "That a sound is just a sum of waves. I can show it now.",
+   "at": "2027-07-24T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-2",
+   "heading": "made",
+   "content": "A 6'2\" fish with the calculations to defend it, shown at the exhibition, and an eight-bit computer that runs my program.",
+   "at": "2027-07-24T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-2",
+   "heading": "changed",
+   "content": "I stopped saying I'm not a math person.",
+   "at": "2027-07-24T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-3",
+   "heading": "education",
+   "content": "Practice being wrong in public and fixing it. Every essay came back marked. The marks were the education.",
+   "at": "2027-11-06T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-3",
+   "heading": "make",
+   "content": "Writing I'm not embarrassed by.",
+   "at": "2027-11-06T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-3",
+   "heading": "believe",
+   "content": "That the first draft is the real one. It isn't. The third is.",
+   "at": "2027-11-06T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-3",
+   "heading": "made",
+   "content": "Four essays with the drafts beside them, and a program that went from forty seconds to a fifth of a second.",
+   "at": "2027-11-06T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-3",
+   "heading": "changed",
+   "content": "I read contracts now. And I cut a third of every sentence.",
+   "at": "2027-11-06T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-4",
+   "heading": "education",
+   "content": "Knowing what's true when someone is selling me something, including when I'm the one selling. And choosing a direction from what I've made, not what I imagined.",
+   "at": "2028-02-19T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-4",
+   "heading": "make",
+   "content": "Things people use. I declared Design.",
+   "at": "2028-02-19T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-4",
+   "heading": "believe",
+   "content": "That my judgment is better than chance. I scored my forecasts. It is, barely.",
+   "at": "2028-02-19T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-4",
+   "heading": "made",
+   "content": "Forty public swell forecasts, scored; a ninety-second film that went further than I expected; a carburetor rebuilt for a client.",
+   "at": "2028-02-19T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-4",
+   "heading": "changed",
+   "content": "I want the numbers before I believe anything, my own ideas first.",
+   "at": "2028-02-19T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-5",
+   "heading": "education",
+   "content": "Learning who I'm making for. A thing nobody can use isn't finished.",
+   "at": "2028-06-03T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-5",
+   "heading": "make",
+   "content": "An instrument for people who can't afford instruments.",
+   "at": "2028-06-03T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-5",
+   "heading": "believe",
+   "content": "That scenes invent things before companies do. I watched it happen at the bowl.",
+   "at": "2028-06-03T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-5",
+   "heading": "made",
+   "content": "Tide Clock, a game in a café that strangers actually play, and a fin box that doesn't crack.",
+   "at": "2028-06-03T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-5",
+   "heading": "changed",
+   "content": "I watch people use my work now instead of explaining it to them.",
+   "at": "2028-06-03T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-6",
+   "heading": "education",
+   "content": "The field term broke my idea that education happens in school. It's the habit of noticing what you assumed and checking it.",
+   "at": "2028-09-16T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-6",
+   "heading": "make",
+   "content": "The sensor, working, in the water, for a month.",
+   "at": "2028-09-16T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-6",
+   "heading": "believe",
+   "content": "That the thing that never failed is the thing you stopped checking.",
+   "at": "2028-09-16T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-6",
+   "heading": "made",
+   "content": "A temperature and tide logger that lived on the pier for five weeks, and a field report from twelve weeks at an instrument shop.",
+   "at": "2028-09-16T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-6",
+   "heading": "changed",
+   "content": "I write down the result that contradicts me first.",
+   "at": "2028-09-16T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-7",
+   "heading": "education",
+   "content": "Taste and responsibility. The tools can make almost anything now. What's left is deciding what's worth making and owning it when it goes wrong.",
+   "at": "2028-12-30T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-7",
+   "heading": "make",
+   "content": "The capstone: a coastal sensor anyone can build for forty dollars.",
+   "at": "2028-12-30T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-7",
+   "heading": "believe",
+   "content": "That a machine can be my collaborator and the work still be mine, if I keep the ledger.",
+   "at": "2028-12-30T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-7",
+   "heading": "made",
+   "content": "A generative piece about kelp, with the rules on the wall, and a capstone proposal that survived the scoping.",
+   "at": "2028-12-30T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-7",
+   "heading": "changed",
+   "content": "I keep a record of every handoff to a model, and I can say which calls were mine.",
+   "at": "2028-12-30T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-8",
+   "heading": "education",
+   "content": "On Day 0 I wrote that it was about a better job. I'd keep the part about finishing. The rest I'd cross out. Education is learning to see clearly, make things that hold up, and stand behind them in front of people. The job is a side effect.",
+   "at": "2029-04-14T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-8",
+   "heading": "make",
+   "content": "The company that builds the forty-dollar sensor for scientists who can't buy the four-thousand-dollar one.",
+   "at": "2029-04-14T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-8",
+   "heading": "believe",
+   "content": "That small scenes invent the future. I defended it in SIG 301 and I'd defend it again.",
+   "at": "2029-04-14T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-8",
+   "heading": "made",
+   "content": "The capstone, defended on the sand in front of five people who use it; a short film for the Crossing; a final build on the wall.",
+   "at": "2029-04-14T20:00:00Z"
+  },
+  {
+   "lesson": "/gates/semester-8",
+   "heading": "changed",
+   "content": "Almost everything I wrote on Day 0, except that I wanted to finish something.",
+   "at": "2029-04-14T20:00:00Z"
+  },
+  {
+   "lesson": "/courses/HUM-101/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"The Mast\", \"form\": \"film\", \"link\": \"\", \"words\": \"A three-minute film of a phone left in a kitchen overnight, cut against the Sirens episode and The Endless Summer. Designing around the weakness instead of pretending it away.\", \"date\": \"2027-04-08\", \"level\": \"proficient\"}",
+   "at": "2027-04-08T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/MATH-110/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Drop-In at Washington Street\", \"form\": \"report\", \"link\": \"\", \"words\": \"One drop-in, frame-stepped from a phone video: position, velocity, and the instant of greatest acceleration, with the calculus beside the data.\", \"date\": \"2027-04-08\", \"level\": \"proficient\"}",
+   "at": "2027-04-08T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/CS-120/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Eight Bits from Nothing\", \"form\": \"program\", \"link\": \"\", \"words\": \"A simulated computer built up from NAND gates that runs a program I wrote to add the week's swell heights.\", \"date\": \"2027-07-22\", \"level\": \"developing\"}",
+   "at": "2027-07-22T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/PHYS-120/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"A 6'2\\\" Fish, by the Numbers\", \"form\": \"object\", \"link\": \"\", \"words\": \"A twin-fin fish with its volume, rocker, and fin area calculated and defended before I cut the foam.\", \"date\": \"2027-07-22\", \"level\": \"proficient\"}",
+   "at": "2027-07-22T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/WKSP-102/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"The Fish, Glassed\", \"form\": \"build\", \"link\": \"\", \"words\": \"The same board, shaped and glassed in the Workshop, shown at the year-end exhibition and ridden the next morning.\", \"date\": \"2027-07-22\", \"level\": \"proficient\"}",
+   "at": "2027-07-22T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/RHET-110/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Four Essays, Drafts Beside Finals\", \"form\": \"essay\", \"link\": \"\", \"words\": \"A made thing described, an argument, a review, and a letter. The distance between the drafts and the finals is the point.\", \"date\": \"2027-11-04\", \"level\": \"proficient\"}",
+   "at": "2027-11-04T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/MATH-220/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Forty Calls\", \"form\": \"forecast\", \"link\": \"\", \"words\": \"Forty public swell forecasts for the Cove, made in advance and scored. Brier score 0.19, which is better than guessing and worse than I thought.\", \"date\": \"2028-02-17\", \"level\": \"proficient\"}",
+   "at": "2028-02-17T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/SIG-201/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Ninety Seconds at Sunset Cliffs\", \"form\": \"film\", \"link\": \"\", \"words\": \"A short piece released into a real feed, with the numbers: who watched, how far, and why I think it moved.\", \"date\": \"2028-02-17\", \"level\": \"developing\"}",
+   "at": "2028-02-17T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/WKSP-202/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"A Carburetor for a 1978 CB400\", \"form\": \"build\", \"link\": \"\", \"words\": \"Rebuilt for a client to their brief and deadline. It started on the second kick.\", \"date\": \"2028-02-17\", \"level\": \"proficient\"}",
+   "at": "2028-02-17T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/ART-310/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Tide Clock\", \"form\": \"build\", \"link\": \"\", \"words\": \"A small interactive piece on a café counter that tells you, at a glance, whether the tide is worth the drive. Observed for two weeks; strangers use it.\", \"date\": \"2028-06-01\", \"level\": \"proficient\"}",
+   "at": "2028-06-01T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/ENGR-310/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"A Fin Box That Doesn't Crack\", \"form\": \"object\", \"link\": \"\", \"words\": \"A redesigned fin box with drawings and tolerances, cast and tested to failure on the bench. It failed above the load I designed for.\", \"date\": \"2028-06-01\", \"level\": \"proficient\"}",
+   "at": "2028-06-01T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/ENGR-320/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Pier Logger\", \"form\": \"build\", \"link\": \"\", \"words\": \"A temperature and tide logger that lived in saltwater on the pier for five weeks and agreed with the official station.\", \"date\": \"2028-09-14\", \"level\": \"proficient\"}",
+   "at": "2028-09-14T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/FLD-301/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Twelve Weeks at an Instrument Shop\", \"form\": \"report\", \"link\": \"\", \"words\": \"A field report, the journal behind it, and my mentor's evaluation from a placement building ocean instruments.\", \"date\": \"2028-09-14\", \"level\": \"proficient\"}",
+   "at": "2028-09-14T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/ART-320/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Low Tide, Six Minutes\", \"form\": \"film\", \"link\": \"\", \"words\": \"The Crossing: a short film, screened, about the hour the reef shows itself.\", \"date\": \"2028-06-01\", \"level\": \"developing\"}",
+   "at": "2028-06-01T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/ART-410/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Kelp\", \"form\": \"other\", \"link\": \"\", \"words\": \"A generative work: the rules for how the kelp grows are mine, the model draws, and the forty I kept are on the wall with the rules beside them.\", \"date\": \"2028-12-28\", \"level\": \"proficient\"}",
+   "at": "2028-12-28T12:00:00Z"
+  },
+  {
+   "lesson": "/courses/CAP-402/made",
+   "heading": "made-thing",
+   "content": "{\"title\": \"Cheap Eyes on the Water\", \"form\": \"build\", \"link\": \"\", \"words\": \"An open coastal temperature and tide sensor anyone can build for about forty dollars, with the build guide, the data, and three independent builds that matched the pier. Defended in public before faculty and outside examiners.\", \"date\": \"2029-04-12\", \"level\": \"mastered\"}",
+   "at": "2029-04-12T12:00:00Z"
+  }
+ ]
+}

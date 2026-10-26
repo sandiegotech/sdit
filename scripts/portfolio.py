@@ -139,6 +139,7 @@ def render_page(public: bool = False) -> str:
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-md>Download Markdown</button>
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-json>Download JSON</button>
       </div>
+      <p class="pf-demo-note" data-demo-note hidden></p>
       <p class="pf-source" data-pf-source>Reading your answers…</p>
       <div class="pf-publish" data-pf-publish hidden>
         <p class="pf-publish-head">Publish this edition</p>

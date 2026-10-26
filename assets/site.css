@@ -1869,3 +1869,6 @@ html.sdit-authed .sdit-portal { display: block; }
 .pf-publish-row input { font: inherit; font-size: 0.95rem; padding: 0.45rem 0.6rem; border: 1px solid var(--border); background: var(--surface, #fff); color: var(--ink); min-width: 12rem; }
 .pf-publish-status { margin: 0.75rem 0 0; font-size: 0.85rem; }
 .pf-publish-status a { word-break: break-all; }
+
+.pf-demo-note { margin: 1rem 0 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--gold); background: var(--surface-soft, transparent); font-size: 0.9rem; }
+.pf-demo-note[hidden] { display: none !important; }

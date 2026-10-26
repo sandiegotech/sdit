@@ -288,7 +288,8 @@
     if (!countAll()) {
       html = '<div class="pf-empty-start"><p>Nothing written yet.</p>' +
         '<p>Your Portfolio fills as you go: the Commitment and three questions on <a href="/begin/">Day 0</a>, ' +
-        "an answer on each day, a record of each made thing on its course page, and the gates at the end of each semester.</p></div>";
+        "an answer on each day, a record of each made thing on its course page, and the gates at the end of each semester.</p>" +
+        '<p><a href="/portfolio/demo/">See a sample portfolio →</a></p></div>';
     } else if (state.edition === "volumes") {
       html = titlePage("Volume " + ROMAN[state.volume]) + volume(state.volume);
     } else if (state.edition === "expanded") {
@@ -410,10 +411,30 @@
     return new URLSearchParams(location.search).get("h");
   }
 
+  // The sample portfolio (a fictional learner, labelled as one) is a static
+  // file, not an account: every edition is built from it with the same
+  // filters a real publish uses.
+  function loadDemo() {
+    return fetch("/portfolio/demo.json").then(function (r) { return r.json(); }).then(function (d) {
+      ANSWERS = {};
+      d.answers.forEach(function (a) { ANSWERS[k(a.lesson, a.heading)] = a; });
+      var editions = {};
+      ["short", "expanded"].concat([1, 2, 3, 4, 5, 6, 7, 8].map(function (n) { return "volume-" + n; }))
+        .forEach(function (e) {
+          editions[e] = { publishedAt: d.answers[d.answers.length - 1].at,
+                          snapshot: { name: d.name, answers: editionAnswers(e) } };
+        });
+      var note = document.querySelector("[data-demo-note]");
+      if (note) { note.textContent = d.note; note.hidden = false; }
+      showPublic({ handle: "demo", editions: editions });
+    });
+  }
+
   function loadPublic() {
     var h = publicHandle();
     var root = document.getElementById("portfolio-root");
     if (!h) { root.innerHTML = '<p class="pf-empty">No portfolio named.</p>'; return; }
+    if (h === "demo") { loadDemo(); return; }
     var api = (window.SDIT_ACCOUNT_API || "/api").replace(/\/+$/, "");
     fetch(api + "/portfolio/" + encodeURIComponent(h)).then(function (r) {
       if (!r.ok) throw new Error(String(r.status));
@@ -448,7 +469,7 @@
       ANSWERS[k(a.lesson, a.heading)] = { lesson: a.lesson, heading: a.heading, content: a.content, at: a.at };
     });
     state.name = (ed && ed.snapshot && ed.snapshot.name) || "";
-    SOURCE = "a snapshot published " + (ed ? dateOf(ed.publishedAt) : "");
+    SOURCE = PUBLIC.handle === "demo" ? "the sample portfolio" : "a snapshot published " + (ed ? dateOf(ed.publishedAt) : "");
     render();
   }
 

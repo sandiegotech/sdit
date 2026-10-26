@@ -493,6 +493,9 @@ def main(argv: list[str] | None = None) -> int:
     # The Portfolio (and /notebook/, which points into it).
     import portfolio
     portfolio.write_all(write_file, OUT)
+    # The sample portfolio of a fictional learner, at /portfolio/demo/.
+    import demo_portfolio
+    demo_portfolio.write_all(write_file, OUT)
 
     # The Path: every day of the degree, in order, with publish dates.
     import degree_path

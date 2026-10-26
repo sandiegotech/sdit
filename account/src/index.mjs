@@ -187,7 +187,7 @@ async function postUnenroll(event) {
 // ── Public portfolios ────────────────────────────────────────────────────────
 
 const HANDLE_RE = /^[a-z0-9](?:[a-z0-9-]{1,28})[a-z0-9]$/;
-const RESERVED = new Set(['api', 'admin', 'view', 'mine', 'new', 'edit', 'index', 'sdit', 'institute',
+const RESERVED = new Set(['api', 'admin', 'view', 'mine', 'demo', 'sample', 'new', 'edit', 'index', 'sdit', 'institute',
   'portfolio', 'notebook', 'begin', 'gates', 'courses', 'curriculum', 'assets', 'help', 'about', 'support']);
 const EDITION_RE = /^(short|expanded|volume-[1-8])$/;
 const MAX_SNAPSHOT = 300 * 1024;   // DynamoDB items stop at 400 KB
