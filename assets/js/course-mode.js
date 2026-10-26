@@ -200,7 +200,9 @@
     }
 
     var browse = el("p", "my-browse");
-    browse.innerHTML = '<a href="' + resolveSitePath("/courses/index.html") + '">Browse all courses →</a>';
+    browse.innerHTML = '<a href="' + resolveSitePath("/curriculum/day-by-day.html") + '">The Path →</a> &nbsp;·&nbsp; ' +
+      '<a href="' + resolveSitePath("/portfolio/") + '">Your Portfolio →</a> &nbsp;·&nbsp; ' +
+      '<a href="' + resolveSitePath("/courses/index.html") + '">Browse all courses →</a>';
     wrap.appendChild(browse);
 
     portal.innerHTML = "";

@@ -48,8 +48,14 @@
     try { return localStorage.getItem(key(lesson, heading)) || ""; } catch (e) { return ""; }
   }
 
+  // Each answer keeps the time it was last written beside it ("…@t"), so the
+  // Portfolio can date answers written on this device.
   function writeLocal(lesson, heading, value) {
-    try { localStorage.setItem(key(lesson, heading), value); return true; } catch (e) { return false; }
+    try {
+      localStorage.setItem(key(lesson, heading), value);
+      localStorage.setItem(key(lesson, heading) + "@t", new Date().toISOString());
+      return true;
+    } catch (e) { return false; }
   }
 
   function account() {
@@ -146,9 +152,9 @@
     foot.className = "answer-foot";
     var hint = document.createElement("span");
     hint.className = "answer-hint";
-    hint.textContent = account()
-      ? "Kept in your Notebook, on every device you sign in on."
-      : "Kept in your Notebook on this device. Sign in to keep it everywhere.";
+    hint.innerHTML = account()
+      ? 'Kept in your <a href="/portfolio/">Portfolio</a>, on every device you sign in on.'
+      : 'Kept in your <a href="/portfolio/">Portfolio</a> on this device. Sign in to keep it everywhere.';
     var status = document.createElement("span");
     status.className = "response-status";
     foot.appendChild(hint);
@@ -170,6 +176,78 @@
                                            function () { setStatus(status, "error"); });
     }, SAVE_DELAY);
     ta.addEventListener("input", function () { resize(); debounced(); });
+  }
+
+  // ── The made thing (course pages) ──────────────────────────────────────────
+  // One record per course: what it is, where it lives, the maker's words, when
+  // it was defended or shown. Stored as JSON under (/courses/<DIR>/made,
+  // "made-thing"). The site keeps the link and the words, never the artifact.
+
+  var FORMS = ["essay", "film", "recording", "object", "program", "build", "forecast", "report", "other"];
+  var LEVELS = ["", "beginning", "developing", "proficient", "mastered"];
+
+  function field(label, input) {
+    var wrap = document.createElement("label");
+    wrap.className = "made-field";
+    var span = document.createElement("span");
+    span.textContent = label;
+    wrap.appendChild(span);
+    wrap.appendChild(input);
+    return wrap;
+  }
+
+  function buildMade(slot) {
+    if (slot._built) return;
+    slot._built = true;
+    var lesson = slot.getAttribute("data-lesson");
+    var heading = "made-thing";
+
+    var head = document.createElement("p");
+    head.className = "made-head";
+    head.textContent = "Your made thing, for your Portfolio";
+
+    var title = document.createElement("input"); title.type = "text"; title.placeholder = "What it is called";
+    var form = document.createElement("select");
+    FORMS.forEach(function (f) { var o = document.createElement("option"); o.value = f; o.textContent = f; form.appendChild(o); });
+    var link = document.createElement("input"); link.type = "url"; link.placeholder = "https://… where it lives";
+    var words = document.createElement("textarea"); words.rows = 3; words.className = "response-textarea";
+    words.placeholder = "One paragraph, in your words: what you made and what it taught you.";
+    var date = document.createElement("input"); date.type = "date";
+    var level = document.createElement("select");
+    LEVELS.forEach(function (l) { var o = document.createElement("option"); o.value = l; o.textContent = l || "not reviewed yet"; level.appendChild(o); });
+
+    var status = document.createElement("span"); status.className = "response-status";
+    var grid = document.createElement("div"); grid.className = "made-grid";
+    grid.appendChild(field("Title", title));
+    grid.appendChild(field("Form", form));
+    grid.appendChild(field("Link", link));
+    grid.appendChild(field("Defended or shown on", date));
+    grid.appendChild(field("Rubric level, if reviewed", level));
+    slot.appendChild(head);
+    slot.appendChild(grid);
+    slot.appendChild(field("In your words", words));
+    slot.appendChild(status);
+
+    read(lesson, heading).then(function (v) {
+      if (!v) return;
+      try {
+        var r = JSON.parse(v);
+        title.value = r.title || ""; form.value = r.form || "essay"; link.value = r.link || "";
+        words.value = r.words || ""; date.value = r.date || ""; level.value = r.level || "";
+      } catch (e) {}
+    });
+
+    var debounced = debounce(function () {
+      var record = { title: title.value.trim(), form: form.value, link: link.value.trim(),
+                     words: words.value.trim(), date: date.value, level: level.value };
+      setStatus(status, "saving");
+      save(lesson, heading, JSON.stringify(record)).then(function (st) { setStatus(status, st); },
+                                                         function () { setStatus(status, "error"); });
+    }, SAVE_DELAY);
+    [title, form, link, words, date, level].forEach(function (el) {
+      el.addEventListener("input", debounced);
+      el.addEventListener("change", debounced);
+    });
   }
 
   // ── The Commitment ─────────────────────────────────────────────────────────
@@ -238,10 +316,11 @@
     Array.prototype.forEach.call(document.querySelectorAll("[data-sdit-answer]"), function (slot) {
       buildSlot(slot, lesson);
     });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-sdit-made]"), buildMade);
   }
 
   // Exposed for the Notebook, which reads the same store.
-  window.SDITWork = { read: read, save: save, key: key, lessonPath: lessonPath };
+  window.SDITWork = { read: read, save: save, key: key, lessonPath: lessonPath, account: account };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () { setTimeout(init, 200); });

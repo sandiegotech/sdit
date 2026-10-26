@@ -181,6 +181,15 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
                                        f'data-sdit-answer="answer" data-question="{_h.escape(q, quote=True)}"')
             html = html.replace(ANSWER_MARKER, slot)
 
+        # Course pages: the made-thing record sits right under "The Made Thing".
+        idx_match = re.match(r"^courses/([^/]+)/index$", path.relative_to(ROOT).with_suffix("").as_posix())
+        if idx_match and 'id="the-made-thing"' in html:
+            d = idx_match.group(1)
+            slot = (f'<div class="made-slot" data-sdit-made data-lesson="/courses/{d}/made"></div>\n')
+            at = html.index('id="the-made-thing"')
+            nxt = html.find("<h2", at)
+            html = html[:nxt] + slot + html[nxt:] if nxt != -1 else html + slot
+
         # Course day pages: a canonical lesson id, and the end-of-day chrome that
         # pulls the learner forward: the next day in this course, and the next
         # day on the Path (which crosses courses in the weekly rhythm).
@@ -473,6 +482,10 @@ def main(argv: list[str] | None = None) -> int:
     # Day 0 (the Commitment and three questions) and the eight gates.
     import reflections
     reflections.write_all(write_file, OUT)
+
+    # The Portfolio (and /notebook/, which points into it).
+    import portfolio
+    portfolio.write_all(write_file, OUT)
 
     # The Path: every day of the degree, in order, with publish dates.
     import degree_path

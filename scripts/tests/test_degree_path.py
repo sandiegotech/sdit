@@ -35,3 +35,18 @@ def test_next_on_the_path_skips_studios():
 def test_unpublished_days_take_the_arc_title():
     s = degree_path.day_step("HUM-102", 2)
     assert s and not s.published and s.title and s.title != "Day 02"
+
+
+def test_portfolio_map_covers_the_degree():
+    import json
+    import portfolio
+    m = portfolio.degree_map()
+    assert len(m["days"]) == 660
+    assert m["days"][0][:5] == [1, 1, "Mon", "HUM-101", 1]
+    assert all(d[6] for d in m["days"]), "every day carries its question"
+    assert [g["lesson"] for g in m["gates"]][0] == "/gates/semester-1"
+    assert m["begin"]["questions"][0]["id"] == "education"
+    assert m["courses"]["HUM-101"]["outcomes"]
+    page = portfolio.render_page()
+    blob = page.split('id="degree-map">', 1)[1].split("</script>", 1)[0]
+    assert json.loads(blob.replace("<\\/", "</"))["question"] == m["question"]
