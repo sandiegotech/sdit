@@ -145,9 +145,9 @@ export async function loadWork(email, lesson) {
     KeyConditionExpression: 'pk = :p AND begins_with(sk, :s)',
     ExpressionAttributeValues: { ':p': userPk(email), ':s': workPrefix(lesson) },
   }));
-  const responses = {};
-  for (const item of r.Items || []) responses[item.heading] = item.content;
-  return responses;
+  const responses = {}, updatedAt = {};
+  for (const item of r.Items || []) { responses[item.heading] = item.content; updatedAt[item.heading] = item.updatedAt || null; }
+  return { responses, updatedAt };
 }
 
 /**

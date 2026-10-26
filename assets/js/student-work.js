@@ -62,28 +62,45 @@
     return window.SDITAccount && window.SDITAccount.isSignedIn() ? window.SDITAccount : null;
   }
 
+  // Resolves to { responses: {heading: content}, updatedAt: {heading: iso} }.
   var _remote = {};
   function loadRemote(lesson) {
     if (!_remote[lesson]) {
       var acct = account();
-      if (acct) {
-        _remote[lesson] = acct.loadWork(lesson);
+      if (acct && acct.loadWorkTimed) {
+        _remote[lesson] = acct.loadWorkTimed(lesson);
+      } else if (acct) {
+        _remote[lesson] = acct.loadWork(lesson).then(function (r) { return { responses: r || {}, updatedAt: {} }; });
       } else if (isLocalhost()) {
         _remote[lesson] = fetch("/api/load?file=" + encodeURIComponent(lesson))
           .then(function (r) { return r.ok ? r.json() : {}; })
-          .catch(function () { return {}; });
+          .then(function (r) { return { responses: r || {}, updatedAt: {} }; })
+          .catch(function () { return { responses: {}, updatedAt: {} }; });
       } else {
-        _remote[lesson] = Promise.resolve({});
+        _remote[lesson] = Promise.resolve({ responses: {}, updatedAt: {} });
       }
     }
     return _remote[lesson];
   }
 
-  // Local wins when both exist: it is the most recent thing typed on this device.
+  // The newer copy wins. This device's copy is usually the most recent thing
+  // typed, but an answer written on another device since (a made thing with
+  // files attached, say) must not be overwritten by a stale local one. Without
+  // dates on both sides, local wins. Signed out, local is all there is.
   function read(lesson, heading) {
     var local = readLocal(lesson, heading);
-    if (local) return Promise.resolve(local);
-    return loadRemote(lesson).then(function (r) { return (r && r[heading]) || ""; });
+    var localAt = "";
+    try { localAt = localStorage.getItem(key(lesson, heading) + "@t") || ""; } catch (e) {}
+    if (local && !account() && !isLocalhost()) return Promise.resolve(local);
+    return loadRemote(lesson).then(function (r) {
+      var remote = (r && r.responses && r.responses[heading]) || "";
+      var remoteAt = (r && r.updatedAt && r.updatedAt[heading]) || "";
+      if (remote && local && remoteAt && localAt && remoteAt > localAt) {
+        writeLocal(lesson, heading, remote);
+        return remote;
+      }
+      return local || remote;
+    });
   }
 
   function save(lesson, heading, value) {

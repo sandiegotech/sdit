@@ -197,7 +197,7 @@ test('an upload is a signed put link under the learner\'s own prefix, checked on
   assert.ok(!stub.bucket.has(link.key));
 });
 
-test('publishing copies the files behind the made things to the public prefix; unpublishing removes them', async () => {
+test('publishing copies the files behind the made things to p/<handle>/<course>/; copies are shared across editions and swept when nothing shows them', async () => {
   const r = await signIn('f3@example.com');
   const cookies = [cookieOf(r)];
   const link = JSON.parse((await handler(ev('POST', '/work/upload', { cookies, body: { course: 'CAP-402', name: 'deck.pdf', type: 'application/pdf' } }))).body);
@@ -208,17 +208,35 @@ test('publishing copies the files behind the made things to the public prefix; u
     { key: link.key, name: 'deck.pdf', type: 'application/pdf', size: 5000, kind: 'pdf' },
     { key: stranger, name: 'secret.pdf', type: 'application/pdf', size: 10, kind: 'pdf' },
   ] };
-  const snapshot = { name: 'F', answers: [{ lesson: '/courses/CAP-402/made', heading: 'made-thing', content: JSON.stringify(rec), at: '2030-05-01' }] };
-  const pub = await handler(ev('PUT', '/portfolio', { cookies, body: { handle: 'f-three', edition: 'short', snapshot } }));
+  const snap = () => ({ name: 'F', answers: [{ lesson: '/courses/CAP-402/made', heading: 'made-thing', content: JSON.stringify(rec), at: '2030-05-01' }] });
+  const pub = await handler(ev('PUT', '/portfolio', { cookies, body: { handle: 'f-three', edition: 'short', snapshot: snap() } }));
   assert.equal(pub.statusCode, 200);
   const base = link.key.split('/').pop();
-  assert.ok(stub.bucket.has(`p/f-three/short/${base}`), 'copied to the public prefix');
+  const copy = `p/f-three/CAP-402/${base}`;
+  assert.ok(stub.bucket.has(copy), 'copied under the handle and course');
   const shown = JSON.parse(JSON.parse((await handler(ev('GET', '/portfolio/f-three'))).body).editions.short.snapshot.answers[0].content);
-  assert.deepEqual(shown.files.map((f) => f.url), [`/work/p/f-three/short/${base}`]);
+  assert.deepEqual(shown.files.map((f) => f.url), [`/work/${copy}`]);
   assert.ok(!JSON.stringify(shown).includes('u/'), 'no private key leaks into the public snapshot');
   assert.ok(!JSON.stringify(shown).includes('secret'), 'a file the learner does not own is left out');
-  const down = await handler(ev('POST', '/portfolio/unpublish', { cookies, body: { edition: 'short' } }));
-  assert.equal(down.statusCode, 200);
-  assert.ok(!stub.bucket.has(`p/f-three/short/${base}`), 'the public copy is gone');
+
+  // A second edition showing the same file shares the copy.
+  assert.equal((await handler(ev('PUT', '/portfolio', { cookies, body: { handle: 'f-three', edition: 'volume-8', snapshot: snap() } }))).statusCode, 200);
+  assert.equal([...stub.bucket.keys()].filter((k) => k.startsWith('p/f-three/')).length, 1, 'one public copy, not two');
+  // Taking one edition down keeps the copy while the other still shows it.
+  assert.equal((await handler(ev('POST', '/portfolio/unpublish', { cookies, body: { edition: 'short' } }))).statusCode, 200);
+  assert.ok(stub.bucket.has(copy), 'still shown by volume-8');
+  // Republishing without the file sweeps it.
+  const bare = { name: 'F', answers: [{ lesson: '/courses/CAP-402/made', heading: 'made-thing', content: JSON.stringify({ ...rec, files: [] }), at: '2030-05-01' }] };
+  assert.equal((await handler(ev('PUT', '/portfolio', { cookies, body: { handle: 'f-three', edition: 'volume-8', snapshot: bare } }))).statusCode, 200);
+  assert.ok(!stub.bucket.has(copy), 'no edition shows it any more');
   assert.ok(stub.bucket.has(link.key), 'the learner\'s own file stays');
+});
+
+test('/work?lesson= returns when each answer was saved', async () => {
+  const r = await signIn('f4@example.com');
+  const cookies = [cookieOf(r)];
+  await handler(ev('PUT', '/work', { cookies, body: { lesson: '/courses/HUM-101/made', heading: 'made-thing', content: '{"title":"x"}' } }));
+  const got = JSON.parse((await handler(ev('GET', '/work', { cookies, query: { lesson: '/courses/HUM-101/made' } }))).body);
+  assert.equal(got.responses['made-thing'], '{"title":"x"}');
+  assert.match(got.updatedAt['made-thing'], /^\d{4}-\d{2}-\d{2}T/);
 });

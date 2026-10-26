@@ -7,9 +7,13 @@
  *                                     the email, so a key never carries it.
  *                                     Read and written only through links
  *                                     signed here, each good for minutes.
- *   p/<handle>/<edition>/<id>-<name>  copies made when an edition is published.
- *                                     CloudFront serves this prefix, and only
- *                                     this prefix, at /work/p/... on the site.
+ *   p/<handle>/<course>/<id>-<name>   copies made when an edition is published,
+ *                                     laid out by course so a link reads as
+ *                                     /work/p/<handle>/CAP-402/<id>-deck.pdf.
+ *                                     One copy serves every published edition;
+ *                                     a copy no published edition still shows
+ *                                     is deleted. CloudFront serves this prefix,
+ *                                     and only this prefix, at /work/p/...
  *
  * The browser talks to the bucket directly with the signed links; this
  * function never carries file bytes. Nothing is written into the learner's
@@ -115,17 +119,30 @@ export async function remove(email, key) {
 
 // ── Publishing ───────────────────────────────────────────────────────────────
 
-/** Every file entry inside the made-thing records of a snapshot. */
-function fileEntries(snapshot) {
+const handlePrefix = (handle) => `p/${handle}/`;
+
+/** Every made-thing record in a snapshot, with the course it belongs to. */
+function madeRecords(snapshot) {
   const out = [];
-  for (const a of snapshot.answers || []) {
+  for (const a of (snapshot && snapshot.answers) || []) {
     if (a.heading !== 'made-thing') continue;
+    const m = /^\/courses\/([A-Z]+-\d+)\/made$/.exec(a.lesson || '');
+    if (!m) continue;
     let rec;
     try { rec = JSON.parse(a.content); } catch { continue; }
     if (!rec || !Array.isArray(rec.files)) continue;
-    out.push({ answer: a, rec });
+    out.push({ answer: a, course: m[1], rec });
   }
   return out;
+}
+
+/** The public keys a stored (already rewritten) snapshot points at. */
+function keysShown(snapshot) {
+  const keys = new Set();
+  for (const { rec } of madeRecords(snapshot)) {
+    for (const f of rec.files) if (f && typeof f.url === 'string' && f.url.startsWith('/work/p/')) keys.add(f.url.slice('/work/'.length));
+  }
+  return keys;
 }
 
 async function listPrefix(prefix) {
@@ -146,25 +163,31 @@ async function deleteKeys(keys) {
   }
 }
 
-/**
- * Make the edition's files public: copy each one the learner owns to the
- * edition's public prefix and rewrite the record to point at the site path.
- * Returns the snapshot to store. Files already copied under the same name are
- * kept; anything no longer referenced is removed, so an unpublished photo
- * really goes away.
- */
-export async function publish(email, handle, edition, snapshot) {
-  const entries = fileEntries(snapshot);
-  const prefix = editionPrefix(handle, edition);
-  const existing = new Set(enabled() ? await listPrefix(prefix) : []);
+/** Remove every public copy under the handle that no published edition shows. */
+async function sweep(handle, snapshots) {
+  if (!enabled()) return;
   const wanted = new Set();
-  for (const { answer, rec } of entries) {
+  for (const snap of snapshots) for (const key of keysShown(snap)) wanted.add(key);
+  const stale = (await listPrefix(handlePrefix(handle))).filter((key) => !wanted.has(key));
+  if (stale.length) await deleteKeys(stale);
+}
+
+/**
+ * Make the edition's files public: copy each one the learner owns to
+ * p/<handle>/<course>/ and rewrite the record to point at the site path.
+ * `others` are the learner's other published editions (their stored
+ * snapshots); a copy they still show is kept, everything else under the
+ * handle that this edition no longer shows is removed. Returns the snapshot
+ * to store.
+ */
+export async function publish(email, handle, edition, snapshot, others = []) {
+  const prefix = handlePrefix(handle);
+  const existing = new Set(enabled() ? await listPrefix(prefix) : []);
+  for (const { answer, course, rec } of madeRecords(snapshot)) {
     const files = [];
     for (const f of rec.files.slice(0, 24)) {
       if (!f || !ownsKey(email, f.key)) continue;
-      const base = f.key.split('/').pop();
-      const target = prefix + base;
-      wanted.add(target);
+      const target = `${prefix}${course}/${f.key.split('/').pop()}`;
       if (!existing.has(target)) {
         try {
           await s3.send(new CopyObjectCommand({
@@ -172,6 +195,7 @@ export async function publish(email, handle, edition, snapshot) {
             MetadataDirective: 'REPLACE', ContentType: f.type || undefined,
             CacheControl: 'public, max-age=31536000, immutable',
           }));
+          existing.add(target);
         } catch {
           continue;   // the source is gone; leave it out rather than publish a broken link
         }
@@ -180,12 +204,11 @@ export async function publish(email, handle, edition, snapshot) {
     }
     answer.content = JSON.stringify({ ...rec, files });
   }
-  const stale = [...existing].filter((key) => !wanted.has(key));
-  if (stale.length) await deleteKeys(stale);
+  await sweep(handle, [snapshot, ...others]);
   return snapshot;
 }
 
-export async function unpublish(handle, edition) {
-  if (!enabled()) return;
-  await deleteKeys(await listPrefix(editionPrefix(handle, edition)));
+/** After an edition comes down: keep only what the remaining editions show. */
+export async function unpublish(handle, remaining = []) {
+  await sweep(handle, remaining);
 }

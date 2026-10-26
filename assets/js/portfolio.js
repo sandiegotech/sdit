@@ -347,7 +347,8 @@
       (r.words ? '<div class="pf-words">' + paras(r.words) + "</div>" : "") +
       (r.applied ? '<div class="pf-applied"><p class="pf-q-when">Where it went</p>' + paras(r.applied) + "</div>" : "") +
       (r.link ? '<p class="pf-link"><a href="' + esc(r.link) + '" rel="noopener">' + esc(r.link) + "</a></p>" : "") +
-      '<p class="pf-evidence">Evidence of: ' + esc(c.outcomes.join(" · ")) + "</p>" + more +
+      '<p class="pf-evidence">Evidence of: ' + esc(c.outcomes.join(" · ")) + "</p>" +
+      (c.fundamentals && c.fundamentals.length ? '<p class="pf-evidence pf-fundamentals">Fundamentals shown: ' + esc(c.fundamentals.join(" · ")) + "</p>" : "") + more +
       "</section>";
   }
 

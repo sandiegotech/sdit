@@ -1,0 +1,173 @@
+__meta__:
+  title: The Studio Fundamentals
+  description: >
+    The twelve working skills every learner has by the end of Year 2, whatever
+    their concentration: the ability to make, keep, and show work. A Bachelor of
+    Arts in Technology in its old sense — the arts as the things people make —
+    with the artist-engineer's twist: the record, the file, the version, the
+    database, and the showing are part of the craft, not an afterthought.
+  intended_use: >
+    Source of truth for where each fundamental is taught (one named day, in
+    Year 1 or 2) and which course highlights are expected to show it. The
+    validator refuses an arc that drops its fundamental; the course pages and
+    the Portfolio read this file so the expectation is visible where the work
+    is made and where it is shown.
+  rule: >
+    Each fundamental is taught once, by name, on a day whose arc row carries it
+    (the "taught" field names the course and day; "mark" is a phrase that must
+    appear in that day's one idea). Later courses assume it. A highlight that
+    is expected to show it lists it on the course page and in the Portfolio.
+  status: working-framework
+  added: 2026-10-26
+
+groups:
+  - id: image
+    name: The image
+  - id: sound-and-motion
+    name: Sound and the moving image
+  - id: record
+    name: The record
+  - id: showing
+    name: Showing
+
+fundamentals:
+  # ── The image ─────────────────────────────────────────────────────────────
+  - id: raster-and-vector
+    group: image
+    name: Raster and vector
+    statement: >
+      Tell a bitmap from a vector and choose the right one: a photograph is a
+      grid of pixels and has a size; a drawing is lines and curves and has
+      none, so it scales clean. Export each in a format that keeps what it is.
+    taught: WKSP-101/12
+    mark: vector
+    shown_in: [WKSP-101, PHYS-120, ENGR-310, CAP-402]
+
+  - id: size-and-format
+    group: image
+    name: Size, resolution, format
+    statement: >
+      Know what an image is in numbers: pixels wide and high, pixels per inch
+      for print, the file format and what it throws away. Make the web size
+      and the print size from one original, and name which is which.
+    taught: MATH-210/1
+    mark: pixels wide
+    shown_in: [MATH-210, WKSP-102, SIG-201, CAP-402]
+
+  - id: color
+    group: image
+    name: Color, on purpose
+    statement: >
+      Name a color three ways (RGB, hex, and the one the printer wants), pick a
+      small palette and keep it, and check that text reads against its ground.
+      Light and paint mix differently; know which one you are working in.
+    taught: MATH-210/3
+    mark: hex
+    shown_in: [MATH-210, WKSP-102, ART-310, ART-410]
+
+  - id: photographing-work
+    group: image
+    name: Photographing the work
+    statement: >
+      Photograph a thing so it reads: one light source, a plain ground, the
+      camera square to the object, in focus, at a size that will survive the
+      Portfolio. Three photographs and a sentence, every session.
+    taught: WKSP-101/4
+    mark: plain ground
+    shown_in: [WKSP-101, WKSP-102, WKSP-201, WKSP-202, ENGR-310, ENGR-320]
+
+  # ── Sound and the moving image ────────────────────────────────────────────
+  - id: recording-sound
+    group: sound-and-motion
+    name: Recording clean sound
+    statement: >
+      Record a voice or an instrument so it is usable: a quiet room, the
+      microphone close, levels that never clip, a file that keeps the
+      recording whole (WAV) and one that travels (MP3), named and dated.
+    taught: SIG-101/14
+    mark: never clip
+    shown_in: [SIG-101, ART-330]
+
+  - id: shooting-video
+    group: sound-and-motion
+    name: Shooting a clip
+    statement: >
+      Shoot a clip a stranger can watch: the phone steady, the frame chosen,
+      the light in front of the subject, sound recorded on purpose, and the
+      aspect ratio decided before the first take (16:9 for a screen, 9:16 for
+      a feed).
+    taught: SIG-201/2
+    mark: steady
+    shown_in: [SIG-201, ART-320, CAP-402]
+
+  - id: editing-video
+    group: sound-and-motion
+    name: The cut, and the export
+    statement: >
+      Cut clips into a piece: in and out points, a title card, a sound level
+      that holds, and an export at a stated resolution and format with a
+      poster frame, under a length you named before you started.
+    taught: SIG-201/3
+    mark: export
+    shown_in: [SIG-201, ART-320, CAP-402]
+
+  # ── The record ────────────────────────────────────────────────────────────
+  - id: files-and-names
+    group: record
+    name: Files, names, folders
+    statement: >
+      Keep the work where you can find it in a year: one folder per course,
+      names that say what a file is and when it was made, no "final-final",
+      and a copy somewhere the laptop is not.
+    taught: WKSP-101/4
+    mark: one folder per course
+    shown_in: [WKSP-101, CS-110, RHET-110]
+
+  - id: versions
+    group: record
+    name: Versions and version control
+    statement: >
+      Never overwrite a draft: keep every version, dated, so the distance
+      between them can be seen. For code and for any text that changes, use
+      version control: a commit is a dated decision with a sentence on it, and
+      the log is the history a stranger can read.
+    taught: CS-110/15
+    mark: commit
+    shown_in: [CS-110, RHET-110, CS-120, CS-210]
+
+  - id: database-of-the-work
+    group: record
+    name: A table of the work
+    statement: >
+      Keep a record of every made thing as data: one row each, with the same
+      fields every time (what, when, where it is, what it showed). A
+      spreadsheet or a file of records is the smallest database; the
+      Portfolio reads one like it.
+    taught: CS-110/10
+    mark: database
+    shown_in: [CS-110, MATH-220, CAP-401]
+
+  # ── Showing ───────────────────────────────────────────────────────────────
+  - id: type-and-layout
+    group: showing
+    name: Type and layout
+    statement: >
+      Put words and a picture on a page so they read: two typefaces at most,
+      one size for the title and one for the rest, a margin, things lined up
+      on a grid, and nothing that is there because the tool offered it. A
+      placard, a flyer, a slide, a thumbnail are all this.
+    taught: WKSP-102/10
+    mark: typeface
+    shown_in: [MATH-210, WKSP-102, SIG-201, CAP-402]
+
+  - id: showing-the-work
+    group: showing
+    name: Showing the work
+    statement: >
+      Hang, play, or publish the work so a stranger meets it well: at reading
+      height, in good light, with the placard beside it, the cover image
+      chosen, and the Portfolio highlight filled in the week it is shown, not
+      a year later.
+    taught: WKSP-102/14
+    mark: cover image
+    shown_in: [WKSP-102, WKSP-202, WKSP-402, CAP-402]

@@ -225,7 +225,7 @@ def _shell(title: str, eyebrow: str, h1: str, meta: str, description: str, body:
         <div class="article-label">Status</div>
         <div class="article-body">
           <p>A working framework, not an authorized degree. SDIT is in its founding phase and is not yet authorized to grant degrees; <a href="/accreditation.html">where authorization stands</a> is published in full. The curriculum is open and free to take.</p>
-          <p><a href="/curriculum/map.html">Curriculum map</a> · <a href="/curriculum/breadth.html">General education</a> · <a href="/curriculum/requirements.html">Requirements</a> · <a href="/curriculum/policies.html">Academic policies</a> · <a href="/curriculum/assessment.html">Assessment plan</a> · <a href="/curriculum/rubrics.html">Rubrics</a></p>
+          <p><a href="/curriculum/map.html">Curriculum map</a> · <a href="/curriculum/breadth.html">General education</a> · <a href="/curriculum/requirements.html">Requirements</a> · <a href="/curriculum/policies.html">Academic policies</a> · <a href="/curriculum/assessment.html">Assessment plan</a> · <a href="/curriculum/rubrics.html">Rubrics</a> · <a href="/curriculum/fundamentals.html">Studio fundamentals</a></p>
         </div>
       </div>
     </section>
@@ -433,3 +433,5 @@ def write_pages(write, out: Path = ROOT) -> None:
     write(d / "policies.html", page_policies())
     write(d / "assessment.html", page_assessment(rows))
     write(d / "rubrics.html", page_rubrics())
+    import fundamentals
+    write(d / "fundamentals.html", fundamentals.page())

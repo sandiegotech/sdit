@@ -41,11 +41,13 @@ def degree_map() -> dict:
     import reflections
     from catalog import load_catalog
 
+    import fundamentals
     cat = load_catalog()
     refl = reflections.load()
     courses = {}
     for c in cat["courses"]:
         courses[c["dir"]] = {
+            "fundamentals": [f["name"] for f in fundamentals.for_course(c["dir"])],
             "code": c["code"],
             "name": c.get("display") or c["name"],
             "catalog": c["name"],

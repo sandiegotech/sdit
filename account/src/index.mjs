@@ -7,7 +7,7 @@
  *   POST /auth/verify    { email, code }      → { token, profile } + session cookie
  *   POST /auth/signout                        → clears the session cookie
  *   GET  /me                                  → { profile }            (Bearer)
- *   GET  /work?lesson=<path>                  → { responses }          (Bearer)
+ *   GET  /work?lesson=<path>                  → { responses: {heading: content}, updatedAt: {heading: iso} }
  *   PUT  /work           { lesson, heading, content }                  (Bearer)
  *   GET  /work/all                            → { responses: [{lesson, heading, content, updatedAt}] }
  *   POST /work/upload    { course, name, type }  → { key, url, kind, max }   a signed link to put one file
@@ -149,7 +149,7 @@ async function getWork(event) {
   if (!session) return unauthorized();
   const lesson = (event.queryStringParameters || {}).lesson;
   if (!lesson) return bad('lesson is required');
-  return ok({ responses: await db.loadWork(session.sub, lesson) });
+  return ok(await db.loadWork(session.sub, lesson));
 }
 
 /** Everything the learner has written: the Notebook's and Portfolio's source. */
@@ -262,7 +262,8 @@ async function putPortfolio(event) {
   if (!(await db.claimHandle(session.sub, h))) return json(409, { error: 'That handle is taken' });
   // The files behind the made things are copied to the public prefix and the
   // snapshot rewritten to point at them, so the page never needs a signed link.
-  await db.publishEdition(session.sub, edition, await files.publish(session.sub, h, edition, snapshot));
+  const others = (await db.listPublished(session.sub)).filter((p) => p.edition !== edition).map((p) => p.snapshot);
+  await db.publishEdition(session.sub, edition, await files.publish(session.sub, h, edition, snapshot, others));
   return ok({ ok: true, handle: h, edition });
 }
 
@@ -273,7 +274,7 @@ async function postUnpublish(event) {
   if (!EDITION_RE.test(String(edition || ''))) return bad('Unknown edition');
   await db.unpublishEdition(session.sub, edition);
   const handle = await db.getHandle(session.sub);
-  if (handle) await files.unpublish(handle, edition);
+  if (handle) await files.unpublish(handle, (await db.listPublished(session.sub)).map((p) => p.snapshot));
   return ok({ ok: true });
 }
 

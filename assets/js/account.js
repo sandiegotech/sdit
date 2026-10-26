@@ -137,10 +137,15 @@
     },
 
     loadWork: function (lesson) {
-      if (!this.isSignedIn()) return Promise.resolve({});
+      return this.loadWorkTimed(lesson).then(function (d) { return d.responses; });
+    },
+    // The answers for one lesson and when each was saved, so a page can
+    // prefer the newer of its own copy and the account's.
+    loadWorkTimed: function (lesson) {
+      if (!this.isSignedIn()) return Promise.resolve({ responses: {}, updatedAt: {} });
       return request("/work?lesson=" + encodeURIComponent(lesson))
-        .then(function (d) { return d.responses || {}; })
-        .catch(function () { return {}; });
+        .then(function (d) { return { responses: d.responses || {}, updatedAt: d.updatedAt || {} }; })
+        .catch(function () { return { responses: {}, updatedAt: {} }; });
     },
     saveWork: function (lesson, heading, content) {
       if (!this.isSignedIn()) return Promise.resolve(false);

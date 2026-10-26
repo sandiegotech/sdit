@@ -515,6 +515,10 @@ def main() -> int:
     validate_yaml_files(errors)
     validate_calendar(errors)
     validate_catalog(errors)
+    # The Studio Fundamentals: each taught by name on a Year 1 or 2 day whose
+    # arc still carries it (knowledge/fundamentals.yaml).
+    import fundamentals
+    errors += [f"fundamentals: {e}" for e in fundamentals.check()]
     if errors:
         for e in errors:
             print(f"[ERROR] {e}")

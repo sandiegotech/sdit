@@ -17,9 +17,10 @@ import test_validate
 import test_arcs
 import test_publishing
 import test_degree_path
+import test_fundamentals
 
 passed = failed = 0
-for module in (test_frontmatter, test_catalog, test_validate, test_arcs, test_publishing, test_degree_path):
+for module in (test_frontmatter, test_catalog, test_validate, test_arcs, test_publishing, test_degree_path, test_fundamentals):
     for name in sorted(dir(module)):
         if not name.startswith("test_"):
             continue

@@ -187,7 +187,9 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
         idx_match = re.match(r"^courses/([^/]+)/index$", path.relative_to(ROOT).with_suffix("").as_posix())
         if idx_match and 'id="the-made-thing"' in html:
             d = idx_match.group(1)
-            slot = (f'<div class="made-slot" data-sdit-made data-lesson="/courses/{d}/made"></div>\n')
+            import fundamentals
+            slot = (fundamentals.course_note(d) +
+                    f'<div class="made-slot" data-sdit-made data-lesson="/courses/{d}/made"></div>\n')
             at = html.index('id="the-made-thing"')
             nxt = html.find("<h2", at)
             html = html[:nxt] + slot + html[nxt:] if nxt != -1 else html + slot

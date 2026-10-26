@@ -1869,6 +1869,9 @@ html.sdit-authed .sdit-portal { display: block; }
 /* The highlight record on course pages */
 .made-slot { margin: 1rem 0 0.5rem; padding: 1rem 1.1rem; border: 1px dashed var(--border); }
 .made-intro { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.75rem; max-width: 40rem; }
+.made-fundamentals { font-size: 0.9rem; color: var(--muted); margin: 0.75rem 0 0; max-width: 44rem; }
+.made-fundamentals strong { color: var(--ink); font-weight: 600; }
+.pf-fundamentals { margin-top: 0.2rem; }
 .made-field small { font-size: 0.75rem; color: var(--muted); }
 .made-files { margin: 1rem 0 0.5rem; padding: 0.9rem 1rem; border: 1px solid var(--hairline); background: var(--surface-soft, transparent); }
 .made-files-head { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.6rem; }
