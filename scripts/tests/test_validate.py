@@ -93,9 +93,12 @@ def _data(course):
 
 
 def _day(n: int, question: str = "Why?", marker: bool = True, bold: bool = True) -> str:
+    """A minimal day held to the core rules only (standard: 1)."""
     asked = f"**{question}**" if bold else question
-    return (f'---\nid: x\ntitle: "Day {n:02d} — T"\nday: {n}\nquestion: "{question}"\n---\n\n# T\n\ndek\n\n'
-            f"## Carry the question\n\n{asked}\n\n" + ("<!-- sdit:answer -->\n" if marker else ""))
+    return (f'---\nid: x\ntitle: "Day {n:02d} — T"\nday: {n}\ncourse: X 101 — Thing\nstandard: 1\nquestion: "{question}"\n---\n\n'
+            f"# Day {n:02d} — T\n\ndek\n\n"
+            f"## Carry the question\n\n{asked}\n\n" + ("<!-- sdit:answer -->\n\n" if marker else "")
+            + f"That's it. **Day {n} is done.**\n")
 
 
 def _arc(n_days: int) -> str:
@@ -306,3 +309,100 @@ def test_day_media_must_not_track_the_reader():
             errors = []
             validate.validate_catalog(errors, _data(c), root)
         assert any(expect in e for e in errors), (expect, errors)
+
+
+# ── Day standard v2 ──────────────────────────────────────────────────────────
+
+FILLER = " ".join(["The wave stands up when it feels the bottom, and the face steepens."] * 22)
+
+V2 = """---
+id: x101-day-02
+title: "Day 02 — T"
+day: 2
+course: X 101 — Thing
+question: "Why?"
+---
+
+# Day 02 — T
+
+Ten minutes. One picture, one idea, one question.
+
+---
+
+## Look
+
+<figure class="day-figure">
+  <img src="https://upload.wikimedia.org/a.jpg" alt="A wave" loading="lazy" referrerpolicy="no-referrer" />
+  <figcaption><strong>A wave.</strong> Someone, 1900.</figcaption>
+</figure>
+
+Why it matters.
+
+---
+
+## One idea
+
+""" + FILLER + """
+
+---
+
+## Carry the question
+
+For the rest of today, carry this one:
+
+**Why?**
+
+Answer in a line or a page, or not at all. What you write is kept in your Notebook.
+
+<!-- sdit:answer -->
+
+That's it. **Day 2 is done.**
+
+---
+
+## If you're still curious
+
+Three doors. Open one, or none.
+
+**Read the real thing.** A book.
+
+**Watch the other half.** A film.
+
+**Ask someone.** Tonight, ask someone you trust a question.
+"""
+
+
+def _v2_errors(text):
+    import frontmatter
+    meta, body = frontmatter.parse(text)
+    return validate.validate_day_text(meta, body, 2, "X-101")
+
+
+def test_a_complete_v2_day_passes():
+    assert _v2_errors(V2) == []
+
+
+def test_v2_rules_each_catch_their_fault():
+    cases = [
+        (V2.replace("## One idea", "## Another idea"), "no '## One idea'"),
+        (V2.replace("## One idea", "## Watch"), "2 experience sections"),
+        (V2.replace("<figure", "<div").replace("</figure>", "</div>"), "does not put the thing on the page"),
+        (V2.replace("**Ask someone.** Tonight", "Tonight"), "has 2 doors"),
+        (V2.replace("**Ask someone.**", "**Ring someone.**"), "third door is not"),
+        (V2.replace(FILLER, "Too short."), "main path is"),
+        (V2.replace("The wave stands up", "The amazing wave stands up", 1), "words the voice does not"),
+        (V2.replace("# Day 02 — T", "# Day 02 — Other"), "H1 does not equal"),
+        (V2.replace("**Day 2 is done.**", "Done."), "no done line"),
+        (V2.replace("## If you're still curious", "## More\n\n## If you're still curious"), "outside the standard"),
+    ]
+    for text, expect in cases:
+        errs = _v2_errors(text)
+        assert any(expect in e for e in errs), (expect, errs)
+
+
+def test_a_fresh_scaffold_cannot_publish():
+    import scaffold_day
+    text = scaffold_day.TEMPLATE.format(id="x", nn="02", n=2, course="X 101", title="T",
+                                        question="Why?", thing="", idea="", doors="")
+    errs = _v2_errors(text)
+    assert any("scaffold placeholder" in e for e in errs), errs

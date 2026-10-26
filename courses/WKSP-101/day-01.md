@@ -2,6 +2,7 @@
 id: wksp101-day-01
 title: "Day 01 — Make Anything"
 day: 1
+standard: 1
 question: "What did you make, and what did finishing it take?"
 course: WKSP 101 — The Workshop
 ---

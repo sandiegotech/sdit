@@ -51,7 +51,7 @@ DEK: one line, under fifteen words, naming what the day holds.
 
 <!-- From the arc, the one idea: {idea} -->
 ## One idea
-<!-- 300 to 450 words. One idea only. Short declarative sentences. Physical
+<!-- 200 to 550 words for the whole main path, the thing and the idea together. One idea only. Short declarative sentences. Physical
      before formal: no concept arrives as notation first. Name the course's
      catalog register once. No hype words. -->
 

@@ -2,6 +2,7 @@
 id: cs110-day-01
 title: "Day 01 — The Very Fast, Very Literal Apprentice"
 day: 1
+standard: 1
 question: "Pick one automated thing you touch — a doorbell, a playlist, a traffic light — and ask: what are its instructions, exactly?"
 course: CS 110 — Programming Fundamentals
 ---

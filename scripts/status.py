@@ -3,6 +3,7 @@
 
     python3 scripts/status.py          # every course, published vs planned days
     python3 scripts/status.py --gaps   # only courses with days still to write
+    python3 scripts/status.py --next   # the next week to write, day by day
 """
 from __future__ import annotations
 
@@ -15,7 +16,43 @@ ROOT = Path(__file__).resolve().parents[1]
 COURSES = ROOT / "courses"
 
 
+def next_week() -> int:
+    """The first week on the Path with a spine day not yet written: every day
+    of it in weekday order, with its arc title, question, and publish date.
+    Weeks are written whole, all courses together, never one course ahead."""
+    import arcs
+    import degree_path
+    import publishing
+
+    pending = [s for s in degree_path.sequence() if s.kind == "day" and not s.studio and not s.published]
+    if not pending:
+        print("Every spine day is written.")
+        return 0
+    sem, week = pending[0].semester, pending[0].week
+    when = publishing.week_date(sem, week)
+    print(f"Next to write: Semester {sem}, Week {week}"
+          + (f" (publishes {publishing.long_date(when)})" if when else ""))
+    print()
+    for s in degree_path.sequence():
+        if s.kind != "day" or s.semester != sem or s.week != week:
+            continue
+        c = s.course or {}
+        a = arcs.load_arc(COURSES / c["dir"])
+        q = a.day(s.n).question if a and a.day(s.n) else ""
+        state = "written" if s.published else "TO WRITE"
+        print(f"  {s.label:<6} {c['dir']:<9} Day {s.n:02d}  {state:<8}  {s.title}")
+        if not s.published:
+            print(f"         {'':9} question: {q}")
+            print(f"         {'':9} python3 scripts/scaffold_day.py {c['dir']} {s.n}")
+    ahead = sum(1 for s in degree_path.sequence() if s.kind == "day" and s.published and s.publishes)
+    print()
+    print(f"Written ahead of the calendar: {ahead} day(s).")
+    return 0
+
+
 def main(argv) -> int:
+    if "--next" in argv:
+        return next_week()
     gaps_only = "--gaps" in argv
     courses = sorted(
         load_catalog().get("courses", []),

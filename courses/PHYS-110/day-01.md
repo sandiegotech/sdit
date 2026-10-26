@@ -2,6 +2,7 @@
 id: phys110-day-01
 title: "Day 01 — The Wave Is a Lecture"
 day: 1
+standard: 1
 question: "Watch one thing move — anything — and ask: what is pushing it, and what is slowing it down?"
 course: PHYS 110 — Mechanics
 ---

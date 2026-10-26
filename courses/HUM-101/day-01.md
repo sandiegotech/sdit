@@ -2,6 +2,7 @@
 id: hum101-day-01
 title: "Day 01 — The Oldest Story Is About You"
 day: 1
+standard: 1
 question: "What's the Siren in your life — and what would tying yourself to the mast look like?"
 course: HUM 101 — The Ancient World
 ---

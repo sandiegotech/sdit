@@ -58,6 +58,90 @@ LIVE_HEADINGS = [
 ]
 
 
+# ── Day standard v2 (PLAN.md 12.4): what a day must be before it publishes ──
+EXPERIENCE = ("Look", "Watch", "Listen", "Read")
+QUESTION_SECTIONS = ("Carry the question", "Now make something")   # the latter: Workshop days
+CURIOUS = "If you're still curious"
+MIN_WORDS, MAX_WORDS = 200, 550     # measured on the published days (273-315)
+BANNED = re.compile(r"\b(revolutionary|disruptive|game-changing|incredible|amazing|unlock\w*|delve\w*|dive into|journey)\b", re.I)
+PLACEHOLDERS = ("DEK:", "WRITE THE", "IMAGE-URL", "Title goes here", "The question goes here", "Why it matters today, in a paragraph", "The idea, plainly")
+
+
+def _h2s(body: str) -> list[str]:
+    return [m.group(1).strip().replace("\u2019", "'") for m in re.finditer(r"^## (.+)$", body, flags=re.M)]
+
+
+def _section_text(body: str, heading: str) -> str:
+    m = re.search(rf"^## {re.escape(heading)}\s*$(.*?)(?=^## |\Z)", body.replace("\u2019", "'"), flags=re.M | re.S)
+    return m.group(1) if m else ""
+
+
+def main_path_words(body: str) -> int:
+    main = re.split(r"^## If you.re still curious", body, flags=re.M)[0]
+    main = re.sub(r"<!--.*?-->", " ", main, flags=re.S)
+    main = re.sub(r"<[^>]+>", " ", main)
+    main = re.sub(r"^# .*$", " ", main, flags=re.M)
+    return len(re.findall(r"[A-Za-z\u2019'-]+", main))
+
+
+def validate_day_text(meta: dict, body: str, n: int, course_dir: str) -> list[str]:
+    """Rules for one day file. Days marked `standard: 1` (the five first days,
+    written before v2) get the core rules; every other day gets all of them."""
+    out = []
+    title = str(meta.get("title") or "")
+    h1 = re.search(r"^# (.+)$", body, flags=re.M)
+    if not h1 or h1.group(1).strip() != title:
+        out.append("its H1 does not equal its front-matter title")
+    for k in ("id", "course"):
+        if not meta.get(k):
+            out.append(f"has no `{k}` in its front matter")
+    if not re.search(rf"\*\*Day {n} is done\.?\*\*", body):
+        out.append(f"has no done line (\"That's it. **Day {n} is done.**\")")
+    for ph in PLACEHOLDERS:
+        if ph in body:
+            out.append(f"still contains the scaffold placeholder {ph!r}")
+    if str(meta.get("standard", "2")) == "1":
+        return out
+
+    h2 = _h2s(body)
+    exp = [h for h in h2 if h in EXPERIENCE]
+    if len(exp) != 1:
+        out.append(f"has {len(exp)} experience sections; exactly one of {', '.join(EXPERIENCE)}")
+    if "One idea" not in h2:
+        out.append("has no '## One idea' section")
+    q = [h for h in h2 if h in QUESTION_SECTIONS]
+    if len(q) != 1:
+        out.append("has no '## Carry the question' section")
+    if not h2 or h2[-1] != CURIOUS:
+        out.append(f"does not end with '## {CURIOUS}'")
+    extra = [h for h in h2 if h not in EXPERIENCE + QUESTION_SECTIONS + ("One idea", CURIOUS)]
+    if extra:
+        out.append(f"has sections outside the standard: {', '.join(extra)}")
+    if exp and q and "One idea" in h2:
+        qi = h2.index(q[0])
+        if not (h2.index(exp[0]) < qi and h2.index("One idea") < qi):
+            out.append("asks its question before the thing to experience and the idea")
+    if exp:
+        sec = re.sub(r"<!--.*?-->", " ", _section_text(body, exp[0]), flags=re.S)
+        if not re.search(r"<figure\b|<iframe\b|<blockquote\b|^> ", sec, flags=re.M):
+            out.append(f"'## {exp[0]}' does not put the thing on the page (a figure, an embed, or a quotation)")
+    doors = re.findall(r"^\*\*[^*]+\*\*", _section_text(body, CURIOUS), flags=re.M)
+    if len(doors) != 3:
+        out.append(f"has {len(doors)} doors under '{CURIOUS}'; it needs three")
+    elif not doors[-1].startswith("**Ask someone"):
+        out.append("its third door is not '**Ask someone.**'")
+    words = main_path_words(body)
+    if not MIN_WORDS <= words <= MAX_WORDS:
+        out.append(f"main path is {words} words; a ten-minute day is {MIN_WORDS} to {MAX_WORDS}")
+    prose = re.sub(r"<!--.*?-->", " ", body, flags=re.S)
+    prose = re.sub(r"^>.*$", "", prose, flags=re.M)
+    prose = re.sub(r"\[[^\]]*\]\([^)]*\)|<[^>]+>|https?://\S+", " ", prose)
+    hits = sorted({m.group(1).lower() for m in BANNED.finditer(prose)})
+    if hits:
+        out.append(f"uses words the voice does not: {', '.join(hits)}")
+    return out
+
+
 def load(p):
     with open(p, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
@@ -158,12 +242,16 @@ def validate_course(c: dict, i: int, threads: set, courses_root: Path, errors: l
             err(f"day-{n:02d}.md does not ask its front-matter question in bold on the page")
         if ANSWER_MARKER not in _body:
             err(f"day-{n:02d}.md has no answer field ({ANSWER_MARKER}) under its question")
+        for problem in validate_day_text(meta, _body, n, d):
+            err(f"day-{n:02d}.md {problem}")
         # Nothing on a day page tracks the reader (PLAN.md 12.3, items 2 and 3).
-        for tag in re.findall(r"<iframe\b[^>]*>", _body):
+        # Comments are the scaffold's instructions, not content; skip them.
+        _live = re.sub(r"<!--.*?-->", " ", _body, flags=re.S)
+        for tag in re.findall(r"<iframe\b[^>]*>", _live):
             src = re.search(r'src="([^"]+)"', tag)
             if not src or not src.group(1).startswith("https://www.youtube-nocookie.com/embed/"):
                 err(f"day-{n:02d}.md embeds a frame from outside www.youtube-nocookie.com")
-        for tag in re.findall(r"<img\b[^>]*>", _body):
+        for tag in re.findall(r"<img\b[^>]*>", _live):
             src = re.search(r'src="([^"]+)"', tag)
             if not src or not (src.group(1).startswith("https://upload.wikimedia.org/") or src.group(1).startswith("/")):
                 err(f"day-{n:02d}.md shows an image from outside upload.wikimedia.org or this site")
