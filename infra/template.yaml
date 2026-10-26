@@ -175,6 +175,25 @@ Resources:
           return request;
         }
 
+  # Published portfolio files live in the work bucket under p/<handle>/..., and
+  # the site serves them at /work/p/... CloudFront forwards the full path, so
+  # the /work prefix has to come off before the request reaches S3, exactly as
+  # /api comes off for the API. Runs before the origin request is signed.
+  WorkPrefixFunction:
+    Type: AWS::CloudFront::Function
+    Properties:
+      Name: !Sub 'sdit-work-prefix-${AWS::StackName}'
+      AutoPublish: true
+      FunctionConfig:
+        Comment: Strip the /work prefix so /work/p/... reads p/... from the work bucket.
+        Runtime: cloudfront-js-2.0
+      FunctionCode: |
+        function handler(event) {
+          var request = event.request;
+          request.uri = request.uri.replace(/^\/work/, '');
+          return request;
+        }
+
   # The same headers as sandiegotech.org. The CSP can be strict because the
   # curriculum loads almost nothing from elsewhere: fonts are self-hosted, and
   # the only outside sources are Wikimedia images and YouTube's cookieless
@@ -280,6 +299,9 @@ Resources:
             # Managed-CachingOptimized: published files are immutable by key.
             CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
             ResponseHeadersPolicyId: !Ref SecurityHeaders
+            FunctionAssociations:
+              - EventType: viewer-request
+                FunctionARN: !GetAtt WorkPrefixFunction.FunctionMetadata.FunctionARN
 
           - PathPattern: /api/*
             TargetOriginId: api
