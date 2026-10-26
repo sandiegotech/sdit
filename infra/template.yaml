@@ -158,6 +158,52 @@ Resources:
           return request;
         }
 
+  # The same headers as sandiegotech.org. The CSP can be strict because the
+  # curriculum loads almost nothing from elsewhere: fonts are self-hosted, and
+  # the only outside sources are Wikimedia images and YouTube's cookieless
+  # embeds on lesson days (validate.py refuses any other). Attached to the site
+  # behavior only: the /api behavior must not inherit a public Cache-Control.
+  SecurityHeaders:
+    Type: AWS::CloudFront::ResponseHeadersPolicy
+    Properties:
+      ResponseHeadersPolicyConfig:
+        Name: !Sub '${AWS::StackName}-security-headers'
+        SecurityHeadersConfig:
+          StrictTransportSecurity:
+            AccessControlMaxAgeSec: 63072000
+            IncludeSubdomains: true
+            Preload: true
+            Override: true
+          ContentTypeOptions:
+            Override: true
+          FrameOptions:
+            FrameOption: SAMEORIGIN
+            Override: true
+          ReferrerPolicy:
+            ReferrerPolicy: strict-origin-when-cross-origin
+            Override: true
+          ContentSecurityPolicy:
+            Override: true
+            ContentSecurityPolicy: >-
+              default-src 'self';
+              img-src 'self' data: https://upload.wikimedia.org;
+              style-src 'self' 'unsafe-inline';
+              font-src 'self';
+              script-src 'self' 'unsafe-inline';
+              frame-src https://www.youtube-nocookie.com;
+              connect-src 'self' https://2yuxbioi45.execute-api.us-west-2.amazonaws.com;
+              form-action 'self';
+              base-uri 'self';
+              object-src 'none'
+        CustomHeadersConfig:
+          Items:
+            # HTML and the catalog are invalidated at the edge on every deploy;
+            # the short browser max-age is what stops a reader seeing last
+            # week's page after a Monday release.
+            - Header: Cache-Control
+              Value: 'public, max-age=300, must-revalidate'
+              Override: false
+
   # ── Distribution ────────────────────────────────────────────────────────────
   Distribution:
     Type: AWS::CloudFront::Distribution
@@ -194,6 +240,7 @@ Resources:
           AllowedMethods: [GET, HEAD, OPTIONS]
           # Managed-CachingOptimized
           CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+          ResponseHeadersPolicyId: !Ref SecurityHeaders
           FunctionAssociations:
             - EventType: viewer-request
               FunctionARN: !GetAtt IndexRewriteFunction.FunctionMetadata.FunctionARN
