@@ -9,45 +9,108 @@ status: syllabus
 
 # SIG 101 — How Music Moves
 
-**Culture & Signal** · 1 units · Required core — everyone takes it
+**Culture & Signal** · 1 unit · Semester 2 · Required core — everyone takes it
+
+## Overview
+
+A song reaches you in the morning and you have no idea how it got there. This course walks the whole path: the room it was recorded in, the horn or the microphone that caught it, the tape that let someone lie, the mix that put the voice in front, the master that made it loud, the format that made it three minutes long, the two copyrights riding on it, the label or the lack of one, the radio tower across the border, the fraction of a cent, and the algorithm that decided you would like it. Fifteen stops, each with a real recording or a real object on the page — Caruso singing into a horn in 1907, a whispering baritone who needed the microphone to exist, a band on the Casbah stage.
+
+Culture & Signal is one unit a year for every student, and this is the first. It is not music appreciation and it is not a production class — the Workshop and the studios do that. It is the study of how a made thing moves through the world, with music as the first case because the path is the oldest and the best documented. San Diego is the material: Iron Butterfly's seventeen minutes, the independent labels that grew out of one room on Kettner Boulevard, and 91X broadcasting from Tijuana since 1983.
+
+One day a week, about ten minutes a sitting. The course ends the way every SDIT course ends: in a made thing, defended out loud — a track released under your name, or the complete documented breakdown of how one was built.
 
 ## The Two Registers
 
 - **Catalog register:** The music industry and its technologies — recording, production, distribution, economics.
 - **Teaching frame:** How a song actually reaches the world — from the room it was recorded in to the algorithm that surfaced it.
 
-## Outcomes Served
+## Learning Outcomes
 
-- **Breadth of Mind**
-- **Workmanship**
+By the end of this course you can:
 
-## What This Course Is About
+1. Hear a recording and say how it was made — the room, the capture, whether it was built from one performance or many — and place it within a decade. → *Workmanship*
+2. Trace the path of any song from recording to listener, naming the technologies, the rights, and the money at each step. → *Breadth of Mind*
+3. Explain how formats, gatekeepers, and recommendation systems have shaped the shape of songs themselves. → *Breadth of Mind*
+4. Release a finished track, or document one to a standard another producer could rebuild from, and defend the decisions in five minutes. → *Workmanship*
 
-Recording, production, labels and independence, streaming economics — the full path a song travels from a room to your morning.
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
-A released track or a documented production breakdown of one.
+A released track or a documented production breakdown of one. The track is yours, mastered, with complete metadata and rights-clear art, released on Bandcamp on a stated date and, if you choose, distributed to the streaming services. The breakdown is a published page that accounts for every decision in one existing record — room, microphones, takes, edits, mix, master, format, release path — confirmed accurate by someone who knows the record. Either is defended on the last day in five minutes: sixty seconds of sound, the path it took, the numbers so far. The thirty-day numbers enter your portfolio and are read at the annual gate.
+
+## How You're Assessed
+
+- **Listening notes**, written weekly against the recording on the page — what you hear, where it sits, how it was made.
+- **The made thing**, released or published on the stated date and defended out loud.
+- **An unassisted listening examination** in the twelfth week: an unfamiliar recording, headphones on, tools closed — the decade, the capture, the placement, the path. AI tools are open for everything else; the institution certifies the human, and this course certifies the ear.
+- Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
 ## The Daily Path
 
-One session per course day — each one designed to look easy and pull you in. This course is at syllabus stage — the daily path is not yet written, so it is not yet live.
+One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
-- Day 01 — *to be written*
-- Day 02 — *to be written*
-- Day 03 — *to be written*
-- Day 04 — *to be written*
-- Day 05 — *to be written*
-- Day 06 — *to be written*
-- Day 07 — *to be written*
-- Day 08 — *to be written*
-- Day 09 — *to be written*
-- Day 10 — *to be written*
-- Day 11 — *to be written*
-- Day 12 — *to be written*
-- Day 13 — *to be written*
-- Day 14 — *to be written*
-- Day 15 — *to be written*
+<!-- sdit:days:begin -->
+### Day 01 — *coming soon*
+
+Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+
+### Day 02 — *coming soon*
+
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+
+### Day 03 — *coming soon*
+
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+
+### Day 04 — *coming soon*
+
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+
+### Day 05 — *coming soon*
+
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+
+### Day 06 — *coming soon*
+
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+
+### Day 07 — *coming soon*
+
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+
+### Day 08 — *coming soon*
+
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+
+### Day 09 — *coming soon*
+
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+
+### Day 10 — *coming soon*
+
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+
+### Day 11 — *coming soon*
+
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+
+### Day 12 — *coming soon*
+
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+
+### Day 13 — *coming soon*
+
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+
+### Day 14 — *coming soon*
+
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+
+### Day 15 — *coming soon*
+
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+<!-- sdit:days:end -->
 
 ---
 

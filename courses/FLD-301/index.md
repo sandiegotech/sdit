@@ -9,46 +9,111 @@ status: syllabus
 
 # FLD 301 — Field Term
 
-**Field Term & Capstone** · 4 units · Required core — everyone takes it
+**Field Term & Capstone** · 4 units · Semester 6 · Required core — everyone takes it
+
+## Overview
+
+A full term inside a working organization — an engineering firm, a lab, a studio, a label, a venture — under a named mentor, doing work that someone else needed done. Not an internship to decorate a résumé. A placement, with an agreement that binds both sides, real responsibilities, one hour a week with a person who has a body of work, and a written account at the end of what the work taught you that the Institute could not.
+
+This is not a subject course, and the page does not pretend to be the teacher. The fifteen days prepare you to walk in well (Days 1 to 4: what an apprentice adds, who has to say yes, what the agreement must say), then hand you one field-journal prompt a week for eight weeks while you are in the building, then make you ask for the mentor's evaluation and write the report. Each day still gives you one thing to experience — Franklin arriving in Philadelphia with three rolls, the apprentice's angel in Verrocchio's painting, Leonardo's list of people to ask, Orville's thirty-two-word telegram — and one question to carry into the work.
+
+Semester 6 is lighter on purpose. This is why. The course ends the way every SDIT course ends: in a made thing — here, three of them, assessed together, and the report defended out loud.
 
 ## The Two Registers
 
 - **Catalog register:** Supervised field placement in a partner organization, with faculty advising.
 - **Teaching frame:** One full term embedded in an engineering firm, lab, studio, label, or venture — under a designated mentor, doing real work.
 
-## Outcomes Served
+## Learning Outcomes
 
-- **Workmanship**
-- **Judgment**
-- **Articulation**
+By the end of this course you can:
 
-## What This Course Is About
+1. Negotiate and write a one-page placement agreement that names a mentor, real responsibilities, what you will make, and what will be evaluated — and hold both sides to it. → *Judgment · Articulation*
+2. Do real work inside a working organization to its standard, and finish small things completely enough that the organization trusts you with larger ones. → *Workmanship*
+3. Read an organization — who knows what, the unwritten rules, how value moves — and act on that reading, recording it in a weekly journal written the week it happened. → *Judgment*
+4. Assemble a portfolio of field work that a mentor will confirm, with the mentor's evaluation on the five outcomes beside it. → *Workmanship*
+5. Write a field report that accounts plainly for what the work was, what you did, what it taught you, and what you would do differently — part of it unaided — and defend it in conversation. → *Articulation*
 
-A full term inside a working organization. Not an internship to decorate a résumé — a placement with a mentor, real responsibilities, and a written account of what the work taught you.
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
-Mentor evaluation, portfolio of field work, and a written field report.
+Three things, assessed together: the **mentor evaluation** — a one-page form on the five outcomes, filled out by the mentor and read with you in the weekly hour; the **portfolio of field work** — what you actually made or did, or the mentor-approved description where confidentiality forbids the thing itself; and the **written field report** — 2,500 to 4,000 words on what the organization is, what you did, what the work taught you, what you would do differently, and what you want next, delivered to the adviser and the mentor on the same day and defended with the adviser. They enter your portfolio and are reviewed at the annual gate. A learner working alone online runs the Field Term as a self-arranged placement — a job you hold, a volunteer role, a shop or lab that takes you a day or two a week — with a named mentor, the same agreement, the same form, and the same report, and says so on the agreement.
+
+## How You're Assessed
+
+- **The placement agreement**, signed by student, mentor, and adviser before Week 1. No agreement, no placement.
+- **The weekly field journal** — eight entries, under a page each, written the week they happened, read by the adviser at two check-ins (Weeks 5 and 10).
+- **The mentor evaluation**, on the five outcomes, read beside the work, never alone.
+- **The portfolio of field work**, confirmed by the mentor.
+- **The written field report**, defended in a half-hour conversation with the adviser. One section — what the work taught you that the Institute could not — is written **unaided**, in one sitting, tools closed. A report drafted by a model is an account of work the model did not witness; the institution certifies that you were in the room.
+- Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
 ## The Daily Path
 
-One session per course day — each one designed to look easy and pull you in. This course is at syllabus stage — the daily path is not yet written, so it is not yet live.
+One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
-- Day 01 — *to be written*
-- Day 02 — *to be written*
-- Day 03 — *to be written*
-- Day 04 — *to be written*
-- Day 05 — *to be written*
-- Day 06 — *to be written*
-- Day 07 — *to be written*
-- Day 08 — *to be written*
-- Day 09 — *to be written*
-- Day 10 — *to be written*
-- Day 11 — *to be written*
-- Day 12 — *to be written*
-- Day 13 — *to be written*
-- Day 14 — *to be written*
-- Day 15 — *to be written*
+<!-- sdit:days:begin -->
+### Day 01 — *coming soon*
+
+Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+
+### Day 02 — *coming soon*
+
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+
+### Day 03 — *coming soon*
+
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+
+### Day 04 — *coming soon*
+
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+
+### Day 05 — *coming soon*
+
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+
+### Day 06 — *coming soon*
+
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+
+### Day 07 — *coming soon*
+
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+
+### Day 08 — *coming soon*
+
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+
+### Day 09 — *coming soon*
+
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+
+### Day 10 — *coming soon*
+
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+
+### Day 11 — *coming soon*
+
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+
+### Day 12 — *coming soon*
+
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+
+### Day 13 — *coming soon*
+
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+
+### Day 14 — *coming soon*
+
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+
+### Day 15 — *coming soon*
+
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+<!-- sdit:days:end -->
 
 ---
 

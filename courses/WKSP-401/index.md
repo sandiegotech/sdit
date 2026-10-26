@@ -9,46 +9,110 @@ status: syllabus
 
 # WKSP 401 — The Workshop
 
-**The Workshop** · 2 units · Required core — everyone takes it
+**The Workshop** · 2 units · Semester 7 · Required core — every semester, everyone
+
+## Overview
+
+The Workshop is the bottega — the room where mastery is transmitted through making, from someone who can do it to someone who cannot yet. Every semester, every student, on a project team that ships. In the seventh semester you change sides of the bench. You lead a team of first-years through WKSP 101 — their first build, in the same fifteen weeks, in the same room — because you don't know it until you can teach it. The thing shipped is theirs. The responsibility is yours.
+
+The material is whatever they can finish; you do not choose it and you do not make it. What you make is the conditions: a brief scoped with them rather than for them, a technique shown once and then handed over, a Friday crit you run and hold to its rules, a bench you keep safe, a bench test you proctor, and a schedule that ships on a date that does not move. You keep a leader's log beside their build log and never write theirs for them. The semester ends with their finished thing, which you did not touch, and your account of leading — three to five pages, read aloud to the masters, naming your team, your decisions, and your errors.
+
+The Workshop is a room with tools, a master, and now you standing between them, and the page says so: one day a week, about ten minutes, carries the leader's brief, the method, the critique as something you run, the safety you own, and the discipline of two logs. Then your hands go in your pockets. The course ends the way every SDIT course ends: in a made thing, shipped — and this time, in someone else's hands from the start.
 
 ## The Two Registers
 
 - **Catalog register:** Project-based fabrication and design practicum — course 7 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
 - **Teaching frame:** You lead first-years now. Every fourth-year leads a Workshop team — you don't know it until you can teach it.
 
-## Outcomes Served
+## Learning Outcomes
 
-- **Workmanship**
-- **Judgment**
-- **Articulation**
+By the end of this course you can:
 
-## What This Course Is About
+1. Scope a first build with a team newer than you, and hold them to a finish on a date that does not move. → *Judgment*
+2. Demonstrate a technique once, clearly, and then keep your hands off their work. → *Workmanship · Articulation*
+3. Run a critique by its rules — description first, the maker last, one instruction — and proctor an unassisted bench test. → *Judgment · Articulation*
+4. Own the safety of a shared bench, and decide which failures to allow and which to stop. → *Judgment · Workmanship*
+5. Write an honest account of leading — decisions, errors, and what you would do with the next team — and read it aloud. → *Articulation*
 
-The teaching requirement, made concrete: a fourth-year runs a first-year team through its first build. The thing shipped is theirs; the responsibility is yours.
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
-A first-year team's shipped project, led by you, and your account of leading it.
+A first-year team's shipped project, led by you and not made by you, with their complete build log — and your account of leading it: three to five pages in your words, with the leader's log behind it, read aloud to the Workshop's masters. Both enter your portfolio and are reviewed at the Year 4 gate.
+
+## How You're Assessed
+
+- **The team's build** — finished by their Day 15, logged by them, held for the year-end exhibition. You are assessed on whether it shipped, not on whether it is good by your standard.
+- **The leader's log** — what you decided, what you did not say, who was behind and why, and what the master would have done; kept weekly beside their log.
+- **The unassisted examination** — a full critique run by you, unaided, and a five-minute oral account of your team with questions, with the masters watching. The institution certifies the human, so it watches you lead unaided.
+- **The account** — three to five pages, read aloud to the masters in Week 14.
+- **Portfolio review** — the Workshop is assessed the way working shops assess a foreman: by whether the work shipped and what the crew learned.
 
 ## The Daily Path
 
-One session per course day — each one designed to look easy and pull you in. This course is at syllabus stage — the daily path is not yet written, so it is not yet live.
+One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
-- Day 01 — *to be written*
-- Day 02 — *to be written*
-- Day 03 — *to be written*
-- Day 04 — *to be written*
-- Day 05 — *to be written*
-- Day 06 — *to be written*
-- Day 07 — *to be written*
-- Day 08 — *to be written*
-- Day 09 — *to be written*
-- Day 10 — *to be written*
-- Day 11 — *to be written*
-- Day 12 — *to be written*
-- Day 13 — *to be written*
-- Day 14 — *to be written*
-- Day 15 — *to be written*
+<!-- sdit:days:begin -->
+### Day 01 — *coming soon*
+
+Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+
+### Day 02 — *coming soon*
+
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+
+### Day 03 — *coming soon*
+
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+
+### Day 04 — *coming soon*
+
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+
+### Day 05 — *coming soon*
+
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+
+### Day 06 — *coming soon*
+
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+
+### Day 07 — *coming soon*
+
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+
+### Day 08 — *coming soon*
+
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+
+### Day 09 — *coming soon*
+
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+
+### Day 10 — *coming soon*
+
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+
+### Day 11 — *coming soon*
+
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+
+### Day 12 — *coming soon*
+
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+
+### Day 13 — *coming soon*
+
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+
+### Day 14 — *coming soon*
+
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+
+### Day 15 — *coming soon*
+
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+<!-- sdit:days:end -->
 
 ---
 

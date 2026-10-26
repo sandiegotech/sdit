@@ -9,46 +9,109 @@ status: syllabus
 
 # HUM 402 — The Long View
 
-**The Canon** · 2 units · Required core — everyone takes it
+**The Canon** · 2 units · Semester 8 · Required core — everyone takes it
+
+## Overview
+
+Civilizations rise and fall, and the people who watched it happen wrote it down: Polybius on the cycle of constitutions, Gibbon standing in the Forum, Ibn Khaldun on the four generations of a dynasty, Tainter on the bill for complexity. This is the final seminar of the Canon, and it reads that record with one question in mind: you have spent a year making a capstone — a thesis, a system that runs, or a venture that exists. Will it matter, and for how long, and what does four years of reading have to say about that?
+
+The course is a colloquium. Its days are built around presenting your capstone against the whole sequence, in four rounds, each one returning to a passage you read in an earlier year: Penelope recognizing Odysseus by the bed he built; Dante's Ulysses sailing past the pillars; an emperor on how fast everything is forgotten; Aristotle on what a thing is for. Each unit is still a Double Feature — **the text + a film + an album** as one conversation: Shelley and Gibbon beside *Koyaanisqatsi* and the last Johnny Cash records; Polybius and Ibn Khaldun beside *Children of Men* and *Exodus*; Homer and Dante beside *O Brother, Where Art Thou?* and Gillian Welch; Pericles and Hamlet beside *12 Angry Men* and *A Love Supreme*.
+
+It ends in the colloquium presentation: twenty minutes before the seminar and an outside examiner, with a one-page lineage sheet — eight lines, one per Canon semester, each naming a text and what your capstone owes it — followed by three questions, one of them drawn cold. The sequence closes where it opened. Then you teach it.
 
 ## The Two Registers
 
 - **Catalog register:** Capstone colloquium — civilizational rise and decline; thesis work presented against the whole sequence.
-- **Teaching frame:** Your capstone, argued against everything you have read in four years.
+- **Teaching frame:** Your capstone, argued against everything you have read in four years — with the record of rise and decline as the measure of whether it will last.
 
-## Outcomes Served
+## Learning Outcomes
 
-- **Judgment**
-- **Articulation**
-- **Breadth of Mind**
+By the end of this course you can:
 
-## What This Course Is About
+1. Read the major accounts of civilizational rise and decline — Polybius, Gibbon, Ibn Khaldun, Tainter — and apply their mechanisms to a product, an institution, a system, or a place. → *Breadth of Mind · Judgment*
+2. Return to a passage from any of the eight Canon semesters and say, with evidence, what your capstone owes it or where it argues back. → *Breadth of Mind*
+3. Judge your own made thing against the long record: name its excess, its likely cause of ruin, and what it will still have done if it is forgotten. → *Judgment*
+4. Present the capstone against the whole sequence in twenty minutes, with a complete lineage sheet, and answer three examiners' questions. → *Articulation*
+5. Speak for five minutes on the capstone and the sequence with no notes, slides, or tools, and answer a cold question on a passage drawn at random. → *Articulation · Judgment*
 
-The final seminar. Civilizations rise and fall on judgment, craft, and signal — and your capstone gets presented against the whole four-year conversation.
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
-The capstone colloquium presentation.
+The colloquium presentation: twenty minutes before the seminar and one outside examiner, placing your capstone — thesis, system, or venture — against the whole four-year sequence, with a one-page lineage sheet of eight lines, one per Canon semester, each naming a text and what the capstone owes it. Followed by an examiners' round of three questions, one drawn cold from a passage read in an earlier course. The form is yours; the test is whether someone who read none of the eight courses leaves knowing what you made and why four years of reading were the right preparation for it. It enters your portfolio and is reviewed at the final gate.
+
+## How You're Assessed
+
+- **Four presentation rounds** in seminar — one minute, then against Year 2, against Year 3, then the full run — each critiqued by the room.
+- **The colloquium presentation and lineage sheet**, given before the seminar and an outside examiner in the final week.
+- **One unassisted examination**: five minutes standing, no notes, no slides, no tools, then one cold question on a passage drawn at random from the sequence. The degree certifies the human, and the last examination in the Canon is the human speaking alone about what they made and what they read.
+- Everything lands in your **portfolio**, reviewed against the five outcomes at the final gate.
 
 ## The Daily Path
 
-One session per course day — each one designed to look easy and pull you in. This course is at syllabus stage — the daily path is not yet written, so it is not yet live.
+One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
-- Day 01 — *to be written*
-- Day 02 — *to be written*
-- Day 03 — *to be written*
-- Day 04 — *to be written*
-- Day 05 — *to be written*
-- Day 06 — *to be written*
-- Day 07 — *to be written*
-- Day 08 — *to be written*
-- Day 09 — *to be written*
-- Day 10 — *to be written*
-- Day 11 — *to be written*
-- Day 12 — *to be written*
-- Day 13 — *to be written*
-- Day 14 — *to be written*
-- Day 15 — *to be written*
+<!-- sdit:days:begin -->
+### Day 01 — *coming soon*
+
+Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+
+### Day 02 — *coming soon*
+
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+
+### Day 03 — *coming soon*
+
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+
+### Day 04 — *coming soon*
+
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+
+### Day 05 — *coming soon*
+
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+
+### Day 06 — *coming soon*
+
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+
+### Day 07 — *coming soon*
+
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+
+### Day 08 — *coming soon*
+
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+
+### Day 09 — *coming soon*
+
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+
+### Day 10 — *coming soon*
+
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+
+### Day 11 — *coming soon*
+
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+
+### Day 12 — *coming soon*
+
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+
+### Day 13 — *coming soon*
+
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+
+### Day 14 — *coming soon*
+
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+
+### Day 15 — *coming soon*
+
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+<!-- sdit:days:end -->
 
 ---
 

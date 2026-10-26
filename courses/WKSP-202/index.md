@@ -9,45 +9,110 @@ status: syllabus
 
 # WKSP 202 — The Workshop
 
-**The Workshop** · 2 units · Required core — everyone takes it
+**The Workshop** · 2 units · Semester 4 · Required core — every semester, everyone
+
+## Overview
+
+The Workshop is the bottega — the room where mastery is transmitted through making, under someone who has done the thing before. Every semester, every student, on a project team that ships. This is the last Workshop of the Foundation, and its material is the third of the five craft traditions the eight Workshops rotate through: motorcycle mechanics. A client's machine comes to the lift not running right. It leaves running, ridden by its owner, with a service log the next mechanic can read.
+
+A motorcycle is the first build with every concentration inside it — mechanical, electrical, fluid, and finish — which is why it is here, at the end of the Foundation. You learn the machine before you touch it, write the brief as symptoms rather than parts, diagnose from what you hear and smell before you reach for a wrench, torque to a number and record it, and let the client's ride be the only done-test that counts. Then you lay four Foundation builds on one table and let the room describe where your hands went. That is the evidence you declare a concentration from: Media, Design, or Engineering, chosen from experience rather than at the door.
+
+The Workshop is a lift with a mechanic at it, and the page says so: one day a week, about ten minutes, carries the brief, the method, the technique, the critique prompt, and the discipline of the log. Then your hands take over — on a motorcycle if the room has one, and on someone else's bicycle, scooter, or mower if it does not. The course ends the way every SDIT course ends: in a made thing, back in its owner's hands, and a choice made from the work.
 
 ## The Two Registers
 
 - **Catalog register:** Project-based fabrication and design practicum — course 4 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
 - **Teaching frame:** A client project carried to the end of the Foundation — the body of made work you declare your concentration from.
 
-## Outcomes Served
+## Learning Outcomes
 
-- **Workmanship**
-- **Judgment**
+By the end of this course you can:
 
-## What This Course Is About
+1. Diagnose a fault in a running machine from symptoms — ear, nose, hand, meter — by suspecting one cause and testing it, without a manual. → *Judgment*
+2. Service a motorcycle's mechanical, fluid, and electrical systems to specification, torque to a number, and record it. → *Workmanship*
+3. Write a client's brief as symptoms in their words, and hold the work to the rider's ride as the only done-test. → *Judgment*
+4. Keep a service log a stranger could inherit — date, work, findings, values, parts. → *Workmanship · Articulation*
+5. Lay out four builds, describe where your own hands went, and declare a concentration from the evidence. → *Judgment*
 
-The last Workshop of the Foundation. By its end you have four shipped builds and enough evidence to choose Media, Design, or Engineering from experience rather than at the door.
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
-A client project, shipped, and a portfolio review ahead of the Declaration.
+A client's motorcycle brought from a described fault to a ride its owner takes, with a service log, a torque record, and the parts and hours accounted — and, beside it, a four-page portfolio of the Foundation's builds, reviewed ahead of the Declaration. Both enter your portfolio and are reviewed at the Year 2 gate.
+
+## How You're Assessed
+
+- **The build** — the machine starts, runs, stops, and has been ridden by its owner; every fastener touched is at spec and on the record.
+- **The log** — the symptom brief, three photos and a sentence per session, the fluids record, the service log with torque values, and the fault tree from the bench test.
+- **The unassisted bench test** — a hidden fault found by ear, nose, hand, and meter, with the manual, the phone, and the AI tools closed. The institution certifies the human, so it watches the reasoning unaided.
+- **Critique** — described before judged, at the lift, with each team member describing a system they did not work on; the client present in Week 8 and at the ride in Week 13.
+- **Portfolio review** — four Foundation builds on one table in Week 14, the room describing where your hands went, ahead of the Declaration.
 
 ## The Daily Path
 
-One session per course day — each one designed to look easy and pull you in. This course is at syllabus stage — the daily path is not yet written, so it is not yet live.
+One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
-- Day 01 — *to be written*
-- Day 02 — *to be written*
-- Day 03 — *to be written*
-- Day 04 — *to be written*
-- Day 05 — *to be written*
-- Day 06 — *to be written*
-- Day 07 — *to be written*
-- Day 08 — *to be written*
-- Day 09 — *to be written*
-- Day 10 — *to be written*
-- Day 11 — *to be written*
-- Day 12 — *to be written*
-- Day 13 — *to be written*
-- Day 14 — *to be written*
-- Day 15 — *to be written*
+<!-- sdit:days:begin -->
+### Day 01 — *coming soon*
+
+Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+
+### Day 02 — *coming soon*
+
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+
+### Day 03 — *coming soon*
+
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+
+### Day 04 — *coming soon*
+
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+
+### Day 05 — *coming soon*
+
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+
+### Day 06 — *coming soon*
+
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+
+### Day 07 — *coming soon*
+
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+
+### Day 08 — *coming soon*
+
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+
+### Day 09 — *coming soon*
+
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+
+### Day 10 — *coming soon*
+
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+
+### Day 11 — *coming soon*
+
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+
+### Day 12 — *coming soon*
+
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+
+### Day 13 — *coming soon*
+
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+
+### Day 14 — *coming soon*
+
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+
+### Day 15 — *coming soon*
+
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+<!-- sdit:days:end -->
 
 ---
 

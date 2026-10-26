@@ -9,46 +9,110 @@ status: syllabus
 
 # ART 320 — Film & the Moving Image
 
-**The Depths** · 4 units · Depth studio — Media · the Crossing for others
+**The Depths** · 4 units · Semester 5 · Depth studio — Media · the Crossing for others
+
+## Overview
+
+The complete craft of the moving image, run once, start to finish, on one film with your name on it. Where to stand. Where to cut. What the audience should hear. What the film is for, in one sentence. Fifteen days carry one short film from a logline written on Day 4 to a public screening on Day 15, with a shoot, dailies, a rough cut, picture lock, sound, and color in between.
+
+The thing to look at each day is a century of cinema that belongs to everyone: the Lumières' train, Méliès' moon, Lois Weber's split screen, Keaton's house, Eisenstein's steps, Murnau's marsh, Hitchcock's first talkie, Ulmer's six-day noir. You watch them for what they decided, then make the same decisions on your own footage that week. This is a depth studio: a room with a master in it — a working cinematographer, editor, or director — and the page is the brief. The room is where the footage gets watched cold and where the cut is defended, once, with the tools closed.
+
+The course ends in a made thing, screened: you sit in the dark with strangers and feel them breathe, and then you answer for it.
 
 ## The Two Registers
 
 - **Catalog register:** Film production — cinematography, editing, sound, narrative.
 - **Teaching frame:** Camera, edit, story. You ship a short film, start to finish.
 
-## Outcomes Served
+## Learning Outcomes
 
-- **Workmanship**
-- **Articulation**
-- **Breadth of Mind**
+By the end of this course you can:
 
-## What This Course Is About
+1. Plan and shoot a short film — camera position, light, blocking, coverage — from a shot list you wrote, on the equipment you have. → *Workmanship*
+2. Cut a scene for emotion, story, and rhythm, and defend each cut to a room, with the tools closed. → *Workmanship · Articulation*
+3. Build a soundtrack from dialogue, effects, ambience, and music, and finish a film to a venue's delivery specification. → *Workmanship*
+4. State a film's purpose in one sentence and in a 150-word director's statement, and present it to a public audience. → *Articulation*
+5. Place your own decisions inside the history of the medium — Lumière to Hitchcock to noir — and say what you took from it. → *Breadth of Mind*
 
-The complete craft of the moving image — from the shot you planned to the cut that finally works — ending in a short film with your name on it, screened for an audience.
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
-A finished short film, screened.
+A finished short film, three to eight minutes, picture locked, sound mixed, color graded, titled, and delivered to specification — screened in public to an audience that mostly does not know you. With it: a shot list, a cut history, a logline, and a director's statement. The screening is the exhibition and the defense; the master file and the statement enter your portfolio for the Year 3 gate.
+
+## How You're Assessed
+
+- **The brief and the logline**, written on Day 4 around what you already have access to, revised in writing at each milestone.
+- **Three critiques:** dailies watched cold and silent (Day 8), the rough cut screened start to finish without pausing (Day 12), and the statement read aloud to the room (Day 14).
+- **The unassisted examination** (Day 9): ninety minutes, twenty minutes of footage you have never seen, an editing application and nothing else — cut a sixty-second scene and defend it cut by cut. The director's statement is also written by hand in the room on Day 14. AI tools are open for transcription, selects, storyboards, and temp music, and closed for these two.
+- **The screening**: delivered on time, shown in public, questions answered.
+- Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
 ## The Daily Path
 
-One session per course day — each one designed to look easy and pull you in. This course is at syllabus stage — the daily path is not yet written, so it is not yet live.
+One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
-- Day 01 — *to be written*
-- Day 02 — *to be written*
-- Day 03 — *to be written*
-- Day 04 — *to be written*
-- Day 05 — *to be written*
-- Day 06 — *to be written*
-- Day 07 — *to be written*
-- Day 08 — *to be written*
-- Day 09 — *to be written*
-- Day 10 — *to be written*
-- Day 11 — *to be written*
-- Day 12 — *to be written*
-- Day 13 — *to be written*
-- Day 14 — *to be written*
-- Day 15 — *to be written*
+<!-- sdit:days:begin -->
+### Day 01 — *coming soon*
+
+Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+
+### Day 02 — *coming soon*
+
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+
+### Day 03 — *coming soon*
+
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+
+### Day 04 — *coming soon*
+
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+
+### Day 05 — *coming soon*
+
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+
+### Day 06 — *coming soon*
+
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+
+### Day 07 — *coming soon*
+
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+
+### Day 08 — *coming soon*
+
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+
+### Day 09 — *coming soon*
+
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+
+### Day 10 — *coming soon*
+
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+
+### Day 11 — *coming soon*
+
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+
+### Day 12 — *coming soon*
+
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+
+### Day 13 — *coming soon*
+
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+
+### Day 14 — *coming soon*
+
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+
+### Day 15 — *coming soon*
+
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+<!-- sdit:days:end -->
 
 ---
 

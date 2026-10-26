@@ -9,45 +9,110 @@ status: syllabus
 
 # WKSP 402 — The Workshop
 
-**The Workshop** · 2 units · Required core — everyone takes it
+**The Workshop** · 2 units · Semester 8 · Required core — every semester, everyone
+
+## Overview
+
+The Workshop is the bottega — the room where mastery is transmitted through making. Every semester, every student, on a project team that ships. This is the eighth and last. The material is yours to choose from the five craft traditions the sequence has rotated through — surfboard and skateboard construction, amplifier and pedal electronics, motorcycle mechanics, camera rigs and housings, drones and ocean sensors — with two doors open that were not before: the drone end of the fifth tradition, which Semester 6 introduced and left, and the second pass, going back to a tradition you built in once and making the thing you could not make then.
+
+The last build is held to the standard of the whole sequence and shown at the final public exhibition, beside your defended capstone, with the seven builds before it present as a wall of pages so that the eighth is read as the end of a sequence. Critique arrives at its final form: an outside eye from the tradition at the bench in Week 7, and the public and outside examiners on opening night, answered in the method you learned in the first semester — describe, then judge, the maker last. The final bench test in your chosen material is given before the public sees the thing. Documentation closes with eight paragraphs, one per build, and the account of eight semesters in your own hand.
+
+The Workshop is the same room it was on the first Friday, with the same tools and a master in it, and the page is still not that room. One day a week, about ten minutes, carries the last brief, the technique as a refresher, the critique as public defense, and the discipline of the final log and the account. Then your hands take over, one more time. The course ends the way every SDIT course ends, and the way the degree ends: in a made thing you can show, and describe well enough to be known by.
 
 ## The Two Registers
 
 - **Catalog register:** Project-based fabrication and design practicum — course 8 of the eight-semester Workshop sequence (WKSP 101–402); tool skills, materials, iterative making, documentation, exhibition.
 - **Teaching frame:** The final exhibition. The last build, shown in public beside the capstone.
 
-## Outcomes Served
+## Learning Outcomes
 
-- **Workmanship**
-- **Judgment**
+By the end of this course you can:
 
-## What This Course Is About
+1. Choose a material tradition from experience, write an honest brief for yourself with a hard done-test, and finish the build to the standard of the whole sequence. → *Judgment · Workmanship*
+2. Execute your tradition's defining technique unaided, with outside examiners watching, and defend the build from brief to hang without notes. → *Workmanship · Judgment*
+3. Take an outside eye's critique, know when it is wrong, and say why. → *Judgment*
+4. Hang a sequence of eight made things so a stranger reads it as one body of work, and stand beside it in public. → *Articulation*
+5. Write the account of eight semesters of making — eight paragraphs and the long form — in your own hand. → *Articulation*
 
-Eight semesters of making end in the room they started in. The last Workshop build is exhibited beside the defended capstone.
+*Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
 ## The Made Thing
 
-The final build, exhibited publicly.
+The final build, in a tradition you chose, exhibited publicly beside the defended capstone with the seven earlier builds present as a wall of pages — and, beside it, the eight-paragraph placard and the account of eight semesters. It closes your portfolio and is reviewed at the final gate.
+
+## How You're Assessed
+
+- **The build** — finished to the sequence's standard, examined at the bench before the public sees it, and shown at the final exhibition.
+- **The log** — the last brief, three photos and a sentence per session to the end, the archive-grade drawing, the eight paragraphs, and the account.
+- **The unassisted examination** — the tradition's defining technique executed with the tools closed and outside examiners watching, then the oral defense of the build with questions and no notes. The institution certifies the human, so it watches the hands and the mouth unaided, one last time.
+- **Critique** — described before judged, every Friday; an outside eye at the bench in Week 7; the public and the examiners on opening night.
+- **Portfolio review and public exhibition** — the Workshop ends the way it began and the way working studios are judged: by the work, shown — all eight of them.
 
 ## The Daily Path
 
-One session per course day — each one designed to look easy and pull you in. This course is at syllabus stage — the daily path is not yet written, so it is not yet live.
+One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
-- Day 01 — *to be written*
-- Day 02 — *to be written*
-- Day 03 — *to be written*
-- Day 04 — *to be written*
-- Day 05 — *to be written*
-- Day 06 — *to be written*
-- Day 07 — *to be written*
-- Day 08 — *to be written*
-- Day 09 — *to be written*
-- Day 10 — *to be written*
-- Day 11 — *to be written*
-- Day 12 — *to be written*
-- Day 13 — *to be written*
-- Day 14 — *to be written*
-- Day 15 — *to be written*
+<!-- sdit:days:begin -->
+### Day 01 — *coming soon*
+
+Being written — publishes with Week 1. Every course in the semester advances together, week by week.
+
+### Day 02 — *coming soon*
+
+Being written — publishes with Week 2. Every course in the semester advances together, week by week.
+
+### Day 03 — *coming soon*
+
+Being written — publishes with Week 3. Every course in the semester advances together, week by week.
+
+### Day 04 — *coming soon*
+
+Being written — publishes with Week 4. Every course in the semester advances together, week by week.
+
+### Day 05 — *coming soon*
+
+Being written — publishes with Week 5. Every course in the semester advances together, week by week.
+
+### Day 06 — *coming soon*
+
+Being written — publishes with Week 6. Every course in the semester advances together, week by week.
+
+### Day 07 — *coming soon*
+
+Being written — publishes with Week 7. Every course in the semester advances together, week by week.
+
+### Day 08 — *coming soon*
+
+Being written — publishes with Week 8. Every course in the semester advances together, week by week.
+
+### Day 09 — *coming soon*
+
+Being written — publishes with Week 9. Every course in the semester advances together, week by week.
+
+### Day 10 — *coming soon*
+
+Being written — publishes with Week 10. Every course in the semester advances together, week by week.
+
+### Day 11 — *coming soon*
+
+Being written — publishes with Week 11. Every course in the semester advances together, week by week.
+
+### Day 12 — *coming soon*
+
+Being written — publishes with Week 12. Every course in the semester advances together, week by week.
+
+### Day 13 — *coming soon*
+
+Being written — publishes with Week 13. Every course in the semester advances together, week by week.
+
+### Day 14 — *coming soon*
+
+Being written — publishes with Week 14. Every course in the semester advances together, week by week.
+
+### Day 15 — *coming soon*
+
+Being written — publishes with Week 15. Every course in the semester advances together, week by week.
+<!-- sdit:days:end -->
 
 ---
 
