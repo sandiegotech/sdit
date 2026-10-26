@@ -17,14 +17,32 @@
   var API = (window.SDIT_ACCOUNT_API || "").replace(/\/+$/, "");
   var TOKEN_KEY = "sdit:session";
   var PROFILE_KEY = "sdit:profile";
+  // On the live site the API is mounted at /api on the same origin, so the
+  // session can ride in an HttpOnly cookie that no script can read. This flag
+  // (not a secret) records that the cookie is in use. Local development calls
+  // the API cross-origin, where the cookie is not sent, and keeps the bearer
+  // token in localStorage as before.
+  var SAME_ORIGIN = API.charAt(0) === "/";
+  var COOKIE_FLAG = "sdit:cookie-session";
 
-  // ── Session state (localStorage) ───────────────────────────────────────────
+  // ── Session state ──────────────────────────────────────────────────────────
 
-  function token() { return localStorage.getItem(TOKEN_KEY) || ""; }
+  function token() { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; } }
 
   function setToken(t) {
-    if (t) localStorage.setItem(TOKEN_KEY, t);
-    else localStorage.removeItem(TOKEN_KEY);
+    try {
+      if (t) localStorage.setItem(TOKEN_KEY, t);
+      else localStorage.removeItem(TOKEN_KEY);
+    } catch (e) {}
+  }
+
+  function cookieSession() { try { return localStorage.getItem(COOKIE_FLAG) === "1"; } catch (e) { return false; } }
+
+  function setCookieSession(on) {
+    try {
+      if (on) localStorage.setItem(COOKIE_FLAG, "1");
+      else localStorage.removeItem(COOKIE_FLAG);
+    } catch (e) {}
   }
 
   function cachedProfile() {
@@ -50,6 +68,7 @@
       method: opts.method || "GET",
       headers: headers,
       body: opts.body ? JSON.stringify(opts.body) : undefined,
+      credentials: "same-origin",
     }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (data) {
         if (!r.ok) {
@@ -64,7 +83,7 @@
 
   var Account = {
     configured: function () { return !!API; },
-    isSignedIn: function () { return !!token() && !!cachedProfile(); },
+    isSignedIn: function () { return !!cachedProfile() && (cookieSession() || !!token()); },
     profile: function () { return cachedProfile(); },
 
     requestCode: function (email) {
@@ -72,12 +91,40 @@
     },
     verify: function (email, code) {
       return request("/auth/verify", { method: "POST", body: { email: email, code: code } })
-        .then(function (d) { setToken(d.token); setProfile(d.profile); return d.profile; });
+        .then(function (d) {
+          if (!SAME_ORIGIN) { setToken(d.token); setProfile(d.profile); return d.profile; }
+          // Same origin: prefer the HttpOnly cookie the server just set. Prove
+          // it works before relying on it; an older server sets no cookie, so
+          // fall back to the token rather than signing the learner straight out.
+          setToken(null);
+          return request("/me").then(function () {
+            setCookieSession(true);
+            setProfile(d.profile);
+            return d.profile;
+          }, function () {
+            setCookieSession(false);
+            setToken(d.token);
+            setProfile(d.profile);
+            return d.profile;
+          });
+        });
     },
     subscribe: function (email) {
       return request("/subscribe", { method: "POST", body: { email: email } });
     },
-    signOut: function () { setToken(null); setProfile(null); },
+    signOut: function () {
+      // An HttpOnly cookie can only be cleared by the server.
+      if (cookieSession()) request("/auth/signout", { method: "POST" }).catch(function () {});
+      setCookieSession(false);
+      setToken(null);
+      setProfile(null);
+    },
+    allWork: function () {
+      if (!this.isSignedIn()) return Promise.resolve([]);
+      return request("/work/all")
+        .then(function (d) { return d.responses || []; })
+        .catch(function () { return null; });   // null = could not reach the account
+    },
     openSignIn: function () { openDialog(); },
 
     progress: function () {
@@ -120,7 +167,7 @@
   // token) signs you out — network blips, cold starts and 5xx must NOT, or a
   // single hiccup on navigation would drop the session.
   function refreshProfile() {
-    if (!API || !token()) return;
+    if (!API || !(token() || cookieSession())) return;
     request("/me")
       .then(function (d) { setProfile(d.profile); })
       .catch(function (err) { if (err && err.status === 401) Account.signOut(); });

@@ -9,7 +9,7 @@
  *   subscriber → visitor → student → fellow → professor
  * `tester` is a flag, not a rank.
  *
- * The AWS SDK v3 is provided by the Node 20 Lambda runtime, so it needs no
+ * The AWS SDK v3 is provided by the Node 24 Lambda runtime, so it needs no
  * bundling and the deploy stays dependency-free.
  */
 
@@ -165,6 +165,31 @@ export async function listProgress(email) {
     }
   }
   return Object.keys(latest).map((lesson) => ({ lesson, updatedAt: latest[lesson] }));
+}
+
+/**
+ * Every answer the learner has written, for the Notebook and the Portfolio.
+ * Paginated: four years of answers can pass DynamoDB's 1 MB page.
+ */
+export async function listAllWork(email) {
+  const items = [];
+  let ExclusiveStartKey;
+  do {
+    const r = await doc.send(new QueryCommand({
+      TableName: TABLE,
+      KeyConditionExpression: 'pk = :p AND begins_with(sk, :s)',
+      ExpressionAttributeValues: { ':p': userPk(email), ':s': 'WORK#' },
+      ProjectionExpression: 'lesson, heading, content, updatedAt',
+      ExclusiveStartKey,
+    }));
+    for (const it of r.Items || []) {
+      if (it.lesson && it.heading) {
+        items.push({ lesson: it.lesson, heading: it.heading, content: it.content ?? '', updatedAt: it.updatedAt || null });
+      }
+    }
+    ExclusiveStartKey = r.LastEvaluatedKey;
+  } while (ExclusiveStartKey);
+  return items;
 }
 
 // ── Enrollments ──────────────────────────────────────────────────────────────

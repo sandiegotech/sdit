@@ -17,6 +17,13 @@ jobs:
       - name: Unit tests
         run: pytest -q scripts/tests
 
+      # The account service, end to end against in-memory AWS stand-ins.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Account service tests
+        run: node --import ./account/test/hooks.mjs --test account/test/handler.test.mjs
+
       - name: Built site is committed (no drift)
         run: |
           python scripts/build_site.py --out .

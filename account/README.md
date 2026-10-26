@@ -34,18 +34,46 @@ dependencies** to install — the deploy is just the source.
 |--------|------|------|--------------|---------|
 | POST | `/subscribe` | — | `{ email }` | `{ ok }` |
 | POST | `/auth/request` | — | `{ email }` | `{ ok }` |
-| POST | `/auth/verify` | — | `{ email, code }` | `{ token, profile }` |
-| GET | `/me` | Bearer | — | `{ profile }` |
-| GET | `/work` | Bearer | `?lesson=<path>` | `{ responses }` |
-| PUT | `/work` | Bearer | `{ lesson, heading, content }` | `{ ok }` |
+| POST | `/auth/verify` | — | `{ email, code }` | `{ token, profile }` + session cookie |
+| POST | `/auth/signout` | — | — | `{ ok }`, expires the cookie |
+| GET | `/me` | session | — | `{ profile }` |
+| GET | `/progress` | session | — | `{ lessons }` |
+| GET | `/work` | session | `?lesson=<path>` | `{ responses }` |
+| PUT | `/work` | session | `{ lesson, heading, content }` | `{ ok }` |
+| GET | `/work/all` | session | — | `{ responses: [{ lesson, heading, content, updatedAt }] }` |
+| GET | `/enrollments` | session | — | `{ courses }` |
+| POST | `/enroll` | session | `{ course }` | `{ ok }` |
+| POST | `/unenroll` | session | `{ course }` | `{ ok }` |
 
-`profile` is `{ email, role, tester }`. The browser sends the session as
-`Authorization: Bearer <token>`.
+`profile` is `{ email, role, tester }`.
+
+### How the session travels
+
+Two carriers are accepted, cookie first:
+
+1. **`sdit_session` cookie** — `Secure; HttpOnly; SameSite=Lax`. This is the one
+   browsers use, and it works because the site and this API share an origin
+   behind CloudFront (`/api/*`). `HttpOnly` keeps it out of reach of page
+   scripts, so an XSS bug cannot steal sessions the way it could when the token
+   lived in `localStorage`.
+2. **`Authorization: Bearer <token>`** — the fallback. Local development
+   (`serve.py` on :3001) calls this API cross-origin, where a `SameSite` cookie
+   is not sent.
+
+`Lax` rather than `Strict` is deliberate: `Strict` withholds the cookie on
+cross-site navigation, so a student following a lesson link out of The Daily
+would arrive logged out. `Lax` still blocks the cross-site POST that CSRF
+relies on.
+
+Signing out is a request rather than a local delete — the page cannot clear a
+cookie it is not permitted to read.
 
 ## Deploy
 
 Prerequisites: an AWS account, the [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html),
 and credentials configured (`aws configure`).
+
+### First deploy only
 
 ```sh
 cd account
@@ -53,22 +81,60 @@ cd account
 # Pin the region to keep data in the US (this is the Cloudflare/Hong-Kong fix).
 sam build
 sam deploy --guided \
-  --region us-west-1 \
+  --region us-west-2 \
   --parameter-overrides \
     SessionSecret="$(openssl rand -hex 32)" \
     MailFrom="" \
     AllowOrigin="https://learn.sandiegotech.org,http://localhost:3001"
 ```
 
-`--guided` saves your answers to `samconfig.toml`; later deploys are just
-`sam deploy`. The stack prints **`ApiUrl`** on success.
+The stack prints **`ApiUrl`** on success.
+
+### Every deploy after that
+
+> **Do not re-run the command above.** `openssl rand` mints a *new*
+> `SessionSecret` each time, and that secret both signs sessions and hashes
+> pending sign-in codes — rotating it signs out every student and invalidates
+> every code in flight.
+
+Redeploy reusing the parameters already on the stack. `SessionSecret` is
+`NoEcho`, so CloudFormation can carry it forward without anyone reading it:
+
+```sh
+sam build
+sam package \
+  --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-fjpqboao7kti \
+  --region us-west-2 \
+  --output-template-file /tmp/packaged.yaml
+
+aws cloudformation update-stack \
+  --stack-name sdit-account \
+  --region us-west-2 \
+  --template-body file:///tmp/packaged.yaml \
+  --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND \
+  --parameters \
+    ParameterKey=SessionSecret,UsePreviousValue=true \
+    ParameterKey=MailFrom,UsePreviousValue=true \
+    ParameterKey=AllowOrigin,UsePreviousValue=true
+
+aws cloudformation wait stack-update-complete \
+  --stack-name sdit-account --region us-west-2
+```
+
+`CAPABILITY_AUTO_EXPAND` is required because this is a SAM template; without it
+the call fails. Note that `wait` returns immediately if the stack is already
+`UPDATE_COMPLETE`, so a failed `update-stack` followed by a successful `wait`
+does **not** mean the deploy landed — check `LastUpdatedTime` moved.
+
+To deliberately rotate the secret (which does sign everyone out), pass
+`ParameterKey=SessionSecret,ParameterValue="$(openssl rand -hex 32)"` instead.
 
 ### Wire it to the site
 
 Set the printed URL in [`../partials/header.html`](../partials/header.html):
 
 ```js
-window.SDIT_ACCOUNT_API = "https://abc123.execute-api.us-west-1.amazonaws.com";
+window.SDIT_ACCOUNT_API = "https://abc123.execute-api.us-west-2.amazonaws.com";
 ```
 
 Until that is set, the site behaves exactly as before (localStorage only) and no

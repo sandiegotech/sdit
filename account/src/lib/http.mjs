@@ -20,15 +20,22 @@ export function corsHeaders(event) {
   };
 }
 
-export function json(statusCode, body) {
-  return {
+/**
+ * `cookies` is an array of Set-Cookie values. HTTP API payload v2 takes them as
+ * a top-level key rather than a header, which is what makes it possible to send
+ * more than one — a plain headers object could only carry a single Set-Cookie.
+ */
+export function json(statusCode, body, cookies) {
+  const response = {
     statusCode,
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(body),
   };
+  if (cookies && cookies.length) response.cookies = cookies;
+  return response;
 }
 
-export const ok = (body) => json(200, body);
+export const ok = (body, cookies) => json(200, body, cookies);
 export const bad = (message) => json(400, { error: message });
 export const unauthorized = (message = 'Not signed in') => json(401, { error: message });
 export const notFound = () => json(404, { error: 'Not found' });

@@ -4,17 +4,22 @@
  * Routes (all JSON):
  *   POST /subscribe      { email }            → join The Daily (role: subscriber)
  *   POST /auth/request   { email }            → email a one-time sign-in code
- *   POST /auth/verify    { email, code }      → { token, profile }
+ *   POST /auth/verify    { email, code }      → { token, profile } + session cookie
+ *   POST /auth/signout                        → clears the session cookie
  *   GET  /me                                  → { profile }            (Bearer)
  *   GET  /work?lesson=<path>                  → { responses }          (Bearer)
  *   PUT  /work           { lesson, heading, content }                  (Bearer)
+ *   GET  /work/all                            → { responses: [{lesson, heading, content, updatedAt}] }
  *   GET  /enrollments                         → { courses: [id] }      (Bearer)
  *   POST /enroll         { course }                                    (Bearer)
  *   POST /unenroll       { course }                                    (Bearer)
  */
 
 import { ok, bad, unauthorized, notFound, json, parseBody, corsHeaders } from './lib/http.mjs';
-import { signSession, verifySession, bearer, newCode, hashCode } from './lib/auth.mjs';
+import {
+  signSession, verifySession, bearer, newCode, hashCode,
+  sessionCookie, sessionCookieHeader, clearSessionCookieHeader,
+} from './lib/auth.mjs';
 import { sendCode } from './lib/email.mjs';
 import * as db from './lib/db.mjs';
 
@@ -45,8 +50,10 @@ function route(method, path, event) {
   if (method === 'POST' && path === '/subscribe') return subscribe(event);
   if (method === 'POST' && path === '/auth/request') return authRequest(event);
   if (method === 'POST' && path === '/auth/verify') return authVerify(event);
+  if (method === 'POST' && path === '/auth/signout') return authSignout();
   if (method === 'GET' && path === '/me') return me(event);
   if (method === 'GET' && path === '/progress') return getProgress(event);
+  if (method === 'GET' && path === '/work/all') return getAllWork(event);
   if (method === 'GET' && path === '/work') return getWork(event);
   if (method === 'PUT' && path === '/work') return putWork(event);
   if (method === 'GET' && path === '/enrollments') return getEnrollments(event);
@@ -92,7 +99,18 @@ async function authVerify(event) {
   await db.deleteCode(email);
   const profile = await db.signIn(email);
   const token = signSession({ sub: profile.email, role: profile.role });
-  return ok({ token, profile: publicProfile(profile) });
+  // The token stays in the body for now so existing clients keep working; the
+  // cookie is what the browser will actually use once the site is same-origin.
+  // Drop the body copy only after nothing reads it.
+  return ok({ token, profile: publicProfile(profile) }, [sessionCookieHeader(token)]);
+}
+
+/**
+ * Signing out has to happen server-side now: the session cookie is HttpOnly,
+ * so the page cannot delete it — only a Set-Cookie from here can.
+ */
+async function authSignout() {
+  return ok({ ok: true }, [clearSessionCookieHeader()]);
 }
 
 async function me(event) {
@@ -115,6 +133,13 @@ async function getWork(event) {
   const lesson = (event.queryStringParameters || {}).lesson;
   if (!lesson) return bad('lesson is required');
   return ok({ responses: await db.loadWork(session.sub, lesson) });
+}
+
+/** Everything the learner has written: the Notebook's and Portfolio's source. */
+async function getAllWork(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  return ok({ responses: await db.listAllWork(session.sub) });
 }
 
 async function putWork(event) {
@@ -153,8 +178,14 @@ async function postUnenroll(event) {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
+/**
+ * Cookie first, bearer token second. Both are accepted during the migration off
+ * localStorage: the browser sends the cookie once the site is served through
+ * CloudFront, while local development and any not-yet-updated client keep
+ * working over the Authorization header.
+ */
 function sessionFrom(event) {
-  return verifySession(bearer(event));
+  return verifySession(sessionCookie(event) || bearer(event));
 }
 
 function publicProfile(p) {

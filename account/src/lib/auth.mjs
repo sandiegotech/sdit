@@ -48,6 +48,42 @@ export function bearer(event) {
   return header.startsWith('Bearer ') ? header.slice(7) : null;
 }
 
+// ── Session cookie ───────────────────────────────────────────────────────────
+//
+// The cookie is the preferred carrier now that the site and this API share an
+// origin behind CloudFront: HttpOnly means a script cannot read the session, so
+// an XSS bug on the site can no longer walk off with every signed-in student's
+// credentials the way a localStorage token could.
+//
+// bearer() stays as a fallback — local development (serve.py on :3001) still
+// calls this API cross-origin, where a SameSite cookie is not sent.
+
+export const SESSION_COOKIE = 'sdit_session';
+
+/** Read the session cookie. HTTP API v2 hands cookies over as name=value strings. */
+export function sessionCookie(event) {
+  for (const c of event.cookies || []) {
+    const eq = c.indexOf('=');
+    if (eq > 0 && c.slice(0, eq).trim() === SESSION_COOKIE) return c.slice(eq + 1).trim();
+  }
+  return null;
+}
+
+/**
+ * SameSite=Lax, not Strict. Strict withholds the cookie on cross-site
+ * navigation, so a student clicking a lesson link in The Daily would land on
+ * the site logged out and have to reload. Lax still blocks the cross-site POST
+ * that CSRF depends on.
+ */
+export function sessionCookieHeader(token, maxAgeSeconds = THIRTY_DAYS) {
+  return `${SESSION_COOKIE}=${token}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${maxAgeSeconds}`;
+}
+
+/** Expire it. JavaScript cannot clear a cookie it is not allowed to read. */
+export function clearSessionCookieHeader() {
+  return `${SESSION_COOKIE}=; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=0`;
+}
+
 /** Six-digit numeric sign-in code. */
 export function newCode() {
   return String(crypto.randomInt(0, 1000000)).padStart(6, '0');
