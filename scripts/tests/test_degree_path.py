@@ -50,3 +50,14 @@ def test_portfolio_map_covers_the_degree():
     page = portfolio.render_page()
     blob = page.split('id="degree-map">', 1)[1].split("</script>", 1)[0]
     assert json.loads(blob.replace("<\\/", "</"))["question"] == m["question"]
+
+
+
+def test_public_view_uses_absolute_asset_paths():
+    # /portfolio/<handle>/ is served from portfolio/view.html one folder deeper
+    # than the file; relative asset paths would resolve to /portfolio/assets/.
+    import re
+    import portfolio
+    page = portfolio.render_page(public=True)
+    refs = re.findall(r'(?:src|href)="([^"]+\.(?:js|css)[^"]*)"', page)
+    assert refs and all(r.startswith("/") for r in refs), refs

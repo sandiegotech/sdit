@@ -93,7 +93,9 @@ def degree_map() -> dict:
 
 def render_page(public: bool = False) -> str:
     """The Portfolio page; with public=True, the read-only page a published
-    portfolio is shown on (/portfolio/<handle>/), which search engines skip."""
+    portfolio is shown on (/portfolio/<handle>/), which search engines skip.
+    Asset paths are absolute: the public page is served at addresses one
+    folder deeper than the file, where relative paths would miss."""
     data = json.dumps(degree_map(), ensure_ascii=False, separators=(",", ":"))
     # A JSON blob inside <script> must not be able to close the tag.
     data = data.replace("</", "<\\/")
@@ -107,10 +109,10 @@ def render_page(public: bool = False) -> str:
   <title>The Portfolio — SDIT</title>
   <meta name="description" content="Everything you have written and made, as a book: eight volumes, a short edition to show someone, and the expanded edition to read back and see how you changed.">
   <meta name="sdit-lesson" content="/portfolio" />{robots}
-  <link rel="stylesheet" href="../assets/site.css" />
-  <script src="../assets/js/site-paths.js" defer></script>
-  <script src="../assets/js/includes.js" defer></script>
-  <script src="../assets/js/portfolio.js" defer></script>
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="/assets/js/site-paths.js" defer></script>
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="/assets/js/portfolio.js" defer></script>
 </head>
 <body class="charter-page portfolio-page{' is-public' if public else ''}" data-portfolio-mode="{'public' if public else 'own'}">
   <div data-include="/partials/header.html"></div>
