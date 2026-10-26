@@ -13,7 +13,7 @@ Ten minutes. One painted cup, eight lines of poetry, one question.
 ## Look
 
 <figure class="day-figure">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Odysseus_Sirens_BM_E440_n2.jpg" alt="Greek vase painting of Odysseus tied to the mast of his ship, sailing past the Sirens" loading="lazy" />
+  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Odysseus_Sirens_BM_E440_n2.jpg" alt="Greek vase painting of Odysseus tied to the mast of his ship, sailing past the Sirens" loading="lazy" />
   <figcaption><strong>Odysseus and the Sirens.</strong> Painted on a jar in Athens about 2,500 years ago. He wants to hear the song that wrecks every sailor who hears it — so he has his crew plug their ears and tie him to the mast. He gets the experience <em>and</em> survives it, because he engineered the situation in advance.</figcaption>
 </figure>
 

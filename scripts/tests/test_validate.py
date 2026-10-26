@@ -288,3 +288,21 @@ def test_syllabus_claims_must_be_on_the_page():
     assert any("outcome_levels covers" in x for x in e)
     e = _run_with_syllabus(lambda t: t.replace("syllabus:", "notsyllabus:"))
     assert any("no `syllabus:` block" in x for x in e)
+
+
+def test_day_media_must_not_track_the_reader():
+    c = _course(status="day1")
+    bad = [
+        ('<iframe src="https://www.youtube.com/embed/x"></iframe>', "outside www.youtube-nocookie.com"),
+        ('<img src="https://example.com/a.jpg" alt="a" loading="lazy" referrerpolicy="no-referrer" />', "outside upload.wikimedia.org"),
+        ('<img src="https://upload.wikimedia.org/a.jpg" alt="a" loading="lazy" />', "without referrerpolicy"),
+    ]
+    for html_tag, expect in bad:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_course(root, c, 1)
+            f = root / c["dir"] / "day-01.md"
+            f.write_text(_day(1) + "\n" + html_tag + "\n")
+            errors = []
+            validate.validate_catalog(errors, _data(c), root)
+        assert any(expect in e for e in errors), (expect, errors)

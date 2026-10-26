@@ -310,10 +310,70 @@ def sync_schedule(catalog) -> int:
     return 0
 
 
+CATALOG_PAGE = ROOT / "courses" / "index.html"
+CATALOG_MARKERS = ("<!-- sdit:catalog:begin -->", "<!-- sdit:catalog:end -->")
+
+
+def _esc(s) -> str:
+    import html
+    return html.escape(str(s), quote=False)
+
+
+def _status_tag(c: dict) -> str:
+    from catalog import published_days
+    n = len(published_days(ROOT / "courses" / c["dir"]))
+    planned = planned_days(c)
+    if n and n >= planned:
+        return '<span class="tag tag--live">live</span>'
+    if n:
+        return f'<span class="tag tag--live">{"day 1" if n == 1 else f"{n} days"} live</span>'
+    first = publishing.week_date(c["semester"], 1) if c.get("semester") else None
+    when = f"from {publishing.short_date(first)} {first.year}" if first else "coming soon"
+    return f'<span class="tag tag--planned">{when}</span>'
+
+
+def sync_catalog_page(catalog) -> int:
+    """The course list on courses/index.html, by thread, from the registry."""
+    src = CATALOG_PAGE.read_text(encoding="utf-8")
+    if CATALOG_MARKERS[0] not in src:
+        return 0
+    courses = catalog.get("courses", [])
+    parts = []
+    for t in catalog.get("threads", []):
+        rows = [c for c in courses if c.get("thread") == t["id"]]
+        if not rows:
+            continue
+        depth = t["id"] == "depth"
+        trs = []
+        for c in rows:
+            name = c.get("name", "")
+            if c["dir"].startswith("WKSP-") or c["dir"].startswith("CAP-"):
+                name = f"{name} · Semester {c.get('semester')}"
+            frame = (f'<td class="cat-frame">{_esc(" · ".join(x.title() for x in c.get("concentrations", [])))}</td>'
+                     if depth else "")
+            trs.append(f'                <tr><td class="cat-code"><a href="/courses/{c["dir"]}/index.html">{_esc(c["code"])}</a></td>'
+                       f'<td><strong>{_esc(name)}</strong></td>{frame}'
+                       f'<td class="cat-units">{c.get("units")} u · {_status_tag(c)}</td></tr>')
+        parts.append(
+            f'          <h3>{_esc(t["name"])}</h3>\n'
+            f'          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">{_esc(t.get("note", ""))}</p>\n'
+            f'          <div class="cat-table-wrap">\n            <table class="cat-table">\n              <tbody>\n'
+            + "\n".join(trs) +
+            '\n              </tbody>\n            </table>\n          </div>\n')
+    body = "\n".join(parts)
+    new = re.sub(re.escape(CATALOG_MARKERS[0]) + r".*?" + re.escape(CATALOG_MARKERS[1]),
+                 lambda _m: f"{CATALOG_MARKERS[0]}\n{body}          {CATALOG_MARKERS[1]}", src, flags=re.S)
+    if new != src:
+        CATALOG_PAGE.write_text(new, encoding="utf-8")
+        return 1
+    return 0
+
+
 def main() -> int:
     catalog = load_catalog()
     n = sync_course_days(catalog)
     s = sync_schedule(catalog)
+    sync_catalog_page(catalog)
     print(f"sync_courses: {n} course page(s) updated, schedule {'updated' if s else 'unchanged'}")
     return 0
 

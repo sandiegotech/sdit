@@ -65,7 +65,7 @@ UNKNOWN=$(cd "$SITE_ROOT" && find . -name index.html \
     -not -path './node_modules/*' -not -path './dist/*' \
   | sed 's|^\./||; s|/index\.html$||' \
   | grep -v '^index\.html$' \
-  | grep -vE '^(courses|curriculum|knowledge|begin|portfolio|notebook|programs/Bachelor-Liberal-Arts)$' \
+  | grep -vE '^(courses|curriculum|begin|portfolio|notebook|programs/Bachelor-Liberal-Arts)$' \
   | grep -vE '^courses/[A-Z]+-[0-9]+$' \
   | grep -vE '^gates/semester-[1-8]$' || true)
 
@@ -90,6 +90,9 @@ aws s3 sync "$SITE_ROOT" "s3://$BUCKET" \
   --exclude "infra/*" \
   --exclude "scripts/*" \
   --exclude "dist/*" \
+  --exclude "knowledge/*" \
+  --exclude "PLAN.md" \
+  --exclude "AUTHORING.md" \
   --exclude "my-work/*" \
   --exclude "serve.py" \
   --exclude "CNAME" \

@@ -6,7 +6,6 @@ Outputs to: dist/site
 
 Features:
 - Converts Markdown under courses/ and programs/ to HTML
-- Renders knowledge/*.yaml into simple HTML pages
 - Generates a top-level index with organized navigation
 
 Dependencies: pyyaml (already used) and markdown (auto-installed if missing)
@@ -99,6 +98,9 @@ def write_file(path: Path, content: str) -> None:
     modification time, so `aws s3 sync` (which compares size and mtime)
     does not re-upload the whole site after every build."""
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.suffix == ".html":
+        import site_polish
+        content = site_polish.polish(content)
     if path.exists() and path.read_text(encoding="utf-8") == content:
         return
     path.write_text(content, encoding="utf-8")
@@ -497,7 +499,9 @@ def main(argv: list[str] | None = None) -> int:
     page = degree_path.render_path_page()
     write_file(OUT / "curriculum" / "day-by-day.html", page)
 
-    knowledge_entries = render_knowledge(ROOT / "knowledge", OUT / "knowledge")
+    # knowledge/ is the build's data, not pages: its YAML carries internal notes
+    # and is no longer rendered or published (PLAN.md 12.3, item 8).
+    knowledge_entries: list = []
     institute_entries = render_markdown_tree(ROOT / "institute", OUT / "institute")
     courses_entries = render_markdown_tree(ROOT / "courses", OUT / "courses")
 
@@ -525,6 +529,10 @@ def main(argv: list[str] | None = None) -> int:
     title_map: Dict[Path, str] = {}
     for title, path in (knowledge_entries + institute_entries + courses_entries):
         title_map[path.resolve()] = title
+    # The last pass: what every page must carry, robots.txt, the sitemap.
+    import site_polish
+    site_polish.run(write_file, OUT)
+
     # Only generate an index page if one does not already exist. This allows
     # callers to run the build into the repository root ("--out .") without
     # clobbering a manually maintained index.html that may contain markers used

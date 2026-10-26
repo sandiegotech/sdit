@@ -15,7 +15,7 @@ Ten minutes. One woodblock print, one physicist with a flower, one question.
 ## Look
 
 <figure class="day-figure">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Great_Wave_off_Kanagawa2.jpg" alt="Hokusai's The Great Wave off Kanagawa — a towering wave with clawed foam above small boats, Mount Fuji in the distance" loading="lazy" />
+  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Great_Wave_off_Kanagawa2.jpg" alt="Hokusai's The Great Wave off Kanagawa — a towering wave with clawed foam above small boats, Mount Fuji in the distance" loading="lazy" />
   <figcaption><strong>The Great Wave off Kanagawa.</strong> Hokusai, around 1831. Look at the foam at the crest — it breaks into claw-like fractal fingers. Hokusai painted the turbulence accurately enough that physicists still write papers about this print. He got it right by <em>looking</em>, two centuries before the math existed to check him.</figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ The skill this course trains first is Hokusai's skill: looking hard enough at mo
 
 A physicist, a flower, and one minute that sets the terms for the whole course — does knowing how it works add beauty, or subtract it?
 
-<div class="lesson-embed"><iframe src="https://www.youtube.com/embed/ZbFM3rn4ldo" title="Richard Feynman — The Beauty of the Flower" allowfullscreen loading="lazy"></iframe></div>
+<div class="lesson-embed"><iframe src="https://www.youtube-nocookie.com/embed/ZbFM3rn4ldo" title="Richard Feynman — The Beauty of the Flower" allowfullscreen loading="lazy"></iframe></div>
 
 ---
 

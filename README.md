@@ -8,7 +8,7 @@ One degree framework — the **BA in Technology** (`curriculum/index.html`) — 
 - **Design** — things people use
 - **Engineering** — things that work on their own
 
-Years 1–2 are the Foundation, identical for everyone — the artist learns engineering, the engineer learns art — and the whole catalog is roughly forty courses; eight depth studios, shared across overlapping concentration lists, carry the focus. Every course is built to one standard: it ends in a made thing, and it ships day by day.
+Years 1–2 are the Foundation, identical for everyone — the artist learns engineering, the engineer learns art — and the whole catalog is forty-four courses; eight depth studios, shared across overlapping concentration lists, carry the focus. Every course is built to one standard: it ends in a made thing, and it ships day by day.
 
 - Website: https://learn.sandiegotech.org
 - Main site: https://www.sandiegotech.org
@@ -36,7 +36,7 @@ The curriculum is designed to be taken, not just read. Fork this repo, run the l
    ```
    Your browser will open at `http://localhost:3001`. That's all you need.
 
-4. **Do the work** — navigate to any lesson, scroll to **My Work**, and type your responses directly in the page. They save automatically.
+4. **Do the work** — begin at Day 0 (`/begin/`), then follow the Path. Each day asks one question and keeps your answer; each course page records your made thing. They save automatically.
 
 5. **Push to GitHub** — run the server with `python3 serve.py --push` to auto-commit and push each response, or push manually whenever you like:
    ```bash
@@ -47,11 +47,12 @@ The curriculum is designed to be taken, not just read. Fork this repo, run the l
 
 ### How responses are saved
 
-When you type in a response field:
-- Your response saves to **localStorage** instantly (survives page refresh)
+When you write an answer:
+- It saves to **localStorage** at once, with the time it was written
+- Signed in on learn.sandiegotech.org, it also saves to your account, so it follows you to other devices
 - On `localhost`, it also writes to a markdown file under `my-work/` (and auto-pushes if the server was started with `--push`)
-- On GitHub Pages (published site), it saves to localStorage only — visible to you in the browser
-- The site also remembers your **last lesson** on each device and offers to continue from it on the homepage
+- On your fork's own GitHub Pages site, it saves to localStorage only
+- `/portfolio/` assembles everything you have written into a book: eight volumes, a short edition, and the expanded edition
 
 ### Where lesson files live
 
@@ -152,3 +153,17 @@ The curriculum — courses, knowledge files, and everything written — is
 CC BY-NC 4.0: free to read, share, teach from, and adapt with credit to the
 San Diego Institute of Technology; commercial use reserved to the Institute.
 The scripts and the account worker are MIT. See [LICENSE.md](LICENSE.md).
+
+
+---
+
+## Deploying learn.sandiegotech.org
+
+The live site is served from S3 behind CloudFront (stack `sdit-learn-web`, us-west-2); Cloudflare holds a DNS-only CNAME. Pushing to `main` runs the checks (validator, unit tests, account-service tests, and the built-site drift check) but publishes nothing. To publish:
+
+```bash
+python3 scripts/build_site.py --out . && python3 scripts/validate.py && python3 scripts/tests/run_tests.py
+./infra/deploy.sh --site
+```
+
+The deploy syncs the working tree, not git: anything uncommitted in the folder goes live. Changes to `infra/template.yaml` need the full `./infra/deploy.sh`, best reviewed first as a change set. The account service in `account/` deploys separately; its README has the parameter-preserving update.

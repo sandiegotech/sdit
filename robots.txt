@@ -1,0 +1,37 @@
+# San Diego Institute of Technology — the Curriculum. Crawler policy.
+#
+# The same position as sandiegotech.org: the curriculum is open to read, and
+# open to find. Search engines and readers are welcome. Bulk collection for
+# model training is a separate act from reading, and it is the one the
+# Institute reserves. Robots.txt is a request, not an enforcement mechanism.
+
+User-agent: *
+Content-Signal: search=yes, ai-train=no, use=reference
+Allow: /
+Disallow: /api/
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+Sitemap: https://learn.sandiegotech.org/sitemap.xml

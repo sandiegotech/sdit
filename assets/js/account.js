@@ -231,9 +231,15 @@
       el("label", { class: "account-label", text: "Enter the code we emailed you" }), code,
     ]);
 
+    // Sign-in mail is sent through Amazon SES, which is still in its sandbox:
+    // it delivers only to approved addresses. Say so plainly rather than tell
+    // a visitor to check an inbox that will stay empty. Set MAIL_LIMITED to
+    // false once SES production access is granted.
+    var MAIL_LIMITED = true;
     var form = el("form", { class: "account-form" }, [
       el("h2", { class: "account-title", text: "Your SDIT Card" }),
-      el("p", { class: "account-sub", text: "Sign in to save your work and pick up on any device." }),
+      el("p", { class: "account-sub", text: "Sign in to keep your answers and your Portfolio on every device." }),
+      MAIL_LIMITED ? el("p", { class: "account-note", text: "Sign-in is in early testing: codes reach approved testers only for now. Everything else works without an account; your answers are kept on this device." }) : el("span"),
       stepEmail, stepCode, msg, submit,
     ]);
 

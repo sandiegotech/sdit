@@ -28,7 +28,7 @@ That's it. That's the trick that builds rockets, prices markets, trains neural n
 
 Seventeen minutes from the best math teacher on the internet — how the whole subject unfolds from ideas you could have invented yourself:
 
-<div class="lesson-embed"><iframe src="https://www.youtube.com/embed/WUvTyaaNkzM" title="3Blue1Brown — The Essence of Calculus" allowfullscreen loading="lazy"></iframe></div>
+<div class="lesson-embed"><iframe src="https://www.youtube-nocookie.com/embed/WUvTyaaNkzM" title="3Blue1Brown — The Essence of Calculus" allowfullscreen loading="lazy"></iframe></div>
 
 *Don't take notes. Don't pause to "get" anything. Watch it the way you'd watch surf footage — for the lines.*
 

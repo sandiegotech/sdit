@@ -15,7 +15,7 @@ Ten minutes — and for once, only two of them are reading. This is the Workshop
 ## Look
 
 <figure class="day-figure">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg" alt="Leonardo da Vinci's Vitruvian Man — a figure inscribed in a circle and square, with notes in mirror writing" loading="lazy" />
+  <img referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg" alt="Leonardo da Vinci's Vitruvian Man — a figure inscribed in a circle and square, with notes in mirror writing" loading="lazy" />
   <figcaption><strong>Vitruvian Man.</strong> Leonardo da Vinci, around 1490. Not made in a university. Made in a workshop — a bottega — where Leonardo had been mixing paint, casting bronze, and measuring everything since he was fourteen. The notes around the figure are study; the figure itself is craft. He never separated them.</figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ Every other course this semester moves through your eyes and ears. This one move
 
 A man who spent two years building a machine that plays music with two thousand marbles. Watch what making at full commitment looks like:
 
-<div class="lesson-embed"><iframe src="https://www.youtube.com/embed/IvUU8joBb1Q" title="Wintergatan — Marble Machine" allowfullscreen loading="lazy"></iframe></div>
+<div class="lesson-embed"><iframe src="https://www.youtube-nocookie.com/embed/IvUU8joBb1Q" title="Wintergatan — Marble Machine" allowfullscreen loading="lazy"></iframe></div>
 
 *Watch his face, not just the machine. That's a person who knows every bolt because every bolt fought back.*
 

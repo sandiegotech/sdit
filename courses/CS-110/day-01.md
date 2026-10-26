@@ -26,7 +26,7 @@ One more thing, because it's 2026: machines now write code too. That doesn't mak
 
 Four minutes. This is a program — written in dominoes, paint cans, and pianos. One instruction triggers the next, exactly as built, no mercy for what the builders *meant*:
 
-<div class="lesson-embed"><iframe src="https://www.youtube.com/embed/qybUFnY7Y8w" title="OK Go — This Too Shall Pass (Rube Goldberg Machine)" allowfullscreen loading="lazy"></iframe></div>
+<div class="lesson-embed"><iframe src="https://www.youtube-nocookie.com/embed/qybUFnY7Y8w" title="OK Go — This Too Shall Pass (Rube Goldberg Machine)" allowfullscreen loading="lazy"></iframe></div>
 
 *It took them months and dozens of failed takes. Every failure was a bug: the machine did what they built, not what they wanted. Watch it once for fun, then once as a debugger.*
 

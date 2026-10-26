@@ -158,6 +158,18 @@ def validate_course(c: dict, i: int, threads: set, courses_root: Path, errors: l
             err(f"day-{n:02d}.md does not ask its front-matter question in bold on the page")
         if ANSWER_MARKER not in _body:
             err(f"day-{n:02d}.md has no answer field ({ANSWER_MARKER}) under its question")
+        # Nothing on a day page tracks the reader (PLAN.md 12.3, items 2 and 3).
+        for tag in re.findall(r"<iframe\b[^>]*>", _body):
+            src = re.search(r'src="([^"]+)"', tag)
+            if not src or not src.group(1).startswith("https://www.youtube-nocookie.com/embed/"):
+                err(f"day-{n:02d}.md embeds a frame from outside www.youtube-nocookie.com")
+        for tag in re.findall(r"<img\b[^>]*>", _body):
+            src = re.search(r'src="([^"]+)"', tag)
+            if not src or not (src.group(1).startswith("https://upload.wikimedia.org/") or src.group(1).startswith("/")):
+                err(f"day-{n:02d}.md shows an image from outside upload.wikimedia.org or this site")
+            for attr, name in (('alt="', "alt"), ('loading="lazy"', "loading"), ('referrerpolicy="no-referrer"', "referrerpolicy")):
+                if attr not in tag:
+                    err(f"day-{n:02d}.md has an <img> without {name}")
 
     if status in ("planned", "syllabus", "building") and days:
         err(f"has status `{status}` but {len(days)} published day file(s); set `day1` (or `live`)")

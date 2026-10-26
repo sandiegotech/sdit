@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@import url("fonts/fonts.css");
 
 /* ─── Tokens ──────────────────────────────────────────────────────────────── */
 :root {
@@ -928,16 +928,22 @@ body.charter-page main {
 
 .charter .standfirst + .standfirst { margin-top: 1.1rem; }
 
-.rise {
+/* A timer settles the hero after 1.2 s even where animation frames never run
+   (a throttled or background tab): timers still fire there, frames do not. */
+.sdit-animate.sdit-settled .rise { opacity: 1 !important; transform: none !important; animation: none !important; }
+/* Visible by default. The entrance animation runs only when a script has
+   confirmed the page is visible (html.sdit-animate), so a page whose
+   animation frames never run is never left blank. */
+.sdit-animate .rise {
   opacity: 0;
   transform: translateY(10px);
   animation: rise 0.9s ease forwards;
 }
-.rise.d1 { animation-delay: 0.12s; }
-.rise.d2 { animation-delay: 0.24s; }
-.rise.d3 { animation-delay: 0.36s; }
+.sdit-animate .rise.d1 { animation-delay: 0.12s; }
+.sdit-animate .rise.d2 { animation-delay: 0.24s; }
+.sdit-animate .rise.d3 { animation-delay: 0.36s; }
 @keyframes rise { to { opacity: 1; transform: none; } }@media (prefers-reduced-motion: reduce) {
-  .rise { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .sdit-animate .rise { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
 /* ---- Articles ---- */
@@ -1846,3 +1852,10 @@ html.sdit-authed .sdit-portal { display: block; }
 .evidence-page .evidence-table td { text-align: center; }
 .evidence-page .evidence-table td:last-child, .rubric-table td, .evidence-table td:only-of-type { text-align: left; }
 .evidence-page .rubric-table td { font-size: 0.84rem; line-height: 1.45; min-width: 9rem; text-align: left; }
+
+
+/* Skip link: first thing a keyboard reaches; visible only on focus. */
+.skip-link { position: absolute; left: -9999px; top: 0.5rem; z-index: 1000; padding: 0.5rem 0.9rem; background: var(--ink); color: #fff; font-size: 0.9rem; }
+.skip-link:focus { left: 0.75rem; }
+
+.account-note { font-size: 0.82rem; color: var(--muted); margin: 0 0 0.75rem; line-height: 1.5; }

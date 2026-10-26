@@ -169,7 +169,7 @@ The full semester-by-semester map: [The Four Years](/curriculum/four-years.html)
 
 ## 9. Scale Commitments
 
-Cohorts of 30–50 in the founding years. Seminar cap 15. Faculty hired as practitioner-scholars with a documented "equivalent professional standing" rubric for non-terminal-degree masters. Small is the pedagogy and the only honest staffing plan — and it is why the whole catalog is roughly forty courses, all but the eight depth studios shared by everyone.
+Cohorts of 30–50 in the founding years. Seminar cap 15. Faculty hired as practitioner-scholars with a documented "equivalent professional standing" rubric for non-terminal-degree masters. Small is the pedagogy and the only honest staffing plan — and it is why the whole catalog is forty-four courses, all but the eight depth studios shared by everyone.
 
 ---
 
