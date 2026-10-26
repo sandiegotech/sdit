@@ -237,7 +237,7 @@
     // it delivers only to approved addresses. Say so plainly rather than tell
     // a visitor to check an inbox that will stay empty. Set MAIL_LIMITED to
     // false once SES production access is granted.
-    var MAIL_LIMITED = true;
+    var MAIL_LIMITED = false;
     var form = el("form", { class: "account-form" }, [
       el("h2", { class: "account-title", text: "Your SDIT Card" }),
       el("p", { class: "account-sub", text: "Sign in to keep your answers and your Portfolio on every device." }),
