@@ -41,11 +41,28 @@ dependencies** to install — the deploy is just the source.
 | GET | `/work` | session | `?lesson=<path>` | `{ responses }` |
 | PUT | `/work` | session | `{ lesson, heading, content }` | `{ ok }` |
 | GET | `/work/all` | session | — | `{ responses: [{ lesson, heading, content, updatedAt }] }` |
+| POST | `/work/upload` | session | `{ course, name, type }` | `{ key, url, kind, max }` — a signed link to PUT one file |
+| POST | `/work/upload/complete` | session | `{ key }` | `{ file }` — checked against its kind's size limit |
+| POST | `/work/file-urls` | session | `{ keys }` | `{ urls: { key: url } }` — signed read links, one hour |
+| POST | `/work/file/delete` | session | `{ key }` | `{ ok }` |
 | GET | `/enrollments` | session | — | `{ courses }` |
 | POST | `/enroll` | session | `{ course }` | `{ ok }` |
 | POST | `/unenroll` | session | `{ course }` | `{ ok }` |
 
 `profile` is `{ email, role, tester }`.
+
+### The files behind the made things
+
+Photos, films, decks, essays and recordings attached to a course's highlight
+live in a private S3 bucket (`WorkBucket`, `<stack>-work`), never in DynamoDB.
+The browser uploads straight to the bucket over a link the function signs
+(`src/lib/files.mjs`); the record in the learner's work keeps only the keys.
+Keys are `u/<hash of email>/<course>/<id>-<name>`, so a key carries no address.
+Publishing an edition copies its files to `p/<handle>/<edition>/` and rewrites
+the snapshot to site paths (`/work/p/...`), which the site's distribution
+serves through its own origin access; the bucket policy allows it to read
+`p/*` and nothing else. Unpublishing deletes the copies. Limits per file:
+images 20 MB, PDF 40 MB, audio 60 MB, video 300 MB, text 1 MB.
 
 ### How the session travels
 
