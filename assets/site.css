@@ -1787,6 +1787,10 @@ html.sdit-authed .sdit-portal { display: block; }
 .pf-volume-pick[hidden] { display: none !important; }
 .pf-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: end; margin: 1rem 0 0; }
 .pf-name { display: grid; gap: 0.25rem; font-size: 0.78rem; color: var(--muted); margin-right: auto; }
+.pf-about-edit { display: grid; gap: 0.75rem; margin: 1.25rem 0 0; max-width: 46rem; }
+.pf-about-field { display: grid; gap: 0.25rem; font-size: 0.78rem; color: var(--muted); }
+.pf-about-field textarea { font: inherit; font-size: 0.95rem; line-height: 1.5; padding: 0.55rem 0.7rem; border: 1px solid var(--border); background: var(--surface, #fff); color: var(--ink); resize: vertical; }
+.pf-about-edit[hidden] { display: none !important; }
 .pf-name input { font: inherit; font-size: 0.95rem; padding: 0.45rem 0.6rem; border: 1px solid var(--border); background: var(--surface, #fff); color: var(--ink); min-width: 14rem; }
 .pf-source { margin: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
 .pf-book { max-width: 46rem; margin: 2rem auto 4rem; }
@@ -1804,6 +1808,48 @@ html.sdit-authed .sdit-portal { display: block; }
 .pf-q-answer { margin: 0; padding: 0.2rem 0 0.2rem 1.1rem; border-left: 3px solid var(--gold); font-family: var(--font-display); font-size: 1.2rem; line-height: 1.55; }
 .pf-q-answer p { margin: 0 0 0.6rem; }
 .pf-made .pf-meta, .pf-evidence { font-size: 0.85rem; color: var(--muted); }
+/* Who this is */
+.pf-who h3 { font-size: 2rem; }
+.pf-about { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.55; max-width: 38rem; }
+.pf-about p { margin: 0 0 0.8rem; }
+.pf-commit { color: var(--muted); font-size: 0.9rem; margin: 1.5rem 0 0; }
+/* The Question, compact */
+.pf-q-between { margin: 1.5rem 0 0; padding-left: 1.1rem; border-left: 1px solid var(--hairline); }
+.pf-q-mid { margin: 0.5rem 0; font-size: 0.95rem; line-height: 1.5; }
+.pf-q-where { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); display: block; }
+/* The highlight and the work itself */
+.pf-highlight h3 { font-size: 1.9rem; }
+.pf-media { margin: 1.25rem 0; }
+.pf-media img, .pf-media video { display: block; width: 100%; height: auto; background: var(--surface-soft, #f4f2ed); }
+.pf-media--image.is-big img { max-height: 72vh; object-fit: contain; }
+.pf-media--video video { aspect-ratio: 16 / 9; }
+.pf-media--audio audio { width: 100%; }
+.pf-media--pdf iframe { display: block; width: 100%; aspect-ratio: 16 / 10; border: 1px solid var(--border); background: #fff; }
+.pf-media figcaption, .pf-media-foot { font-size: 0.8rem; color: var(--muted); margin: 0.4rem 0 0; }
+.pf-media--text { padding: 1.25rem 1.5rem; border: 1px solid var(--hairline); background: var(--surface, #fff); font-family: var(--font-display); font-size: 1.05rem; line-height: 1.6; max-height: 34rem; overflow: auto; }
+.pf-media--text h4, .pf-media--text h5, .pf-media--text h6 { font-family: var(--font-display); font-weight: 600; margin: 1rem 0 0.4rem; }
+.pf-media--text h4 { font-size: 1.3rem; }
+.pf-media--text p { margin: 0 0 0.8rem; }
+.pf-media--pending { color: var(--muted); font-size: 0.85rem; padding: 1rem; border: 1px dashed var(--border); }
+.pf-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 0.6rem; margin: 0 0 1rem; align-items: start; }
+.pf-gallery .pf-media { margin: 0; }
+.pf-gallery .pf-media img { aspect-ratio: 4 / 3; object-fit: cover; }
+.pf-file { margin: 0; font-size: 0.9rem; padding: 0.6rem 0.7rem; border: 1px solid var(--hairline); }
+.pf-file-kind { color: var(--muted); font-size: 0.78rem; display: block; }
+.pf-words { font-size: 1.05rem; line-height: 1.6; }
+.pf-applied { margin: 1rem 0 0; padding: 0.8rem 1rem; border-left: 3px solid var(--gold); }
+.pf-applied p { margin: 0.2rem 0 0; }
+.pf-deeper { font-size: 0.9rem; margin: 0.75rem 0 0; }
+.pf-divider .pf-sub { max-width: 34rem; }
+/* A course inside a volume: the highlight, then the days behind it */
+.pf-course { padding: 2.5rem 0 1rem; border-bottom: 1px solid var(--hairline); }
+.pf-course > .pf-eyebrow { font-size: 0.8rem; }
+.pf-course .pf-highlight { padding: 0.5rem 0 0; }
+.pf-course .pf-highlight .pf-eyebrow { color: var(--muted); }
+.pf-no-highlight { font-size: 0.9rem; }
+.pf-days summary { cursor: pointer; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 1.25rem 0 0.25rem; }
+.pf-days summary::-webkit-details-marker { color: var(--gold); }
+.pf-gate { padding-top: 2.5rem; }
 .pf-link a { word-break: break-all; }
 .pf-block { padding: 1.5rem 0 0; }
 .pf-qa { margin: 1rem 0; }
@@ -1820,8 +1866,26 @@ html.sdit-authed .sdit-portal { display: block; }
 .pf-volume-title { text-align: center; padding: 4rem 0 2rem; }
 .pf-volume-title h2 { font-family: var(--font-display); font-weight: 400; font-size: 2.4rem; margin: 0.4rem 0 0; }
 
-/* The made-thing record on course pages */
+/* The highlight record on course pages */
 .made-slot { margin: 1rem 0 0.5rem; padding: 1rem 1.1rem; border: 1px dashed var(--border); }
+.made-intro { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.75rem; max-width: 40rem; }
+.made-field small { font-size: 0.75rem; color: var(--muted); }
+.made-files { margin: 1rem 0 0.5rem; padding: 0.9rem 1rem; border: 1px solid var(--hairline); background: var(--surface-soft, transparent); }
+.made-files-head { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.6rem; }
+.made-file-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.made-file { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0.75rem; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid var(--hairline); }
+.made-file-thumb { width: 4.5rem; height: 3.4rem; background: var(--surface, #fff); border: 1px solid var(--hairline); display: grid; place-items: center; overflow: hidden; }
+.made-file-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.made-file-kind { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.made-file-meta { display: grid; gap: 0.1rem; min-width: 0; }
+.made-file-name { font-size: 0.92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.made-file-size { font-size: 0.75rem; color: var(--muted); }
+.made-file-actions { display: flex; gap: 0.4rem; }
+.made-file-btn { font: inherit; font-size: 0.75rem; padding: 0.3rem 0.55rem; border: 1px solid var(--border); background: var(--surface, #fff); color: var(--ink); cursor: pointer; }
+.made-files-note { font-size: 0.82rem; color: var(--muted); margin: 0.6rem 0; }
+.made-add { display: inline-block; cursor: pointer; }
+.made-add.is-off { opacity: 0.5; pointer-events: none; }
+@media (max-width: 640px) { .made-file { grid-template-columns: 3.5rem 1fr; } .made-file-actions { grid-column: 1 / -1; } }
 .made-head { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.75rem; }
 .made-grid { display: grid; gap: 0.75rem; grid-template-columns: 1fr 1fr; }
 @media (max-width: 640px) { .made-grid { grid-template-columns: 1fr; } }
@@ -1837,6 +1901,11 @@ html.sdit-authed .sdit-portal { display: block; }
   .pf-volume { page-break-before: always; break-before: page; }
   .pf-day { break-inside: avoid; page-break-inside: avoid; border-color: #ccc; }
   .pf-made, .pf-q-row, .pf-qa { break-inside: avoid; page-break-inside: avoid; }
+  .pf-media--image.is-big img { max-height: 60vh; }
+  .pf-media--video, .pf-media--audio, .pf-media--pdf iframe { display: none; }
+  .pf-media--text { max-height: none; overflow: visible; border: 0; padding: 0; }
+  .pf-days summary { list-style: none; }
+  .pf-deeper { display: none; }
   .pf-link a::after { content: ""; }
   @page { margin: 2cm 2.2cm; }
 }

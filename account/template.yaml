@@ -19,11 +19,17 @@ Parameters:
     Type: String
     Default: 'https://learn.sandiegotech.org,http://localhost:3001'
     Description: Comma-separated browser origins allowed to call the API (CORS).
+  SiteDistributionId:
+    Type: String
+    Default: E1JN5MG0GX1HU4
+    Description: >
+      The learn.sandiegotech.org CloudFront distribution (sdit-learn-web stack),
+      allowed to read the published prefix of the work bucket at /work/p/*.
 
 Globals:
   Function:
     Runtime: nodejs24.x
-    Timeout: 10
+    Timeout: 30
     MemorySize: 256
     Architectures: [arm64]
 
@@ -47,6 +53,53 @@ Resources:
         AttributeName: ttl
         Enabled: true
 
+  # The files behind the made things (see src/lib/files.mjs). Private: the
+  # browser reads and writes a learner's own files over links the function
+  # signs, and only the published prefix p/ is readable by the site's
+  # distribution. Browsers upload straight to the bucket, so it needs CORS.
+  WorkBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub '${AWS::StackName}-work'
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      CorsConfiguration:
+        CorsRules:
+          - AllowedOrigins: ['https://learn.sandiegotech.org', 'http://localhost:3001']
+            AllowedMethods: [GET, HEAD, PUT]
+            AllowedHeaders: ['*']
+            ExposedHeaders: [ETag]
+            MaxAge: 3000
+      LifecycleConfiguration:
+        Rules:
+          - Id: abandoned-multipart
+            Status: Enabled
+            AbortIncompleteMultipartUpload:
+              DaysAfterInitiation: 2
+
+  WorkBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WorkBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: 's3:GetObject'
+            Resource: !Sub '${WorkBucket.Arn}/p/*'
+            Condition:
+              StringEquals:
+                'AWS:SourceArn': !Sub 'arn:aws:cloudfront::${AWS::AccountId}:distribution/${SiteDistributionId}'
+
   # CORS is handled in the function (see src/lib/http.mjs) against the
   # ALLOW_ORIGIN allow-list, so the API itself needs no CORS config.
   HttpApi:
@@ -63,9 +116,12 @@ Resources:
           SESSION_SECRET: !Ref SessionSecret
           MAIL_FROM: !Ref MailFrom
           ALLOW_ORIGIN: !Ref AllowOrigin
+          WORK_BUCKET: !Ref WorkBucket
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref AccountTable
+        - S3CrudPolicy:
+            BucketName: !Ref WorkBucket
         - Statement:
             - Effect: Allow
               Action: ['ses:SendEmail']
@@ -79,6 +135,12 @@ Resources:
             Method: ANY
 
 Outputs:
+  WorkBucketName:
+    Description: The files behind the made things. The site stack reads this to serve /work/p/*.
+    Value: !Ref WorkBucket
+  WorkBucketDomain:
+    Description: Origin domain for the site distribution's /work/* behavior.
+    Value: !GetAtt WorkBucket.RegionalDomainName
   ApiUrl:
     Description: Base URL for the account API. Set this as window.SDIT_ACCOUNT_API in partials/header.html.
     Value: !GetAtt HttpApi.ApiEndpoint

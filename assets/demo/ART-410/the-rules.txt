@@ -1,0 +1,15 @@
+KELP — the rules
+
+The system is mine; the drawing is the machine's; the forty I kept are the taste. The rules, in the order the program applies them:
+
+1. A forest is six to nine stipes. Each begins at the sand and grows upward in segments.
+2. Each segment bends toward the light by 18% of the angle between where it points and where the light is, plus a little noise (±0.25 rad). The light is above the frame and off-centre, a different place each time.
+3. Each segment is 86–96% the length of the one before it. A stipe ends when it is too thin to see or it has made sixteen segments.
+4. A segment grows blades on either side with probability 0.7, each blade an ellipse about half the segment's length, turned 0.5 rad off the stipe.
+5. With probability 0.22 a stipe forks. The fork inherits the parent's colour and most of its length.
+6. Colour is one of four olive-ambers, varied by ±12 per channel per segment, so no two segments match and no stipe is flat.
+7. Six shafts of light fall from the top, blurred. They are drawn before the kelp and never move.
+
+What is not in the rules: which forty of the four thousand to keep. I ran the system 4,000 times over three nights and chose by one test: would I stop in front of it. The ledger of every run, every parameter change, and the forty choices is in the Workshop with the prints. The model drew. I decided. I can say which calls were mine, and these were all of them.
+
+Shown in the Workshop, 40 prints at 30 × 40 cm, with this page on the wall beside them. 12 December 2030.

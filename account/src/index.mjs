@@ -10,6 +10,10 @@
  *   GET  /work?lesson=<path>                  → { responses }          (Bearer)
  *   PUT  /work           { lesson, heading, content }                  (Bearer)
  *   GET  /work/all                            → { responses: [{lesson, heading, content, updatedAt}] }
+ *   POST /work/upload    { course, name, type }  → { key, url, kind, max }   a signed link to put one file
+ *   POST /work/upload/complete { key }          → { file }                 after the put: checked and accepted
+ *   POST /work/file-urls { keys }               → { urls: {key: url} }     signed links to read own files
+ *   POST /work/file/delete { key }              → { ok }
  *   GET  /portfolio/mine                      → { handle, published: [edition] }        (session)
  *   PUT  /portfolio      { handle, edition, snapshot }  → publish one edition          (session)
  *   POST /portfolio/unpublish { edition }                → take one edition down       (session)
@@ -26,6 +30,7 @@ import {
 } from './lib/auth.mjs';
 import { sendCode } from './lib/email.mjs';
 import * as db from './lib/db.mjs';
+import * as files from './lib/files.mjs';
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const COURSE_RE = /^[A-Z]+-\d+$/;
@@ -58,6 +63,10 @@ function route(method, path, event) {
   if (method === 'GET' && path === '/me') return me(event);
   if (method === 'GET' && path === '/progress') return getProgress(event);
   if (method === 'GET' && path === '/work/all') return getAllWork(event);
+  if (method === 'POST' && path === '/work/upload') return postUpload(event);
+  if (method === 'POST' && path === '/work/upload/complete') return postUploadComplete(event);
+  if (method === 'POST' && path === '/work/file-urls') return postFileUrls(event);
+  if (method === 'POST' && path === '/work/file/delete') return postFileDelete(event);
   if (method === 'GET' && path === '/work') return getWork(event);
   if (method === 'PUT' && path === '/work') return putWork(event);
   if (method === 'GET' && path === '/portfolio/mine') return getMyPortfolio(event);
@@ -159,6 +168,47 @@ async function putWork(event) {
   return ok({ ok: true });
 }
 
+// ── Files behind the made things ─────────────────────────────────────────────
+
+async function postUpload(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  if (!files.enabled()) return json(503, { error: 'File uploads are not switched on yet' });
+  const { course, name, type } = parseBody(event);
+  if (!course || !COURSE_RE.test(course)) return bad('A valid course id is required');
+  if (!name || !type) return bad('name and type are required');
+  const link = await files.uploadLink(session.sub, course, name, type);
+  if (!link) return bad('That kind of file is not accepted: photos, video, audio, PDF, or plain text');
+  return ok(link);
+}
+
+async function postUploadComplete(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const { key } = parseBody(event);
+  if (!key) return bad('key is required');
+  const r = await files.complete(session.sub, key);
+  if (r.error) return bad(r.error);
+  return ok(r);
+}
+
+async function postFileUrls(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const { keys } = parseBody(event);
+  if (!Array.isArray(keys)) return bad('keys is required');
+  return ok({ urls: await files.viewLinks(session.sub, keys) });
+}
+
+async function postFileDelete(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const { key } = parseBody(event);
+  if (!key) return bad('key is required');
+  if (!(await files.remove(session.sub, key))) return bad('Not your file');
+  return ok({ ok: true });
+}
+
 async function getEnrollments(event) {
   const session = sessionFrom(event);
   if (!session) return unauthorized();
@@ -210,7 +260,9 @@ async function putPortfolio(event) {
   if (!snapshot || typeof snapshot !== 'object' || !Array.isArray(snapshot.answers)) return bad('A snapshot is required');
   if (JSON.stringify(snapshot).length > MAX_SNAPSHOT) return bad('That edition is too large to publish; publish a single volume instead');
   if (!(await db.claimHandle(session.sub, h))) return json(409, { error: 'That handle is taken' });
-  await db.publishEdition(session.sub, edition, snapshot);
+  // The files behind the made things are copied to the public prefix and the
+  // snapshot rewritten to point at them, so the page never needs a signed link.
+  await db.publishEdition(session.sub, edition, await files.publish(session.sub, h, edition, snapshot));
   return ok({ ok: true, handle: h, edition });
 }
 
@@ -220,6 +272,8 @@ async function postUnpublish(event) {
   const { edition } = parseBody(event);
   if (!EDITION_RE.test(String(edition || ''))) return bad('Unknown edition');
   await db.unpublishEdition(session.sub, edition);
+  const handle = await db.getHandle(session.sub);
+  if (handle) await files.unpublish(handle, edition);
   return ok({ ok: true });
 }
 

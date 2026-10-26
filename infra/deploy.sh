@@ -25,6 +25,9 @@ API_URL=$(aws cloudformation describe-stacks \
   --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)
 API_DOMAIN=${API_URL#https://}
 API_DOMAIN=${API_DOMAIN%/}
+WORK_DOMAIN=$(aws cloudformation describe-stacks \
+  --stack-name sdit-account --region "$REGION" \
+  --query "Stacks[0].Outputs[?OutputKey=='WorkBucketDomain'].OutputValue" --output text)
 
 if [ "${1:-}" != "--site" ]; then
   echo "→ Deploying stack $STACK (API origin: $API_DOMAIN)"
@@ -36,7 +39,8 @@ if [ "${1:-}" != "--site" ]; then
     --parameter-overrides \
       DomainName="$DOMAIN" \
       CertificateArn="$CERT_ARN" \
-      ApiDomain="$API_DOMAIN"
+      ApiDomain="$API_DOMAIN" \
+      WorkBucketDomain="$WORK_DOMAIN"
 fi
 
 # Look each output up by name. A single multi-key query returns them in

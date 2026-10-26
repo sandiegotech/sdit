@@ -3,6 +3,7 @@ import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 
 process.env.TABLE_NAME = 'test';
+process.env.WORK_BUCKET = 'work-test';
 process.env.SESSION_SECRET = 'test-secret';
 process.env.MAIL_FROM = '';
 process.env.ALLOW_ORIGIN = 'https://learn.sandiegotech.org';
@@ -157,4 +158,67 @@ test('an oversized snapshot is refused', async () => {
   const big = { name: '', answers: [{ lesson: '/x', heading: 'answer', content: 'x'.repeat(320 * 1024) }] };
   const res = await handler(ev('PUT', '/portfolio', { cookies: [cookieOf(r)], body: { handle: 'big-one', edition: 'expanded', snapshot: big } }));
   assert.equal(res.statusCode, 400);
+});
+
+// ── Files behind the made things ─────────────────────────────────────────────
+
+test('an upload is a signed put link under the learner\'s own prefix, checked once it lands', async () => {
+  const r = await signIn('f1@example.com');
+  const cookies = [cookieOf(r)];
+  const no = await handler(ev('POST', '/work/upload', { cookies, body: { course: 'ART-310', name: 'tide.exe', type: 'application/x-msdownload' } }));
+  assert.equal(no.statusCode, 400);
+  const link = JSON.parse((await handler(ev('POST', '/work/upload', { cookies, body: { course: 'ART-310', name: 'Tide Clock (1).JPG', type: 'image/jpeg' } }))).body);
+  assert.match(link.key, /^u\/[0-9a-f]{20}\/ART-310\/[0-9a-f]{12}-Tide-Clock-1.JPG$/);
+  assert.ok(!link.key.includes('f1@'), 'the key never carries the email');
+  assert.match(link.url, /verb=put/);
+  assert.equal(link.kind, 'image');
+
+  // Nothing arrived yet.
+  const early = await handler(ev('POST', '/work/upload/complete', { cookies, body: { key: link.key } }));
+  assert.equal(early.statusCode, 400);
+  // Too big for its kind: deleted and refused.
+  stub.bucket.set(link.key, { ContentType: 'image/jpeg', ContentLength: 21 * 1024 * 1024 });
+  const big = await handler(ev('POST', '/work/upload/complete', { cookies, body: { key: link.key } }));
+  assert.equal(big.statusCode, 400);
+  assert.ok(!stub.bucket.has(link.key));
+  // Accepted.
+  stub.bucket.set(link.key, { ContentType: 'image/jpeg', ContentLength: 240000 });
+  const done = JSON.parse((await handler(ev('POST', '/work/upload/complete', { cookies, body: { key: link.key } }))).body);
+  assert.deepEqual(done.file, { key: link.key, name: 'Tide-Clock-1.JPG', type: 'image/jpeg', size: 240000, kind: 'image' });
+
+  // Only the owner can read or delete it.
+  const other = await signIn('f2@example.com');
+  const theirs = JSON.parse((await handler(ev('POST', '/work/file-urls', { cookies: [cookieOf(other)], body: { keys: [link.key] } }))).body);
+  assert.deepEqual(theirs.urls, {});
+  const mine = JSON.parse((await handler(ev('POST', '/work/file-urls', { cookies, body: { keys: [link.key] } }))).body);
+  assert.match(mine.urls[link.key], /verb=get/);
+  assert.equal((await handler(ev('POST', '/work/file/delete', { cookies: [cookieOf(other)], body: { key: link.key } }))).statusCode, 400);
+  assert.equal((await handler(ev('POST', '/work/file/delete', { cookies, body: { key: link.key } }))).statusCode, 200);
+  assert.ok(!stub.bucket.has(link.key));
+});
+
+test('publishing copies the files behind the made things to the public prefix; unpublishing removes them', async () => {
+  const r = await signIn('f3@example.com');
+  const cookies = [cookieOf(r)];
+  const link = JSON.parse((await handler(ev('POST', '/work/upload', { cookies, body: { course: 'CAP-402', name: 'deck.pdf', type: 'application/pdf' } }))).body);
+  stub.bucket.set(link.key, { ContentType: 'application/pdf', ContentLength: 5000 });
+  const stranger = 'u/0000000000000000dead/CAP-402/abcdefabcdef-secret.pdf';
+  stub.bucket.set(stranger, { ContentType: 'application/pdf', ContentLength: 10 });
+  const rec = { title: 'Cheap Eyes', form: 'build', words: 'x', files: [
+    { key: link.key, name: 'deck.pdf', type: 'application/pdf', size: 5000, kind: 'pdf' },
+    { key: stranger, name: 'secret.pdf', type: 'application/pdf', size: 10, kind: 'pdf' },
+  ] };
+  const snapshot = { name: 'F', answers: [{ lesson: '/courses/CAP-402/made', heading: 'made-thing', content: JSON.stringify(rec), at: '2030-05-01' }] };
+  const pub = await handler(ev('PUT', '/portfolio', { cookies, body: { handle: 'f-three', edition: 'short', snapshot } }));
+  assert.equal(pub.statusCode, 200);
+  const base = link.key.split('/').pop();
+  assert.ok(stub.bucket.has(`p/f-three/short/${base}`), 'copied to the public prefix');
+  const shown = JSON.parse(JSON.parse((await handler(ev('GET', '/portfolio/f-three'))).body).editions.short.snapshot.answers[0].content);
+  assert.deepEqual(shown.files.map((f) => f.url), [`/work/p/f-three/short/${base}`]);
+  assert.ok(!JSON.stringify(shown).includes('u/'), 'no private key leaks into the public snapshot');
+  assert.ok(!JSON.stringify(shown).includes('secret'), 'a file the learner does not own is left out');
+  const down = await handler(ev('POST', '/portfolio/unpublish', { cookies, body: { edition: 'short' } }));
+  assert.equal(down.statusCode, 200);
+  assert.ok(!stub.bucket.has(`p/f-three/short/${base}`), 'the public copy is gone');
+  assert.ok(stub.bucket.has(link.key), 'the learner\'s own file stays');
 });

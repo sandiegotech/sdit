@@ -6,21 +6,29 @@
  * (localStorage "sdit:<lesson>::<heading>", with "…@t" timestamps) and, when
  * signed in, from the account (GET /work/all). Renders one of three editions:
  *
- *   Short      the judging document: the Commitment, the Question across the
- *              years, one page per made thing, the capstone, the outcomes
- *   Volumes    one book per semester: the gate, the Question so far, the
- *              semester's made things, then its daily answers in Path order
+ *   Short      the judging document: who this is, then one page per course's
+ *              highlight (the work itself, large), the capstone, the Question
+ *              across the years, the outcomes
+ *   Volumes    one book per semester: each course opens with its highlight and
+ *              the day answers sit behind it; then the gate and the Question
+ *              as it stood
  *   Expanded   every volume, in order
  *
- * Print uses the print stylesheet; downloads are built here as files. Nothing
- * is sent anywhere: the learner's words stay in their browser and account.
+ * The files behind a highlight (photos, a film, a deck, an essay) live in the
+ * account's work bucket. A record keeps their keys; this page asks the API
+ * for signed links to show them. A published snapshot carries site URLs
+ * instead (/work/p/...), written by the server when the edition went public.
+ *
+ * Print uses the print stylesheet; downloads are built here as files.
  */
 (function () {
   "use strict";
 
   var ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
   var MAP, ANSWERS = {}, SOURCE = "this device", PROFILE = null;
-  var state = { edition: "short", volume: 1, name: "" };
+  var state = { edition: "short", volume: 1, name: "", about: "" };
+  var FILE_URLS = {};      // key -> signed link (own mode)
+  var TEXTS = {};          // url -> fetched text (essays)
 
   // ── Utilities ──────────────────────────────────────────────────────────────
 
@@ -44,6 +52,11 @@
   function get(lesson, heading) { return ANSWERS[k(lesson, heading)] || null; }
   function pad(n) { return String(n).padStart(2, "0"); }
   function dayLesson(dir, n) { return "/courses/" + dir + "/day-" + pad(n); }
+  function fmtSize(n) {
+    if (!n) return "";
+    if (n < 1024 * 1024) return Math.max(1, Math.round(n / 1024)) + " KB";
+    return (n / (1024 * 1024)).toFixed(n < 10 * 1024 * 1024 ? 1 : 0) + " MB";
+  }
 
   function waitFor(test, ms) {
     return new Promise(function (resolve) {
@@ -91,8 +104,28 @@
           ANSWERS[key] = { lesson: r.lesson, heading: r.heading, content: r.content, at: r.updatedAt };
         }
       });
+      var about = get("/portfolio", "about"), name = get("/portfolio", "name");
+      if (about && !state.about) state.about = about.content;
+      if (name && !state.name) state.name = name.content;
     });
   }
+
+  // Signed links for the files behind the highlights (own mode only; public
+  // snapshots already carry site URLs).
+  function resolveFiles() {
+    var acct = window.SDITAccount && window.SDITAccount.isSignedIn() ? window.SDITAccount : null;
+    if (!acct || !acct.request) return Promise.resolve();
+    var keys = [];
+    madeThings().forEach(function (m) {
+      (m.rec.files || []).forEach(function (f) { if (f.key && !f.url && !FILE_URLS[f.key]) keys.push(f.key); });
+    });
+    if (!keys.length) return Promise.resolve();
+    return acct.request("/work/file-urls", { method: "POST", body: { keys: keys } }).then(function (d) {
+      Object.keys(d.urls || {}).forEach(function (key) { FILE_URLS[key] = d.urls[key]; });
+    }, function () {});
+  }
+
+  function fileUrl(f) { return f.url || FILE_URLS[f.key] || ""; }
 
   // ── Reading the store as the degree ────────────────────────────────────────
 
@@ -114,17 +147,24 @@
     return rows;
   }
 
+  function madeOf(dir) {
+    var r = get("/courses/" + dir + "/made", "made-thing");
+    if (!r) return null;
+    var rec;
+    try { rec = JSON.parse(r.content); } catch (e) { return null; }
+    if (!rec || !(rec.title || rec.words || rec.link || (rec.files && rec.files.length))) return null;
+    rec.files = Array.isArray(rec.files) ? rec.files.filter(function (f) { return f && (f.url || f.key); }) : [];
+    var c = MAP.courses[dir];
+    return { dir: dir, course: c, rec: rec, at: r.at, days: semesterDays(c.semester, dir) };
+  }
+
   function madeThings(semester) {
     var out = [];
     Object.keys(MAP.courses).forEach(function (dir) {
       var c = MAP.courses[dir];
       if (semester && c.semester !== semester) return;
-      var r = get("/courses/" + dir + "/made", "made-thing");
-      if (!r) return;
-      var rec;
-      try { rec = JSON.parse(r.content); } catch (e) { return; }
-      if (!rec || !(rec.title || rec.words || rec.link)) return;
-      out.push({ dir: dir, course: c, rec: rec, at: r.at });
+      var m = madeOf(dir);
+      if (m) out.push(m);
     });
     out.sort(function (a, b) {
       return (a.course.semester - b.course.semester) || (a.course.code < b.course.code ? -1 : 1);
@@ -132,15 +172,28 @@
     return out;
   }
 
-  function semesterDays(semester) {
-    return MAP.days.filter(function (d) { return d[0] === semester; }).map(function (d) {
+  function semesterDays(semester, dir) {
+    return MAP.days.filter(function (d) { return d[0] === semester && (!dir || d[3] === dir); }).map(function (d) {
       return { s: d[0], w: d[1], label: d[2], dir: d[3], n: d[4], title: d[5], q: d[6],
                a: get(dayLesson(d[3], d[4]), "answer") };
     }).filter(function (d) { return d.a; });
   }
 
+  // The semester's courses in the order the week meets them, each with its
+  // highlight and its day answers; only courses with something in them.
+  function semesterCourses(semester) {
+    var order = [], seen = {};
+    MAP.days.forEach(function (d) { if (d[0] === semester && !seen[d[3]]) { seen[d[3]] = true; order.push(d[3]); } });
+    Object.keys(MAP.courses).forEach(function (dir) {
+      if (MAP.courses[dir].semester === semester && !seen[dir]) { seen[dir] = true; order.push(dir); }
+    });
+    return order.map(function (dir) {
+      return { dir: dir, course: MAP.courses[dir], made: madeOf(dir), days: semesterDays(semester, dir) };
+    }).filter(function (c) { return c.made || c.days.length; });
+  }
+
   function countAll() {
-    return Object.keys(ANSWERS).length;
+    return Object.keys(ANSWERS).filter(function (key) { return ANSWERS[key].lesson !== "/portfolio"; }).length;
   }
 
   // ── Rendering ──────────────────────────────────────────────────────────────
@@ -157,36 +210,174 @@
       "</section>";
   }
 
-  function commitmentBlock() {
+  // Who this is: the statement written on the Portfolio page, and the Commitment.
+  function aboutPage(isPublic) {
     var c = commitment();
-    if (!c) return "";
-    return '<section class="pf-block"><h3>The Commitment</h3>' +
-      "<p>Committed on " + esc(dateOf(c)) + ".</p></section>";
+    var about = (state.about || "").trim();
+    if (!about && !c) return "";
+    var body = about ? '<div class="pf-about">' + paras(about) + "</div>" :
+      (isPublic ? "" : '<p class="pf-empty">A few lines about who you are and what you want your work to say. Write them in "About you" above; they open the Portfolio.</p>');
+    return '<section class="pf-page pf-who"><p class="pf-eyebrow">Who this is</p>' +
+      (state.name ? "<h3>" + esc(state.name) + "</h3>" : "") + body +
+      (c ? '<p class="pf-commit">Committed to the four years on ' + esc(dateOf(c)) + ".</p>" : "") +
+      "</section>";
   }
 
-  function questionSpread(upTo, title) {
+  // The Question across the years. Compact: the first and latest answers in
+  // full voice, the ones between in a quieter list, so the change reads at a
+  // glance without taking the front of the book.
+  function questionSection(upTo, title, compact) {
     var rows = theQuestion(upTo);
-    var body = rows.length ? rows.map(function (r) {
-      return '<div class="pf-q-row"><p class="pf-q-when">' + esc(r.where) +
-        (r.a.at ? " · " + esc(dateOf(r.a.at)) : "") + "</p>" +
-        '<blockquote class="pf-q-answer">' + paras(r.a.content) + "</blockquote></div>";
-    }).join("") : '<p class="pf-empty">Not answered yet. It is the first question on <a href="/begin/">Day 0</a>.</p>';
+    var body;
+    if (!rows.length) {
+      body = '<p class="pf-empty">Not answered yet. It is the first question on <a href="/begin/">Day 0</a>.</p>';
+    } else if (compact && rows.length > 2) {
+      var first = rows[0], last = rows[rows.length - 1], mid = rows.slice(1, -1);
+      body = qRow(first) +
+        '<div class="pf-q-between"><p class="pf-q-when">Between</p>' +
+        mid.map(function (r) {
+          return '<p class="pf-q-mid"><span class="pf-q-where">' + esc(r.where) + (r.a.at ? " · " + esc(dateOf(r.a.at)) : "") + "</span> " + esc(r.a.content) + "</p>";
+        }).join("") + "</div>" + qRow(last);
+    } else {
+      body = rows.map(qRow).join("");
+    }
     return '<section class="pf-page pf-question"><p class="pf-eyebrow">' + esc(title || "The Question") + "</p>" +
       "<h3>" + esc(MAP.question) + "</h3>" + body + "</section>";
   }
+  function qRow(r) {
+    return '<div class="pf-q-row"><p class="pf-q-when">' + esc(r.where) +
+      (r.a.at ? " · " + esc(dateOf(r.a.at)) : "") + "</p>" +
+      '<blockquote class="pf-q-answer">' + paras(r.a.content) + "</blockquote></div>";
+  }
 
-  function madeBlock(m, onePerPage) {
+  // ── The work itself ────────────────────────────────────────────────────────
+
+  var KIND_WORD = { image: "photo", video: "film", audio: "recording", pdf: "pages", text: "text" };
+
+  function mediaHtml(f, big) {
+    var url = fileUrl(f), name = esc(f.name || "");
+    if (!url) return '<div class="pf-media pf-media--pending">' + name + "</div>";
+    var u = esc(url);
+    if (f.kind === "image") {
+      return '<figure class="pf-media pf-media--image' + (big ? " is-big" : "") + '"><img src="' + u + '" alt="' + name + '" loading="lazy"></figure>';
+    }
+    if (f.kind === "video") {
+      return '<figure class="pf-media pf-media--video"><video controls preload="metadata" playsinline src="' + u + '"' +
+        (f.poster ? ' poster="' + esc(f.poster) + '"' : "") + "></video></figure>";
+    }
+    if (f.kind === "audio") {
+      return '<figure class="pf-media pf-media--audio"><audio controls preload="metadata" src="' + u + '"></audio><figcaption>' + name + "</figcaption></figure>";
+    }
+    if (f.kind === "pdf") {
+      return '<figure class="pf-media pf-media--pdf">' +
+        (big ? '<iframe src="' + u + '#toolbar=0&view=FitH" title="' + name + '" loading="lazy"></iframe>' : "") +
+        '<figcaption><a href="' + u + '" target="_blank" rel="noopener">Open ' + name + "</a>" + (f.size ? " · " + fmtSize(f.size) : "") + "</figcaption></figure>";
+    }
+    if (f.kind === "text") {
+      var t = TEXTS[url];
+      return '<div class="pf-media pf-media--text" data-pf-text="' + u + '">' +
+        (t == null ? '<p class="pf-empty">Reading ' + name + "…</p>" : textHtml(t)) +
+        '<p class="pf-media-foot"><a href="' + u + '" target="_blank" rel="noopener">' + name + "</a></p></div>";
+    }
+    return '<p class="pf-link"><a href="' + u + '" target="_blank" rel="noopener">' + name + "</a></p>";
+  }
+
+  // Plain text or light markdown: headings, paragraphs, emphasis. Nothing else.
+  function textHtml(t) {
+    var out = [];
+    String(t).replace(/\r/g, "").split(/\n{2,}/).forEach(function (block) {
+      block = block.trim();
+      if (!block) return;
+      var h = block.match(/^(#{1,3})\s+(.*)$/);
+      if (h) { out.push("<h" + (h[1].length + 3) + ">" + inline(h[2]) + "</h" + (h[1].length + 3) + ">"); return; }
+      if (/^---+$/.test(block)) { out.push("<hr>"); return; }
+      out.push("<p>" + inline(block).replace(/\n/g, "<br>") + "</p>");
+    });
+    return out.join("");
+  }
+  function inline(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*])\*(?!\s)(.+?)\*(?!\*)/g, "$1<em>$2</em>");
+  }
+
+  function fillTexts() {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-pf-text]"), function (box) {
+      var url = box.getAttribute("data-pf-text");
+      if (TEXTS[url] != null) return;
+      fetch(url).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
+        TEXTS[url] = t;
+        var foot = box.querySelector(".pf-media-foot");
+        box.innerHTML = textHtml(t) + (foot ? foot.outerHTML : "");
+      }).catch(function () { TEXTS[url] = ""; });
+    });
+  }
+
+  // The course's highlight: the cover large, the rest smaller, then the words.
+  function highlight(m, opts) {
+    opts = opts || {};
     var r = m.rec, c = m.course;
-    return '<section class="' + (onePerPage ? "pf-page " : "") + 'pf-made">' +
-      '<p class="pf-eyebrow">' + esc(c.code) + " · " + esc(c.name) + " · Semester " + esc(c.semester) + "</p>" +
+    var files = r.files || [];
+    var cover = files[0], rest = files.slice(1);
+    var media = "";
+    if (cover) media += mediaHtml(cover, true);
+    if (rest.length) {
+      media += '<div class="pf-gallery">' + rest.map(function (f) {
+        return f.kind === "image" ? mediaHtml(f, false) :
+          '<p class="pf-file"><a href="' + esc(fileUrl(f)) + '" target="_blank" rel="noopener">' + esc(f.name) + "</a>" +
+          ' <span class="pf-file-kind">' + (KIND_WORD[f.kind] || "file") + (f.size ? " · " + fmtSize(f.size) : "") + "</span></p>";
+      }).join("") + "</div>";
+    }
+    // The way deeper: this course's days, in its Volume. In a published Short
+    // Edition the days are not in the snapshot, so the link stands only when
+    // that Volume is published too.
+    var more = "";
+    if (opts.deeper) {
+      var n = m.days ? m.days.length : 0;
+      var vol = "volume-" + c.semester;
+      if (n && !PUBLIC) more = n + " day" + (n === 1 ? "" : "s") + " of answers from this course, in Volume " + ROMAN[c.semester];
+      else if (PUBLIC && PUBLIC.editions && PUBLIC.editions[vol]) more = "The days from this course, in Volume " + ROMAN[c.semester];
+      if (more) more = '<p class="pf-deeper"><a href="#course-' + esc(m.dir) + '">' + more + " →</a></p>";
+    }
+    return '<section class="' + (opts.onePage ? "pf-page " : "") + 'pf-made pf-highlight"' + (opts.id ? ' id="' + esc(opts.id) + '"' : "") + ">" +
+      '<p class="pf-eyebrow">' + esc(opts.eyebrow || (c.code + " · " + c.name + " · Semester " + c.semester)) + "</p>" +
       "<h3>" + esc(r.title || "Untitled") + "</h3>" +
       '<p class="pf-meta">' + esc(r.form || "") +
         (r.date ? " · defended or shown " + esc(dateOf(r.date)) : "") +
         (r.level ? " · " + esc(r.level) : "") + "</p>" +
-      (r.words ? paras(r.words) : "") +
+      media +
+      (r.words ? '<div class="pf-words">' + paras(r.words) + "</div>" : "") +
+      (r.applied ? '<div class="pf-applied"><p class="pf-q-when">Where it went</p>' + paras(r.applied) + "</div>" : "") +
       (r.link ? '<p class="pf-link"><a href="' + esc(r.link) + '" rel="noopener">' + esc(r.link) + "</a></p>" : "") +
-      '<p class="pf-evidence">Evidence of: ' + esc(c.outcomes.join(" · ")) + "</p>" +
+      '<p class="pf-evidence">Evidence of: ' + esc(c.outcomes.join(" · ")) + "</p>" + more +
       "</section>";
+  }
+
+  function daysHtml(days) {
+    var parts = [], week = 0;
+    days.forEach(function (d) {
+      if (d.w !== week) { week = d.w; parts.push('<p class="pf-week">Week ' + week + "</p>"); }
+      var c = MAP.courses[d.dir] || {};
+      parts.push('<article class="pf-day"><p class="pf-day-head">' + esc(d.label ? d.label + " · " : "") +
+        esc(c.code || d.dir) + " · Day " + d.n + (d.a.at ? " · " + esc(dateOf(d.a.at)) : "") + "</p>" +
+        "<h4>" + esc(d.title) + "</h4>" +
+        '<p class="pf-day-q">' + esc(d.q) + "</p>" +
+        '<div class="pf-day-a">' + paras(d.a.content) + "</div></article>");
+    });
+    return parts.join("");
+  }
+
+  // One course inside a volume: the highlight first, the days behind it.
+  function courseSection(cs) {
+    var c = cs.course;
+    var head = '<section class="pf-course" id="course-' + esc(cs.dir) + '">' +
+      '<p class="pf-eyebrow">' + esc(c.code) + " · " + esc(c.name) + "</p>";
+    var body = "";
+    if (cs.made) body += highlight(cs.made, { eyebrow: "The highlight" });
+    else body += '<p class="pf-empty pf-no-highlight">No highlight recorded for this course yet. Its course page has the place for one.</p>';
+    if (cs.days.length) {
+      body += '<details class="pf-days" open><summary>The days · ' + cs.days.length + " answer" + (cs.days.length === 1 ? "" : "s") + "</summary>" +
+        daysHtml(cs.days) + "</details>";
+    }
+    return head + body + "</section>";
   }
 
   function gateBlock(n) {
@@ -196,7 +387,7 @@
       return a ? '<div class="pf-qa"><p class="pf-qa-q">' + esc(q.text) + "</p>" +
         '<div class="pf-qa-a">' + paras(a.content) + "</div></div>" : "";
     }).join("");
-    return rows ? '<section class="pf-block"><h3>The Gate</h3>' + rows + "</section>" : "";
+    return rows ? '<section class="pf-block pf-gate"><p class="pf-eyebrow">The Gate · end of Semester ' + n + '</p><h3>What stood at the end</h3>' + rows + "</section>" : "";
   }
 
   function dayZeroBlock() {
@@ -208,59 +399,49 @@
     return rows ? '<section class="pf-block"><h3>Day 0</h3>' + rows + "</section>" : "";
   }
 
+  function commitmentBlock() {
+    var c = commitment();
+    if (!c) return "";
+    return '<section class="pf-block"><h3>The Commitment</h3>' +
+      "<p>Committed on " + esc(dateOf(c)) + ".</p></section>";
+  }
+
   function volume(n) {
     var sem = MAP.semesters[n - 1];
-    var days = semesterDays(n);
-    var made = madeThings(n);
+    var courses = semesterCourses(n);
     var gate = gateBlock(n);
     var parts = [];
     parts.push('<section class="pf-page pf-volume-title"><p class="pf-eyebrow">Volume ' + ROMAN[n] + "</p>" +
                "<h2>" + esc(sem.label) + "</h2><p class=\"pf-sub\">Semester " + n + "</p></section>");
     if (n === 1) { parts.push(commitmentBlock()); parts.push(dayZeroBlock()); }
+    courses.forEach(function (cs) { parts.push(courseSection(cs)); });
     parts.push(gate);
-    parts.push(questionSpread(n, "The Question, as it stood at the end of Semester " + n));
-    if (made.length) {
-      parts.push('<section class="pf-block"><h3>What you made</h3></section>');
-      made.forEach(function (m) { parts.push(madeBlock(m, false)); });
-    }
-    if (days.length) {
-      parts.push('<section class="pf-block pf-days"><h3>The days</h3>');
-      var week = 0;
-      days.forEach(function (d) {
-        if (d.w !== week) { week = d.w; parts.push('<p class="pf-week">Week ' + week + "</p>"); }
-        var c = MAP.courses[d.dir] || {};
-        parts.push('<article class="pf-day"><p class="pf-day-head">' + esc(d.label ? d.label + " · " : "") +
-          esc(c.code || d.dir) + " · Day " + d.n + (d.a.at ? " · " + esc(dateOf(d.a.at)) : "") + "</p>" +
-          "<h4>" + esc(d.title) + "</h4>" +
-          '<p class="pf-day-q">' + esc(d.q) + "</p>" +
-          '<div class="pf-day-a">' + paras(d.a.content) + "</div></article>");
-      });
-      parts.push("</section>");
-    }
-    if (!gate && !made.length && !days.length && n !== 1) {
+    if (theQuestion(n).length) parts.push(questionSection(n, "The Question, as it stood at the end of Semester " + n, true));
+    if (!gate && !courses.length && n !== 1) {
       parts.push('<p class="pf-empty">Nothing written in this semester yet.</p>');
     }
     return '<div class="pf-volume">' + parts.join("") + "</div>";
   }
 
   function volumeHasContent(n) {
-    return semesterDays(n).length || madeThings(n).length || gateBlock(n) || (n === 1 && (commitment() || dayZeroBlock()));
+    return semesterCourses(n).length || gateBlock(n) || (n === 1 && (commitment() || dayZeroBlock()));
   }
 
-  function shortEdition() {
+  function shortEdition(isPublic) {
     var made = madeThings();
     var cap = made.filter(function (m) { return /^CAP-/.test(m.dir); });
     var rest = made.filter(function (m) { return !/^CAP-/.test(m.dir); });
-    var out = [titlePage("The Short Edition"), commitmentBlock(), questionSpread(0)];
+    var out = [titlePage("The Short Edition"), aboutPage(isPublic)];
     if (rest.length) {
-      out.push('<section class="pf-page pf-block"><p class="pf-eyebrow">What was made</p><h3>' +
-               rest.length + " made thing" + (rest.length === 1 ? "" : "s") + "</h3></section>");
-      rest.forEach(function (m) { out.push(madeBlock(m, true)); });
+      out.push('<section class="pf-page pf-block pf-divider"><p class="pf-eyebrow">The work</p><h3>' +
+               rest.length + " course" + (rest.length === 1 ? "" : "s") + ", one highlight each</h3>" +
+               '<p class="pf-sub">The piece from each course that shows what it taught and where it went. The days behind each one are in the Volumes.</p></section>');
+      rest.forEach(function (m) { out.push(highlight(m, { onePage: true, deeper: true })); });
     }
     if (cap.length) {
-      out.push('<section class="pf-page pf-block"><p class="pf-eyebrow">The Capstone</p><h3>The defended work</h3></section>');
-      cap.forEach(function (m) { out.push(madeBlock(m, true)); });
+      cap.forEach(function (m) { out.push(highlight(m, { onePage: true, deeper: true, eyebrow: "The Capstone · " + m.course.code + " · defended" })); });
     }
+    out.push(questionSection(0, "The Question, across the years", true));
     if (made.length) {
       var rows = MAP.outcomes.map(function (o) {
         var ev = made.filter(function (m) { return m.course.outcomes.indexOf(o) !== -1; });
@@ -270,34 +451,37 @@
       out.push('<section class="pf-page pf-block"><p class="pf-eyebrow">The five outcomes</p><h3>What the work evidences</h3>' +
                '<table class="pf-outcomes">' + rows + "</table></section>");
     } else {
-      out.push('<p class="pf-empty">No made things recorded yet. Each course page has a place to record yours, under "The Made Thing".</p>');
+      out.push('<p class="pf-empty">No highlights recorded yet. Each course page has a place for one, under "The Made Thing".</p>');
     }
     return out.join("");
   }
 
-  function expandedEdition() {
-    var out = [titlePage("The Expanded Edition"), questionSpread(0)];
+  function expandedEdition(isPublic) {
+    var out = [titlePage("The Expanded Edition"), aboutPage(isPublic)];
     for (var n = 1; n <= 8; n++) if (volumeHasContent(n)) out.push(volume(n));
+    out.push(questionSection(0, "The Question, across the years", false));
     return out.join("");
   }
 
   function render() {
     var root = document.getElementById("portfolio-root");
     if (!root) return;
+    var isPublic = document.body.getAttribute("data-portfolio-mode") === "public";
     var html;
     if (!countAll()) {
       html = '<div class="pf-empty-start"><p>Nothing written yet.</p>' +
         '<p>Your Portfolio fills as you go: the Commitment and three questions on <a href="/begin/">Day 0</a>, ' +
-        "an answer on each day, a record of each made thing on its course page, and the gates at the end of each semester.</p>" +
+        "an answer on each day, one highlight per course on its course page, and the gates at the end of each semester.</p>" +
         '<p><a href="/portfolio/demo/">See a sample portfolio →</a></p></div>';
     } else if (state.edition === "volumes") {
       html = titlePage("Volume " + ROMAN[state.volume]) + volume(state.volume);
     } else if (state.edition === "expanded") {
-      html = expandedEdition();
+      html = expandedEdition(isPublic);
     } else {
-      html = shortEdition();
+      html = shortEdition(isPublic);
     }
     root.innerHTML = html;
+    fillTexts();
 
     Array.prototype.forEach.call(document.querySelectorAll("[data-edition]"), function (b) {
       var on = b.getAttribute("data-edition") === state.edition;
@@ -380,8 +564,8 @@
       var ed = editionId();
       var answers = editionAnswers(ed).map(function (a) { return { lesson: a.lesson, heading: a.heading, content: a.content, at: a.at }; });
       if (!answers.length) { publishStatus("This edition is empty; there is nothing to publish yet."); return; }
-      publishStatus("Publishing…");
-      acct.request("/portfolio", { method: "PUT", body: { handle: handle, edition: ed, snapshot: { name: state.name, answers: answers } } })
+      publishStatus("Publishing… (the files behind the highlights are copied; this can take a moment)");
+      acct.request("/portfolio", { method: "PUT", body: { handle: handle, edition: ed, snapshot: { name: state.name, about: state.about, answers: answers } } })
         .then(function (d) {
           MINE.handle = d.handle;
           MINE.published = MINE.published.filter(function (p) { return p.edition !== ed; })
@@ -422,7 +606,7 @@
       ["short", "expanded"].concat([1, 2, 3, 4, 5, 6, 7, 8].map(function (n) { return "volume-" + n; }))
         .forEach(function (e) {
           editions[e] = { publishedAt: d.answers[d.answers.length - 1].at,
-                          snapshot: { name: d.name, answers: editionAnswers(e) } };
+                          snapshot: { name: d.name, about: d.about, answers: editionAnswers(e) } };
         });
       var note = document.querySelector("[data-demo-note]");
       if (note) { note.textContent = d.note; note.hidden = false; }
@@ -456,7 +640,10 @@
       });
       var sel = document.querySelector("[data-volume]");
       if (sel) Array.prototype.forEach.call(sel.options, function (o) { o.hidden = eds.indexOf("volume-" + o.value) === -1; });
-      if (eds.indexOf("short") !== -1) state.edition = "short";
+      var want = state.edition;
+      if (want === "volumes" && eds.some(function (x) { return x === "volume-" + state.volume; })) { /* keep */ }
+      else if (eds.indexOf(want) !== -1) { /* keep */ }
+      else if (eds.indexOf("short") !== -1) state.edition = "short";
       else if (eds.indexOf("expanded") !== -1) state.edition = "expanded";
       else { state.edition = "volumes"; state.volume = +eds.filter(function (x) { return /^volume-/.test(x); })[0].split("-")[1]; if (sel) sel.value = state.volume; }
       usePublicEdition();
@@ -469,6 +656,7 @@
       ANSWERS[k(a.lesson, a.heading)] = { lesson: a.lesson, heading: a.heading, content: a.content, at: a.at };
     });
     state.name = (ed && ed.snapshot && ed.snapshot.name) || "";
+    state.about = (ed && ed.snapshot && ed.snapshot.about) || "";
     SOURCE = PUBLIC.handle === "demo" ? "the sample portfolio" : "a snapshot published " + (ed ? dateOf(ed.publishedAt) : "");
     render();
   }
@@ -479,24 +667,28 @@
     var md = [];
     var name = state.name || (PROFILE && PROFILE.email) || "";
     md.push("# The Portfolio" + (name ? " of " + name : ""), "");
+    if (state.about) md.push("## Who this is", "", state.about, "");
     var c = commitment();
     if (c) md.push("Committed on " + dateOf(c) + ".", "");
-    md.push("## " + MAP.question, "");
-    theQuestion(0).forEach(function (r) {
-      md.push("**" + r.where + (r.a.at ? " · " + dateOf(r.a.at) : "") + "**", "", r.a.content, "");
-    });
     var made = madeThings();
     if (made.length) {
-      md.push("## What was made", "");
+      md.push("## The work", "");
       made.forEach(function (m) {
         var r = m.rec;
         md.push("### " + (r.title || "Untitled") + " — " + m.course.code + " " + m.course.name, "");
         md.push([r.form, r.date ? "defended or shown " + dateOf(r.date) : "", r.level].filter(Boolean).join(" · "), "");
         if (r.words) md.push(r.words, "");
+        if (r.applied) md.push("Where it went: " + r.applied, "");
+        (r.files || []).forEach(function (f) { md.push("- " + f.name + (fileUrl(f) ? " <" + fileUrl(f) + ">" : "")); });
+        if ((r.files || []).length) md.push("");
         if (r.link) md.push(r.link, "");
         md.push("Evidence of: " + m.course.outcomes.join(" · "), "");
       });
     }
+    md.push("## " + MAP.question, "");
+    theQuestion(0).forEach(function (r) {
+      md.push("**" + r.where + (r.a.at ? " · " + dateOf(r.a.at) : "") + "**", "", r.a.content, "");
+    });
     if (state.edition !== "short") {
       var vols = state.edition === "volumes" ? [state.volume] : [1, 2, 3, 4, 5, 6, 7, 8];
       vols.forEach(function (n) {
@@ -505,14 +697,16 @@
         if (n === 1) MAP.begin.questions.forEach(function (q) {
           var a = get(MAP.begin.lesson, q.id); if (a) md.push("**Day 0 · " + q.text + "**", "", a.content, "");
         });
+        semesterCourses(n).forEach(function (cs) {
+          md.push("### " + cs.course.code + " · " + cs.course.name, "");
+          cs.days.forEach(function (d) {
+            md.push("#### Day " + d.n + " — " + d.title, "");
+            md.push("*" + d.q + "*" + (d.a.at ? " · " + dateOf(d.a.at) : ""), "", d.a.content, "");
+          });
+        });
         var g = MAP.gates[n - 1];
         g.questions.forEach(function (q) {
           var a = get(g.lesson, q.id); if (a) md.push("**Gate · " + q.text + "**", "", a.content, "");
-        });
-        semesterDays(n).forEach(function (d) {
-          var cc = MAP.courses[d.dir] || {};
-          md.push("### " + (cc.code || d.dir) + " · Day " + d.n + " — " + d.title, "");
-          md.push("*" + d.q + "*" + (d.a.at ? " · " + dateOf(d.a.at) : ""), "", d.a.content, "");
         });
       });
     }
@@ -562,7 +756,24 @@
         if (PUBLIC) usePublicEdition(); else { render(); refreshPublishPanel(); }
       });
     });
-    var print = document.querySelector("[data-pf-print]");
+    // A "days of answers" link under a Short Edition highlight opens the
+    // Volumes at that course.
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#course-"]');
+      if (!a) return;
+      var dir = a.getAttribute("href").slice("#course-".length);
+      var c = MAP.courses[dir];
+      if (!c || state.edition !== "short") return;
+      e.preventDefault();
+      state.edition = "volumes"; state.volume = c.semester;
+      if (sel) sel.value = state.volume;
+      if (PUBLIC) {
+        if (!PUBLIC.editions["volume-" + c.semester]) { state.edition = "short"; return; }
+        usePublicEdition();
+      } else { render(); refreshPublishPanel(); }
+      var target = document.getElementById("course-" + dir);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
     if (isPublic) {
       Array.prototype.forEach.call(document.querySelectorAll("[data-own-only]"), function (el) { el.hidden = true; });
       waitFor(function () { return window.SDIT_ACCOUNT_API; }, 3000).then(loadPublic);
@@ -579,6 +790,20 @@
         render();
       });
     }
+    var aboutInput = document.querySelector("[data-pf-about]");
+    if (aboutInput) {
+      try { state.about = localStorage.getItem("sdit:/portfolio::about") || ""; } catch (e) {}
+      aboutInput.value = state.about;
+      var saveAbout;
+      aboutInput.addEventListener("input", function () {
+        state.about = aboutInput.value;
+        clearTimeout(saveAbout);
+        saveAbout = setTimeout(function () {
+          if (window.SDITWork) window.SDITWork.save("/portfolio", "about", state.about.trim());
+          render();
+        }, 800);
+      });
+    }
     var p = document.querySelector("[data-pf-print]");
     if (p) p.addEventListener("click", function () { window.print(); });
     var m = document.querySelector("[data-pf-md]");
@@ -590,14 +815,19 @@
         return { lesson: a.lesson, heading: a.heading, content: a.content, updatedAt: a.at };
       });
       download("sdit-portfolio.json", "application/json",
-               JSON.stringify({ exported: new Date().toISOString(), name: state.name, answers: rows }, null, 2));
+               JSON.stringify({ exported: new Date().toISOString(), name: state.name, about: state.about, answers: rows }, null, 2));
     });
 
     ANSWERS = readLocal();
     render();
     // The account script arrives with the header partial; wait for it briefly.
     waitFor(function () { return window.SDITWork && (window.SDITAccount || !window.SDIT_ACCOUNT_API); }, 4000)
-      .then(gather).then(function () { render(); wirePublishing(); });
+      .then(gather).then(function () {
+        if (aboutInput && !aboutInput.value && state.about) aboutInput.value = state.about;
+        if (nameInput && !nameInput.value && state.name) nameInput.value = state.name;
+        render(); wirePublishing();
+        return resolveFiles();
+      }).then(render);
   }
 
   // For inspection and tests; the page itself uses the buttons.

@@ -13,8 +13,9 @@ page carries only the shape of the degree, and the learner's words never leave
 their browser except to their own account.
 
 Three editions render from one store (PLAN.md section 15):
-  Volumes   one book per semester
-  Short     the judging document: commitment, the Question, the made things
+  Volumes   one book per semester; each course opens with its highlight
+  Short     the judging document: who this is, one highlight per course,
+            the capstone, the Question across the years, the outcomes
   Expanded  everything, in order
 """
 from __future__ import annotations
@@ -107,7 +108,7 @@ def render_page(public: bool = False) -> str:
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Portfolio — SDIT</title>
-  <meta name="description" content="Everything you have written and made, as a book: eight volumes, a short edition to show someone, and the expanded edition to read back and see how you changed.">
+  <meta name="description" content="Who you are, one highlight from every course with the work itself, the days behind each, and how your answer to the Question changed: eight volumes, a short edition, and the expanded edition.">
   <meta name="sdit-lesson" content="/portfolio" />{robots}
   <link rel="stylesheet" href="/assets/site.css" />
   <script src="/assets/js/site-paths.js" defer></script>
@@ -122,7 +123,7 @@ def render_page(public: bool = False) -> str:
       <div class="frame">
         <span class="page-header__eyebrow">The Portfolio</span>
         <h1 class="page-header__title">{'A published <em>portfolio.</em>' if public else 'What you wrote, and what you <em>made.</em>'}</h1>
-        <p class="page-header__meta">{'shared by its author · read only' if public else 'eight volumes · a short edition to show someone · the expanded edition to read back'}</p>
+        <p class="page-header__meta">{'shared by its author · read only' if public else 'who you are · one highlight from every course · the days behind each · how the Question changed'}</p>
       </div>
     </header>
 
@@ -135,8 +136,13 @@ def render_page(public: bool = False) -> str:
       <div class="pf-volume-pick" data-volume-pick hidden>
         <label>Volume <select data-volume></select></label>
       </div>
-      <div class="pf-actions" data-own-only>
+      <div class="pf-about-edit" data-own-only>
         <label class="pf-name">Name on the title page <input type="text" data-pf-name autocomplete="name" placeholder="Your name"></label>
+        <label class="pf-about-field">About you
+          <textarea data-pf-about rows="4" placeholder="A few lines on who you are and what you want your work to say. This opens the Portfolio, before any of the work. Change it whenever it stops being true."></textarea>
+        </label>
+      </div>
+      <div class="pf-actions" data-own-only>
         <button type="button" class="learn-cta" data-pf-print>Print</button>
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-md>Download Markdown</button>
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-json>Download JSON</button>

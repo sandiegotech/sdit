@@ -1,0 +1,34 @@
+; swell-adder.asm — adds the week's swell heights (feet) on the eight-bit machine
+; Rowan Hale · CS 120 · assembled by hand, 4 instructions, 16 bytes of RAM
+;
+; op  mnemonic   what it does
+; 00  LOAD  a    R0 <- RAM[a]
+; 01  ADD   a    R0 <- R0 + RAM[a]   (carry out ripples through FA0..FA7)
+; 10  STORE a    RAM[a] <- R0
+; 11  HALT
+
+        LOAD  0x08      ; Mon  3
+        ADD   0x09      ; Tue  4
+        ADD   0x0A      ; Wed  2
+        ADD   0x0B      ; Thu  6
+        ADD   0x0C      ; Fri  5
+        ADD   0x0D      ; Sat  8
+        ADD   0x0E      ; Sun  7
+        STORE 0x0F      ; total -> 0x0F
+        HALT
+
+; data (bytes 0x08–0x0E, from the Scripps buoy, week of 7 June 2027)
+; 0x08: 03  0x09: 04  0x0A: 02  0x0B: 06  0x0C: 05  0x0D: 08  0x0E: 07
+
+; run log
+; cycle 00  PC=0  LOAD  R0=00000011
+; cycle 01  PC=1  ADD   R0=00000111  carry=0
+; cycle 02  PC=2  ADD   R0=00001001  carry=0
+; cycle 03  PC=3  ADD   R0=00001111  carry=0
+; cycle 04  PC=4  ADD   R0=00010100  carry=0   <- the carry ran four places here
+; cycle 05  PC=5  ADD   R0=00011100  carry=0
+; cycle 06  PC=6  ADD   R0=00100011  carry=0
+; cycle 07  PC=7  STORE RAM[0x0F]=00100011     (35)
+; cycle 08  PC=8  HALT
+;
+; 35 feet of swell in a week. The machine does not know what a foot is.

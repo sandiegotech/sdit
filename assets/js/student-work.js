@@ -178,22 +178,62 @@
     ta.addEventListener("input", function () { resize(); debounced(); });
   }
 
-  // ── The made thing (course pages) ──────────────────────────────────────────
-  // One record per course: what it is, where it lives, the maker's words, when
-  // it was defended or shown. Stored as JSON under (/courses/<DIR>/made,
-  // "made-thing"). The site keeps the link and the words, never the artifact.
+  // ── The highlight (course pages) ───────────────────────────────────────────
+  // One record per course: the piece that shows what the course taught and
+  // where it went. Stored as JSON under (/courses/<DIR>/made, "made-thing"):
+  //   title, form, link, words, applied, date, level,
+  //   files: [{key, name, type, size, kind}]  — the photos, film, deck, essay
+  // The words save like any answer. The files go to the account's work bucket
+  // over links the API signs, so they need a sign-in; the record keeps only
+  // their keys, and the Portfolio asks for links when it shows them.
 
   var FORMS = ["essay", "film", "recording", "object", "program", "build", "forecast", "report", "other"];
   var LEVELS = ["", "beginning", "developing", "proficient", "mastered"];
+  var ACCEPT = "image/*,video/mp4,video/quicktime,video/webm,audio/*,application/pdf,text/plain,text/markdown,.md,.txt";
+  var MAX_FILES = 12;
 
-  function field(label, input) {
+  function field(label, input, hint) {
     var wrap = document.createElement("label");
     wrap.className = "made-field";
     var span = document.createElement("span");
     span.textContent = label;
     wrap.appendChild(span);
     wrap.appendChild(input);
+    if (hint) { var h = document.createElement("small"); h.textContent = hint; wrap.appendChild(h); }
     return wrap;
+  }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function fmtSize(n) {
+    if (!n) return "";
+    if (n < 1024 * 1024) return Math.max(1, Math.round(n / 1024)) + " KB";
+    return (n / (1024 * 1024)).toFixed(n < 10 * 1024 * 1024 ? 1 : 0) + " MB";
+  }
+
+  // Upload one file: ask for a signed link, put the bytes there, then have
+  // the API check what landed. Progress comes from the put.
+  function uploadFile(acct, course, file, onProgress) {
+    var type = file.type || (/\.md$/i.test(file.name) ? "text/markdown" : /\.txt$/i.test(file.name) ? "text/plain" : "");
+    return acct.request("/work/upload", { method: "POST", body: { course: course, name: file.name, type: type } })
+      .then(function (link) {
+        if (file.size > link.max) throw new Error("Too large: the limit for " + link.kind + " files is " + Math.round(link.max / 1048576) + " MB");
+        return new Promise(function (resolve, reject) {
+          var xhr = new XMLHttpRequest();
+          xhr.open("PUT", link.url);
+          xhr.setRequestHeader("Content-Type", type);
+          xhr.upload.onprogress = function (e) { if (e.lengthComputable && onProgress) onProgress(e.loaded / e.total); };
+          xhr.onload = function () { xhr.status >= 200 && xhr.status < 300 ? resolve() : reject(new Error("The upload failed (" + xhr.status + ")")); };
+          xhr.onerror = function () { reject(new Error("The upload failed")); };
+          xhr.send(file);
+        }).then(function () { return acct.request("/work/upload/complete", { method: "POST", body: { key: link.key } }); })
+          .then(function (d) { return d.file; });
+      });
   }
 
   function buildMade(slot) {
@@ -201,52 +241,154 @@
     slot._built = true;
     var lesson = slot.getAttribute("data-lesson");
     var heading = "made-thing";
+    var course = (lesson.match(/^\/courses\/([^/]+)\//) || [])[1] || "";
+    var record = { title: "", form: "essay", link: "", words: "", applied: "", date: "", level: "", files: [] };
 
-    var head = document.createElement("p");
-    head.className = "made-head";
-    head.textContent = "Your made thing, for your Portfolio";
+    slot.appendChild(el("p", "made-head", "The highlight of this course, for your Portfolio"));
+    slot.appendChild(el("p", "made-intro",
+      "One piece that shows what the course taught you and where it went. Photos, a film, a deck, an essay, a recording: whatever the thing actually is. " +
+      "Your Portfolio opens each course with it; everything else you wrote here sits behind it."));
 
     var title = document.createElement("input"); title.type = "text"; title.placeholder = "What it is called";
     var form = document.createElement("select");
     FORMS.forEach(function (f) { var o = document.createElement("option"); o.value = f; o.textContent = f; form.appendChild(o); });
-    var link = document.createElement("input"); link.type = "url"; link.placeholder = "https://… where it lives";
+    var link = document.createElement("input"); link.type = "url"; link.placeholder = "https://… if it lives somewhere online";
     var words = document.createElement("textarea"); words.rows = 3; words.className = "response-textarea";
-    words.placeholder = "One paragraph, in your words: what you made and what it taught you.";
+    words.placeholder = "What you made, and what it taught you.";
+    var applied = document.createElement("textarea"); applied.rows = 2; applied.className = "response-textarea";
+    applied.placeholder = "Where it went afterwards: how you have used it outside the course, if you have.";
     var date = document.createElement("input"); date.type = "date";
     var level = document.createElement("select");
     LEVELS.forEach(function (l) { var o = document.createElement("option"); o.value = l; o.textContent = l || "not reviewed yet"; level.appendChild(o); });
 
-    var status = document.createElement("span"); status.className = "response-status";
-    var grid = document.createElement("div"); grid.className = "made-grid";
+    var status = el("span", "response-status");
+    var grid = el("div", "made-grid");
     grid.appendChild(field("Title", title));
     grid.appendChild(field("Form", form));
-    grid.appendChild(field("Link", link));
     grid.appendChild(field("Defended or shown on", date));
     grid.appendChild(field("Rubric level, if reviewed", level));
-    slot.appendChild(head);
     slot.appendChild(grid);
     slot.appendChild(field("In your words", words));
+    slot.appendChild(field("Where it went", applied));
+
+    // The files.
+    var filesWrap = el("div", "made-files");
+    filesWrap.appendChild(el("p", "made-files-head", "The work itself"));
+    var list = el("ul", "made-file-list");
+    var note = el("p", "made-files-note");
+    var add = document.createElement("input"); add.type = "file"; add.multiple = true; add.accept = ACCEPT; add.id = "made-add-" + course;
+    var addLabel = el("label", "learn-cta learn-cta--ghost made-add", "Add photos, video, a deck, an essay…");
+    addLabel.setAttribute("for", add.id);
+    add.hidden = true;
+    filesWrap.appendChild(list);
+    filesWrap.appendChild(note);
+    filesWrap.appendChild(addLabel);
+    filesWrap.appendChild(add);
+    slot.appendChild(filesWrap);
+    slot.appendChild(field("Link", link, "Optional. The Portfolio shows the files above; this is for a place it also lives."));
     slot.appendChild(status);
 
-    read(lesson, heading).then(function (v) {
-      if (!v) return;
-      try {
-        var r = JSON.parse(v);
-        title.value = r.title || ""; form.value = r.form || "essay"; link.value = r.link || "";
-        words.value = r.words || ""; date.value = r.date || ""; level.value = r.level || "";
-      } catch (e) {}
-    });
+    var urls = {};
+    function refreshUrls() {
+      var acct = account();
+      var keys = record.files.map(function (f) { return f.key; }).filter(function (k) { return k && !urls[k]; });
+      if (!acct || !acct.request || !keys.length) return Promise.resolve();
+      return acct.request("/work/file-urls", { method: "POST", body: { keys: keys } })
+        .then(function (d) { Object.keys(d.urls || {}).forEach(function (k) { urls[k] = d.urls[k]; }); renderFiles(); }, function () {});
+    }
 
-    var debounced = debounce(function () {
-      var record = { title: title.value.trim(), form: form.value, link: link.value.trim(),
-                     words: words.value.trim(), date: date.value, level: level.value };
+    function renderFiles() {
+      list.innerHTML = "";
+      var acct = account();
+      record.files.forEach(function (f, i) {
+        var li = el("li", "made-file");
+        var thumb = el("div", "made-file-thumb");
+        if (f.kind === "image" && urls[f.key]) {
+          var img = document.createElement("img"); img.src = urls[f.key]; img.alt = ""; img.loading = "lazy"; thumb.appendChild(img);
+        } else {
+          thumb.appendChild(el("span", "made-file-kind", { image: "photo", video: "film", audio: "sound", pdf: "pages", text: "text" }[f.kind] || "file"));
+        }
+        li.appendChild(thumb);
+        var meta = el("div", "made-file-meta");
+        var name = urls[f.key] ? document.createElement("a") : el("span");
+        if (urls[f.key]) { name.href = urls[f.key]; name.target = "_blank"; name.rel = "noopener"; }
+        name.textContent = f.name;
+        name.className = "made-file-name";
+        meta.appendChild(name);
+        meta.appendChild(el("span", "made-file-size", (i === 0 ? "the cover · " : "") + fmtSize(f.size)));
+        li.appendChild(meta);
+        var actions = el("div", "made-file-actions");
+        if (i > 0) {
+          var cover = el("button", "made-file-btn", "Make it the cover"); cover.type = "button";
+          cover.addEventListener("click", function () { record.files.splice(i, 1); record.files.unshift(f); renderFiles(); persist(); });
+          actions.appendChild(cover);
+        }
+        var rm = el("button", "made-file-btn", "Remove"); rm.type = "button";
+        rm.addEventListener("click", function () {
+          if (!confirm("Remove " + f.name + " from this course? The file is deleted.")) return;
+          record.files.splice(i, 1); renderFiles(); persist();
+          if (acct && acct.request) acct.request("/work/file/delete", { method: "POST", body: { key: f.key } }).catch(function () {});
+        });
+        actions.appendChild(rm);
+        li.appendChild(actions);
+        list.appendChild(li);
+      });
+      if (!acct) {
+        note.textContent = "Sign in to attach the work itself. The words save on this device either way.";
+        addLabel.classList.add("is-off");
+      } else {
+        note.textContent = record.files.length ? "The first file is the cover: the one the Portfolio shows large." :
+          "Photos, a film (MP4 or MOV), a recording, a PDF deck or paper, or a plain-text essay. Up to " + MAX_FILES + " files.";
+        addLabel.classList.remove("is-off");
+      }
+    }
+
+    function persist() {
       setStatus(status, "saving");
       save(lesson, heading, JSON.stringify(record)).then(function (st) { setStatus(status, st); },
                                                          function () { setStatus(status, "error"); });
+    }
+    var debounced = debounce(function () {
+      record.title = title.value.trim(); record.form = form.value; record.link = link.value.trim();
+      record.words = words.value.trim(); record.applied = applied.value.trim(); record.date = date.value; record.level = level.value;
+      persist();
     }, SAVE_DELAY);
-    [title, form, link, words, date, level].forEach(function (el) {
-      el.addEventListener("input", debounced);
-      el.addEventListener("change", debounced);
+
+    add.addEventListener("change", function () {
+      var acct = account();
+      if (!acct || !acct.request) { note.textContent = "Sign in first to attach files."; return; }
+      var picked = Array.prototype.slice.call(add.files || []);
+      add.value = "";
+      if (!picked.length) return;
+      if (record.files.length + picked.length > MAX_FILES) { note.textContent = "Up to " + MAX_FILES + " files per course."; return; }
+      var i = 0;
+      (function next() {
+        if (i >= picked.length) { note.textContent = "Added."; renderFiles(); persist(); refreshUrls(); return; }
+        var f = picked[i++];
+        note.textContent = "Uploading " + f.name + "…";
+        uploadFile(acct, course, f, function (p) { note.textContent = "Uploading " + f.name + "… " + Math.round(p * 100) + "%"; })
+          .then(function (file) { record.files.push(file); renderFiles(); next(); },
+                function (err) { note.textContent = (err && err.message) || "The upload failed."; renderFiles(); });
+      })();
+    });
+
+    read(lesson, heading).then(function (v) {
+      if (v) {
+        try {
+          var r = JSON.parse(v);
+          record.title = r.title || ""; record.form = r.form || "essay"; record.link = r.link || "";
+          record.words = r.words || ""; record.applied = r.applied || ""; record.date = r.date || ""; record.level = r.level || "";
+          record.files = Array.isArray(r.files) ? r.files.filter(function (f) { return f && f.key; }) : [];
+        } catch (e) {}
+      }
+      title.value = record.title; form.value = record.form; link.value = record.link;
+      words.value = record.words; applied.value = record.applied; date.value = record.date; level.value = record.level;
+      renderFiles();
+      refreshUrls();
+    });
+    [title, form, link, words, applied, date, level].forEach(function (x) {
+      x.addEventListener("input", debounced);
+      x.addEventListener("change", debounced);
     });
   }
 

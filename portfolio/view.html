@@ -11,16 +11,16 @@
   <meta name="theme-color" content="#101C2C" />
   <script>try{var d=document.documentElement;if(document.visibilityState==="visible"){d.classList.add("sdit-animate");setTimeout(function(){d.classList.add("sdit-settled")},1200)}}catch(e){}</script>
   <title>The Portfolio — SDIT</title>
-  <meta name="description" content="Everything you have written and made, as a book: eight volumes, a short edition to show someone, and the expanded edition to read back and see how you changed.">
+  <meta name="description" content="Who you are, one highlight from every course with the work itself, the days behind each, and how your answer to the Question changed: eight volumes, a short edition, and the expanded edition.">
   <meta name="sdit-lesson" content="/portfolio" />
   <meta name="robots" content="noindex" />
-  <link rel="stylesheet" href="/assets/site.css?v=013e8fa062" />
+  <link rel="stylesheet" href="/assets/site.css?v=52cea44cef" />
   <script src="/assets/js/site-paths.js?v=9dfed823ff" defer></script>
   <script src="/assets/js/includes.js?v=2783b50173" defer></script>
-  <script src="/assets/js/portfolio.js?v=df532a9bdd" defer></script>
+  <script src="/assets/js/portfolio.js?v=8a93bc1a4b" defer></script>
 </head>
 <body class="charter-page portfolio-page is-public" data-portfolio-mode="public">
-  <div data-include="/partials/header.html?v=1790935d1c"></div>
+  <div data-include="/partials/header.html?v=3d67322ced"></div>
 
   <main id="main">
     <header class="page-header pf-screen">
@@ -40,8 +40,13 @@
       <div class="pf-volume-pick" data-volume-pick hidden>
         <label>Volume <select data-volume></select></label>
       </div>
-      <div class="pf-actions" data-own-only>
+      <div class="pf-about-edit" data-own-only>
         <label class="pf-name">Name on the title page <input type="text" data-pf-name autocomplete="name" placeholder="Your name"></label>
+        <label class="pf-about-field">About you
+          <textarea data-pf-about rows="4" placeholder="A few lines on who you are and what you want your work to say. This opens the Portfolio, before any of the work. Change it whenever it stops being true."></textarea>
+        </label>
+      </div>
+      <div class="pf-actions" data-own-only>
         <button type="button" class="learn-cta" data-pf-print>Print</button>
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-md>Download Markdown</button>
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-json>Download JSON</button>

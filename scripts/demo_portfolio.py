@@ -25,6 +25,72 @@ NOTE = ("A sample portfolio. Rowan Hale is a fictional learner, written to show 
 
 START = dt.date(2026, 12, 28)   # committed and answered Day 0 the week before Week 2
 
+# Who this is: written on the Portfolio page, changed as it stopped being true.
+ABOUT = ("I make instruments for people who can't afford instruments. I came to SDIT for a better job and found out "
+         "I liked finishing things more than I liked the job. Four years later: a surfboard with the maths to defend "
+         "it, a logger that lived on the pier, a tide clock on a café counter, and a forty-dollar sensor that three "
+         "strangers built from my guide and got the same numbers the four-thousand-dollar one gets.\n\n"
+         "Design concentration. The Cove is my lab. I want the work here to say one thing: cheap, honest, checked, "
+         "and left where people can use it.")
+
+# The work itself, per course: files under /assets/demo/<DIR>/, drawn by
+# scripts/demo_media.py. The first file is the cover.
+MEDIA = ROOT / "assets" / "demo"
+TYPES = {".jpg": "image/jpeg", ".png": "image/png", ".mp4": "video/mp4", ".pdf": "application/pdf", ".txt": "text/plain"}
+KINDS = {"image/jpeg": "image", "image/png": "image", "video/mp4": "video", "application/pdf": "pdf", "text/plain": "text"}
+FILES = {
+    "HUM-101": ["the-mast.mp4", "shot-list.txt"],
+    "MATH-110": ["drop-in-plot.png", "drop-in-frames.png", "drop-in-report.pdf"],
+    "CS-120": ["eight-bit-schematic.png", "swell-adder.txt"],
+    "PHYS-120": ["fish-template.png", "rocker-and-volume.png", "design-calculations.pdf"],
+    "WKSP-102": ["fish-glassed.jpg", "exhibition-card.png"],
+    "RHET-110": ["essay-2-final.txt", "essay-2-draft-1.txt", "drafts-beside-finals.pdf"],
+    "MATH-220": ["forty-calls.png", "forecast-log.txt"],
+    "SIG-201": ["ninety-seconds.mp4", "how-it-moved.png"],
+    "WKSP-202": ["carb-bench.jpg", "client-brief.txt"],
+    "ART-310": ["tide-clock-counter.jpg", "tide-clock-face.png", "observations.txt"],
+    "ENGR-310": ["fin-box-drawing.png", "load-test.png"],
+    "ENGR-320": ["logger-on-pier.jpg", "pier-logger-data.png", "logger-board.png"],
+    "FLD-301": ["field-report.pdf", "journal-week-4.txt"],
+    "ART-320": ["low-tide-six-minutes.mp4", "screening-card.png"],
+    "ART-410": ["kelp-19.jpg", "kelp-07.jpg", "kelp-33.jpg", "kelp-40.jpg", "the-rules.txt"],
+    "CAP-402": ["sensor-at-the-cove.jpg", "defense-deck.pdf", "three-builds-vs-pier.png", "build-guide.txt"],
+}
+
+# Where each highlight went afterwards.
+APPLIED = {
+    "HUM-101": "The phone still sleeps in the kitchen. Four years.",
+    "MATH-110": "I frame-step every clip of myself now. The fish's rocker came out of the same habit.",
+    "CS-120": "When a model tells me something about my sensor data, I know there is an adder under it and nothing else.",
+    "PHYS-120": "Ridden twice a week since. The winter board that followed has the extra tail rocker the panel asked about.",
+    "WKSP-102": "Sold the old board. Shaped two more for friends, with their numbers.",
+    "RHET-110": "Every email I send to a client goes through the same cut. A third comes out.",
+    "MATH-220": "I still post a call every Friday, and score it. 160 calls now; Brier 0.17.",
+    "SIG-201": "I stopped posting for the number and started posting for the one repost that matters. It is usually a teacher.",
+    "WKSP-202": "Marisol's brother bought the CB400. I did his carbs too.",
+    "ART-310": "Still on the counter. The owner replaced the cell once. Nobody has asked me to add anything.",
+    "ENGR-310": "Every box I have cast since has R4 corners, including the sensor's end caps.",
+    "ENGR-320": "The housing became the capstone's housing. The bracket became step 11 of the guide.",
+    "FLD-301": "I write the date on everything. The shop offered me a job for after the degree.",
+    "ART-320": "Screened again at the Workshop's open night. I watch the audience, not the film.",
+    "ART-410": "Two prints are on a café wall on Newport. The ledger is how I work with models now, on everything.",
+    "CAP-402": "The kit ships 1 May. Forty-one orders. Three are from outside the county.",
+}
+
+
+def _files(d: str) -> list:
+    out = []
+    for name in FILES.get(d, []):
+        path = MEDIA / d / name
+        if not path.exists():
+            continue
+        mime = TYPES[path.suffix.lower()]
+        f = {"url": f"/assets/demo/{d}/{name}", "name": name, "type": mime, "size": path.stat().st_size, "kind": KINDS[mime]}
+        if f["kind"] == "video" and path.with_suffix(".jpg").exists():
+            f["poster"] = f"/assets/demo/{d}/{path.with_suffix('.jpg').name}"
+        out.append(f)
+    return out
+
 BEGIN = {
     "education": "Getting a degree so I can get a better job. Honestly that's most of it. Maybe also proving to myself I can finish something.",
     "make": "An app, probably. Something people use.",
@@ -162,10 +228,11 @@ def build() -> dict:
             answers.append({"lesson": f"/gates/semester-{n}", "heading": qid, "content": text, "at": when})
     for d, title, form, words, level in MADE:
         shown = publishing.week_date(sem_of[d], 15) + dt.timedelta(days=3)
-        record = {"title": title, "form": form, "link": "", "words": words, "date": shown.isoformat(), "level": level}
+        record = {"title": title, "form": form, "link": "", "words": words, "applied": APPLIED.get(d, ""),
+                  "date": shown.isoformat(), "level": level, "files": _files(d)}
         answers.append({"lesson": f"/courses/{d}/made", "heading": "made-thing",
                         "content": json.dumps(record, ensure_ascii=False), "at": _iso(shown, 12)})
-    return {"name": NAME, "note": NOTE, "answers": answers}
+    return {"name": NAME, "about": ABOUT, "note": NOTE, "answers": answers}
 
 
 def write_all(write, out: Path = ROOT) -> None:

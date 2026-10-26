@@ -1,0 +1,19 @@
+TIDE CLOCK — two weeks on the counter at Lazy Hummingbird, Newport Ave
+
+What it is: a dial the size of a saucer. One hand is the tide right now, the arc behind it is today's curve, and one word in the middle says GO or WAIT: whether the reef at the end of the street is worth the walk in the next two hours. No screen glow, no phone, no account. It reads the NOAA tide table once a day and the buoy once an hour.
+
+Who it's for: the barista, who gets twenty minutes at 7 a.m. and no time to open an app. She was the first user and the brief came from watching her check her phone with wet hands.
+
+Observations (14 days, 6:30–9:30 a.m., sitting at the end of the counter with a notebook)
+- 212 people looked at it for more than two seconds.
+- 61 touched it (it does nothing when touched; three people tried to turn the dial).
+- 38 asked the barista what it was. She explained it 38 times. By day 5 she had a two-sentence version.
+- 9 regulars started checking it on the way in and said so.
+- 2 people photographed it. One asked to buy one.
+- Day 3: moved it 40 cm left, out of the line of the pastry case. Looks tripled.
+- Day 8: changed WAIT to NOT YET after the barista said WAIT sounded like an order. Nobody has objected to NOT YET.
+- Day 11: the word GO at 7:05 and four people left without ordering. The owner laughed. We talked about it. It stays.
+
+What I learned: the piece works when it answers the one question the person actually has, in the second they have for it. Everything I added in the first prototype (wind, water temperature, a swell arrow) was for me, not for her, and came off.
+
+Defended 2 May 2029 with the clock on the table and the barista in the room.

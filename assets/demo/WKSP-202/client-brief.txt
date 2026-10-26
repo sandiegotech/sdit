@@ -1,0 +1,16 @@
+CLIENT BRIEF — WKSP 202, client project
+
+Client: Marisol Ortega (a neighbour; found me through the shop)
+Machine: 1978 Honda CB400T, 31,000 miles, sat four years
+Complaint: will not start cold; when it does, idles at 2,500 and dies when the choke comes off
+Brief: "Make it start on the second kick and idle like a motorcycle." Budget $180 in parts. Deadline 20 November 2028 (her brother's visit).
+
+What I did
+- Week 1: pulled both carbs, found varnish in the pilot circuits and a float set 3 mm high on #2. Photographed every step. Agreed the brief in writing; she signed it.
+- Week 2: ultrasonic clean, new jets (#38 pilot, #105 main, as stock), bowl gaskets, o-rings, float needles. Set float height 14.5 mm with the gauge from ENGR 310. Synced with the manometer I built in PHYS 120.
+- Week 3: idle 1,100 warm. Starts on the second kick cold, every morning for a week, logged.
+
+Delivered 17 November. $164 in parts, 11 hours. She paid for the parts and brought tamales. The portfolio review before the Declaration used this as the Design piece: a brief, a deadline, a thing that works for someone else.
+
+Sign-off
+  "Second kick, like you said. Idles like a motorcycle." — M. Ortega, 17 Nov 2028

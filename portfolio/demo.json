@@ -1,5 +1,6 @@
 {
  "name": "Rowan Hale",
+ "about": "I make instruments for people who can't afford instruments. I came to SDIT for a better job and found out I liked finishing things more than I liked the job. Four years later: a surfboard with the maths to defend it, a logger that lived on the pier, a tide clock on a café counter, and a forty-dollar sensor that three strangers built from my guide and got the same numbers the four-thousand-dollar one gets.\n\nDesign concentration. The Cove is my lab. I want the work here to say one thing: cheap, honest, checked, and left where people can use it.",
  "note": "A sample portfolio. Rowan Hale is a fictional learner, written to show what four years of answers and made things look like here. Nothing on this page belongs to a real person.",
  "answers": [
   {
@@ -473,97 +474,97 @@
   {
    "lesson": "/courses/HUM-101/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"The Mast\", \"form\": \"film\", \"link\": \"\", \"words\": \"A three-minute film of a phone left in a kitchen overnight, cut against the Sirens episode and The Endless Summer. Designing around the weakness instead of pretending it away.\", \"date\": \"2027-04-08\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"The Mast\", \"form\": \"film\", \"link\": \"\", \"words\": \"A three-minute film of a phone left in a kitchen overnight, cut against the Sirens episode and The Endless Summer. Designing around the weakness instead of pretending it away.\", \"applied\": \"The phone still sleeps in the kitchen. Four years.\", \"date\": \"2027-04-08\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/HUM-101/the-mast.mp4\", \"name\": \"the-mast.mp4\", \"type\": \"video/mp4\", \"size\": 212682, \"kind\": \"video\", \"poster\": \"/assets/demo/HUM-101/the-mast.jpg\"}, {\"url\": \"/assets/demo/HUM-101/shot-list.txt\", \"name\": \"shot-list.txt\", \"type\": \"text/plain\", \"size\": 952, \"kind\": \"text\"}]}",
    "at": "2027-04-08T12:00:00Z"
   },
   {
    "lesson": "/courses/MATH-110/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Drop-In at Washington Street\", \"form\": \"report\", \"link\": \"\", \"words\": \"One drop-in, frame-stepped from a phone video: position, velocity, and the instant of greatest acceleration, with the calculus beside the data.\", \"date\": \"2027-04-08\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"Drop-In at Washington Street\", \"form\": \"report\", \"link\": \"\", \"words\": \"One drop-in, frame-stepped from a phone video: position, velocity, and the instant of greatest acceleration, with the calculus beside the data.\", \"applied\": \"I frame-step every clip of myself now. The fish's rocker came out of the same habit.\", \"date\": \"2027-04-08\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/MATH-110/drop-in-plot.png\", \"name\": \"drop-in-plot.png\", \"type\": \"image/png\", \"size\": 73232, \"kind\": \"image\"}, {\"url\": \"/assets/demo/MATH-110/drop-in-frames.png\", \"name\": \"drop-in-frames.png\", \"type\": \"image/png\", \"size\": 20370, \"kind\": \"image\"}, {\"url\": \"/assets/demo/MATH-110/drop-in-report.pdf\", \"name\": \"drop-in-report.pdf\", \"type\": \"application/pdf\", \"size\": 466213, \"kind\": \"pdf\"}]}",
    "at": "2027-04-08T12:00:00Z"
   },
   {
    "lesson": "/courses/CS-120/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Eight Bits from Nothing\", \"form\": \"program\", \"link\": \"\", \"words\": \"A simulated computer built up from NAND gates that runs a program I wrote to add the week's swell heights.\", \"date\": \"2027-07-22\", \"level\": \"developing\"}",
+   "content": "{\"title\": \"Eight Bits from Nothing\", \"form\": \"program\", \"link\": \"\", \"words\": \"A simulated computer built up from NAND gates that runs a program I wrote to add the week's swell heights.\", \"applied\": \"When a model tells me something about my sensor data, I know there is an adder under it and nothing else.\", \"date\": \"2027-07-22\", \"level\": \"developing\", \"files\": [{\"url\": \"/assets/demo/CS-120/eight-bit-schematic.png\", \"name\": \"eight-bit-schematic.png\", \"type\": \"image/png\", \"size\": 75271, \"kind\": \"image\"}, {\"url\": \"/assets/demo/CS-120/swell-adder.txt\", \"name\": \"swell-adder.txt\", \"type\": \"text/plain\", \"size\": 1268, \"kind\": \"text\"}]}",
    "at": "2027-07-22T12:00:00Z"
   },
   {
    "lesson": "/courses/PHYS-120/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"A 6'2\\\" Fish, by the Numbers\", \"form\": \"object\", \"link\": \"\", \"words\": \"A twin-fin fish with its volume, rocker, and fin area calculated and defended before I cut the foam.\", \"date\": \"2027-07-22\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"A 6'2\\\" Fish, by the Numbers\", \"form\": \"object\", \"link\": \"\", \"words\": \"A twin-fin fish with its volume, rocker, and fin area calculated and defended before I cut the foam.\", \"applied\": \"Ridden twice a week since. The winter board that followed has the extra tail rocker the panel asked about.\", \"date\": \"2027-07-22\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/PHYS-120/fish-template.png\", \"name\": \"fish-template.png\", \"type\": \"image/png\", \"size\": 58630, \"kind\": \"image\"}, {\"url\": \"/assets/demo/PHYS-120/rocker-and-volume.png\", \"name\": \"rocker-and-volume.png\", \"type\": \"image/png\", \"size\": 31243, \"kind\": \"image\"}, {\"url\": \"/assets/demo/PHYS-120/design-calculations.pdf\", \"name\": \"design-calculations.pdf\", \"type\": \"application/pdf\", \"size\": 329478, \"kind\": \"pdf\"}]}",
    "at": "2027-07-22T12:00:00Z"
   },
   {
    "lesson": "/courses/WKSP-102/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"The Fish, Glassed\", \"form\": \"build\", \"link\": \"\", \"words\": \"The same board, shaped and glassed in the Workshop, shown at the year-end exhibition and ridden the next morning.\", \"date\": \"2027-07-22\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"The Fish, Glassed\", \"form\": \"build\", \"link\": \"\", \"words\": \"The same board, shaped and glassed in the Workshop, shown at the year-end exhibition and ridden the next morning.\", \"applied\": \"Sold the old board. Shaped two more for friends, with their numbers.\", \"date\": \"2027-07-22\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/WKSP-102/fish-glassed.jpg\", \"name\": \"fish-glassed.jpg\", \"type\": \"image/jpeg\", \"size\": 62076, \"kind\": \"image\"}, {\"url\": \"/assets/demo/WKSP-102/exhibition-card.png\", \"name\": \"exhibition-card.png\", \"type\": \"image/png\", \"size\": 65149, \"kind\": \"image\"}]}",
    "at": "2027-07-22T12:00:00Z"
   },
   {
    "lesson": "/courses/RHET-110/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Four Essays, Drafts Beside Finals\", \"form\": \"essay\", \"link\": \"\", \"words\": \"A made thing described, an argument, a review, and a letter. The distance between the drafts and the finals is the point.\", \"date\": \"2027-11-04\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"Four Essays, Drafts Beside Finals\", \"form\": \"essay\", \"link\": \"\", \"words\": \"A made thing described, an argument, a review, and a letter. The distance between the drafts and the finals is the point.\", \"applied\": \"Every email I send to a client goes through the same cut. A third comes out.\", \"date\": \"2027-11-04\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/RHET-110/essay-2-final.txt\", \"name\": \"essay-2-final.txt\", \"type\": \"text/plain\", \"size\": 2341, \"kind\": \"text\"}, {\"url\": \"/assets/demo/RHET-110/essay-2-draft-1.txt\", \"name\": \"essay-2-draft-1.txt\", \"type\": \"text/plain\", \"size\": 2005, \"kind\": \"text\"}, {\"url\": \"/assets/demo/RHET-110/drafts-beside-finals.pdf\", \"name\": \"drafts-beside-finals.pdf\", \"type\": \"application/pdf\", \"size\": 376079, \"kind\": \"pdf\"}]}",
    "at": "2027-11-04T12:00:00Z"
   },
   {
    "lesson": "/courses/MATH-220/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Forty Calls\", \"form\": \"forecast\", \"link\": \"\", \"words\": \"Forty public swell forecasts for the Cove, made in advance and scored. Brier score 0.19, which is better than guessing and worse than I thought.\", \"date\": \"2028-02-17\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"Forty Calls\", \"form\": \"forecast\", \"link\": \"\", \"words\": \"Forty public swell forecasts for the Cove, made in advance and scored. Brier score 0.19, which is better than guessing and worse than I thought.\", \"applied\": \"I still post a call every Friday, and score it. 160 calls now; Brier 0.17.\", \"date\": \"2028-02-17\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/MATH-220/forty-calls.png\", \"name\": \"forty-calls.png\", \"type\": \"image/png\", \"size\": 68499, \"kind\": \"image\"}, {\"url\": \"/assets/demo/MATH-220/forecast-log.txt\", \"name\": \"forecast-log.txt\", \"type\": \"text/plain\", \"size\": 2304, \"kind\": \"text\"}]}",
    "at": "2028-02-17T12:00:00Z"
   },
   {
    "lesson": "/courses/SIG-201/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Ninety Seconds at Sunset Cliffs\", \"form\": \"film\", \"link\": \"\", \"words\": \"A short piece released into a real feed, with the numbers: who watched, how far, and why I think it moved.\", \"date\": \"2028-02-17\", \"level\": \"developing\"}",
+   "content": "{\"title\": \"Ninety Seconds at Sunset Cliffs\", \"form\": \"film\", \"link\": \"\", \"words\": \"A short piece released into a real feed, with the numbers: who watched, how far, and why I think it moved.\", \"applied\": \"I stopped posting for the number and started posting for the one repost that matters. It is usually a teacher.\", \"date\": \"2028-02-17\", \"level\": \"developing\", \"files\": [{\"url\": \"/assets/demo/SIG-201/ninety-seconds.mp4\", \"name\": \"ninety-seconds.mp4\", \"type\": \"video/mp4\", \"size\": 571675, \"kind\": \"video\", \"poster\": \"/assets/demo/SIG-201/ninety-seconds.jpg\"}, {\"url\": \"/assets/demo/SIG-201/how-it-moved.png\", \"name\": \"how-it-moved.png\", \"type\": \"image/png\", \"size\": 48860, \"kind\": \"image\"}]}",
    "at": "2028-02-17T12:00:00Z"
   },
   {
    "lesson": "/courses/WKSP-202/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"A Carburetor for a 1978 CB400\", \"form\": \"build\", \"link\": \"\", \"words\": \"Rebuilt for a client to their brief and deadline. It started on the second kick.\", \"date\": \"2028-02-17\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"A Carburetor for a 1978 CB400\", \"form\": \"build\", \"link\": \"\", \"words\": \"Rebuilt for a client to their brief and deadline. It started on the second kick.\", \"applied\": \"Marisol's brother bought the CB400. I did his carbs too.\", \"date\": \"2028-02-17\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/WKSP-202/carb-bench.jpg\", \"name\": \"carb-bench.jpg\", \"type\": \"image/jpeg\", \"size\": 91068, \"kind\": \"image\"}, {\"url\": \"/assets/demo/WKSP-202/client-brief.txt\", \"name\": \"client-brief.txt\", \"type\": \"text/plain\", \"size\": 1203, \"kind\": \"text\"}]}",
    "at": "2028-02-17T12:00:00Z"
   },
   {
    "lesson": "/courses/ART-310/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Tide Clock\", \"form\": \"build\", \"link\": \"\", \"words\": \"A small interactive piece on a café counter that tells you, at a glance, whether the tide is worth the drive. Observed for two weeks; strangers use it.\", \"date\": \"2028-06-01\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"Tide Clock\", \"form\": \"build\", \"link\": \"\", \"words\": \"A small interactive piece on a café counter that tells you, at a glance, whether the tide is worth the drive. Observed for two weeks; strangers use it.\", \"applied\": \"Still on the counter. The owner replaced the cell once. Nobody has asked me to add anything.\", \"date\": \"2028-06-01\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/ART-310/tide-clock-counter.jpg\", \"name\": \"tide-clock-counter.jpg\", \"type\": \"image/jpeg\", \"size\": 59797, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ART-310/tide-clock-face.png\", \"name\": \"tide-clock-face.png\", \"type\": \"image/png\", \"size\": 45978, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ART-310/observations.txt\", \"name\": \"observations.txt\", \"type\": \"text/plain\", \"size\": 1680, \"kind\": \"text\"}]}",
    "at": "2028-06-01T12:00:00Z"
   },
   {
    "lesson": "/courses/ENGR-310/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"A Fin Box That Doesn't Crack\", \"form\": \"object\", \"link\": \"\", \"words\": \"A redesigned fin box with drawings and tolerances, cast and tested to failure on the bench. It failed above the load I designed for.\", \"date\": \"2028-06-01\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"A Fin Box That Doesn't Crack\", \"form\": \"object\", \"link\": \"\", \"words\": \"A redesigned fin box with drawings and tolerances, cast and tested to failure on the bench. It failed above the load I designed for.\", \"applied\": \"Every box I have cast since has R4 corners, including the sensor's end caps.\", \"date\": \"2028-06-01\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/ENGR-310/fin-box-drawing.png\", \"name\": \"fin-box-drawing.png\", \"type\": \"image/png\", \"size\": 96757, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ENGR-310/load-test.png\", \"name\": \"load-test.png\", \"type\": \"image/png\", \"size\": 48365, \"kind\": \"image\"}]}",
    "at": "2028-06-01T12:00:00Z"
   },
   {
    "lesson": "/courses/ENGR-320/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Pier Logger\", \"form\": \"build\", \"link\": \"\", \"words\": \"A temperature and tide logger that lived in saltwater on the pier for five weeks and agreed with the official station.\", \"date\": \"2028-09-14\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"Pier Logger\", \"form\": \"build\", \"link\": \"\", \"words\": \"A temperature and tide logger that lived in saltwater on the pier for five weeks and agreed with the official station.\", \"applied\": \"The housing became the capstone's housing. The bracket became step 11 of the guide.\", \"date\": \"2028-09-14\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/ENGR-320/logger-on-pier.jpg\", \"name\": \"logger-on-pier.jpg\", \"type\": \"image/jpeg\", \"size\": 50709, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ENGR-320/pier-logger-data.png\", \"name\": \"pier-logger-data.png\", \"type\": \"image/png\", \"size\": 95608, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ENGR-320/logger-board.png\", \"name\": \"logger-board.png\", \"type\": \"image/png\", \"size\": 18558, \"kind\": \"image\"}]}",
    "at": "2028-09-14T12:00:00Z"
   },
   {
    "lesson": "/courses/FLD-301/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Twelve Weeks at an Instrument Shop\", \"form\": \"report\", \"link\": \"\", \"words\": \"A field report, the journal behind it, and my mentor's evaluation from a placement building ocean instruments.\", \"date\": \"2028-09-14\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"Twelve Weeks at an Instrument Shop\", \"form\": \"report\", \"link\": \"\", \"words\": \"A field report, the journal behind it, and my mentor's evaluation from a placement building ocean instruments.\", \"applied\": \"I write the date on everything. The shop offered me a job for after the degree.\", \"date\": \"2028-09-14\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/FLD-301/field-report.pdf\", \"name\": \"field-report.pdf\", \"type\": \"application/pdf\", \"size\": 703449, \"kind\": \"pdf\"}, {\"url\": \"/assets/demo/FLD-301/journal-week-4.txt\", \"name\": \"journal-week-4.txt\", \"type\": \"text/plain\", \"size\": 1165, \"kind\": \"text\"}]}",
    "at": "2028-09-14T12:00:00Z"
   },
   {
    "lesson": "/courses/ART-320/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Low Tide, Six Minutes\", \"form\": \"film\", \"link\": \"\", \"words\": \"The Crossing: a short film, screened, about the hour the reef shows itself.\", \"date\": \"2028-06-01\", \"level\": \"developing\"}",
+   "content": "{\"title\": \"Low Tide, Six Minutes\", \"form\": \"film\", \"link\": \"\", \"words\": \"The Crossing: a short film, screened, about the hour the reef shows itself.\", \"applied\": \"Screened again at the Workshop's open night. I watch the audience, not the film.\", \"date\": \"2028-06-01\", \"level\": \"developing\", \"files\": [{\"url\": \"/assets/demo/ART-320/low-tide-six-minutes.mp4\", \"name\": \"low-tide-six-minutes.mp4\", \"type\": \"video/mp4\", \"size\": 299822, \"kind\": \"video\", \"poster\": \"/assets/demo/ART-320/low-tide-six-minutes.jpg\"}, {\"url\": \"/assets/demo/ART-320/screening-card.png\", \"name\": \"screening-card.png\", \"type\": \"image/png\", \"size\": 34413, \"kind\": \"image\"}]}",
    "at": "2028-06-01T12:00:00Z"
   },
   {
    "lesson": "/courses/ART-410/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Kelp\", \"form\": \"other\", \"link\": \"\", \"words\": \"A generative work: the rules for how the kelp grows are mine, the model draws, and the forty I kept are on the wall with the rules beside them.\", \"date\": \"2028-12-28\", \"level\": \"proficient\"}",
+   "content": "{\"title\": \"Kelp\", \"form\": \"other\", \"link\": \"\", \"words\": \"A generative work: the rules for how the kelp grows are mine, the model draws, and the forty I kept are on the wall with the rules beside them.\", \"applied\": \"Two prints are on a café wall on Newport. The ledger is how I work with models now, on everything.\", \"date\": \"2028-12-28\", \"level\": \"proficient\", \"files\": [{\"url\": \"/assets/demo/ART-410/kelp-19.jpg\", \"name\": \"kelp-19.jpg\", \"type\": \"image/jpeg\", \"size\": 103452, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ART-410/kelp-07.jpg\", \"name\": \"kelp-07.jpg\", \"type\": \"image/jpeg\", \"size\": 98910, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ART-410/kelp-33.jpg\", \"name\": \"kelp-33.jpg\", \"type\": \"image/jpeg\", \"size\": 104087, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ART-410/kelp-40.jpg\", \"name\": \"kelp-40.jpg\", \"type\": \"image/jpeg\", \"size\": 86629, \"kind\": \"image\"}, {\"url\": \"/assets/demo/ART-410/the-rules.txt\", \"name\": \"the-rules.txt\", \"type\": \"text/plain\", \"size\": 1536, \"kind\": \"text\"}]}",
    "at": "2028-12-28T12:00:00Z"
   },
   {
    "lesson": "/courses/CAP-402/made",
    "heading": "made-thing",
-   "content": "{\"title\": \"Cheap Eyes on the Water\", \"form\": \"build\", \"link\": \"\", \"words\": \"An open coastal temperature and tide sensor anyone can build for about forty dollars, with the build guide, the data, and three independent builds that matched the pier. Defended in public before faculty and outside examiners.\", \"date\": \"2029-04-12\", \"level\": \"mastered\"}",
+   "content": "{\"title\": \"Cheap Eyes on the Water\", \"form\": \"build\", \"link\": \"\", \"words\": \"An open coastal temperature and tide sensor anyone can build for about forty dollars, with the build guide, the data, and three independent builds that matched the pier. Defended in public before faculty and outside examiners.\", \"applied\": \"The kit ships 1 May. Forty-one orders. Three are from outside the county.\", \"date\": \"2029-04-12\", \"level\": \"mastered\", \"files\": [{\"url\": \"/assets/demo/CAP-402/sensor-at-the-cove.jpg\", \"name\": \"sensor-at-the-cove.jpg\", \"type\": \"image/jpeg\", \"size\": 41051, \"kind\": \"image\"}, {\"url\": \"/assets/demo/CAP-402/defense-deck.pdf\", \"name\": \"defense-deck.pdf\", \"type\": \"application/pdf\", \"size\": 603558, \"kind\": \"pdf\"}, {\"url\": \"/assets/demo/CAP-402/three-builds-vs-pier.png\", \"name\": \"three-builds-vs-pier.png\", \"type\": \"image/png\", \"size\": 44045, \"kind\": \"image\"}, {\"url\": \"/assets/demo/CAP-402/build-guide.txt\", \"name\": \"build-guide.txt\", \"type\": \"text/plain\", \"size\": 1922, \"kind\": \"text\"}]}",
    "at": "2029-04-12T12:00:00Z"
   }
  ]

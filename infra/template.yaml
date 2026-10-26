@@ -30,6 +30,15 @@ Parameters:
       slash — e.g. 2yuxbioi45.execute-api.us-west-2.amazonaws.com. This is the
       ApiUrl output of the sdit-account stack with https:// stripped.
 
+  WorkBucketDomain:
+    Type: String
+    Description: >
+      Regional domain of the account stack's work bucket, e.g.
+      sdit-account-work.s3.us-west-2.amazonaws.com (its WorkBucketDomain
+      output). Published portfolio files are served from its p/ prefix at
+      /work/p/*; a learner's own files are read and uploaded there directly
+      over signed links, which is why the host also appears in the CSP.
+
 Resources:
 
   # ── Site bucket ─────────────────────────────────────────────────────────────
@@ -192,14 +201,15 @@ Resources:
             Override: true
           ContentSecurityPolicy:
             Override: true
-            ContentSecurityPolicy: >-
+            ContentSecurityPolicy: !Sub >-
               default-src 'self';
-              img-src 'self' data: https://upload.wikimedia.org;
+              img-src 'self' data: https://upload.wikimedia.org https://${WorkBucketDomain};
+              media-src 'self' https://${WorkBucketDomain};
               style-src 'self' 'unsafe-inline';
               font-src 'self';
               script-src 'self' 'unsafe-inline';
-              frame-src https://www.youtube-nocookie.com;
-              connect-src 'self' https://2yuxbioi45.execute-api.us-west-2.amazonaws.com;
+              frame-src 'self' https://www.youtube-nocookie.com https://${WorkBucketDomain};
+              connect-src 'self' https://2yuxbioi45.execute-api.us-west-2.amazonaws.com https://${WorkBucketDomain};
               form-action 'self';
               base-uri 'self';
               object-src 'none'
@@ -241,6 +251,14 @@ Resources:
               OriginProtocolPolicy: https-only
               OriginSSLProtocols: [TLSv1.2]
 
+          # The published files behind made things (the account stack's work
+          # bucket). Its policy lets this distribution read p/* and nothing
+          # else, so a learner's private files are unreachable this way.
+          - Id: work
+            DomainName: !Ref WorkBucketDomain
+            OriginAccessControlId: !GetAtt OriginAccessControl.Id
+            S3OriginConfig: {}
+
         DefaultCacheBehavior:
           TargetOriginId: s3
           ViewerProtocolPolicy: redirect-to-https
@@ -254,6 +272,15 @@ Resources:
               FunctionARN: !GetAtt IndexRewriteFunction.FunctionMetadata.FunctionARN
 
         CacheBehaviors:
+          - PathPattern: /work/p/*
+            TargetOriginId: work
+            ViewerProtocolPolicy: redirect-to-https
+            Compress: true
+            AllowedMethods: [GET, HEAD, OPTIONS]
+            # Managed-CachingOptimized: published files are immutable by key.
+            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+            ResponseHeadersPolicyId: !Ref SecurityHeaders
+
           - PathPattern: /api/*
             TargetOriginId: api
             ViewerProtocolPolicy: https-only

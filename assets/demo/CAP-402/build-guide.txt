@@ -1,0 +1,32 @@
+CHEAP EYES ON THE WATER — build guide v1.0
+A coastal temperature and tide sensor for about forty dollars. 11 steps, 40 minutes, no experience assumed.
+
+Bill of materials ($41.60)
+  1  microcontroller board with LoRa radio ............ 12.40
+  1  pressure + temperature sensor, I2C, 0–10 m ........ 9.80
+  1  LiFePO4 cell 3.2 V 1500 mAh + charger board ....... 8.20
+  1  PVC pipe 50 mm × 300 mm + two cast end caps ....... 5.10
+  1  cable gland M12, stainless bracket, 2 straps ...... 3.60
+  1  solar panel 1 W ..................................... 2.50
+
+Steps
+  1. Flash the board (one file, one button). Test it blinks.
+  2. Solder four wires: sensor to board. Red, black, yellow, blue. Photos in the appendix.
+  3. Solder the cell and charger. Test the voltage: 3.2–3.6 V.
+  4. Pass the sensor cable through the gland in the lower cap. Straight. No bend inside the housing.
+  5. Pot the gland with the urethane in the kit. Pour slowly. Write the date on the cap.
+  6. Fit the upper cap with the solar panel and antenna. Hand tight plus a quarter turn.
+  7. Power on. Wait for the green light: it found the network.
+  8. Lower it into a bucket of water. The reading should go to the depth of the bucket within 2 cm.
+  9. Mount the bracket where it can be seen from above: not under a ledge, not where a cable crosses an edge.
+ 10. Strap the housing. Check it does not move when pushed hard.
+ 11. Write today's date on the bracket, and a date one month from today. Come back on that date.
+
+What to expect
+  Readings every 10 minutes to the open map. Temperature within 0.1 °C of a reference station; depth within 3 cm.
+  Battery: indefinite with 2 h of sun a day. A week in the dark.
+
+If it stops
+  Check the bracket first. Then the gland. Then the cell. The sensor itself has not failed yet in any build.
+
+License: CERN-OHL-P. Files: sdit.org/eyes. Data: open. Questions: the forum, or ask someone who built one.
