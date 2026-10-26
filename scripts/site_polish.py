@@ -61,9 +61,42 @@ def _first_paragraph(text: str) -> str:
     return ""
 
 
+# Every script, stylesheet, and partial a page references gets ?v=<hash of its
+# contents>. A changed file then has a new URL, so no browser can run a stale
+# cached copy against a new page (until 2026-10-26 the site sent no cache
+# headers, and browsers kept old scripts for as long as they liked).
+ASSET_REF = re.compile(
+    r'((?:src|href|data-include)=")((?:\.\./)*|/)'
+    r'(assets/(?:js/[\w-]+\.js|site\.css|fonts/fonts\.css)|partials/[\w-]+\.html)(\?v=[0-9a-f]+)?"')
+_VERSIONS: dict = {}
+
+
+def asset_version(rel: str, root: Path = ROOT) -> str:
+    """Short content hash of an asset. Partials are hashed after their own
+    script references are versioned, so a changed script changes them too."""
+    import hashlib
+    if rel not in _VERSIONS:
+        f = root / rel
+        if not f.exists():
+            return ""
+        data = f.read_text(encoding="utf-8")
+        if rel.startswith("partials/"):
+            data = version_refs(data, root)
+        _VERSIONS[rel] = hashlib.sha1(data.encode("utf-8")).hexdigest()[:10]
+    return _VERSIONS[rel]
+
+
+def version_refs(text: str, root: Path = ROOT) -> str:
+    def sub(m):
+        v = asset_version(m.group(3), root)
+        return f'{m.group(1)}{m.group(2)}{m.group(3)}' + (f"?v={v}" if v else "") + '"'
+    return ASSET_REF.sub(sub, text)
+
+
 def polish(text: str) -> str:
     if is_redirect(text) or "<head>" not in text:
         return text
+    text = version_refs(text)
     if HEAD_MARK in text and HEAD not in text:
         text = re.sub(re.escape(HEAD_MARK) + r"\n.*?</script>\n", lambda _m: HEAD, text, count=1, flags=re.S)
     if HEAD_MARK not in text:
@@ -166,6 +199,13 @@ def sitemap(root: Path) -> str:
 
 def run(write, out: Path = ROOT) -> int:
     changed = 0
+    # The partials carry script references too; version them in place.
+    for p in sorted((ROOT / "partials").glob("*.html")):
+        text = p.read_text(encoding="utf-8")
+        new = version_refs(text)
+        if new != text:
+            p.write_text(new, encoding="utf-8")
+    _VERSIONS.clear()
     for p in pages(out):
         text = p.read_text(encoding="utf-8")
         new = polish(text)
