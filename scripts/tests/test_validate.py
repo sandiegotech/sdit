@@ -15,6 +15,22 @@ INDEX_LIVE = """---
 id: x-101
 title: "X 101 — Thing"
 status: {status}
+syllabus:
+  level: lower
+  prerequisites: []
+  corequisites: []
+  method: [lecture]
+  hours: {{instruction: 3, studio_or_lab: 0, independent: 9}}
+  materials:
+    - {{title: "A Book", author: "Someone", access: open, cost: 0}}
+  assessment:
+    - {{component: "Weekly answers", weight: 20}}
+    - {{component: "Unassisted examination", weight: 20}}
+    - {{component: "The made thing", weight: 60}}
+  exam: "Week 13, tools closed."
+  rubric: made-response
+  core_competencies: {{critical-thinking: I}}
+  outcome_levels: {{judgment: I}}
 ---
 
 # X 101 — Thing
@@ -22,6 +38,8 @@ status: {status}
 ## Overview
 ## The Two Registers
 ## Learning Outcomes
+
+1. Do the thing. → *Judgment* · *Critical thinking*
 ## The Made Thing
 ## How You're Assessed
 ## The Daily Path
@@ -31,10 +49,29 @@ INDEX_SCAFFOLD = """---
 id: x-101
 title: "X 101 — Thing"
 status: {status}
+syllabus:
+  level: lower
+  prerequisites: []
+  corequisites: []
+  method: [lecture]
+  hours: {{instruction: 3, studio_or_lab: 0, independent: 9}}
+  materials:
+    - {{title: "A Book", author: "Someone", access: open, cost: 0}}
+  assessment:
+    - {{component: "Weekly answers", weight: 20}}
+    - {{component: "Unassisted examination", weight: 20}}
+    - {{component: "The made thing", weight: 60}}
+  exam: "Week 13, tools closed."
+  rubric: made-response
+  core_competencies: {{critical-thinking: I}}
+  outcome_levels: {{judgment: I}}
 ---
 
 # X 101 — Thing
 
+## Learning Outcomes
+
+1. Do the thing. → *Judgment* · *Critical thinking*
 ## The Two Registers
 ## The Daily Path
 """
@@ -208,3 +245,46 @@ def test_day_must_ask_its_question_and_keep_the_answer():
             errors = []
             validate.validate_catalog(errors, _data(c), root)
         assert any(expect in e for e in errors), (expect, errors)
+
+
+def _run_with_syllabus(edit):
+    """Run the validator on the minimal course after editing its index.md text."""
+    c = _course()
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        _write_course(root, c, 0)
+        f = root / c["dir"] / "index.md"
+        f.write_text(edit(f.read_text()))
+        errors = []
+        validate.validate_catalog(errors, _data(c), root)
+    return errors
+
+
+def test_syllabus_numbers_must_add_up():
+    assert _run_with_syllabus(lambda t: t) == []
+    e = _run_with_syllabus(lambda t: t.replace("independent: 9", "independent: 8"))
+    assert any("weekly hours sum to 11" in x for x in e)
+    e = _run_with_syllabus(lambda t: t.replace("weight: 60", "weight: 50"))
+    assert any("sum to 90, not 100" in x for x in e)
+    e = _run_with_syllabus(lambda t: t.replace("level: lower", "level: upper"))
+    assert any("lower division" in x for x in e)
+
+
+def test_syllabus_references_must_be_real():
+    e = _run_with_syllabus(lambda t: t.replace("prerequisites: []", "prerequisites: [NOPE 999]"))
+    assert any("not in the catalog" in x for x in e)
+    e = _run_with_syllabus(lambda t: t.replace("rubric: made-response", "rubric: vibes"))
+    assert any("not in knowledge/rubrics.yaml" in x for x in e)
+    e = _run_with_syllabus(lambda t: t.replace("access: open, cost: 0", "access: open, cost: 40"))
+    assert any("is open but costs 40" in x for x in e)
+
+
+def test_syllabus_claims_must_be_on_the_page():
+    e = _run_with_syllabus(lambda t: t.replace(" · *Critical thinking*", ""))
+    assert any("no learning outcome names it" in x for x in e)
+    e = _run_with_syllabus(lambda t: t.replace("Unassisted examination", "Quiz"))
+    assert any("no unassisted examination component" in x for x in e)
+    e = _run_with_syllabus(lambda t: t.replace("outcome_levels: {judgment: I}", "outcome_levels: {breadth: I}"))
+    assert any("outcome_levels covers" in x for x in e)
+    e = _run_with_syllabus(lambda t: t.replace("syllabus:", "notsyllabus:"))
+    assert any("no `syllabus:` block" in x for x in e)

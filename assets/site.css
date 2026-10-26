@@ -1834,3 +1834,15 @@ html.sdit-authed .sdit-portal { display: block; }
   .pf-link a::after { content: ""; }
   @page { margin: 2cm 2.2cm; }
 }
+
+
+/* ---- Evidence pages (for reviewers) ---- */
+.evidence-table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+.evidence-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.evidence-table th, .evidence-table td { text-align: left; vertical-align: top; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--hairline); }
+.evidence-table thead th { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.evidence-table tbody th { font-weight: 600; white-space: nowrap; }
+.evidence-table tbody th span { display: block; font-weight: 400; color: var(--muted); font-size: 0.8rem; white-space: normal; }
+.evidence-page .evidence-table td { text-align: center; }
+.evidence-page .evidence-table td:last-child, .rubric-table td, .evidence-table td:only-of-type { text-align: left; }
+.evidence-page .rubric-table td { font-size: 0.84rem; line-height: 1.45; min-width: 9rem; text-align: left; }

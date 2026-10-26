@@ -5,6 +5,44 @@ course_code: ENGR 410
 units: 4
 thread: The Depths
 status: syllabus
+syllabus:
+  level: upper
+  prerequisites: [HUM 202, MATH 220, CS 220, RHET 210, WKSP 202, ENGR 310]
+  corequisites: []
+  method: [studio]
+  hours:
+    instruction: 1
+    studio_or_lab: 6
+    independent: 5
+  materials:
+    - {title: "Stanley: The Robot That Won the DARPA Grand Challenge", author: "Sebastian Thrun et al.", edition: "Journal of Field Robotics, 2006; author's copy", access: open, cost: 0}
+    - {title: "Elephants Don't Play Chess", author: "Rodney Brooks", edition: "1990; author's copy at MIT", access: open, cost: 0}
+    - {title: "Intelligence Without Representation", author: "Rodney Brooks", edition: "1991; author's copy at MIT", access: open, cost: 0}
+    - {title: "The American Practical Navigator, dead reckoning chapter", author: "Nathaniel Bowditch", edition: "National Geospatial-Intelligence Agency", access: open, cost: 0}
+    - {title: "Perseverance AutoNav description", author: "NASA", access: open, cost: 0}
+    - {title: "On Governors", author: "James Clerk Maxwell", edition: "1868", access: open, cost: 0}
+    - {title: "Introduction to A*", author: "Amit Patel", edition: "Red Blob Games", access: open, cost: 0}
+    - {title: "DARPA Robotics Challenge final report", author: "DARPA", access: open, cost: 0}
+    - {title: "Autonomous Driving in Urban Environments: Boss and the Urban Challenge", author: "Chris Urmson et al.", edition: "2008; author's copy at CMU", access: open, cost: 0}
+    - {title: "Apollo 11 air-to-ground transcript, final descent", author: "NASA", access: open, cost: 0}
+    - {title: "Small unmanned aircraft rules, 14 CFR Part 107", author: "Federal Aviation Administration", access: open, cost: 0}
+    - {title: "Opportunity mission summary", author: "NASA", access: open, cost: 0}
+    - {title: "Closed parking lot, Mission Bay access, range safety officer, and rover platforms", author: "San Diego Institute of Technology", access: provided, cost: 0, note: "Open learner: a small wheeled robot kit, a camera, a hallway or driveway."}
+  assessment:
+    - {component: "Weekly platform, log, and written exercises", weight: 20}
+    - {component: "Signed safety case and three critiques: moving, rehearsal, failures", weight: 15}
+    - {component: "Unassisted examination: step response, hand-planned path, odometry fix", weight: 20}
+    - {component: "The live demonstration, logs, and account", weight: 45}
+  exam: "Day 11, tools closed, ninety minutes with a pencil: diagnose a controller's step response, plan a path by hand on a grid map, and state where a robot is and how sure you are from odometry and one landmark fix."
+  rubric: working-system
+  core_competencies:
+    quantitative-reasoning: D
+    written-communication: D
+    oral-communication: D
+  outcome_levels:
+    intelligence: M
+    craft: M
+    judgment: M
 ---
 
 # ENGR 410 — Robotics & Autonomous Systems
@@ -24,15 +62,52 @@ This is a depth studio: a parking lot you can close, a stretch of bay you can us
 - **Catalog register:** Robotics — perception, control, planning, autonomy.
 - **Teaching frame:** Perception, control, autonomy in the physical world — where the demo meets the parking lot.
 
+## Course Information
+
+<!-- sdit:info:begin -->
+| | |
+|---|---|
+| Catalog number | ENGR 410 — Robotics & Autonomous Systems |
+| Units | 4 semester units · 180 hours of work over 15 weeks |
+| Each week | 1 h instruction · 6 h studio or laboratory · 5 h independent work |
+| Level | Upper division |
+| Offered | Semester 7 · Year 4 · Fall |
+| Prerequisites | [HUM 202](/courses/HUM-202/index.html), [MATH 220](/courses/MATH-220/index.html), [CS 220](/courses/CS-220/index.html), [RHET 210](/courses/RHET-210/index.html), [WKSP 202](/courses/WKSP-202/index.html), [ENGR 310](/courses/ENGR-310/index.html) |
+| Corequisites | None |
+| Instructional method | Studio |
+| Instructor | A practitioner-scholar with a body of work in the field: a terminal degree, or equivalent professional standing documented under the Institute's rubric (The Degree, section 9). |
+| Rubric | [The working system (Computation and Engineering)](/curriculum/rubrics.html#working-system) |
+| Core competencies | Written communication (developed) · Oral communication (developed) · Quantitative reasoning (developed) |
+| Unassisted examination | Day 11, tools closed, ninety minutes with a pencil: diagnose a controller's step response, plan a path by hand on a grid map, and state where a robot is and how sure you are from odometry and one landmark fix. |
+
+**Required materials**
+
+- *Stanley: The Robot That Won the DARPA Grand Challenge*, Sebastian Thrun et al. — Journal of Field Robotics, 2006; author's copy · open, free
+- *Elephants Don't Play Chess*, Rodney Brooks — 1990; author's copy at MIT · open, free
+- *Intelligence Without Representation*, Rodney Brooks — 1991; author's copy at MIT · open, free
+- *The American Practical Navigator, dead reckoning chapter*, Nathaniel Bowditch — National Geospatial-Intelligence Agency · open, free
+- *Perseverance AutoNav description*, NASA · open, free
+- *On Governors*, James Clerk Maxwell — 1868 · open, free
+- *Introduction to A**, Amit Patel — Red Blob Games · open, free
+- *DARPA Robotics Challenge final report*, DARPA · open, free
+- *Autonomous Driving in Urban Environments: Boss and the Urban Challenge*, Chris Urmson et al. — 2008; author's copy at CMU · open, free
+- *Apollo 11 air-to-ground transcript, final descent*, NASA · open, free
+- *Small unmanned aircraft rules, 14 CFR Part 107*, Federal Aviation Administration · open, free
+- *Opportunity mission summary*, NASA · open, free
+- *Closed parking lot, Mission Bay access, range safety officer, and rover platforms*, San Diego Institute of Technology · provided in the room; open learner: a small wheeled robot kit, a camera, a hallway or driveway
+
+Required materials cost: nothing. Every item is open, borrowable from a public library, or provided in the room.
+<!-- sdit:info:end -->
+
 ## Learning Outcomes
 
 By the end of this course you can:
 
-1. Build a perception and localization pipeline that turns sensors into a position and a map, carries its uncertainty forward, and resets its drift against landmarks. → *Command of Intelligence*
+1. Build a perception and localization pipeline that turns sensors into a position and a map, carries its uncertainty forward, and resets its drift against landmarks. → *Command of Intelligence* · *Quantitative reasoning*
 2. Design and tune a feedback controller for a physical platform, diagnose its response, and explain where the error came from. → *Workmanship*
 3. Plan a path through a mapped space and replan when the space changes, choosing where a learned component earns its place and where plain code must remain. → *Command of Intelligence · Judgment*
-4. Write and sign a safety case for an unmanned system — emergency stop, geofence, speed limit, lost-link behavior — and run every test under it. → *Judgment*
-5. Demonstrate an autonomous system doing a stated job live, in an uncontrolled space, with a recorded success rate, and account for what it saw, decided, and got wrong. → *Workmanship*
+4. Write and sign a safety case for an unmanned system — emergency stop, geofence, speed limit, lost-link behavior — and run every test under it. → *Judgment* · *Written communication*
+5. Demonstrate an autonomous system doing a stated job live, in an uncontrolled space, with a recorded success rate, and account for what it saw, decided, and got wrong. → *Workmanship* · *Oral communication*
 
 *Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
@@ -49,11 +124,26 @@ An autonomous system demonstrated live, in the world, doing its job. A ground ro
 - **An unassisted examination** on Day 11, tools closed: a step response to diagnose, a map to plan a path through by hand, odometry to localize from. The autonomy you build will hand you the problem at the worst moment; the institution certifies the human who can take it.
 - Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
+<!-- sdit:weights:begin -->
+
+| Component | Weight |
+|---|---|
+| Weekly platform, log, and written exercises | 20% |
+| Signed safety case and three critiques: moving, rehearsal, failures | 15% |
+| Unassisted examination: step response, hand-planned path, odometry fix | 20% |
+| The live demonstration, logs, and account | 45% |
+| **Total** | **100%** |
+
+Grades follow the scale in the [academic policies](/curriculum/policies.html#grading).
+<!-- sdit:weights:end -->
+
 ## The Daily Path
 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
+The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+
 ### Day 01 — Seven Miles Into the Desert
 
 Publishes Monday, 18 September 2028.
@@ -114,6 +204,17 @@ Publishes Monday, 18 December 2028.
 
 Publishes Monday, 25 December 2028.
 <!-- sdit:days:end -->
+
+
+## Policies
+
+<!-- sdit:policies:begin -->
+- **Attendance and participation.** See [attendance](/curriculum/policies.html#attendance).
+- **AI use.** Tools are open in every course, and the human is examined unaided. See [the AI policy](/curriculum/policies.html#ai).
+- **Academic integrity.** See [academic integrity](/curriculum/policies.html#integrity).
+- **Accommodations.** See [accommodations](/curriculum/policies.html#accommodations).
+- **Late work.** See [late work](/curriculum/policies.html#late-work).
+<!-- sdit:policies:end -->
 
 ---
 

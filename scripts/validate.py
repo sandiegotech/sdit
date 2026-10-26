@@ -202,6 +202,147 @@ def validate_course(c: dict, i: int, threads: set, courses_root: Path, errors: l
                 f"(run scripts/sync_courses.py)")
 
 
+SYLLABUS_METHODS = {"seminar", "lecture", "laboratory", "studio", "placement", "independent"}
+ACCESS = {"open", "library", "purchase", "provided"}
+LEVELS = {"I", "D", "M"}
+COMPETENCIES = {
+    "written-communication": "Written communication",
+    "oral-communication": "Oral communication",
+    "quantitative-reasoning": "Quantitative reasoning",
+    "information-literacy": "Information literacy",
+    "critical-thinking": "Critical thinking",
+}
+INSTITUTIONAL = ["Judgment", "Command of Intelligence", "Workmanship", "Articulation", "Breadth of Mind"]
+
+
+def _rubric_ids(knowledge: Path = KNOWLEDGE) -> set:
+    f = knowledge / "rubrics.yaml"
+    if not f.exists():
+        return set()
+    return {r["id"] for r in (load(f) or {}).get("rubrics", [])}
+
+
+def _section(text: str, heading: str) -> str:
+    m = re.search(rf"^## {re.escape(heading)}\s*$(.*?)(?=^## |\Z)", text, flags=re.M | re.S)
+    return m.group(1) if m else ""
+
+
+def validate_syllabi(courses: list, courses_root: Path, errors: list, rubric_ids: set | None = None) -> None:
+    """Every course page carries a syllabus block a reviewer could check, and
+    every number in it adds up (PLAN.md section 13)."""
+    rubric_ids = _rubric_ids() if rubric_ids is None else rubric_ids
+    by_code = {c.get("code"): c for c in courses if isinstance(c, dict)}
+    served: dict[str, set] = {k: set() for k in COMPETENCIES}   # competency -> years assessed
+    mastered: set = set()
+    for c in courses:
+        if not isinstance(c, dict) or not c.get("dir"):
+            continue
+        label = c["dir"]
+        err = lambda msg: errors.append(f"courses/{label}/index.md: {msg}")
+        f = courses_root / c["dir"] / "index.md"
+        if not f.exists():
+            continue
+        text = f.read_text(encoding="utf-8")
+        meta, body = frontmatter.parse(text)
+        b = (meta or {}).get("syllabus") if isinstance(meta, dict) else None
+        if not isinstance(b, dict):
+            err("has no `syllabus:` block in its front matter")
+            continue
+
+        num = re.search(r"\d+", str(c.get("code", "")))
+        want_level = "upper" if num and int(num.group()[0]) >= 3 else "lower"
+        if b.get("level") != want_level:
+            err(f"syllabus level is {b.get('level')!r}; a {c.get('code')} course is {want_level} division")
+
+        units = c.get("units")
+        h = b.get("hours") or {}
+        try:
+            total = sum(float(h.get(k, 0)) for k in ("instruction", "studio_or_lab", "independent"))
+        except (TypeError, ValueError):
+            total = -1
+        if isinstance(units, int) and abs(total - units * 3) > 1e-9:
+            err(f"weekly hours sum to {total:g}; {units} units need {units * 3}")
+
+        methods = b.get("method") or []
+        if not methods or any(m not in SYLLABUS_METHODS for m in methods):
+            err(f"method must be a non-empty list from {sorted(SYLLABUS_METHODS)}")
+
+        sem = c.get("semester")
+        for key, rel in (("prerequisites", "earlier"), ("corequisites", "same")):
+            for code in b.get(key) or []:
+                other = by_code.get(code)
+                if not other:
+                    err(f"{key} names {code!r}, which is not in the catalog")
+                elif rel == "earlier" and not (other.get("semester") or 9) < (sem or 0):
+                    err(f"prerequisite {code} is not in an earlier semester")
+                elif rel == "same" and other.get("semester") != sem:
+                    err(f"corequisite {code} is not in the same semester")
+
+        mats = b.get("materials") or []
+        if not mats:
+            err("lists no required materials")
+        for m in mats:
+            if not isinstance(m, dict) or not m.get("title"):
+                err("has a material with no title")
+                continue
+            if m.get("access") not in ACCESS:
+                err(f"material {m['title']!r} has access {m.get('access')!r}; want one of {sorted(ACCESS)}")
+            cost = m.get("cost")
+            if not isinstance(cost, (int, float)) or cost < 0:
+                err(f"material {m['title']!r} needs a cost (0 when open, library, or provided)")
+            elif m.get("access") in ("open", "library", "provided") and cost:
+                err(f"material {m['title']!r} is {m.get('access')} but costs {cost}")
+
+        rows = b.get("assessment") or []
+        try:
+            wsum = sum(int(r.get("weight")) for r in rows)
+        except (TypeError, ValueError):
+            wsum = -1
+        if wsum != 100:
+            err(f"assessment weights sum to {wsum}, not 100")
+        if not any("unassisted" in str(r.get("component", "")).lower() for r in rows):
+            err("assessment has no unassisted examination component")
+        if not str(b.get("exam") or "").strip():
+            err("syllabus names no unassisted examination (`exam`)")
+
+        if b.get("rubric") not in rubric_ids:
+            err(f"rubric {b.get('rubric')!r} is not in knowledge/rubrics.yaml")
+
+        ol = b.get("outcome_levels") or {}
+        reg = set(c.get("outcomes") or [])
+        if set(ol) != reg:
+            err(f"outcome_levels covers {sorted(ol)}; the registry lists {sorted(reg)}")
+        if any(v not in LEVELS for v in ol.values()):
+            err("outcome_levels values must be I, D, or M")
+
+        outcomes_text = _section(body, "Learning Outcomes")
+        for line in re.findall(r"^\d+\.\s.*$", outcomes_text, flags=re.M):
+            tail = line.split("→", 1)[1] if "→" in line else ""
+            if not any(name in tail for name in INSTITUTIONAL):
+                err(f"learning outcome is not mapped to an institutional outcome: {line[:60]}…")
+        cc = b.get("core_competencies") or {}
+        for k, v in cc.items():
+            if k not in COMPETENCIES:
+                err(f"unknown core competency {k!r}")
+                continue
+            if v not in LEVELS:
+                err(f"core competency {k} has level {v!r}; want I, D, or M")
+            if COMPETENCIES[k] not in outcomes_text:
+                err(f"core competency {COMPETENCIES[k]} is claimed but no learning outcome names it")
+            if isinstance(sem, int):
+                served[k].add((sem + 1) // 2)
+            if v == "M":
+                mastered.add(k)
+
+    if courses and all(isinstance(c, dict) for c in courses) and len(courses) > 5:
+        for k, name in COMPETENCIES.items():
+            for year in (1, 2):
+                if year not in served[k]:
+                    errors.append(f"curriculum: {name} is assessed by no course in Year {year} of the Foundation")
+            if k not in mastered:
+                errors.append(f"curriculum: {name} is never assessed at graduation level (M)")
+
+
 def validate_catalog(errors, data: dict | None = None, courses_root: Path = COURSES):
     if data is None:
         path = KNOWLEDGE / "catalog.yaml"
@@ -230,6 +371,8 @@ def validate_catalog(errors, data: dict | None = None, courses_root: Path = COUR
                 errors.append(f"catalog.yaml: duplicate code `{code}`")
             seen_codes.add(code)
         validate_course(c, i, threads, courses_root, errors)
+
+    validate_syllabi(courses, courses_root, errors)
 
     # Every course directory on disk should be a registered course, so nothing
     # unlisted gets built and published by accident.

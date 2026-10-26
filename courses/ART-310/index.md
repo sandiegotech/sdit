@@ -5,6 +5,42 @@ course_code: ART 310
 units: 4
 thread: The Depths
 status: syllabus
+syllabus:
+  level: upper
+  prerequisites: [HUM 202, MATH 220, CS 220, RHET 210, WKSP 202]
+  corequisites: []
+  method: [studio]
+  hours:
+    instruction: 1
+    studio_or_lab: 6
+    independent: 5
+  materials:
+    - {title: "The Art of Computer Game Design", author: "Chris Crawford", edition: "1984; the author's free edition", access: open, cost: 0}
+    - {title: "The Design of Everyday Things, chapter 1", author: "Don Norman", access: library, cost: 0}
+    - {title: "Inventing on Principle (first twelve minutes)", author: "Bret Victor", edition: "CUSEC 2012, author's Vimeo upload", access: open, cost: 0}
+    - {title: "The Art of Game Design, Lens #1", author: "Jesse Schell", access: library, cost: 0}
+    - {title: "The Landlord's Game, US Patent 748,626", author: "Lizzie Magie", edition: "1904; Google Patents", access: open, cost: 0}
+    - {title: "Game Feel", author: "Steve Swink", access: library, cost: 0}
+    - {title: "Why You Only Need to Test with 5 Users", author: "Jakob Nielsen", edition: "nngroup.com", access: open, cost: 0}
+    - {title: "Report of the President's Commission on the Accident at Three Mile Island (control room section)", author: "Kemeny Commission", edition: "1979; US government", access: open, cost: 0}
+    - {title: "The information capacity of the human motor system", author: "Paul Fitts", edition: "1954", access: library, cost: 0}
+    - {title: "Ten principles of good design", author: "Dieter Rams", edition: "vitsoe.com", access: open, cost: 0}
+    - {title: "Homo Ludens", author: "Johan Huizinga", access: library, cost: 0}
+    - {title: "Studio room, microcontrollers, sensors, projectors, and the observation protocol", author: "San Diego Institute of Technology", access: provided, cost: 0, note: "Open learner: paper, cardboard, a laptop, and a roommate as first tester."}
+  assessment:
+    - {component: "The brief and its dated revisions at every milestone", weight: 15}
+    - {component: "Three critiques: silent test, on-site, subtractive", weight: 20}
+    - {component: "Unassisted examination: sealed paper brief, live think-aloud test, spoken account", weight: 20}
+    - {component: "The installed piece and observation log, exhibited and defended", weight: 45}
+  exam: "Day 10, in the room, tools closed: ninety minutes to answer a sealed brief on paper and cardboard, run one think-aloud test on a classmate, then give a five-minute spoken account of three changes."
+  rubric: studio-work
+  core_competencies:
+    critical-thinking: D
+    oral-communication: D
+  outcome_levels:
+    craft: D
+    intelligence: D
+    judgment: D
 ---
 
 # ART 310 — Interactive Media & Interfaces
@@ -24,15 +60,51 @@ The course ends the way every SDIT course ends: in a made thing, defended out lo
 - **Catalog register:** Interactive systems design — interfaces, games, installations, human factors.
 - **Teaching frame:** The designed experience — what it feels like to use a thing, studied and built.
 
+## Course Information
+
+<!-- sdit:info:begin -->
+| | |
+|---|---|
+| Catalog number | ART 310 — Interactive Media & Interfaces |
+| Units | 4 semester units · 180 hours of work over 15 weeks |
+| Each week | 1 h instruction · 6 h studio or laboratory · 5 h independent work |
+| Level | Upper division |
+| Offered | Semester 5 · Year 3 · Fall |
+| Prerequisites | [HUM 202](/courses/HUM-202/index.html), [MATH 220](/courses/MATH-220/index.html), [CS 220](/courses/CS-220/index.html), [RHET 210](/courses/RHET-210/index.html), [WKSP 202](/courses/WKSP-202/index.html) |
+| Corequisites | None |
+| Instructional method | Studio |
+| Instructor | A practitioner-scholar with a body of work in the field: a terminal degree, or equivalent professional standing documented under the Institute's rubric (The Degree, section 9). |
+| Rubric | [The studio work (the Depths)](/curriculum/rubrics.html#studio-work) |
+| Core competencies | Oral communication (developed) · Critical thinking (developed) |
+| Unassisted examination | Day 10, in the room, tools closed: ninety minutes to answer a sealed brief on paper and cardboard, run one think-aloud test on a classmate, then give a five-minute spoken account of three changes. |
+
+**Required materials**
+
+- *The Art of Computer Game Design*, Chris Crawford — 1984; the author's free edition · open, free
+- *The Design of Everyday Things, chapter 1*, Don Norman · public library, free
+- *Inventing on Principle (first twelve minutes)*, Bret Victor — CUSEC 2012, author's Vimeo upload · open, free
+- *The Art of Game Design, Lens #1*, Jesse Schell · public library, free
+- *The Landlord's Game, US Patent 748,626*, Lizzie Magie — 1904; Google Patents · open, free
+- *Game Feel*, Steve Swink · public library, free
+- *Why You Only Need to Test with 5 Users*, Jakob Nielsen — nngroup.com · open, free
+- *Report of the President's Commission on the Accident at Three Mile Island (control room section)*, Kemeny Commission — 1979; US government · open, free
+- *The information capacity of the human motor system*, Paul Fitts — 1954 · public library, free
+- *Ten principles of good design*, Dieter Rams — vitsoe.com · open, free
+- *Homo Ludens*, Johan Huizinga · public library, free
+- *Studio room, microcontrollers, sensors, projectors, and the observation protocol*, San Diego Institute of Technology · provided in the room; open learner: paper, cardboard, a laptop, and a roommate as first tester
+
+Required materials cost: nothing. Every item is open, borrowable from a public library, or provided in the room.
+<!-- sdit:info:end -->
+
 ## Learning Outcomes
 
 By the end of this course you can:
 
 1. Design, prototype, and build an interactive piece that a stranger can use unaided, from paper to installed hardware or software. → *Workmanship*
-2. Run a silent observation of real users, record what they did in a fixed form, and change the piece on the evidence. → *Judgment*
+2. Run a silent observation of real users, record what they did in a fixed form, and change the piece on the evidence. → *Judgment* · *Critical thinking*
 3. Read an interface or a space for its affordances, feedback, and human-factors failures, and say what the design should have done. → *Judgment*
 4. Use machine intelligence as a collaborator — for code, assets, characters, and synthetic playtests — and state exactly what it made and what stayed yours. → *Command of Intelligence*
-5. Scope a brief by subtraction and defend what was cut, with the log as evidence. → *Workmanship · Judgment*
+5. Scope a brief by subtraction and defend what was cut, with the log as evidence. → *Workmanship · Judgment* · *Oral communication*
 
 *Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
@@ -48,11 +120,26 @@ An interactive piece — a small game, an installation, or an interface — with
 - **The exhibition**: the piece installed, the log presented, the questions answered live.
 - Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
+<!-- sdit:weights:begin -->
+
+| Component | Weight |
+|---|---|
+| The brief and its dated revisions at every milestone | 15% |
+| Three critiques: silent test, on-site, subtractive | 20% |
+| Unassisted examination: sealed paper brief, live think-aloud test, spoken account | 20% |
+| The installed piece and observation log, exhibited and defended | 45% |
+| **Total** | **100%** |
+
+Grades follow the scale in the [academic policies](/curriculum/policies.html#grading).
+<!-- sdit:weights:end -->
+
 ## The Daily Path
 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
+The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+
 ### Day 01 — The Audience Acts
 
 Publishes Monday, 21 February 2028.
@@ -113,6 +200,17 @@ Publishes Monday, 22 May 2028.
 
 Publishes Monday, 29 May 2028.
 <!-- sdit:days:end -->
+
+
+## Policies
+
+<!-- sdit:policies:begin -->
+- **Attendance and participation.** See [attendance](/curriculum/policies.html#attendance).
+- **AI use.** Tools are open in every course, and the human is examined unaided. See [the AI policy](/curriculum/policies.html#ai).
+- **Academic integrity.** See [academic integrity](/curriculum/policies.html#integrity).
+- **Accommodations.** See [accommodations](/curriculum/policies.html#accommodations).
+- **Late work.** See [late work](/curriculum/policies.html#late-work).
+<!-- sdit:policies:end -->
 
 ---
 

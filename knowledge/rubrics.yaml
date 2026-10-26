@@ -1,0 +1,389 @@
+__meta__:
+  title: Rubrics
+  description: >
+    How every kind of made thing, and every unassisted examination, is judged.
+    Each rubric has four to six criteria, each mapped to the institutional
+    outcomes it evidences, and four levels described in a sentence each.
+  intended_use: >
+    Referenced by id from every course's syllabus block (`syllabus.rubric`)
+    and rendered as curriculum/rubrics.html. The levels are the ones a learner
+    may record on a made thing in the Portfolio. Ids are stable.
+  levels: [beginning, developing, proficient, mastered]
+
+rubrics:
+  - id: made-response
+    name: The made response (the Canon)
+    applies_to: An essay, short film, recorded piece, or designed object answering a text, film, and album, defended in seminar.
+    criteria:
+      - name: Reading
+        outcomes: [breadth]
+        levels:
+          - Summarizes the text; the argument is not yet reconstructed.
+          - Reconstructs the argument with gaps or a misreading.
+          - Reconstructs the argument accurately, with evidence from the text.
+          - Reconstructs it as its author would, and finds what it leaves unsaid.
+      - name: The connection
+        outcomes: [judgment, breadth]
+        levels:
+          - Places the three works side by side without joining them.
+          - Names a connection that rests on one of the three.
+          - Defends one idea across text, film, and album with evidence from each.
+          - Makes the three works illuminate each other in a way a reader had not seen.
+      - name: The making
+        outcomes: [craft]
+        levels:
+          - The response is unfinished or does not stand without its maker.
+          - It is finished; the form fights the idea.
+          - It is finished, and the form carries the idea.
+          - The form is the argument; it could not have been made another way.
+      - name: The defense
+        outcomes: [articulation]
+        levels:
+          - Cannot yet say what the work claims.
+          - States the claim; questions knock it over.
+          - States and holds the claim under seminar questions.
+          - Uses the questions to sharpen the claim in the room.
+
+  - id: quantitative-study
+    name: The quantitative study (Mathematics and Science)
+    applies_to: A real motion, sound, image, wave, board, or forecast, measured, modeled, and defended.
+    criteria:
+      - name: Measurement
+        outcomes: [judgment, craft]
+        levels:
+          - Data are missing, borrowed, or uncollected.
+          - Data are collected; method and error are not stated.
+          - Data are collected with a stated method and an estimate of error.
+          - The measurement is designed so its error can be bounded and checked.
+      - name: The model
+        outcomes: [judgment]
+        levels:
+          - A formula is applied without showing why it fits.
+          - The model fits the data; its assumptions are unstated.
+          - The model fits, its assumptions are stated, and the fit is shown.
+          - The model's limits are found by testing where it breaks.
+      - name: The mathematics
+        outcomes: [judgment]
+        levels:
+          - Steps contain errors that change the result.
+          - Steps are correct with minor slips.
+          - Steps are correct and each is justified.
+          - The mathematics is economical and chosen for the physics.
+      - name: Physical before formal
+        outcomes: [breadth, craft]
+        levels:
+          - The notation stands alone; the physical thing is absent.
+          - The physical thing is named but not used.
+          - Every quantity is tied to something that can be seen or felt.
+          - A reader without the notation could follow the argument from the physical thing.
+      - name: The defense
+        outcomes: [articulation]
+        levels:
+          - Cannot explain the setup.
+          - Explains the answer, not the setup.
+          - Explains the setup and the answer, and takes questions.
+          - Anticipates the strongest objection and answers it first.
+
+  - id: working-system
+    name: The working system (Computation and Engineering)
+    applies_to: A program, model, instrument, or autonomous system that runs, with its verification and failure analysis.
+    criteria:
+      - name: It works
+        outcomes: [craft]
+        levels:
+          - It does not run, or runs only in the maker's hands.
+          - It runs on the demonstrated case.
+          - It runs on cases the maker did not choose.
+          - It runs in the world, under conditions it was not tuned for.
+      - name: Direction and verification
+        outcomes: [intelligence, judgment]
+        levels:
+          - Machine-written work is accepted unread.
+          - Machine-written work is read but not tested.
+          - Every delegated piece is specified, tested, and logged.
+          - The verification would catch a subtle error a reviewer planted.
+      - name: Failure analysis
+        outcomes: [judgment]
+        levels:
+          - Failures are not reported.
+          - Failures are listed without causes.
+          - Each failure has a cause and a consequence.
+          - The analysis predicts failures not yet seen.
+      - name: Measurement
+        outcomes: [judgment, craft]
+        levels:
+          - Claims of speed, accuracy, or reliability are unmeasured.
+          - Measured once, without a baseline.
+          - Measured against a baseline, with method stated.
+          - Measured so another builder could reproduce the number.
+      - name: The account
+        outcomes: [articulation]
+        levels:
+          - A reader cannot tell what the system does.
+          - A reader can tell what it does, not why it is built so.
+          - A reader can tell what, why, and what was traded away.
+          - The account would let a stranger maintain it.
+
+  - id: writing-portfolio
+    name: The writing portfolio (Rhetoric)
+    applies_to: Revised essays, first drafts beside finals, line-edited.
+    criteria:
+      - name: The claim
+        outcomes: [judgment, articulation]
+        levels:
+          - No claim can be found.
+          - A claim is present but hedged into nothing.
+          - A single claim, stated early, holds the essay together.
+          - The claim is one a reasonable reader resists, and earns its place.
+      - name: Evidence
+        outcomes: [judgment]
+        levels:
+          - Assertion without support.
+          - Support that is general or borrowed.
+          - Particular evidence, rightly placed.
+          - Evidence chosen so the reader sees it before being told.
+      - name: The sentence
+        outcomes: [articulation]
+        levels:
+          - Sentences obscure their meaning.
+          - Clear, with padding and abstraction.
+          - Plain, short, and exact; every sentence does work.
+          - The prose has a voice and nothing to cut.
+      - name: Revision
+        outcomes: [articulation, craft]
+        levels:
+          - The final repeats the draft.
+          - Marks were answered one by one; the essay is the same.
+          - The final is a different, better essay than the draft.
+          - The distance between draft and final teaches something about writing.
+
+  - id: forensic-teardown
+    name: The forensic teardown (Epistemics)
+    applies_to: A documented teardown of a real piece of persuasion, defended against a persuader's advocate.
+    criteria:
+      - name: The claims
+        outcomes: [judgment]
+        levels:
+          - The piece is described, not dismantled.
+          - Main claims are listed; their kinds are not.
+          - Every claim is listed and tagged by kind and evidence.
+          - Implied claims are surfaced and tagged as well.
+      - name: The techniques
+        outcomes: [judgment, intelligence]
+        levels:
+          - Techniques are named loosely.
+          - Techniques are named and located.
+          - Each technique is named, located, and its effect explained.
+          - The design of the whole is reconstructed from its parts.
+      - name: The truth of the matter
+        outcomes: [judgment]
+        levels:
+          - The verdict rests on opinion.
+          - The verdict rests on one source.
+          - Each claim is checked against sources a skeptic would accept.
+          - Where the truth cannot be settled, the uncertainty is stated and bounded.
+      - name: Sources
+        outcomes: [judgment, articulation]
+        levels:
+          - Sources are missing.
+          - Sources are listed without assessment.
+          - Each source is assessed for who made it and why.
+          - The source trail would survive an adversarial review.
+
+  - id: cultural-artifact
+    name: The cultural artifact (Culture and Signal)
+    applies_to: A track, a piece of video, a field study, or a shipped artifact that reaches a real audience, with the numbers.
+    criteria:
+      - name: Made and shipped
+        outcomes: [craft]
+        levels:
+          - Not released.
+          - Released where no one could find it.
+          - Released through a real channel on a stated date.
+          - Released through channels chosen for the audience it was made for.
+      - name: The numbers
+        outcomes: [judgment]
+        levels:
+          - No numbers, or vanity numbers alone.
+          - Numbers without denominators.
+          - Numbers with denominators, and what they measure stated.
+          - The numbers are read against a prediction made before release.
+      - name: The account
+        outcomes: [articulation]
+        levels:
+          - A diary of what happened.
+          - An account of what happened and in what order.
+          - An account of why it moved, or did not.
+          - An account another maker could use.
+      - name: The scene
+        outcomes: [breadth]
+        levels:
+          - The work is unplaced.
+          - The work names its influences.
+          - The work is placed in a scene and its history.
+          - The work adds something its scene had not yet said.
+
+  - id: shipped-build
+    name: The shipped build (the Workshop)
+    applies_to: The semester's build, exhibited in public.
+    criteria:
+      - name: It ships
+        outcomes: [craft]
+        levels:
+          - Not finished.
+          - Finished; parts are held by intention, not construction.
+          - Finished, works, and survives handling by a stranger.
+          - Finished to a standard the maker can name and has met.
+      - name: The brief
+        outcomes: [judgment]
+        levels:
+          - No brief, or the brief changed without notice.
+          - A brief, loosely met.
+          - The brief, met; changes to it were made openly.
+          - The brief, met; and the client would hire the team again.
+      - name: Documentation
+        outcomes: [articulation]
+        levels:
+          - No record.
+          - Photographs without notes.
+          - Drawings, decisions, and failures recorded as the work went.
+          - Another team could build it again from the record.
+      - name: Critique
+        outcomes: [judgment, articulation]
+        levels:
+          - Defends rather than describes.
+          - Hears critique; changes nothing.
+          - Describes before judging, and makes the one change.
+          - Runs a critique that improves someone else's work.
+
+  - id: studio-work
+    name: The studio work (the Depths)
+    applies_to: A finished studio piece, used, screened, released, or installed before a real audience.
+    criteria:
+      - name: The brief
+        outcomes: [judgment]
+        levels:
+          - The project drifts.
+          - The brief is met in part.
+          - The brief is met, and its constraints shaped the work.
+          - The constraints were turned into the work's strength.
+      - name: Technique
+        outcomes: [craft, intelligence]
+        levels:
+          - The technique is visible as struggle.
+          - Competent, with uneven passages.
+          - Controlled throughout.
+          - Technique disappears into the work.
+      - name: The audience
+        outcomes: [judgment, craft]
+        levels:
+          - Never met an audience.
+          - Shown; reactions not recorded.
+          - Shown, observed, and changed by what was observed.
+          - Designed from observation and proven in front of strangers.
+      - name: Taste
+        outcomes: [judgment, breadth]
+        levels:
+          - Choices are defaults.
+          - Choices are made, not defended.
+          - Choices are made and defended against alternatives.
+          - Choices are defended against the tradition the work belongs to.
+
+  - id: field-report
+    name: The field report (the Field Term)
+    applies_to: The written field report, the field journal, and the mentor's evaluation.
+    criteria:
+      - name: The work done
+        outcomes: [craft]
+        levels:
+          - Responsibilities unmet.
+          - Responsibilities met with supervision.
+          - Responsibilities met independently.
+          - The organization relied on the work.
+      - name: Judgment in the field
+        outcomes: [judgment]
+        levels:
+          - Decisions deferred.
+          - Decisions made, not explained.
+          - Decisions made and explained in the journal.
+          - Decisions the mentor would have made, and some they would not have thought of.
+      - name: The report
+        outcomes: [articulation]
+        levels:
+          - A log of tasks.
+          - An account of the work.
+          - An account of what the work taught, with evidence.
+          - An account the organization would publish.
+      - name: Self-assessment
+        outcomes: [judgment, articulation]
+        levels:
+          - Absent.
+          - Generous to the self.
+          - Agrees with the mentor's evaluation, with reasons.
+          - Sees what the mentor missed, both ways.
+
+  - id: capstone
+    name: The capstone (the defended original work)
+    applies_to: A research thesis, an engineered system that works, or a venture that exists, defended in public.
+    criteria:
+      - name: Original
+        outcomes: [judgment, breadth]
+        levels:
+          - Restates existing work.
+          - Applies existing work to a new case.
+          - Contributes something that did not exist.
+          - Contributes something others will build on.
+      - name: It exists
+        outcomes: [craft, intelligence]
+        levels:
+          - Plans and fragments.
+          - A working core with gaps.
+          - Complete in its form: argued, running, or trading.
+          - Complete, and tested against the world.
+      - name: Method
+        outcomes: [judgment, intelligence]
+        levels:
+          - Method is unstated.
+          - Method is stated, loosely followed.
+          - Method fits the question and is followed.
+          - Method would satisfy an outside examiner in the field.
+      - name: The defense
+        outcomes: [articulation]
+        levels:
+          - Cannot defend the central claim.
+          - Defends the claim against friendly questions.
+          - Defends it against outside examiners.
+          - Concedes what should be conceded, and holds the rest.
+      - name: Against the four years
+        outcomes: [breadth]
+        levels:
+          - Stands alone.
+          - Mentions earlier work.
+          - Draws on the Canon, the mathematics, and the Workshop by name.
+          - Shows the four years as one argument that ends here.
+
+  - id: unassisted-examination
+    name: The unassisted examination (every course)
+    applies_to: Periodic examinations in writing, mathematics, and code, with every tool closed.
+    criteria:
+      - name: Accuracy
+        outcomes: [judgment]
+        levels:
+          - Errors that change the result.
+          - Correct with slips.
+          - Correct throughout.
+          - Correct, and checked by an independent route.
+      - name: Setup
+        outcomes: [judgment]
+        levels:
+          - The problem is not set up.
+          - Set up with prompting.
+          - Set up from words, unaided.
+          - Set up the simplest way, with the reason given.
+      - name: Expression
+        outcomes: [articulation]
+        levels:
+          - The answer cannot be followed.
+          - The answer can be followed with effort.
+          - The answer is plain and complete.
+          - The answer would teach the reader.

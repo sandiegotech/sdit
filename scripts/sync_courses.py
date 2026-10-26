@@ -25,6 +25,7 @@ from pathlib import Path
 
 import arcs
 import publishing
+import review_grade
 from catalog import DEFAULT_DAYS, planned_days, load_catalog, day_info
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -119,17 +120,27 @@ def sync_course_days(catalog) -> int:
                     else:
                         block = f"### Day {n:02d} — *coming soon*\n\n{when_line}\n"
                 blocks.append(block)
-            generated = "<!-- sdit:days:begin -->\n" + "\n".join(blocks) + "<!-- sdit:days:end -->"
+            lead = review_grade.DAYS_LEAD + "\n\n" if (course and _syllabus(new)) else ""
+            generated = "<!-- sdit:days:begin -->\n" + lead + "\n".join(blocks) + "<!-- sdit:days:end -->"
             new = re.sub(
                 r"<!-- sdit:days:begin -->.*?<!-- sdit:days:end -->",
                 generated.replace("\\", "\\\\"),
                 new,
                 flags=re.S,
             )
+        if course:
+            new = review_grade.sync_course_sections(new, course, _syllabus(new))
         if new != src:
             index_md.write_text(new, encoding="utf-8")
             changed += 1
     return changed
+
+
+def _syllabus(text: str) -> dict | None:
+    import frontmatter
+    meta, _ = frontmatter.parse(text)
+    block = (meta or {}).get("syllabus") if isinstance(meta, dict) else None
+    return block if isinstance(block, dict) else None
 
 
 def semester_rows(catalog, semester: int) -> list[tuple[str, object]]:

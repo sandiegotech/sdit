@@ -483,6 +483,11 @@ def main(argv: list[str] | None = None) -> int:
     import reflections
     reflections.write_all(write_file, OUT)
 
+    # The pages a reviewer reads: map, breadth, requirements, policies,
+    # assessment, rubrics.
+    import review_grade
+    review_grade.write_pages(write_file, OUT)
+
     # The Portfolio (and /notebook/, which points into it).
     import portfolio
     portfolio.write_all(write_file, OUT)

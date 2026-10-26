@@ -5,6 +5,44 @@ course_code: CAP 402
 units: 2
 thread: Field Term & Capstone
 status: syllabus
+syllabus:
+  level: upper
+  prerequisites: [CAP 401]
+  corequisites: []
+  method: [independent, seminar]
+  hours:
+    instruction: 1
+    studio_or_lab: 0
+    independent: 5
+  materials:
+    - {title: "On the Origin of Species", author: "Charles Darwin", edition: "Project Gutenberg #1228", access: open, cost: 0}
+    - {title: "Radio-active Substances", author: "Marie Curie", edition: "1904 English translation of her thesis; Internet Archive", access: open, cost: 0}
+    - {title: "An Account of the New-Invented Pennsylvanian Fire-Places", author: "Benjamin Franklin", edition: "1744; Founders Online", access: open, cost: 0}
+    - {title: "On the Tendency of Species to form Varieties", author: "Charles Darwin and Alfred Russel Wallace", edition: "1858; Wikisource and Internet Archive", access: open, cost: 0}
+    - {title: "Experiments and Observations on Electricity, Made at Philadelphia in America", author: "Benjamin Franklin", edition: "1751; Internet Archive", access: open, cost: 0}
+    - {title: "Flying-Machine, US Patent 821,393", author: "Wilbur and Orville Wright", edition: "1906; Google Patents", access: open, cost: 0}
+    - {title: "The Chemical History of a Candle", author: "Michael Faraday", edition: "Project Gutenberg #14474", access: open, cost: 0}
+    - {title: "Life and Letters of Charles Darwin, Vol. II", author: "Francis Darwin, ed.", edition: "Project Gutenberg #2088", access: open, cost: 0}
+    - {title: "The Notebooks of Leonardo da Vinci", author: "Leonardo da Vinci, ed. Jean Paul Richter", edition: "Project Gutenberg #5000", access: open, cost: 0}
+    - {title: "Public defense room, recording, examiner panel, and archive", author: "San Diego Institute of Technology", access: provided, cost: 0, note: "Open learner: two found examiners, a recorded call or borrowed room."}
+  assessment:
+    - {component: "Fifteen weekly checkpoints, each with the week's document", weight: 20}
+    - {component: "Unassisted examination: the 300-word claim and written answers to open questions", weight: 20}
+    - {component: "The defended original work: frozen work and account, and the public defense", weight: 50}
+    - {component: "Examiners' report and completed corrections", weight: 10}
+  exam: "Week 6, one sitting, tools closed: state the work's claim in 300 words; the Week 13 public defense is also unaided, with no notes or device, and questions left unanswered there are answered in writing, unaided, within a week."
+  rubric: capstone
+  core_competencies:
+    written-communication: M
+    oral-communication: M
+    quantitative-reasoning: M
+    critical-thinking: M
+  outcome_levels:
+    judgment: M
+    intelligence: M
+    craft: M
+    articulation: M
+    breadth: M
 ---
 
 # CAP 402 — Thesis / Venture Capstone II
@@ -24,14 +62,48 @@ The course ends the way the degree ends: in a made thing, defended out loud, in 
 - **Catalog register:** Capstone II — completion and public defense of the original work before faculty and outside examiners.
 - **Teaching frame:** The finished work, defended in public. A thesis, a system that runs, or a venture that exists — presented against the whole four-year sequence.
 
+## Course Information
+
+<!-- sdit:info:begin -->
+| | |
+|---|---|
+| Catalog number | CAP 402 — Thesis / Venture Capstone II |
+| Units | 2 semester units · 90 hours of work over 15 weeks |
+| Each week | 1 h instruction · 0 h studio or laboratory · 5 h independent work |
+| Level | Upper division |
+| Offered | Semester 8 · Year 4 · Spring |
+| Prerequisites | [CAP 401](/courses/CAP-401/index.html) |
+| Corequisites | None |
+| Instructional method | Independent work, Seminar |
+| Instructor | A practitioner-scholar with a body of work in the field: a terminal degree, or equivalent professional standing documented under the Institute's rubric (The Degree, section 9). |
+| Rubric | [The capstone (the defended original work)](/curriculum/rubrics.html#capstone) |
+| Core competencies | Written communication (mastered) · Oral communication (mastered) · Quantitative reasoning (mastered) · Critical thinking (mastered) |
+| Unassisted examination | Week 6, one sitting, tools closed: state the work's claim in 300 words; the Week 13 public defense is also unaided, with no notes or device, and questions left unanswered there are answered in writing, unaided, within a week. |
+
+**Required materials**
+
+- *On the Origin of Species*, Charles Darwin — Project Gutenberg #1228 · open, free
+- *Radio-active Substances*, Marie Curie — 1904 English translation of her thesis; Internet Archive · open, free
+- *An Account of the New-Invented Pennsylvanian Fire-Places*, Benjamin Franklin — 1744; Founders Online · open, free
+- *On the Tendency of Species to form Varieties*, Charles Darwin and Alfred Russel Wallace — 1858; Wikisource and Internet Archive · open, free
+- *Experiments and Observations on Electricity, Made at Philadelphia in America*, Benjamin Franklin — 1751; Internet Archive · open, free
+- *Flying-Machine, US Patent 821,393*, Wilbur and Orville Wright — 1906; Google Patents · open, free
+- *The Chemical History of a Candle*, Michael Faraday — Project Gutenberg #14474 · open, free
+- *Life and Letters of Charles Darwin, Vol. II*, Francis Darwin, ed. — Project Gutenberg #2088 · open, free
+- *The Notebooks of Leonardo da Vinci*, Leonardo da Vinci, ed. Jean Paul Richter — Project Gutenberg #5000 · open, free
+- *Public defense room, recording, examiner panel, and archive*, San Diego Institute of Technology · provided in the room; open learner: two found examiners, a recorded call or borrowed room
+
+Required materials cost: nothing. Every item is open, borrowable from a public library, or provided in the room.
+<!-- sdit:info:end -->
+
 ## Learning Outcomes
 
 By the end of this course you can:
 
 1. Bring an original work to a fixed, finished, defensible state by a date — deciding what finished means, cutting what will not be, and freezing the rest. → *Workmanship · Judgment*
-2. Write the account of a made thing — thesis, system paper, or venture memo — that lets a stranger judge or rebuild it with you gone. → *Articulation*
-3. State the work's strongest objections yourself, answer them in the account, and answer the ones you missed in writing, unaided. → *Judgment*
-4. Defend the work in public before examiners, without notes, answering the question asked — and present it against the whole four-year sequence in HUM 402. → *Articulation · Breadth of Mind*
+2. Write the account of a made thing — thesis, system paper, or venture memo — that lets a stranger judge or rebuild it with you gone. → *Articulation* · *Written communication* · *Quantitative reasoning*
+3. State the work's strongest objections yourself, answer them in the account, and answer the ones you missed in writing, unaided. → *Judgment* · *Critical thinking*
+4. Defend the work in public before examiners, without notes, answering the question asked — and present it against the whole four-year sequence in HUM 402. → *Articulation · Breadth of Mind* · *Oral communication*
 5. Account for what machine intelligence did in the work and what you did without it, and show the difference under examination. → *Command of Intelligence*
 
 *Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
@@ -49,11 +121,26 @@ By the end of this course you can:
 - **The examiners' report** — pass, pass with corrections, or not yet — and your **corrections**, completed and signed off; unanswered questions answered in writing, unaided, within a week.
 - Everything lands in your **portfolio**, reviewed against the five outcomes at the final gate. The portfolio is the credential; the transcript is its interface.
 
+<!-- sdit:weights:begin -->
+
+| Component | Weight |
+|---|---|
+| Fifteen weekly checkpoints, each with the week's document | 20% |
+| Unassisted examination: the 300-word claim and written answers to open questions | 20% |
+| The defended original work: frozen work and account, and the public defense | 50% |
+| Examiners' report and completed corrections | 10% |
+| **Total** | **100%** |
+
+Grades follow the scale in the [academic policies](/curriculum/policies.html#grading).
+<!-- sdit:weights:end -->
+
 ## The Daily Path
 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
+The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+
 ### Day 01 — Publish the Abstract
 
 Publishes Monday, 1 January 2029.
@@ -114,6 +201,17 @@ Publishes Monday, 2 April 2029.
 
 Publishes Monday, 9 April 2029.
 <!-- sdit:days:end -->
+
+
+## Policies
+
+<!-- sdit:policies:begin -->
+- **Attendance and participation.** See [attendance](/curriculum/policies.html#attendance).
+- **AI use.** Tools are open in every course, and the human is examined unaided. See [the AI policy](/curriculum/policies.html#ai).
+- **Academic integrity.** See [academic integrity](/curriculum/policies.html#integrity).
+- **Accommodations.** See [accommodations](/curriculum/policies.html#accommodations).
+- **Late work.** See [late work](/curriculum/policies.html#late-work).
+<!-- sdit:policies:end -->
 
 ---
 

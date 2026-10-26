@@ -5,6 +5,36 @@ course_code: SIG 101
 units: 1
 thread: Culture & Signal
 status: syllabus
+syllabus:
+  level: lower
+  prerequisites: []
+  corequisites: []
+  method: [seminar]
+  hours:
+    instruction: 1
+    studio_or_lab: 0
+    independent: 2
+  materials:
+    - {title: "Vesti la giubba (Victor, 1907)", author: "Enrico Caruso", edition: "Wikimedia Commons recording", access: open, cost: 0}
+    - {title: "Are You Sorry? (Victor, 1925)", author: "Whispering Jack Smith", edition: "Internet Archive, Great 78 Project", access: open, cost: 0}
+    - {title: "Wikimedia Commons image set for the fifteen days (Edison phonograph, Magnetophon, mixing console, cutting lathe, Tin Pan Alley, Casbah stage, Walkman, and others)", author: "Various", edition: "Wikimedia Commons", access: open, cost: 0}
+    - {title: "Wikipedia articles named in each day's reading (Phonograph, Acoustic recording, Multitrack recording, Audio mixing, Loudness war, Napster, and others)", author: "Various", edition: "Wikipedia", access: open, cost: 0}
+    - {title: "Bandcamp account for releasing the made thing", author: "Bandcamp", edition: "Free artist account", access: open, cost: 0}
+    - {title: "Headphones for the Week 12 listening examination and the mixing days", author: "Not applicable", edition: "Any closed-back stereo headphones the learner already owns", access: purchase, cost: 25, estimate: true}
+  assessment:
+    - {component: "Weekly listening notes", weight: 20}
+    - {component: "Unassisted listening examination, Week 12", weight: 20}
+    - {component: "Released track or documented production breakdown, defended", weight: 50}
+    - {component: "Seminar participation", weight: 10}
+  exam: "Week 12, 30 minutes, tools closed, headphones on: hear an unfamiliar recording twice, then name its decade with reasons, how it was captured, where three instruments sit, two mix decisions, and the path it took to a listener."
+  rubric: cultural-artifact
+  core_competencies:
+    oral-communication: I
+    information-literacy: I
+    critical-thinking: I
+  outcome_levels:
+    breadth: I
+    craft: I
 ---
 
 # SIG 101 — How Music Moves
@@ -24,14 +54,44 @@ One day a week, about ten minutes a sitting. The course ends the way every SDIT 
 - **Catalog register:** The music industry and its technologies — recording, production, distribution, economics.
 - **Teaching frame:** How a song actually reaches the world — from the room it was recorded in to the algorithm that surfaced it.
 
+## Course Information
+
+<!-- sdit:info:begin -->
+| | |
+|---|---|
+| Catalog number | SIG 101 — How Music Moves |
+| Units | 1 semester units · 45 hours of work over 15 weeks |
+| Each week | 1 h instruction · 0 h studio or laboratory · 2 h independent work |
+| Level | Lower division |
+| Offered | Semester 2 · Year 1 · Spring |
+| Prerequisites | None |
+| Corequisites | None |
+| Instructional method | Seminar |
+| Instructor | A practitioner-scholar with a body of work in the field: a terminal degree, or equivalent professional standing documented under the Institute's rubric (The Degree, section 9). |
+| Rubric | [The cultural artifact (Culture and Signal)](/curriculum/rubrics.html#cultural-artifact) |
+| Core competencies | Oral communication (introduced) · Information literacy (introduced) · Critical thinking (introduced) |
+| Unassisted examination | Week 12, 30 minutes, tools closed, headphones on: hear an unfamiliar recording twice, then name its decade with reasons, how it was captured, where three instruments sit, two mix decisions, and the path it took to a listener. |
+
+**Required materials**
+
+- *Vesti la giubba (Victor, 1907)*, Enrico Caruso — Wikimedia Commons recording · open, free
+- *Are You Sorry? (Victor, 1925)*, Whispering Jack Smith — Internet Archive, Great 78 Project · open, free
+- *Wikimedia Commons image set for the fifteen days (Edison phonograph, Magnetophon, mixing console, cutting lathe, Tin Pan Alley, Casbah stage, Walkman, and others)*, Various — Wikimedia Commons · open, free
+- *Wikipedia articles named in each day's reading (Phonograph, Acoustic recording, Multitrack recording, Audio mixing, Loudness war, Napster, and others)*, Various — Wikipedia · open, free
+- *Bandcamp account for releasing the made thing*, Bandcamp — Free artist account · open, free
+- *Headphones for the Week 12 listening examination and the mixing days*, Not applicable — Any closed-back stereo headphones the learner already owns · purchase, about $25
+
+Required materials cost: about $25 if bought; everything else is open, borrowable from a public library, or provided in the room.
+<!-- sdit:info:end -->
+
 ## Learning Outcomes
 
 By the end of this course you can:
 
 1. Hear a recording and say how it was made — the room, the capture, whether it was built from one performance or many — and place it within a decade. → *Workmanship*
-2. Trace the path of any song from recording to listener, naming the technologies, the rights, and the money at each step. → *Breadth of Mind*
-3. Explain how formats, gatekeepers, and recommendation systems have shaped the shape of songs themselves. → *Breadth of Mind*
-4. Release a finished track, or document one to a standard another producer could rebuild from, and defend the decisions in five minutes. → *Workmanship*
+2. Trace the path of any song from recording to listener, naming the technologies, the rights, and the money at each step. → *Breadth of Mind* · *Information literacy*
+3. Explain how formats, gatekeepers, and recommendation systems have shaped the shape of songs themselves. → *Breadth of Mind* · *Critical thinking*
+4. Release a finished track, or document one to a standard another producer could rebuild from, and defend the decisions in five minutes. → *Workmanship* · *Oral communication*
 
 *Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
@@ -46,11 +106,26 @@ A released track or a documented production breakdown of one. The track is yours
 - **An unassisted listening examination** in the twelfth week: an unfamiliar recording, headphones on, tools closed — the decade, the capture, the placement, the path. AI tools are open for everything else; the institution certifies the human, and this course certifies the ear.
 - Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
+<!-- sdit:weights:begin -->
+
+| Component | Weight |
+|---|---|
+| Weekly listening notes | 20% |
+| Unassisted listening examination, Week 12 | 20% |
+| Released track or documented production breakdown, defended | 50% |
+| Seminar participation | 10% |
+| **Total** | **100%** |
+
+Grades follow the scale in the [academic policies](/curriculum/policies.html#grading).
+<!-- sdit:weights:end -->
+
 ## The Daily Path
 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
+The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+
 ### Day 01 — The Song Left the Room in 1877
 
 Publishes Monday, 12 April 2027.
@@ -111,6 +186,17 @@ Publishes Monday, 12 July 2027.
 
 Publishes Monday, 19 July 2027.
 <!-- sdit:days:end -->
+
+
+## Policies
+
+<!-- sdit:policies:begin -->
+- **Attendance and participation.** See [attendance](/curriculum/policies.html#attendance).
+- **AI use.** Tools are open in every course, and the human is examined unaided. See [the AI policy](/curriculum/policies.html#ai).
+- **Academic integrity.** See [academic integrity](/curriculum/policies.html#integrity).
+- **Accommodations.** See [accommodations](/curriculum/policies.html#accommodations).
+- **Late work.** See [late work](/curriculum/policies.html#late-work).
+<!-- sdit:policies:end -->
 
 ---
 

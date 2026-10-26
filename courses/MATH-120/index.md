@@ -5,6 +5,39 @@ course_code: MATH 120
 units: 4
 thread: Mathematics & Science
 status: syllabus
+syllabus:
+  level: lower
+  prerequisites: [MATH 110]
+  corequisites: []
+  method: [lecture]
+  hours:
+    instruction: 3
+    studio_or_lab: 0
+    independent: 9
+  materials:
+    - {title: "Calculus Made Easy", author: "Silvanus P. Thompson", edition: "Project Gutenberg #33283 (1910)", access: open, cost: 0}
+    - {title: "The Essence of Calculus (video series)", author: "Grant Sanderson (3Blue1Brown)", edition: "Official 3Blue1Brown channel", access: open, cost: 0}
+    - {title: "But what is a Fourier series? From heat flow to drawing with circles", author: "Grant Sanderson (3Blue1Brown)", edition: "Official 3Blue1Brown channel", access: open, cost: 0}
+    - {title: "But what is the Fourier Transform? A visual introduction", author: "Grant Sanderson (3Blue1Brown)", edition: "Official 3Blue1Brown channel", access: open, cost: 0}
+    - {title: "On the Sensations of Tone", author: "Hermann von Helmholtz", edition: "Ellis translation (1885), Internet Archive", access: open, cost: 0}
+    - {title: "Fourier series building a square wave from rotating circles (animation)", author: "Wikimedia Commons", edition: "CC0", access: open, cost: 0}
+    - {title: "Audacity", author: "Audacity Team", edition: "Free, open-source audio editor", access: open, cost: 0}
+    - {title: "Surge XT", author: "Surge Synth Team", edition: "Free, open-source synthesizer", access: open, cost: 0}
+    - {title: "Open AIR cathedral impulse response", author: "Open AIR library, University of York", edition: "CC BY", access: open, cost: 0}
+    - {title: "An Edison cylinder recording made before 1923", author: "Library of Congress National Jukebox or Wikimedia Commons", edition: "Public domain", access: open, cost: 0}
+    - {title: "Toccata and Fugue in D minor, BWV 565 (Musopen recording)", author: "Johann Sebastian Bach", edition: "Internet Archive, public domain", access: open, cost: 0}
+  assessment:
+    - {component: "Weekly problem sets, checked by hand", weight: 25}
+    - {component: "Unassisted written examinations, two sittings", weight: 25}
+    - {component: "The sound built from first principles, played and defended in seminar", weight: 40}
+    - {component: "Class participation and the daily path", weight: 10}
+  exam: "Two sittings, tools closed: after Day 9, definite integrals by substitution and by parts, an area and a volume by slicing, an average value, and one improper integral, on functions not seen before; after Day 14, the convergence or divergence of four series with the test named, the first four terms of a Taylor series, and the first three Fourier coefficients of a simple wave."
+  rubric: quantitative-study
+  core_competencies:
+    quantitative-reasoning: I
+  outcome_levels:
+    judgment: I
+    craft: I
 ---
 
 # MATH 120 — Calculus II
@@ -24,15 +57,50 @@ One day a week, about ten minutes a sitting, with problems that start in the stu
 - **Catalog register:** Integral calculus and series — integration, applications, infinite series, Fourier introduction. Transfer-legible Calculus II.
 - **Teaching frame:** The Mathematics of Sound — harmonics and Fourier through synthesizers and the studio. Every integral heard before it is written.
 
+## Course Information
+
+<!-- sdit:info:begin -->
+| | |
+|---|---|
+| Catalog number | MATH 120 — Calculus II |
+| Units | 4 semester units · 180 hours of work over 15 weeks |
+| Each week | 3 h instruction · 0 h studio or laboratory · 9 h independent work |
+| Level | Lower division |
+| Offered | Semester 2 · Year 1 · Spring |
+| Prerequisites | [MATH 110](/courses/MATH-110/index.html) |
+| Corequisites | None |
+| Instructional method | Lecture |
+| Instructor | A practitioner-scholar with a body of work in the field: a terminal degree, or equivalent professional standing documented under the Institute's rubric (The Degree, section 9). |
+| Rubric | [The quantitative study (Mathematics and Science)](/curriculum/rubrics.html#quantitative-study) |
+| Core competencies | Quantitative reasoning (introduced) |
+| Unassisted examination | Two sittings, tools closed: after Day 9, definite integrals by substitution and by parts, an area and a volume by slicing, an average value, and one improper integral, on functions not seen before; after Day 14, the convergence or divergence of four series with the test named, the first four terms of a Taylor series, and the first three Fourier coefficients of a simple wave. |
+
+**Required materials**
+
+- *Calculus Made Easy*, Silvanus P. Thompson — Project Gutenberg #33283 (1910) · open, free
+- *The Essence of Calculus (video series)*, Grant Sanderson (3Blue1Brown) — Official 3Blue1Brown channel · open, free
+- *But what is a Fourier series? From heat flow to drawing with circles*, Grant Sanderson (3Blue1Brown) — Official 3Blue1Brown channel · open, free
+- *But what is the Fourier Transform? A visual introduction*, Grant Sanderson (3Blue1Brown) — Official 3Blue1Brown channel · open, free
+- *On the Sensations of Tone*, Hermann von Helmholtz — Ellis translation (1885), Internet Archive · open, free
+- *Fourier series building a square wave from rotating circles (animation)*, Wikimedia Commons — CC0 · open, free
+- *Audacity*, Audacity Team — Free, open-source audio editor · open, free
+- *Surge XT*, Surge Synth Team — Free, open-source synthesizer · open, free
+- *Open AIR cathedral impulse response*, Open AIR library, University of York — CC BY · open, free
+- *An Edison cylinder recording made before 1923*, Library of Congress National Jukebox or Wikimedia Commons — Public domain · open, free
+- *Toccata and Fugue in D minor, BWV 565 (Musopen recording)*, Johann Sebastian Bach — Internet Archive, public domain · open, free
+
+Required materials cost: nothing. Every item is open, borrowable from a public library, or provided in the room.
+<!-- sdit:info:end -->
+
 ## Learning Outcomes
 
 By the end of this course you can:
 
-1. Evaluate definite and indefinite integrals by substitution, by parts, and as improper integrals, and check a machine's answer by hand. → *Workmanship*
-2. Set up and compute areas, volumes by slicing, arc lengths, work, and average and RMS values from physical situations, and defend the setup. → *Judgment · Workmanship*
-3. Decide whether an infinite series converges, name the test, and say what the sum means physically. → *Judgment*
-4. Compute Taylor and Fourier coefficients for a given function or waveform, and build the waveform from them on a synthesizer. → *Workmanship*
-5. Demonstrate the above unassisted, in periodic written examinations. → *Judgment*
+1. Evaluate definite and indefinite integrals by substitution, by parts, and as improper integrals, and check a machine's answer by hand. → *Workmanship* · *Quantitative reasoning*
+2. Set up and compute areas, volumes by slicing, arc lengths, work, and average and RMS values from physical situations, and defend the setup. → *Judgment · Workmanship* · *Quantitative reasoning*
+3. Decide whether an infinite series converges, name the test, and say what the sum means physically. → *Judgment* · *Quantitative reasoning*
+4. Compute Taylor and Fourier coefficients for a given function or waveform, and build the waveform from them on a synthesizer. → *Workmanship* · *Quantitative reasoning*
+5. Demonstrate the above unassisted, in periodic written examinations. → *Judgment* · *Quantitative reasoning*
 
 *Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
@@ -47,11 +115,26 @@ A sound built from first principles — a patch or a short piece whose harmonic 
 - **Unassisted written examinations** — integration technique after the first half; series, Taylor, and Fourier coefficients after the second. AI-native, not AI-dependent.
 - Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
+<!-- sdit:weights:begin -->
+
+| Component | Weight |
+|---|---|
+| Weekly problem sets, checked by hand | 25% |
+| Unassisted written examinations, two sittings | 25% |
+| The sound built from first principles, played and defended in seminar | 40% |
+| Class participation and the daily path | 10% |
+| **Total** | **100%** |
+
+Grades follow the scale in the [academic policies](/curriculum/policies.html#grading).
+<!-- sdit:weights:end -->
+
 ## The Daily Path
 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
+The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+
 ### Day 01 — Every Sound Is a Sum
 
 Publishes Monday, 12 April 2027.
@@ -112,6 +195,17 @@ Publishes Monday, 12 July 2027.
 
 Publishes Monday, 19 July 2027.
 <!-- sdit:days:end -->
+
+
+## Policies
+
+<!-- sdit:policies:begin -->
+- **Attendance and participation.** See [attendance](/curriculum/policies.html#attendance).
+- **AI use.** Tools are open in every course, and the human is examined unaided. See [the AI policy](/curriculum/policies.html#ai).
+- **Academic integrity.** See [academic integrity](/curriculum/policies.html#integrity).
+- **Accommodations.** See [accommodations](/curriculum/policies.html#accommodations).
+- **Late work.** See [late work](/curriculum/policies.html#late-work).
+<!-- sdit:policies:end -->
 
 ---
 

@@ -5,6 +5,47 @@ course_code: HUM 402
 units: 2
 thread: The Canon
 status: syllabus
+syllabus:
+  level: upper
+  prerequisites: [HUM 401]
+  corequisites: [CAP 402]
+  method: [seminar]
+  hours:
+    instruction: 2
+    studio_or_lab: 0
+    independent: 4
+  materials:
+    - {title: "Ozymandias; The Decline and Fall of the Roman Empire, ch. 71; The Ruins", author: "Percy Bysshe Shelley; Edward Gibbon; Constantin Volney", edition: "Public-domain texts, Project Gutenberg", access: open, cost: 0}
+    - {title: "Histories, Book VI; On the Origin of Species, closing paragraph", author: "Polybius; Charles Darwin", edition: "Public-domain texts, Project Gutenberg", access: open, cost: 0}
+    - {title: "The Muqaddimah", author: "Ibn Khaldun", edition: "Rosenthal translation, print or library copy", access: library, cost: 0}
+    - {title: "The Collapse of Complex Societies", author: "Joseph Tainter", edition: "Print or library copy", access: library, cost: 0}
+    - {title: "Gilgamesh", author: "Anonymous", edition: "Lectio edition", access: open, cost: 0}
+    - {title: "The Odyssey, Books 23-24; the Inferno, Canto 26; Meditations, Book 4", author: "Homer; Dante; Marcus Aurelius", edition: "Lectio editions", access: open, cost: 0}
+    - {title: "Pericles' Funeral Oration; Nicomachean Ethics, Book I; Hamlet, Act V scene 2", author: "Thucydides; Aristotle; William Shakespeare", edition: "Crawley translation (Gutenberg); Lectio editions", access: open, cost: 0}
+    - {title: "Koyaanisqatsi (1982) (film)", author: "Godfrey Reggio", edition: "Film", access: library, cost: 0}
+    - {title: "Children of Men (2006) (film)", author: "Alfonso Cuaron", edition: "Film", access: library, cost: 0}
+    - {title: "O Brother, Where Art Thou? (2000) (film)", author: "Joel and Ethan Coen", edition: "Film", access: library, cost: 0}
+    - {title: "12 Angry Men (1957) (film)", author: "Sidney Lumet", edition: "Film", access: library, cost: 0}
+    - {title: "American IV: The Man Comes Around (2002) (album)", author: "Johnny Cash", edition: "Album", access: library, cost: 0}
+    - {title: "Exodus (1977) (album)", author: "Bob Marley and the Wailers", edition: "Album", access: library, cost: 0}
+    - {title: "Time (The Revelator) (2001) (album)", author: "Gillian Welch", edition: "Album", access: library, cost: 0}
+    - {title: "A Love Supreme (1965) (album)", author: "John Coltrane", edition: "Album", access: library, cost: 0}
+  assessment:
+    - {component: "Weekly written answers, line-edited", weight: 20}
+    - {component: "Unassisted oral examination", weight: 25}
+    - {component: "The colloquium presentation, with lineage sheet", weight: 45}
+    - {component: "Seminar participation", weight: 10}
+  exam: "Week 14, five minutes, no notes, slides, or tools: speak on the capstone against the whole sequence, then draw one passage at random from a set of sixteen and answer one question on it; the Week 15 colloquium is also unaided."
+  rubric: made-response
+  core_competencies:
+    written-communication: M
+    oral-communication: M
+    information-literacy: M
+    critical-thinking: M
+  outcome_levels:
+    judgment: M
+    articulation: M
+    breadth: M
 ---
 
 # HUM 402 — The Long View
@@ -24,15 +65,54 @@ It ends in the colloquium presentation: twenty minutes before the seminar and an
 - **Catalog register:** Capstone colloquium — civilizational rise and decline; thesis work presented against the whole sequence.
 - **Teaching frame:** Your capstone, argued against everything you have read in four years — with the record of rise and decline as the measure of whether it will last.
 
+## Course Information
+
+<!-- sdit:info:begin -->
+| | |
+|---|---|
+| Catalog number | HUM 402 — The Long View |
+| Units | 2 semester units · 90 hours of work over 15 weeks |
+| Each week | 2 h instruction · 0 h studio or laboratory · 4 h independent work |
+| Level | Upper division |
+| Offered | Semester 8 · Year 4 · Spring |
+| Prerequisites | [HUM 401](/courses/HUM-401/index.html) |
+| Corequisites | [CAP 402](/courses/CAP-402/index.html) |
+| Instructional method | Seminar |
+| Instructor | A practitioner-scholar with a body of work in the field: a terminal degree, or equivalent professional standing documented under the Institute's rubric (The Degree, section 9). |
+| Rubric | [The made response (the Canon)](/curriculum/rubrics.html#made-response) |
+| Core competencies | Written communication (mastered) · Oral communication (mastered) · Information literacy (mastered) · Critical thinking (mastered) |
+| Unassisted examination | Week 14, five minutes, no notes, slides, or tools: speak on the capstone against the whole sequence, then draw one passage at random from a set of sixteen and answer one question on it; the Week 15 colloquium is also unaided. |
+
+**Required materials**
+
+- *Ozymandias; The Decline and Fall of the Roman Empire, ch. 71; The Ruins*, Percy Bysshe Shelley; Edward Gibbon; Constantin Volney — Public-domain texts, Project Gutenberg · open, free
+- *Histories, Book VI; On the Origin of Species, closing paragraph*, Polybius; Charles Darwin — Public-domain texts, Project Gutenberg · open, free
+- *The Muqaddimah*, Ibn Khaldun — Rosenthal translation, print or library copy · public library, free
+- *The Collapse of Complex Societies*, Joseph Tainter — Print or library copy · public library, free
+- *Gilgamesh*, Anonymous — Lectio edition · open, free
+- *The Odyssey, Books 23-24; the Inferno, Canto 26; Meditations, Book 4*, Homer; Dante; Marcus Aurelius — Lectio editions · open, free
+- *Pericles' Funeral Oration; Nicomachean Ethics, Book I; Hamlet, Act V scene 2*, Thucydides; Aristotle; William Shakespeare — Crawley translation (Gutenberg); Lectio editions · open, free
+- *Koyaanisqatsi (1982) (film)*, Godfrey Reggio — Film · public library, free
+- *Children of Men (2006) (film)*, Alfonso Cuaron — Film · public library, free
+- *O Brother, Where Art Thou? (2000) (film)*, Joel and Ethan Coen — Film · public library, free
+- *12 Angry Men (1957) (film)*, Sidney Lumet — Film · public library, free
+- *American IV: The Man Comes Around (2002) (album)*, Johnny Cash — Album · public library, free
+- *Exodus (1977) (album)*, Bob Marley and the Wailers — Album · public library, free
+- *Time (The Revelator) (2001) (album)*, Gillian Welch — Album · public library, free
+- *A Love Supreme (1965) (album)*, John Coltrane — Album · public library, free
+
+Required materials cost: nothing. Every item is open, borrowable from a public library, or provided in the room.
+<!-- sdit:info:end -->
+
 ## Learning Outcomes
 
 By the end of this course you can:
 
-1. Read the major accounts of civilizational rise and decline — Polybius, Gibbon, Ibn Khaldun, Tainter — and apply their mechanisms to a product, an institution, a system, or a place. → *Breadth of Mind · Judgment*
-2. Return to a passage from any of the eight Canon semesters and say, with evidence, what your capstone owes it or where it argues back. → *Breadth of Mind*
-3. Judge your own made thing against the long record: name its excess, its likely cause of ruin, and what it will still have done if it is forgotten. → *Judgment*
-4. Present the capstone against the whole sequence in twenty minutes, with a complete lineage sheet, and answer three examiners' questions. → *Articulation*
-5. Speak for five minutes on the capstone and the sequence with no notes, slides, or tools, and answer a cold question on a passage drawn at random. → *Articulation · Judgment*
+1. Read the major accounts of civilizational rise and decline — Polybius, Gibbon, Ibn Khaldun, Tainter — and apply their mechanisms to a product, an institution, a system, or a place. → *Breadth of Mind · Judgment* · *Critical thinking*
+2. Return to a passage from any of the eight Canon semesters and say, with evidence, what your capstone owes it or where it argues back. → *Breadth of Mind* · *Information literacy*
+3. Judge your own made thing against the long record: name its excess, its likely cause of ruin, and what it will still have done if it is forgotten. → *Judgment* · *Critical thinking*
+4. Present the capstone against the whole sequence in twenty minutes, with a complete lineage sheet, and answer three examiners' questions. → *Articulation* · *Oral communication* · *Written communication*
+5. Speak for five minutes on the capstone and the sequence with no notes, slides, or tools, and answer a cold question on a passage drawn at random. → *Articulation · Judgment* · *Oral communication*
 
 *Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
@@ -47,11 +127,26 @@ The colloquium presentation: twenty minutes before the seminar and one outside e
 - **One unassisted examination**: five minutes standing, no notes, no slides, no tools, then one cold question on a passage drawn at random from the sequence. The degree certifies the human, and the last examination in the Canon is the human speaking alone about what they made and what they read.
 - Everything lands in your **portfolio**, reviewed against the five outcomes at the final gate.
 
+<!-- sdit:weights:begin -->
+
+| Component | Weight |
+|---|---|
+| Weekly written answers, line-edited | 20% |
+| Unassisted oral examination | 25% |
+| The colloquium presentation, with lineage sheet | 45% |
+| Seminar participation | 10% |
+| **Total** | **100%** |
+
+Grades follow the scale in the [academic policies](/curriculum/policies.html#grading).
+<!-- sdit:weights:end -->
+
 ## The Daily Path
 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
+The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+
 ### Day 01 — Ozymandias
 
 Publishes Monday, 1 January 2029.
@@ -112,6 +207,17 @@ Publishes Monday, 2 April 2029.
 
 Publishes Monday, 9 April 2029.
 <!-- sdit:days:end -->
+
+
+## Policies
+
+<!-- sdit:policies:begin -->
+- **Attendance and participation.** See [attendance](/curriculum/policies.html#attendance).
+- **AI use.** Tools are open in every course, and the human is examined unaided. See [the AI policy](/curriculum/policies.html#ai).
+- **Academic integrity.** See [academic integrity](/curriculum/policies.html#integrity).
+- **Accommodations.** See [accommodations](/curriculum/policies.html#accommodations).
+- **Late work.** See [late work](/curriculum/policies.html#late-work).
+<!-- sdit:policies:end -->
 
 ---
 

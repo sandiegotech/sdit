@@ -5,6 +5,41 @@ course_code: ENGR 310
 units: 4
 thread: The Depths
 status: syllabus
+syllabus:
+  level: upper
+  prerequisites: [HUM 202, MATH 220, CS 220, RHET 210, WKSP 202]
+  corequisites: []
+  method: [studio]
+  hours:
+    instruction: 1
+    studio_or_lab: 6
+    independent: 5
+  materials:
+    - {title: "Code of Hammurabi, laws 229-233", author: "translated by L. W. King", edition: "1910; Yale Avalon Project", access: open, cost: 0}
+    - {title: "On an Uniform System of Screw Threads", author: "Joseph Whitworth", edition: "1841; Internet Archive", access: open, cost: 0}
+    - {title: "A Manual of Engineering Drawing for Students and Draftsmen", author: "Thomas E. French", edition: "1911; Internet Archive", access: open, cost: 0}
+    - {title: "Aircraft Accident Report AAR-89/03 (Aloha Airlines Flight 243), findings", author: "National Transportation Safety Board", access: open, cost: 0}
+    - {title: "Letters to Octave Chanute, 1900-1903", author: "Wilbur and Orville Wright", edition: "Library of Congress", access: open, cost: 0}
+    - {title: "Dialogues Concerning Two New Sciences, Second Day", author: "Galileo Galilei", edition: "Project Gutenberg", access: open, cost: 0}
+    - {title: "De Architectura, Book I, Chapter 1", author: "Vitruvius", edition: "Morgan translation; Project Gutenberg", access: open, cost: 0}
+    - {title: "History of the meter", author: "National Institute of Standards and Technology", access: open, cost: 0}
+    - {title: "Apollo quality and reliability history (NASA SP-4204, one chapter)", author: "NASA", access: open, cost: 0}
+    - {title: "Gears from the Greeks", author: "Derek de Solla Price", edition: "1974", access: library, cost: 0}
+    - {title: "Longitude", author: "Dava Sobel", access: library, cost: 0}
+    - {title: "Mill, lathe, printer, surface plate, gauge blocks, calipers, and micrometers", author: "San Diego Institute of Technology", access: provided, cost: 0, note: "Open learner: free CAD, a home or library printer, an inexpensive caliper."}
+  assessment:
+    - {component: "Weekly drawing, fit, and process exercises with written reasons", weight: 20}
+    - {component: "Three critiques: mock-up, drawing review, cycle test", weight: 15}
+    - {component: "Unassisted examination: read a drawing and part cold, then sketch and dimension by hand", weight: 20}
+    - {component: "The mechanism, drawing package, and first-article sheet, exhibited and answered for", weight: 45}
+  exam: "Day 11, tools closed, ninety minutes: judge an unseen drawing and the part made from it with calipers and a micrometer, say what happens in service if it fails, then hand-sketch and dimension an object in three views."
+  rubric: studio-work
+  core_competencies:
+    quantitative-reasoning: D
+    critical-thinking: D
+  outcome_levels:
+    craft: D
+    judgment: D
 ---
 
 # ENGR 310 — Mechanical Design & Fabrication
@@ -24,15 +59,51 @@ This is a depth studio: a room with a mill, a lathe, a printer, a surface plate,
 - **Catalog register:** Mechanical engineering design — CAD, materials, manufacturing processes, tolerance.
 - **Teaching frame:** CAD to shop floor; tolerance is a moral category.
 
+## Course Information
+
+<!-- sdit:info:begin -->
+| | |
+|---|---|
+| Catalog number | ENGR 310 — Mechanical Design & Fabrication |
+| Units | 4 semester units · 180 hours of work over 15 weeks |
+| Each week | 1 h instruction · 6 h studio or laboratory · 5 h independent work |
+| Level | Upper division |
+| Offered | Semester 5 · Year 3 · Fall |
+| Prerequisites | [HUM 202](/courses/HUM-202/index.html), [MATH 220](/courses/MATH-220/index.html), [CS 220](/courses/CS-220/index.html), [RHET 210](/courses/RHET-210/index.html), [WKSP 202](/courses/WKSP-202/index.html) |
+| Corequisites | None |
+| Instructional method | Studio |
+| Instructor | A practitioner-scholar with a body of work in the field: a terminal degree, or equivalent professional standing documented under the Institute's rubric (The Degree, section 9). |
+| Rubric | [The studio work (the Depths)](/curriculum/rubrics.html#studio-work) |
+| Core competencies | Quantitative reasoning (developed) · Critical thinking (developed) |
+| Unassisted examination | Day 11, tools closed, ninety minutes: judge an unseen drawing and the part made from it with calipers and a micrometer, say what happens in service if it fails, then hand-sketch and dimension an object in three views. |
+
+**Required materials**
+
+- *Code of Hammurabi, laws 229-233*, translated by L. W. King — 1910; Yale Avalon Project · open, free
+- *On an Uniform System of Screw Threads*, Joseph Whitworth — 1841; Internet Archive · open, free
+- *A Manual of Engineering Drawing for Students and Draftsmen*, Thomas E. French — 1911; Internet Archive · open, free
+- *Aircraft Accident Report AAR-89/03 (Aloha Airlines Flight 243), findings*, National Transportation Safety Board · open, free
+- *Letters to Octave Chanute, 1900-1903*, Wilbur and Orville Wright — Library of Congress · open, free
+- *Dialogues Concerning Two New Sciences, Second Day*, Galileo Galilei — Project Gutenberg · open, free
+- *De Architectura, Book I, Chapter 1*, Vitruvius — Morgan translation; Project Gutenberg · open, free
+- *History of the meter*, National Institute of Standards and Technology · open, free
+- *Apollo quality and reliability history (NASA SP-4204, one chapter)*, NASA · open, free
+- *Gears from the Greeks*, Derek de Solla Price — 1974 · public library, free
+- *Longitude*, Dava Sobel · public library, free
+- *Mill, lathe, printer, surface plate, gauge blocks, calipers, and micrometers*, San Diego Institute of Technology · provided in the room; open learner: free CAD, a home or library printer, an inexpensive caliper
+
+Required materials cost: nothing. Every item is open, borrowable from a public library, or provided in the room.
+<!-- sdit:info:end -->
+
 ## Learning Outcomes
 
 By the end of this course you can:
 
 1. Produce an engineering drawing package — orthographic views, datums, dimensions, and tolerances with stated reasons — that a stranger could manufacture from without you in the room. → *Workmanship*
 2. Choose a material and a manufacturing process for a part from its load, its cycles, its environment, and the shop available, and say what each choice gives up. → *Judgment*
-3. Specify the fit that matters in a mechanism and hold it: shaft and hole, clearance, transition, or interference, measured and recorded. → *Workmanship*
+3. Specify the fit that matters in a mechanism and hold it: shaft and hole, clearance, transition, or interference, measured and recorded. → *Workmanship* · *Quantitative reasoning*
 4. Fabricate a mechanism by at least two processes, inspect it against its drawing, and record every critical dimension honestly on a first-article sheet. → *Workmanship*
-5. Read a drawing and a part cold, judge pass or fail, and say what would happen in service — with the tools closed. → *Judgment*
+5. Read a drawing and a part cold, judge pass or fail, and say what would happen in service — with the tools closed. → *Judgment* · *Critical thinking*
 
 *Each outcome maps to the five institutional outcomes (Judgment, Command of Intelligence, Workmanship, Articulation, Breadth of Mind) — the assessment spine of the degree and its accreditation evidence file.*
 
@@ -49,11 +120,26 @@ A designed and fabricated mechanism that works — drawings, tolerances, and the
 - **An unassisted examination** on Day 11, tools closed: you read a drawing you have not seen, measure the part made from it, judge it, and hand-sketch and dimension an object from the bench. The institution certifies the human who can speak the drawing's language without software.
 - Everything lands in your **portfolio**, reviewed against the five outcomes at the end-of-year gate.
 
+<!-- sdit:weights:begin -->
+
+| Component | Weight |
+|---|---|
+| Weekly drawing, fit, and process exercises with written reasons | 20% |
+| Three critiques: mock-up, drawing review, cycle test | 15% |
+| Unassisted examination: read a drawing and part cold, then sketch and dimension by hand | 20% |
+| The mechanism, drawing package, and first-article sheet, exhibited and answered for | 45% |
+| **Total** | **100%** |
+
+Grades follow the scale in the [academic policies](/curriculum/policies.html#grading).
+<!-- sdit:weights:end -->
+
 ## The Daily Path
 
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
+The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+
 ### Day 01 — The Part Outlives the Drawing
 
 Publishes Monday, 21 February 2028.
@@ -114,6 +200,17 @@ Publishes Monday, 22 May 2028.
 
 Publishes Monday, 29 May 2028.
 <!-- sdit:days:end -->
+
+
+## Policies
+
+<!-- sdit:policies:begin -->
+- **Attendance and participation.** See [attendance](/curriculum/policies.html#attendance).
+- **AI use.** Tools are open in every course, and the human is examined unaided. See [the AI policy](/curriculum/policies.html#ai).
+- **Academic integrity.** See [academic integrity](/curriculum/policies.html#integrity).
+- **Accommodations.** See [accommodations](/curriculum/policies.html#accommodations).
+- **Late work.** See [late work](/curriculum/policies.html#late-work).
+<!-- sdit:policies:end -->
 
 ---
 
