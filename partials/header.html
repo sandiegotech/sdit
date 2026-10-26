@@ -11,10 +11,16 @@
   </div>
 </header>
 <script>
-  // The SDIT Card. Set this to the account service's ApiUrl (see account/README.md)
-  // to switch on sign-in + cloud sync. Left blank, the site runs on localStorage
-  // alone and no sign-in UI appears.
-  window.SDIT_ACCOUNT_API = window.SDIT_ACCOUNT_API || "https://2yuxbioi45.execute-api.us-west-2.amazonaws.com";
+  // The SDIT Card. On the live domain the account API is mounted at /api on the
+  // same CloudFront distribution (see infra/template.yaml), so calls are
+  // same-origin and the session can live in an HttpOnly cookie. Local
+  // development (serve.py on :3001) has no /api, so it calls the API Gateway
+  // address directly, cross-origin, with the bearer token. Left blank, the site
+  // runs on localStorage alone and no sign-in UI appears.
+  window.SDIT_ACCOUNT_API = window.SDIT_ACCOUNT_API ||
+    (location.hostname === "learn.sandiegotech.org"
+      ? "/api"
+      : "https://2yuxbioi45.execute-api.us-west-2.amazonaws.com");
 </script>
 <script>
   (function () {
