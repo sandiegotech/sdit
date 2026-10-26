@@ -25,6 +25,14 @@ Three lineages, fused:
 - **Bell Labs / early MIT** — deep technical rigor in service of building, not credentialing.
 - **The waterman tradition** — physical mastery, courage, and judgment as part of the formation of the whole person. San Diego is not where SDIT happens to be; San Diego is the laboratory. The ocean teaches physics. The culture teaches media. The terrain teaches engineering.
 
+**What counts as a master.** The bottega runs on masters, so the institution has to say who one is. A master is a person with a body of work and the years inside a discipline that produced it. Formal study is one kind of evidence for that. It is not the only kind, and in most of what SDIT teaches it is not the strongest kind. A shaper, a record producer, a cinematographer, a boat builder, a chip designer who has been inside the work for twenty years holds a depth that four years of coursework does not reach — and usually holds no credential that says so.
+
+The error runs both ways, and the second direction matters more. A degree certifies that a course of study was completed. It does not certify that the person can do the thing. An MBA held by someone who has never run a business is a real qualification in a subject that person has never practiced. A doctorate can mean thirty years of judgment across a whole field, or it can mean one narrow specialty defended past the point of honesty, or a position held for reasons other than the evidence. The letters do not distinguish these cases. The industrial university's division of disciplines is what produces the failure: it can certify depth in a part while leaving the whole unseen, which is the same division the Post-Industrial Renaissance thesis rejects.
+
+So the test is the same in both directions, and it is not the credential. The evidence is the work itself, the record of it over time, and the judgment of peers who cannot be fooled about it. That is what identifies the master who was never certified, and what identifies the certified person who is not one.
+
+This is the Dual-Register Principle turned toward the faculty. For students, the credential is the interface and the portfolio is the truth. The same holds for the people who teach here. The institution's obligation is to find them, give them a title and a room, and present what they know in a form that makes its depth legible to someone who has not yet earned it.
+
 ## III. The Dual-Register Principle
 
 The governing design rule of everything SDIT teaches: **keep the names, transform the delivery.**
