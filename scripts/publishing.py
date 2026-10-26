@@ -79,3 +79,49 @@ def plain_date(d: dt.date) -> str:
 
 def short_date(d: dt.date) -> str:
     return f"{d.day} {d:%b}"
+
+
+# ── The release gate ─────────────────────────────────────────────────────────
+
+def released_through(cal: dict | None = None) -> tuple[int, int]:
+    """(semester, week) of the last released week. Weeks after it are backlog."""
+    cal = cal or load_calendar()
+    rt = (cal.get("publishing") or {}).get("released_through") or {}
+    return int(rt.get("semester", 1)), int(rt.get("week", 1))
+
+
+def released(semester: int, week: int, cal: dict | None = None) -> bool:
+    """Is this week out? Earlier semesters are; later ones are not; the current
+    one up to and including released_through's week."""
+    rs, rw = released_through(cal)
+    return (semester, week) <= (rs, rw)
+
+
+def unreleased_paths(root: Path | None = None) -> list[str]:
+    """Site paths of day pages that exist but are not yet released, so the
+    deploy can leave them out: courses/<DIR>/day-NN.html and .md."""
+    import re as _re
+    from catalog import load_catalog
+    root = root or ROOT
+    out = []
+    for c in load_catalog()["courses"]:
+        sem = c.get("semester")
+        cdir = root / "courses" / c["dir"]
+        for f in sorted(cdir.glob("day-*.md")):
+            m = _re.match(r"day-(\d+)\.md$", f.name)
+            if not m or not sem:
+                continue
+            n = int(m.group(1))
+            if not released(int(sem), n):
+                out.append(f"courses/{c['dir']}/day-{n:02d}.md")
+                out.append(f"courses/{c['dir']}/day-{n:02d}.html")
+    return out
+
+
+if __name__ == "__main__":
+    import sys as _sys
+    if "--unreleased-paths" in _sys.argv:
+        print("\n".join(unreleased_paths()))
+    else:
+        rs, rw = released_through()
+        print(f"released through Semester {rs}, Week {rw}; {len(unreleased_paths()) // 2} written day(s) in the backlog")

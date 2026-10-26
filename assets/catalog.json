@@ -25,7 +25,7 @@
           "n": 2,
           "title": "My Name Is Nobody",
           "question": "When did needing credit for something cost you more than the thing was worth?",
-          "publishes": "2027-01-04"
+          "publishes": null
         },
         {
           "n": 3,
@@ -838,8 +838,8 @@
         {
           "n": 2,
           "title": "Right Now Is Two Frames Apart",
-          "question": "Watch anything move and ask: how close would two photographs have to be before I could call it \"now\"?",
-          "publishes": "2027-01-04"
+          "question": "Watch anything move and ask: how close would two photographs have to be before I could call it \u201cnow\u201d?",
+          "publishes": null
         },
         {
           "n": 3,
@@ -1047,7 +1047,7 @@
           "n": 2,
           "title": "The Hammer and the Feather",
           "question": "Drop two different things together today and watch which lands first. Then ask why.",
-          "publishes": "2027-01-04"
+          "publishes": null
         },
         {
           "n": 3,
@@ -1457,7 +1457,7 @@
           "n": 2,
           "title": "The First Program Was Written by Hand",
           "question": "What is the smallest useful thing you could tell a machine to do for you every day?",
-          "publishes": "2027-01-04"
+          "publishes": null
         },
         {
           "n": 3,
@@ -2675,7 +2675,7 @@
           "n": 2,
           "title": "The Room Has a Master in It",
           "question": "Who is the nearest person who could show you a tool you don't know how to use?",
-          "publishes": "2027-01-04"
+          "publishes": null
         },
         {
           "n": 3,

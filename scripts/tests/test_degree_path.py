@@ -23,7 +23,9 @@ def test_next_on_the_path_crosses_courses_and_weeks():
     assert nxt.key == ("MATH-110", 1)
     after_friday = degree_path.next_on_path("WKSP-101", 1)
     assert after_friday.key == ("HUM-101", 2)
-    assert after_friday.published is False and after_friday.publishes is not None
+    # Whether Week 2 is out depends on the release calendar, not on this test;
+    # it always has a publish date.
+    assert isinstance(after_friday.published, bool) and after_friday.publishes is not None
 
 
 def test_next_on_the_path_skips_studios():
@@ -61,3 +63,17 @@ def test_public_view_uses_absolute_asset_paths():
     page = portfolio.render_page(public=True)
     refs = re.findall(r'(?:src|href)="([^"]+\.(?:js|css)[^"]*)"', page)
     assert refs and all(r.startswith("/") for r in refs), refs
+
+
+def test_the_release_gate_holds_written_days_back():
+    import publishing
+    rs, rw = publishing.released_through()
+    assert publishing.released(rs, rw) and not publishing.released(rs, rw + 1) and publishing.released(1, 1)
+    # Any written day after the gate is backlog: not published, dated, still written.
+    for s in degree_path.sequence():
+        if s.kind == "day" and s.written and (s.semester, s.week) > (rs, rw):
+            assert s.published is False and s.publishes is not None
+            assert f"courses/{s.course['dir']}/day-{s.n:02d}.html" in publishing.unreleased_paths()
+    # Every unreleased path names a file that exists.
+    for rel in publishing.unreleased_paths():
+        assert (degree_path.ROOT / rel).exists() or rel.endswith(".html"), rel

@@ -24,7 +24,7 @@ def next_week() -> int:
     import degree_path
     import publishing
 
-    pending = [s for s in degree_path.sequence() if s.kind == "day" and not s.studio and not s.published]
+    pending = [s for s in degree_path.sequence() if s.kind == "day" and not s.studio and not s.written]
     if not pending:
         print("Every spine day is written.")
         return 0
@@ -39,14 +39,16 @@ def next_week() -> int:
         c = s.course or {}
         a = arcs.load_arc(COURSES / c["dir"])
         q = a.day(s.n).question if a and a.day(s.n) else ""
-        state = "written" if s.published else "TO WRITE"
+        state = "written" if s.written else "TO WRITE"
         print(f"  {s.label:<6} {c['dir']:<9} Day {s.n:02d}  {state:<8}  {s.title}")
-        if not s.published:
+        if not s.written:
             print(f"         {'':9} question: {q}")
             print(f"         {'':9} python3 scripts/scaffold_day.py {c['dir']} {s.n}")
-    ahead = sum(1 for s in degree_path.sequence() if s.kind == "day" and s.published and s.publishes)
+    ahead = sum(1 for s in degree_path.sequence() if s.kind == "day" and s.written and not s.published)
+    rs, rw = publishing.released_through()
     print()
-    print(f"Written ahead of the calendar: {ahead} day(s).")
+    print(f"Released through Semester {rs}, Week {rw}. Written ahead of the release gate: {ahead} day(s).")
+    print("Release the next week by moving released_through in knowledge/calendar.yaml, then build, commit, deploy.")
     return 0
 
 

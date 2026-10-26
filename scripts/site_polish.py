@@ -184,10 +184,12 @@ def url_for(p: Path, root: Path) -> str:
 
 
 def sitemap(root: Path) -> str:
+    import publishing
+    hidden = set(publishing.unreleased_paths(root))
     urls = []
     for p in pages(root):
         rel = p.relative_to(root).as_posix()
-        if rel == "404.html":
+        if rel == "404.html" or rel in hidden:
             continue
         if is_redirect(p.read_text(encoding="utf-8")):
             continue

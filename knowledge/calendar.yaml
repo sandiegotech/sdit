@@ -8,11 +8,17 @@ __meta__:
     any breaks.
   intended_use: >
     Read by scripts/publishing.py. Drives the publish dates on the Path page,
-    each course's Daily Path, the browser catalog, and the lesson rail.
-    Change dates here and nowhere else.
+    each course's Daily Path, the browser catalog, and the lesson rail, and
+    the release gate (released_through) that decides which written days are
+    live. Change dates here and nowhere else.
 
 publishing:
   first_release: 2027-01-04   # Monday. Semester 1, Week 2.
+  # The release gate. A written day is live only when its week is at or
+  # before this; later weeks sit in the backlog, built locally and kept out of
+  # the deploy. Move it forward each Monday with the commit that releases the
+  # week, so the site changes by decision, not by the clock.
+  released_through: {semester: 1, week: 1}
   cadence_days: 7
   # A break pushes every later week back. Example:
   #   - {after: {semester: 1, week: 15}, weeks: 2}

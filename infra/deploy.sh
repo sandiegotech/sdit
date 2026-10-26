@@ -80,6 +80,15 @@ if [ -n "$UNKNOWN" ]; then
   exit 1
 fi
 
+# The release gate: day pages written ahead of knowledge/calendar.yaml's
+# released_through stay on this machine until their Monday. They are listed
+# by the calendar, not by date, so the site changes by decision.
+UNRELEASED=()
+while IFS= read -r rel; do
+  [ -n "$rel" ] && UNRELEASED+=(--exclude "$rel")
+done < <(cd "$SITE_ROOT" && python3 scripts/publishing.py --unreleased-paths)
+echo "→ Holding back ${#UNRELEASED[@]} unreleased path exclusion(s)"
+
 echo "→ Syncing site to s3://$BUCKET"
 # --delete keeps the bucket an exact mirror of the repo, so a file removed here
 # disappears from the site. Everything excluded below is source, not site:
@@ -102,7 +111,8 @@ aws s3 sync "$SITE_ROOT" "s3://$BUCKET" \
   --exclude "CNAME" \
   --exclude ".nojekyll" \
   --exclude "wrangler.toml" \
-  --exclude "*.md"
+  --exclude "*.md" \
+  "${UNRELEASED[@]}"
 
 # HTML is cached at the edge under the CachingOptimized policy, so a sync alone
 # would leave stale pages served for hours. "/*" counts as ONE path against the

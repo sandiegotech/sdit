@@ -49,7 +49,8 @@ class Step:
     course: dict | None = None
     n: int = 0
     title: str = ""
-    published: bool = False
+    published: bool = False      # written AND released: live on the site
+    written: bool = False        # the day file exists (it may sit in the backlog)
     href: str = ""
     publishes: object = None  # datetime.date or None
     studio: bool = False
@@ -68,15 +69,18 @@ def _course_day_step(c: dict, semester: int, week: int, label: str) -> Step | No
     arc = arcs.load_arc(cdir)
     arc_day = arc.day(n) if arc else None
     if info:
-        title, published = info[0], True
+        title, written = info[0], True
     elif arc_day:
-        title, published = arc_day.title, False
+        title, written = arc_day.title, False
     else:
-        title, published = f"Day {n:02d}", False
+        title, written = f"Day {n:02d}", False
+    # A written day is live only once its week is released (the calendar's
+    # release gate); until then it is backlog, with a publish date.
+    published = written and publishing.released(semester, week)
     studio = c.get("thread") == "depth"
     return Step(
         kind="day", semester=semester, week=week, label=label, course=c, n=n,
-        title=title, published=published,
+        title=title, published=published, written=written,
         href=f"/courses/{c['dir']}/day-{n:02d}.html",
         publishes=None if published else publishing.week_date(semester, week),
         studio=studio,

@@ -31,7 +31,13 @@ def build_catalog() -> dict:
         if not course_dir.exists():
             continue
         days = []
+        import publishing
+        sem = c.get("semester")
         for n in published_days(course_dir):
+            # The release gate: written days after released_through stay out
+            # of the browser catalog until their week.
+            if sem and not publishing.released(int(sem), n):
+                continue
             info = day_info(course_dir, n)
             if not info:
                 continue

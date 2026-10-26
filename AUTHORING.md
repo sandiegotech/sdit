@@ -183,6 +183,8 @@ open `http://localhost:3001/curriculum/day-by-day.html`, and read each new day o
 
 A person reads and line-edits every week before it publishes. Your job is a draft good enough that the edit is small.
 
+Committing a week does not publish it. The release gate in `knowledge/calendar.yaml` (`released_through`) decides which weeks are live: a written day after the gate is built locally, shown on its course page and the Path as "Publishes <date>", and left out of the deploy and the sitemap. On the Monday a week releases, move `released_through` forward, build, commit, and deploy. `python3 scripts/status.py --next` reports how many days sit written ahead of the gate.
+
 ## 9. Writing a course's syllabus block
 
 Every course page already carries a `syllabus:` block in its front matter; the build generates Course Information, the assessment weights, and Policies from it. If a course's plan changes (a material, a weight, the exam), change the block, never the generated sections. The rules: weekly hours sum to units × 3; weights are integers summing to 100 and include an "Unassisted" component; prerequisites are real course codes from earlier semesters; every material has `access` (open, library, purchase, provided) and `cost`; every core competency claimed appears on a learning-outcome line. `validate.py` checks all of it. The full specification is in `PLAN.md`, section 13.

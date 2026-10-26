@@ -104,7 +104,12 @@ def sync_course_days(catalog) -> int:
             blocks = []
             for n in range(1, planned + 1):
                 info = day_info(course_dir, n)
-                if info:
+                sem = course.get("semester") if course else None
+                if info and sem and not publishing.released(int(sem), n):
+                    # Written, in the backlog: show the title and the date, no link.
+                    when = publishing.week_date(int(sem), n)
+                    block = f"### Day {n:02d} — {info[0]}\n\n" + (f"Publishes {publishing.long_date(when)}.\n" if when else "Being written.\n")
+                elif info:
                     title, dek = info
                     block = f"### Day {n:02d} — {title}\n\n"
                     if dek:
@@ -321,7 +326,8 @@ def _esc(s) -> str:
 
 def _status_tag(c: dict) -> str:
     from catalog import published_days
-    n = len(published_days(ROOT / "courses" / c["dir"]))
+    sem = c.get("semester")
+    n = len([d for d in published_days(ROOT / "courses" / c["dir"]) if sem and publishing.released(int(sem), d)])
     planned = planned_days(c)
     if n and n >= planned:
         return '<span class="tag tag--live">live</span>'
