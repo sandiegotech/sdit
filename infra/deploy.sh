@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # Deploy learn.sandiegotech.org — stack, then site, then cache invalidation.
 #
-# Safe to run before DNS is cut over: until the Cloudflare record points at
-# CloudFront, this publishes to the distribution's own *.cloudfront.net address
-# and GitHub Pages keeps serving the live domain. Verify there first.
+# This IS the deploy: since 2026-10-26 the Cloudflare record for the domain
+# points at this distribution (DNS only), and GitHub Pages is out of the path.
+# Pushing to main runs the checks but publishes nothing. The sync walks the
+# working tree, not git, so anything uncommitted in the folder goes live too.
 #
 #   ./deploy.sh            # stack + site
 #   ./deploy.sh --site     # site only (skip the CloudFormation step)
@@ -104,5 +105,4 @@ aws cloudfront create-invalidation \
   --query 'Invalidation.Id' --output text
 
 echo
-echo "Done. Test at:  https://$DIST_DOMAIN"
-echo "Live domain ($DOMAIN) is unchanged until DNS is cut over."
+echo "Done. Live at https://$DOMAIN (DNS cut over 2026-10-26); the distribution itself answers at https://$DIST_DOMAIN."
