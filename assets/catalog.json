@@ -18,76 +18,91 @@
         {
           "n": 1,
           "title": "The Oldest Story Is About You",
+          "question": "What's the Siren in your life \u2014 and what would tying yourself to the mast look like?",
           "publishes": null
         },
         {
           "n": 2,
           "title": "My Name Is Nobody",
+          "question": "When did needing credit for something cost you more than the thing was worth?",
           "publishes": "2027-01-04"
         },
         {
           "n": 3,
           "title": "Strangers at the Door",
+          "question": "Who fed you before they knew your name, and what did they get for it?",
           "publishes": "2027-01-11"
         },
         {
           "n": 4,
           "title": "The Bed Is Nailed to the Floor",
+          "question": "What have you made that only you could describe from the inside?",
           "publishes": "2027-01-18"
         },
         {
           "n": 5,
           "title": "It Begins With Rage, Not War",
+          "question": "What did the last anger you felt actually protect?",
           "publishes": "2027-01-25"
         },
         {
           "n": 6,
           "title": "Hector Takes Off the Helmet",
+          "question": "Who is the Hector in a conflict you are part of, and have you let yourself see him at home?",
           "publishes": "2027-02-01"
         },
         {
           "n": 7,
           "title": "Priam Kisses the Hands",
+          "question": "Who would you have to sit across from to end the longest fight you are in?",
           "publishes": "2027-02-08"
         },
         {
           "n": 8,
           "title": "Two Laws on the Same Hot Day",
+          "question": "Name a fight you are in where the other side is also right. What does that change?",
           "publishes": "2027-02-15"
         },
         {
           "n": 9,
           "title": "The First Jury",
+          "question": "What loop are you in that only a third party could break?",
           "publishes": "2027-02-22"
         },
         {
           "n": 10,
           "title": "The Strong Do What They Can",
+          "question": "Where in your life is someone telling you the truth about power, and are you answering with hope?",
           "publishes": "2027-03-01"
         },
         {
           "n": 11,
           "title": "The Plague Tells the Truth",
+          "question": "What did the last crisis reveal about a group you belong to that the group's own story left out?",
           "publishes": "2027-03-08"
         },
         {
           "n": 12,
           "title": "The Cave",
+          "question": "What is the screen you take for the world, and who would you go back for?",
           "publishes": "2027-03-15"
         },
         {
           "n": 13,
           "title": "The Ring That Makes You Invisible",
+          "question": "What would you do this week if you were certain no one could ever know?",
           "publishes": "2027-03-22"
         },
         {
           "n": 14,
           "title": "What the Music Does to the City",
+          "question": "Name one album that changed how you behave. How?",
           "publishes": "2027-03-29"
         },
         {
           "n": 15,
           "title": "Defend It Out Loud",
+          "question": "If someone asked you tonight what your made thing claims, in one sentence, could you say it?",
           "publishes": "2027-04-05"
         }
       ]
@@ -104,76 +119,91 @@
         {
           "n": 1,
           "title": "Get Up",
+          "question": "What were you made to do today, and did you get up for it?",
           "publishes": "2027-04-12"
         },
         {
           "n": 2,
           "title": "Empty Pools",
+          "question": "What is the drained pool in your life right now, the thing that looks like a loss?",
           "publishes": "2027-04-19"
         },
         {
           "n": 3,
           "title": "Written in a Tent",
+          "question": "Who taught you something you still use, and have you written their name down?",
           "publishes": "2027-04-26"
         },
         {
           "n": 4,
           "title": "You Could Leave Life Right Now",
+          "question": "If this semester were your last, what would you make with what is already in the room?",
           "publishes": "2027-05-03"
         },
         {
           "n": 5,
           "title": "The Pears",
+          "question": "What have you done only because someone was watching you do it?",
           "publishes": "2027-05-10"
         },
         {
           "n": 6,
           "title": "Take and Read",
+          "question": "What have you been slowly becoming that might arrive all at once?",
           "publishes": "2027-05-17"
         },
         {
           "n": 7,
           "title": "What, Then, Is Time?",
+          "question": "Where is yesterday, right now?",
           "publishes": "2027-05-24"
         },
         {
           "n": 8,
           "title": "Midway",
+          "question": "Where are you lost right now, and who could you ask to walk the first stretch with you?",
           "publishes": "2027-05-31"
         },
         {
           "n": 9,
           "title": "Why Virgil?",
+          "question": "Who is your Virgil, and where will they have to leave you?",
           "publishes": "2027-06-07"
         },
         {
           "n": 10,
           "title": "Odysseus in Hell",
+          "question": "Where is the line in your own work between curiosity and recklessness, and who drew it?",
           "publishes": "2027-06-14"
         },
         {
           "n": 11,
           "title": "Climbing Is Lighter",
+          "question": "What are you working off, and how will you know when a letter is gone?",
           "publishes": "2027-06-21"
         },
         {
           "n": 12,
           "title": "Written From Exile",
+          "question": "Where in your life do you run on what people should do, and what has that cost?",
           "publishes": "2027-06-28"
         },
         {
           "n": 13,
           "title": "Feared, Not Hated",
+          "question": "Who has power over you, and what keeps it legitimate?",
           "publishes": "2027-07-05"
         },
         {
           "n": 14,
           "title": "Knowing How to See",
+          "question": "What have you looked at long enough to draw from memory?",
           "publishes": "2027-07-12"
         },
         {
           "n": 15,
           "title": "The Bottega",
+          "question": "Which part of your made thing is the angel, the part you did alone inside someone else's structure?",
           "publishes": "2027-07-19"
         }
       ]
@@ -190,76 +220,91 @@
         {
           "n": 1,
           "title": "The War of Everyone Against Everyone",
+          "question": "Why do you obey? Not why you should: why you actually do.",
           "publishes": "2027-07-26"
         },
         {
           "n": 2,
           "title": "Covenants Without the Sword",
+          "question": "Name one agreement you rely on. Who holds the sword behind it?",
           "publishes": "2027-08-02"
         },
         {
           "n": 3,
           "title": "Inside Leviathan",
+          "question": "What would you be like with no sword above you at all?",
           "publishes": "2027-08-09"
         },
         {
           "n": 4,
           "title": "Mixing Your Labor",
+          "question": "Who owns what you made at work last week? Read the contract.",
           "publishes": "2027-08-16"
         },
         {
           "n": 5,
           "title": "Enough, and as Good, Left for Others",
+          "question": "What are you taking from a commons right now, and is there enough and as good left for the next person?",
           "publishes": "2027-08-23"
         },
         {
           "n": 6,
           "title": "This Land",
+          "question": "What question do you already argue about? That is probably your made thing.",
           "publishes": "2027-08-30"
         },
         {
           "n": 7,
           "title": "The Pin Factory",
+          "question": "What is your pin? Name the one small step you do that someone else depends on.",
           "publishes": "2027-09-06"
         },
         {
           "n": 8,
           "title": "The Invisible Hand Appears Once",
+          "question": "When did you last do the right thing for a stranger because an imagined observer was watching?",
           "publishes": "2027-09-13"
         },
         {
           "n": 9,
           "title": "As Stupid and Ignorant as It Is Possible to Become",
+          "question": "What has your work narrowed in you, and what are you doing about it?",
           "publishes": "2027-09-20"
         },
         {
           "n": 10,
           "title": "Common Sense",
+          "question": "What argument would you print a hundred thousand copies of, and could a stranger follow it?",
           "publishes": "2027-09-27"
         },
         {
           "n": 11,
           "title": "Self-Evident",
+          "question": "What sentence in your own argument would survive a committee?",
           "publishes": "2027-10-04"
         },
         {
           "n": 12,
           "title": "Faction",
+          "question": "What system in your life assumes people will be good? What happens when they are not?",
           "publishes": "2027-10-11"
         },
         {
           "n": 13,
           "title": "Ambition Against Ambition",
+          "question": "Where in your work does a check feel like an obstacle? Is it doing its job?",
           "publishes": "2027-10-18"
         },
         {
           "n": 14,
           "title": "The Room Where Equals Argue",
+          "question": "What is the largest group you have seen actually change its mind? How big was it?",
           "publishes": "2027-10-25"
         },
         {
           "n": 15,
           "title": "The Earth Belongs to the Living",
+          "question": "If your argument became a rule tomorrow, who would it bind, and did you ask them?",
           "publishes": "2027-11-01"
         }
       ]
@@ -276,76 +321,91 @@
         {
           "n": 1,
           "title": "The Creature Reads",
+          "question": "What have you made that has since been used in a way you never intended? Did you go back for it?",
           "publishes": "2027-11-08"
         },
         {
           "n": 2,
           "title": "I Ought to Be Thy Adam",
+          "question": "What is the thing you made and then walked away from, and what would it say to you if it could?",
           "publishes": "2027-11-15"
         },
         {
           "n": 3,
           "title": "A Teenager, a Rainy Summer, and a Frog's Leg",
+          "question": "What live science around you right now will be someone's ghost story in two hundred years?",
           "publishes": "2027-11-22"
         },
         {
           "n": 4,
           "title": "Circuits That Live and Die",
+          "question": "What is the difference between an instrument and a creature? Where is the line, exactly?",
           "publishes": "2027-11-29"
         },
         {
           "n": 5,
           "title": "The Tangled Bank",
+          "question": "Look at one living thing today for ten minutes and ask: what made this, and did it mean to?",
           "publishes": "2027-12-06"
         },
         {
           "n": 6,
           "title": "Four Years, Ten Thousand Miles",
+          "question": "What have you observed long enough, and written down carefully enough, to see it change?",
           "publishes": "2027-12-13"
         },
         {
           "n": 7,
           "title": "The Overwhelming Indifference",
+          "question": "If nothing out there is keeping score, what are you owed, and by whom?",
           "publishes": "2027-12-20"
         },
         {
           "n": 8,
           "title": "The Shift Change",
+          "question": "What machine sets the pace of your day, and did you choose it?",
           "publishes": "2027-12-27"
         },
         {
           "n": 9,
           "title": "All That Is Solid Melts Into Air",
+          "question": "What in your own field was solid five years ago and is gone? Who melted it?",
           "publishes": "2028-01-03"
         },
         {
           "n": 10,
           "title": "The Working Day",
+          "question": "How many hours did you work this week, honestly counted? Who set the number?",
           "publishes": "2028-01-10"
         },
         {
           "n": 11,
           "title": "We Are the Robots",
+          "question": "What in your life is a robot in \u010capek's sense, something built to work and never asked?",
           "publishes": "2028-01-17"
         },
         {
           "n": 12,
           "title": "We Have Killed Him",
+          "question": "What did you stop believing, and what quietly took its place?",
           "publishes": "2028-01-24"
         },
         {
           "n": 13,
           "title": "Would You Live It Again?",
+          "question": "Which day of yours this month would you accept living again forever? What would it take to make it tomorrow?",
           "publishes": "2028-01-31"
         },
         {
           "n": 14,
           "title": "Become Who You Are",
+          "question": "Who are you becoming on purpose, and who is becoming you by default?",
           "publishes": "2028-02-07"
         },
         {
           "n": 15,
           "title": "What Do You Owe It?",
+          "question": "What do you owe the thing you made, and what does it owe you? Say it in one sentence.",
           "publishes": "2028-02-14"
         }
       ]
@@ -362,76 +422,91 @@
         {
           "n": 1,
           "title": "The Fiction Got There First",
+          "question": "What is one thing you believe about machines in 2050 \u2014 and who wrote it down first?",
           "publishes": "2028-02-21"
         },
         {
           "n": 2,
           "title": "Maelzel's Chess-Player",
+          "question": "What would convince you something was thinking? Name one test.",
           "publishes": "2028-02-28"
         },
         {
           "n": 3,
           "title": "The Imitation Game",
+          "question": "In the last week, where did you talk to a machine and not check?",
           "publishes": "2028-03-06"
         },
         {
           "n": 4,
           "title": "Lady Lovelace's Objection",
+          "question": "When did a machine last surprise you \u2014 and was the surprise yours or its?",
           "publishes": "2028-03-13"
         },
         {
           "n": 5,
           "title": "The Governor",
+          "question": "Find one loop in your day that corrects itself \u2014 and one that doesn't.",
           "publishes": "2028-03-20"
         },
         {
           "n": 6,
           "title": "The Human Use of Human Beings",
+          "question": "What do you do that you would not want done for you?",
           "publishes": "2028-03-27"
         },
         {
           "n": 7,
           "title": "The Doomsday Machine",
+          "question": "Where in your life have you already taken the human out of the loop?",
           "publishes": "2028-04-03"
         },
         {
           "n": 8,
           "title": "Robot Is a Czech Word",
+          "question": "Who does the work that lets you not do it?",
           "publishes": "2028-04-10"
         },
         {
           "n": 9,
           "title": "The Machine Stops",
+          "question": "What have you not touched this week that you only saw on a screen?",
           "publishes": "2028-04-17"
         },
         {
           "n": 10,
           "title": "The Book of the Machines",
+          "question": "Which of your tools has gotten better by making you choose it?",
           "publishes": "2028-04-24"
         },
         {
           "n": 11,
           "title": "The Broom That Would Not Stop",
+          "question": "Write down one instruction you gave this week that was obeyed exactly and wrongly.",
           "publishes": "2028-05-01"
         },
         {
           "n": 12,
           "title": "What Would Make It Wrong?",
+          "question": "State your forecast in one sentence. Now: what evidence by your named year would make you drop it?",
           "publishes": "2028-05-08"
         },
         {
           "n": 13,
           "title": "A Machine Among the Choir",
+          "question": "In your forecast, who is the apprentice and who is the broom?",
           "publishes": "2028-05-15"
         },
         {
           "n": 14,
           "title": "Unassisted: Can Machines Think?",
+          "question": "Did his forecast come true? One reason.",
           "publishes": "2028-05-22"
         },
         {
           "n": 15,
           "title": "Defend the Forecast",
+          "question": "What did the room say that you now believe?",
           "publishes": "2028-05-29"
         }
       ]
@@ -448,76 +523,91 @@
         {
           "n": 1,
           "title": "What You Build Changes Who Has Power",
+          "question": "What have you made that gave one person power over another?",
           "publishes": "2028-06-05"
         },
         {
           "n": 2,
           "title": "Three Conditions",
+          "question": "For the thing you are working on now: who authorized it, for what, and do you believe the reason?",
           "publishes": "2028-06-12"
         },
         {
           "n": 3,
           "title": "Proportion",
+          "question": "Name one thing you use that harms a few for the convenience of many. Do you know the ratio?",
           "publishes": "2028-06-19"
         },
         {
           "n": 4,
           "title": "The Builder's Bench",
+          "question": "Which of the five words is hardest to apply to your own work?",
           "publishes": "2028-06-26"
         },
         {
           "n": 5,
           "title": "The Petition",
+          "question": "If you signed a petition against your own project, what would its first sentence say?",
           "publishes": "2028-07-03"
         },
         {
           "n": 6,
           "title": "Now I Am Become Death",
+          "question": "What do you know how to make that you would not want to be known for?",
           "publishes": "2028-07-10"
         },
         {
           "n": 7,
           "title": "Every Gun That Is Made",
+          "question": "Who paid for the thing you are building \u2014 and what did they not buy instead?",
           "publishes": "2028-07-17"
         },
         {
           "n": 8,
           "title": "Nature Cannot Be Fooled",
+          "question": "What number at your work does management not want to hear?",
           "publishes": "2028-07-24"
         },
         {
           "n": 9,
           "title": "The Phone Call",
+          "question": "What would you do the day you found your own fatal mistake?",
           "publishes": "2028-07-31"
         },
         {
           "n": 10,
           "title": "The Software Was the Operator",
+          "question": "What has your code done to a person who never saw it?",
           "publishes": "2028-08-07"
         },
         {
           "n": 11,
           "title": "The Arsenal and the Scholar",
+          "question": "Who funds the field you are entering, and what do they want from it?",
           "publishes": "2028-08-14"
         },
         {
           "n": 12,
           "title": "The Strong Do What They Can",
+          "question": "Is there a project you would refuse even if someone else would build it anyway?",
           "publishes": "2028-08-21"
         },
         {
           "n": 13,
           "title": "Politics and the English Language",
+          "question": "What is the euphemism your industry uses for the harm it does?",
           "publishes": "2028-08-28"
         },
         {
           "n": 14,
           "title": "Unassisted: The Cold Case",
+          "question": "What did you decide \u2014 and on what principle?",
           "publishes": "2028-09-04"
         },
         {
           "n": 15,
           "title": "The Tribunal",
+          "question": "What did counsel for the other side say that you could not answer?",
           "publishes": "2028-09-11"
         }
       ]
@@ -534,76 +624,91 @@
         {
           "n": 1,
           "title": "The Hide Houses at La Playa",
+          "question": "Walk to the nearest piece of water today. What work is being done at it?",
           "publishes": "2028-09-18"
         },
         {
           "n": 2,
           "title": "Where the Frontier Ran Out",
+          "question": "Where is your frontier \u2014 the edge you go to in order to be tested?",
           "publishes": "2028-09-25"
         },
         {
           "n": 3,
           "title": "The Land of Little Rain",
+          "question": "Where does the water you drank today come from? Can you name the river?",
           "publishes": "2028-10-02"
         },
         {
           "n": 4,
           "title": "Migrant Mother",
+          "question": "Who picks what you eat \u2014 and where do they sleep?",
           "publishes": "2028-10-09"
         },
         {
           "n": 5,
           "title": "The Night He Saw the Film",
+          "question": "Could you tell the thing you are making in seventeen verses?",
           "publishes": "2028-10-16"
         },
         {
           "n": 6,
           "title": "Salinas",
+          "question": "Name your square mile. What is the oldest thing in it?",
           "publishes": "2028-10-23"
         },
         {
           "n": 7,
           "title": "With the Sun Not Shining",
+          "question": "What is the weather of your square mile at the hour you would set a crime?",
           "publishes": "2028-10-30"
         },
         {
           "n": 8,
           "title": "Down These Mean Streets",
+          "question": "Where in your work do the mean streets run \u2014 and what is your code?",
           "publishes": "2028-11-06"
         },
         {
           "n": 9,
           "title": "The Second Coming",
+          "question": "What is the one detail from your square mile that says everything without arguing?",
           "publishes": "2028-11-13"
         },
         {
           "n": 10,
           "title": "Holy Water",
+          "question": "What piece of infrastructure in your square mile do you love without knowing how it works?",
           "publishes": "2028-11-20"
         },
         {
           "n": 11,
           "title": "The Wave Speech",
+          "question": "What wave are you on, and where does it break?",
           "publishes": "2028-11-27"
         },
         {
           "n": 12,
           "title": "A Royal Sport",
+          "question": "What did you do this year that someone will call a sport in a hundred years?",
           "publishes": "2028-12-04"
         },
         {
           "n": 13,
           "title": "The Pump House",
+          "question": "What is the pump house of your square mile \u2014 where does the culture gather?",
           "publishes": "2028-12-11"
         },
         {
           "n": 14,
           "title": "Unassisted: Write the Square Mile",
+          "question": "Which of the four did you choose \u2014 and what did you borrow?",
           "publishes": "2028-12-18"
         },
         {
           "n": 15,
           "title": "Read It at the Water",
+          "question": "Who heard it \u2014 and what did the place do while you read?",
           "publishes": "2028-12-25"
         }
       ]
@@ -620,76 +725,91 @@
         {
           "n": 1,
           "title": "Ozymandias",
+          "question": "In one sentence: what have you made, and who is it for after you?",
           "publishes": "2029-01-01"
         },
         {
           "n": 2,
           "title": "The Walls of Uruk",
+          "question": "Which text from Year 1 is already in your capstone without your noticing?",
           "publishes": "2029-01-08"
         },
         {
           "n": 3,
           "title": "Standing in the Forum",
+          "question": "Which of Gibbon's four causes will take your capstone first?",
           "publishes": "2029-01-15"
         },
         {
           "n": 4,
           "title": "Round One: The Thing in One Minute",
+          "question": "What is your capstone's excess \u2014 the thing it becomes if nothing checks it?",
           "publishes": "2029-01-22"
         },
         {
           "n": 5,
           "title": "Four Generations",
+          "question": "What generation is the field you are entering in \u2014 and what is dissolving its group feeling?",
           "publishes": "2029-01-29"
         },
         {
           "n": 6,
           "title": "Complexity Has a Bill",
+          "question": "Where in your capstone is complexity still paying for itself \u2014 and where has it stopped?",
           "publishes": "2029-02-05"
         },
         {
           "n": 7,
           "title": "Round Two: The Tangled Bank",
+          "question": "Which argument from Year 2 does your capstone contradict?",
           "publishes": "2029-02-12"
         },
         {
           "n": 8,
           "title": "The Bed Made From a Living Tree",
+          "question": "What did you make in four years that proves it was you?",
           "publishes": "2029-02-19"
         },
         {
           "n": 9,
           "title": "Past the Pillars",
+          "question": "Is your capstone a homecoming or a last voyage \u2014 and which did you intend?",
           "publishes": "2029-02-26"
         },
         {
           "n": 10,
           "title": "Round Three: How Soon It Is All Forgotten",
+          "question": "If your capstone is forgotten in twenty years, what did it still do?",
           "publishes": "2029-03-05"
         },
         {
           "n": 11,
           "title": "San Diego Has Risen Four Times",
+          "question": "Which San Diego is your capstone built for \u2014 and which one will it meet?",
           "publishes": "2029-03-12"
         },
         {
           "n": 12,
           "title": "The Whole Earth Is Their Sepulchre",
+          "question": "What is the one sentence the examiners should say about your capstone?",
           "publishes": "2029-03-19"
         },
         {
           "n": 13,
           "title": "Round Four: What a Life Is For",
+          "question": "What is your capstone's work \u2014 and did it do it well?",
           "publishes": "2029-03-26"
         },
         {
           "n": 14,
           "title": "Unassisted: Five Minutes, No Notes",
+          "question": "What did you say that you had not planned to?",
           "publishes": "2029-04-02"
         },
         {
           "n": 15,
           "title": "The Colloquium",
+          "question": "What will you read next, with no one assigning it?",
           "publishes": "2029-04-09"
         }
       ]
@@ -712,76 +832,91 @@
         {
           "n": 1,
           "title": "Zoom In Until It's Straight",
+          "question": "Find one thing that's changing \u2014 your speed, the light, the tide, your mood \u2014 and ask: changing how fast, right now?",
           "publishes": null
         },
         {
           "n": 2,
           "title": "Right Now Is Two Frames Apart",
+          "question": "Watch anything move and ask: how close would two photographs have to be before I could call it \"now\"?",
           "publishes": "2027-01-04"
         },
         {
           "n": 3,
           "title": "The Closer You Get",
+          "question": "Name something in your day that approaches but never arrives.",
           "publishes": "2027-01-11"
         },
         {
           "n": 4,
           "title": "The Steepest Part of the Face",
+          "question": "Stand on any slope and ask: how steep is it here, and where is it steepest?",
           "publishes": "2027-01-18"
         },
         {
           "n": 5,
           "title": "A Square Grows by a Strip",
+          "question": "Find a shape in the world and ask: if it grew a little, which part would be new?",
           "publishes": "2027-01-25"
         },
         {
           "n": 6,
           "title": "Felt in the Knees",
+          "question": "What did you feel today that was acceleration, not speed?",
           "publishes": "2027-02-01"
         },
         {
           "n": 7,
           "title": "Gears Inside Gears",
+          "question": "Find a chain of three \"depends on\" in your day and ask how fast the end moves when the start moves.",
           "publishes": "2027-02-08"
         },
         {
           "n": 8,
           "title": "The Buoy Is a Clock",
+          "question": "Watch something that repeats and ask: when is it moving fastest, and where is it then?",
           "publishes": "2027-02-15"
         },
         {
           "n": 9,
           "title": "Half of What's Left",
+          "question": "Find one thing today that loses a fixed fraction, not a fixed amount, each hour.",
           "publishes": "2027-02-22"
         },
         {
           "n": 10,
           "title": "The Racing Line",
+          "question": "Find a decision you make every day that is a maximum or a minimum, and ask what you are trading off.",
           "publishes": "2027-03-01"
         },
         {
           "n": 11,
           "title": "Where the Pocket Becomes the Vert",
+          "question": "Look at any curve today, in the world or on a chart, and ask: where does it change from cupping to flattening?",
           "publishes": "2027-03-08"
         },
         {
           "n": 12,
           "title": "The Shadow of the Pier",
+          "question": "Find two things that change together and ask which is pulling which.",
           "publishes": "2027-03-15"
         },
         {
           "n": 13,
           "title": "Somewhere You Went Exactly Average",
+          "question": "Predict something one hour ahead using only how fast it is changing now, and check.",
           "publishes": "2027-03-22"
         },
         {
           "n": 14,
           "title": "The Glide",
+          "question": "Pick one thing you want the most of and ask: the most of what, exactly, and against what constraint?",
           "publishes": "2027-03-29"
         },
         {
           "n": 15,
           "title": "The Motion Study",
+          "question": "What did your moving thing turn out to be doing that you could not see before?",
           "publishes": "2027-04-05"
         }
       ]
@@ -798,76 +933,91 @@
         {
           "n": 1,
           "title": "Every Sound Is a Sum",
+          "question": "Hear one sound today and ask: how many sounds is it?",
           "publishes": "2027-04-12"
         },
         {
           "n": 2,
           "title": "Stitch It Back Together",
+          "question": "Find one total today that was built from a changing rate.",
           "publishes": "2027-04-19"
         },
         {
           "n": 3,
           "title": "Forty-Four Thousand Slices",
+          "question": "Zoom in on anything smooth today until it turns to steps, and ask how thin is thin enough.",
           "publishes": "2027-04-26"
         },
         {
           "n": 4,
           "title": "The Odometer and the Speedometer",
+          "question": "Find two gauges today that are each other's slope and total.",
           "publishes": "2027-05-03"
         },
         {
           "n": 5,
           "title": "Speed Up the Tape",
+          "question": "Change the speed of any recording today and ask what else changed with the time.",
           "publishes": "2027-05-10"
         },
         {
           "n": 6,
           "title": "A Tone Times a Fade",
+          "question": "Find one thing today that is two things multiplied, and ask which one you would rather have the total of.",
           "publishes": "2027-05-17"
         },
         {
           "n": 7,
           "title": "The Blank at Ten Stations",
+          "question": "Pick one solid thing today and ask how you would slice it to find its volume.",
           "publishes": "2027-05-24"
         },
         {
           "n": 8,
           "title": "Loud Is the Average of the Square",
+          "question": "Find two things of the same peak today and ask which is bigger on average.",
           "publishes": "2027-05-31"
         },
         {
           "n": 9,
           "title": "The Tail That Never Ends",
+          "question": "Find one thing today that never quite stops and ask whether its total is finite.",
           "publishes": "2027-06-07"
         },
         {
           "n": 10,
           "title": "Echo, Echo, Echo",
+          "question": "Find one thing today that repeats at a fraction of itself and ask whether it adds up to something finite.",
           "publishes": "2027-06-14"
         },
         {
           "n": 11,
           "title": "One, a Half, a Third",
+          "question": "Find a list of shrinking things today and ask whether they add up to something finite.",
           "publishes": "2027-06-21"
         },
         {
           "n": 12,
           "title": "Drawbars",
+          "question": "Listen to one sustained note today and ask which harmonics you can hear inside it.",
           "publishes": "2027-06-28"
         },
         {
           "n": 13,
           "title": "The Polynomial That Learned to Sing",
+          "question": "Find one thing today that is \"close enough to straight\" and ask how far you could push it.",
           "publishes": "2027-07-05"
         },
         {
           "n": 14,
           "title": "The Ear Is a Prism",
+          "question": "Hold a spectrogram app up to one sound today and ask what you see that you could not hear.",
           "publishes": "2027-07-12"
         },
         {
           "n": 15,
           "title": "A Sound From First Principles",
+          "question": "What did you hear in your sound at the end that you could not hear at the start?",
           "publishes": "2027-07-19"
         }
       ]
@@ -890,76 +1040,91 @@
         {
           "n": 1,
           "title": "The Wave Is a Lecture",
+          "question": "Watch one thing move \u2014 anything \u2014 and ask: what is pushing it, and what is slowing it down?",
           "publishes": null
         },
         {
           "n": 2,
           "title": "The Hammer and the Feather",
+          "question": "Drop two different things together today and watch which lands first. Then ask why.",
           "publishes": "2027-01-04"
         },
         {
           "n": 3,
           "title": "Which Way Is the Push",
+          "question": "Find one thing today that moved in a direction nobody pushed it, and name the two pushes that added up.",
           "publishes": "2027-01-11"
         },
         {
           "n": 4,
           "title": "Nothing Is Pushing",
+          "question": "Notice one thing today that kept going after the push ended, and ask what finally stopped it.",
           "publishes": "2027-01-18"
         },
         {
           "n": 5,
           "title": "Twice the Board, Half the Turn",
+          "question": "Push two things of different weight with the same push and watch what happens. Then ask what \"the same push\" means.",
           "publishes": "2027-01-25"
         },
         {
           "n": 6,
           "title": "What Comes Back",
+          "question": "Find one push today and name what pushed back.",
           "publishes": "2027-02-01"
         },
         {
           "n": 7,
           "title": "The Rail That Holds",
+          "question": "Find one surface today that grips and one that slides, and ask what changed.",
           "publishes": "2027-02-08"
         },
         {
           "n": 8,
           "title": "Lean Angle",
+          "question": "Go around any corner and ask: what is pushing me toward the center, and how hard?",
           "publishes": "2027-02-15"
         },
         {
           "n": 9,
           "title": "Pumping",
+          "question": "Find one thing today that gained speed and ask where the energy came from.",
           "publishes": "2027-02-22"
         },
         {
           "n": 10,
           "title": "Two Boards in the Lineup",
+          "question": "Watch one collision today and ask where the motion went.",
           "publishes": "2027-03-01"
         },
         {
           "n": 11,
           "title": "Where You Carry It",
+          "question": "Stand on one foot and ask where your mass is and what you did to put it there.",
           "publishes": "2027-03-08"
         },
         {
           "n": 12,
           "title": "The Kickflip Has an Axis",
+          "question": "Spin anything you can hold today about its three axes and feel which is easy.",
           "publishes": "2027-03-15"
         },
         {
           "n": 13,
           "title": "Arms In",
+          "question": "Spin in a chair with your arms out and pull them in. Then ask what you did not change.",
           "publishes": "2027-03-22"
         },
         {
           "n": 14,
           "title": "Predicted and Observed",
+          "question": "Measure one thing ten times today and ask why the answers differ.",
           "publishes": "2027-03-29"
         },
         {
           "n": 15,
           "title": "The Maneuver",
+          "question": "What does the lineup know that the diagram still does not?",
           "publishes": "2027-04-05"
         }
       ]
@@ -976,76 +1141,91 @@
         {
           "n": 1,
           "title": "The Canyon Under Black's",
+          "question": "Next time you see waves, ask: where did this energy come from, and what shaped it on the way?",
           "publishes": "2027-04-12"
         },
         {
           "n": 2,
           "title": "The Machine Is the Wave",
+          "question": "Stand near any wave today \u2014 water, rope, sound \u2014 and ask what is moving and what is staying.",
           "publishes": "2027-04-19"
         },
         {
           "n": 3,
           "title": "The Long Ones Arrive First",
+          "question": "Look at any arrival today and ask what sorted it on the way.",
           "publishes": "2027-04-26"
         },
         {
           "n": 4,
           "title": "Sets and Lulls",
+          "question": "Find two rhythms today that drift in and out of step, and count the beat.",
           "publishes": "2027-05-03"
         },
         {
           "n": 5,
           "title": "The Bend at Point Loma",
+          "question": "Watch any line of waves meet a shallow and ask which end slowed first.",
           "publishes": "2027-05-10"
         },
         {
           "n": 6,
           "title": "Standing Up and Falling Over",
+          "question": "Watch one wave break today and ask where it first felt the bottom.",
           "publishes": "2027-05-17"
         },
         {
           "n": 7,
           "title": "Rooms That Hum",
+          "question": "Find one thing today that rings at one note and ask why that note.",
           "publishes": "2027-05-24"
         },
         {
           "n": 8,
           "title": "Hot Sand, Cold Water",
+          "question": "Touch two things in the same sun today and ask why one is hotter.",
           "publishes": "2027-05-31"
         },
         {
           "n": 9,
           "title": "Why It Lifts at Eleven",
+          "question": "Watch the sky clear today and ask where the fog went.",
           "publishes": "2027-06-07"
         },
         {
           "n": 10,
           "title": "The Engine Called the Sea Breeze",
+          "question": "Find one thing today that ran because something hot was next to something cold.",
           "publishes": "2027-06-14"
         },
         {
           "n": 11,
           "title": "Ears at Twenty Feet",
+          "question": "Float something today and ask how much of it is under.",
           "publishes": "2027-06-21"
         },
         {
           "n": 12,
           "title": "The Rip Is a Pipe",
+          "question": "Watch water forced through a narrow place today and ask where it speeds up.",
           "publishes": "2027-06-28"
         },
         {
           "n": 13,
           "title": "Why Fins Hold",
+          "question": "Hold your hand out of a car window at an angle today and feel the lift. Then ask where the drag went.",
           "publishes": "2027-07-05"
         },
         {
           "n": 14,
           "title": "Franklin Calms the Pond",
+          "question": "Pour water over two surfaces today and ask which one it clings to.",
           "publishes": "2027-07-12"
         },
         {
           "n": 15,
           "title": "The Board on the Rack",
+          "question": "What did the water teach you that the sheet did not?",
           "publishes": "2027-07-19"
         }
       ]
@@ -1062,76 +1242,91 @@
         {
           "n": 1,
           "title": "A Photograph Is a Spreadsheet",
+          "question": "Look at one photograph today and ask: how many numbers is it?",
           "publishes": "2027-07-26"
         },
         {
           "n": 2,
           "title": "Arrows and Pixels",
+          "question": "Find one thing today that is really two or three numbers moving together.",
           "publishes": "2027-08-02"
         },
         {
           "n": 3,
           "title": "Any Color From Three",
+          "question": "Find three things today that make everything else of their kind by mixing.",
           "publishes": "2027-08-09"
         },
         {
           "n": 4,
           "title": "Brightness Is a Dot Product",
+          "question": "Find a shadow today and ask how much of the thing it kept.",
           "publishes": "2027-08-16"
         },
         {
           "n": 5,
           "title": "The Transform Tool",
+          "question": "Change one photograph today with the transform tool and ask what stayed straight.",
           "publishes": "2027-08-23"
         },
         {
           "n": 6,
           "title": "Order Matters",
+          "question": "Reorder two steps of anything you do today and ask what changed.",
           "publishes": "2027-08-30"
         },
         {
           "n": 7,
           "title": "Three Unknowns, Three Knobs",
+          "question": "Find one target today you hit by adjusting three things, and ask whether there was only one way.",
           "publishes": "2027-09-06"
         },
         {
           "n": 8,
           "title": "How Much Did It Stretch",
+          "question": "Find one change today that lost something you could not get back, and ask what.",
           "publishes": "2027-09-13"
         },
         {
           "n": 9,
           "title": "Flatten",
+          "question": "Find one picture today and ask what direction it threw away.",
           "publishes": "2027-09-20"
         },
         {
           "n": 10,
           "title": "Undo, If You Can",
+          "question": "Find one thing you did today that you could undo, and one you could not, and ask what the difference was.",
           "publishes": "2027-09-27"
         },
         {
           "n": 11,
           "title": "Mid and Side",
+          "question": "Describe one thing today in two coordinate systems and ask which one makes it simpler.",
           "publishes": "2027-10-04"
         },
         {
           "n": 12,
           "title": "The Directions That Stay Put",
+          "question": "Find one thing today that, pushed, stays pointing the same way.",
           "publishes": "2027-10-11"
         },
         {
           "n": 13,
           "title": "Keep the Big Ones",
+          "question": "Find one thing today you summarized with a few numbers and ask what you dropped.",
           "publishes": "2027-10-18"
         },
         {
           "n": 14,
           "title": "The Layer",
+          "question": "Look at one thing a model did today and ask which matrix did it.",
           "publishes": "2027-10-25"
         },
         {
           "n": 15,
           "title": "Built by Hand, Found in the Model",
+          "question": "What did the model learn that you had to be taught?",
           "publishes": "2027-11-01"
         }
       ]
@@ -1148,76 +1343,91 @@
         {
           "n": 1,
           "title": "The Ox at the Fair",
+          "question": "Say one thing you believe will happen this week, with a number for how sure. Write it down.",
           "publishes": "2027-11-08"
         },
         {
           "n": 2,
           "title": "The Problem of Points",
+          "question": "Count the ways one thing in your day could have gone, and ask how many of them were good.",
           "publishes": "2027-11-15"
         },
         {
           "n": 3,
           "title": "What You've Seen Changes What's Left",
+          "question": "Find one case today where learning something changed the odds of something else.",
           "publishes": "2027-11-22"
         },
         {
           "n": 4,
           "title": "The Buoy Says",
+          "question": "Take one belief you hold today and ask: what evidence would move it, and by how much?",
           "publishes": "2027-11-29"
         },
         {
           "n": 5,
           "title": "Pot Odds",
+          "question": "Price one choice you make today as a bet: the cost, the payoff, the odds.",
           "publishes": "2027-12-06"
         },
         {
           "n": 6,
           "title": "Heads, a Hundred Times",
+          "question": "Find one repeated yes-or-no thing today and ask how far from half you would have to see before you doubted the coin.",
           "publishes": "2027-12-13"
         },
         {
           "n": 7,
           "title": "The One-in-a-Hundred Wave",
+          "question": "Count waves for ten minutes today, or sets, and ask which number you would report.",
           "publishes": "2027-12-20"
         },
         {
           "n": 8,
           "title": "The Bell on the Board",
+          "question": "Find one thing today that is a sum of many small chances and ask whether it should be bell-shaped.",
           "publishes": "2027-12-27"
         },
         {
           "n": 9,
           "title": "Error Bars",
+          "question": "Measure one thing ten times today and write the average with a plus-or-minus.",
           "publishes": "2028-01-03"
         },
         {
           "n": 10,
           "title": "Did It Work",
+          "question": "Find one claim today that something \"worked\" and ask what would have happened anyway.",
           "publishes": "2028-01-10"
         },
         {
           "n": 11,
           "title": "Taller Fathers, Shorter Sons",
+          "question": "Find one correlation today and name a third thing that could be behind it.",
           "publishes": "2028-01-17"
         },
         {
           "n": 12,
           "title": "The Line Through the Buoy Data",
+          "question": "Fit a line by eye through any two things you measured together, and ask where the points stray.",
           "publishes": "2028-01-24"
         },
         {
           "n": 13,
           "title": "The Forecast Factory",
+          "question": "Turn one prediction you make today into a probability and ask what would make you say sixty instead of seventy.",
           "publishes": "2028-01-31"
         },
         {
           "n": 14,
           "title": "The Score",
+          "question": "Look back at the number you wrote down on Day 1 and ask whether you deserved it.",
           "publishes": "2028-02-07"
         },
         {
           "n": 15,
           "title": "Scored in Public",
+          "question": "What were you most wrong about, and what did it cost?",
           "publishes": "2028-02-14"
         }
       ]
@@ -1240,76 +1450,91 @@
         {
           "n": 1,
           "title": "The Very Fast, Very Literal Apprentice",
+          "question": "Pick one automated thing you touch \u2014 a doorbell, a playlist, a traffic light \u2014 and ask: what are its instructions, exactly?",
           "publishes": null
         },
         {
           "n": 2,
           "title": "The First Program Was Written by Hand",
+          "question": "What is the smallest useful thing you could tell a machine to do for you every day?",
           "publishes": "2027-01-04"
         },
         {
           "n": 3,
           "title": "A Name for a Thing",
+          "question": "What do you keep track of in your head that deserves a label and a box?",
           "publishes": "2027-01-11"
         },
         {
           "n": 4,
           "title": "Again, Again, Until",
+          "question": "Where in your day do you do the same thing with a small change each time \u2014 and could you say the rule?",
           "publishes": "2027-01-18"
         },
         {
           "n": 5,
           "title": "If It's Raining",
+          "question": "What decision do you make every day that you could write down as a rule \u2014 and where would the rule be wrong?",
           "publishes": "2027-01-25"
         },
         {
           "n": 6,
           "title": "Give the Move a Name",
+          "question": "What do you do that you've never named \u2014 and what would you call it?",
           "publishes": "2027-02-01"
         },
         {
           "n": 7,
           "title": "Where the Bug Was",
+          "question": "When something broke this week, how did you find where?",
           "publishes": "2027-02-08"
         },
         {
           "n": 8,
           "title": "Tools Closed",
+          "question": "Did your prediction match? Where exactly did your reading of the program differ from the machine's?",
           "publishes": "2027-02-15"
         },
         {
           "n": 9,
           "title": "Lists of Things",
+          "question": "What list do you carry around that nobody has ever written down?",
           "publishes": "2027-02-22"
         },
         {
           "n": 10,
           "title": "Pairs of Things",
+          "question": "What pair do you look up more than once a day \u2014 and where is the key kept?",
           "publishes": "2027-03-01"
         },
         {
           "n": 11,
           "title": "What Did You Actually Want?",
+          "question": "Write down one thing you want done this week in a way that could not be misunderstood. How long did it take?",
           "publishes": "2027-03-08"
         },
         {
           "n": 12,
           "title": "Prove It Works",
+          "question": "What is the case your program would get wrong that you haven't tried yet?",
           "publishes": "2027-03-15"
         },
         {
           "n": 13,
           "title": "Plausible Is Not True",
+          "question": "This week, where did you believe something because it was fluent?",
           "publishes": "2027-03-22"
         },
         {
           "n": 14,
           "title": "Tools Closed, Again",
+          "question": "What could you not do today without the tools \u2014 and is that acceptable to you?",
           "publishes": "2027-03-29"
         },
         {
           "n": 15,
           "title": "Ship It",
+          "question": "What did the stranger need that you didn't think to say?",
           "publishes": "2027-04-05"
         }
       ]
@@ -1326,76 +1551,91 @@
         {
           "n": 1,
           "title": "No Magic Anywhere",
+          "question": "Pick one device within reach and name the layers between your finger and what happens. How many can you name today?",
           "publishes": "2027-04-12"
         },
         {
           "n": 2,
           "title": "A Switch That Flips a Switch",
+          "question": "Where is the nearest transistor to you right now, and how many are there in the room? Guess, then look it up.",
           "publishes": "2027-04-19"
         },
         {
           "n": 3,
           "title": "Everything from NAND",
+          "question": "What else in your life is built from one small repeated part?",
           "publishes": "2027-04-26"
         },
         {
           "n": 4,
           "title": "Adding with Switches",
+          "question": "Add 13 and 7 in binary on paper tonight. Where does the carry travel?",
           "publishes": "2027-05-03"
         },
         {
           "n": 5,
           "title": "Negative Numbers and One Clever Box",
+          "question": "What is a thing you do by doing its opposite?",
           "publishes": "2027-05-10"
         },
         {
           "n": 6,
           "title": "Remembering Is a Loop",
+          "question": "What do you know only because you keep telling yourself?",
           "publishes": "2027-05-17"
         },
         {
           "n": 7,
           "title": "Numbered Houses",
+          "question": "Where do you keep things by address rather than by name \u2014 and which is faster?",
           "publishes": "2027-05-24"
         },
         {
           "n": 8,
           "title": "Tools Closed: Draw It",
+          "question": "Which of the three could you not draw \u2014 and what will you rebuild this week?",
           "publishes": "2027-05-31"
         },
         {
           "n": 9,
           "title": "The Heartbeat",
+          "question": "Find the clock in something you own \u2014 the tick that paces it. What happens if it stops?",
           "publishes": "2027-06-07"
         },
         {
           "n": 10,
           "title": "Holes in a Card Are an Order",
+          "question": "Write one instruction for your day as sixteen yes/no answers. What did you lose?",
           "publishes": "2027-06-14"
         },
         {
           "n": 11,
           "title": "Wiring the CPU",
+          "question": "What is the smallest wrong wire that would break everything?",
           "publishes": "2027-06-21"
         },
         {
           "n": 12,
           "title": "The Program That Runs the Programs",
+          "question": "Which program on your machine is running right now that you did not start?",
           "publishes": "2027-06-28"
         },
         {
           "n": 13,
           "title": "Packets Across the Sea",
+          "question": "Count the hops between you and the farthest place you spoke to today.",
           "publishes": "2027-07-05"
         },
         {
           "n": 14,
           "title": "Tools Closed: Trace It",
+          "question": "What is the one layer you still take on faith?",
           "publishes": "2027-07-12"
         },
         {
           "n": 15,
           "title": "The Oldest Computer",
+          "question": "Now that there is no magic in the stack, where did the wonder go?",
           "publishes": "2027-07-19"
         }
       ]
@@ -1412,76 +1652,91 @@
         {
           "n": 1,
           "title": "Fast Is a Measurement",
+          "question": "What is the slowest thing you wait for every day \u2014 and how long is it, really? Time it.",
           "publishes": "2027-07-26"
         },
         {
           "n": 2,
           "title": "Twice the Input, How Much Longer?",
+          "question": "What in your life gets twice as hard when it gets twice as big \u2014 and what doesn't?",
           "publishes": "2027-08-02"
         },
         {
           "n": 3,
           "title": "Half the Phone Book",
+          "question": "What do you keep sorted so that you can find things \u2014 and what do you keep in a pile?",
           "publishes": "2027-08-09"
         },
         {
           "n": 4,
           "title": "Lines and Stacks",
+          "question": "Where in your day are you in a queue, and where are you on a stack?",
           "publishes": "2027-08-16"
         },
         {
           "n": 5,
           "title": "The Baseline",
+          "question": "What question about your data would you actually want answered?",
           "publishes": "2027-08-23"
         },
         {
           "n": 6,
           "title": "A Number for Every Name",
+          "question": "What do you find by computing where it is, rather than by looking?",
           "publishes": "2027-08-30"
         },
         {
           "n": 7,
           "title": "Sorting on the Floor",
+          "question": "How do you sort a pile of anything \u2014 and is there a faster way you've never tried?",
           "publishes": "2027-09-06"
         },
         {
           "n": 8,
           "title": "Tools Closed: Say How Fast",
+          "question": "Which fragment did you get wrong, and what did you believe about it?",
           "publishes": "2027-09-13"
         },
         {
           "n": 9,
           "title": "Trees",
+          "question": "What do you own that is a tree \u2014 and how deep is it?",
           "publishes": "2027-09-20"
         },
         {
           "n": 10,
           "title": "The Redesign",
+          "question": "Which change made the difference \u2014 and which change did you believe would, and didn't?",
           "publishes": "2027-09-27"
         },
         {
           "n": 11,
           "title": "Maps Are Graphs",
+          "question": "What is the shortest path between you and someone you've never met? Count the hops.",
           "publishes": "2027-10-04"
         },
         {
           "n": 12,
           "title": "Memory Is Also Time",
+          "question": "What do you prepare in advance so that the moment is fast \u2014 and what does it cost you?",
           "publishes": "2027-10-11"
         },
         {
           "n": 13,
           "title": "Measure, Don't Trust",
+          "question": "What did you believe this week because someone said it with confidence?",
           "publishes": "2027-10-18"
         },
         {
           "n": 14,
           "title": "Tools Closed: Prove It",
+          "question": "Could you prove your fast version is faster, without running it?",
           "publishes": "2027-10-25"
         },
         {
           "n": 15,
           "title": "Show the Speedup",
+          "question": "What would it take to convince a skeptic who cannot read code that your program is faster?",
           "publishes": "2027-11-01"
         }
       ]
@@ -1498,76 +1753,91 @@
         {
           "n": 1,
           "title": "A Line Through the Points",
+          "question": "What do you predict every day without thinking \u2014 and from what?",
           "publishes": "2027-11-08"
         },
         {
           "n": 2,
           "title": "One Honest Measurement a Day",
+          "question": "What would you measure every day for a year, if you knew someone would use it?",
           "publishes": "2027-11-15"
         },
         {
           "n": 3,
           "title": "Warmer, Colder",
+          "question": "What are you adjusting in your life by warmer-and-colder \u2014 and what's the loss?",
           "publishes": "2027-11-22"
         },
         {
           "n": 4,
           "title": "What the Model Is Allowed to See",
+          "question": "What do you judge by a proxy \u2014 and when does the proxy lie?",
           "publishes": "2027-11-29"
         },
         {
           "n": 5,
           "title": "The First Fit",
+          "question": "What is the smallest amount of evidence you've ever drawn a conclusion from?",
           "publishes": "2027-12-06"
         },
         {
           "n": 6,
           "title": "The Horse That Learned the Examiner",
+          "question": "What have you learned to pass without learning the thing?",
           "publishes": "2027-12-13"
         },
         {
           "n": 7,
           "title": "A Neuron Is a Weighted Vote",
+          "question": "What decision do you make as a weighted vote \u2014 and which weight is too high?",
           "publishes": "2027-12-20"
         },
         {
           "n": 8,
           "title": "Tools Closed: One Step by Hand",
+          "question": "Did your step go the right way? If not, where did the sign flip?",
           "publishes": "2027-12-27"
         },
         {
           "n": 9,
           "title": "Stack the Votes",
+          "question": "What in your judgment is a second layer \u2014 a weighing of weighings?",
           "publishes": "2028-01-03"
         },
         {
           "n": 10,
           "title": "Four Kinds of Right and Wrong",
+          "question": "Which kind of wrong can you not afford \u2014 in your model, and in your life?",
           "publishes": "2028-01-10"
         },
         {
           "n": 11,
           "title": "What It Cannot Know",
+          "question": "What has stayed true for you only because nothing has changed yet?",
           "publishes": "2028-01-17"
         },
         {
           "n": 12,
           "title": "Look at Every One",
+          "question": "Who is missing from your data \u2014 and would the model fail them?",
           "publishes": "2028-01-24"
         },
         {
           "n": 13,
           "title": "The Big Ones Are the Same Thing",
+          "question": "When the assistant explains something to you, what is it actually predicting?",
           "publishes": "2028-01-31"
         },
         {
           "n": 14,
           "title": "Tools Closed: Read the Matrix",
+          "question": "Which question did you need a tool for \u2014 and is that acceptable?",
           "publishes": "2028-02-07"
         },
         {
           "n": 15,
           "title": "Eight Minutes of Arc",
+          "question": "Where is the eight minutes in your model \u2014 and what does it tell you the world is actually like?",
           "publishes": "2028-02-14"
         }
       ]
@@ -1584,76 +1854,91 @@
         {
           "n": 1,
           "title": "The Model Is the Smallest Part",
+          "question": "Pick one AI product you used today. What happens, exactly, when the model inside it is wrong?",
           "publishes": "2028-02-21"
         },
         {
           "n": 2,
           "title": "Ship the Smallest True Thing",
+          "question": "Who is your first user \u2014 by name \u2014 and what will they do the first time it is wrong?",
           "publishes": "2028-02-28"
         },
         {
           "n": 3,
           "title": "The Harness Before the Feature",
+          "question": "If you could measure one number about your system, which one \u2014 and what would it hide?",
           "publishes": "2028-03-06"
         },
         {
           "n": 4,
           "title": "The Horse Could Not Count",
+          "question": "What is the easiest signal your system could be cheating with right now?",
           "publishes": "2028-03-13"
         },
         {
           "n": 5,
           "title": "Show It Breaking",
+          "question": "What failure are you hoping nobody asks about?",
           "publishes": "2028-03-20"
         },
         {
           "n": 6,
           "title": "It Will Say Things That Are Not So",
+          "question": "When did you last say something with confidence because it sounded right?",
           "publishes": "2028-03-27"
         },
         {
           "n": 7,
           "title": "Someone Will Type Something Hostile",
+          "question": "Where in your system does untrusted text meet a tool that acts in the world?",
           "publishes": "2028-04-03"
         },
         {
           "n": 8,
           "title": "The World Moves Under the Model",
+          "question": "What has changed in the world since your data was collected?",
           "publishes": "2028-04-10"
         },
         {
           "n": 9,
           "title": "An Agent Is a Loop With Hands",
+          "question": "What in your life runs as a loop with no stop condition?",
           "publishes": "2028-04-17"
         },
         {
           "n": 10,
           "title": "What It Did at Three in the Morning",
+          "question": "What did your system do yesterday at 3 a.m.?",
           "publishes": "2028-04-24"
         },
         {
           "n": 11,
           "title": "With the Tools Closed",
+          "question": "If the model vanished tomorrow, what could you still do?",
           "publishes": "2028-05-01"
         },
         {
           "n": 12,
           "title": "Cost Is a Design Constraint",
+          "question": "What would your system cost at a thousand users \u2014 and who pays?",
           "publishes": "2028-05-08"
         },
         {
           "n": 13,
           "title": "Design the Day It Is Wrong",
+          "question": "When your system is wrong, what does the user see \u2014 and did you choose it?",
           "publishes": "2028-05-15"
         },
         {
           "n": 14,
           "title": "Write the Accident Report",
+          "question": "What do you believe about your system that you have not measured?",
           "publishes": "2028-05-22"
         },
         {
           "n": 15,
           "title": "Real Users, Live",
+          "question": "What will you build next, and what will you measure first?",
           "publishes": "2028-05-29"
         }
       ]
@@ -1670,76 +1955,91 @@
         {
           "n": 1,
           "title": "The Master's Hand and the Apprentice's",
+          "question": "What did you delegate this week, to a person or a model \u2014 and how did you know it was done right?",
           "publishes": "2028-09-18"
         },
         {
           "n": 2,
           "title": "The Ledger",
+          "question": "What have you handed off in the last day that left no record anywhere?",
           "publishes": "2028-09-25"
         },
         {
           "n": 3,
           "title": "Choose the Work",
+          "question": "What in the work you are about to make must be yours alone?",
           "publishes": "2028-10-02"
         },
         {
           "n": 4,
           "title": "Write the Brief",
+          "question": "What is the one sentence of intent that would let someone act for you without asking?",
           "publishes": "2028-10-09"
         },
         {
           "n": 5,
           "title": "Verify at the Seams",
+          "question": "Where is the seam in your work this week \u2014 and has anyone looked at it?",
           "publishes": "2028-10-16"
         },
         {
           "n": 6,
           "title": "The Court That Agreed",
+          "question": "Who in your life tells you the clothes aren't there \u2014 and when did you last ask them?",
           "publishes": "2028-10-23"
         },
         {
           "n": 7,
           "title": "Build the Eval",
+          "question": "What test do you keep passing that isn't measuring the thing?",
           "publishes": "2028-10-30"
         },
         {
           "n": 8,
           "title": "Tools Closed: Make the Unit Yourself",
+          "question": "Was yours worse, better, or different \u2014 and which of those surprised you?",
           "publishes": "2028-11-06"
         },
         {
           "n": 9,
           "title": "Taste Is a Decision",
+          "question": "What do you own that has nothing on it that needn't be there?",
           "publishes": "2028-11-13"
         },
         {
           "n": 10,
           "title": "The Average Is the Enemy",
+          "question": "Where in your work this week did you accept the first thing because it was fine?",
           "publishes": "2028-11-20"
         },
         {
           "n": 11,
           "title": "What It Cost",
+          "question": "What have you stopped being able to do because something does it for you \u2014 and do you mind?",
           "publishes": "2028-11-27"
         },
         {
           "n": 12,
           "title": "Whose Name Is On It",
+          "question": "If someone asked \"did you make this?\", what is the true answer, in one sentence?",
           "publishes": "2028-12-04"
         },
         {
           "n": 13,
           "title": "When Not to Use It",
+          "question": "What will you choose to keep doing without it \u2014 and what is that choice protecting?",
           "publishes": "2028-12-11"
         },
         {
           "n": 14,
           "title": "Tools Closed: Defend the Calls",
+          "question": "Which entry could you not defend \u2014 and what will you do about it this week?",
           "publishes": "2028-12-18"
         },
         {
           "n": 15,
           "title": "The Angel in the Corner",
+          "question": "What in the finished work is better than you \u2014 and did you make it possible, or just allow it?",
           "publishes": "2028-12-25"
         }
       ]
@@ -1756,76 +2056,91 @@
         {
           "n": 1,
           "title": "Two Hundred and Seventy-Two Words",
+          "question": "What is one thing you believe that you have never written down, and would it survive being written?",
           "publishes": "2027-07-26"
         },
         {
           "n": 2,
           "title": "Omit Needless Words",
+          "question": "Take one sentence you wrote this week. Cut a third of it. What was the third doing?",
           "publishes": "2027-08-02"
         },
         {
           "n": 3,
           "title": "A Slave Was Made a Man",
+          "question": "Find the heaviest word in a sentence you wrote. Where is it sitting?",
           "publishes": "2027-08-09"
         },
         {
           "n": 4,
           "title": "We Hold These Truths",
+          "question": "What is the one sentence your current piece is for? If you cannot say it, you do not have a piece yet.",
           "publishes": "2027-08-16"
         },
         {
           "n": 5,
           "title": "Addie Card, Twelve Years",
+          "question": "Find one general statement in your draft. What particular would prove it?",
           "publishes": "2027-08-23"
         },
         {
           "n": 6,
           "title": "The Race Is Not to the Swift",
+          "question": "Which word in your draft would you not say out loud to a friend?",
           "publishes": "2027-08-30"
         },
         {
           "n": 7,
           "title": "I Went to the Woods",
+          "question": "Take any paragraph you wrote. Say its one job in five words. Does every sentence serve it?",
           "publishes": "2027-09-06"
         },
         {
           "n": 8,
           "title": "All Gaul Is Divided Into Three Parts",
+          "question": "If your reader stopped after your first paragraph, would they know what the rest holds?",
           "publishes": "2027-09-13"
         },
         {
           "n": 9,
           "title": "Call Me Ishmael",
+          "question": "Read your first sentence. Is it the beginning, or is it you warming up?",
           "publishes": "2027-09-20"
         },
         {
           "n": 10,
           "title": "Whitman on Wax",
+          "question": "Read your draft aloud. Where did you run out of breath, and where did you stumble?",
           "publishes": "2027-09-27"
         },
         {
           "n": 11,
           "title": "Writing Maketh an Exact Man",
+          "question": "What can you say clearly with nothing open but your own head?",
           "publishes": "2027-10-04"
         },
         {
           "n": 12,
           "title": "The Man Inside the Turk",
+          "question": "Of the model's marks on your draft, which one was wrong, and how do you know?",
           "publishes": "2027-10-11"
         },
         {
           "n": 13,
           "title": "A Letter to Tacitus",
+          "question": "Who, exactly, is on the other end of what you are writing? Name them.",
           "publishes": "2027-10-18"
         },
         {
           "n": 14,
           "title": "Franklin and the Spectator",
+          "question": "Put your Week 1 piece beside your newest final. What can you see now that you could not see then?",
           "publishes": "2027-10-25"
         },
         {
           "n": 15,
           "title": "Here Is an Honest Book",
+          "question": "What did you learn to see in your own writing that you could not see in Week 1?",
           "publishes": "2027-11-01"
         }
       ]
@@ -1842,76 +2157,91 @@
         {
           "n": 1,
           "title": "Someone Put This Here",
+          "question": "Of everything you saw today, pick one thing. Who put it there, and what did they want?",
           "publishes": "2027-11-08"
         },
         {
           "n": 2,
           "title": "No Frogs Are Poetical",
+          "question": "Find one argument you accepted this week. Did it follow, and were its premises true? Check them separately.",
           "publishes": "2027-11-15"
         },
         {
           "n": 3,
           "title": "Thirty-Eight Ways to Win Without Being Right",
+          "question": "Catch one stratagem being used today, on you or by you, and name it.",
           "publishes": "2027-11-22"
         },
         {
           "n": 4,
           "title": "Proportion Your Belief",
+          "question": "What is one thing you believe on less evidence than you would demand from a stranger?",
           "publishes": "2027-11-29"
         },
         {
           "n": 5,
           "title": "The Pump on Broad Street",
+          "question": "Find one number used to persuade you today. Out of how many?",
           "publishes": "2027-12-06"
         },
         {
           "n": 6,
           "title": "Nightingale's Wedges",
+          "question": "Look at one chart today. What is it trying to make you feel, and does the data earn it?",
           "publishes": "2027-12-13"
         },
         {
           "n": 7,
           "title": "Twelve Sailors, Six Cures",
+          "question": "Find one \"X causes Y\" you heard today. What would the control group be?",
           "publishes": "2027-12-20"
         },
         {
           "n": 8,
           "title": "Lies, Damned Lies, and Attribution",
+          "question": "Pick one quotation you have repeated. Find its first appearance. Did the person say it?",
           "publishes": "2027-12-27"
         },
         {
           "n": 9,
           "title": "Knowing Doesn't Fix It",
+          "question": "Where today did you feel certain? What would the ruler have been?",
           "publishes": "2028-01-03"
         },
         {
           "n": 10,
           "title": "Conan Doyle Believed in Fairies",
+          "question": "What do you want to be true this week? Treat that belief as the one most in need of a check.",
           "publishes": "2028-01-10"
         },
         {
           "n": 11,
           "title": "Not the First Story That Came My Way",
+          "question": "Without any tool open, what do you know, and how do you know it?",
           "publishes": "2028-01-17"
         },
         {
           "n": 12,
           "title": "Torches of Freedom",
+          "question": "Of today's news, which event happened and which was made to happen?",
           "publishes": "2028-01-24"
         },
         {
           "n": 13,
           "title": "Destroy This Mad Brute",
+          "question": "Find one piece of persuasion today and name its single enemy.",
           "publishes": "2028-01-31"
         },
         {
           "n": 14,
           "title": "The Feed Is a Factory",
+          "question": "What did the model do to persuade you that your original piece also did?",
           "publishes": "2028-02-07"
         },
         {
           "n": 15,
           "title": "Nature Cannot Be Fooled",
+          "question": "What is one thing you believed on Day 1 that you now hold differently, and what moved it?",
           "publishes": "2028-02-14"
         }
       ]
@@ -1928,76 +2258,91 @@
         {
           "n": 1,
           "title": "The Song Left the Room in 1877",
+          "question": "Think of the last song you heard. Not who made it \u2014 how did it reach you? Name every step you can.",
           "publishes": "2027-04-12"
         },
         {
           "n": 2,
           "title": "A Room You Can Hear",
+          "question": "Listen to any recording today and ask: how far away is the singer, and what room are they in?",
           "publishes": "2027-04-19"
         },
         {
           "n": 3,
           "title": "The Whisper That Needed a Microphone",
+          "question": "What can you do into a phone microphone that you could never do to a room?",
           "publishes": "2027-04-26"
         },
         {
           "n": 4,
           "title": "Tape Lets You Lie",
+          "question": "Of the last song you heard, how much of it happened at the same time?",
           "publishes": "2027-05-03"
         },
         {
           "n": 5,
           "title": "Where Things Sit",
+          "question": "Where is the voice in the song you hear today \u2014 in front, behind, left, right \u2014 and what put it there?",
           "publishes": "2027-05-10"
         },
         {
           "n": 6,
           "title": "The Loud War",
+          "question": "Does turning it up make it better, or only louder? Try it with one song today.",
           "publishes": "2027-05-17"
         },
         {
           "n": 7,
           "title": "The Container Shapes the Song",
+          "question": "Why is a song three minutes long?",
           "publishes": "2027-05-24"
         },
         {
           "n": 8,
           "title": "Two Copyrights on Every Song",
+          "question": "Who owns the song you heard this morning \u2014 the writer, the singer, or someone you have never heard of?",
           "publishes": "2027-05-31"
         },
         {
           "n": 9,
           "title": "The Casbah and What a Label Is",
+          "question": "If a label offered you money for your master, what exactly would you be selling?",
           "publishes": "2027-06-07"
         },
         {
           "n": 10,
           "title": "The Border Blaster",
+          "question": "Who decided what you heard before you could decide?",
           "publishes": "2027-06-14"
         },
         {
           "n": 11,
           "title": "From Owning to Renting",
+          "question": "What music do you actually own?",
           "publishes": "2027-06-21"
         },
         {
           "n": 12,
           "title": "A Fraction of a Cent",
+          "question": "How many plays would your favorite artist need this month to pay rent?",
           "publishes": "2027-06-28"
         },
         {
           "n": 13,
           "title": "The Algorithm That Surfaced It",
+          "question": "The last song you discovered \u2014 did a person or a machine hand it to you, and how do you know?",
           "publishes": "2027-07-05"
         },
         {
           "n": 14,
           "title": "The Breakdown",
+          "question": "Pick one song. How many decisions stand between the first idea and your ear?",
           "publishes": "2027-07-12"
         },
         {
           "n": 15,
           "title": "Release Day, and the Morning After",
+          "question": "What is the one song that reached you this year and stayed \u2014 and can you trace its whole path now?",
           "publishes": "2027-07-19"
         }
       ]
@@ -2014,76 +2359,91 @@
         {
           "n": 1,
           "title": "The Horse Left the Ground",
+          "question": "What is the last image that stopped you \u2014 and how did it reach you?",
           "publishes": "2027-11-08"
         },
         {
           "n": 2,
           "title": "Fifty Seconds and One Frame",
+          "question": "If you had fifty seconds and one frame, what would you point it at?",
           "publishes": "2027-11-15"
         },
         {
           "n": 3,
           "title": "The Cut Makes the Meaning",
+          "question": "Watch two clips in a row in any feed: what did the second one do to the first?",
           "publishes": "2027-11-22"
         },
         {
           "n": 4,
           "title": "Nanook's Igloo Had No Roof",
+          "question": "What is the last \"real\" video you believed \u2014 and what did the camera have to do to be there?",
           "publishes": "2027-11-29"
         },
         {
           "n": 5,
           "title": "One Photograph Fed a Camp",
+          "question": "Of the images you saw today, which one asked you to do something \u2014 and could you?",
           "publishes": "2027-12-06"
         },
         {
           "n": 6,
           "title": "You Press the Button",
+          "question": "Who taught you what is worth a picture?",
           "publishes": "2027-12-13"
         },
         {
           "n": 7,
           "title": "Earthrise Took Four Days to Land",
+          "question": "Picture the chain between the last photo you saw and the camera that took it. How many hands?",
           "publishes": "2027-12-20"
         },
         {
           "n": 8,
           "title": "The Camcorder Was a Studio",
+          "question": "Who is filming your scene \u2014 and who is cutting it?",
           "publishes": "2027-12-27"
         },
         {
           "n": 9,
           "title": "Hall H: Attention Is the Scarce Thing",
+          "question": "What did you pay attention to today that you did not choose?",
           "publishes": "2028-01-03"
         },
         {
           "n": 10,
           "title": "The Loop Is the Oldest Moving Image",
+          "question": "What is a video you watched more than once today \u2014 and what made you?",
           "publishes": "2028-01-10"
         },
         {
           "n": 11,
           "title": "The Feed Is a Slot Machine",
+          "question": "Watch yourself open an app. What are you hoping for, exactly?",
           "publishes": "2028-01-17"
         },
         {
           "n": 12,
           "title": "The Poster Was the Thumbnail",
+          "question": "Why did you click the last thing you clicked? Describe the picture, not the title.",
           "publishes": "2028-01-24"
         },
         {
           "n": 13,
           "title": "The Navy Was the Biggest Studio in Town",
+          "question": "If you had to make a ninety-second film about a real place you know, what is the one shot you would need?",
           "publishes": "2028-01-31"
         },
         {
           "n": 14,
           "title": "The Rose Diagram",
+          "question": "Of the numbers you saw today, which one was trying to persuade you?",
           "publishes": "2028-02-07"
         },
         {
           "n": 15,
           "title": "Let Go, Then Watch",
+          "question": "Who, by name, do you hope sees it?",
           "publishes": "2028-02-14"
         }
       ]
@@ -2100,76 +2460,91 @@
         {
           "n": 1,
           "title": "A Rec Room in the Bronx, 1973",
+          "question": "What room are you in regularly that might be a lab?",
           "publishes": "2028-02-21"
         },
         {
           "n": 2,
           "title": "Scenius",
+          "question": "Who are the five people whose opinion of your work you would actually want?",
           "publishes": "2028-02-28"
         },
         {
           "n": 3,
           "title": "Pop an Ollie",
+          "question": "What have you invented that only works because other people can see it?",
           "publishes": "2028-03-06"
         },
         {
           "n": 4,
           "title": "A Navy Book at Windansea",
+          "question": "What have you built or modified for yourself that no company sells?",
           "publishes": "2028-03-13"
         },
         {
           "n": 5,
           "title": "The Password",
+          "question": "What is the password in your scene \u2014 what does a newcomer get wrong first?",
           "publishes": "2028-03-20"
         },
         {
           "n": 6,
           "title": "The Che Caf\u00e9's Rules",
+          "question": "What are the three rules of the room your scene depends on?",
           "publishes": "2028-03-27"
         },
         {
           "n": 7,
           "title": "The Drum Machine Nobody Wanted",
+          "question": "What is the cheap, failed, or discarded tool your scene runs on?",
           "publishes": "2028-04-03"
         },
         {
           "n": 8,
           "title": "A Scene Builds a Park",
+          "question": "What has your scene built that would stay if everyone left?",
           "publishes": "2028-04-10"
         },
         {
           "n": 9,
           "title": "The Border Is a Mixer",
+          "question": "Where in your life do two different crowds share one room?",
           "publishes": "2028-04-17"
         },
         {
           "n": 10,
           "title": "Homebrew: A Garage and a Newsletter",
+          "question": "What is your scene's medium \u2014 where does the news travel?",
           "publishes": "2028-04-24"
         },
         {
           "n": 11,
           "title": "Hybrid Corn and the S-Curve",
+          "question": "Something you use daily \u2014 who were the first people you saw using it?",
           "publishes": "2028-05-01"
         },
         {
           "n": 12,
           "title": "The Bridge Person",
+          "question": "Who in your scene knows people from another scene?",
           "publishes": "2028-05-08"
         },
         {
           "n": 13,
           "title": "The Veranda",
+          "question": "What is happening in your scene that nobody writes down?",
           "publishes": "2028-05-15"
         },
         {
           "n": 14,
           "title": "The Scene Gets a Name and Dies",
+          "question": "Has your scene been named yet \u2014 and by whom?",
           "publishes": "2028-05-22"
         },
         {
           "n": 15,
           "title": "Hand It Back",
+          "question": "Who in your scene should read this first \u2014 and what will they say?",
           "publishes": "2028-05-29"
         }
       ]
@@ -2186,76 +2561,91 @@
         {
           "n": 1,
           "title": "The Key With the Leather Thong",
+          "question": "Name one thing you like that you can defend by pointing at something in it.",
           "publishes": "2029-01-01"
         },
         {
           "n": 2,
           "title": "The Cabinet",
+          "question": "If you could show someone five things, in order, what are they?",
           "publishes": "2029-01-08"
         },
         {
           "n": 3,
           "title": "Signal, Noise, Channel",
+          "question": "What did you hear this week that you could repeat exactly?",
           "publishes": "2029-01-15"
         },
         {
           "n": 4,
           "title": "Common Sense Sold 120,000 Copies",
+          "question": "What would you give away so that it travels?",
           "publishes": "2029-01-22"
         },
         {
           "n": 5,
           "title": "Anyone With a Copier Is a Press",
+          "question": "What would you make twenty copies of and hand out?",
           "publishes": "2029-01-29"
         },
         {
           "n": 6,
           "title": "A Signal Is a Schedule",
+          "question": "What arrives for you on a schedule that you would miss?",
           "publishes": "2029-02-05"
         },
         {
           "n": 7,
           "title": "Poor Richard Owned His List",
+          "question": "If every platform vanished tonight, who could you reach tomorrow?",
           "publishes": "2029-02-12"
         },
         {
           "n": 8,
           "title": "Rent the Theater Yourself",
+          "question": "What is your Wichita \u2014 the unlikely room where your signal would prove itself?",
           "publishes": "2029-02-19"
         },
         {
           "n": 9,
           "title": "D\u00fcrer's Rhinoceros Was Wrong Five Thousand Times",
+          "question": "What is the edition size of the thing you are making \u2014 and who decided?",
           "publishes": "2029-02-26"
         },
         {
           "n": 10,
           "title": "A Human Is in the Box",
+          "question": "What in your work would a model get wrong, and would anyone notice?",
           "publishes": "2029-03-05"
         },
         {
           "n": 11,
           "title": "Ship Means a Date",
+          "question": "Say the date out loud to someone. Then do it.",
           "publishes": "2029-03-12"
         },
         {
           "n": 12,
           "title": "The Pump Handle",
+          "question": "What is the denominator of the number you are proudest of?",
           "publishes": "2029-03-19"
         },
         {
           "n": 13,
           "title": "Seventy-Five Thousand Mouths",
+          "question": "Who, by name, would repeat your signal to someone else \u2014 and why?",
           "publishes": "2029-03-26"
         },
         {
           "n": 14,
           "title": "Bernays Wrote It Down",
+          "question": "Would you tell your audience, in person, how you got their attention?",
           "publishes": "2029-04-02"
         },
         {
           "n": 15,
           "title": "The Numbers, Out Loud",
+          "question": "What did the world do with it \u2014 and what will you make next?",
           "publishes": "2029-04-09"
         }
       ]
@@ -2278,76 +2668,91 @@
         {
           "n": 1,
           "title": "Make Anything",
+          "question": "What did you make, and what did finishing it take?",
           "publishes": null
         },
         {
           "n": 2,
           "title": "The Room Has a Master in It",
+          "question": "Who is the nearest person who could show you a tool you don't know how to use?",
           "publishes": "2027-01-04"
         },
         {
           "n": 3,
           "title": "Small Enough to Finish",
+          "question": "What is the smallest version of your build that would still be the thing?",
           "publishes": "2027-01-11"
         },
         {
           "n": 4,
           "title": "Three Photos and a Sentence",
+          "question": "What did you decide today that you will have forgotten by Friday?",
           "publishes": "2027-01-18"
         },
         {
           "n": 5,
           "title": "Measure Twice",
+          "question": "Where in your build does an eighth of an inch matter, and where does it not?",
           "publishes": "2027-01-25"
         },
         {
           "n": 6,
           "title": "The Tool Is a Teacher",
+          "question": "Which of your tools is dull, and how long have you known?",
           "publishes": "2027-02-01"
         },
         {
           "n": 7,
           "title": "Describe Before You Judge",
+          "question": "Can you describe your own build for three minutes without saying whether it is good?",
           "publishes": "2027-02-08"
         },
         {
           "n": 8,
           "title": "Rough, Then Fine",
+          "question": "What stage is your build actually at \u2014 not the stage you wish it were at?",
           "publishes": "2027-02-15"
         },
         {
           "n": 9,
           "title": "The Thing Pushes Back",
+          "question": "What in your build has fought back this week, and what did it teach you about the material?",
           "publishes": "2027-02-22"
         },
         {
           "n": 10,
           "title": "Halfway Is a Lie",
+          "question": "What would you have to drop from your build to finish it on time?",
           "publishes": "2027-03-01"
         },
         {
           "n": 11,
           "title": "Hands Only",
+          "question": "What part of your build could you do right now, alone, with no help from anything?",
           "publishes": "2027-03-08"
         },
         {
           "n": 12,
           "title": "A Picture Someone Could Build From",
+          "question": "Could someone build your thing from your log alone, with you out of the room?",
           "publishes": "2027-03-15"
         },
         {
           "n": 13,
           "title": "Finish Means Finished",
+          "question": "What on your build is still held together by your intention to fix it later?",
           "publishes": "2027-03-22"
         },
         {
           "n": 14,
           "title": "Say It in Two Minutes",
+          "question": "Can you say what your build is in two minutes without the word \"basically\"?",
           "publishes": "2027-03-29"
         },
         {
           "n": 15,
           "title": "It Ships",
+          "question": "What will you make next, now that you know you can finish?",
           "publishes": "2027-04-05"
         }
       ]
@@ -2364,76 +2769,91 @@
         {
           "n": 1,
           "title": "A Board Is a Stack of Decisions",
+          "question": "Which object you own could you defend curve by curve?",
           "publishes": "2027-04-12"
         },
         {
           "n": 2,
           "title": "Foam, Wood, or Seven Plies",
+          "question": "What can you actually finish by Day 13 with the tools and hours you have?",
           "publishes": "2027-04-19"
         },
         {
           "n": 3,
           "title": "Rocker First",
+          "question": "What is the one curve in your build that everything else depends on?",
           "publishes": "2027-04-26"
         },
         {
           "n": 4,
           "title": "The Template Is the DNA",
+          "question": "What one dimension on your template would you refuse to change?",
           "publishes": "2027-05-03"
         },
         {
           "n": 5,
           "title": "Seven Plies in a Press",
+          "question": "What does the concave of a deck do that a flat plank cannot?",
           "publishes": "2027-05-10"
         },
         {
           "n": 6,
           "title": "A Fin Is a Wing",
+          "question": "Would you rather a board that holds or one that releases \u2014 and why that?",
           "publishes": "2027-05-17"
         },
         {
           "n": 7,
           "title": "Rough, Then Fine, in Foam",
+          "question": "Where are the high spots on your build, and have you looked under a side light?",
           "publishes": "2027-05-24"
         },
         {
           "n": 8,
           "title": "Resin Has a Clock",
+          "question": "What in your build has a clock on it, and what must be ready before it starts?",
           "publishes": "2027-05-31"
         },
         {
           "n": 9,
           "title": "Strangers in the Room",
+          "question": "What did the stranger see that the room had stopped seeing?",
           "publishes": "2027-06-07"
         },
         {
           "n": 10,
           "title": "The Placard",
+          "question": "Can you say what your board is for in sixty words without one adjective?",
           "publishes": "2027-06-14"
         },
         {
           "n": 11,
           "title": "Hands Only, Round Two",
+          "question": "Which decision on your board could you not defend if asked right now?",
           "publishes": "2027-06-21"
         },
         {
           "n": 12,
           "title": "Into the Water",
+          "question": "What did the ride tell you that the bench could not?",
           "publishes": "2027-06-28"
         },
         {
           "n": 13,
           "title": "Dings Are Data",
+          "question": "What did the ding tell you about where your build is weak?",
           "publishes": "2027-07-05"
         },
         {
           "n": 14,
           "title": "Hang It Right",
+          "question": "At what height does your board read as a thing to ride rather than a thing to look at?",
           "publishes": "2027-07-12"
         },
         {
           "n": 15,
           "title": "Shown",
+          "question": "What did the stranger say that you will carry into the next build?",
           "publishes": "2027-07-19"
         }
       ]
@@ -2450,76 +2870,91 @@
         {
           "n": 1,
           "title": "Someone Who Is Not You",
+          "question": "Who would actually plug this in, and what do they want it to do that nothing they own does?",
           "publishes": "2027-07-26"
         },
         {
           "n": 2,
           "title": "A Small Voltage That Wants to Be Bigger",
+          "question": "Where in the chain from pick to speaker does the sound you like actually happen?",
           "publishes": "2027-08-02"
         },
         {
           "n": 3,
           "title": "The Brief, Written Down",
+          "question": "What is the done-test \u2014 the one thing the client will do that proves it works?",
           "publishes": "2027-08-09"
         },
         {
           "n": 4,
           "title": "Solder Is a Joint, Not a Glue",
+          "question": "What does a cold joint look like, and have you made one today?",
           "publishes": "2027-08-16"
         },
         {
           "n": 5,
           "title": "The Breadboard Version",
+          "question": "What is the one component you could swap that changes the sound most?",
           "publishes": "2027-08-23"
         },
         {
           "n": 6,
           "title": "Read the Schematic Like a Map",
+          "question": "Can you point to where on the board the schematic's gain stage lives?",
           "publishes": "2027-08-30"
         },
         {
           "n": 7,
           "title": "The Client's Ears",
+          "question": "What did the client hear that you had stopped hearing?",
           "publishes": "2027-09-06"
         },
         {
           "n": 8,
           "title": "Noise Is Information",
+          "question": "What is the quietest your build has been, and what did you change to get there?",
           "publishes": "2027-09-13"
         },
         {
           "n": 9,
           "title": "Three Photos and a Schematic",
+          "question": "If your board died tomorrow, could the client's next tech rebuild it from your drawing?",
           "publishes": "2027-09-20"
         },
         {
           "n": 10,
           "title": "Tolerance Is Honesty",
+          "question": "Where does your circuit depend on a part being exactly what the label says?",
           "publishes": "2027-09-27"
         },
         {
           "n": 11,
           "title": "Hands Only",
+          "question": "Which stage in a stranger's circuit would you not be able to name right now?",
           "publishes": "2027-10-04"
         },
         {
           "n": 12,
           "title": "Box It",
+          "question": "What will the client do to this box that you have not planned for?",
           "publishes": "2027-10-11"
         },
         {
           "n": 13,
           "title": "Plug It In for Them",
+          "question": "What did the client say first \u2014 and was it about the sound or about the box?",
           "publishes": "2027-10-18"
         },
         {
           "n": 14,
           "title": "The Invoice Is a Document Too",
+          "question": "What did this build cost, and what part of the cost was learning?",
           "publishes": "2027-10-25"
         },
         {
           "n": 15,
           "title": "Shipped, Documented",
+          "question": "What did building for someone else change about how you build?",
           "publishes": "2027-11-01"
         }
       ]
@@ -2536,76 +2971,91 @@
         {
           "n": 1,
           "title": "A Machine Someone Depends On",
+          "question": "Which of the four systems would you reach for first, before anyone assigned you?",
           "publishes": "2027-11-08"
         },
         {
           "n": 2,
           "title": "Look Inside Before You Touch",
+          "question": "Can you trace, by hand, the path of air from the filter to the exhaust?",
           "publishes": "2027-11-15"
         },
         {
           "n": 3,
           "title": "Symptoms, Not Parts",
+          "question": "What does the client mean by \"it runs rough\" \u2014 and did you ask?",
           "publishes": "2027-11-22"
         },
         {
           "n": 4,
           "title": "Four Strokes, by Hand",
+          "question": "In which stroke does your client's symptom live?",
           "publishes": "2027-11-29"
         },
         {
           "n": 5,
           "title": "Torque Is a Promise",
+          "question": "Which fastener on this machine would you least want to have guessed?",
           "publishes": "2027-12-06"
         },
         {
           "n": 6,
           "title": "Three Fluids and a Fire",
+          "question": "What does the plug tell you when you pull it?",
           "publishes": "2027-12-13"
         },
         {
           "n": 7,
           "title": "The Harness Is a Nervous System",
+          "question": "Where does your machine's ground actually meet the frame, and is it clean?",
           "publishes": "2027-12-20"
         },
         {
           "n": 8,
           "title": "The Crit at the Lift",
+          "question": "Which system on the machine could you not describe to the client right now?",
           "publishes": "2027-12-27"
         },
         {
           "n": 9,
           "title": "The Service Log",
+          "question": "Could a stranger pick up your log and know what not to touch?",
           "publishes": "2028-01-03"
         },
         {
           "n": 10,
           "title": "Running",
+          "question": "What did it sound like the second it caught, and was that the sound you expected?",
           "publishes": "2028-01-10"
         },
         {
           "n": 11,
           "title": "Hands Only",
+          "question": "What is your first move when a machine dies and no one will tell you why?",
           "publishes": "2028-01-17"
         },
         {
           "n": 12,
           "title": "Tolerance Is a Moral Category",
+          "question": "Which clearance on this machine, if wrong, hurts the rider first?",
           "publishes": "2028-01-24"
         },
         {
           "n": 13,
           "title": "The Ride",
+          "question": "What did the rider say first \u2014 about how it ran, or how it looked?",
           "publishes": "2028-01-31"
         },
         {
           "n": 14,
           "title": "Four Builds on One Table",
+          "question": "Which part of each build did you take when no one assigned it?",
           "publishes": "2028-02-07"
         },
         {
           "n": 15,
           "title": "Declare It",
+          "question": "What did your hands choose before your mouth did?",
           "publishes": "2028-02-14"
         }
       ]
@@ -2622,76 +3072,91 @@
         {
           "n": 1,
           "title": "The Shot They Can't Get",
+          "question": "What shot has your client given up on, and what stands between the camera and it?",
           "publishes": "2028-02-21"
         },
         {
           "n": 2,
           "title": "Someone Did This in 1959 with What They Had",
+          "question": "What is the simplest thing that would keep your client's camera dry and pointed?",
           "publishes": "2028-02-28"
         },
         {
           "n": 3,
           "title": "The Brief Has a Frame Rate",
+          "question": "What are the five numbers your rig must meet, and which one did the client not know?",
           "publishes": "2028-03-06"
         },
         {
           "n": 4,
           "title": "A Rig Is a Lever",
+          "question": "Where is the balance point of your rig with the camera on it \u2014 have you found it by hand?",
           "publishes": "2028-03-13"
         },
         {
           "n": 5,
           "title": "Write the Test Before the Build",
+          "question": "What is your pass line for the bucket test \u2014 minutes, depth, and what counts as dry?",
           "publishes": "2028-03-20"
         },
         {
           "n": 6,
           "title": "Light Is the Payload",
+          "question": "What does the light do at the place your client wants the shot \u2014 and at what hour?",
           "publishes": "2028-03-27"
         },
         {
           "n": 7,
           "title": "Three Concentrations, One Bench",
+          "question": "Which decision on the rig could you not describe, and whose was it?",
           "publishes": "2028-04-03"
         },
         {
           "n": 8,
           "title": "Firmware Is a Material",
+          "question": "What is the one action your rig must perform without a hand on it?",
           "publishes": "2028-04-10"
         },
         {
           "n": 9,
           "title": "Three Photos and a Test Log",
+          "question": "Which test did you skip, and what did you tell yourself about why?",
           "publishes": "2028-04-17"
         },
         {
           "n": 10,
           "title": "Weight Is the Enemy",
+          "question": "What is your rig's total weight with camera, and what would you cut to lose a fifth of it?",
           "publishes": "2028-04-24"
         },
         {
           "n": 11,
           "title": "Hands Only",
+          "question": "Where is the weakest point on a housing you have never seen \u2014 and how do you know?",
           "publishes": "2028-05-01"
         },
         {
           "n": 12,
           "title": "In the Water with the Client",
+          "question": "What did the water do that the bucket did not?",
           "publishes": "2028-05-08"
         },
         {
           "n": 13,
           "title": "The Edit Is the Proof",
+          "question": "Is the shot the client named in Week 3 in the footage \u2014 the actual shot, not one near it?",
           "publishes": "2028-05-15"
         },
         {
           "n": 14,
           "title": "The Cyclopes Make One Shield",
+          "question": "Which decision that was not yours would you defend as if it were?",
           "publishes": "2028-05-22"
         },
         {
           "n": 15,
           "title": "Shipped, Documented",
+          "question": "What would the next builder need from your log that you have not written yet?",
           "publishes": "2028-05-29"
         }
       ]
@@ -2708,76 +3173,91 @@
         {
           "n": 1,
           "title": "One Instrument, One Week, One Number",
+          "question": "What single number about the ocean would you trust yourself to measure?",
           "publishes": "2028-06-05"
         },
         {
           "n": 2,
           "title": "Saltwater Eats Everything",
+          "question": "What on your parts list will the sea attack first?",
           "publishes": "2028-06-12"
         },
         {
           "n": 3,
           "title": "One Variable",
+          "question": "What question would a week of your one number answer?",
           "publishes": "2028-06-19"
         },
         {
           "n": 4,
           "title": "The Housing Is the Build",
+          "question": "What is the smallest housing that keeps your sensor dry and lets it sense?",
           "publishes": "2028-06-26"
         },
         {
           "n": 5,
           "title": "Calibrate Against Something True",
+          "question": "What does your sensor read in ice water, and did you let it settle?",
           "publishes": "2028-07-03"
         },
         {
           "n": 6,
           "title": "A Week Is 168 Hours",
+          "question": "How long will your battery last if the sensor never sleeps \u2014 and have you measured, not guessed?",
           "publishes": "2028-07-10"
         },
         {
           "n": 7,
           "title": "A Sensor That Moves",
+          "question": "What would your one variable look like if the instrument could move?",
           "publishes": "2028-07-17"
         },
         {
           "n": 8,
           "title": "The Remote Crit",
+          "question": "Can you describe a plot for two minutes without saying whether it looks right?",
           "publishes": "2028-07-24"
         },
         {
           "n": 9,
           "title": "Three Photos and a Plot",
+          "question": "What does your plot leave out that the next reader would need?",
           "publishes": "2028-07-31"
         },
         {
           "n": 10,
           "title": "Deploy",
+          "question": "If a stranger finds your instrument, what will they know, and can they reach you?",
           "publishes": "2028-08-07"
         },
         {
           "n": 11,
           "title": "Hands Only",
+          "question": "Can you tell a bad reading from a surprising one \u2014 and how?",
           "publishes": "2028-08-14"
         },
         {
           "n": 12,
           "title": "Retrieve",
+          "question": "What grew on it, what corroded, and what got in?",
           "publishes": "2028-08-21"
         },
         {
           "n": 13,
           "title": "The Plot Is the Made Thing",
+          "question": "What is the one number you are willing to say is true, and what is its uncertainty?",
           "publishes": "2028-08-28"
         },
         {
           "n": 14,
           "title": "Lighter, on Purpose",
+          "question": "What did you see at the placement that changes how you will build next fall?",
           "publishes": "2028-09-04"
         },
         {
           "n": 15,
           "title": "One Number That's True",
+          "question": "What would it take to leave your instrument in for a year?",
           "publishes": "2028-09-11"
         }
       ]
@@ -2794,76 +3274,91 @@
         {
           "n": 1,
           "title": "You Don't Know It Until You Can Teach It",
+          "question": "What is the one thing about making you are not sure you could explain?",
           "publishes": "2028-09-18"
         },
         {
           "n": 2,
           "title": "Their Day 1 Is This Week",
+          "question": "What did each person on your team make, and what does it tell you?",
           "publishes": "2028-09-25"
         },
         {
           "n": 3,
           "title": "The Brief Is Theirs",
+          "question": "What would you have chosen for them that they did not choose \u2014 and why is yours worse?",
           "publishes": "2028-10-02"
         },
         {
           "n": 4,
           "title": "Show Once, Then Step Back",
+          "question": "When did you touch their work this week, and should you have?",
           "publishes": "2028-10-09"
         },
         {
           "n": 5,
           "title": "Running the Crit",
+          "question": "Did you give one instruction, or five?",
           "publishes": "2028-10-16"
         },
         {
           "n": 6,
           "title": "Two Logs",
+          "question": "What did you decide not to say this week, and why?",
           "publishes": "2028-10-23"
         },
         {
           "n": 7,
           "title": "Let Them Fail Small",
+          "question": "Which failure this week did you let happen, and which did you stop \u2014 and were both right?",
           "publishes": "2028-10-30"
         },
         {
           "n": 8,
           "title": "Safety Is Yours",
+          "question": "What is the tool on your bench most likely to hurt a first-year, and what have you done about it?",
           "publishes": "2028-11-06"
         },
         {
           "n": 9,
           "title": "What the Exam Reveals",
+          "question": "What did their hands do that you had not taught \u2014 and what did they fail at that you had?",
           "publishes": "2028-11-13"
         },
         {
           "n": 10,
           "title": "When to Hand It Over",
+          "question": "Who on your team is better than you at something already, and have you told them?",
           "publishes": "2028-11-20"
         },
         {
           "n": 11,
           "title": "Your Hands Only",
+          "question": "Can you say where each person on your team is, right now, without looking at the log?",
           "publishes": "2028-11-27"
         },
         {
           "n": 12,
           "title": "Four Weeks Left, the Date Does Not Move",
+          "question": "What will your team drop this week so that it ships?",
           "publishes": "2028-12-04"
         },
         {
           "n": 13,
           "title": "Their Finish, Not Yours",
+          "question": "What on their build would you fix if it were yours \u2014 and why is it not yours?",
           "publishes": "2028-12-11"
         },
         {
           "n": 14,
           "title": "The Account",
+          "question": "What did leading teach you that six builds did not?",
           "publishes": "2028-12-18"
         },
         {
           "n": 15,
           "title": "Handed Over",
+          "question": "What will you build last, now that you have watched someone build first?",
           "publishes": "2028-12-25"
         }
       ]
@@ -2880,76 +3375,91 @@
         {
           "n": 1,
           "title": "Tell Me If Anything Was Ever Done",
+          "question": "Which tradition do you have the most left to say in?",
           "publishes": "2029-01-01"
         },
         {
           "n": 2,
           "title": "The Last Brief You Write for Yourself",
+          "question": "What is the done-test that would prove this build is yours and not a kit's?",
           "publishes": "2029-01-08"
         },
         {
           "n": 3,
           "title": "A Sensor That Moves, If You Want It",
+          "question": "What would you want to see or measure from where only a drone can go?",
           "publishes": "2029-01-15"
         },
         {
           "n": 4,
           "title": "The Second Pass",
+          "question": "What did you build badly once that you now know how to build well?",
           "publishes": "2029-01-22"
         },
         {
           "n": 5,
           "title": "The Room Beside the Defense",
+          "question": "What is the build for, if not the capstone?",
           "publishes": "2029-01-29"
         },
         {
           "n": 6,
           "title": "Hands Remember",
+          "question": "What does your Semester 2, 3, 4, 5, or 6 log tell you to do first?",
           "publishes": "2029-02-05"
         },
         {
           "n": 7,
           "title": "The Outside Eye",
+          "question": "Which outside judgment this week was wrong, and how do you know?",
           "publishes": "2029-02-12"
         },
         {
           "n": 8,
           "title": "The Final Log Is for the Archive",
+          "question": "If someone opens your logs in forty years, what will they be able to build?",
           "publishes": "2029-02-19"
         },
         {
           "n": 9,
           "title": "The First-Years Are Downstairs",
+          "question": "What did you see on their bench that you had forgotten you once did not know?",
           "publishes": "2029-02-26"
         },
         {
           "n": 10,
           "title": "Hang It Beside the Capstone",
+          "question": "Does a stranger walking in see one build or eight?",
           "publishes": "2029-03-05"
         },
         {
           "n": 11,
           "title": "Hands Only, Last Time",
+          "question": "What question about this build do you hope they do not ask \u2014 and what is your answer?",
           "publishes": "2029-03-12"
         },
         {
           "n": 12,
           "title": "Eight Paragraphs",
+          "question": "Which of the eight builds is hardest to describe in a paragraph, and why?",
           "publishes": "2029-03-19"
         },
         {
           "n": 13,
           "title": "The Public",
+          "question": "What did a stranger say tonight that you will still be thinking about in a year?",
           "publishes": "2029-03-26"
         },
         {
           "n": 14,
           "title": "The Account of Eight Semesters",
+          "question": "What can your hands do now that your first log shows they could not?",
           "publishes": "2029-04-02"
         },
         {
           "n": 15,
           "title": "The Bed Odysseus Built",
+          "question": "What have you made that you could describe well enough to be known by?",
           "publishes": "2029-04-09"
         }
       ]
@@ -2966,76 +3476,91 @@
         {
           "n": 1,
           "title": "Walk In With Three Rolls",
+          "question": "Who, in the place you are about to enter, will see you first \u2014 and what will they see?",
           "publishes": "2028-06-05"
         },
         {
           "n": 2,
           "title": "The Apprentice's Angel",
+          "question": "What is the smallest corner of someone else's work that you could do so well they would not touch it?",
           "publishes": "2028-06-12"
         },
         {
           "n": 3,
           "title": "Eight Objections, Answered",
+          "question": "Who has to say yes to your placement, and what is their best reason to say no?",
           "publishes": "2028-06-19"
         },
         {
           "n": 4,
           "title": "Write Down What Was Promised",
+          "question": "What has the organization promised you \u2014 and could you point to where it is written?",
           "publishes": "2028-06-26"
         },
         {
           "n": 5,
           "title": "Ask Benedetto How They Go on Ice",
+          "question": "Who in the building knows the thing you most need to know, and have you asked them yet?",
           "publishes": "2028-07-03"
         },
         {
           "n": 6,
           "title": "Write Down the One That Contradicts You",
+          "question": "What did you assume about this work that turned out to be wrong \u2014 and when did you notice?",
           "publishes": "2028-07-10"
         },
         {
           "n": 7,
           "title": "Fly It as a Kite First",
+          "question": "What did you finish this week, and who checked it?",
           "publishes": "2028-07-17"
         },
         {
           "n": 8,
           "title": "Errata",
+          "question": "What did your mistake cost, and who paid?",
           "publishes": "2028-07-24"
         },
         {
           "n": 9,
           "title": "Afflicted With the Belief",
+          "question": "What does your mentor see in your work that you cannot see yourself?",
           "publishes": "2028-07-31"
         },
         {
           "n": 10,
           "title": "The Water-American",
+          "question": "What does this place do that no one explained, and what is it protecting?",
           "publishes": "2028-08-07"
         },
         {
           "n": 11,
           "title": "Ten Things I Can Do",
+          "question": "Of the ten things you can now do, which one could you not have done in January?",
           "publishes": "2028-08-14"
         },
         {
           "n": 12,
           "title": "Retrospect",
+          "question": "What would you tell yourself on the first morning?",
           "publishes": "2028-08-21"
         },
         {
           "n": 13,
           "title": "The Little Book With Dots",
+          "question": "What will the mentor's form say \u2014 and have you earned the right to be surprised?",
           "publishes": "2028-08-28"
         },
         {
           "n": 14,
           "title": "Thirty-Two Words to Dayton",
+          "question": "Can you say what the term was in thirty-two words?",
           "publishes": "2028-09-04"
         },
         {
           "n": 15,
           "title": "The Most Important Event",
+          "question": "Who, from this term, will you still be writing to in ten years?",
           "publishes": "2028-09-11"
         }
       ]
@@ -3052,76 +3577,91 @@
         {
           "n": 1,
           "title": "I Think",
+          "question": "What have you been circling for three years without naming?",
           "publishes": "2028-09-18"
         },
         {
           "n": 2,
           "title": "Thesis, System, or Venture",
+          "question": "Which form does your work already lean toward \u2014 and who would be qualified to examine it?",
           "publishes": "2028-09-25"
         },
         {
           "n": 3,
           "title": "Add My Mite",
+          "question": "What already exists that does most of what you want to do \u2014 and what does it leave undone?",
           "publishes": "2028-10-02"
         },
         {
           "n": 4,
           "title": "One Page, Still Standing",
+          "question": "Can you say in one sentence what the work is and how anyone will know it is done?",
           "publishes": "2028-10-09"
         },
         {
           "n": 5,
           "title": "Sit on a Fence and Watch the Birds",
+          "question": "What is the hardest part of your work \u2014 and is it still in the plan?",
           "publishes": "2028-10-16"
         },
         {
           "n": 6,
           "title": "Smashed",
+          "question": "What is your defense date?",
           "publishes": "2028-10-23"
         },
         {
           "n": 7,
           "title": "The Junto's Questions",
+          "question": "If a room of serious peers asked you the same five questions every week, which would you dread?",
           "publishes": "2028-10-30"
         },
         {
           "n": 8,
           "title": "Date the First Page",
+          "question": "What is the smallest piece of your work that could exist, dated, by Friday?",
           "publishes": "2028-11-06"
         },
         {
           "n": 9,
           "title": "Fifty Subscribers",
+          "question": "Who, outside your own head, has your work touched \u2014 and what did they say?",
           "publishes": "2028-11-13"
         },
         {
           "n": 10,
           "title": "Test It Two or Three Times",
+          "question": "What would convince someone who wants you to be wrong?",
           "publishes": "2028-11-20"
         },
         {
           "n": 11,
           "title": "Lilienthal's Tables Were Wrong",
+          "question": "What has a tool told you this semester that you have not checked yourself?",
           "publishes": "2028-11-27"
         },
         {
           "n": 12,
           "title": "Like Confessing a Murder",
+          "question": "What is true about the work today that you have not said out loud?",
           "publishes": "2028-12-04"
         },
         {
           "n": 13,
           "title": "Written the Same Day",
+          "question": "Could a stranger read your record and tell what you did last Tuesday?",
           "publishes": "2028-12-11"
         },
         {
           "n": 14,
           "title": "A Thousand Glides",
+          "question": "Does the piece work in front of people, or only in front of you?",
           "publishes": "2028-12-18"
         },
         {
           "n": 15,
           "title": "The Shed",
+          "question": "What will you do in the first week of the break?",
           "publishes": "2028-12-25"
         }
       ]
@@ -3138,76 +3678,91 @@
         {
           "n": 1,
           "title": "Publish the Abstract",
+          "question": "Which item on your \"finished\" list have you been pretending is doable?",
           "publishes": "2029-01-01"
         },
         {
           "n": 2,
           "title": "The Commission d'Examen",
+          "question": "Who, outside the Institute, could you not fool about this work \u2014 and have you asked them?",
           "publishes": "2029-01-08"
         },
         {
           "n": 3,
           "title": "Leonardo Didn't Finish",
+          "question": "What are you still carrying that will not be finished by Week 9?",
           "publishes": "2029-01-15"
         },
         {
           "n": 4,
           "title": "Le Mans, 8 August 1908",
+          "question": "Where is your work running, right now, without you?",
           "publishes": "2029-01-22"
         },
         {
           "n": 5,
           "title": "Explain the Stove",
+          "question": "Could someone build or judge your work from the account alone, with you gone?",
           "publishes": "2029-01-29"
         },
         {
           "n": 6,
           "title": "The Claim in Three Pages",
+          "question": "Can you say what your work shows in 300 words you wrote alone?",
           "publishes": "2029-02-05"
         },
         {
           "n": 7,
           "title": "Difficulties on Theory",
+          "question": "What is the question you are hoping nobody asks?",
           "publishes": "2029-02-12"
         },
         {
           "n": 8,
           "title": "Rudder and Compass",
+          "question": "Which three books from the last four years does your work answer?",
           "publishes": "2029-02-19"
         },
         {
           "n": 9,
           "title": "Freeze It",
+          "question": "What will you be tempted to change after Friday \u2014 and where will you write it instead?",
           "publishes": "2029-02-26"
         },
         {
           "n": 10,
           "title": "Letters to Mr. Collinson",
+          "question": "What will the examiners think of the work before you say a word?",
           "publishes": "2029-03-05"
         },
         {
           "n": 11,
           "title": "Bring the Candle",
+          "question": "What would you show if you could only show, not tell?",
           "publishes": "2029-03-12"
         },
         {
           "n": 12,
           "title": "Oxford, June 1860",
+          "question": "Which question in the mock defense did you answer around instead of answering?",
           "publishes": "2029-03-19"
         },
         {
           "n": 13,
           "title": "Five Witnesses on the Sand",
+          "question": "Who is in the room, and what did they see?",
           "publishes": "2029-03-26"
         },
         {
           "n": 14,
           "title": "Tell Me If Anything Was Ever Done",
+          "question": "What does the examiners' report say was actually done \u2014 in their words, not yours?",
           "publishes": "2029-04-02"
         },
         {
           "n": 15,
           "title": "There Is Grandeur",
+          "question": "What is the next thing, and when is its first dated page?",
           "publishes": "2029-04-09"
         }
       ]
@@ -3224,76 +3779,91 @@
         {
           "n": 1,
           "title": "The Audience Acts",
+          "question": "Find one thing you used today without thinking about it. Who did the thinking for you, and when?",
           "publishes": "2028-02-21"
         },
         {
           "n": 2,
           "title": "The Door That Needs a Sign",
+          "question": "Find one door today that needs a sign. Say, without the sign, what the handle should have told you.",
           "publishes": "2028-02-28"
         },
         {
           "n": 3,
           "title": "The Loop",
+          "question": "Time the slowest loop you work inside today. What would you do differently if it were instant?",
           "publishes": "2028-03-06"
         },
         {
           "n": 4,
           "title": "The Brief",
+          "question": "Who is the one person you are making this for, and where exactly will they meet it?",
           "publishes": "2028-03-13"
         },
         {
           "n": 5,
           "title": "Paper First",
+          "question": "What could you test tomorrow with paper and one friend?",
           "publishes": "2028-03-20"
         },
         {
           "n": 6,
           "title": "Juice",
+          "question": "Press one button today \u2014 a crosswalk, an elevator, a phone \u2014 and notice everything that happens in the second after.",
           "publishes": "2028-03-27"
         },
         {
           "n": 7,
           "title": "Rules Make Play",
+          "question": "What is one rule you could remove from your piece and lose nothing \u2014 or gain something?",
           "publishes": "2028-04-03"
         },
         {
           "n": 8,
           "title": "Watch, Don't Talk",
+          "question": "Watch someone use anything today without helping them. How long can you last?",
           "publishes": "2028-04-10"
         },
         {
           "n": 9,
           "title": "Two Hundred Identical Lights",
+          "question": "Find a moment today where an error you made was the design's fault. Say what the design should have done.",
           "publishes": "2028-04-17"
         },
         {
           "n": 10,
           "title": "The Body Sets the Target",
+          "question": "What is the smallest target you hit today, and how many tries did it take?",
           "publishes": "2028-04-24"
         },
         {
           "n": 11,
           "title": "Rooms, Not Screens",
+          "question": "Walk into one space today and notice how it tells you how to behave before you read anything.",
           "publishes": "2028-05-01"
         },
         {
           "n": 12,
           "title": "The Coin Box Is Honest",
+          "question": "What will you count, and what number would make you change the piece?",
           "publishes": "2028-05-08"
         },
         {
           "n": 13,
           "title": "The Machine at the Table",
+          "question": "What in your piece did a machine make, and what must stay yours?",
           "publishes": "2028-05-15"
         },
         {
           "n": 14,
           "title": "Take Something Out",
+          "question": "What did a user do that you did not design \u2014 and will you keep it?",
           "publishes": "2028-05-22"
         },
         {
           "n": 15,
           "title": "Observed in Use",
+          "question": "What did you learn that you could not have learned by thinking?",
           "publishes": "2028-05-29"
         }
       ]
@@ -3310,76 +3880,91 @@
         {
           "n": 1,
           "title": "Where You Stand Is the Film",
+          "question": "For one minute today, stand where the camera would go, and say why there.",
           "publishes": "2028-02-21"
         },
         {
           "n": 2,
           "title": "Two Shots Make a Third Thing",
+          "question": "Count the cuts in one minute of whatever you watch tonight. Then ask what each one did.",
           "publishes": "2028-02-28"
         },
         {
           "n": 3,
           "title": "The Steps",
+          "question": "Tonight, notice one reaction shot and ask what it made you feel that the screen never showed.",
           "publishes": "2028-03-06"
         },
         {
           "n": 4,
           "title": "The Brief",
+          "question": "What do you have access to that no one else in the room has?",
           "publishes": "2028-03-13"
         },
         {
           "n": 5,
           "title": "Light Is the Subject",
+          "question": "Find the light in the room you are in: where is it from, how big is the source, what does it do to a face?",
           "publishes": "2028-03-20"
         },
         {
           "n": 6,
           "title": "The Frame Is a Sentence",
+          "question": "Watch where two people stand during a conversation today, and say what the distance means.",
           "publishes": "2028-03-27"
         },
         {
           "n": 7,
           "title": "The Shot List Is a Promise",
+          "question": "Plan tomorrow morning as five shots. Which one is the reason?",
           "publishes": "2028-04-03"
         },
         {
           "n": 8,
           "title": "Dailies",
+          "question": "What is in your footage that you did not put there?",
           "publishes": "2028-04-10"
         },
         {
           "n": 9,
           "title": "Cut on the Blink",
+          "question": "Watch a scene tonight and say \"now\" where you would cut. Were you early or late?",
           "publishes": "2028-04-17"
         },
         {
           "n": 10,
           "title": "Knife",
+          "question": "Close your eyes in a public place for sixty seconds and list the layers.",
           "publishes": "2028-04-24"
         },
         {
           "n": 11,
           "title": "Four Stems",
+          "question": "Pick one scene you love and name the four stems in it, one at a time.",
           "publishes": "2028-05-01"
         },
         {
           "n": 12,
           "title": "Picture Lock",
+          "question": "If you had to lose a minute tonight, which minute?",
           "publishes": "2028-05-08"
         },
         {
           "n": 13,
           "title": "The Last Lie",
+          "question": "Notice the color of one scene tonight. Who chose it, and what for?",
           "publishes": "2028-05-15"
         },
         {
           "n": 14,
           "title": "Say It in One Sentence",
+          "question": "Say your film in one sentence to someone who has not seen it. Watch their face, not their words.",
           "publishes": "2028-05-22"
         },
         {
           "n": 15,
           "title": "The Room Is the Last Edit",
+          "question": "What did the room do that you did not expect?",
           "publishes": "2028-05-29"
         }
       ]
@@ -3396,76 +3981,91 @@
         {
           "n": 1,
           "title": "The Room Is the First Instrument",
+          "question": "Clap in three rooms today. Which one answers, and for how long?",
           "publishes": "2028-06-05"
         },
         {
           "n": 2,
           "title": "Where You Stand Is the Mix",
+          "question": "Record ten seconds of the same sound on your phone from one inch, one foot, and ten feet.",
           "publishes": "2028-06-12"
         },
         {
           "n": 3,
           "title": "An Ear With a Shape",
+          "question": "Listen to one sound from an inch away and from across the room. What left, and what arrived?",
           "publishes": "2028-06-19"
         },
         {
           "n": 4,
           "title": "The Brief and the Release Date",
+          "question": "What one record would you want this to play after?",
           "publishes": "2028-06-26"
         },
         {
           "n": 5,
           "title": "Attack, Then Everything After",
+          "question": "Hum a note. Now make it a bell, then a cello, by changing only how it starts.",
           "publishes": "2028-07-03"
         },
         {
           "n": 6,
           "title": "Subtract",
+          "question": "Put on anything and listen for one instrument only. Where does it live \u2014 high, middle, low?",
           "publishes": "2028-07-10"
         },
         {
           "n": 7,
           "title": "A Hand Faster Than a Hand",
+          "question": "Listen to a voice on the radio and one across the table. Which changes volume more?",
           "publishes": "2028-07-17"
         },
         {
           "n": 8,
           "title": "Three Speakers",
+          "question": "Play your rough on the worst speaker you own. What disappeared?",
           "publishes": "2028-07-24"
         },
         {
           "n": 9,
           "title": "Two Ears",
+          "question": "Close your eyes and point at five sounds. How did you know?",
           "publishes": "2028-07-31"
         },
         {
           "n": 10,
           "title": "The Inaudible Made Audible",
+          "question": "Record one sound. Pitch it down two octaves. What is it now?",
           "publishes": "2028-08-07"
         },
         {
           "n": 11,
           "title": "The Reference and the Lie",
+          "question": "A/B two versions of anything, level-matched. Could you tell them apart?",
           "publishes": "2028-08-14"
         },
         {
           "n": 12,
           "title": "Mix Lock",
+          "question": "What is the one thing the listener must hear first in your piece?",
           "publishes": "2028-08-21"
         },
         {
           "n": 13,
           "title": "Louder Is Not Better",
+          "question": "Play a record from 1985 and one from 2005 at the same volume setting. Which one breathes?",
           "publishes": "2028-08-28"
         },
         {
           "n": 14,
           "title": "The Record Made the Music",
+          "question": "Name one production decision in a record you love that dates it exactly.",
           "publishes": "2028-09-04"
         },
         {
           "n": 15,
           "title": "Release",
+          "question": "Who heard it first that you will never meet?",
           "publishes": "2028-09-11"
         }
       ]
@@ -3482,76 +4082,91 @@
         {
           "n": 1,
           "title": "No Two Alike, All the Same Work",
+          "question": "Find one made thing today that is the output of a rule rather than a decision. Who wrote the rule?",
           "publishes": "2028-09-18"
         },
         {
           "n": 2,
           "title": "Mozart Rolls Dice",
+          "question": "What is one thing you make that could be made from a table and a die? Would it be worse?",
           "publishes": "2028-09-25"
         },
         {
           "n": 3,
           "title": "The Loom Was First",
+          "question": "Describe something you made this week as a procedure another person could follow exactly. Where does it break?",
           "publishes": "2028-10-02"
         },
         {
           "n": 4,
           "title": "The Brief",
+          "question": "What is the smallest rule set you would be proud to sign?",
           "publishes": "2028-10-09"
         },
         {
           "n": 5,
           "title": "Noise Is a Material",
+          "question": "Find something today that is random but not static. What gives it memory?",
           "publishes": "2028-10-16"
         },
         {
           "n": 6,
           "title": "Three Rules, Then a Universe",
+          "question": "Watch a crowd today \u2014 a lineup, a sidewalk, a flock. Name the one rule each body is following.",
           "publishes": "2028-10-23"
         },
         {
           "n": 7,
           "title": "Grow It",
+          "question": "Find one thing that grew today \u2014 bread, a plant, a crack. Say its rule.",
           "publishes": "2028-10-30"
         },
         {
           "n": 8,
           "title": "Run It a Thousand Times",
+          "question": "What do your ten worst outputs say about your rules?",
           "publishes": "2028-11-06"
         },
         {
           "n": 9,
           "title": "The Model Is Material",
+          "question": "In one image a model made for you today, what exactly is yours?",
           "publishes": "2028-11-13"
         },
         {
           "n": 10,
           "title": "Train It on Yourself",
+          "question": "What would a system trained only on you get wrong about you?",
           "publishes": "2028-11-20"
         },
         {
           "n": 11,
           "title": "Whose Work Is It",
+          "question": "Where in your system does your authorship begin, and could you prove it to a stranger?",
           "publishes": "2028-11-27"
         },
         {
           "n": 12,
           "title": "Freeze the Rule",
+          "question": "Could someone run your system without you in the room? Prove it.",
           "publishes": "2028-12-04"
         },
         {
           "n": 13,
           "title": "Curate",
+          "question": "Lay ten of your outputs on a floor. Which one goes, and why?",
           "publishes": "2028-12-11"
         },
         {
           "n": 14,
           "title": "Live",
+          "question": "What would your system do with a person standing in front of it?",
           "publishes": "2028-12-18"
         },
         {
           "n": 15,
           "title": "The Rules on the Wall",
+          "question": "Could a visitor guess the rule from the outputs? Should they?",
           "publishes": "2028-12-25"
         }
       ]
@@ -3568,76 +4183,91 @@
         {
           "n": 1,
           "title": "The Part Outlives the Drawing",
+          "question": "Pick one object with moving parts you touched today. What has to fit for it to work?",
           "publishes": "2028-02-21"
         },
         {
           "n": 2,
           "title": "Tolerance Is a Moral Category",
+          "question": "Where in your life do you state a tolerance \u2014 \"seven, give or take\" \u2014 and mean it?",
           "publishes": "2028-02-28"
         },
         {
           "n": 3,
           "title": "Three Views and the Truth",
+          "question": "Could a stranger make your idea from your drawing alone?",
           "publishes": "2028-03-06"
         },
         {
           "n": 4,
           "title": "Metal Remembers",
+          "question": "What in your home is failing from tiredness rather than force?",
           "publishes": "2028-03-13"
         },
         {
           "n": 5,
           "title": "Make It From Paper First",
+          "question": "What did the cardboard tell you that the CAD did not?",
           "publishes": "2028-03-20"
         },
         {
           "n": 6,
           "title": "A Fit Is a Relationship",
+          "question": "What is the one fit in your mechanism that, if wrong, makes the rest irrelevant?",
           "publishes": "2028-03-27"
         },
         {
           "n": 7,
           "title": "Four Ways to Make a Part",
+          "question": "For the part in your hand, which process made it \u2014 and what mark did the process leave?",
           "publishes": "2028-04-03"
         },
         {
           "n": 8,
           "title": "Measure Twice, Then Doubt It",
+          "question": "How precisely do you know the length of anything you own?",
           "publishes": "2028-04-10"
         },
         {
           "n": 9,
           "title": "Where the Load Turns the Corner",
+          "question": "Find a crack in something today. Where did the load turn a corner?",
           "publishes": "2028-04-17"
         },
         {
           "n": 10,
           "title": "The Drawing Review",
+          "question": "Which dimension on your drawing could you not defend if asked why?",
           "publishes": "2028-04-24"
         },
         {
           "n": 11,
           "title": "Read the Drawing Cold",
+          "question": "Could you have made that judgment a month ago?",
           "publishes": "2028-05-01"
         },
         {
           "n": 12,
           "title": "The Air Here Eats Steel",
+          "question": "What on your mechanism will rust, and what have you done about it?",
           "publishes": "2028-05-08"
         },
         {
           "n": 13,
           "title": "Assemble, Then Tell the Truth",
+          "question": "Which measurement on your sheet did you want to round?",
           "publishes": "2028-05-15"
         },
         {
           "n": 14,
           "title": "Run It Until It Breaks",
+          "question": "What load have you not drawn?",
           "publishes": "2028-05-22"
         },
         {
           "n": 15,
           "title": "Judged by the Number",
+          "question": "What is the one number your mechanism will be judged by \u2014 and did you hit it?",
           "publishes": "2028-05-29"
         }
       ]
@@ -3654,76 +4284,91 @@
         {
           "n": 1,
           "title": "A Bucket on a Rope",
+          "question": "What measured the world for you today \u2014 and did you check it?",
           "publishes": "2028-06-05"
         },
         {
           "n": 2,
           "title": "A Computer the Size of a Stamp",
+          "question": "What is the smallest computer in your house, and what does it decide?",
           "publishes": "2028-06-12"
         },
         {
           "n": 3,
           "title": "What a Sensor Actually Returns",
+          "question": "How does your thermostat know what it knows?",
           "publishes": "2028-06-19"
         },
         {
           "n": 4,
           "title": "Seal It",
+          "question": "Where does water get into things you own?",
           "publishes": "2028-06-26"
         },
         {
           "n": 5,
           "title": "Show the Raw Trace",
+          "question": "What does your raw trace show that you would rather smooth away?",
           "publishes": "2028-07-03"
         },
         {
           "n": 6,
           "title": "Time Is the Hardest Sensor",
+          "question": "How do the clocks in your life agree with each other \u2014 and which one is right?",
           "publishes": "2028-07-10"
         },
         {
           "n": 7,
           "title": "Power Is the Budget",
+          "question": "What in your house is on when it does not need to be?",
           "publishes": "2028-07-17"
         },
         {
           "n": 8,
           "title": "Radio Is a Sensor Pointed at Air",
+          "question": "What would your instrument do if it could never call home?",
           "publishes": "2028-07-24"
         },
         {
           "n": 9,
           "title": "Assume It Will Crash",
+          "question": "What in your life has no recovery plan?",
           "publishes": "2028-07-31"
         },
         {
           "n": 10,
           "title": "The Line Had Rotted",
+          "question": "What did you not check because it had never failed?",
           "publishes": "2028-08-07"
         },
         {
           "n": 11,
           "title": "Read the Trace",
+          "question": "Could you have read that trace a month ago?",
           "publishes": "2028-08-14"
         },
         {
           "n": 12,
           "title": "Deploy Day",
+          "question": "What is on your checklist because something once went wrong?",
           "publishes": "2028-08-21"
         },
         {
           "n": 13,
           "title": "The Data Comes Home Dirty",
+          "question": "What step of your cleaning could you not explain to the person who gave you the data?",
           "publishes": "2028-08-28"
         },
         {
           "n": 14,
           "title": "Read the River",
+          "question": "What did your data show that you did not expect \u2014 and do you believe it?",
           "publishes": "2028-09-04"
         },
         {
           "n": 15,
           "title": "Your Number Enters the Record",
+          "question": "What would you change before you put it back in?",
           "publishes": "2028-09-11"
         }
       ]
@@ -3740,76 +4385,91 @@
         {
           "n": 1,
           "title": "Seven Miles Into the Desert",
+          "question": "What have you seen work in a demo that you would not trust in the world?",
           "publishes": "2028-09-18"
         },
         {
           "n": 2,
           "title": "Sense, Think, Act, Sense Again",
+          "question": "What loop are you running right now, and how stale is its sensing?",
           "publishes": "2028-09-25"
         },
         {
           "n": 3,
           "title": "Where Am I?",
+          "question": "How do you know where you are right now \u2014 and how much of it is memory?",
           "publishes": "2028-10-02"
         },
         {
           "n": 4,
           "title": "Seeing Is Guessing",
+          "question": "What did you see today that turned out to be something else?",
           "publishes": "2028-10-09"
         },
         {
           "n": 5,
           "title": "Drive in a Straight Line",
+          "question": "Why did it not go straight?",
           "publishes": "2028-10-16"
         },
         {
           "n": 6,
           "title": "Control Is a Conversation With Error",
+          "question": "Where in your life do you overcorrect?",
           "publishes": "2028-10-23"
         },
         {
           "n": 7,
           "title": "Plan the Path, Expect the Cone",
+          "question": "What was your plan for today \u2014 and what cone did the world put in it?",
           "publishes": "2028-10-30"
         },
         {
           "n": 8,
           "title": "Wheels, Legs, Hulls, Rotors",
+          "question": "What does your body do for you that your brain never has to think about?",
           "publishes": "2028-11-06"
         },
         {
           "n": 9,
           "title": "When to Let It Learn",
+          "question": "Where in your system would you not trust a model \u2014 and why there?",
           "publishes": "2028-11-13"
         },
         {
           "n": 10,
           "title": "Rehearsal in the Lot",
+          "question": "What is different about the lot at the hour you will demonstrate?",
           "publishes": "2028-11-20"
         },
         {
           "n": 11,
           "title": "Fly It by Hand",
+          "question": "If your robot handed you the controls right now, would you be ready?",
           "publishes": "2028-11-27"
         },
         {
           "n": 12,
           "title": "Safety Is the First Feature",
+          "question": "What does your machine do when it loses contact with you?",
           "publishes": "2028-12-04"
         },
         {
           "n": 13,
           "title": "The Job, Not the Demo",
+          "question": "What is your success rate \u2014 and would you ride in it?",
           "publishes": "2028-12-11"
         },
         {
           "n": 14,
           "title": "Robots Fall Down",
+          "question": "Which failure are you fixing, and which are you accepting?",
           "publishes": "2028-12-18"
         },
         {
           "n": 15,
           "title": "Live, One Take, in the Lot",
+          "question": "What did it do that you did not tell it to?",
           "publishes": "2028-12-25"
         }
       ]

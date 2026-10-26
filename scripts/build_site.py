@@ -52,6 +52,10 @@ def md_to_html(md_text: str) -> str:
     ])
 
 
+ANSWER_MARKER = "<!-- sdit:answer -->"
+ANSWER_SLOT = '<div class="answer-slot" data-sdit-answer="answer"></div>'
+
+
 def inject_student_work_class(html: str) -> str:
     """Wrap the My Work H2 section and all following content in a .student-work div."""
     marker = '<h2 id="my-work">'
@@ -168,10 +172,14 @@ def render_markdown_tree(src: Path, dest: Path) -> list[tuple[str, Path]]:
             entries.append((title, out_path))
             continue
 
-        # Wrap student work section if present
-        is_lesson = re.search(r"(section-\d+|day-\d+)\.html$", str(out_path))
-        if is_lesson:
-            html = inject_student_work_class(html)
+        # Where the day asks for an answer, the source carries a marker; the
+        # page carries a slot that student-work.js turns into the field.
+        if ANSWER_MARKER in html:
+            import html as _h
+            q = str((meta or {}).get("question") or "") if isinstance(meta, dict) else ""
+            slot = ANSWER_SLOT.replace('data-sdit-answer="answer"',
+                                       f'data-sdit-answer="answer" data-question="{_h.escape(q, quote=True)}"')
+            html = html.replace(ANSWER_MARKER, slot)
 
         # Course day pages: a canonical lesson id, and the end-of-day chrome that
         # pulls the learner forward: the next day in this course, and the next
@@ -461,6 +469,10 @@ def main(argv: list[str] | None = None) -> int:
     # Browser-fetchable course index for the signed-in course-mode header.
     import build_catalog
     build_catalog.main(ASSETS)
+
+    # Day 0 (the Commitment and three questions) and the eight gates.
+    import reflections
+    reflections.write_all(write_file, OUT)
 
     # The Path: every day of the degree, in order, with publish dates.
     import degree_path

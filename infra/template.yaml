@@ -111,9 +111,10 @@ Resources:
             // adding a course needs no change here. Everything else that owns
             // an index.html is named outright — deploy.sh fails if the repo
             // grows a directory this rule would miss.
-            var DIRS = ['courses', 'curriculum', 'knowledge'];
+            var DIRS = ['courses', 'curriculum', 'knowledge', 'begin', 'portfolio', 'notebook'];
             var key = uri.replace(/^\/+/, '').replace(/\/+$/, '');
-            var isDir = DIRS.indexOf(key) !== -1 || /^courses\/[A-Z]+-\d+$/.test(key);
+            var isDir = DIRS.indexOf(key) !== -1 || /^courses\/[A-Z]+-\d+$/.test(key) ||
+                        /^gates\/semester-[1-8]$/.test(key);
 
             // Redirect rather than serve, matching what GitHub Pages does.
             // Serving index.html at both /courses and /courses/ would make one

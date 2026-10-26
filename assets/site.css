@@ -1745,3 +1745,24 @@ html.sdit-authed .sdit-portal { display: block; }
 .lesson-tomorrow-card.is-upcoming .lesson-tomorrow-cta { color: var(--muted); }
 .lesson-selfpace a { color: inherit; }
 .day-rail-next { margin: 0.6rem 0 0; font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+
+
+/* ---- Answers, Day 0, the Gates ---- */
+.answer-slot { margin: 0.75rem 0 1.25rem; }
+.answer-slot .response-textarea { min-height: 4.5rem; }
+.answer-foot { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-top: 0.35rem; }
+.answer-hint { font-size: 0.78rem; color: var(--muted); }
+.reflection-q { margin: 2rem 0 0; }
+.article-body .reflection-q h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.45rem; line-height: 1.35; margin: 0 0 0.35rem; text-transform: none; letter-spacing: 0; color: var(--ink); }
+.reflection-recall { margin: 2rem 0 0; }
+.reflection-recall-label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.4rem; }
+.reflection-recall blockquote { margin: 0; padding: 0.9rem 1.1rem; border-left: 3px solid var(--gold); background: var(--surface-soft, transparent); white-space: pre-wrap; }
+.reflection-recall blockquote.is-empty { color: var(--muted); font-style: italic; }
+.commitment p { font-size: 1.05rem; line-height: 1.75; }
+.commit-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; margin: 1.75rem 0 0.5rem; }
+.commitment .commit-done { margin: 1.5rem 0 0.5rem; font-family: var(--font-display); font-size: 1.35rem; font-style: italic; color: var(--marine, var(--ink)); }
+.commit-actions[hidden], .commit-done[hidden], [data-after-commit][hidden] { display: none !important; }
+.commit-foot { margin-top: 1rem; font-size: 0.88rem; }
+.commit-foot a { color: var(--muted); }
+.gate-commitment { font-family: var(--font-display); font-size: 1.2rem; font-style: italic; margin: 0 0 1rem; }
+.learn-link { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }

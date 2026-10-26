@@ -65,8 +65,9 @@ UNKNOWN=$(cd "$SITE_ROOT" && find . -name index.html \
     -not -path './node_modules/*' -not -path './dist/*' \
   | sed 's|^\./||; s|/index\.html$||' \
   | grep -v '^index\.html$' \
-  | grep -vE '^(courses|curriculum|knowledge|programs/Bachelor-Liberal-Arts)$' \
-  | grep -vE '^courses/[A-Z]+-[0-9]+$' || true)
+  | grep -vE '^(courses|curriculum|knowledge|begin|portfolio|notebook|programs/Bachelor-Liberal-Arts)$' \
+  | grep -vE '^courses/[A-Z]+-[0-9]+$' \
+  | grep -vE '^gates/semester-[1-8]$' || true)
 
 if [ -n "$UNKNOWN" ]; then
   echo "error: directories unknown to the edge function in template.yaml:" >&2

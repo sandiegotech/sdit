@@ -2,6 +2,7 @@
 id: math110-day-01
 title: "Day 01 — Zoom In Until It's Straight"
 day: 1
+question: "Find one thing that's changing — your speed, the light, the tide, your mood — and ask: changing how fast, right now?"
 course: MATH 110 — Calculus I
 ---
 
@@ -39,7 +40,11 @@ For the rest of today:
 
 **Find one thing that's changing — your speed, the light, the tide, your mood — and ask: changing how fast, right now?**
 
-The phrase "right now" is the whole subject. No writing required.
+The phrase "right now" is the whole subject.
+
+Answer in a line or a page, or not at all. What you write is kept in your Notebook.
+
+<!-- sdit:answer -->
 
 That's it. **Day 1 is done.**
 

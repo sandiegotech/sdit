@@ -47,9 +47,17 @@ def build_catalog() -> dict:
             info = day_info(course_dir, n)
             arc_day = arc.day(n) if arc else None
             when = publishing.week_date(c["semester"], n) if c.get("semester") else None
+            question = ""
+            if info:
+                import frontmatter
+                meta, _ = frontmatter.parse((course_dir / f"day-{n:02d}.md").read_text(encoding="utf-8"))
+                question = str(meta.get("question") or "")
+            if not question and arc_day:
+                question = arc_day.question
             planned.append({
                 "n": n,
                 "title": info[0] if info else (arc_day.title if arc_day else ""),
+                "question": question,
                 "publishes": None if info or not when else when.isoformat(),
             })
         courses[dir_name] = {

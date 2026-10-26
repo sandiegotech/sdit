@@ -2,6 +2,7 @@
 id: hum101-day-01
 title: "Day 01 — The Oldest Story Is About You"
 day: 1
+question: "What's the Siren in your life — and what would tying yourself to the mast look like?"
 course: HUM 101 — The Ancient World
 ---
 
@@ -32,7 +33,9 @@ For the rest of today, carry this one:
 
 **What's the Siren in your life — and what would tying yourself to the mast look like?**
 
-No right answer, no writing required.
+Answer in a line or a page, or not at all. What you write is kept in your Notebook.
+
+<!-- sdit:answer -->
 
 That's it. **Day 1 is done.**
 

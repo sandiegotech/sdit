@@ -2,6 +2,7 @@
 id: phys110-day-01
 title: "Day 01 — The Wave Is a Lecture"
 day: 1
+question: "Watch one thing move — anything — and ask: what is pushing it, and what is slowing it down?"
 course: PHYS 110 — Mechanics
 ---
 
@@ -40,7 +41,11 @@ For the rest of today:
 
 **Watch one thing move — anything — and ask: what is pushing it, and what is slowing it down?**
 
-A door swinging shut counts. No writing required.
+A door swinging shut counts.
+
+Answer in a line or a page, or not at all. What you write is kept in your Notebook.
+
+<!-- sdit:answer -->
 
 That's it. **Day 1 is done.**
 

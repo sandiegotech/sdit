@@ -3,9 +3,12 @@
 
     python3 scripts/scaffold_day.py HUM-101 2
 
-Writes courses/<DIR>/day-NN.md in the standard lesson shape: front matter, the
-H1, a one-line dek, one thing to experience ON the page, one idea, one question
-to carry, the done line, and three optional doors. Refuses to write a day the
+Writes courses/<DIR>/day-NN.md in day standard v2: front matter with the
+question, the H1, a one-line dek, one thing to experience ON the page, one
+idea, the question to carry with its answer field, the done line, and three
+optional doors. The title, the question, and the arc's notes for the thing,
+the idea, and the doors are filled in from courses/<DIR>/arc.md; the author
+writes the dek, the thing on the page, the idea, and the doors. Refuses to write a day the
 course's planned length does not include, or to overwrite an existing file.
 After editing, run scripts/build_site.py --out . to publish.
 
@@ -23,43 +26,34 @@ ROOT = Path(__file__).resolve().parents[1]
 
 TEMPLATE = '''---
 id: {id}
-title: "Day {nn} — Title goes here"
+title: "Day {nn} — {title}"
 day: {n}
 course: {course}
+question: "{question}"
 ---
 
-# Day {nn} — Title goes here
+# Day {nn} — {title}
 
-Ten minutes. One thing to experience, one idea, one question.
-<!-- The dek: one line, under fifteen words, naming what the day holds. It is
-     reused on the course page and the schedule. -->
+DEK: one line, under fifteen words, naming what the day holds.
 
 ---
 
+<!-- From the arc, the thing to experience: {thing} -->
 ## Look
-<!-- Or "## Watch" or "## Listen". The thing to experience goes ON the page:
-     an image from Wikimedia Commons, a passage from Project Gutenberg or a
-     Lectio edition, an embeddable clip or recording. Never "go watch this."
-     Public domain, openly licensed, or embeddable by its publisher — nothing
-     else. Then one short paragraph on why it matters to the reader today. -->
-
-<figure class="day-figure">
-  <img src="IMAGE-URL" alt="Describe the image for someone who cannot see it" loading="lazy" />
-  <figcaption><strong>Title of the work.</strong> Maker, date. One or two sentences on what to look at.</figcaption>
-</figure>
-
-Why it matters today, in a paragraph.
+<!-- Or "## Watch", "## Listen", "## Read": exactly one. The thing goes ON the
+     page: a <figure> with an <img> from upload.wikimedia.org (alt,
+     loading="lazy", referrerpolicy="no-referrer", and a figcaption), or an
+     <iframe> from www.youtube-nocookie.com, or a <blockquote> from Project
+     Gutenberg or a Lectio edition. Then one paragraph on why it matters
+     today. -->
 
 ---
 
+<!-- From the arc, the one idea: {idea} -->
 ## One idea
-<!-- A few hundred words. One idea only; if a draft has two, it is two days or
-     one day with a door. The whole main path, doors excluded, runs 400 to 600
-     words. Physical before formal: no concept arrives as notation first.
-     Short declarative sentences. No hype words. Name the course's catalog
-     register once, somewhere, so a transcript reader can place the day. -->
-
-The idea, plainly.
+<!-- 300 to 450 words. One idea only. Short declarative sentences. Physical
+     before formal: no concept arrives as notation first. Name the course's
+     catalog register once. No hype words. -->
 
 ---
 
@@ -67,9 +61,11 @@ The idea, plainly.
 
 For the rest of today, carry this one:
 
-**The question goes here.**
+**{question}**
 
-No right answer, no writing required.
+Answer in a line or a page, or not at all. What you write is kept in your Notebook.
+
+<!-- sdit:answer -->
 
 That's it. **Day {n} is done.**
 
@@ -78,14 +74,14 @@ That's it. **Day {n} is done.**
 ## If you're still curious
 
 Three doors. Open one, or none — they'll be here tomorrow too.
-<!-- Always three: something to read, something to watch or hear, someone to
-     ask. The "ask someone" door is the signature of these days. Keep it. -->
 
-**Read the real thing.** [Title](URL) — what to read and how much.
+<!-- From the arc: {doors} -->
 
-**Watch (or listen to) the other half.** [Title](URL) — the film or album half of the pairing, and why.
+**Read the real thing.** WRITE THE READING DOOR.
 
-**Ask someone.** Tonight, ask someone you trust: *"The question to ask them."* What to listen for.
+**Watch (or listen to) the other half.** WRITE THE WATCH OR LISTEN DOOR.
+
+**Ask someone.** Tonight, ask someone you trust: *"WRITE THE QUESTION TO ASK."* WRITE WHAT TO LISTEN FOR.
 '''
 
 
@@ -132,12 +128,25 @@ def main(argv) -> int:
             print(f"day-{n - 1:02d}.md does not exist yet; days publish in order, so write it first.")
             return 1
 
+    import arcs
+    arc = arcs.load_arc(course_dir)
+    a = arc.day(n) if arc else None
+
+    def clean(v: str) -> str:
+        # Arc cells go into HTML comments and a YAML string: keep both valid.
+        return (v or "").replace("-->", "—>").replace('"', "\u201d")
+
     path.write_text(
         TEMPLATE.format(
             id=f"{course_dir.lower().replace('-', '')}-day-{n:02d}",
             nn=f"{n:02d}",
             n=n,
             course=course_label(course_dir),
+            title=a.title if a else "Title goes here",
+            question=clean(a.question) if a else "The question goes here.",
+            thing=clean(a.thing) if a else "",
+            idea=clean(a.idea) if a else "",
+            doors=clean(a.doors) if a else "",
         ),
         encoding="utf-8",
     )

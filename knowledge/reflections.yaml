@@ -1,0 +1,80 @@
+__meta__:
+  title: Reflections — the Commitment, Day 0, and the Gates
+  description: >
+    The words that open the degree and close each semester. Day 0 (/begin/)
+    is the Commitment and three questions; each semester ends at a gate that
+    asks them again, plus what you made and what changed. Every answer is kept
+    in the learner's Notebook under the page's lesson id and the question id,
+    so the same question can be read across four years.
+  intended_use: >
+    Rendered by scripts/reflections.py into begin/index.html and
+    gates/semester-N/index.html. Question ids are storage keys: never rename
+    one once learners have answered it. The Commitment text is the founder's
+    to edit; change it here and nowhere else.
+
+commitment:
+  heading: The Commitment
+  paragraphs:
+    - >
+      Everything here is open. You can read any day of any course without an
+      account and without asking. If that is what you want, go ahead; the
+      doors stay open.
+    - >
+      If you want the whole education, there is one condition: trust the
+      system. Do the days in order. Do the reading behind the doors when it
+      pulls you. Make the things, and finish them. Write your answers down.
+      Show up for the gates. The sequence is the point; it was built to be
+      walked, not browsed.
+    - >
+      If you commit to that, we commit to the other half. The next day will be
+      there every Monday. The work will be real. And the whole thing is built
+      so that you come out of it with a mind ready to live in the present, and
+      in whatever comes after it.
+  commit_label: I commit
+  look_label: I'm just looking
+  look_href: /courses/index.html
+  committed_line: "You committed on {date}."
+  footnote: Where the degree itself stands, in plain terms
+  footnote_href: /accreditation.html
+
+begin:
+  lesson: /begin
+  eyebrow: Day 0
+  title: Before everything
+  intro: >
+    Three questions before the first day. Answer them in a line or a page.
+    You will be asked them again at the end of every semester, and at the
+    end of the fourth year you will read what you wrote today.
+  questions:
+    - id: education
+      text: What does education mean to you?
+    - id: make
+      text: What do you want to be able to make by the end of this?
+    - id: believe
+      text: Name one thing you believe and could not yet defend.
+  next:
+    eyebrow: Day 1
+    href: /courses/HUM-101/day-01.html
+
+gates:
+  lesson: /gates/semester-{n}
+  eyebrow: The Gate
+  intro: >
+    The end of Semester {n}. The same three questions as Day 0, then two more.
+    Answer without looking back first; the Notebook keeps the earlier answers,
+    and you can compare once you have written.
+  questions:
+    - id: education
+      text: What does education mean to you?
+    - id: make
+      text: What do you want to be able to make by the end of this?
+    - id: believe
+      text: Name one thing you believe and could not yet defend.
+    - id: made
+      text: What did you make this semester?
+    - id: changed
+      text: What changed?
+  final:
+    # Gate 8 opens by showing the Day 0 answer, then asks the question again.
+    recall_label: What you wrote on Day 0
+    education_text: "Read your Day 0 answer. Then answer again: what does education mean to you?"

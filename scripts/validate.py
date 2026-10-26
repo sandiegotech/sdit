@@ -45,6 +45,7 @@ STATUSES = {"planned", "syllabus", "building", "day1", "live"}
 OUTCOMES = {"judgment", "intelligence", "craft", "articulation", "breadth"}
 CONCENTRATIONS = {"media", "design", "engineering"}
 MAX_DAYS = 60
+ANSWER_MARKER = "<!-- sdit:answer -->"
 
 # What a course page must carry before its course can be called live.
 LIVE_HEADINGS = [
@@ -149,6 +150,14 @@ def validate_course(c: dict, i: int, threads: set, courses_root: Path, errors: l
             err(f"day-{n:02d}.md says `day: {meta.get('day')}` in its front matter")
         if not meta.get("title"):
             err(f"day-{n:02d}.md has no `title` in its front matter")
+        # Every day asks one question and keeps the answer (day standard v2).
+        q = str(meta.get("question") or "").strip()
+        if not q:
+            err(f"day-{n:02d}.md has no `question` in its front matter")
+        elif f"**{q}**" not in _body:
+            err(f"day-{n:02d}.md does not ask its front-matter question in bold on the page")
+        if ANSWER_MARKER not in _body:
+            err(f"day-{n:02d}.md has no answer field ({ANSWER_MARKER}) under its question")
 
     if status in ("planned", "syllabus", "building") and days:
         err(f"has status `{status}` but {len(days)} published day file(s); set `day1` (or `live`)")

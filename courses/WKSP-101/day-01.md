@@ -2,6 +2,7 @@
 id: wksp101-day-01
 title: "Day 01 — Make Anything"
 day: 1
+question: "What did you make, and what did finishing it take?"
 course: WKSP 101 — The Workshop
 ---
 
@@ -42,6 +43,14 @@ Right now, before the feeling fades — **make anything, in ten minutes or less,
 - Fix the small broken thing you've been walking past for weeks.
 
 Quality is not the assignment. **Finishing is the assignment.** The Workshop's only rule, from today to your final exhibition four years from now: it ships.
+
+When it's done, one question:
+
+**What did you make, and what did finishing it take?**
+
+Answer in a line or a page, or not at all. What you write is kept in your Notebook.
+
+<!-- sdit:answer -->
 
 That's it. **Day 1 is done** — if you made something.
 

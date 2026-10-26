@@ -55,6 +55,12 @@ def _data(course):
     return {"threads": [{"id": "canon"}, {"id": "depth"}], "courses": [course]}
 
 
+def _day(n: int, question: str = "Why?", marker: bool = True, bold: bool = True) -> str:
+    asked = f"**{question}**" if bold else question
+    return (f'---\nid: x\ntitle: "Day {n:02d} — T"\nday: {n}\nquestion: "{question}"\n---\n\n# T\n\ndek\n\n'
+            f"## Carry the question\n\n{asked}\n\n" + ("<!-- sdit:answer -->\n" if marker else ""))
+
+
 def _arc(n_days: int) -> str:
     rows = "\n".join(f"| {n} | T | thing | idea | question? | read · watch · ask |" for n in range(1, n_days + 1))
     return ("---\ncourse: X 101 — Thing\nsemester: 1\ndays: %d\n---\n\n# Arc\n\n"
@@ -69,7 +75,7 @@ def _write_course(root: Path, course: dict, days: int, index_tpl=INDEX_SCAFFOLD,
     for n in range(1, days + 1):
         if n in skip:
             continue
-        (d / f"day-{n:02d}.md").write_text(f'---\nid: x\ntitle: "Day {n:02d} — T"\nday: {n}\n---\n\n# T\n\ndek\n')
+        (d / f"day-{n:02d}.md").write_text(_day(n))
 
 
 def _run(course, days=0, index_tpl=INDEX_SCAFFOLD, skip=()):
@@ -173,7 +179,7 @@ def test_published_title_must_match_arc():
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         _write_course(root, c, 1)
-        (root / c["dir"] / "day-01.md").write_text('---\nid: x\ntitle: "Day 01 — Other"\nday: 1\n---\n\n# Other\n\ndek\n')
+        (root / c["dir"] / "day-01.md").write_text(_day(1).replace("Day 01 — T", "Day 01 — Other"))
         errors = []
         validate.validate_catalog(errors, _data(c), root)
     assert any("but the arc calls it" in e for e in errors)
@@ -188,3 +194,17 @@ def test_calendar_rules():
     validate.validate_calendar(errors, {"publishing": {"first_release": "2027-01-04"},
                                         "semesters": [{"n": i, "weeks": 15} for i in range(1, 8)]})
     assert any("1 to 8" in e for e in errors)
+
+
+def test_day_must_ask_its_question_and_keep_the_answer():
+    c = _course(status="day1")
+    for text, expect in ((_day(1, marker=False), "has no answer field"),
+                         (_day(1, bold=False), "does not ask its front-matter question"),
+                         (_day(1).replace('question: "Why?"\n', ""), "has no `question`")):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_course(root, c, 1)
+            (root / c["dir"] / "day-01.md").write_text(text)
+            errors = []
+            validate.validate_catalog(errors, _data(c), root)
+        assert any(expect in e for e in errors), (expect, errors)
