@@ -48,7 +48,7 @@ The machine that learned to finish your sentences is not a mystery. It is matric
 
 The teaching frame is Teaching Machines. The data is yours: starting in the second week you gather and label it — one honest observation a day for the whole course, or a few hundred photographs or messages labelled in an afternoon. The gradient is yours too: plain code, no training library, so every number the model learns passed through lines you can point to. The AI assistant is open throughout, and the course's method for checking its code is the same method for checking your own — perturb a weight and see whether the loss moves the way the gradient said. By the last week you build the smallest version of the assistant itself and watch it produce almost-English.
 
-One day a week, about ten minutes a sitting, and it ends in a made thing: a model you trained on data you gathered, with a report that says exactly where it fails and who it fails.
+One page a week opens the day, about ten minutes to read, and it ends in a made thing: a model you trained on data you gathered, with a report that says exactly where it fails and who it fails.
 
 ## The Two Registers
 
@@ -127,7 +127,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — A Line Through the Points
 

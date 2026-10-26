@@ -11,7 +11,7 @@ What it regenerates, in place, between markers:
                                  (between <!-- sdit:days:begin/end -->)
                                  and the `status:` line of the front matter,
                                  which always mirrors the registry.
-  2. curriculum/schedule.html — every semester: its weekday rhythm, then one
+  2. curriculum/schedule.html — every semester: its load and weekday rhythm (one
                                  Week section per published week
                                  (between <!-- sdit:weeks:begin/end -->)
 
@@ -36,7 +36,7 @@ SCHEDULE = ROOT / "curriculum" / "schedule.html"
 # A prefix names the course that owns that weekday. STUDIO marks the days given
 # to depth studios (a learner takes the ones their concentration prescribes, so
 # studios are listed without a fixed weekday). A "~" entry is a requirement
-# that is not a catalog course and links to the four-year map instead.
+# that is not a catalog course and links to the requirements instead.
 STUDIO = "*studio*"
 WEEKDAY_ORDER = {
     1: ["HUM", "MATH", "PHYS", "CS", "WKSP"],
@@ -65,8 +65,8 @@ SEMESTER_MILESTONE = {
     6: "The Field Term: a full term embedded in a working organization.",
     8: "Capstone defense, the teaching requirement, graduation.",
 }
-FOUNDATION_NOTE = "One schedule serves everyone for the first two years — the Foundation is identical for every student."
-FOCUS_NOTE = "The spine is shared. The studios are the four your concentration prescribes; the Crossing is one from outside it."
+FOUNDATION_NOTE = "The same courses for everyone: the first two years are the Foundation, and nothing in them is elective."
+FOCUS_NOTE = "The spine (the books, the Workshop, the Field Term, the capstone) is shared. The studios listed are the ones offered that semester; your concentration prescribes four across Years 3 and 4, and the Crossing adds one from outside it."
 
 
 def _course_prefix(c: dict) -> str:
@@ -264,38 +264,38 @@ def sync_schedule(catalog) -> int:
             f'\n          <p style="margin-top:0.6rem;font-size:0.88rem;color:var(--muted);">→ {milestone}</p>'
             if milestone else ""
         )
+        # The load, honestly: one unit is three hours a week for fifteen weeks.
+        spine = [c for c in courses if c.get("thread") != "depth"]
+        spine_units = sum(int(c.get("units") or 0) for c in spine)
+        # Years 3 and 4: the studios listed are the ones offered; a learner takes
+        # four across the two years (2, 1, 1) and, in Semester 8, the Crossing
+        # and the Open Studio. With the spine that is 13 + 12 + 14 + 15 = 54
+        # units, which with the Foundation's 66 makes the degree's 120.
+        STUDIO_LOAD = {5: (8, "two studios"), 6: (4, "one studio"), 7: (4, "one studio"),
+                       8: (8, "the Crossing and the Open Studio")}
+        if semester <= 4:
+            load = f"{spine_units} units · about {spine_units * 3} hours of work a week"
+        else:
+            su, what = STUDIO_LOAD[semester]
+            load = f"{spine_units} units on the spine + {su} in {what} · about {(spine_units + su) * 3} hours of work a week"
+        first = publishing.week_date(semester, 1)
+        if first:
+            dates = f"from {publishing.long_date(first)}"
+        else:
+            second = publishing.week_date(semester, 2)
+            dates = f"Week 1 is live · Weeks 2–15 from {publishing.long_date(second)}" if second else ""
         sections.append(_section(
             f"semester-{semester}",
             f"Semester {semester}",
             SEMESTER_LABEL.get(semester, ""),
+            f'          <p class="sched-load">{load}{" · " + dates if dates else ""}</p>\n'
             f'          <nav class="ledger" aria-label="Semester {semester} week" style="margin-top:0.5rem;">\n'
             f"{_rhythm_ledger(rows)}\n"
             f"          </nav>\n"
             f'          <p style="margin-top:1rem;font-size:0.88rem;color:var(--muted);">{note}</p>'
-            f"{milestone_html}",
+            f"{milestone_html}"
+            f'\n          <p style="margin-top:0.6rem;font-size:0.88rem;"><a href="/curriculum/day-by-day.html#semester-{semester}">Every day of Semester {semester}, dated, on the Path →</a></p>',
         ))
-
-        max_week = max((planned_days(c) for c in courses), default=DEFAULT_DAYS)
-        published_weeks = 0
-        for week in range(1, max_week + 1):
-            ledger = _week_ledger(rows, week)
-            if not ledger:
-                continue
-            published_weeks += 1
-            num = "Start Here" if (semester == 1 and week == 1) else f"Semester {semester}"
-            sections.append(_section(
-                f"s{semester}-week-{week}",
-                f"Week {week}",
-                num,
-                f'          <nav class="ledger" aria-label="Semester {semester}, Week {week}" style="margin-top:0.5rem;">\n'
-                f"{ledger}\n"
-                f"          </nav>",
-            ))
-        if not published_weeks:
-            sections.append(
-                f'    <p class="frame" style="font-size:0.88rem;color:var(--muted);margin:-0.5rem auto 2rem;">'
-                f"Semester {semester}'s days publish week by week once the semester before it is complete.</p>"
-            )
 
     generated = "<!-- sdit:weeks:begin -->\n" + "\n\n".join(sections) + "\n    <!-- sdit:weeks:end -->"
     new = re.sub(
@@ -344,22 +344,34 @@ def sync_catalog_page(catalog) -> int:
         if not rows:
             continue
         depth = t["id"] == "depth"
-        trs = []
+        items = []
         for c in rows:
-            name = c.get("name", "")
+            name = c.get("display") or c.get("name", "")
+            formal = c.get("name", "") if c.get("display") and c.get("display") != c.get("name") else ""
             if c["dir"].startswith("WKSP-") or c["dir"].startswith("CAP-"):
                 name = f"{name} · Semester {c.get('semester')}"
-            frame = (f'<td class="cat-frame">{_esc(" · ".join(x.title() for x in c.get("concentrations", [])))}</td>'
-                     if depth else "")
-            trs.append(f'                <tr><td class="cat-code"><a href="/courses/{c["dir"]}/index.html">{_esc(c["code"])}</a></td>'
-                       f'<td><strong>{_esc(name)}</strong></td>{frame}'
-                       f'<td class="cat-units">{c.get("units")} u · {_status_tag(c)}</td></tr>')
+            frame = " · ".join(x.title() for x in c.get("concentrations", [])) if depth else ""
+            why = " ".join(str(c.get("description", "")).split())
+            ends = " ".join(str(c.get("artifact", "")).split())
+            units = c.get("units")
+            meta = " · ".join(x for x in (
+                f'{units} unit{"s" if units != 1 else ""}' if isinstance(units, int) else "",
+                f'Semester {c.get("semester")}' if c.get("semester") else "",
+                frame) if x)
+            items.append(
+                f'            <li class="cat-course" id="{_esc(c["dir"])}">\n'
+                f'              <a class="cat-head" href="/courses/{c["dir"]}/index.html"><span class="cat-code">{_esc(c["code"])}</span>'
+                f'<strong>{_esc(name)}</strong>{f"<small>{_esc(formal)}</small>" if formal else ""}</a>\n'
+                f'              <p class="cat-why">{_esc(why)}</p>\n'
+                + (f'              <p class="cat-ends"><span>You make</span> {_esc(ends)}</p>\n' if ends else "")
+                + f'              <p class="cat-meta">{_esc(meta)} · {_status_tag(c)}</p>\n'
+                f'            </li>')
         parts.append(
-            f'          <h3>{_esc(t["name"])}</h3>\n'
-            f'          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">{_esc(t.get("note", ""))}</p>\n'
-            f'          <div class="cat-table-wrap">\n            <table class="cat-table">\n              <tbody>\n'
-            + "\n".join(trs) +
-            '\n              </tbody>\n            </table>\n          </div>\n')
+            f'          <h3 id="{_esc(t["id"])}">{_esc(t["name"])}</h3>\n'
+            f'          <p class="cat-thread-note">{_esc(t.get("note", ""))}</p>\n'
+            f'          <ul class="cat-list">\n'
+            + "\n".join(items) +
+            '\n          </ul>\n')
     body = "\n".join(parts)
     new = re.sub(re.escape(CATALOG_MARKERS[0]) + r".*?" + re.escape(CATALOG_MARKERS[1]),
                  lambda _m: f"{CATALOG_MARKERS[0]}\n{body}          {CATALOG_MARKERS[1]}", src, flags=re.S)

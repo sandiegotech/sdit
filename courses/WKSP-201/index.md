@@ -53,7 +53,7 @@ The Workshop is the bottega — the room where making is taught by making, under
 
 The circuit is the smaller half of the lesson. The larger half is the client: writing their brief in their words, letting their ears outrank your intentions at the bench, delivering the thing in person with a schematic they can hand to the next tech, and writing an honest account of what it cost in hours and parts. Critique this semester puts the client at the bench. Documentation adds the brief, the as-built schematic, and the account.
 
-The Workshop is a bench with an iron, a meter, and a master at it, and the page says so plainly: one day a week, about ten minutes, carries the brief, the technique, the critique prompt, and the discipline of the log. Then your hands take over — on the bench if you have one, and on a breadboard at a kitchen table if you do not. The course ends the way every SDIT course ends: in a made thing, in someone else's hands.
+The Workshop is a bench with an iron, a meter, and a master at it, and the page says so plainly: one page a week, about ten minutes to read, opens the day and carries the brief, the technique, the critique prompt, and the discipline of the log. Then your hands take over — on the bench if you have one, and on a breadboard at a kitchen table if you do not. The course ends the way every SDIT course ends: in a made thing, in someone else's hands.
 
 ## The Two Registers
 
@@ -138,7 +138,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Someone Who Is Not You
 

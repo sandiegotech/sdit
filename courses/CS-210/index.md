@@ -48,7 +48,7 @@ The difference between code that works and code that works at scale is the subje
 
 The teaching frame is Making Things Fast. The first tool you build is a stopwatch around a function, and you use it every week. You choose a real dataset — the Institute's suggestion is decades of wave measurements from the Scripps buoys off Point Loma and Torrey Pines — write the honest slow version of a program that answers a question about it, and then make it fast, with the chart and the proof to show why. The AI assistant is open throughout; it is good at proposing structures and confident about running times it has never measured. Every claim of speed in this course is a measurement, and every measurement is yours.
 
-One day a week, about ten minutes a sitting, and it ends in a made thing: a program measurably faster than it was, defended with a stopwatch and a proof.
+One page a week opens the day, about ten minutes to read, and it ends in a made thing: a program measurably faster than it was, defended with a stopwatch and a proof.
 
 ## The Two Registers
 
@@ -127,7 +127,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Fast Is a Measurement
 

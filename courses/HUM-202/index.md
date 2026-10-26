@@ -57,7 +57,7 @@ The nineteenth century built the factory, the theory of evolution, and the first
 
 None of it is read alone. This is the Double Feature Method: every unit pairs **the text + a film + an album**, discussed as one conversation. *Frankenstein* beside *Blade Runner* and the birth of electronic music; Darwin beside *Grizzly Man*; Marx beside *Metropolis* and Kraftwerk; Nietzsche beside *Groundhog Day* and *Hunky Dory*. The century that invented the machine and the anxiety about it turns out to be arguing about your work.
 
-One day a week, about ten minutes a sitting, plus the reading that pulls you in. This is the last Canon course of the Foundation, and it ends the week you declare a concentration. It ends the way every SDIT course ends: in a made thing, defended out loud — this time, a thing that can act without you.
+One page a week opens the day, about ten minutes to read, plus the reading that pulls you in. This is the last Canon course of the Foundation, and it ends the week you declare a concentration. It ends the way every SDIT course ends: in a made thing, defended out loud — this time, a thing that can act without you.
 
 ## The Two Registers
 
@@ -144,7 +144,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Creature Reads
 

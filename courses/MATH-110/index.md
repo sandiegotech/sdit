@@ -47,7 +47,7 @@ Calculus is the mathematics of motion, and you already know the motion. Every dr
 
 Taught as **The Mathematics of Motion**: ramp transitions, swell decay, the moment a turn is tightest. By the time limits and derivatives appear as symbols, they're descriptions of things you've watched happen — which is the only way the symbols ever meant anything to anyone.
 
-One day a week, about ten minutes a sitting, with problems that start in the world and end on the page. AI tools stay open for exploration; your own unassisted command of the material is examined, because the degree certifies you, not your tools.
+One page a week opens the day, about ten minutes to read, with problems that start in the world and end on the page. AI tools stay open for exploration; your own unassisted command of the material is examined, because the degree certifies you, not your tools.
 
 ## The Two Registers
 
@@ -126,7 +126,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Zoom In Until It's Straight
 

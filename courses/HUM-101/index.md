@@ -58,7 +58,7 @@ The oldest stories we have are survival manuals for being human, and they are st
 
 This is how the Canon works at SDIT: not literature appreciation, but a working toolkit. Odysseus engineering his way past the Sirens is systems thinking about human weakness, three millennia before anyone called it that. You read these books because the people who build the things you admire read them — and because every day of this course hands you a question you will actually use.
 
-One day a week, about ten minutes a sitting, plus the reading that pulls you in. The course ends the way every SDIT course ends: in a made thing, defended out loud.
+One page a week opens the day, about ten minutes to read, plus the reading that pulls you in. The course ends the way every SDIT course ends: in a made thing, defended out loud.
 
 ## The Two Registers
 
@@ -144,7 +144,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Oldest Story Is About You
 

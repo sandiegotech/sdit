@@ -53,7 +53,7 @@ Why Black's breaks, why fins hold, why the marine layer burns off at eleven. Thi
 
 Taught as **Why Waves Break**: swell generation, refraction at Point Loma, bathymetric focusing at Black's, board hydrodynamics and fin theory, marine-layer thermodynamics. Every law is met in the water or the air before it is written — you count the period at Scripps Pier before you see the wave equation, feel the pressure in your ears at the Cove before you see Archimedes, hold your hand out the car window before you see lift. The lab is the beach, the buoy, and the shaping bay.
 
-One day a week, about ten minutes a sitting, building toward real measurement, honest uncertainty, and a board. The course ends the way every SDIT course ends: in a made thing — a surfboard you shaped, with design calculations you can defend — exhibited, defended, and ridden.
+One page a week opens the day, about ten minutes to read, building toward real measurement, honest uncertainty, and a board. The course ends the way every SDIT course ends: in a made thing — a surfboard you shaped, with design calculations you can defend — exhibited, defended, and ridden.
 
 ## The Two Registers
 
@@ -139,7 +139,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Canyon Under Black's
 

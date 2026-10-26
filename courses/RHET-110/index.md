@@ -51,7 +51,7 @@ Writing is thinking made auditable. A thought in your head can be vague and stil
 
 The specimens are masters' drafts beside their finals, because the record keeps them: Lincoln's Gettysburg draft with its corrections, Jefferson's rough draft with Franklin's hand on it, Franklin teaching himself by rewriting the *Spectator* from notes. You line-edit them before you line-edit yourself, and you learn six marks that say almost everything an editor ever needs to say. From Week 12 a model may read your drafts and mark them; it may never write them. The distance between your first draft and your final has to be yours, and the course is built so that a reviewer can see it is.
 
-One day a week, about ten minutes a sitting, plus the writing — which is the course. It ends the way every SDIT course ends: in a made thing, read aloud and defended.
+One page a week opens the day, about ten minutes to read, plus the writing — which is the course. It ends the way every SDIT course ends: in a made thing, read aloud and defended.
 
 ## The Two Registers
 
@@ -135,7 +135,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Two Hundred and Seventy-Two Words
 

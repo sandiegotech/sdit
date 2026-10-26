@@ -54,7 +54,7 @@ The Workshop is the bottega — the room where mastery is transmitted through ma
 
 The last build is held to the standard of the whole sequence and shown at the final public exhibition, beside your defended capstone, with the seven builds before it present as a wall of pages so that the eighth is read as the end of a sequence. Critique arrives at its final form: an outside eye from the tradition at the bench in Week 7, and the public and outside examiners on opening night, answered in the method you learned in the first semester — describe, then judge, the maker last. The final bench test in your chosen material is given before the public sees the thing. Documentation closes with eight paragraphs, one per build, and the account of eight semesters in your own hand.
 
-The Workshop is the same room it was on the first Friday, with the same tools and a master in it, and the page is still not that room. One day a week, about ten minutes, carries the last brief, the technique as a refresher, the critique as public defense, and the discipline of the final log and the account. Then your hands take over, one more time. The course ends the way every SDIT course ends, and the way the degree ends: in a made thing you can show, and describe well enough to be known by.
+The Workshop is the same room it was on the first Friday, with the same tools and a master in it, and the page is still not that room. One page a week, about ten minutes to read, opens the day and carries the last brief, the technique as a refresher, the critique as public defense, and the discipline of the final log and the account. Then your hands take over, one more time. The course ends the way every SDIT course ends, and the way the degree ends: in a made thing you can show, and describe well enough to be known by.
 
 ## The Two Registers
 
@@ -140,7 +140,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Tell Me If Anything Was Ever Done
 

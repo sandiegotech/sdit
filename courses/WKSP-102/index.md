@@ -52,7 +52,7 @@ The Workshop is the bottega — the room where the rest of the curriculum become
 
 The showing is the point. The year-end public exhibition closes Year 1, and people you do not know will stand in front of the thing you made and read sixty words about it. Critique this semester adds a stranger to the bench. Documentation adds a template drawing, a ride log, a repair log, and the placard. The Semester 1 build hangs beside the board.
 
-The Workshop is a room with tools and a shaper in it, and the page is honest about that: one day a week on the page, about ten minutes, carries the brief, the technique, the critique prompt, and the discipline of the log. Then your hands take over — in the bay if you have one, and with a plank and a hand plane if you do not. The course ends the way every SDIT course ends: in a made thing, shown.
+The Workshop is a room with tools and a shaper in it, and the page is honest about that: one page a week, about ten minutes to read, opens the day and carries the brief, the technique, the critique prompt, and the discipline of the log. Then your hands take over — in the bay if you have one, and with a plank and a hand plane if you do not. The course ends the way every SDIT course ends: in a made thing, shown.
 
 ## The Two Registers
 
@@ -135,7 +135,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — A Board Is a Stack of Decisions
 

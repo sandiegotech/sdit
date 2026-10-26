@@ -52,7 +52,7 @@ Mechanics is the study of how things move, and San Diego is the laboratory. Forc
 
 Taught as **How Things Move**: the ocean and the board first, Newton second. A wave is a lecture on energy transport; a skateboard is an instrument for studying rotational inertia. No concept arrives as notation first — force is a bottom turn before it is a vector.
 
-One day a week, about ten minutes a sitting, building toward real measurement, honest uncertainty, and a lab artifact you can defend.
+One page a week opens the day, about ten minutes to read, building toward real measurement, honest uncertainty, and a lab artifact you can defend.
 
 ## The Two Registers
 
@@ -135,7 +135,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Wave Is a Lecture
 

@@ -47,7 +47,7 @@ There is no magic anywhere in the stack. Between your finger and the page you ar
 
 The teaching frame is How Machines Think. The default build is simulated, in a free browser-based hardware simulator, chip by chip, each one tested before the next is wired from it; a breadboard door stays open every day for those who want to hold the gates in their hands. The AI assistant is open from Day 2 — it will draft a chip for you — and the rule of the course is that the test script, not the assistant, says whether a chip works. You learn to make the assistant's chip fail before you trust it, and by Day 12 you can say where in the stack the assistant itself lives.
 
-One day a week, about ten minutes a sitting, and the course ends the way every SDIT course ends: in a made thing. Yours is a computer, built upward from gates, running a program you wrote.
+One page a week opens the day, about ten minutes to read, and the course ends the way every SDIT course ends: in a made thing. Yours is a computer, built upward from gates, running a program you wrote.
 
 ## The Two Registers
 
@@ -125,7 +125,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — No Magic Anywhere
 

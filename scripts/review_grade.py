@@ -51,8 +51,8 @@ INSTRUCTOR = ("A practitioner-scholar with a body of work in the field: a termin
 INFO = ("<!-- sdit:info:begin -->", "<!-- sdit:info:end -->")
 WEIGHTS = ("<!-- sdit:weights:begin -->", "<!-- sdit:weights:end -->")
 POLICIES = ("<!-- sdit:policies:begin -->", "<!-- sdit:policies:end -->")
-DAYS_LEAD = ("The fifteen days below are the open spine of the course, about ten minutes each. "
-             "The hours in Course Information are the course.")
+DAYS_LEAD = ("The fifteen days below are the course's spine: one page a week, about ten minutes to read, "
+             "each opening that week's work. The hours in Course Information are the course.")
 
 
 def _load_rubrics() -> dict:

@@ -47,7 +47,7 @@ A song reaches you in the morning and you have no idea how it got there. This co
 
 Culture & Signal is one unit a year for every student, and this is the first. It is not music appreciation and it is not a production class — the Workshop and the studios do that. It is the study of how a made thing moves through the world, with music as the first case because the path is the oldest and the best documented. San Diego is the material: Iron Butterfly's seventeen minutes, the independent labels that grew out of one room on Kettner Boulevard, and 91X broadcasting from Tijuana since 1983.
 
-One day a week, about ten minutes a sitting. The course ends the way every SDIT course ends: in a made thing, defended out loud — a track released under your name, or the complete documented breakdown of how one was built.
+One page a week opens the day, about ten minutes to read; the hours in Course Information are the course. The course ends the way every SDIT course ends: in a made thing, defended out loud — a track released under your name, or the complete documented breakdown of how one was built.
 
 ## The Two Registers
 
@@ -124,7 +124,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Song Left the Room in 1877
 

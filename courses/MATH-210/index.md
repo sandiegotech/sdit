@@ -51,7 +51,7 @@ A photograph is a grid of numbers. So is a recording; so is every layer of every
 
 Taught as **The Mathematics of Images**: every photograph, every mix session, every AI model is matrices. Every concept arrives physical before formal — you shear the photograph before you see the matrix, hear mid and side before you see the change of basis, dust the plate with sand and bow it before you see the eigenvector. This is the secret on-ramp to machine learning: by the end you read a model's insides because you have built the operations yourself.
 
-One day a week, about ten minutes a sitting. AI tools stay open — the course is partly about what is inside them — and your own unassisted command of the operations is examined, because the degree certifies you, not your tools. The course ends the way every SDIT course ends: in a made thing — a transformation built by hand and found again in a model — presented and defended.
+One page a week opens the day, about ten minutes to read; the hours in Course Information are the course. AI tools stay open — the course is partly about what is inside them — and your own unassisted command of the operations is examined, because the degree certifies you, not your tools. The course ends the way every SDIT course ends: in a made thing — a transformation built by hand and found again in a model — presented and defended.
 
 ## The Two Registers
 
@@ -135,7 +135,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — A Photograph Is a Spreadsheet
 

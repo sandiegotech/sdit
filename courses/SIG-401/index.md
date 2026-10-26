@@ -51,7 +51,7 @@ Four years of taking culture in; now you put something back out and watch what t
 
 Every day puts the real thing on the page — the engraving, the pamphlet, the recording, a Navy ship sliding into San Diego Bay at NASSCO on the day it ships. The course runs alongside your capstone and must not be it; it is the signal you build around something you believe in.
 
-One day a week, about ten minutes a sitting, and the rest of the week making and shipping. The course ends in a made thing: a real cultural artifact — a zine, a newsletter, a record, a radio hour, a show in a real room — shipped to a real audience outside the building, with the numbers, defended out loud before an outside examiner.
+One page a week opens the day, about ten minutes to read, and the rest of the week making and shipping. The course ends in a made thing: a real cultural artifact — a zine, a newsletter, a record, a radio hour, a show in a real room — shipped to a real audience outside the building, with the numbers, defended out loud before an outside examiner.
 
 ## The Two Registers
 
@@ -133,7 +133,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Key With the Leather Thong
 

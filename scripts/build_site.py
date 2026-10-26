@@ -270,7 +270,7 @@ def lesson_footer_html(course_dir: str, n: int, meta: dict) -> str:
     parts = ['<aside class="lesson-journey">',
              f'<p class="lesson-journey-meta">{_html.escape(where)}</p>',
              '<div class="lesson-next">', *cards, '</div>',
-             '<p class="lesson-selfpace">Self-paced: the next day is there whenever you come back. '
+             '<p class="lesson-selfpace">The next day is there whenever you come back; the dates on the Path are the full-time pace. '
              '<a href="/curriculum/day-by-day.html">The whole Path →</a></p>',
              '</aside>']
     return "\n".join(parts)

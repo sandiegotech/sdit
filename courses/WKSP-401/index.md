@@ -56,7 +56,7 @@ The Workshop is the bottega — the room where mastery is transmitted through ma
 
 The material is whatever they can finish; you do not choose it and you do not make it. What you make is the conditions: a brief scoped with them rather than for them, a technique shown once and then handed over, a Friday crit you run and hold to its rules, a bench you keep safe, a bench test you proctor, and a schedule that ships on a date that does not move. You keep a leader's log beside their build log and never write theirs for them. The semester ends with their finished thing, which you did not touch, and your account of leading — three to five pages, read aloud to the masters, naming your team, your decisions, and your errors.
 
-The Workshop is a room with tools, a master, and now you standing between them, and the page says so: one day a week, about ten minutes, carries the leader's brief, the method, the critique as something you run, the safety you own, and the discipline of two logs. Then your hands go in your pockets. The course ends the way every SDIT course ends: in a made thing, shipped — and this time, in someone else's hands from the start.
+The Workshop is a room with tools, a master, and now you standing between them, and the page says so: one page a week, about ten minutes to read, opens the day and carries the leader's brief, the method, the critique as something you run, the safety you own, and the discipline of two logs. Then your hands go in your pockets. The course ends the way every SDIT course ends: in a made thing, shipped — and this time, in someone else's hands from the start.
 
 ## The Two Registers
 
@@ -143,7 +143,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — You Don't Know It Until You Can Teach It
 

@@ -54,7 +54,7 @@ Your information environment is built by people who want things from you. Some o
 
 The cases are historical and public domain, because there the record is complete and the stakes are cold: a 1917 recruiting poster that printed four million copies, John Snow's cholera map, Nightingale's wedges, the Cottingley Fairies and the man who believed in them, Bernays manufacturing a news event in 1929, Capra cutting the enemy's own film into an argument. You learn the moves where you can check the answer, then use them where you cannot. Models are open as fallacy-finders and provenance tools, with one standing rule: you check every finding and write down the check. In the last weeks you turn the machine around — ask it to write the persuasion, then tear down what it wrote.
 
-One day a week, about ten minutes a sitting, plus a weekly log of claims met in the wild. The course ends in a made thing: a forensic teardown of one real piece of persuasion, defended against a peer whose job is to show you were unfair.
+One page a week opens the day, about ten minutes to read, plus a weekly log of claims met in the wild. The course ends in a made thing: a forensic teardown of one real piece of persuasion, defended against a peer whose job is to show you were unfair.
 
 ## The Two Registers
 
@@ -141,7 +141,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Someone Put This Here
 

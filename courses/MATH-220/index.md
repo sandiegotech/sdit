@@ -54,7 +54,7 @@ Uncertainty is the native condition of the AI age, and this is its grammar. Ever
 
 Taught as **Forecasting & Games**: swell models, prediction markets, poker, A/B tests. Every concept arrives physical before formal — you count outs at the table before you see conditional probability, watch beads pile into a bell on a Galton board before you see the normal distribution, time the period at Scripps Pier ten times before you see a confidence interval. The discipline the course is built around is the oldest one in forecasting: write the number down, wait, and look.
 
-One day a week, about ten minutes a sitting, plus a forecast posted every week from the sixth. AI tools stay open — reading a model's output as a distribution is half the subject — and your own unassisted reasoning with probability is examined, because a model will produce a number for any question and only you can say whether it was the right question. The course ends the way every SDIT course ends: in a made thing — a public forecast, tracked and scored — defended before the room and the ledger.
+One page a week opens the day, about ten minutes to read, plus a forecast posted every week from the sixth. AI tools stay open — reading a model's output as a distribution is half the subject — and your own unassisted reasoning with probability is examined, because a model will produce a number for any question and only you can say whether it was the right question. The course ends the way every SDIT course ends: in a made thing — a public forecast, tracked and scored — defended before the room and the ledger.
 
 ## The Two Registers
 
@@ -140,7 +140,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Ox at the Fair
 

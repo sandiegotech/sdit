@@ -57,7 +57,7 @@ Rights, markets, contracts, constitutions: the operating system the modern world
 
 None of it is read alone. This is the Double Feature Method: every unit pairs **the text + a film + an album**, discussed as one conversation. *Leviathan* beside *Seven Samurai* and *At Folsom Prison*; Locke beside *There Will Be Blood*; *The Federalist* beside *12 Angry Men* and *Kind of Blue*. The point is not to admire the Enlightenment. It is to find the design assumption inside every institution you touch, which is the skill Madison had and most people who build systems today do not.
 
-One day a week, about ten minutes a sitting, plus the reading that pulls you in. The course ends the way every SDIT course ends: in a made thing, defended out loud, this time to people who have been asked to disagree with you.
+One page a week opens the day, about ten minutes to read, plus the reading that pulls you in. The course ends the way every SDIT course ends: in a made thing, defended out loud, this time to people who have been asked to disagree with you.
 
 ## The Two Registers
 
@@ -144,7 +144,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The War of Everyone Against Everyone
 

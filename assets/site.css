@@ -1248,6 +1248,21 @@ a.join-path:hover { border-color: var(--gold); background: var(--gold-dim); }
 
 /* ---- Catalog & semester tables ---- */
 .cat-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+/* The course list: what each course is for, and what you make */
+.cat-thread-note { font-size: 0.9rem; color: var(--muted); margin: -0.4rem 0 0.6rem; }
+.cat-list { list-style: none; margin: 0 0 2.25rem; padding: 0; }
+.cat-course { padding: 1rem 0 1.1rem; border-top: 1px solid var(--hairline); }
+.cat-course:last-child { border-bottom: 1px solid var(--hairline); }
+.cat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.7rem; text-decoration: none; color: var(--ink); }
+.cat-head .cat-code { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; color: var(--gold); }
+.cat-head strong { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; }
+.cat-head small { font-size: 0.8rem; color: var(--muted); }
+.cat-head:hover strong { color: var(--gold); }
+.cat-why { margin: 0.35rem 0 0; font-size: 0.95rem; line-height: 1.55; max-width: 44rem; }
+.cat-ends { margin: 0.4rem 0 0; font-size: 0.9rem; color: var(--ink-soft, var(--ink)); max-width: 44rem; }
+.cat-ends span { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-right: 0.4rem; }
+.cat-meta { margin: 0.45rem 0 0; font-size: 0.8rem; color: var(--muted); }
+.sched-load { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.04em; color: var(--muted); margin: 0.25rem 0 0; }
 .cat-table {
   width: 100%;
   border-collapse: collapse;

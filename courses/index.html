@@ -11,7 +11,7 @@
   <script>try{var d=document.documentElement;if(document.visibilityState==="visible"){d.classList.add("sdit-animate");setTimeout(function(){d.classList.add("sdit-settled")},1200)}}catch(e){}</script>
   <title>Courses — SDIT</title>
   <meta name="description" content="Every course in the BA in Technology catalog. Take any one of them on its own — every syllabus open to everyone.">
-  <link rel="stylesheet" href="../assets/site.css?v=f10020d5c3" />
+  <link rel="stylesheet" href="../assets/site.css?v=f12bf5f62b" />
   <script src="../assets/js/site-paths.js?v=9dfed823ff" defer></script>
   <script src="../assets/js/includes.js?v=2783b50173" defer></script>
 </head>
@@ -23,132 +23,331 @@
     <header class="page-header">
       <div class="frame">
         <span class="page-header__eyebrow">Courses</span>
-        <h1 class="page-header__title">Take one course <em>on one topic.</em></h1>
-        <p class="page-header__meta">one degree · 44 courses · eight depth studios · every syllabus open to everyone</p>
+        <h1 class="page-header__title">Every course, <em>and what it is for.</em></h1>
+        <p class="page-header__meta">44 courses · 120 units · one unit is three hours of work a week for fifteen weeks · every syllabus open</p>
       </div>
     </header>
+
+    <!-- ============ HOW IT FITS ============ -->
+    <section class="article" id="how-it-fits">
+      <div class="frame article-grid">
+        <div class="article-label">How It Fits</div>
+        <div class="article-body">
+          <p>One degree, eight semesters. The first four are the same for everyone: the books, the mathematics and the science, code, writing, and the Workshop every semester. That is the Foundation, and it is where you find out what you are good at. At the end of Year 2 you declare a concentration (Media, Design, or Engineering), take four depth studios in it and one from outside it, spend a term inside a working organization, and defend a capstone in public.</p>
+          <p>Every course below says what it is for and what you make in it, because every course ends in a made thing that goes into your <a href="/portfolio/">Portfolio</a>. The full syllabus (hours, materials, how it is assessed, the unassisted examination) is on each course's page. A course's fifteen days are its spine: one page a week, about ten minutes to read, each opening that week's work. The hours are the course. <a href="/curriculum/schedule.html">The Schedule</a> shows what a week and a semester look like; <a href="/curriculum/day-by-day.html">the Path</a> dates every day.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ THE CATALOG ============ -->
     <section class="article" id="catalog">
       <div class="frame article-grid">
-        <div class="article-label">The Catalog<span class="num">By Thread</span></div>
+        <div class="article-label">The Courses<span class="num">By Thread</span></div>
         <div class="article-body">
           <!-- sdit:catalog:begin -->
-          <h3>The Canon</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">A text + a film + an album, every unit, all eight semesters.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/HUM-101/index.html">HUM 101</a></td><td><strong>The Ancient World</strong></td><td class="cat-units">2 u · <span class="tag tag--live">day 1 live</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/HUM-102/index.html">HUM 102</a></td><td><strong>Rome to the Renaissance</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 12 Apr 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/HUM-201/index.html">HUM 201</a></td><td><strong>The Enlightenment</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 26 Jul 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/HUM-202/index.html">HUM 202</a></td><td><strong>The Industrial Mind</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 8 Nov 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/HUM-301/index.html">HUM 301</a></td><td><strong>The Age of Intelligence</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 21 Feb 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/HUM-302/index.html">HUM 302</a></td><td><strong>Ethics &amp; Statecraft</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 5 Jun 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/HUM-401/index.html">HUM 401</a></td><td><strong>The California Canon</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 18 Sep 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/HUM-402/index.html">HUM 402</a></td><td><strong>The Long View</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 1 Jan 2029</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="canon">The Canon</h3>
+          <p class="cat-thread-note">A text + a film + an album, every unit, all eight semesters.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="HUM-101">
+              <a class="cat-head" href="/courses/HUM-101/index.html"><span class="cat-code">HUM 101</span><strong>The Ancient World</strong></a>
+              <p class="cat-why">The oldest stories we have are survival manuals for being human, and they are still about you. Eight weeks inside Homer, the tragedians, and Plato — each unit paired with a film and an album so the conversation crosses three thousand years without slowing down.</p>
+              <p class="cat-ends"><span>You make</span> A made response — essay, short film, recorded piece, or designed object — defended in seminar.</p>
+              <p class="cat-meta">2 units · Semester 1 · <span class="tag tag--live">day 1 live</span></p>
+            </li>
+            <li class="cat-course" id="HUM-102">
+              <a class="cat-head" href="/courses/HUM-102/index.html"><span class="cat-code">HUM 102</span><strong>Rome to the Renaissance</strong></a>
+              <p class="cat-why">From the Stoic emperor to the workshop of Verrocchio — the long arc that ends in the bottega, where art and engineering were one job. Da Vinci's notebooks are the founding documents of this institution's premise.</p>
+              <p class="cat-ends"><span>You make</span> A made response defended in seminar.</p>
+              <p class="cat-meta">2 units · Semester 2 · <span class="tag tag--planned">from 12 Apr 2027</span></p>
+            </li>
+            <li class="cat-course" id="HUM-201">
+              <a class="cat-head" href="/courses/HUM-201/index.html"><span class="cat-code">HUM 201</span><strong>The Enlightenment</strong></a>
+              <p class="cat-why">Rights, markets, contracts, constitutions — the operating system the modern world still runs on, read in the original and argued in seminar.</p>
+              <p class="cat-ends"><span>You make</span> A made response defended in seminar.</p>
+              <p class="cat-meta">2 units · Semester 3 · <span class="tag tag--planned">from 26 Jul 2027</span></p>
+            </li>
+            <li class="cat-course" id="HUM-202">
+              <a class="cat-head" href="/courses/HUM-202/index.html"><span class="cat-code">HUM 202</span><strong>The Industrial Mind</strong></a>
+              <p class="cat-why">The century that built the factory, the theory of evolution, and the first fears about what we make. Shelley's question — what do you owe the thing you created? — is now an engineering requirement.</p>
+              <p class="cat-ends"><span>You make</span> A made response defended in seminar.</p>
+              <p class="cat-meta">2 units · Semester 4 · <span class="tag tag--planned">from 8 Nov 2027</span></p>
+            </li>
+            <li class="cat-course" id="HUM-301">
+              <a class="cat-head" href="/courses/HUM-301/index.html"><span class="cat-code">HUM 301</span><strong>The Age of Intelligence</strong></a>
+              <p class="cat-why">Turing's 1950 paper, Wiener's warnings, and the alignment debate — read alongside the science fiction that keeps getting there first.</p>
+              <p class="cat-ends"><span>You make</span> A made response defended in seminar.</p>
+              <p class="cat-meta">2 units · Semester 5 · <span class="tag tag--planned">from 21 Feb 2028</span></p>
+            </li>
+            <li class="cat-course" id="HUM-302">
+              <a class="cat-head" href="/courses/HUM-302/index.html"><span class="cat-code">HUM 302</span><strong>Ethics &amp; Statecraft</strong></a>
+              <p class="cat-why">What you build changes who has power. This course is the standing argument about what that obliges you to do.</p>
+              <p class="cat-ends"><span>You make</span> A made response defended in seminar.</p>
+              <p class="cat-meta">2 units · Semester 6 · <span class="tag tag--planned">from 5 Jun 2028</span></p>
+            </li>
+            <li class="cat-course" id="HUM-401">
+              <a class="cat-head" href="/courses/HUM-401/index.html"><span class="cat-code">HUM 401</span><strong>The California Canon</strong></a>
+              <p class="cat-why">The laboratory this institution lives in, read as literature — from the Salinas Valley to the Z-Boys, the state that keeps inventing the future and writing it down.</p>
+              <p class="cat-ends"><span>You make</span> A made response defended in seminar.</p>
+              <p class="cat-meta">2 units · Semester 7 · <span class="tag tag--planned">from 18 Sep 2028</span></p>
+            </li>
+            <li class="cat-course" id="HUM-402">
+              <a class="cat-head" href="/courses/HUM-402/index.html"><span class="cat-code">HUM 402</span><strong>The Long View</strong></a>
+              <p class="cat-why">The final seminar. Civilizations rise and fall on judgment, craft, and signal — and your capstone gets presented against the whole four-year conversation.</p>
+              <p class="cat-ends"><span>You make</span> The capstone colloquium presentation.</p>
+              <p class="cat-meta">2 units · Semester 8 · <span class="tag tag--planned">from 1 Jan 2029</span></p>
+            </li>
+          </ul>
 
-          <h3>Mathematics &amp; Science</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">Physical before formal — the ocean, the ramp, the studio.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/MATH-110/index.html">MATH 110</a></td><td><strong>Calculus I</strong></td><td class="cat-units">4 u · <span class="tag tag--live">day 1 live</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/MATH-120/index.html">MATH 120</a></td><td><strong>Calculus II</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 12 Apr 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/PHYS-110/index.html">PHYS 110</a></td><td><strong>Mechanics</strong></td><td class="cat-units">4 u · <span class="tag tag--live">day 1 live</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/PHYS-120/index.html">PHYS 120</a></td><td><strong>Waves, Energy &amp; Fluids</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 12 Apr 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/MATH-210/index.html">MATH 210</a></td><td><strong>Linear Algebra</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 26 Jul 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/MATH-220/index.html">MATH 220</a></td><td><strong>Probability &amp; Statistics</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 8 Nov 2027</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="math-science">Mathematics &amp; Science</h3>
+          <p class="cat-thread-note">Physical before formal — the ocean, the ramp, the studio.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="MATH-110">
+              <a class="cat-head" href="/courses/MATH-110/index.html"><span class="cat-code">MATH 110</span><strong>The Mathematics of Motion</strong><small>Calculus I</small></a>
+              <p class="cat-why">Calculus is the mathematics of change, and you already have the intuition — every drop-in, every braking point, every fading swell is a derivative you can feel. This course attaches the notation to what your body already knows.</p>
+              <p class="cat-ends"><span>You make</span> A motion study — a real moving thing measured, modeled, and explained with the calculus that governs it.</p>
+              <p class="cat-meta">4 units · Semester 1 · <span class="tag tag--live">day 1 live</span></p>
+            </li>
+            <li class="cat-course" id="MATH-120">
+              <a class="cat-head" href="/courses/MATH-120/index.html"><span class="cat-code">MATH 120</span><strong>The Mathematics of Sound</strong><small>Calculus II</small></a>
+              <p class="cat-why">Integration and infinite series, taught through the studio: every sound you have ever loved is a sum of sines, and the synthesizer is the lab bench where you prove it.</p>
+              <p class="cat-ends"><span>You make</span> A sound built from first principles — a patch or piece whose harmonic structure you can derive and defend.</p>
+              <p class="cat-meta">4 units · Semester 2 · <span class="tag tag--planned">from 12 Apr 2027</span></p>
+            </li>
+            <li class="cat-course" id="PHYS-110">
+              <a class="cat-head" href="/courses/PHYS-110/index.html"><span class="cat-code">PHYS 110</span><strong>How Things Move</strong><small>Mechanics</small></a>
+              <p class="cat-why">Forces, energy, and momentum, learned where they actually live — on the wave, the ramp, and the road. The lab is the beach; the problem sets are things you can feel in your knees.</p>
+              <p class="cat-ends"><span>You make</span> A force analysis of a real maneuver — measured, diagrammed, defended.</p>
+              <p class="cat-meta">4 units · Semester 1 · <span class="tag tag--live">day 1 live</span></p>
+            </li>
+            <li class="cat-course" id="PHYS-120">
+              <a class="cat-head" href="/courses/PHYS-120/index.html"><span class="cat-code">PHYS 120</span><strong>Why Waves Break</strong><small>Waves, Energy &amp; Fluids</small></a>
+              <p class="cat-why">Why Black's breaks, why fins hold, why the marine layer burns off at eleven — the physics of the place, ending in a board you shaped with math you can show.</p>
+              <p class="cat-ends"><span>You make</span> A shaped board with design calculations, defended.</p>
+              <p class="cat-meta">4 units · Semester 2 · <span class="tag tag--planned">from 12 Apr 2027</span></p>
+            </li>
+            <li class="cat-course" id="MATH-210">
+              <a class="cat-head" href="/courses/MATH-210/index.html"><span class="cat-code">MATH 210</span><strong>The Mathematics of Images</strong><small>Linear Algebra</small></a>
+              <p class="cat-why">The mathematics every photograph, mix session, and neural network is made of. By the end you can read a model's insides because you have built the operations yourself.</p>
+              <p class="cat-ends"><span>You make</span> An image or audio transformation built by hand from matrix operations — then found again inside a working model.</p>
+              <p class="cat-meta">4 units · Semester 3 · <span class="tag tag--planned">from 26 Jul 2027</span></p>
+            </li>
+            <li class="cat-course" id="MATH-220">
+              <a class="cat-head" href="/courses/MATH-220/index.html"><span class="cat-code">MATH 220</span><strong>Forecasting &amp; Games</strong><small>Probability &amp; Statistics</small></a>
+              <p class="cat-why">Uncertainty is the native condition of the AI age, and this is its grammar: forecasts, bets, base rates, and the discipline of being scored on what you predicted.</p>
+              <p class="cat-ends"><span>You make</span> A forecast with skin in the game — made, tracked, and scored in public.</p>
+              <p class="cat-meta">4 units · Semester 4 · <span class="tag tag--planned">from 8 Nov 2027</span></p>
+            </li>
+          </ul>
 
-          <h3>Computation &amp; Intelligent Systems</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">Code and AI as a native medium; unassisted exams keep it honest.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/CS-110/index.html">CS 110</a></td><td><strong>Programming Fundamentals</strong></td><td class="cat-units">4 u · <span class="tag tag--live">day 1 live</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/CS-120/index.html">CS 120</a></td><td><strong>Computational Thinking &amp; Systems</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 12 Apr 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/CS-210/index.html">CS 210</a></td><td><strong>Data Structures &amp; Algorithms</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 26 Jul 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/CS-220/index.html">CS 220</a></td><td><strong>Machine Learning I</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 8 Nov 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/CS-320/index.html">CS 320</a></td><td><strong>Human-AI Collaboration</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 18 Sep 2028</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="computation">Computation &amp; Intelligent Systems</h3>
+          <p class="cat-thread-note">Code and AI as a native medium; unassisted exams keep it honest.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="CS-110">
+              <a class="cat-head" href="/courses/CS-110/index.html"><span class="cat-code">CS 110</span><strong>Speaking to Machines</strong><small>Programming Fundamentals</small></a>
+              <p class="cat-why">Code is the most literal language ever invented — the machine does exactly what you say, which is how you find out what you actually said. Taught AI-native from the first hour: the tools stay open, and the skill graded is direction and verification.</p>
+              <p class="cat-ends"><span>You make</span> A small working program that does something you actually wanted done — written with AI in the loop and verified without it.</p>
+              <p class="cat-meta">4 units · Semester 1 · <span class="tag tag--live">day 1 live</span></p>
+            </li>
+            <li class="cat-course" id="CS-120">
+              <a class="cat-head" href="/courses/CS-120/index.html"><span class="cat-code">CS 120</span><strong>How Machines Think</strong><small>Computational Thinking &amp; Systems</small></a>
+              <p class="cat-why">No magic anywhere in the stack: from a transistor to a logic gate to a processor to the page you are reading, every layer explained by building it.</p>
+              <p class="cat-ends"><span>You make</span> A working computer built upward from gates — simulated or breadboarded — that runs a program you wrote.</p>
+              <p class="cat-meta">4 units · Semester 2 · <span class="tag tag--planned">from 12 Apr 2027</span></p>
+            </li>
+            <li class="cat-course" id="CS-210">
+              <a class="cat-head" href="/courses/CS-210/index.html"><span class="cat-code">CS 210</span><strong>Making Things Fast</strong><small>Data Structures &amp; Algorithms</small></a>
+              <p class="cat-why">The difference between code that works and code that works at scale. Structures and algorithms taught by making slow things fast and proving why.</p>
+              <p class="cat-ends"><span>You make</span> A measurably faster program — profiled, redesigned, and benchmarked, with the analysis to show why.</p>
+              <p class="cat-meta">4 units · Semester 3 · <span class="tag tag--planned">from 26 Jul 2027</span></p>
+            </li>
+            <li class="cat-course" id="CS-220">
+              <a class="cat-head" href="/courses/CS-220/index.html"><span class="cat-code">CS 220</span><strong>Teaching Machines</strong><small>Machine Learning I</small></a>
+              <p class="cat-why">The machine that learned to finish your sentences is not a mystery — it is matrices, gradients, and data. Build small models from scratch so the big ones stop being magic.</p>
+              <p class="cat-ends"><span>You make</span> A model trained from scratch on data you gathered — with an honest evaluation of where it fails.</p>
+              <p class="cat-meta">4 units · Semester 4 · <span class="tag tag--planned">from 8 Nov 2027</span></p>
+            </li>
+            <li class="cat-course" id="CS-320">
+              <a class="cat-head" href="/courses/CS-320/index.html"><span class="cat-code">CS 320</span><strong>Working with Intelligence</strong><small>Human-AI Collaboration</small></a>
+              <p class="cat-why">By Year 4 you have used these tools everywhere; now the practice itself becomes the subject. Delegation, verification, and taste — studied, drilled, and graded.</p>
+              <p class="cat-ends"><span>You make</span> A substantial work produced with AI as instrument — with a full account of what was delegated, what was verified, and why the judgment calls were yours.</p>
+              <p class="cat-meta">4 units · Semester 7 · <span class="tag tag--planned">from 18 Sep 2028</span></p>
+            </li>
+          </ul>
 
-          <h3>Rhetoric &amp; Epistemics</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">Writing with force; knowing what's true.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/RHET-110/index.html">RHET 110</a></td><td><strong>Writing Seminar</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 26 Jul 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/RHET-210/index.html">RHET 210</a></td><td><strong>Epistemic Self-Defense</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 8 Nov 2027</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="rhetoric">Rhetoric &amp; Epistemics</h3>
+          <p class="cat-thread-note">Writing with force; knowing what's true.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="RHET-110">
+              <a class="cat-head" href="/courses/RHET-110/index.html"><span class="cat-code">RHET 110</span><strong>Writing That Lands</strong><small>Writing Seminar</small></a>
+              <p class="cat-why">Writing is thinking made auditable. Heavy output, line-edited, every week — because clarity on the page is clarity in the head, and both are trained the same way: by revision.</p>
+              <p class="cat-ends"><span>You make</span> A portfolio of revised essays — first drafts and finals side by side, so the distance is visible.</p>
+              <p class="cat-meta">4 units · Semester 3 · <span class="tag tag--planned">from 26 Jul 2027</span></p>
+            </li>
+            <li class="cat-course" id="RHET-210">
+              <a class="cat-head" href="/courses/RHET-210/index.html"><span class="cat-code">RHET 210</span><strong>Knowing What's True</strong><small>Epistemic Self-Defense</small></a>
+              <p class="cat-why">Your information environment is built by people who want things from you. Logic, statistics, bias, and propaganda analysis — the martial art of knowing what's true.</p>
+              <p class="cat-ends"><span>You make</span> A forensic teardown of a real piece of persuasion — its claims, techniques, and the truth of the matter, documented.</p>
+              <p class="cat-meta">4 units · Semester 4 · <span class="tag tag--planned">from 8 Nov 2027</span></p>
+            </li>
+          </ul>
 
-          <h3>Culture &amp; Signal</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">One unit per year — how music, images, scenes, and signals move.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/SIG-101/index.html">SIG 101</a></td><td><strong>How Music Moves</strong></td><td class="cat-units">1 u · <span class="tag tag--planned">from 12 Apr 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/SIG-201/index.html">SIG 201</a></td><td><strong>How Images Move</strong></td><td class="cat-units">1 u · <span class="tag tag--planned">from 8 Nov 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/SIG-301/index.html">SIG 301</a></td><td><strong>How Scenes Form</strong></td><td class="cat-units">1 u · <span class="tag tag--planned">from 21 Feb 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/SIG-401/index.html">SIG 401</a></td><td><strong>How to Build a Signal</strong></td><td class="cat-units">1 u · <span class="tag tag--planned">from 1 Jan 2029</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="signal">Culture &amp; Signal</h3>
+          <p class="cat-thread-note">One unit per year — how music, images, scenes, and signals move.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="SIG-101">
+              <a class="cat-head" href="/courses/SIG-101/index.html"><span class="cat-code">SIG 101</span><strong>How Music Moves</strong></a>
+              <p class="cat-why">Recording, production, labels and independence, streaming economics — the full path a song travels from a room to your morning.</p>
+              <p class="cat-ends"><span>You make</span> A released track or a documented production breakdown of one.</p>
+              <p class="cat-meta">1 unit · Semester 2 · <span class="tag tag--planned">from 12 Apr 2027</span></p>
+            </li>
+            <li class="cat-course" id="SIG-201">
+              <a class="cat-head" href="/courses/SIG-201/index.html"><span class="cat-code">SIG 201</span><strong>How Images Move</strong></a>
+              <p class="cat-why">Cinema, short-form ecosystems, documentary craft, and the attention economy that decides what gets seen.</p>
+              <p class="cat-ends"><span>You make</span> A short visual piece released into a real feed, with a written account of how it moved.</p>
+              <p class="cat-meta">1 unit · Semester 4 · <span class="tag tag--planned">from 8 Nov 2027</span></p>
+            </li>
+            <li class="cat-course" id="SIG-301">
+              <a class="cat-head" href="/courses/SIG-301/index.html"><span class="cat-code">SIG 301</span><strong>How Scenes Form</strong></a>
+              <p class="cat-why">Every technology and art form you love was invented by a small scene before it was an industry. How those rooms work, studied closely.</p>
+              <p class="cat-ends"><span>You make</span> A field study of a living scene — documented from inside.</p>
+              <p class="cat-meta">1 unit · Semester 5 · <span class="tag tag--planned">from 21 Feb 2028</span></p>
+            </li>
+            <li class="cat-course" id="SIG-401">
+              <a class="cat-head" href="/courses/SIG-401/index.html"><span class="cat-code">SIG 401</span><strong>How to Build a Signal</strong></a>
+              <p class="cat-why">Four years of taking culture in; now you put something back out and watch what the world does with it.</p>
+              <p class="cat-ends"><span>You make</span> A real cultural artifact shipped to a real audience — with the numbers.</p>
+              <p class="cat-meta">1 unit · Semester 8 · <span class="tag tag--planned">from 1 Jan 2029</span></p>
+            </li>
+          </ul>
 
-          <h3>The Workshop</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">Every semester, a project team that ships.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/WKSP-101/index.html">WKSP 101</a></td><td><strong>The Workshop · Semester 1</strong></td><td class="cat-units">2 u · <span class="tag tag--live">day 1 live</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/WKSP-102/index.html">WKSP 102</a></td><td><strong>The Workshop · Semester 2</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 12 Apr 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/WKSP-201/index.html">WKSP 201</a></td><td><strong>The Workshop · Semester 3</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 26 Jul 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/WKSP-202/index.html">WKSP 202</a></td><td><strong>The Workshop · Semester 4</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 8 Nov 2027</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/WKSP-301/index.html">WKSP 301</a></td><td><strong>The Workshop · Semester 5</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 21 Feb 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/WKSP-302/index.html">WKSP 302</a></td><td><strong>The Workshop · Semester 6</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 5 Jun 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/WKSP-401/index.html">WKSP 401</a></td><td><strong>The Workshop · Semester 7</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 18 Sep 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/WKSP-402/index.html">WKSP 402</a></td><td><strong>The Workshop · Semester 8</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 1 Jan 2029</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="workshop">The Workshop</h3>
+          <p class="cat-thread-note">Every semester, a project team that ships.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="WKSP-101">
+              <a class="cat-head" href="/courses/WKSP-101/index.html"><span class="cat-code">WKSP 101</span><strong>The Workshop · Semester 1</strong></a>
+              <p class="cat-why">The bottega — the room where mastery is transmitted through making. Every semester, every student, on a project team that ships something real. Semester 1 is your first build: small, finished, and yours.</p>
+              <p class="cat-ends"><span>You make</span> The shipped project, exhibited publicly.</p>
+              <p class="cat-meta">2 units · Semester 1 · <span class="tag tag--live">day 1 live</span></p>
+            </li>
+            <li class="cat-course" id="WKSP-102">
+              <a class="cat-head" href="/courses/WKSP-102/index.html"><span class="cat-code">WKSP 102</span><strong>The Workshop · Semester 2</strong></a>
+              <p class="cat-why">The second build, carried to the public exhibition that closes Year 1. Finishing was Semester 1's skill; showing is this one's.</p>
+              <p class="cat-ends"><span>You make</span> The shipped project, shown at the year-end public exhibition.</p>
+              <p class="cat-meta">2 units · Semester 2 · <span class="tag tag--planned">from 12 Apr 2027</span></p>
+            </li>
+            <li class="cat-course" id="WKSP-201">
+              <a class="cat-head" href="/courses/WKSP-201/index.html"><span class="cat-code">WKSP 201</span><strong>The Workshop · Semester 3</strong></a>
+              <p class="cat-why">Year 2 of the Workshop brings the first outside client. The standard does not change; the person you answer to does.</p>
+              <p class="cat-ends"><span>You make</span> A client project, shipped and documented.</p>
+              <p class="cat-meta">2 units · Semester 3 · <span class="tag tag--planned">from 26 Jul 2027</span></p>
+            </li>
+            <li class="cat-course" id="WKSP-202">
+              <a class="cat-head" href="/courses/WKSP-202/index.html"><span class="cat-code">WKSP 202</span><strong>The Workshop · Semester 4</strong></a>
+              <p class="cat-why">The last Workshop of the Foundation. By its end you have four shipped builds and enough evidence to choose Media, Design, or Engineering from experience rather than at the door.</p>
+              <p class="cat-ends"><span>You make</span> A client project, shipped, and a portfolio review ahead of the Declaration.</p>
+              <p class="cat-meta">2 units · Semester 4 · <span class="tag tag--planned">from 8 Nov 2027</span></p>
+            </li>
+            <li class="cat-course" id="WKSP-301">
+              <a class="cat-head" href="/courses/WKSP-301/index.html"><span class="cat-code">WKSP 301</span><strong>The Workshop · Semester 5</strong></a>
+              <p class="cat-why">Year 3 of the Workshop runs beside your first depth studios. The materials follow your concentration; the client and the deadline stay real.</p>
+              <p class="cat-ends"><span>You make</span> A client project, shipped and documented.</p>
+              <p class="cat-meta">2 units · Semester 5 · <span class="tag tag--planned">from 21 Feb 2028</span></p>
+            </li>
+            <li class="cat-course" id="WKSP-302">
+              <a class="cat-head" href="/courses/WKSP-302/index.html"><span class="cat-code">WKSP 302</span><strong>The Workshop · Semester 6</strong></a>
+              <p class="cat-why">The Workshop continues through the Field Term semester — a lighter build, on purpose, so the placement gets the weight.</p>
+              <p class="cat-ends"><span>You make</span> The shipped project, documented.</p>
+              <p class="cat-meta">2 units · Semester 6 · <span class="tag tag--planned">from 5 Jun 2028</span></p>
+            </li>
+            <li class="cat-course" id="WKSP-401">
+              <a class="cat-head" href="/courses/WKSP-401/index.html"><span class="cat-code">WKSP 401</span><strong>The Workshop · Semester 7</strong></a>
+              <p class="cat-why">The teaching requirement, made concrete: a fourth-year runs a first-year team through its first build. The thing shipped is theirs; the responsibility is yours.</p>
+              <p class="cat-ends"><span>You make</span> A first-year team's shipped project, led by you, and your account of leading it.</p>
+              <p class="cat-meta">2 units · Semester 7 · <span class="tag tag--planned">from 18 Sep 2028</span></p>
+            </li>
+            <li class="cat-course" id="WKSP-402">
+              <a class="cat-head" href="/courses/WKSP-402/index.html"><span class="cat-code">WKSP 402</span><strong>The Workshop · Semester 8</strong></a>
+              <p class="cat-why">Eight semesters of making end in the room they started in. The last Workshop build is exhibited beside the defended capstone.</p>
+              <p class="cat-ends"><span>You make</span> The final build, exhibited publicly.</p>
+              <p class="cat-meta">2 units · Semester 8 · <span class="tag tag--planned">from 1 Jan 2029</span></p>
+            </li>
+          </ul>
 
-          <h3>Field Term &amp; Capstone</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">A real organization in Year 3; a defended original work in Year 4.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/FLD-301/index.html">FLD 301</a></td><td><strong>Field Term</strong></td><td class="cat-units">4 u · <span class="tag tag--planned">from 5 Jun 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/CAP-401/index.html">CAP 401</a></td><td><strong>Thesis / Venture Capstone I · Semester 7</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 18 Sep 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/CAP-402/index.html">CAP 402</a></td><td><strong>Thesis / Venture Capstone II · Semester 8</strong></td><td class="cat-units">2 u · <span class="tag tag--planned">from 1 Jan 2029</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="field-capstone">Field Term &amp; Capstone</h3>
+          <p class="cat-thread-note">A real organization in Year 3; a defended original work in Year 4.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="FLD-301">
+              <a class="cat-head" href="/courses/FLD-301/index.html"><span class="cat-code">FLD 301</span><strong>The Field Term</strong><small>Field Term</small></a>
+              <p class="cat-why">A full term inside a working organization. Not an internship to decorate a résumé — a placement with a mentor, real responsibilities, and a written account of what the work taught you.</p>
+              <p class="cat-ends"><span>You make</span> Mentor evaluation, portfolio of field work, and a written field report.</p>
+              <p class="cat-meta">4 units · Semester 6 · <span class="tag tag--planned">from 5 Jun 2028</span></p>
+            </li>
+            <li class="cat-course" id="CAP-401">
+              <a class="cat-head" href="/courses/CAP-401/index.html"><span class="cat-code">CAP 401</span><strong>The Capstone Begins · Semester 7</strong><small>Thesis / Venture Capstone I</small></a>
+              <p class="cat-why">The whole degree converges here — one original work, a year in the making. This semester you choose its form, argue its scope, and start building it for real.</p>
+              <p class="cat-ends"><span>You make</span> An accepted capstone proposal and the first working piece of the thing itself.</p>
+              <p class="cat-meta">2 units · Semester 7 · <span class="tag tag--planned">from 18 Sep 2028</span></p>
+            </li>
+            <li class="cat-course" id="CAP-402">
+              <a class="cat-head" href="/courses/CAP-402/index.html"><span class="cat-code">CAP 402</span><strong>The Capstone, Defended · Semester 8</strong><small>Thesis / Venture Capstone II</small></a>
+              <p class="cat-why">The year-long work is finished and defended in public before faculty and outside examiners. The five outcomes, demonstrated at once.</p>
+              <p class="cat-ends"><span>You make</span> The defended original work itself.</p>
+              <p class="cat-meta">2 units · Semester 8 · <span class="tag tag--planned">from 1 Jan 2029</span></p>
+            </li>
+          </ul>
 
-          <h3>The Depths</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin:-0.4rem 0 0.4rem;">Eight studios; your concentration prescribes four — the Crossing adds one from outside it.</p>
-          <div class="cat-table-wrap">
-            <table class="cat-table">
-              <tbody>
-                <tr><td class="cat-code"><a href="/courses/CS-310/index.html">CS 310</a></td><td><strong>Machine Learning II / AI Systems Engineering</strong></td><td class="cat-frame">Engineering</td><td class="cat-units">4 u · <span class="tag tag--planned">from 21 Feb 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/ART-310/index.html">ART 310</a></td><td><strong>Interactive Media &amp; Interfaces</strong></td><td class="cat-frame">Media · Design</td><td class="cat-units">4 u · <span class="tag tag--planned">from 21 Feb 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/ART-320/index.html">ART 320</a></td><td><strong>Film &amp; the Moving Image</strong></td><td class="cat-frame">Media</td><td class="cat-units">4 u · <span class="tag tag--planned">from 21 Feb 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/ART-330/index.html">ART 330</a></td><td><strong>Music Production &amp; Sound Design</strong></td><td class="cat-frame">Media</td><td class="cat-units">4 u · <span class="tag tag--planned">from 5 Jun 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/ART-410/index.html">ART 410</a></td><td><strong>Generative Media &amp; Creative Code</strong></td><td class="cat-frame">Media · Design</td><td class="cat-units">4 u · <span class="tag tag--planned">from 18 Sep 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/ENGR-310/index.html">ENGR 310</a></td><td><strong>Mechanical Design &amp; Fabrication</strong></td><td class="cat-frame">Design · Engineering</td><td class="cat-units">4 u · <span class="tag tag--planned">from 21 Feb 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/ENGR-320/index.html">ENGR 320</a></td><td><strong>Embedded Systems &amp; Sensors</strong></td><td class="cat-frame">Design · Engineering</td><td class="cat-units">4 u · <span class="tag tag--planned">from 5 Jun 2028</span></td></tr>
-                <tr><td class="cat-code"><a href="/courses/ENGR-410/index.html">ENGR 410</a></td><td><strong>Robotics &amp; Autonomous Systems</strong></td><td class="cat-frame">Engineering</td><td class="cat-units">4 u · <span class="tag tag--planned">from 18 Sep 2028</span></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 id="depth">The Depths</h3>
+          <p class="cat-thread-note">Eight studios; your concentration prescribes four — the Crossing adds one from outside it.</p>
+          <ul class="cat-list">
+            <li class="cat-course" id="CS-310">
+              <a class="cat-head" href="/courses/CS-310/index.html"><span class="cat-code">CS 310</span><strong>Engineering Intelligence</strong><small>Machine Learning II / AI Systems Engineering</small></a>
+              <p class="cat-why">Models are easy; systems are hard. Deployment, evaluation, agents, and failure modes — the engineering discipline of making machine intelligence dependable.</p>
+              <p class="cat-ends"><span>You make</span> A deployed AI system with real users, an evaluation harness, and a documented failure analysis.</p>
+              <p class="cat-meta">4 units · Semester 5 · Engineering · <span class="tag tag--planned">from 21 Feb 2028</span></p>
+            </li>
+            <li class="cat-course" id="ART-310">
+              <a class="cat-head" href="/courses/ART-310/index.html"><span class="cat-code">ART 310</span><strong>Interactive Media &amp; Interfaces</strong></a>
+              <p class="cat-why">Games, installations, interfaces — the art form where the audience acts. Design, build, and watch real people use what you made.</p>
+              <p class="cat-ends"><span>You make</span> An interactive piece with real users — playable, usable, observed.</p>
+              <p class="cat-meta">4 units · Semester 5 · Media · Design · <span class="tag tag--planned">from 21 Feb 2028</span></p>
+            </li>
+            <li class="cat-course" id="ART-320">
+              <a class="cat-head" href="/courses/ART-320/index.html"><span class="cat-code">ART 320</span><strong>Film &amp; the Moving Image</strong></a>
+              <p class="cat-why">The complete craft of the moving image — from the shot you planned to the cut that finally works — ending in a short film with your name on it, screened for an audience.</p>
+              <p class="cat-ends"><span>You make</span> A finished short film, screened.</p>
+              <p class="cat-meta">4 units · Semester 5 · Media · <span class="tag tag--planned">from 21 Feb 2028</span></p>
+            </li>
+            <li class="cat-course" id="ART-330">
+              <a class="cat-head" href="/courses/ART-330/index.html"><span class="cat-code">ART 330</span><strong>Music Production &amp; Sound Design</strong></a>
+              <p class="cat-why">Recording, synthesis, mixing, and the design of sound itself — the studio treated as the instrument it is, built on the Fourier you already own from Calculus II.</p>
+              <p class="cat-ends"><span>You make</span> A produced and mixed piece of music or sound design, released or screened.</p>
+              <p class="cat-meta">4 units · Semester 6 · Media · <span class="tag tag--planned">from 5 Jun 2028</span></p>
+            </li>
+            <li class="cat-course" id="ART-410">
+              <a class="cat-head" href="/courses/ART-410/index.html"><span class="cat-code">ART 410</span><strong>Generative Media &amp; Creative Code</strong></a>
+              <p class="cat-why">The medium that did not exist ten years ago. Procedural systems and machine intelligence as raw material — where the artist's job moves up a level, to the rules and the taste.</p>
+              <p class="cat-ends"><span>You make</span> A generative work where the system is yours — the rules authored, the output curated, the taste defended.</p>
+              <p class="cat-meta">4 units · Semester 7 · Media · Design · <span class="tag tag--planned">from 18 Sep 2028</span></p>
+            </li>
+            <li class="cat-course" id="ENGR-310">
+              <a class="cat-head" href="/courses/ENGR-310/index.html"><span class="cat-code">ENGR 310</span><strong>Design &amp; Fabrication</strong><small>Mechanical Design &amp; Fabrication</small></a>
+              <p class="cat-why">From the sketch to the CAD model to the part in your hand — and the discipline of tolerance, where honesty becomes measurable.</p>
+              <p class="cat-ends"><span>You make</span> A designed and fabricated mechanism that works — drawings, tolerances, and the physical thing.</p>
+              <p class="cat-meta">4 units · Semester 5 · Design · Engineering · <span class="tag tag--planned">from 21 Feb 2028</span></p>
+            </li>
+            <li class="cat-course" id="ENGR-320">
+              <a class="cat-head" href="/courses/ENGR-320/index.html"><span class="cat-code">ENGR 320</span><strong>Machines That Sense</strong><small>Embedded Systems &amp; Sensors</small></a>
+              <p class="cat-why">Computers that live in things — and in this curriculum, things that live in saltwater. Firmware, sensors, and the engineering humility the ocean teaches.</p>
+              <p class="cat-ends"><span>You make</span> A working instrument deployed in the field — gathering real data in a hostile environment.</p>
+              <p class="cat-meta">4 units · Semester 6 · Design · Engineering · <span class="tag tag--planned">from 5 Jun 2028</span></p>
+            </li>
+            <li class="cat-course" id="ENGR-410">
+              <a class="cat-head" href="/courses/ENGR-410/index.html"><span class="cat-code">ENGR 410</span><strong>Robots in the World</strong><small>Robotics &amp; Autonomous Systems</small></a>
+              <p class="cat-why">Everything converges: mechanics, embedded systems, machine learning, and the unforgiving physical world. The machine has to work in the parking lot, not the slide deck.</p>
+              <p class="cat-ends"><span>You make</span> An autonomous system demonstrated live, in the world, doing its job.</p>
+              <p class="cat-meta">4 units · Semester 7 · Engineering · <span class="tag tag--planned">from 18 Sep 2028</span></p>
+            </li>
+          </ul>
           <!-- sdit:catalog:end -->
         </div>
       </div>

@@ -46,7 +46,7 @@ Every technology and art form you love was invented by a small group in a specif
 
 The third Culture & Signal unit is the one most at home in San Diego. The Che Café has run on the same rules since 1980. Chicano Park was built by a scene that occupied the ground under a bridge and would not leave. Tijuana's Nortec Collective made music for two cities at once. Rodney Mullen, after whom the Institute's arts wing is named, explains in his own words how a trick becomes open-source the moment it is landed in public.
 
-One day a week, about ten minutes a sitting, and the rest of the week in the field. The course ends in a made thing: a field study of a living scene, written from inside after weeks with a notebook, and handed back to the room before it is defended in seminar.
+One page a week opens the day, about ten minutes to read, and the rest of the week in the field. The course ends in a made thing: a field study of a living scene, written from inside after weeks with a notebook, and handed back to the room before it is defended in seminar.
 
 ## The Two Registers
 
@@ -124,7 +124,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — A Rec Room in the Bronx, 1973
 

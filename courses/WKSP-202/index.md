@@ -55,7 +55,7 @@ The Workshop is the bottega — the room where mastery is transmitted through ma
 
 A motorcycle is the first build with every concentration inside it — mechanical, electrical, fluid, and finish — which is why it is here, at the end of the Foundation. You learn the machine before you touch it, write the brief as symptoms rather than parts, diagnose from what you hear and smell before you reach for a wrench, torque to a number and record it, and let the client's ride be the only done-test that counts. Then you lay four Foundation builds on one table and let the room describe where your hands went. That is the evidence you declare a concentration from: Media, Design, or Engineering, chosen from experience rather than at the door.
 
-The Workshop is a lift with a mechanic at it, and the page says so: one day a week, about ten minutes, carries the brief, the method, the technique, the critique prompt, and the discipline of the log. Then your hands take over — on a motorcycle if the room has one, and on someone else's bicycle, scooter, or mower if it does not. The course ends the way every SDIT course ends: in a made thing, back in its owner's hands, and a choice made from the work.
+The Workshop is a lift with a mechanic at it, and the page says so: one page a week, about ten minutes to read, opens the day and carries the brief, the method, the technique, the critique prompt, and the discipline of the log. Then your hands take over — on a motorcycle if the room has one, and on someone else's bicycle, scooter, or mower if it does not. The course ends the way every SDIT course ends: in a made thing, back in its owner's hands, and a choice made from the work.
 
 ## The Two Registers
 
@@ -142,7 +142,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — A Machine Someone Depends On
 

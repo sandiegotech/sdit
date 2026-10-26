@@ -55,7 +55,7 @@ The Workshop is the bottega — the room where mastery is transmitted through ma
 
 This is the tradition every concentration can enter through its own door, which is why it sits here, just after the Declaration. Media builds the operating end: where the camera goes and how it moves. Design builds the part a person holds: the handle, the latch, the housing opened cold and wet with one hand. Engineering builds the part that must work on its own: the seal, the trigger, the firmware. Teams are mixed; the crit goes around the table with each person describing another concentration's decisions; the test protocol is written before the first part is cut; and the rig is judged by one thing only — whether the client's shot is in the footage.
 
-The Workshop is a bench with O-ring stock, a bucket, a pier, and someone who has flooded a housing, and the page says so: one day a week, about ten minutes, carries the brief, the test protocol, the technique, the critique prompt, and the discipline of the test log. Then your hands take over — in the shop if you have one, and with a dry bag, a frame, and a bucket if you do not. The course ends the way every SDIT course ends: in a made thing, in a client's hands, with the shot to prove it.
+The Workshop is a bench with O-ring stock, a bucket, a pier, and someone who has flooded a housing, and the page says so: one page a week, about ten minutes to read, opens the day and carries the brief, the test protocol, the technique, the critique prompt, and the discipline of the test log. Then your hands take over — in the shop if you have one, and with a dry bag, a frame, and a bucket if you do not. The course ends the way every SDIT course ends: in a made thing, in a client's hands, with the shot to prove it.
 
 ## The Two Registers
 
@@ -142,7 +142,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Shot They Can't Get
 

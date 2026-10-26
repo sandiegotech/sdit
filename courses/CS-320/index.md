@@ -51,7 +51,7 @@ By Year 4 you have used the AI assistant in every course for three years. That u
 
 The teaching frame is Working with Intelligence. The course names no product; you use whichever assistant you have, and from the second week you keep a ledger of every delegation — what you asked, what came back, how you checked it, what you changed, what it cost. The ledger is the spine of the made thing. Twice the tools close: once to make a unit of the work by hand and set it beside the delegated version, and once to defend three ledger entries out loud to an examiner. You can only judge work you could do, and only defend calls you actually made.
 
-One day a week, about ten minutes a sitting, and it ends in a made thing: a substantial work in your concentration, made with AI as instrument, with a full account of what was yours.
+One page a week opens the day, about ten minutes to read, and it ends in a made thing: a substantial work in your concentration, made with AI as instrument, with a full account of what was yours.
 
 ## The Two Registers
 
@@ -132,7 +132,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Master's Hand and the Apprentice's
 

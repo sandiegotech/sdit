@@ -50,7 +50,7 @@ Every sound you have ever loved is a sum of sines, and the synthesizer is the la
 
 Taught as **The Mathematics of Sound**: harmonics and Fourier through synthesizers and the studio. Every concept arrives physical before formal — you hear the square wave before you see the series, measure the blank before you write the integral, play the echo before you test the convergence. The notation is the last step, never the first.
 
-One day a week, about ten minutes a sitting, with problems that start in the studio and end on the page. AI tools stay open for exploration; your own unassisted command of integration and series is examined, because the degree certifies you, not your tools. The course ends the way every SDIT course ends: in a made thing — a sound built from first principles — played and defended.
+One page a week opens the day, about ten minutes to read, with problems that start in the studio and end on the page. AI tools stay open for exploration; your own unassisted command of integration and series is examined, because the degree certifies you, not your tools. The course ends the way every SDIT course ends: in a made thing — a sound built from first principles — played and defended.
 
 ## The Two Registers
 
@@ -133,7 +133,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Every Sound Is a Sum
 

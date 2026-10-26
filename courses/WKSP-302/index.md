@@ -52,7 +52,7 @@ The Workshop is the bottega — the room where mastery is transmitted through ma
 
 The sensor is bought for a few dollars. Everything else is made: the housing that keeps the sea out, the mount, the retrieval line, the power budget that lets it sleep for 168 hours, the calibration against ice and boiling water that makes its number mean something. You deploy it off a pier or into a tide pool with a tag and a phone number, leave it a week, pull it up, photograph what grew on it, and download. The made thing is the plot — axes, units, time, gaps labeled honestly — and one number you are willing to say is true. Critique happens over three photos and a plot, from wherever the Field Term has put you. The drone end of the tradition is introduced in one day and left open for your last build.
 
-The Workshop is a bench with potting compound, a bucket of seawater, a pier, and someone from an instrument shop who has lost instruments, and the page says so: one day a week, about ten minutes, carries the brief, the calibration discipline, the technique, the remote critique prompt, and the discipline of the plot. Then your hands take over — on the pier if you have one, and with a thermometer logger in a jar if you do not. The course ends the way every SDIT course ends: in a made thing, retrieved and reported.
+The Workshop is a bench with potting compound, a bucket of seawater, a pier, and someone from an instrument shop who has lost instruments, and the page says so: one page a week, about ten minutes to read, opens the day and carries the brief, the calibration discipline, the technique, the remote critique prompt, and the discipline of the plot. Then your hands take over — on the pier if you have one, and with a thermometer logger in a jar if you do not. The course ends the way every SDIT course ends: in a made thing, retrieved and reported.
 
 ## The Two Registers
 
@@ -135,7 +135,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — One Instrument, One Week, One Number
 

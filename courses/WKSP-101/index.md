@@ -54,7 +54,7 @@ The Workshop is the bottega — the room where everything else in the curriculum
 
 Materials rotate through the region's craft traditions — surfboard and skateboard construction, amplifier and pedal electronics, camera rigs, drones and ocean sensors — but the first semester's law is simpler: **make anything, and finish it**. Finishing is the skill. Critique is the method. The year ends with your work in a public exhibition, which is not a metaphor: people you don't know will look at the thing you made.
 
-One day a week on the page, about ten minutes a sitting — and then your hands take over.
+One page a week opens the day, about ten minutes to read — and then your hands take over for the week's hours.
 
 ## The Two Registers
 
@@ -137,7 +137,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Make Anything
 

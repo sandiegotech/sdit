@@ -50,7 +50,7 @@ Some images travel and most die. A horse photographed in 1878 started cinema; a 
 
 The second Culture & Signal unit is also San Diego's: the skate videos cut on two VCRs in this county that invented the grammar of short-form, the Hall H line where attention is paid in hours on a sidewalk, and the Navy films this town made about itself for ninety years. You learn to judge an image before you release one.
 
-One day a week, about ten minutes a sitting. The course ends in a made thing: a short piece you shoot and cut, released into a real feed under your own name, with a written account — numbers in hand — of what the feed did with it.
+One page a week opens the day, about ten minutes to read; the hours in Course Information are the course. The course ends in a made thing: a short piece you shoot and cut, released into a real feed under your own name, with a written account — numbers in hand — of what the feed did with it.
 
 ## The Two Registers
 
@@ -131,7 +131,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Horse Left the Ground
 

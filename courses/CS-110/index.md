@@ -49,7 +49,7 @@ Code is the most literal language ever invented — the machine does exactly wha
 
 Taught **AI-native from the first hour**. The tools stay open on the table — instrumented, critiqued, never hidden — because pretending they don't exist would be training you for a world that's gone. The skill this course actually grades is **direction and verification**: telling the machine precisely what you want, and proving to yourself that what came back is right. That second skill is the one that survives every model release.
 
-One day a week, about ten minutes a sitting, hands on the keys from Day 1, building toward a small program that does something you genuinely wanted done.
+One page a week opens the day, about ten minutes to read, hands on the keys from Day 1, building toward a small program that does something you genuinely wanted done.
 
 ## The Two Registers
 
@@ -128,7 +128,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — The Very Fast, Very Literal Apprentice
 

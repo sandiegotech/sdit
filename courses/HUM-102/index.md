@@ -57,7 +57,7 @@ Thirteen centuries separate the last Roman emperor worth reading from the worksh
 
 The course ends in the bottega, where art and engineering were one job, because that room is the model for this whole institution. Da Vinci's notebooks are the founding documents of the premise that technology, art, craft, science, and philosophy are one discipline. You read them here to see what it looks like when a person refuses to divide them.
 
-One day a week, about ten minutes a sitting, plus the reading that pulls you in. Where a Lectio edition exists, you read in it. The course ends the way every SDIT course ends: in a made thing, defended out loud.
+One page a week opens the day, about ten minutes to read, plus the reading that pulls you in. Where a Lectio edition exists, you read in it. The course ends the way every SDIT course ends: in a made thing, defended out loud.
 
 ## The Two Registers
 
@@ -144,7 +144,7 @@ Grades follow the scale in the [academic policies](/curriculum/policies.html#gra
 One session per course day — each one built to look easy and pull you in: one thing to experience, one idea, one question to carry. The schedule below is generated from the course's own day files.
 
 <!-- sdit:days:begin -->
-The fifteen days below are the open spine of the course, about ten minutes each. The hours in Course Information are the course.
+The fifteen days below are the course's spine: one page a week, about ten minutes to read, each opening that week's work. The hours in Course Information are the course.
 
 ### Day 01 — Get Up
 
