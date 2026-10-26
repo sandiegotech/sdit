@@ -4,6 +4,9 @@
  *   USER#<email> / PROFILE              → the Card: email, role, tester, daily
  *   USER#<email> / WORK#<lesson>#<head> → one saved response
  *   AUTH#<email> / CODE                 → pending sign-in code (TTL-expired)
+ *   USER#<email> / HANDLE               → the learner's public handle
+ *   USER#<email> / PUBLISHED#<edition>  → a published Portfolio snapshot
+ *   HANDLE#<handle> / OWNER             → who holds a handle (uniqueness)
  *
  * The belt series lives in one field, `role`:
  *   subscriber → visitor → student → fellow → professor
@@ -21,6 +24,7 @@ import {
   UpdateCommand,
   QueryCommand,
   DeleteCommand,
+  TransactWriteCommand,
 } from '@aws-sdk/lib-dynamodb';
 
 const TABLE = process.env.TABLE_NAME;
@@ -219,4 +223,65 @@ export async function listEnrollments(email) {
     ProjectionExpression: 'courseId, enrolledAt',
   }));
   return (r.Items || []).map((i) => ({ courseId: i.courseId, enrolledAt: i.enrolledAt }));
+}
+
+
+// ── Public portfolios ────────────────────────────────────────────────────────
+// Opt-in, per edition. Publishing stores a snapshot of exactly what the
+// learner chose to show; nothing written afterward is public until they
+// publish again. A handle is claimed once and is unique.
+
+const handlePk = (h) => `HANDLE#${h}`;
+
+export async function getHandle(email) {
+  const r = await doc.send(new GetCommand({ TableName: TABLE, Key: { pk: userPk(email), sk: 'HANDLE' } }));
+  return r.Item ? r.Item.handle : null;
+}
+
+export async function handleOwner(handle) {
+  const r = await doc.send(new GetCommand({ TableName: TABLE, Key: { pk: handlePk(handle), sk: 'OWNER' } }));
+  return r.Item ? r.Item.email : null;
+}
+
+/** Claim a handle for this learner. Returns false if someone else holds it. */
+export async function claimHandle(email, handle) {
+  const owner = await handleOwner(handle);
+  if (owner && owner !== norm(email)) return false;
+  if (owner === norm(email)) return true;
+  const previous = await getHandle(email);
+  const items = [
+    { Put: { TableName: TABLE, Item: { pk: handlePk(handle), sk: 'OWNER', email: norm(email), createdAt: now() },
+             ConditionExpression: 'attribute_not_exists(pk)' } },
+    { Put: { TableName: TABLE, Item: { pk: userPk(email), sk: 'HANDLE', handle, updatedAt: now() } } },
+  ];
+  if (previous && previous !== handle) {
+    items.push({ Delete: { TableName: TABLE, Key: { pk: handlePk(previous), sk: 'OWNER' } } });
+  }
+  try {
+    await doc.send(new TransactWriteCommand({ TransactItems: items }));
+    return true;
+  } catch (err) {
+    if (err && (err.name === 'TransactionCanceledException' || err.name === 'ConditionalCheckFailedException')) return false;
+    throw err;
+  }
+}
+
+export async function publishEdition(email, edition, snapshot) {
+  await doc.send(new PutCommand({
+    TableName: TABLE,
+    Item: { pk: userPk(email), sk: `PUBLISHED#${edition}`, edition, snapshot, publishedAt: now() },
+  }));
+}
+
+export async function unpublishEdition(email, edition) {
+  await doc.send(new DeleteCommand({ TableName: TABLE, Key: { pk: userPk(email), sk: `PUBLISHED#${edition}` } }));
+}
+
+export async function listPublished(email) {
+  const r = await doc.send(new QueryCommand({
+    TableName: TABLE,
+    KeyConditionExpression: 'pk = :p AND begins_with(sk, :s)',
+    ExpressionAttributeValues: { ':p': userPk(email), ':s': 'PUBLISHED#' },
+  }));
+  return (r.Items || []).map((i) => ({ edition: i.edition, snapshot: i.snapshot, publishedAt: i.publishedAt }));
 }

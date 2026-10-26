@@ -12,6 +12,7 @@ export class UpdateCommand extends Command {}
 export class QueryCommand extends Command {}
 export class DeleteCommand extends Command {}
 export class SendEmailCommand extends Command {}
+export class TransactWriteCommand extends Command {}
 
 export const sent = [];                  // emails "sent"
 export let pageSize = 1000;              // shrink to exercise pagination
@@ -38,6 +39,19 @@ function send(cmd) {
     const page = all.slice(start, start + pageSize);
     const more = start + pageSize < all.length;
     return { Items: page, LastEvaluatedKey: more ? { pk: p, sk: page[page.length - 1].sk } : undefined };
+  }
+  if (cmd instanceof TransactWriteCommand) {
+    // All or nothing: check every condition first, then apply.
+    for (const t of i.TransactItems) {
+      if (t.Put && t.Put.ConditionExpression === 'attribute_not_exists(pk)' && table.has(k(t.Put.Item))) {
+        const e = new Error('cancelled'); e.name = 'TransactionCanceledException'; throw e;
+      }
+    }
+    for (const t of i.TransactItems) {
+      if (t.Put) table.set(k(t.Put.Item), { ...t.Put.Item });
+      if (t.Delete) table.delete(k(t.Delete.Key));
+    }
+    return {};
   }
   if (cmd instanceof SendEmailCommand) { sent.push(i); return {}; }
   throw new Error('unstubbed command');

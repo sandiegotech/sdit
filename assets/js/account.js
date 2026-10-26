@@ -126,6 +126,8 @@
         .catch(function () { return null; });   // null = could not reach the account
     },
     openSignIn: function () { openDialog(); },
+    // The Portfolio's publish controls call the account API through this.
+    request: function (path, opts) { return request(path, opts); },
 
     progress: function () {
       if (!this.isSignedIn()) return Promise.resolve([]);

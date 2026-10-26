@@ -101,6 +101,14 @@ Resources:
           var request = event.request;
           var uri = request.uri;
 
+          // A published portfolio, /portfolio/<handle>/, is one static page
+          // that reads the handle from the address.
+          var pm = uri.match(/^\/portfolio\/([a-z0-9-]{3,30})\/?$/);
+          if (pm && pm[1] !== 'view') {
+            request.uri = '/portfolio/view.html';
+            return request;
+          }
+
           if (uri.endsWith('/')) {
             request.uri = uri + 'index.html';
             return request;

@@ -309,6 +309,149 @@
     if (src) src.textContent = countAll() + " entr" + (countAll() === 1 ? "y" : "ies") + ", read from " + SOURCE + ".";
   }
 
+  // ── Publishing (opt-in, one edition at a time) ────────────────────────────
+
+  function editionId() {
+    return state.edition === "volumes" ? "volume-" + state.volume : state.edition;
+  }
+
+  // Exactly the answers the chosen edition shows, and nothing else.
+  function editionAnswers(edition) {
+    var all = Object.keys(ANSWERS).map(function (key) { return ANSWERS[key]; })
+      .filter(function (a) { return a.lesson !== "/portfolio"; });
+    var semOfLesson = function (lesson) {
+      var m = lesson.match(/^\/courses\/([A-Z]+-\d+)\//);
+      return m && MAP.courses[m[1]] ? MAP.courses[m[1]].semester : null;
+    };
+    var gateN = function (lesson) { var m = lesson.match(/^\/gates\/semester-(\d)$/); return m ? +m[1] : null; };
+    if (edition === "expanded") return all;
+    if (edition === "short") {
+      return all.filter(function (a) {
+        return (a.lesson === "/begin" && (a.heading === "commitment" || a.heading === "education")) ||
+               (gateN(a.lesson) && a.heading === "education") || a.heading === "made-thing";
+      });
+    }
+    var n = +edition.split("-")[1];
+    return all.filter(function (a) {
+      var g = gateN(a.lesson);
+      if (a.lesson === "/begin") return n === 1 || a.heading === "education";
+      if (g) return g === n || (g < n && a.heading === "education");
+      return semOfLesson(a.lesson) === n;
+    });
+  }
+
+  function publishStatus(text, link) {
+    var el = document.querySelector("[data-pf-publish-status]");
+    if (!el) return;
+    el.innerHTML = esc(text) + (link ? ' <a href="' + esc(link) + '">' + esc(link) + "</a>" : "");
+  }
+
+  var MINE = { handle: null, published: [] };
+
+  function publicLink(handle) { return location.origin + "/portfolio/" + handle + "/"; }
+
+  function refreshPublishPanel() {
+    var panel = document.querySelector("[data-pf-publish]");
+    var acct = window.SDITAccount;
+    if (!panel || !acct || !acct.isSignedIn() || !acct.request) return;
+    panel.hidden = false;
+    var ed = editionId();
+    var on = MINE.published.filter(function (p) { return p.edition === ed; })[0];
+    var un = panel.querySelector("[data-pf-unpublish-btn]");
+    if (un) un.hidden = !on;
+    var label = { short: "The Short Edition", expanded: "The Expanded Edition" }[ed] || ("Volume " + ROMAN[+ed.split("-")[1]]);
+    if (on && MINE.handle) publishStatus(label + " is published, as of " + dateOf(on.publishedAt) + ":", publicLink(MINE.handle));
+    else publishStatus(label + " is private.");
+  }
+
+  function wirePublishing() {
+    var acct = window.SDITAccount;
+    if (!acct || !acct.isSignedIn() || !acct.request) return;
+    var input = document.querySelector("[data-pf-handle]");
+    acct.request("/portfolio/mine").then(function (d) {
+      MINE = { handle: d.handle, published: d.published || [] };
+      if (input && d.handle) input.value = d.handle;
+      refreshPublishPanel();
+    }, function () { refreshPublishPanel(); });
+    var pub = document.querySelector("[data-pf-publish-btn]");
+    if (pub) pub.addEventListener("click", function () {
+      var handle = (input && input.value || "").trim().toLowerCase();
+      var ed = editionId();
+      var answers = editionAnswers(ed).map(function (a) { return { lesson: a.lesson, heading: a.heading, content: a.content, at: a.at }; });
+      if (!answers.length) { publishStatus("This edition is empty; there is nothing to publish yet."); return; }
+      publishStatus("Publishing…");
+      acct.request("/portfolio", { method: "PUT", body: { handle: handle, edition: ed, snapshot: { name: state.name, answers: answers } } })
+        .then(function (d) {
+          MINE.handle = d.handle;
+          MINE.published = MINE.published.filter(function (p) { return p.edition !== ed; })
+            .concat([{ edition: ed, publishedAt: new Date().toISOString() }]);
+          refreshPublishPanel();
+        }, function (err) {
+          publishStatus(err && err.status === 404 ? "Publishing is not switched on yet." : (err && err.message) || "Not published.");
+        });
+    });
+    var un = document.querySelector("[data-pf-unpublish-btn]");
+    if (un) un.addEventListener("click", function () {
+      var ed = editionId();
+      acct.request("/portfolio/unpublish", { method: "POST", body: { edition: ed } }).then(function () {
+        MINE.published = MINE.published.filter(function (p) { return p.edition !== ed; });
+        refreshPublishPanel();
+      }, function (err) { publishStatus((err && err.message) || "Could not unpublish."); });
+    });
+  }
+
+  // ── The public view (/portfolio/<handle>/) ────────────────────────────────
+
+  var PUBLIC = null;
+
+  function publicHandle() {
+    var m = location.pathname.match(/^\/portfolio\/([a-z0-9-]{3,30})\/?$/);
+    if (m && m[1] !== "view") return m[1];
+    return new URLSearchParams(location.search).get("h");
+  }
+
+  function loadPublic() {
+    var h = publicHandle();
+    var root = document.getElementById("portfolio-root");
+    if (!h) { root.innerHTML = '<p class="pf-empty">No portfolio named.</p>'; return; }
+    var api = (window.SDIT_ACCOUNT_API || "/api").replace(/\/+$/, "");
+    fetch(api + "/portfolio/" + encodeURIComponent(h)).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(showPublic).catch(function () {
+      root.innerHTML = '<div class="pf-empty-start"><p>This portfolio is not published.</p></div>';
+      var src = document.querySelector("[data-pf-source]"); if (src) src.textContent = "";
+    });
+  }
+
+  function showPublic(d) {
+      PUBLIC = d;
+      var eds = Object.keys(d.editions || {});
+      // Offer only what was published.
+      Array.prototype.forEach.call(document.querySelectorAll("[data-edition]"), function (b) {
+        var e = b.getAttribute("data-edition");
+        var has = e === "volumes" ? eds.some(function (x) { return /^volume-/.test(x); }) : eds.indexOf(e) !== -1;
+        b.hidden = !has;
+      });
+      var sel = document.querySelector("[data-volume]");
+      if (sel) Array.prototype.forEach.call(sel.options, function (o) { o.hidden = eds.indexOf("volume-" + o.value) === -1; });
+      if (eds.indexOf("short") !== -1) state.edition = "short";
+      else if (eds.indexOf("expanded") !== -1) state.edition = "expanded";
+      else { state.edition = "volumes"; state.volume = +eds.filter(function (x) { return /^volume-/.test(x); })[0].split("-")[1]; if (sel) sel.value = state.volume; }
+      usePublicEdition();
+  }
+
+  function usePublicEdition() {
+    var ed = PUBLIC.editions[editionId()];
+    ANSWERS = {};
+    ((ed && ed.snapshot && ed.snapshot.answers) || []).forEach(function (a) {
+      ANSWERS[k(a.lesson, a.heading)] = { lesson: a.lesson, heading: a.heading, content: a.content, at: a.at };
+    });
+    state.name = (ed && ed.snapshot && ed.snapshot.name) || "";
+    SOURCE = "a snapshot published " + (ed ? dateOf(ed.publishedAt) : "");
+    render();
+  }
+
   // ── Downloads ──────────────────────────────────────────────────────────────
 
   function markdown() {
@@ -371,6 +514,7 @@
     var mapEl = document.getElementById("degree-map");
     if (!mapEl) return;
     MAP = JSON.parse(mapEl.textContent);
+    var isPublic = document.body.getAttribute("data-portfolio-mode") === "public";
 
     var params = new URLSearchParams(location.search);
     var ed = params.get("edition");
@@ -386,11 +530,23 @@
         sel.appendChild(o);
       });
       sel.value = state.volume;
-      sel.addEventListener("change", function () { state.volume = parseInt(sel.value, 10); render(); });
+      sel.addEventListener("change", function () {
+        state.volume = parseInt(sel.value, 10);
+        if (PUBLIC) usePublicEdition(); else { render(); refreshPublishPanel(); }
+      });
     }
     Array.prototype.forEach.call(document.querySelectorAll("[data-edition]"), function (b) {
-      b.addEventListener("click", function () { state.edition = b.getAttribute("data-edition"); render(); });
+      b.addEventListener("click", function () {
+        state.edition = b.getAttribute("data-edition");
+        if (PUBLIC) usePublicEdition(); else { render(); refreshPublishPanel(); }
+      });
     });
+    var print = document.querySelector("[data-pf-print]");
+    if (isPublic) {
+      Array.prototype.forEach.call(document.querySelectorAll("[data-own-only]"), function (el) { el.hidden = true; });
+      waitFor(function () { return window.SDIT_ACCOUNT_API; }, 3000).then(loadPublic);
+      return;
+    }
 
     var nameInput = document.querySelector("[data-pf-name]");
     if (nameInput) {
@@ -420,11 +576,12 @@
     render();
     // The account script arrives with the header partial; wait for it briefly.
     waitFor(function () { return window.SDITWork && (window.SDITAccount || !window.SDIT_ACCOUNT_API); }, 4000)
-      .then(gather).then(render);
+      .then(gather).then(function () { render(); wirePublishing(); });
   }
 
   // For inspection and tests; the page itself uses the buttons.
-  window.SDITPortfolio = { markdown: function () { return markdown(); }, render: render, state: state };
+  window.SDITPortfolio = { markdown: function () { return markdown(); }, render: render, state: state,
+                           showPublic: function (d) { showPublic(d); }, editionAnswers: function (e) { return editionAnswers(e); } };
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

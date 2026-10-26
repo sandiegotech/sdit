@@ -13,13 +13,13 @@
   <title>The Portfolio — SDIT</title>
   <meta name="description" content="Everything you have written and made, as a book: eight volumes, a short edition to show someone, and the expanded edition to read back and see how you changed.">
   <meta name="sdit-lesson" content="/portfolio" />
-  <link rel="stylesheet" href="../assets/site.css?v=e11ce501da" />
+  <link rel="stylesheet" href="../assets/site.css?v=3b0e2f9933" />
   <script src="../assets/js/site-paths.js?v=9dfed823ff" defer></script>
   <script src="../assets/js/includes.js?v=2783b50173" defer></script>
-  <script src="../assets/js/portfolio.js?v=9cae719506" defer></script>
+  <script src="../assets/js/portfolio.js?v=e565900cf5" defer></script>
 </head>
-<body class="charter-page portfolio-page">
-  <div data-include="/partials/header.html?v=ceb9834826"></div>
+<body class="charter-page portfolio-page" data-portfolio-mode="own">
+  <div data-include="/partials/header.html?v=42c5013823"></div>
 
   <main id="main">
     <header class="page-header pf-screen">
@@ -39,13 +39,23 @@
       <div class="pf-volume-pick" data-volume-pick hidden>
         <label>Volume <select data-volume></select></label>
       </div>
-      <div class="pf-actions">
+      <div class="pf-actions" data-own-only>
         <label class="pf-name">Name on the title page <input type="text" data-pf-name autocomplete="name" placeholder="Your name"></label>
         <button type="button" class="learn-cta" data-pf-print>Print</button>
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-md>Download Markdown</button>
         <button type="button" class="learn-cta learn-cta--ghost" data-pf-json>Download JSON</button>
       </div>
       <p class="pf-source" data-pf-source>Reading your answers…</p>
+      <div class="pf-publish" data-pf-publish hidden>
+        <p class="pf-publish-head">Publish this edition</p>
+        <p class="pf-publish-note">Off until you choose. Publishing shares a snapshot of exactly this edition at a link you can send; nothing you write afterward is shown until you publish again. Your email is never shown. Search engines are asked not to index it.</p>
+        <div class="pf-publish-row">
+          <label>Handle <input type="text" data-pf-handle placeholder="your-name" autocomplete="off" spellcheck="false"></label>
+          <button type="button" class="learn-cta" data-pf-publish-btn>Publish</button>
+          <button type="button" class="learn-cta learn-cta--ghost" data-pf-unpublish-btn hidden>Unpublish</button>
+        </div>
+        <p class="pf-publish-status" data-pf-publish-status></p>
+      </div>
     </section>
 
     <div class="frame">

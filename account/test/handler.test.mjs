@@ -106,3 +106,55 @@ test('a wrong code is refused and counted; the right one still works', async () 
   const good = await handler(ev('POST', '/auth/verify', { body: { email, code } }));
   assert.equal(good.statusCode, 200);
 });
+
+// ── Public portfolios ───────────────────────────────────────────────────────
+
+const snap = (text) => ({ name: 'Ana', answers: [{ lesson: '/begin', heading: 'education', content: text, at: '2027-01-04T10:00:00Z' }] });
+
+test('publishing claims a handle, and the public read shows only what was published', async () => {
+  const r = await signIn('p1@example.com');
+  const cookies = [cookieOf(r)];
+  // A private answer that was never published must not appear.
+  await handler(ev('PUT', '/work', { cookies, body: { lesson: '/begin', heading: 'believe', content: 'private' } }));
+  const pub = await handler(ev('PUT', '/portfolio', { cookies, body: { handle: 'ana-r', edition: 'short', snapshot: snap('Seeing clearly.') } }));
+  assert.equal(pub.statusCode, 200);
+  const read = await handler(ev('GET', '/portfolio/ana-r'));
+  assert.equal(read.statusCode, 200);
+  const body = JSON.parse(read.body);
+  assert.deepEqual(Object.keys(body.editions), ['short']);
+  assert.equal(body.editions.short.snapshot.answers[0].content, 'Seeing clearly.');
+  assert.ok(!read.body.includes('p1@example.com'), 'the public read never carries the email');
+  assert.ok(!read.body.includes('private'), 'unpublished answers never appear');
+  const mine = JSON.parse((await handler(ev('GET', '/portfolio/mine', { cookies }))).body);
+  assert.equal(mine.handle, 'ana-r');
+  assert.deepEqual(mine.published.map((p) => p.edition), ['short']);
+});
+
+test('a handle belongs to one learner; reserved and malformed handles are refused', async () => {
+  const other = await signIn('p2@example.com');
+  const cookies = [cookieOf(other)];
+  const taken = await handler(ev('PUT', '/portfolio', { cookies, body: { handle: 'ana-r', edition: 'short', snapshot: snap('x') } }));
+  assert.equal(taken.statusCode, 409);
+  for (const h of ['api', 'ab', 'Has Space', '-dash', 'double--dash']) {
+    const r = await handler(ev('PUT', '/portfolio', { cookies, body: { handle: h, edition: 'short', snapshot: snap('x') } }));
+    assert.equal(r.statusCode, 400, h);
+  }
+  const anon = await handler(ev('PUT', '/portfolio', { body: { handle: 'ghost', edition: 'short', snapshot: snap('x') } }));
+  assert.equal(anon.statusCode, 401);
+});
+
+test('unpublishing takes an edition down; a handle with nothing published is not found', async () => {
+  const r = await signIn('p1@example.com');
+  const cookies = [cookieOf(r)];
+  const down = await handler(ev('POST', '/portfolio/unpublish', { cookies, body: { edition: 'short' } }));
+  assert.equal(down.statusCode, 200);
+  assert.equal((await handler(ev('GET', '/portfolio/ana-r'))).statusCode, 404);
+  assert.equal((await handler(ev('GET', '/portfolio/nobody-here'))).statusCode, 404);
+});
+
+test('an oversized snapshot is refused', async () => {
+  const r = await signIn('p3@example.com');
+  const big = { name: '', answers: [{ lesson: '/x', heading: 'answer', content: 'x'.repeat(320 * 1024) }] };
+  const res = await handler(ev('PUT', '/portfolio', { cookies: [cookieOf(r)], body: { handle: 'big-one', edition: 'expanded', snapshot: big } }));
+  assert.equal(res.statusCode, 400);
+});

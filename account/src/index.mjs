@@ -10,6 +10,10 @@
  *   GET  /work?lesson=<path>                  → { responses }          (Bearer)
  *   PUT  /work           { lesson, heading, content }                  (Bearer)
  *   GET  /work/all                            → { responses: [{lesson, heading, content, updatedAt}] }
+ *   GET  /portfolio/mine                      → { handle, published: [edition] }        (session)
+ *   PUT  /portfolio      { handle, edition, snapshot }  → publish one edition          (session)
+ *   POST /portfolio/unpublish { edition }                → take one edition down       (session)
+ *   GET  /portfolio/<handle>                  → { handle, editions: {edition: {snapshot, publishedAt}} }  (public)
  *   GET  /enrollments                         → { courses: [id] }      (Bearer)
  *   POST /enroll         { course }                                    (Bearer)
  *   POST /unenroll       { course }                                    (Bearer)
@@ -56,6 +60,10 @@ function route(method, path, event) {
   if (method === 'GET' && path === '/work/all') return getAllWork(event);
   if (method === 'GET' && path === '/work') return getWork(event);
   if (method === 'PUT' && path === '/work') return putWork(event);
+  if (method === 'GET' && path === '/portfolio/mine') return getMyPortfolio(event);
+  if (method === 'PUT' && path === '/portfolio') return putPortfolio(event);
+  if (method === 'POST' && path === '/portfolio/unpublish') return postUnpublish(event);
+  if (method === 'GET' && path.startsWith('/portfolio/')) return getPublicPortfolio(path.slice('/portfolio/'.length));
   if (method === 'GET' && path === '/enrollments') return getEnrollments(event);
   if (method === 'POST' && path === '/enroll') return postEnroll(event);
   if (method === 'POST' && path === '/unenroll') return postUnenroll(event);
@@ -174,6 +182,58 @@ async function postUnenroll(event) {
   if (!course) return bad('course is required');
   await db.unenroll(session.sub, course);
   return ok({ ok: true });
+}
+
+// ── Public portfolios ────────────────────────────────────────────────────────
+
+const HANDLE_RE = /^[a-z0-9](?:[a-z0-9-]{1,28})[a-z0-9]$/;
+const RESERVED = new Set(['api', 'admin', 'view', 'mine', 'new', 'edit', 'index', 'sdit', 'institute',
+  'portfolio', 'notebook', 'begin', 'gates', 'courses', 'curriculum', 'assets', 'help', 'about', 'support']);
+const EDITION_RE = /^(short|expanded|volume-[1-8])$/;
+const MAX_SNAPSHOT = 300 * 1024;   // DynamoDB items stop at 400 KB
+
+async function getMyPortfolio(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const [handle, published] = await Promise.all([db.getHandle(session.sub), db.listPublished(session.sub)]);
+  return ok({ handle, published: published.map((p) => ({ edition: p.edition, publishedAt: p.publishedAt })) });
+}
+
+async function putPortfolio(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const { handle, edition, snapshot } = parseBody(event);
+  const h = String(handle || '').trim().toLowerCase();
+  if (!HANDLE_RE.test(h) || h.includes('--')) return bad('A handle is 3 to 30 lowercase letters, digits, or single dashes');
+  if (RESERVED.has(h)) return bad('That handle is reserved');
+  if (!EDITION_RE.test(String(edition || ''))) return bad('Unknown edition');
+  if (!snapshot || typeof snapshot !== 'object' || !Array.isArray(snapshot.answers)) return bad('A snapshot is required');
+  if (JSON.stringify(snapshot).length > MAX_SNAPSHOT) return bad('That edition is too large to publish; publish a single volume instead');
+  if (!(await db.claimHandle(session.sub, h))) return json(409, { error: 'That handle is taken' });
+  await db.publishEdition(session.sub, edition, snapshot);
+  return ok({ ok: true, handle: h, edition });
+}
+
+async function postUnpublish(event) {
+  const session = sessionFrom(event);
+  if (!session) return unauthorized();
+  const { edition } = parseBody(event);
+  if (!EDITION_RE.test(String(edition || ''))) return bad('Unknown edition');
+  await db.unpublishEdition(session.sub, edition);
+  return ok({ ok: true });
+}
+
+/** Public: only what the learner chose to publish, and never their email. */
+async function getPublicPortfolio(raw) {
+  const h = decodeURIComponent(raw || '').toLowerCase();
+  if (!HANDLE_RE.test(h)) return notFound();
+  const owner = await db.handleOwner(h);
+  if (!owner) return notFound();
+  const published = await db.listPublished(owner);
+  if (!published.length) return notFound();
+  const editions = {};
+  for (const p of published) editions[p.edition] = { snapshot: p.snapshot, publishedAt: p.publishedAt };
+  return ok({ handle: h, editions });
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

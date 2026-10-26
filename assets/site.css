@@ -1859,3 +1859,13 @@ html.sdit-authed .sdit-portal { display: block; }
 .skip-link:focus { left: 0.75rem; }
 
 .account-note { font-size: 0.82rem; color: var(--muted); margin: 0 0 0.75rem; line-height: 1.5; }
+
+.pf-publish { margin: 1.25rem 0 0; padding: 1rem 1.1rem; border: 1px dashed var(--border); }
+.pf-publish[hidden], [data-own-only][hidden], .pf-tabs button[hidden] { display: none !important; }
+.pf-publish-head { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.4rem; }
+.pf-publish-note { font-size: 0.85rem; color: var(--muted); margin: 0 0 0.75rem; }
+.pf-publish-row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: end; }
+.pf-publish-row label { display: grid; gap: 0.25rem; font-size: 0.78rem; color: var(--muted); }
+.pf-publish-row input { font: inherit; font-size: 0.95rem; padding: 0.45rem 0.6rem; border: 1px solid var(--border); background: var(--surface, #fff); color: var(--ink); min-width: 12rem; }
+.pf-publish-status { margin: 0.75rem 0 0; font-size: 0.85rem; }
+.pf-publish-status a { word-break: break-all; }
